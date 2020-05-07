@@ -1,0 +1,48 @@
+.questionContainer{
+          width: 95%;
+          background: #48BCE8;
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+}
+
+.question_row_item{
+    padding: 25px 35px; 
+}
+
+.question_input_txt{
+    display: block;
+    height: 40px;
+    width: 50%;
+}
+
+.error{
+    color: red;
+    font-weight: 700;
+}
+
+
+.radio_grp_set{
+    padding-left: 35px;
+}
+.question_row_item_sub{
+    margin-top: 25px;
+}
+
+.divider{
+    display: block;
+    background: white;
+    height: 1px;
+    width: 90%;
+    margin: 20px 0;
+}
+
+.q1_grid{
+    display: grid;
+    width: 85%;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, auto);
+    row-gap: 1em;
+    margin-top: 20px;
+
+}

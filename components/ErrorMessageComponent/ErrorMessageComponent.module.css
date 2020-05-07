@@ -1,0 +1,11 @@
+.errorContainer{
+    width: 95%;
+    background: #FE4E01;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    padding-left: 30px;
+}
+
+

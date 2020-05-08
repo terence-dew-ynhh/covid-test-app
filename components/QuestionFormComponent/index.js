@@ -32,14 +32,14 @@ const QuestionFormComponent = () => {
 
               
               <div className={styles.question_row_item_sub}>
-              <input id="" type="checkbox" name=""></input>
-              <label htmlFor="">Fever of 100°F or higher</label>
+              <input id="fever_higher_chk" type="checkbox" name=""></input>
+              <label htmlFor="fever_higher_chk">Fever of 100°F or higher</label>
 
-              <input id="" type="checkbox" name=""></input>
-              <label htmlFor="">Cough</label>
+              <input id="cough_chk" type="checkbox" name=""></input>
+              <label htmlFor="cough_chk">Cough</label>
 
-              <input id="" type="checkbox" name=""></input>
-              <label htmlFor="">
+              <input id="diff_breat_chk" type="checkbox" name=""></input>
+              <label htmlFor="diff_breat_chk">
                 Difficulty breathing or shortness of breath
               </label>
               </div>
@@ -95,13 +95,13 @@ const QuestionFormComponent = () => {
               </legend>
 
               <div className="radio_row_item">
-                <input type="radio" name=""></input>
-                <label htmlFor="">Yes</label>
+                <input id="nursing_home_chk_yes" type="radio" name=""></input>
+                <label htmlFor="nursing_home_chk_yes">Yes</label>
               </div>
 
               <div className="radio_row_item">
-                <input type="radio" name=""></input>
-                <label htmlFor="">No</label>
+                <input id="nursing_home_chk_no" type="radio" name=""></input>
+                <label htmlFor="nursing_home_chk_no">No</label>
               </div>
             </fieldset>
             </div>
@@ -116,13 +116,13 @@ const QuestionFormComponent = () => {
               </legend>
 
               <div className="radio_row_item">
-                <input type="radio" name="have_referral"></input>
-                <label htmlFor="">Yes</label>
+                <input id="health_care_yes" type="radio" name="have_referral"></input>
+                <label htmlFor="health_care_yes">Yes</label>
               </div>
 
               <div className="radio_row_item">
-                <input type="radio" name="have_referral"></input>
-                <label htmlFor="">No</label>
+                <input id="health_care_no" type="radio" name="have_referral"></input>
+                <label htmlFor="health_care_no">No</label>
               </div>              
             </fieldset>
             </div>
@@ -137,13 +137,13 @@ const QuestionFormComponent = () => {
               </legend>
 
               <div className="radio_row_item">
-                <input type="radio" name="have_referral"></input>
-                <label htmlFor="">Yes</label>
+                <input id="treatment_facility_yes" type="radio" name="have_referral"></input>
+                <label htmlFor="treatment_facility_yes">Yes</label>
               </div>
 
               <div className="radio_row_item">
-                <input type="radio" name="have_referral"></input>
-                <label htmlFor="">No</label>
+                <input id="treatment_facility_no" type="radio" name="have_referral"></input>
+                <label htmlFor="treatment_facility_no">No</label>
               </div>
               
             </fieldset>
@@ -173,8 +173,8 @@ const QuestionFormComponent = () => {
           <span className={styles.divider}></span>
           <div className="question-set-container-final">
           <div className={styles.question_row_item}>
-            <input className="" type="checkbox" name=""></input>
-            <label htmlFor="">
+            <input className="answered_chk" type="checkbox" name=""></input>
+            <label htmlFor="answered_chk">
               I have answered these questions truthfully to the best of my
               knowledge.
             </label>

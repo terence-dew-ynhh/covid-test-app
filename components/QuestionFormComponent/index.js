@@ -172,8 +172,8 @@ const QuestionFormComponent = () => {
           <span className={styles.divider}></span>
           <div className="question-set-container-final">
           <div className={styles.question_row_item}>
-            <input className="answered_chk" type="checkbox" name="answered_chk"></input>
-            <label htmlFor="answered_chk">
+            <input className="answered_truthfully_chk" type="checkbox" name="answered_truthfully_chk"></input>
+            <label htmlFor="answered_truthfully_chk">
               I have answered these questions truthfully to the best of my
               knowledge.
             </label>

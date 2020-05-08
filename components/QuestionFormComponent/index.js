@@ -54,31 +54,31 @@ const QuestionFormComponent = () => {
                 that apply)
               </legend>
               <div className={styles.q1_grid}>
-                <input id="" type="checkbox" name=""></input>
-                <label htmlFor="">Asthma or chronic lung disease</label>
-                <input id="" type="checkbox" name=""></input>
-                <label htmlFor="">Diabetes</label>
-                <input id="" type="checkbox" name=""></input>
-                <label htmlFor="">Extreme obesity</label>
-                <input id="" type="checkbox" name=""></input>
-                <label htmlFor="">Cirrhosis of the liver</label>
-                <input id="" type="checkbox" name=""></input>
-                <label htmlFor="">Pregnancy</label>
+                <input id="asthma_lung_chk" type="checkbox" name=""></input>
+                <label htmlFor="asthma_lung_chk">Asthma or chronic lung disease</label>
+                <input id="diabetes_chk" type="checkbox" name=""></input>
+                <label htmlFor="diabetes_chk">Diabetes</label>
+                <input id="obesity_chk" type="checkbox" name=""></input>
+                <label htmlFor="obesity_chk">Extreme obesity</label>
+                <input id="cirrhosis_chk" type="checkbox" name=""></input>
+                <label htmlFor="cirrhosis_chk">Cirrhosis of the liver</label>
+                <input id="pregnancy_chk" type="checkbox" name=""></input>
+                <label htmlFor="pregnancy_chk">Pregnancy</label>
                 
-                <input id="" type="checkbox" name=""></input>
-                <label htmlFor="">
+                <input id="heart_cond_chk" type="checkbox" name=""></input>
+                <label htmlFor="heart_cond_chk">
                   Serious heart condition, such as congestive heart failure
                 </label>
-                <input id="" type="checkbox" name=""></input>
-                <label htmlFor="">
+                <input id="diseases_cough_chk" type="checkbox" name=""></input>
+                <label htmlFor="diseases_cough_chk">
                   Diseases or conditions that make it harder to cough
                 </label>
-                <input id="" type="checkbox" name=""></input>
-                <label htmlFor="">
+                <input id="kidney_failure_chk" type="checkbox" name=""></input>
+                <label htmlFor="kidney_failure_chk">
                   Kidney failure or end stage renal disease
                 </label>
-                <input id="" type="checkbox" name=""></input>
-                <label htmlFor="">
+                <input id="immune_system_chk" type="checkbox" name=""></input>
+                <label htmlFor="immune_system_chk">
                   Conditions that result in a weakened immune system, including
                   cancer treatment
                 </label>
@@ -159,13 +159,13 @@ const QuestionFormComponent = () => {
               </legend>
 
               <div className="radio_row_item">
-                <input type="radio" name="have_referral"></input>
-                <label htmlFor="">Yes</label>
+                <input id="work_treatment_yes" type="radio" name="work_treatment_yes"></input>
+                <label htmlFor="work_treatment_yes">Yes</label>
               </div>
 
               <div className="radio_row_item">
-                <input type="radio" name="have_referral"></input>
-                <label htmlFor="">No</label>
+                <input id="work_treatment_no" type="radio" name="work_treatment_no"></input>
+                <label htmlFor="work_treatment_no">No</label>
               </div>
             </fieldset>
           </div>
@@ -183,7 +183,6 @@ const QuestionFormComponent = () => {
           <Link href="/scheduling">
         <button className="button">Select Date and Time</button>
       </Link>
-
         </div>
       </div>
     </div>

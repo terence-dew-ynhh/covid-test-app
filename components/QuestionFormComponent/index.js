@@ -154,18 +154,17 @@ const QuestionFormComponent = () => {
             <div className="radio_row_item">
             <fieldset className={styles.radio_grp_set}>
               <legend>
-                Do you live or work in a treatment facility, group home or other
-                group setting?
+              Are you a caregiver for either an older person (age 60 or older) or someone who has a weakened immune system?
               </legend>
 
               <div className="radio_row_item">
-                <input id="work_treatment_yes" type="radio" name="work_treatment_yes"></input>
-                <label htmlFor="work_treatment_yes">Yes</label>
+                <input id="caregiver_yes" type="radio" name="work_treatment_yes"></input>
+                <label htmlFor="caregiver_yes">Yes</label>
               </div>
 
               <div className="radio_row_item">
-                <input id="work_treatment_no" type="radio" name="work_treatment_no"></input>
-                <label htmlFor="work_treatment_no">No</label>
+                <input id="caregiver_no" type="radio" name="work_treatment_no"></input>
+                <label htmlFor="caregiver_no">No</label>
               </div>
             </fieldset>
           </div>
@@ -173,7 +172,7 @@ const QuestionFormComponent = () => {
           <span className={styles.divider}></span>
           <div className="question-set-container-final">
           <div className={styles.question_row_item}>
-            <input className="answered_chk" type="checkbox" name=""></input>
+            <input className="answered_chk" type="checkbox" name="answered_chk"></input>
             <label htmlFor="answered_chk">
               I have answered these questions truthfully to the best of my
               knowledge.

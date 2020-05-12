@@ -38,10 +38,10 @@ const QuestionFormComponent = () => {
   }
   
 
-  // const netIdField = isEmployee ? <div className={styles.question_row_item_sub}>
-  // <label htmlFor="net_Id">What is your NetID?</label>
-  // <input className={styles.question_input_txt} onChange={handleChange} type="text" name="net_Id"></input>
-  // </div> : null
+  const netIdField = isEmployee ? <div className={styles.question_row_item_sub}>
+  <label htmlFor="net_Id">What is your NetID?</label>
+  <input className={styles.question_input_txt} onChange={handleChange} type="text" name="net_Id"></input>
+  </div> : null
 
   return (
     <div>
@@ -60,7 +60,7 @@ const QuestionFormComponent = () => {
             <div className={styles.question_row_item}>
               <label htmlFor="age">Age</label>
               <input className={styles.question_input_txt} type="number" name="age" min="0" max="120"></input>
-{/* 
+
               <div className={styles.question_row_item_sub}>
               <fieldset >
               <legend>
@@ -79,7 +79,7 @@ const QuestionFormComponent = () => {
             </fieldset>
               </div>
               
-              {netIdField}              */}
+              {netIdField}             
               <div className={styles.question_row_item_sub}>
               <input id="fever_higher_chk" type="checkbox" name="fever_higher" value={"Yes"} onClick={handleChange}></input>
               <label htmlFor="fever_higher_chk">Fever of 100°F or higher</label>

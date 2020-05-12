@@ -32,7 +32,7 @@ export default function Home() {
   return (
     <div className="container">
       <Head>
-        <title>Create Next App</title>
+        <title>Yale COVID-19 Test Scheduler</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -60,6 +60,7 @@ export default function Home() {
                     <legend>Are you over 18?</legend>
                     <input                      
                       id="question_age_check_yes"
+                      className="initial_radios"
                       type="radio"
                       name="age_check"
                       onClick={() => {
@@ -67,11 +68,12 @@ export default function Home() {
                         setContinueButton(false);
                       }}
                     ></input>
-                    <label htmlFor="question_age_check_yes">Yes</label>
+                    <label className="initial_radios" htmlFor="question_age_check_yes">Yes</label>
 
                     <input
                      defaultChecked
                       id="question_age_check_no"
+                      className="initial_radios"
                       type="radio"
                       name="age_check"
                       onClick={() => {
@@ -79,7 +81,7 @@ export default function Home() {
                         setContinueButton(false);
                       }}
                     ></input>
-                    <label htmlFor="question_age_check_no">No</label>
+                    <label className="initial_radios" htmlFor="question_age_check_no">No</label>
                   </fieldset>
                 </div>
               </div>
@@ -130,7 +132,17 @@ export default function Home() {
         .div_hide {
           display: none;
         }
-
+        label,
+        legend,
+        .button {
+          color: white;
+        }
+        .button {
+          padding: 15px 35px;
+          margin: 0 3% 3% 2%;
+          border: 2px solid white;
+          background: transparent;
+        }
         .cancel_link {
           color: white;
         }

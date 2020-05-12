@@ -1,6 +1,6 @@
 .questionContainer{
           width: 95%;
-          background: #48BCE8;
+          background: rgba(36, 111, 181, 0.05);
           display: flex;
           justify-content: center;
           flex-direction: column;
@@ -21,6 +21,14 @@
     font-weight: 700;
 }
 
+.submitbutton {
+    padding: 15px 35px;
+    margin: 0 3% 3% 2%;
+    border: 2px solid black;
+    background: transparent;
+    color: black;
+  }
+
 
 .radio_grp_set{
     padding-left: 35px;
@@ -31,7 +39,7 @@
 
 .divider{
     display: block;
-    background: white;
+    background: black;
     height: 1px;
     width: 90%;
     margin: 20px 0;

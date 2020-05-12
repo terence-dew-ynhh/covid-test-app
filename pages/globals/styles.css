@@ -29,6 +29,11 @@ small {
   font-size: 1em;
 }
 
+img{
+  width:400px;
+  height:70px;
+}
+
 .container {
   min-height: 100vh;
   padding: 0 0.5rem;

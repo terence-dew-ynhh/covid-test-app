@@ -37,7 +37,7 @@ export default function Home() {
       </Head>
 
       <main>
-          <img src="/YNHHSLogo.png"></img>
+          <img src="/YHlogo_color.svg"></img>
           <span className="divider"></span>
 
         <h1 className="title">

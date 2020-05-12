@@ -1,15 +1,47 @@
 import React, {useState} from "react";
-import {blurFocus,dataInput} from './utils'
+import { logInfo } from './actions';
 import styles from './QuestionFormComponent.module.css'
-import Link from "next/link";
-
-
 
 const QuestionFormComponent = () => {
+  const [isEmployee, setIsEmployee] = useState(false);
+  const [patientData, setPatientData] = useState({
+    age:'',
+    yale_employee:'',
+    net_id:'',
+    fever_higher:'',
+    cough:'',
+    diff_breath:'',
+    asthma_lung:'',
+    diabetes:'',
+    obesity:'',
+    cirrhosis:'',
+    pregnancy:'',
+    heart_cond:'',
+    diseases_cough:'',
+    kidney_failure:'',
+    immune_system:'',
+    nursing_home:'',
+    health_care:'',
+    treatment_facility:'',
+    caregiver:'',
+  })
 
-  const [under18, setUnder18] = useState(false);
+  function submitLog(evt){
+    evt.preventDefault();
+    logInfo(patientData);
+  }
 
+  const handleChange = e =>{
+    let value = patientData[e.target.name] === 'Yes' ? '': e.target.value;
 
+    setPatientData({ ...patientData, [e.target.name]: value });
+  }
+  
+
+  // const netIdField = isEmployee ? <div className={styles.question_row_item_sub}>
+  // <label htmlFor="net_Id">What is your NetID?</label>
+  // <input className={styles.question_input_txt} onChange={handleChange} type="text" name="net_Id"></input>
+  // </div> : null
 
   return (
     <div>
@@ -21,25 +53,42 @@ const QuestionFormComponent = () => {
       Details will be confirmed on site at your visit.
       </p>
       <div className={styles.questionContainer}>
+      <form onSubmit={ e => submitLog(e)} id="patient-form" name="patient-form">
         <div className="question-set-container">
           <div className="question-set-container-conditions">
             
             <div className={styles.question_row_item}>
-              <label htmlFor="">Date of Birth</label>
-              <input className={styles.question_input_txt} onBlur={(e) => setUnder18(blurFocus(e))} onInput={(e)=> dataInput(e)} type="text" name=""></input>
-              <small>Hint: MM/DD/YYYY</small>
-              {under18 ? <small className={styles.error}>Patients must be 18 years or older to take a COVID-19 test.</small> : null}
-
-              
+              <label htmlFor="age">Age</label>
+              <input className={styles.question_input_txt} type="number" name="age" min="0" max="120"></input>
+{/* 
               <div className={styles.question_row_item_sub}>
-              <input id="fever_higher_chk" type="checkbox" name=""></input>
+              <fieldset >
+              <legend>
+                Are you a Yale Employee?
+              </legend>
+
+              <div className="radio_row_item">
+                <input id="yale_employee_yes" type="radio" value="Yes" name="yale_employee" onClick={(e)=>{handleChange(e); setIsEmployee(true)} }></input>
+                <label htmlFor="yale_employee_yes">Yes</label>
+              </div>
+
+              <div className="radio_row_item">
+                <input defaultChecked id="yale_employee_no" type="radio" value="" name="yale_employee" onClick={(e)=>{handleChange(e); setIsEmployee(false)} }></input>
+                <label htmlFor="yale_employee_no">No</label>
+              </div>              
+            </fieldset>
+              </div>
+              
+              {netIdField}              */}
+              <div className={styles.question_row_item_sub}>
+              <input id="fever_higher_chk" type="checkbox" name="fever_higher" value={"Yes"} onClick={handleChange}></input>
               <label htmlFor="fever_higher_chk">Fever of 100°F or higher</label>
 
-              <input id="cough_chk" type="checkbox" name=""></input>
+              <input id="cough_chk" type="checkbox" name="cough" value="Yes" onClick={handleChange}></input>
               <label htmlFor="cough_chk">Cough</label>
 
-              <input id="diff_breat_chk" type="checkbox" name=""></input>
-              <label htmlFor="diff_breat_chk">
+              <input id="diff_breath_chk" type="checkbox" name="diff_breath" value="Yes" onClick={handleChange}></input>
+              <label htmlFor="diff_breath_chk">
                 Difficulty breathing or shortness of breath
               </label>
               </div>
@@ -54,30 +103,30 @@ const QuestionFormComponent = () => {
                 that apply)
               </legend>
               <div className={styles.q1_grid}>
-                <input id="asthma_lung_chk" type="checkbox" name=""></input>
+                <input id="asthma_lung_chk" type="checkbox" name="asthma_lung" value="Yes" onClick={handleChange}></input>
                 <label htmlFor="asthma_lung_chk">Asthma or chronic lung disease</label>
-                <input id="diabetes_chk" type="checkbox" name=""></input>
+                <input id="diabetes_chk" type="checkbox" name="diabetes" value="Yes" onClick={handleChange}></input>
                 <label htmlFor="diabetes_chk">Diabetes</label>
-                <input id="obesity_chk" type="checkbox" name=""></input>
+                <input id="obesity_chk" type="checkbox" name="obesity" value="Yes" onClick={handleChange}></input>
                 <label htmlFor="obesity_chk">Extreme obesity</label>
-                <input id="cirrhosis_chk" type="checkbox" name=""></input>
+                <input id="cirrhosis_chk" type="checkbox" name="cirrhosis" value="Yes" onClick={handleChange}></input>
                 <label htmlFor="cirrhosis_chk">Cirrhosis of the liver</label>
-                <input id="pregnancy_chk" type="checkbox" name=""></input>
+                <input id="pregnancy_chk" type="checkbox" name="pregnancy" value="Yes" onClick={handleChange}></input>
                 <label htmlFor="pregnancy_chk">Pregnancy</label>
                 
-                <input id="heart_cond_chk" type="checkbox" name=""></input>
+                <input id="heart_cond_chk" type="checkbox" name="heart_cond" value="Yes" onClick={handleChange}></input>
                 <label htmlFor="heart_cond_chk">
                   Serious heart condition, such as congestive heart failure
                 </label>
-                <input id="diseases_cough_chk" type="checkbox" name=""></input>
+                <input id="diseases_cough_chk" type="checkbox" name="diseases_cough" value="Yes" onClick={handleChange}></input>
                 <label htmlFor="diseases_cough_chk">
                   Diseases or conditions that make it harder to cough
                 </label>
-                <input id="kidney_failure_chk" type="checkbox" name=""></input>
+                <input id="kidney_failure_chk" type="checkbox" name="kidney_failure" value="Yes" onClick={handleChange}></input>
                 <label htmlFor="kidney_failure_chk">
                   Kidney failure or end stage renal disease
                 </label>
-                <input id="immune_system_chk" type="checkbox" name=""></input>
+                <input id="immune_system_chk" type="checkbox" name="immune_system" value="Yes" onClick={handleChange}></input>
                 <label htmlFor="immune_system_chk">
                   Conditions that result in a weakened immune system, including
                   cancer treatment
@@ -95,12 +144,12 @@ const QuestionFormComponent = () => {
               </legend>
 
               <div className="radio_row_item">
-                <input id="nursing_home_chk_yes" type="radio" name=""></input>
+                <input id="nursing_home_chk_yes" type="radio" value="Yes" name="nursing_home" onClick={handleChange}></input>
                 <label htmlFor="nursing_home_chk_yes">Yes</label>
               </div>
 
               <div className="radio_row_item">
-                <input id="nursing_home_chk_no" type="radio" name=""></input>
+                <input defaultChecked id="nursing_home_chk_no" type="radio" value="" name="nursing_home" onClick={handleChange}></input>
                 <label htmlFor="nursing_home_chk_no">No</label>
               </div>
             </fieldset>
@@ -116,12 +165,12 @@ const QuestionFormComponent = () => {
               </legend>
 
               <div className="radio_row_item">
-                <input id="health_care_yes" type="radio" name="have_referral"></input>
+                <input id="health_care_yes" type="radio" value="Yes" name="health_care" onClick={handleChange}></input>
                 <label htmlFor="health_care_yes">Yes</label>
               </div>
 
               <div className="radio_row_item">
-                <input id="health_care_no" type="radio" name="have_referral"></input>
+                <input defaultChecked id="health_care_no" type="radio" value="" name="health_care" onClick={handleChange}></input>
                 <label htmlFor="health_care_no">No</label>
               </div>              
             </fieldset>
@@ -137,12 +186,12 @@ const QuestionFormComponent = () => {
               </legend>
 
               <div className="radio_row_item">
-                <input id="treatment_facility_yes" type="radio" name="have_referral"></input>
+                <input id="treatment_facility_yes" type="radio" value="Yes"  name="treatment_facility" onClick={handleChange}></input>
                 <label htmlFor="treatment_facility_yes">Yes</label>
               </div>
 
               <div className="radio_row_item">
-                <input id="treatment_facility_no" type="radio" name="have_referral"></input>
+                <input defaultChecked id="treatment_facility_no" type="radio" value="" name="treatment_facility" onClick={handleChange}></input>
                 <label htmlFor="treatment_facility_no">No</label>
               </div>
               
@@ -158,12 +207,12 @@ const QuestionFormComponent = () => {
               </legend>
 
               <div className="radio_row_item">
-                <input id="caregiver_yes" type="radio" name="work_treatment_yes"></input>
+                <input id="caregiver_yes" type="radio" value="Yes" name="caregiver" onClick={handleChange}></input>
                 <label htmlFor="caregiver_yes">Yes</label>
               </div>
 
               <div className="radio_row_item">
-                <input id="caregiver_no" type="radio" name="work_treatment_no"></input>
+                <input defaultChecked id="caregiver_no" type="radio" value="" name="caregiver" onClick={handleChange}></input>
                 <label htmlFor="caregiver_no">No</label>
               </div>
             </fieldset>
@@ -172,17 +221,16 @@ const QuestionFormComponent = () => {
           <span className={styles.divider}></span>
           <div className="question-set-container-final">
           <div className={styles.question_row_item}>
-            <input className="answered_truthfully_chk" type="checkbox" name="answered_truthfully_chk"></input>
+            <input id="answered_truthfully_chk" type="checkbox" name="answered_truthfully"></input>
             <label htmlFor="answered_truthfully_chk">
               I have answered these questions truthfully to the best of my
               knowledge.
             </label>
             </div>
           </div>
-          <Link href="/scheduling">
-        <button className="button">Select Date and Time</button>
-      </Link>
+        <button type="submit" form="patient-form"  className="button">Select Date and Time</button>
         </div>
+        </form>
       </div>
     </div>
   );

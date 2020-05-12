@@ -23,7 +23,7 @@ app
     server.use(compression());
     server.use(bodyParser.urlencoded({ extended: true }));
     server.use(bodyParser.json());
-    
+
     server.use('/', router);
     server.get('*', (req, res) => handle(req, res));
 

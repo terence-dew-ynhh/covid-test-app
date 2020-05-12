@@ -5,18 +5,18 @@ import styles from './ErrorMessageComponent.module.css'
 
 const ErrorMessageComponent = () => {
   return (
-<div>
+<>
       <h2 className="title">
       You do not qualify for testing at this time.
       </h2>
       
     <div className={styles.errorContainer}>
       
-    <h1 className="error-tittle">
+    <h1 className="title">
     Try these resources for further information
       </h1>
 
-    <p className="error-subtext">
+    <p className="description">
     If you believe that you may have been exposed to COVID-19, we ask that you stay home at this time.
     </p>
 
@@ -31,7 +31,7 @@ const ErrorMessageComponent = () => {
      <Link href="/">
        <a className="cancel_link">Home</a>
        </Link>
-    </div>
+    </>
   );
 };
 

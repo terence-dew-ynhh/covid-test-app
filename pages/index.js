@@ -4,19 +4,17 @@ import Link from "next/link";
 import QuestionFormComponent from "../components/QuestionFormComponent";
 
 export default function Home() {
-  const [referralSelected, setreferralSelected] = useState(false);
   const [isAdult, setIsAdult] = useState(false);
   const [continueButton, setContinueButton] = useState(false);
 
   const questionShowComponent =
-    (referralSelected === true && isAdult === true && continueButton === true) ||
-    (referralSelected === false && continueButton === true) ? (
+    (isAdult === true && continueButton === true) ||
+    (continueButton === true) ? (
       <QuestionFormComponent />
     ) : null;
 
   const buttonSelected =
-    isAdult === false &&
-    referralSelected === true ? (
+    isAdult === false ? (
       <Link href="/notqualified">
         <button className="button">Continue</button>
       </Link>
@@ -39,6 +37,9 @@ export default function Home() {
       </Head>
 
       <main>
+          <img src="/YNHHSLogo.png"></img>
+          <span className="divider"></span>
+
         <h1 className="title">
           See if you qualify for coronavirus (COVID-19) testing
         </h1>
@@ -51,40 +52,8 @@ export default function Home() {
         <div className="grid">
           <div className="grid_subcontainer">
             <div className="question_div">
-              <fieldset className="radio_grp_set">
-                <legend>
-                  Do you have a referral from a medical professional?
-                </legend>
-
-                <div className="radio_row_item">
-                  <input                    
-                    id="have_referral_yes"
-                    type="radio"
-                    name="have_referral"
-                    onClick={() => {setreferralSelected(true); setContinueButton(false)}}
-                  ></input>
-                  <label htmlFor="have_referral_yes">Yes</label>
-                </div>
-
-                <div className="radio_row_item">
-                  <input
-                  defaultChecked
-                    id="have_referral_no"
-                    type="radio"
-                    name="have_referral"
-                    onClick={() => {
-                      setreferralSelected(false);
-                      setContinueButton(false);
-                    }}
-                  ></input>
-                  <label htmlFor="have_referral_no">No</label>
-                </div>
-              </fieldset>
-
               <div
-                className={
-                  referralSelected === true ? "age_check" : "age_check div_hide"
-                }
+                className={"age_check"}
               >
                 <div className="radio_grp">
                   <fieldset className="radio_grp_set">
@@ -126,23 +95,7 @@ export default function Home() {
         {questionShowComponent}
       </main>
 
-      <style jsx>{`
-        .container {
-          min-height: 100vh;
-          padding: 0 0.5rem;
-          display: flex;
-          flex-direction: column;
-          justify-content: start;
-          align-items: center;
-        }
-        main {
-          width: 95%;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: flex-start;
-        }
-
+      <style jsx>{`        
         .grid {
           display: flex;
           align-items: center;

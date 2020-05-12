@@ -11,6 +11,8 @@ export default function Home() {
       </Head>
 
       <main>
+      <img src="/YNHHSLogo.png"></img>
+      <span className="divider"></span>
        <ErrorMessageComponent/>
       </main>
       <style jsx>{`

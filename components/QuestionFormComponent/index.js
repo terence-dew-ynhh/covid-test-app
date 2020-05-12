@@ -7,6 +7,7 @@ const QuestionFormComponent = () => {
   const [patientData, setPatientData] = useState({
     age:'',
     yale_employee:'',
+    employee_type:'',
     net_id:'',
     fever_higher:'',
     cough:'',
@@ -45,15 +46,15 @@ const QuestionFormComponent = () => {
 
   const employeeTypeRdio = isEmployee ? <div className={styles.question_row_item_sub}>
   <fieldset><legend>What type of employee are you?</legend><div className="radio_row_item">
-    <input defaultChecked id="employee_type_researcher" type="radio" value="Yes" name="employee_type_researcher" onClick={(e)=>{handleChange(e); setIsEmployee(true)} }></input>
+    <input defaultChecked id="employee_type_researcher" type="radio" value="researcher" name="employee_type" onClick={(e)=>{handleChange(e)}}></input>
     <label htmlFor="employee_type_researcher">Researcher</label>
   </div>
   <div className="radio_row_item">
-    <input  id="employee_type_faculty" type="radio" value="" name="employee_type_faculty" onClick={(e)=>{handleChange(e); setIsEmployee(false)} }></input>
+    <input  id="employee_type_faculty" type="radio" value="faculty" name="employee_type" onClick={(e)=>{handleChange(e)} }></input>
     <label htmlFor="employee_type_faculty">Faculty</label>
   </div>
   <div className="radio_row_item">
-    <input  id="employee_type_student" type="radio" value="" name="employee_type_student" onClick={(e)=>{handleChange(e); setIsEmployee(false)} }></input>
+    <input  id="employee_type_student" type="radio" value="student" name="employee_type" onClick={(e)=>{handleChange(e)} }></input>
     <label htmlFor="employee_type_student">Student</label>
   </div>              
 </fieldset>

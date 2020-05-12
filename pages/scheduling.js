@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div className="container">
       <Head>
-        <title>COVID19 Testing</title>
+        <title>Yale COVID-19 Test Scheduler</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

@@ -5,9 +5,7 @@ import styles from './QuestionFormComponent.module.css'
 const QuestionFormComponent = () => {
   const [isEmployee, setIsEmployee] = useState(false);
   const [patientData, setPatientData] = useState({
-    age:'',
-    yale_employee:'',
-    net_id:'',
+    age_range:'',    
     fever_higher:'',
     cough:'',
     diff_breath:'',
@@ -62,12 +60,12 @@ const QuestionFormComponent = () => {
 
               <div className="radio_row_item">
                 <input id="yale_employee_18" type="radio" value="18plus" name="age_range" onClick={(e)=>handleChange(e)}></input>
-                <label htmlFor="yale_employee_yes">Between 18 and 65</label>
+                <label htmlFor="yale_employee_18">Between 18 and 65</label>
               </div>
 
               <div className="radio_row_item">
                 <input defaultChecked id="yale_employee_65" type="radio" value="65plus" name="age_range" onClick={(e)=>handleChange(e)}></input>
-                <label htmlFor="yale_employee_no">Over 65</label>
+                <label htmlFor="yale_employee_65">Over 65</label>
               </div>         
             </fieldset>
               </div>

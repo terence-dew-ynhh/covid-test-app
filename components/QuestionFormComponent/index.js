@@ -75,8 +75,8 @@ const QuestionFormComponent = () => {
           <div className="question-set-container-conditions">
             
             <div className={styles.question_row_item}>
-              <label htmlFor="age">Age</label>
-              <input className={styles.question_input_txt} type="number" name="age" min="0" max="120"></input>
+              {/* <label htmlFor="age">Age</label>
+              <input className={styles.question_input_txt} type="number" name="age" min="0" max="120"></input> */}
 
               <div className={styles.question_row_item_sub}>
               <fieldset >
@@ -97,7 +97,7 @@ const QuestionFormComponent = () => {
               </div>
               {employeeTypeRdio}
               {netIdField}             
-              <div className={styles.question_row_item_sub}>
+              {/* <div className={styles.question_row_item_sub}>
               <input id="fever_higher_chk" type="checkbox" name="fever_higher" value={"Yes"} onClick={handleChange}></input>
               <label htmlFor="fever_higher_chk">Fever of 100°F or higher</label>
 
@@ -108,7 +108,7 @@ const QuestionFormComponent = () => {
               <label htmlFor="diff_breath_chk">
                 Difficulty breathing or shortness of breath
               </label>
-              </div>
+              </div> */}
             </div>
           </div>
           <span className={styles.divider}></span>

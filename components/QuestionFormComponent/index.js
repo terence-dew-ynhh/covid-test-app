@@ -36,15 +36,10 @@ const QuestionFormComponent = () => {
 
     setPatientData({ ...patientData, [e.target.name]: value });
   }
-  
-
-  // const netIdField = isEmployee ? <div className={styles.question_row_item_sub}>
-  // <label htmlFor="net_Id">What is your NetID?</label>
-  // <input className={styles.question_input_txt} onChange={handleChange} type="text" name="net_Id"></input>
-  // </div> : null
+ 
 
   return (
-    <div>
+    <>
       <h1 className="title">
       We need to collect some more information.
       </h1>
@@ -58,28 +53,25 @@ const QuestionFormComponent = () => {
           <div className="question-set-container-conditions">
             
             <div className={styles.question_row_item}>
-              <label htmlFor="age">Age</label>
-              <input className={styles.question_input_txt} type="number" name="age" min="0" max="120"></input>
-{/* 
+            
               <div className={styles.question_row_item_sub}>
               <fieldset >
               <legend>
-                Are you a Yale Employee?
+                Age Range:
               </legend>
 
               <div className="radio_row_item">
-                <input id="yale_employee_yes" type="radio" value="Yes" name="yale_employee" onClick={(e)=>{handleChange(e); setIsEmployee(true)} }></input>
-                <label htmlFor="yale_employee_yes">Yes</label>
+                <input id="yale_employee_18" type="radio" value="18plus" name="age_range" onClick={(e)=>handleChange(e)}></input>
+                <label htmlFor="yale_employee_yes">Between 18 and 65</label>
               </div>
 
               <div className="radio_row_item">
-                <input defaultChecked id="yale_employee_no" type="radio" value="" name="yale_employee" onClick={(e)=>{handleChange(e); setIsEmployee(false)} }></input>
-                <label htmlFor="yale_employee_no">No</label>
-              </div>              
+                <input defaultChecked id="yale_employee_65" type="radio" value="65plus" name="age_range" onClick={(e)=>handleChange(e)}></input>
+                <label htmlFor="yale_employee_no">Over 65</label>
+              </div>         
             </fieldset>
               </div>
               
-              {netIdField}              */}
               <div className={styles.question_row_item_sub}>
               <input id="fever_higher_chk" type="checkbox" name="fever_higher" value={"Yes"} onClick={handleChange}></input>
               <label htmlFor="fever_higher_chk">Fever of 100°F or higher</label>
@@ -232,7 +224,7 @@ const QuestionFormComponent = () => {
         </div>
         </form>
       </div>
-    </div>
+    </>
   );
 };
 

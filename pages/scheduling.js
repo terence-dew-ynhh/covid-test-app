@@ -12,7 +12,6 @@ export default function Home() {
 
       <main>
         <img src="/YNHHSLogo.png"></img>
-        <span className="divider"></span>
         
       <div className="scheduleContainer">
   <iframe id="openSchedulingFrame" className="widgetframe" scrolling="no" src="https://mychartnp.ynhhs.org/POC/openscheduling/SignupAndSchedule/EmbeddedSchedule?vt=2102&dept=101010165&view=plain&public=1"></iframe>
@@ -22,6 +21,10 @@ export default function Home() {
         .scheduleContainer, iframe{
           width: 100%;
           height: 100vh;
+          display:flex;
+          align-items: center;
+          justify-items: center;
+          border:none;
         }
       `}</style>
     </div>

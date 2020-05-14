@@ -102,7 +102,7 @@ export default function Home() {
           justify-content: center;
           flex-direction: column;
           color: white;
-          width: 95%;
+          width: 100%;
           margin-top: 3rem;
         }
         .grid_subcontainer {

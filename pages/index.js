@@ -104,7 +104,7 @@ export default function Home() {
           justify-content: center;
           flex-direction: column;
           color: white;
-          width: 95%;
+          width: 100%;
           margin-top: 3rem;
         }
         .grid_subcontainer {
@@ -150,13 +150,7 @@ export default function Home() {
         .logo {
           height: 1em;
         }
-
-        @media (max-width: 600px) {
-          .grid {
-            width: 100%;
-            flex-direction: column;
-          }
-        }
+       
       `}</style>
     </div>
   );

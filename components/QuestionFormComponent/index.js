@@ -61,7 +61,7 @@ const QuestionFormComponent = () => {
   </div> : null
 
   return (
-    <div>
+    <>
       <h1 className="title">
       We need to collect some more information.
       </h1>
@@ -249,7 +249,7 @@ const QuestionFormComponent = () => {
         </div>
         </form>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -60,7 +60,7 @@ const QuestionFormComponent = () => {
             name="employee_type"
             // onClick={}
           ></input>
-          <label htmlFor="employee_type_researcher">Researcher</label>
+          <label className={styles.label} htmlFor="employee_type_researcher">Researcher</label>
         </div>
         <div className="radio_row_item">
           <input
@@ -70,7 +70,7 @@ const QuestionFormComponent = () => {
             name="employee_type"
             // onClick={}
           ></input>
-          <label htmlFor="employee_type_faculty">Faculty</label>
+          <label className={styles.label} htmlFor="employee_type_faculty">Faculty</label>
         </div>
         <div className="radio_row_item">
           <input
@@ -80,7 +80,7 @@ const QuestionFormComponent = () => {
             name="employee_type"
             // onClick={}
           ></input>
-          <label htmlFor="employee_type_student">Student</label>
+          <label className={styles.label} htmlFor="employee_type_student">Student</label>
         </div>
       </fieldset>
     </div>
@@ -106,7 +106,7 @@ const QuestionFormComponent = () => {
                   {/* <label htmlFor="age">Age</label>
               <input className={styles.question_input_txt} type="number" name="age" min="0" max="120"></input> */}
                   <fieldset className={styles.radio_grp_set}>
-                    <legend>
+                    <legend className={styles.legend}>
                       Do you currently have symptoms that may be suggestive of
                       COVID 19? Symptoms may include fever, cough, shortness of
                       breath, sore throat, fatigue, muscle aches, loss of sense
@@ -125,7 +125,7 @@ const QuestionFormComponent = () => {
                           setQ2end(true);
                         }}
                       ></input>
-                      <label htmlFor="yale_employee_yes">Yes</label>
+                      <label className={styles.label} htmlFor="yale_employee_yes">Yes</label>
                     </div>
 
                     <div className="radio_row_item">
@@ -143,7 +143,7 @@ const QuestionFormComponent = () => {
                           setQ4end(false);
                         }}
                       ></input>
-                      <label htmlFor="yale_employee_no">No</label>
+                      <label className={styles.label} htmlFor="yale_employee_no">No</label>
                     </div>
                   </fieldset>
                   <p className={styles.error} hidden={!q2end}>
@@ -157,7 +157,7 @@ const QuestionFormComponent = () => {
               <span className={styles.divider}></span>
               <div className={styles.question_row_item}>
                 <fieldset className={styles.radio_grp_set}>
-                  <legend>
+                  <legend className={styles.legend}>
                     Can your work be performed remotely and is it your intention
                     to work remotely?
                   </legend>
@@ -174,7 +174,7 @@ const QuestionFormComponent = () => {
                         setQ3end(true);
                       }}
                     ></input>
-                    <label htmlFor="work_remote_chk_yes">Yes</label>
+                    <label className={styles.label} htmlFor="work_remote_chk_yes">Yes</label>
                   </div>
 
                   <div className="radio_row_item">
@@ -191,7 +191,7 @@ const QuestionFormComponent = () => {
                         setQ4end(false);
                       }}
                     ></input>
-                    <label htmlFor="work_remote_chk_no">No</label>
+                    <label className={styles.label} htmlFor="work_remote_chk_no">No</label>
                   </div>
                 </fieldset>
                 <p className={styles.error} hidden={!q3end}>
@@ -205,7 +205,7 @@ const QuestionFormComponent = () => {
               <span className={styles.divider}></span>
               <div className={styles.question_row_item}>
                 <fieldset className={styles.radio_grp_set}>
-                  <legend>
+                  <legend className={styles.legend}>
                     Do you intend to work remotely due to age over 65 OR high
                     risk medical condition?
                   </legend>
@@ -222,7 +222,7 @@ const QuestionFormComponent = () => {
                         setQ4end(true);
                       }}
                     ></input>
-                    <label htmlFor="health_care_yes">Yes</label>
+                    <label className={styles.label} htmlFor="health_care_yes">Yes</label>
                   </div>
 
                   <div className="radio_row_item">
@@ -238,7 +238,7 @@ const QuestionFormComponent = () => {
                         setQ4end(false);
                       }}
                     ></input>
-                    <label htmlFor="health_care_no">No</label>
+                    <label className={styles.label} htmlFor="health_care_no">No</label>
                   </div>
                 </fieldset>
                 <p className={styles.error} hidden={!q4end}>

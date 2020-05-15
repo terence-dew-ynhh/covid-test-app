@@ -7,6 +7,7 @@ body {
 }
 
 * {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -18,25 +19,35 @@ fieldset {
   padding: 0;
 }
 
+h1,p{
+  width:100%;
+}
+
 img {
   width: 400px;
   height: 70px;
 }
 
-.container {
-  min-height: 100vh;
-  padding: 0 0.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
+label,
+legend,
+.button {
+  color: white;
 }
 
-main {
+.container {
   width: 95%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
   align-items: flex-start;
 }
 
@@ -57,6 +68,15 @@ fieldset {
   border: none;
   display: inline-block;
   margin-right: 50px;
+  width: 100%;
+}
+
+.error {
+}
+.radio_grp {
+  display: flex;
+  width: 90%;
+  flex-direction: column;
 }
 
 .radio_row_item {
@@ -79,6 +99,9 @@ fieldset {
 label,
 legend {
   margin-bottom: 20px;
+}
+legend{
+  width:100%;
 }
 
 li {
@@ -152,18 +175,21 @@ li {
   left: 4px;
   border-radius: 100%;
   -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
 
 [type='radio']:not(:checked) + label:after {
   opacity: 0;
   -webkit-transform: scale(0);
+  -ms-transform: scale(0);
   transform: scale(0);
 }
 
 [type='radio']:checked + label:after {
   opacity: 1;
   -webkit-transform: scale(1);
+  -ms-transform: scale(1);
   transform: scale(1);
 }
 
@@ -195,6 +221,7 @@ li {
   border: 2px solid #ccc;
   background: #fff;
   border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
@@ -209,6 +236,8 @@ li {
   font-size: 1.3em;
   line-height: 0.8;
   color: #09ad7e;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
   transition: all 0.2s;
   font-family: 'Lucida Sans Unicode', 'Arial Unicode MS', Arial;
 }
@@ -217,11 +246,15 @@ li {
 
 [type='checkbox']:not(:checked) + label:after {
   opacity: 0;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
   transform: scale(0);
 }
 
 [type='checkbox']:checked + label:after {
   opacity: 1;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
   transform: scale(1);
 }
 
@@ -229,6 +262,7 @@ li {
 
 [type='checkbox']:disabled:not(:checked) + label:before,
 [type='checkbox']:disabled:checked + label:before {
+  -webkit-box-shadow: none;
   box-shadow: none;
   border-color: #bbb;
   background-color: #ddd;

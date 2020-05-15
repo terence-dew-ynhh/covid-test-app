@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const compression = require('compression');
 const cookieSession = require('cookie-session');
 const http = require('http');
+const passport = require('passport')
 
 const dev = process.env.NODE_ENV !== 'production';
 const port = process.env.PORT || 3000;
@@ -23,6 +24,8 @@ app
     server.use(compression());
     server.use(bodyParser.urlencoded({ extended: true }));
     server.use(bodyParser.json());
+
+    server.use(passport.initialize());
 
     server.use('/', router);
     server.get('*', (req, res) => handle(req, res));

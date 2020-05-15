@@ -11,7 +11,7 @@ export default function Home() {
       </Head>
 
       <main>
-        <img src="/YHlogo_color.svg"></img>
+        <img src="/YHlogo_color.png"></img>
         <span className="divider"></span>
         
       <div className="scheduleContainer">

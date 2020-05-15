@@ -11,7 +11,7 @@ export default function Home() {
       </Head>
 
       <main>
-        <img src="/YNHHSLogo.png"></img>
+        <img src="/YHlogo_color.svg"></img>
         <span className="divider"></span>
         
       <div className="scheduleContainer">
@@ -22,6 +22,7 @@ export default function Home() {
         .scheduleContainer, iframe{
           width: 100%;
           height: 100vh;
+          border:none;
         }
       `}</style>
     </div>

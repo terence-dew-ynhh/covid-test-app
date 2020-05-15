@@ -1,119 +1,272 @@
-import React, {useState} from "react";
+import React, { useState } from 'react';
+import Link from 'next/link';
 import { logInfo } from './actions';
-import styles from './QuestionFormComponent.module.css'
+import styles from './QuestionFormComponent.module.css';
 
 const QuestionFormComponent = () => {
   const [isEmployee, setIsEmployee] = useState(false);
   const [patientData, setPatientData] = useState({
-    age:'',
-    yale_employee:'',
-    employee_type:'',
-    net_id:'',
-    fever_higher:'',
-    cough:'',
-    diff_breath:'',
-    asthma_lung:'',
-    diabetes:'',
-    obesity:'',
-    cirrhosis:'',
-    pregnancy:'',
-    heart_cond:'',
-    diseases_cough:'',
-    kidney_failure:'',
-    immune_system:'',
-    nursing_home:'',
-    health_care:'',
-    treatment_facility:'',
-    caregiver:'',
-  })
+    age: '',
+    yale_employee: '',
+    employee_type: '',
+    net_id: '',
+    fever_higher: '',
+    cough: '',
+    diff_breath: '',
+    asthma_lung: '',
+    diabetes: '',
+    obesity: '',
+    cirrhosis: '',
+    pregnancy: '',
+    heart_cond: '',
+    diseases_cough: '',
+    kidney_failure: '',
+    immune_system: '',
+    nursing_home: '',
+    health_care: '',
+    treatment_facility: '',
+    caregiver: ''
+  });
+  const [q2end, setQ2end] = useState(false);
+  const [q3end, setQ3end] = useState(false);
+  const [q4end, setQ4end] = useState(false);
 
-  function submitLog(evt){
+  function submitLog(evt) {
     evt.preventDefault();
     logInfo(patientData);
   }
 
-  const handleChange = e =>{
-    let value = patientData[e.target.name] === 'Yes' ? '': e.target.value;
+  const handleChange = (e) => {
+    let value = patientData[e.target.name] === 'Yes' ? '' : e.target.value;
 
     setPatientData({ ...patientData, [e.target.name]: value });
-  }
-  
+  };
 
-  const netIdField = isEmployee ? <div className={styles.question_row_item_sub}>
-  <label htmlFor="net_Id">What is your NetID?</label>
-  <input className={styles.question_input_txt} onChange={handleChange} type="text" name="net_Id"></input>
-  </div> : null
+  // const netIdField = isEmployee ? <div className={styles.question_row_item_sub}>
+  // <label htmlFor="net_Id">What is your NetID?</label>
+  // <input className={styles.question_input_txt} onChange={handleChange} type="text" name="net_Id"></input>
+  // </div> : null
 
-  const employeeTypeRdio = isEmployee ? <div className={styles.question_row_item_sub}>
-  <fieldset><legend>What type of employee are you?</legend><div className="radio_row_item">
-    <input defaultChecked id="employee_type_researcher" type="radio" value="researcher" name="employee_type" onClick={(e)=>{handleChange(e)}}></input>
-    <label htmlFor="employee_type_researcher">Researcher</label>
-  </div>
-  <div className="radio_row_item">
-    <input  id="employee_type_faculty" type="radio" value="faculty" name="employee_type" onClick={(e)=>{handleChange(e)} }></input>
-    <label htmlFor="employee_type_faculty">Faculty</label>
-  </div>
-  <div className="radio_row_item">
-    <input  id="employee_type_student" type="radio" value="student" name="employee_type" onClick={(e)=>{handleChange(e)} }></input>
-    <label htmlFor="employee_type_student">Student</label>
-  </div>              
-</fieldset>
-  </div> : null
+  const employeeTypeRdio = isEmployee ? (
+    <div className={styles.question_row_item_sub}>
+      <fieldset>
+        <legend>What type of employee are you?</legend>
+        <div className="radio_row_item">
+          <input
+            defaultChecked
+            id="employee_type_researcher"
+            type="radio"
+            value="researcher"
+            name="employee_type"
+            // onClick={}
+          ></input>
+          <label htmlFor="employee_type_researcher">Researcher</label>
+        </div>
+        <div className="radio_row_item">
+          <input
+            id="employee_type_faculty"
+            type="radio"
+            value="faculty"
+            name="employee_type"
+            // onClick={}
+          ></input>
+          <label htmlFor="employee_type_faculty">Faculty</label>
+        </div>
+        <div className="radio_row_item">
+          <input
+            id="employee_type_student"
+            type="radio"
+            value="student"
+            name="employee_type"
+            // onClick={}
+          ></input>
+          <label htmlFor="employee_type_student">Student</label>
+        </div>
+      </fieldset>
+    </div>
+  ) : null;
 
   return (
     <>
-      <h1 className="title">
-      We need to collect some more information.
-      </h1>
+      <h1 className="title">We need to collect some more information.</h1>
 
       <p className="description">
-      Details will be confirmed on site at your visit.
+        Details will be confirmed on site at your visit.
       </p>
       <div className={styles.questionContainer}>
-      <form onSubmit={ e => submitLog(e)} id="patient-form" name="patient-form">
-        <div className="question-set-container">
-          <div className="question-set-container-conditions">
-            
-            <div className={styles.question_row_item}>
-              {/* <label htmlFor="age">Age</label>
+        <form
+          onSubmit={(e) => submitLog(e)}
+          id="patient-form"
+          name="patient-form"
+        >
+          <div className={styles.question_set_container}>
+            <div className="question-set-container-conditions">
+              <div className="question-set-container-q1">
+                <div className={styles.question_row_item}>
+                  {/* <label htmlFor="age">Age</label>
               <input className={styles.question_input_txt} type="number" name="age" min="0" max="120"></input> */}
+                  <fieldset className={styles.radio_grp_set}>
+                    <legend>
+                      Do you currently have symptoms that may be suggestive of
+                      COVID 19? Symptoms may include fever, cough, shortness of
+                      breath, sore throat, fatigue, muscle aches, loss of sense
+                      of smell or taste, stomach upset.
+                    </legend>
 
-              <div className={styles.question_row_item_sub}>
-              <fieldset >
-              <legend>
-                Are you a Yale Employee?
-              </legend>
+                    <div className="radio_row_item">
+                      <input
+                        disabled={q3end || q4end}
+                        id="yale_employee_yes"
+                        type="radio"
+                        value="Yes"
+                        name="yale_employee"
+                        onClick={(e) => {
+                          handleChange(e);
+                          setQ2end(true);
+                        }}
+                      ></input>
+                      <label htmlFor="yale_employee_yes">Yes</label>
+                    </div>
 
-              <div className="radio_row_item">
-                <input id="yale_employee_yes" type="radio" value="Yes" name="yale_employee" onClick={(e)=>{handleChange(e); setIsEmployee(true)} }></input>
-                <label htmlFor="yale_employee_yes">Yes</label>
+                    <div className="radio_row_item">
+                      <input
+                        disabled={q3end || q4end}
+                        defaultChecked
+                        id="yale_employee_no"
+                        type="radio"
+                        value=""
+                        name="yale_employee"
+                        onClick={(e) => {
+                          handleChange(e);
+                          setQ2end(false);
+                          setQ3end(false);
+                          setQ4end(false);
+                        }}
+                      ></input>
+                      <label htmlFor="yale_employee_no">No</label>
+                    </div>
+                  </fieldset>
+                  <p className={styles.error} hidden={!q2end}>
+                    Please contact Yale Health or your personal health care
+                    provider to discuss testing and treatment.
+                  </p>
+                </div>
               </div>
-
-              <div className="radio_row_item">
-                <input defaultChecked id="yale_employee_no" type="radio" value="" name="yale_employee" onClick={(e)=>{handleChange(e); setIsEmployee(false)} }></input>
-                <label htmlFor="yale_employee_no">No</label>
-              </div>              
-            </fieldset>
-              </div>
-              {employeeTypeRdio}
-              {netIdField}             
-              {/* <div className={styles.question_row_item_sub}>
-              <input id="fever_higher_chk" type="checkbox" name="fever_higher" value={"Yes"} onClick={handleChange}></input>
-              <label htmlFor="fever_higher_chk">Fever of 100°F or higher</label>
-
-              <input id="cough_chk" type="checkbox" name="cough" value="Yes" onClick={handleChange}></input>
-              <label htmlFor="cough_chk">Cough</label>
-
-              <input id="diff_breath_chk" type="checkbox" name="diff_breath" value="Yes" onClick={handleChange}></input>
-              <label htmlFor="diff_breath_chk">
-                Difficulty breathing or shortness of breath
-              </label>
-              </div> */}
             </div>
+            <div className="question-set-container-q2">
+              <span className={styles.divider}></span>
+              <div className={styles.question_row_item}>
+                <fieldset className={styles.radio_grp_set}>
+                  <legend>
+                    Can your work be performed remotely and is it your intention
+                    to work remotely?
+                  </legend>
+
+                  <div className="radio_row_item">
+                    <input
+                      disabled={q2end || q4end}
+                      id="work_remote_chk_yes"
+                      type="radio"
+                      value="Yes"
+                      name="work_remote"
+                      onClick={(e) => {
+                        handleChange(e);
+                        setQ3end(true);
+                      }}
+                    ></input>
+                    <label htmlFor="work_remote_chk_yes">Yes</label>
+                  </div>
+
+                  <div className="radio_row_item">
+                    <input
+                      disabled={q2end || q4end}
+                      defaultChecked
+                      id="work_remote_chk_no"
+                      type="radio"
+                      value=""
+                      name="work_remote"
+                      onClick={(e) => {
+                        handleChange(e);
+                        setQ3end(false);
+                        setQ4end(false);
+                      }}
+                    ></input>
+                    <label htmlFor="work_remote_chk_no">No</label>
+                  </div>
+                </fieldset>
+                <p className={styles.error} hidden={!q3end}>
+                  No testing needed at this time. Discuss with your supervisor
+                  if you plan to return to work on campus in the future.{' '}
+                </p>
+              </div>
+            </div>
+
+            <div className="question-set-container-q3">
+              <span className={styles.divider}></span>
+              <div className={styles.question_row_item}>
+                <fieldset className={styles.radio_grp_set}>
+                  <legend>
+                    Do you intend to work remotely due to age over 65 OR high
+                    risk medical condition?
+                  </legend>
+
+                  <div className="radio_row_item">
+                    <input
+                      disabled={q2end || q3end}
+                      id="health_care_yes"
+                      type="radio"
+                      value="Yes"
+                      name="health_care"
+                      onClick={(e) => {
+                        handleChange(e);
+                        setQ4end(true);
+                      }}
+                    ></input>
+                    <label htmlFor="health_care_yes">Yes</label>
+                  </div>
+
+                  <div className="radio_row_item">
+                    <input
+                      defaultChecked
+                      disabled={q2end || q3end}
+                      id="health_care_no"
+                      type="radio"
+                      value=""
+                      name="health_care"
+                      onClick={(e) => {
+                        handleChange(e);
+                        setQ4end(false);
+                      }}
+                    ></input>
+                    <label htmlFor="health_care_no">No</label>
+                  </div>
+                </fieldset>
+                <p className={styles.error} hidden={!q4end}>
+                  No testing needed at this time.{' '}
+                </p>
+              </div>
+            </div>
+            <Link href="/scheduling">
+              <button
+                hidden={q4end || q2end || q3end}
+                type="submit"
+                form="patient-form"
+                className={styles.submitbutton}
+              >
+                Select Date and Time
+              </button>
+            </Link>
           </div>
-          <span className={styles.divider}></span>
-          <div className="question-set-container-q1">
-          <div className={styles.question_row_item}>
+        </form>
+      </div>
+    </>
+  );
+};
+
+export default QuestionFormComponent;
+
+{
+  /* <div className={styles.question_row_item}>
             <fieldset>
               <legend>
                 Do you have any of the following medical conditions? (Select all
@@ -150,107 +303,5 @@ const QuestionFormComponent = () => {
                 </label>
               </div>
             </fieldset>   
-            </div>         
-          </div>
-          <span className={styles.divider}></span>
-          <div className="question-set-container-q2">
-          <div className="radio_row_item">
-            <fieldset className={styles.radio_grp_set}>
-              <legend>
-                Do you live in a nursing home or long-term care facility?
-              </legend>
-
-              <div className="radio_row_item">
-                <input id="nursing_home_chk_yes" type="radio" value="Yes" name="nursing_home" onClick={handleChange}></input>
-                <label htmlFor="nursing_home_chk_yes">Yes</label>
-              </div>
-
-              <div className="radio_row_item">
-                <input defaultChecked id="nursing_home_chk_no" type="radio" value="" name="nursing_home" onClick={handleChange}></input>
-                <label htmlFor="nursing_home_chk_no">No</label>
-              </div>
-            </fieldset>
-            </div>
-          </div>
-          <span className={styles.divider}></span>
-          <div className="question-set-container-q3">
-          <div className="radio_row_item">
-            <fieldset className={styles.radio_grp_set}>
-              <legend>
-                Are you a health care worker, first responder or law enforcement
-                officer?
-              </legend>
-
-              <div className="radio_row_item">
-                <input id="health_care_yes" type="radio" value="Yes" name="health_care" onClick={handleChange}></input>
-                <label htmlFor="health_care_yes">Yes</label>
-              </div>
-
-              <div className="radio_row_item">
-                <input defaultChecked id="health_care_no" type="radio" value="" name="health_care" onClick={handleChange}></input>
-                <label htmlFor="health_care_no">No</label>
-              </div>              
-            </fieldset>
-            </div>
-          </div>
-          <span className={styles.divider}></span>
-          <div className="question-set-container-q4">
-          <div className="radio_row_item">
-            <fieldset className={styles.radio_grp_set}>
-              <legend>
-                Do you live or work in a treatment facility, group home or other
-                group setting?
-              </legend>
-
-              <div className="radio_row_item">
-                <input id="treatment_facility_yes" type="radio" value="Yes"  name="treatment_facility" onClick={handleChange}></input>
-                <label htmlFor="treatment_facility_yes">Yes</label>
-              </div>
-
-              <div className="radio_row_item">
-                <input defaultChecked id="treatment_facility_no" type="radio" value="" name="treatment_facility" onClick={handleChange}></input>
-                <label htmlFor="treatment_facility_no">No</label>
-              </div>
-              
-            </fieldset>
-          </div>
-          </div>
-          <span className={styles.divider}></span>
-          <div className="question-set-container-q5">
-            <div className="radio_row_item">
-            <fieldset className={styles.radio_grp_set}>
-              <legend>
-              Are you a caregiver for either an older person (age 60 or older) or someone who has a weakened immune system?
-              </legend>
-
-              <div className="radio_row_item">
-                <input id="caregiver_yes" type="radio" value="Yes" name="caregiver" onClick={handleChange}></input>
-                <label htmlFor="caregiver_yes">Yes</label>
-              </div>
-
-              <div className="radio_row_item">
-                <input defaultChecked id="caregiver_no" type="radio" value="" name="caregiver" onClick={handleChange}></input>
-                <label htmlFor="caregiver_no">No</label>
-              </div>
-            </fieldset>
-          </div>
-          </div>
-          <span className={styles.divider}></span>
-          <div className="question-set-container-final">
-          <div className={styles.question_row_item}>
-            <input id="answered_truthfully_chk" type="checkbox" name="answered_truthfully"></input>
-            <label htmlFor="answered_truthfully_chk">
-              I have answered these questions truthfully to the best of my
-              knowledge.
-            </label>
-            </div>
-          </div>
-        <button type="submit" form="patient-form"  className={styles.submitbutton}>Select Date and Time</button>
-        </div>
-        </form>
-      </div>
-    </>
-  );
-};
-
-export default QuestionFormComponent;
+            </div>          */
+}

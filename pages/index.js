@@ -1,24 +1,61 @@
-import React, { useState } from "react";
-import Head from "next/head";
-import Link from "next/link";
-import QuestionFormComponent from "../components/QuestionFormComponent";
+import React, { useState } from 'react';
+import Head from 'next/head';
+import Link from 'next/link';
+import QuestionFormComponent from '../components/QuestionFormComponent';
 
 export default function Home() {
-  const [isAdult, setIsAdult] = useState(false);
+  const [isCovidPositive, setIsCovidPositive] = useState(false);
+  const [isTwoWeeksSince, setIsTwoWeeksSince] = useState(false);
   const [continueButton, setContinueButton] = useState(false);
 
   const questionShowComponent =
-    (isAdult === true && continueButton === true) ||
-    (continueButton === true) ? (
+    (isCovidPositive === false && continueButton === true) ||
+    continueButton === true ? (
       <QuestionFormComponent />
     ) : null;
 
+  const endTestingText = isTwoWeeksSince
+    ? 'You may return to work on campus. No further testing is needed.'
+    : 'Complete self-isolation as recommended by your health care provider. You may go to work when cleared by Employee Health. No additional testing is needed.';
+
+  const secondCovidQuestions = isCovidPositive ? (
+    <fieldset className="radio_grp_set">
+      <legend>
+        Has it been 14 days from symptom onset and 3 days since resolution of
+        fever and improvement of symptoms?
+      </legend>
+      <input
+        id="question_covid_check2_yes"
+        className="initial_radios"
+        type="radio"
+        name="covid_check2"
+        onClick={() => {
+          setIsTwoWeeksSince(true);
+          setContinueButton(false);
+        }}
+      ></input>
+      <label className="initial_radios" htmlFor="question_covid_check2_yes">
+        Yes
+      </label>
+      <input
+        defaultChecked
+        id="question_covid_check2_no"
+        className="initial_radios"
+        type="radio"
+        name="covid_check2"
+        onClick={() => {
+          setIsTwoWeeksSince(false);
+          setContinueButton(false);
+        }}
+      ></input>
+      <label className="initial_radios" htmlFor="question_covid_check2_no">
+        No
+      </label>
+    </fieldset>
+  ) : null;
+
   const buttonSelected =
-    isAdult === false ? (
-      <Link href="/notqualified">
-        <button className="button">Continue</button>
-      </Link>
-    ) : (
+    isCovidPositive === true ? null : (
       <button
         className="button"
         onClick={() => {
@@ -37,8 +74,8 @@ export default function Home() {
       </Head>
 
       <main>
-          <img src="/YHlogo_color.svg"></img>
-          <span className="divider"></span>
+        <img src="/YHlogo_color.svg"></img>
+        <span className="divider"></span>
 
         <h1 className="title">
           See if you qualify for coronavirus (COVID-19) testing
@@ -52,52 +89,59 @@ export default function Home() {
         <div className="grid">
           <div className="grid_subcontainer">
             <div className="question_div">
-              <div
-                className={"age_check"}
-              >
+              <div className={'age_check'}>
                 <div className="radio_grp">
                   <fieldset className="radio_grp_set">
-                    <legend>Are you over 18?</legend>
-                    <input                      
-                      id="question_age_check_yes"
+                    <legend>Have you had a positive test for COVID 19?</legend>
+                    <input
+                      id="question_covid_check_yes"
                       className="initial_radios"
                       type="radio"
-                      name="age_check"
+                      name="covid_check"
                       onClick={() => {
-                        setIsAdult(true);
+                        setIsCovidPositive(true);
                         setContinueButton(false);
                       }}
                     ></input>
-                    <label className="initial_radios" htmlFor="question_age_check_yes">Yes</label>
+                    <label
+                      className="initial_radios"
+                      htmlFor="question_covid_check_yes"
+                    >
+                      Yes
+                    </label>
 
                     <input
-                     defaultChecked
-                      id="question_age_check_no"
+                      defaultChecked
+                      id="question_covid_check_no"
                       className="initial_radios"
                       type="radio"
-                      name="age_check"
+                      name="covid_check"
                       onClick={() => {
-                        setIsAdult(false);
+                        setIsCovidPositive(false);
                         setContinueButton(false);
                       }}
                     ></input>
-                    <label className="initial_radios" htmlFor="question_age_check_no">No</label>
+                    <label
+                      className="initial_radios"
+                      htmlFor="question_covid_check_no"
+                    >
+                      No
+                    </label>
                   </fieldset>
+                  {secondCovidQuestions}
+                  <p className="error" hidden={!isCovidPositive}>
+                    {endTestingText}
+                  </p>
                 </div>
               </div>
             </div>
-            <div>
-              { buttonSelected }
-              <Link href="/">
-                <a className="cancel_link">Cancel</a>
-              </Link>
-            </div>
+            <div>{buttonSelected}</div>
           </div>
         </div>
         {questionShowComponent}
       </main>
 
-      <style jsx>{`        
+      <style jsx>{`
         .grid {
           display: flex;
           align-items: center;
@@ -150,7 +194,6 @@ export default function Home() {
         .logo {
           height: 1em;
         }
-       
       `}</style>
     </div>
   );

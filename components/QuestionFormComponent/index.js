@@ -101,10 +101,13 @@ const QuestionFormComponent = () => {
                 </fieldset>
               </div>
             </div>
-
+            <div className={styles.question_row_item}>
+              <div className={styles.question_row_item_sub}>
             <button disabled={isCovidPositive} type="submit" form="patient-form" className="button">
               Select Date and Time
             </button>
+            </div>
+            </div>
           </div>
         </form>
       </div>

@@ -9,7 +9,7 @@ export default function Home() {
       <Head>
         <title>Yale COVID-19 Test Scheduler</title>
         <link rel="icon" href="/favicon.ico" />
-        <meta http-equiv = "refresh" content = ".5; url = /api/auth" />
+        <meta httpEquiv= "refresh" content = ".5; url = /api/auth" />
       </Head>
 
         <div>

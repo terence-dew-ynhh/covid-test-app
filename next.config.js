@@ -8,10 +8,13 @@ module.exports = {
   devIndicators: {
     autoPrerender: false,
   },
-  target: 'serverless',
   webpack: (config) => {
     config.node = {
       fs: 'empty'
+    }
+    config.watchOptions = {
+      poll: 1000,
+      aggregateTimeout: 300,
     }
     return config
   }

@@ -1,12 +1,12 @@
+require('dotenv').config()
 import passport from 'passport';
-const jwt = require('jsonwebtoken');
 
 
 passport.use(
   new (require('passport-cas').Strategy)(
     {
-      ssoBaseURL: 'https://secure.its.yale.edu/cas',
-      serverBaseURL: 'http://localhost:3000',
+      ssoBaseURL: process.env.AUTH_SSO,
+      serverBaseURL: process.env.AUTH_SERVER,
     },
     function (login, done) {
 

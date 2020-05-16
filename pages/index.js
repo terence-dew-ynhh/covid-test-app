@@ -73,10 +73,19 @@ export default function Home() {
         {questionShowComponent}
       <style jsx>{`        
         .grid {
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-direction: column;
+          -webkit-box-align: center;
+              -ms-flex-align: center;
+                  align-items: center;
+          -webkit-box-pack: center;
+              -ms-flex-pack: center;
+                  justify-content: center;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+              -ms-flex-direction: column;
+                  flex-direction: column;
           color: white;
           width: 100%;
           margin-top: 3rem;
@@ -84,24 +93,49 @@ export default function Home() {
         .grid_subcontainer {
           width: 100%;
           background: #0f4d92;
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
-          justify-content: center;
-          flex-direction: column;
+          -webkit-box-pack: center;
+              -ms-flex-pack: center;
+                  justify-content: center;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+              -ms-flex-direction: column;
+                  flex-direction: column;
         }
         .question_div {
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
-          align-items: flex-start;
-          justify-content: flex-start;
+          -webkit-box-align: start;
+              -ms-flex-align: start;
+                  align-items: flex-start;
+          -webkit-box-pack: start;
+              -ms-flex-pack: start;
+                  justify-content: flex-start;
           margin: 0 0 3% 0;
-          flex-direction: row;
+          -webkit-box-orient: horizontal;
+          -webkit-box-direction: normal;
+              -ms-flex-direction: row;
+                  flex-direction: row;
           width: 100%;
         }
         .age_check,
         .have_referral {
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
-          align-items: flex-start;
-          justify-content: center;
-          flex-direction: column;
+          -webkit-box-align: start;
+              -ms-flex-align: start;
+                  align-items: flex-start;
+          -webkit-box-pack: center;
+              -ms-flex-pack: center;
+                  justify-content: center;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+              -ms-flex-direction: column;
+                  flex-direction: column;
         }
         .div_hide {
           display: none;
@@ -118,7 +152,10 @@ export default function Home() {
         @media (max-width: 600px) {
           .grid {
             width: 100%;
-            flex-direction: column;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
           }
         }
       `}</style>

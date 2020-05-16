@@ -1,33 +1,17 @@
 import React, { useState } from "react";
 import Head from "next/head";
-import Link from "next/link";
 import QuestionFormComponent from "../components/QuestionFormComponent";
 
 export default function Home() {
-  const [isAdult, setIsAdult] = useState(false);
+  const [isEmployee, setIsEmployee] = useState(true);
   const [continueButton, setContinueButton] = useState(false);
 
   const questionShowComponent =
-    (isAdult === true && continueButton === true) ||
-    (continueButton === true) ? (
+    (isEmployee && continueButton) ? (
       <QuestionFormComponent />
     ) : null;
 
-  const buttonSelected =
-    isAdult === false ? (
-      <Link href="/notqualified">
-        <button className="button">Continue</button>
-      </Link>
-    ) : (
-      <button
-        className="button"
-        onClick={() => {
-          setContinueButton(true);
-        }}
-      >
-        Continue
-      </button>
-    );
+  
 
   return (
     <div className="container">
@@ -36,7 +20,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
           <img src="/YNHHSLogo.png"></img>
           <span className="divider"></span>
 
@@ -52,49 +35,42 @@ export default function Home() {
         <div className="grid">
           <div className="grid_subcontainer">
             <div className="question_div">
-              <div
-                className={"age_check"}
-              >
+
                 <div className="radio_grp">
                   <fieldset className="radio_grp_set">
-                    <legend>Are you over 18?</legend>
-                    <input                      
-                      id="question_age_check_yes"
+                    <legend>Are you an employee or medical staff member of Yale New Haven Health/ Yale Medicine?</legend>
+                    <input     
+                    defaultChecked                 
+                      id="employee_staff_check_yes"
                       type="radio"
-                      name="age_check"
+                      name="employee_staff"
                       onClick={() => {
-                        setIsAdult(true);
+                        setIsEmployee(true);
                         setContinueButton(false);
                       }}
                     ></input>
-                    <label htmlFor="question_age_check_yes">Yes</label>
+                    <label htmlFor="employee_staff_check_yes">Yes</label>
 
-                    <input
-                     defaultChecked
-                      id="question_age_check_no"
+                    <input                     
+                      id="employee_staff_check_no"
                       type="radio"
-                      name="age_check"
+                      name="employee_staff"
                       onClick={() => {
-                        setIsAdult(false);
+                        setIsEmployee(false);
                         setContinueButton(false);
                       }}
                     ></input>
-                    <label htmlFor="question_age_check_no">No</label>
+                    <label htmlFor="employee_staff_check_no">No</label>
                   </fieldset>
+                  <p className="error" hidden={isEmployee}>Sorry, please navigate to a public testing website to schedule your test</p>
                 </div>
-              </div>
             </div>
             <div>
-              { buttonSelected }
-              <Link href="/">
-                <a className="cancel_link">Cancel</a>
-              </Link>
+            <button onClick={()=>setContinueButton(true)} className="button">Continue</button>                
             </div>
           </div>
         </div>
         {questionShowComponent}
-      </main>
-
       <style jsx>{`        
         .grid {
           display: flex;

@@ -34,16 +34,18 @@ small {
   padding: 0 0.5rem;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-main {
-  width: 90%;
-  display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  width: 100%;
+}
+
+.grid,
+.grid_subcontainer{
+  width:100%;
+}
+
+h1,p{
+  width:100%;
 }
 
 .button {
@@ -69,22 +71,34 @@ fieldset {
 .question_div {
   padding: 25px 35px;
 }
+.error{
+  color:red;
+  font-weight: 600;
+}
+
+
 
 .divider {
   display: block;
   background: #131313;
   height: 1px;
   width: 90%;
-  margin: 20px 0;
+  margin: 1*-+0px 0;
 }
 
 label,
 legend {
   margin-bottom: 20px;
+  width: 100%;
 }
 
 li{
   margin-bottom: 2%;
+}
+
+img{
+  width:300px;
+
 }
 
 .title{
@@ -240,4 +254,47 @@ li{
 
 label:hover:before {
   border: 2px solid #4778d9 !important;
+}
+
+
+/* Select */
+
+.select-wrapper {
+  position: relative;
+  width: 100%;
+}
+.select-wrapper::after {
+  color: black;
+  content: '▾';
+  margin-right: 10px;
+  pointer-events: none;
+  position: absolute;
+  right: 10px;
+  top: 7px;
+  font-size: 20px;
+}
+
+.select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background: white;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  padding: 12px;
+  width: 100%;
+  font-size: 18px;
+}
+.select:focus {
+  color: black;
+}
+.select::-ms-expand {
+  display: none;
+}
+
+@media(max-width:430px){
+  .select {
+    font-size: 13px;
+  }
+
 }

@@ -77,13 +77,8 @@ export default function Home() {
       <span className="divider"></span>
 
       <h1 className="title">
-        See if you qualify for coronavirus (COVID-19) testing
+       See if you qualify for coronavirus (COVID 19) screening
       </h1>
-
-      <p className="description">
-        Test supplies are extremely limited. Help those who need testing the
-        most by answering truthfully.
-      </p>
 
       <div className="grid">
         <div className="grid_subcontainer">
@@ -91,7 +86,7 @@ export default function Home() {
             <div className={'age_check'}>
               <div className="radio_grp">
                 <fieldset className="radio_grp_set">
-                  <legend>Have you had a positive test for COVID 19?</legend>
+                  <legend>Have you had a positive test for COVID 19 at any time since March 1?</legend>
                   <input
                     id="question_covid_check_yes"
                     className="initial_radios"
@@ -157,6 +152,7 @@ export default function Home() {
           color: white;
           width: 100%;
           margin-top: 3rem;
+          margin-bottom: 3em;
         }
         .grid_subcontainer {
           width: 100%;

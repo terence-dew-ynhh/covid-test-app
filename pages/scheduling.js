@@ -10,13 +10,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <img src="/YNHHSLogo.png"></img>
+        <img src="/YNHHSLogo.png">
+        </img><span className="divider"></span>
         
       <div className="scheduleContainer">
   <iframe id="openSchedulingFrame" className="widgetframe" scrolling="no" src="https://mychartnp.ynhhs.org/POC/openscheduling/SignupAndSchedule/EmbeddedSchedule?vt=2102&dept=101010165&view=plain&public=1"></iframe>
     </div>
-      </main>
       <style jsx>{`
         .scheduleContainer, iframe{
           width: 100%;

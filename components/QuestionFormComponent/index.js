@@ -217,7 +217,8 @@ const QuestionFormComponent = () => {
                   </div>
                 </fieldset>
                 <p className={styles.error} hidden={!q4end}>
-                  No testing needed at this time.{' '}
+                No screening needed at this time. Discuss with your supervisor
+                  if you plan to return to work on campus in the future.{' '}
                 </p>
               </div>
             </div>

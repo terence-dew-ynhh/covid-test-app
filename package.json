@@ -21,9 +21,7 @@
   "scripts": {
     "build": "next build",
     "dev": "node server/server.js",
-    "start": "node server/server.js",
-    "deploy-staging": "NODE_ENV=staging next build &&    NODE_ENV=staging node ./server/server.js",
-    "deploy-production": "NODE_ENV=production next build && NODE_ENV=production node ./server/server.js"
+    "start": "node server/server.js"
   },
   "repository": {
     "type": "git",

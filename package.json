@@ -1,25 +1,38 @@
 {
-  "name": "create-next-app-cli",
-  "version": "0.1.0",
+  "name": "covid-testing-app",
+  "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "scripts": {
-    "build": "next build",
-    "dev": "node server/server.js",
-    "start": "node server/server.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "main": "next.config.js",
   "dependencies": {
     "axios": "^0.19.2",
     "compression": "^1.7.4",
     "cookie-session": "^1.4.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "next": "9.3.6",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
+    "jsonwebtoken": "^8.5.1",
+    "next": "^9.3.6",
+    "passport": "^0.4.1",
+    "passport-cas": "^0.1.1",
+    "react-dom": "^16.13.1",
+    "react": "^16.13.1",
     "styled-components.macro": "^1.0.0"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "build": "next build",
+    "dev": "node server/server.js",
+    "start": "node server/server.js",
+    "deploy-staging": "NODE_ENV=staging next build &&    NODE_ENV=staging node ./server/server.js",
+    "deploy-production": "NODE_ENV=production next build && NODE_ENV=production node ./server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/terence-dew-ynhh/covid-test-app.git"
+  },
+  "author": "Terence Dew",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/terence-dew-ynhh/covid-test-app/issues"
+  },
+  "homepage": "https://github.com/terence-dew-ynhh/covid-test-app#readme"
 }

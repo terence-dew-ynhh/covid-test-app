@@ -1,33 +1,17 @@
 import React, { useState } from "react";
 import Head from "next/head";
-import Link from "next/link";
 import QuestionFormComponent from "../components/QuestionFormComponent";
 
 export default function Home() {
-  const [isAdult, setIsAdult] = useState(false);
+  const [isEmployee, setIsEmployee] = useState(true);
   const [continueButton, setContinueButton] = useState(false);
 
   const questionShowComponent =
-    (isAdult === true && continueButton === true) ||
-    (continueButton === true) ? (
+    (isEmployee && continueButton) ? (
       <QuestionFormComponent />
     ) : null;
 
-  const buttonSelected =
-    isAdult === false ? (
-      <Link href="/notqualified">
-        <button className="button">Continue</button>
-      </Link>
-    ) : (
-      <button
-        className="button"
-        onClick={() => {
-          setContinueButton(true);
-        }}
-      >
-        Continue
-      </button>
-    );
+  
 
   return (
     <div className="container">
@@ -36,7 +20,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
           <img src="/YNHHSLogo.png"></img>
           <span className="divider"></span>
 
@@ -52,80 +35,107 @@ export default function Home() {
         <div className="grid">
           <div className="grid_subcontainer">
             <div className="question_div">
-              <div
-                className={"age_check"}
-              >
+
                 <div className="radio_grp">
                   <fieldset className="radio_grp_set">
-                    <legend>Are you over 18?</legend>
-                    <input                      
-                      id="question_age_check_yes"
+                    <legend>Are you an employee or medical staff member of Yale New Haven Health/ Yale Medicine?</legend>
+                    <input     
+                    defaultChecked                 
+                      id="employee_staff_check_yes"
                       type="radio"
-                      name="age_check"
+                      name="employee_staff"
                       onClick={() => {
-                        setIsAdult(true);
+                        setIsEmployee(true);
                         setContinueButton(false);
                       }}
                     ></input>
-                    <label htmlFor="question_age_check_yes">Yes</label>
+                    <label htmlFor="employee_staff_check_yes">Yes</label>
 
-                    <input
-                     defaultChecked
-                      id="question_age_check_no"
+                    <input                     
+                      id="employee_staff_check_no"
                       type="radio"
-                      name="age_check"
+                      name="employee_staff"
                       onClick={() => {
-                        setIsAdult(false);
+                        setIsEmployee(false);
                         setContinueButton(false);
                       }}
                     ></input>
-                    <label htmlFor="question_age_check_no">No</label>
+                    <label htmlFor="employee_staff_check_no">No</label>
                   </fieldset>
+                  <p className="error" hidden={isEmployee}>Sorry, please navigate to a public testing website to schedule your test</p>
                 </div>
-              </div>
             </div>
             <div>
-              { buttonSelected }
-              <Link href="/">
-                <a className="cancel_link">Cancel</a>
-              </Link>
+            <button onClick={()=>setContinueButton(true)} className="button">Continue</button>                
             </div>
           </div>
         </div>
         {questionShowComponent}
-      </main>
-
       <style jsx>{`        
         .grid {
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-direction: column;
+          -webkit-box-align: center;
+              -ms-flex-align: center;
+                  align-items: center;
+          -webkit-box-pack: center;
+              -ms-flex-pack: center;
+                  justify-content: center;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+              -ms-flex-direction: column;
+                  flex-direction: column;
           color: white;
-          width: 95%;
+          width: 100%;
           margin-top: 3rem;
         }
         .grid_subcontainer {
           width: 100%;
           background: #0f4d92;
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
-          justify-content: center;
-          flex-direction: column;
+          -webkit-box-pack: center;
+              -ms-flex-pack: center;
+                  justify-content: center;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+              -ms-flex-direction: column;
+                  flex-direction: column;
         }
         .question_div {
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
-          align-items: flex-start;
-          justify-content: flex-start;
+          -webkit-box-align: start;
+              -ms-flex-align: start;
+                  align-items: flex-start;
+          -webkit-box-pack: start;
+              -ms-flex-pack: start;
+                  justify-content: flex-start;
           margin: 0 0 3% 0;
-          flex-direction: row;
+          -webkit-box-orient: horizontal;
+          -webkit-box-direction: normal;
+              -ms-flex-direction: row;
+                  flex-direction: row;
           width: 100%;
         }
         .age_check,
         .have_referral {
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
-          align-items: flex-start;
-          justify-content: center;
-          flex-direction: column;
+          -webkit-box-align: start;
+              -ms-flex-align: start;
+                  align-items: flex-start;
+          -webkit-box-pack: center;
+              -ms-flex-pack: center;
+                  justify-content: center;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+              -ms-flex-direction: column;
+                  flex-direction: column;
         }
         .div_hide {
           display: none;
@@ -142,7 +152,10 @@ export default function Home() {
         @media (max-width: 600px) {
           .grid {
             width: 100%;
-            flex-direction: column;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
           }
         }
       `}</style>

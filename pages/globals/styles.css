@@ -40,11 +40,11 @@ small {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
+  -webkit-box-pack: flex-start;
+      -ms-flex-pack: flex-start;
+          justify-content: flex-start;
+  -webkit-box-align: flex-start;
+      -ms-flex-align: flex-start;
           align-items: flex-start;
   width: 100%;
 }
@@ -69,7 +69,7 @@ h1,p{
 .radio_grp_set,
 fieldset {
   border: none;
-  display: inline-block;
+  display: inline;
   margin-right: 50px;
 }
 
@@ -135,7 +135,7 @@ img{
   padding-right: 20px;
   cursor: pointer;
   line-height: 20px;
-  display: inline-block;
+  display: inline;
   color: white;
 }
 

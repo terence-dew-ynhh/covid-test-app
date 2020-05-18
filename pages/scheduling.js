@@ -14,7 +14,7 @@ export default function Home() {
         </img><span className="divider"></span>
         
       <div className="scheduleContainer">
-  <iframe id="openSchedulingFrame" className="widgetframe" scrolling="no" src="https://mychartnp.ynhhs.org/POC/openscheduling/SignupAndSchedule/EmbeddedSchedule?vt=2102&dept=101010165&view=plain&public=1"></iframe>
+  <iframe id="openSchedulingFrame" className="widgetframe" scrolling="no" src="https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=78061,78102&vt=2102&dept=101010165&view=plain&public=1"></iframe>
     </div>
       <style jsx>{`
         .scheduleContainer, iframe{

@@ -79,7 +79,6 @@ export default function Home() {
                 <fieldset className="radio_grp_set">
                   <legend>Have you had a positive test for COVID 19 at any time since March 1?</legend>
                   <input
-                    tabIndex="1"
                     id="question_covid_check_yes"
                     className="initial_radios"
                     type="radio"
@@ -98,7 +97,6 @@ export default function Home() {
                   </label>
 
                   <input
-                    defaultChecked
                     id="question_covid_check_no"
                     className="initial_radios"
                     type="radio"

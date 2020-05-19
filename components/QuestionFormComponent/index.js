@@ -93,8 +93,6 @@ const QuestionFormComponent = () => {
                         onClick={(e) => {
                           handleChange(e);
                           setQ2end(e.target.value);
-                          setQ3end(e.target.value);
-                          setQ4end(e.target.value);
                         }}
                       ></input>
                       <label
@@ -160,7 +158,6 @@ const QuestionFormComponent = () => {
                       onClick={(e) => {
                         handleChange(e);
                         setQ3end(e.target.value);
-                        setQ4end(e.target.value);
                       }}
                     ></input>
                     <label
@@ -243,7 +240,7 @@ const QuestionFormComponent = () => {
             </div>
             <Link href="/scheduling">
               <button
-                hidden={!(q4end === 'No') || !(q2end === 'No') || !   (q3end === 'No')}
+                hidden={!((q4end === 'No') && (q2end === 'No') && (q3end === 'No'))}
                 type="submit"
                 form="patient-form"
                 className={styles.submitbutton}

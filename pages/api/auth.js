@@ -5,7 +5,7 @@ passport.use(
   new (require('passport-cas').Strategy)(
     {
       ssoBaseURL: process.env.AUTH_SSO,
-      serverBaseURL: process.env.AUTH_SERVER
+      serverBaseURL: process.env.AUTH_SERVER_DEV
     },
     function (login, done) {
       var netId = login;

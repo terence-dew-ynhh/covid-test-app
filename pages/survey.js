@@ -2,15 +2,18 @@ import React, { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import QuestionFormComponent from '../components/QuestionFormComponent';
+import {parseCookies, logInfo} from './utils/actions';
+import Cookie from 'js-cookie'
 
-export default function Home() {
+export default function Home({user}) {
   const [isCovidPositive, setIsCovidPositive] = useState('');
   const [isTwoWeeksSince, setIsTwoWeeksSince] = useState('');
+  
 
   const questionShowComponent =
     (isCovidPositive === 'No')
     ? (
-      <QuestionFormComponent />
+      <QuestionFormComponent casUser={user} />
     ) : null;
 
     
@@ -130,11 +133,8 @@ export default function Home() {
           </div>
         </div>
       </div>
-      {questionShowComponent}
-      <Link href='https://usability.yale.edu/web-accessibility/accessibility-yale'>
-        <a>Accessibility at yale</a>
-      </Link>
-
+      {questionShowComponent }
+        <a href='https://usability.yale.edu/web-accessibility/accessibility-yale'>Accessibility at yale</a>
       <style jsx>{`
         .grid {
           display: -webkit-box;
@@ -229,3 +229,10 @@ export default function Home() {
     </div>
   );
 }
+
+Home.getInitialProps = ({req}) =>{
+  const cookies = parseCookies(req);
+  return{
+    user: cookies.token
+  }
+} 

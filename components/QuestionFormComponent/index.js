@@ -1,39 +1,28 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { logInfo } from './actions';
 import styles from './QuestionFormComponent.module.css';
+import {logInfo} from '../../pages/utils/actions';
+import { Router } from 'next/router';
 
-const QuestionFormComponent = () => {
-  const [patientData, setPatientData] = useState({
-    age: '',
-    yale_employee: '',
-    employee_type: '',
-    net_id: '',
-    fever_higher: '',
-    cough: '',
-    diff_breath: '',
-    asthma_lung: '',
-    diabetes: '',
-    obesity: '',
-    cirrhosis: '',
-    pregnancy: '',
-    heart_cond: '',
-    diseases_cough: '',
-    kidney_failure: '',
-    immune_system: '',
-    nursing_home: '',
-    health_care: '',
-    treatment_facility: '',
-    caregiver: ''
-  });
+
+const QuestionFormComponent = ({casUser}) => {
+  
   const [q2end, setQ2end] = useState('');
   const [q3end, setQ3end] = useState('');
   const [q4end, setQ4end] = useState('');
+  const [patientData, setPatientData] = useState({
+    survey_src: 'yale',
+    net_id: casUser,
+    covid_symptoms: '',
+    work_remote: '',
+    work_remote_age: '',
+  });
 
   function submitLog(evt) {
     evt.preventDefault();
     logInfo(patientData);
   }
+
 
   const handleChange = (e) => {
     let value = patientData[e.target.name] === 'Yes' ? '' : e.target.value;
@@ -66,10 +55,10 @@ const QuestionFormComponent = () => {
                     <div className="radio_row_item">
                       <input
                         disabled={q3end === 'Yes' || q4end === 'Yes'}
-                        id="yale_employee_yes"
+                        id="covid_symptoms_yes"
                         type="radio"
                         value="Yes"
-                        name="yale_employee"
+                        name="covid_symptoms"
                         onClick={(e) => {
                           handleChange(e);
                           setQ2end(e.target.value);
@@ -77,7 +66,7 @@ const QuestionFormComponent = () => {
                       ></input>
                       <label
                         className={styles.label}
-                        htmlFor="yale_employee_yes"
+                        htmlFor="covid_symptoms_yes"
                       >
                         Yes
                       </label>
@@ -86,10 +75,10 @@ const QuestionFormComponent = () => {
                     <div className="radio_row_item">
                       <input
                         disabled={q3end === 'Yes' || q4end === 'Yes'}
-                        id="yale_employee_no"
+                        id="covid_symptoms_no"
                         type="radio"
                         value="No"
-                        name="yale_employee"
+                        name="covid_symptoms"
                         onClick={(e) => {
                           handleChange(e);
                           setQ2end(e.target.value);
@@ -99,7 +88,7 @@ const QuestionFormComponent = () => {
                       ></input>
                       <label
                         className={styles.label}
-                        htmlFor="yale_employee_no"
+                        htmlFor="covid_symptoms_no"
                       >
                         No
                       </label>
@@ -197,16 +186,16 @@ const QuestionFormComponent = () => {
                   <div className="radio_row_item">
                     <input
                       disabled={q2end === 'Yes' || q3end === 'Yes'}
-                      id="health_care_yes"
+                      id="work_remote_age_yes"
                       type="radio"
                       value="Yes"
-                      name="health_care"
+                      name="work_remote_age"
                       onClick={(e) => {
                         handleChange(e);
                         setQ4end(e.target.value);
                       }}
                     ></input>
-                    <label className={styles.label} htmlFor="health_care_yes">
+                    <label className={styles.label} htmlFor="work_remote_age_yes">
                       Yes
                     </label>
                   </div>
@@ -214,16 +203,16 @@ const QuestionFormComponent = () => {
                   <div className="radio_row_item">
                     <input
                       disabled={q2end === 'Yes' || q3end === 'Yes'}
-                      id="health_care_no"
+                      id="work_remote_age_no"
                       type="radio"
                       value="No"
-                      name="health_care"
+                      name="work_remote_age"
                       onClick={(e) => {
                         handleChange(e);
                         setQ4end(e.target.value);
                       }}
                     ></input>
-                    <label className={styles.label} htmlFor="health_care_no">
+                    <label className={styles.label} htmlFor="work_remote_age_no">
                       No
                     </label>
                   </div>
@@ -241,21 +230,22 @@ const QuestionFormComponent = () => {
                 </div>
               </div>
             </div>
-            <Link href="/scheduling">
+
               <button
-                hidden={!(q4end === 'No') || !(q2end === 'No') || !   (q3end === 'No')}
+                hidden={!(q4end === 'No') && !(q2end === 'No') && !   (q3end === 'No')}
                 type="submit"
                 form="patient-form"
                 className={styles.submitbutton}
               >
                 Select Date and Time
               </button>
-            </Link>
           </div>
         </form>
       </div>
     </>
   );
 };
+
+
 
 export default QuestionFormComponent;

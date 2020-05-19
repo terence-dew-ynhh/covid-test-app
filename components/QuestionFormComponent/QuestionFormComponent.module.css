@@ -35,9 +35,22 @@
     width: 50%;
   }
   
+  .error_container{
+    background: white;
+    border: black 1px solid;
+    padding: 2%;
+    width: 80%;
+  }
+  
   .error {
-    color: #ff0033;
-    font-weight: 650;
+    color: #0f4d92;
+    font-weight: 700;
+  }
+  
+  .error_sub{
+    color: #131313;
+    font-weight: 500;
+    font-size: .8em;
   }
   
   .submitbutton {

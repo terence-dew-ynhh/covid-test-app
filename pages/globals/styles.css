@@ -71,7 +71,22 @@ fieldset {
   width: 100%;
 }
 
+.error_container{
+  background: white;
+  border: black 1px solid;
+  padding: 2%;
+  width: 80%;
+}
+
 .error {
+  color: #0f4d92;
+  font-weight: 700;
+}
+
+.error_sub{
+  color: #131313;
+  font-weight: 500;
+  font-size: .8em;
 }
 .radio_grp {
   display: flex;
@@ -115,11 +130,6 @@ li {
 .description {
   font-size: 1em;
   font-weight: 700;
-}
-
-.error {
-  color: #ff0033;
-  font-weight: 650;
 }
 
 @media (max-width: 400px) {
@@ -193,9 +203,14 @@ li {
   transform: scale(1);
 }
 
+[type='radio']:checked:focus + label:before,
+[type='radio']:not(:checked):focus + label:before {
+  border: 2px dotted blue;
+}
+
 /* Checkboxes */
 
-[type='checkbox']:not(:checked),
+/* [type='checkbox']:not(:checked),
 [type='checkbox']:checked {
   position: absolute;
   left: -9999px;
@@ -210,7 +225,7 @@ li {
 
 /* checkbox aspect */
 
-[type='checkbox']:not(:checked) + label:before,
+/* [type='checkbox']:not(:checked) + label:before,
 [type='checkbox']:checked + label:before {
   content: '';
   position: absolute;
@@ -223,11 +238,11 @@ li {
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-}
+} */
 
 /* checked mark aspect */
 
-[type='checkbox']:not(:checked) + label:after,
+/* [type='checkbox']:not(:checked) + label:after,
 [type='checkbox']:checked + label:after {
   content: '\2713\0020';
   position: absolute;
@@ -240,11 +255,11 @@ li {
   -o-transition: all 0.2s;
   transition: all 0.2s;
   font-family: 'Lucida Sans Unicode', 'Arial Unicode MS', Arial;
-}
+} */
 
 /* checked mark aspect changes */
 
-[type='checkbox']:not(:checked) + label:after {
+/* [type='checkbox']:not(:checked) + label:after {
   opacity: 0;
   -webkit-transform: scale(0);
   -ms-transform: scale(0);
@@ -256,11 +271,11 @@ li {
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
-}
+} */
 
 /* disabled checkbox */
 
-[type='checkbox']:disabled:not(:checked) + label:before,
+/* [type='checkbox']:disabled:not(:checked) + label:before,
 [type='checkbox']:disabled:checked + label:before {
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -274,17 +289,17 @@ li {
 
 [type='checkbox']:disabled + label {
   color: #aaa;
-}
+} */
 
 /* accessibility */
 
-[type='checkbox']:checked:focus + label:before,
+/* [type='checkbox']:checked:focus + label:before,
 [type='checkbox']:not(:checked):focus + label:before {
   border: 2px dotted blue;
-}
+} */
 
 /* hover style just for information */
 
-label:hover:before {
+/* label:hover:before {
   border: 2px solid #4778d9 !important;
-}
+} */ 

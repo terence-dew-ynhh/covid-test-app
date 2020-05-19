@@ -21,14 +21,25 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-        <div>
-          <Link href="/api/auth">
-          <a>Sign in with CAS</a>
-          </Link>        
+        <div className="loading_container">
+          <h1>Loading...</h1>        
         </div>
 
       <style jsx>{`
-
+      .container{
+        height: 100vh;
+        width: 100%;
+      }
+      .loading_container{
+          height: 100%;
+          width: 100%;
+          display:flex;
+          flex-direction: column;
+          align-items: center;
+          justify-items: center;
+          justify-content: center;
+          align-content: center;
+        }
       `}</style>
     </div>
   )

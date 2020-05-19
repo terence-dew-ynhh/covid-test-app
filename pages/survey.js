@@ -4,21 +4,24 @@ import Link from 'next/link';
 import QuestionFormComponent from '../components/QuestionFormComponent';
 
 export default function Home() {
-  const [isCovidPositive, setIsCovidPositive] = useState(false);
-  const [isTwoWeeksSince, setIsTwoWeeksSince] = useState(false);
-  const [continueButton, setContinueButton] = useState(false);
+  const [isCovidPositive, setIsCovidPositive] = useState('');
+  const [isTwoWeeksSince, setIsTwoWeeksSince] = useState('');
 
   const questionShowComponent =
-    (isCovidPositive === false && continueButton === true) ||
-    continueButton === true ? (
+    (isCovidPositive === 'No')
+    ? (
       <QuestionFormComponent />
     ) : null;
 
-  const endTestingText = isTwoWeeksSince
-    ? 'You may return to work on campus. No further testing is needed.'
-    : 'Complete self-isolation as recommended by your health care provider. You may go to work when cleared by Employee Health. No additional testing is needed.';
+    
+    const endTestingText = isTwoWeeksSince  === 'Yes'
+      ? 'You may return to work on campus.'
+      : 'Complete self-isolation as recommended by your health care provider.';
+    const endTestingSubText = isTwoWeeksSince  === 'Yes'
+    ? ' No further testing is needed.'
+    : 'You may go to work when cleared by Employee Health. No additional testing is needed.';
 
-  const secondCovidQuestions = isCovidPositive ? (
+  const secondCovidQuestions = (isCovidPositive === 'Yes') ? (
     <fieldset className="radio_grp_set">
       <legend>
         Has it been 14 days from symptom onset and 3 days since resolution of
@@ -27,25 +30,24 @@ export default function Home() {
       <input
         id="question_covid_check2_yes"
         className="initial_radios"
+        value='Yes'
         type="radio"
         name="covid_check2"
-        onClick={() => {
-          setIsTwoWeeksSince(true);
-          setContinueButton(false);
+        onClick={(e) => {
+          setIsTwoWeeksSince(e.target.value);
         }}
       ></input>
       <label className="initial_radios" htmlFor="question_covid_check2_yes">
         Yes
       </label>
       <input
-        defaultChecked
         id="question_covid_check2_no"
         className="initial_radios"
+        value='No'
         type="radio"
         name="covid_check2"
-        onClick={() => {
-          setIsTwoWeeksSince(false);
-          setContinueButton(false);
+        onClick={(e) => {
+          setIsTwoWeeksSince(e.target.value);
         }}
       ></input>
       <label className="initial_radios" htmlFor="question_covid_check2_no">
@@ -53,18 +55,7 @@ export default function Home() {
       </label>
     </fieldset>
   ) : null;
-
-  const buttonSelected =
-    isCovidPositive === true ? null : (
-      <button
-        className="button"
-        onClick={() => {
-          setContinueButton(true);
-        }}
-      >
-        Continue
-      </button>
-    );
+  
 
   return (
     <div className="container">
@@ -88,13 +79,15 @@ export default function Home() {
                 <fieldset className="radio_grp_set">
                   <legend>Have you had a positive test for COVID 19 at any time since March 1?</legend>
                   <input
+                    tabIndex="1"
                     id="question_covid_check_yes"
                     className="initial_radios"
                     type="radio"
+                    value='Yes'
                     name="covid_check"
-                    onClick={() => {
-                      setIsCovidPositive(true);
-                      setContinueButton(false);
+                    onClick={(e) => {
+                      setIsCovidPositive(e.target.value);
+                      setIsTwoWeeksSince('');
                     }}
                   ></input>
                   <label
@@ -109,10 +102,11 @@ export default function Home() {
                     id="question_covid_check_no"
                     className="initial_radios"
                     type="radio"
+                    value='No'
                     name="covid_check"
-                    onClick={() => {
-                      setIsCovidPositive(false);
-                      setContinueButton(false);
+                    onClick={(e) => {
+                      setIsCovidPositive(e.target.value);
+                      setIsTwoWeeksSince('');
                     }}
                   ></input>
                   <label
@@ -123,16 +117,23 @@ export default function Home() {
                   </label>
                 </fieldset>
                 {secondCovidQuestions}
-                <p className="error" hidden={!isCovidPositive}>
+                <div className="error_container" hidden={isTwoWeeksSince === ''}>
+                <p className="error" >
                   {endTestingText}
                 </p>
+                <p className="error_sub" >
+                  {endTestingSubText}
+                </p>
+                </div>
               </div>
             </div>
           </div>
-          <div>{buttonSelected}</div>
         </div>
       </div>
       {questionShowComponent}
+      <Link href='https://usability.yale.edu/web-accessibility/accessibility-yale'>
+        <a>Accessibility at yale</a>
+      </Link>
 
       <style jsx>{`
         .grid {

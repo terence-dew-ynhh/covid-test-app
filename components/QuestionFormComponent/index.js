@@ -26,9 +26,9 @@ const QuestionFormComponent = () => {
     treatment_facility: '',
     caregiver: ''
   });
-  const [q2end, setQ2end] = useState(false);
-  const [q3end, setQ3end] = useState(false);
-  const [q4end, setQ4end] = useState(false);
+  const [q2end, setQ2end] = useState('');
+  const [q3end, setQ3end] = useState('');
+  const [q4end, setQ4end] = useState('');
 
   function submitLog(evt) {
     evt.preventDefault();
@@ -65,14 +65,14 @@ const QuestionFormComponent = () => {
 
                     <div className="radio_row_item">
                       <input
-                        disabled={q3end || q4end}
+                        disabled={q3end === 'Yes' || q4end === 'Yes'}
                         id="yale_employee_yes"
                         type="radio"
                         value="Yes"
                         name="yale_employee"
                         onClick={(e) => {
                           handleChange(e);
-                          setQ2end(true);
+                          setQ2end(e.target.value);
                         }}
                       ></input>
                       <label
@@ -85,17 +85,16 @@ const QuestionFormComponent = () => {
 
                     <div className="radio_row_item">
                       <input
-                        disabled={q3end || q4end}
-                        defaultChecked
+                        disabled={q3end === 'Yes' || q4end === 'Yes'}
                         id="yale_employee_no"
                         type="radio"
-                        value=""
+                        value="No"
                         name="yale_employee"
                         onClick={(e) => {
                           handleChange(e);
-                          setQ2end(false);
-                          setQ3end(false);
-                          setQ4end(false);
+                          setQ2end(e.target.value);
+                          setQ3end(e.target.value);
+                          setQ4end(e.target.value);
                         }}
                       ></input>
                       <label
@@ -106,11 +105,19 @@ const QuestionFormComponent = () => {
                       </label>
                     </div>
                   </fieldset>
-                  <p className={styles.error} hidden={!q2end}>
-                    Please contact Yale Health or your personal health care
-                    provider to discuss testing and treatment.You are not
-                    eligible for this asymptomatic screening program.
-                  </p>
+                  <div
+                    className={styles.error_container}
+                    hidden={!(q2end === 'Yes')}
+                  >
+                    <p className={styles.error}>
+                      Please contact Yale Health or your personal health care
+                      provider to discuss testing and treatment.
+                    </p>
+                    <p className={styles.error_sub}>
+                      You are not eligible for this asymptomatic screening
+                      program.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -125,14 +132,14 @@ const QuestionFormComponent = () => {
 
                   <div className="radio_row_item">
                     <input
-                      disabled={q2end || q4end}
+                      disabled={q2end === 'Yes' || q4end === 'Yes'}
                       id="work_remote_chk_yes"
                       type="radio"
                       value="Yes"
                       name="work_remote"
                       onClick={(e) => {
                         handleChange(e);
-                        setQ3end(true);
+                        setQ3end(e.target.value);
                       }}
                     ></input>
                     <label
@@ -145,16 +152,15 @@ const QuestionFormComponent = () => {
 
                   <div className="radio_row_item">
                     <input
-                      disabled={q2end || q4end}
-                      defaultChecked
+                      disabled={q2end === 'Yes' || q4end === 'Yes'}
                       id="work_remote_chk_no"
                       type="radio"
-                      value=""
+                      value="No"
                       name="work_remote"
                       onClick={(e) => {
                         handleChange(e);
-                        setQ3end(false);
-                        setQ4end(false);
+                        setQ3end(e.target.value);
+                        setQ4end(e.target.value);
                       }}
                     ></input>
                     <label
@@ -165,10 +171,17 @@ const QuestionFormComponent = () => {
                     </label>
                   </div>
                 </fieldset>
-                <p className={styles.error} hidden={!q3end}>
-                  No screening needed at this time. Discuss with your supervisor
-                  if you plan to return to work on campus in the future.
-                </p>
+                <div
+                  className={styles.error_container}
+                  hidden={!(q3end === 'Yes')}
+                >
+                  <p className={styles.error}>
+                    No screening needed at this time. Discuss with your
+                    supervisor if you plan to return to work on campus in the
+                    future.
+                  </p>
+                  <p className={styles.error_sub}></p>
+                </div>
               </div>
             </div>
 
@@ -183,14 +196,14 @@ const QuestionFormComponent = () => {
 
                   <div className="radio_row_item">
                     <input
-                      disabled={q2end || q3end}
+                      disabled={q2end === 'Yes' || q3end === 'Yes'}
                       id="health_care_yes"
                       type="radio"
                       value="Yes"
                       name="health_care"
                       onClick={(e) => {
                         handleChange(e);
-                        setQ4end(true);
+                        setQ4end(e.target.value);
                       }}
                     ></input>
                     <label className={styles.label} htmlFor="health_care_yes">
@@ -200,15 +213,14 @@ const QuestionFormComponent = () => {
 
                   <div className="radio_row_item">
                     <input
-                      defaultChecked
-                      disabled={q2end || q3end}
+                      disabled={q2end === 'Yes' || q3end === 'Yes'}
                       id="health_care_no"
                       type="radio"
-                      value=""
+                      value="No"
                       name="health_care"
                       onClick={(e) => {
                         handleChange(e);
-                        setQ4end(false);
+                        setQ4end(e.target.value);
                       }}
                     ></input>
                     <label className={styles.label} htmlFor="health_care_no">
@@ -216,15 +228,22 @@ const QuestionFormComponent = () => {
                     </label>
                   </div>
                 </fieldset>
-                <p className={styles.error} hidden={!q4end}>
-                No screening needed at this time. Discuss with your supervisor
-                  if you plan to return to work on campus in the future.{' '}
-                </p>
+                <div
+                  className={styles.error_container}
+                  hidden={!(q4end === 'Yes')}
+                >
+                  <p className={styles.error}>
+                    No screening needed at this time. Discuss with your
+                    supervisor if you plan to return to work on campus in the
+                    future.
+                  </p>
+                  <p className={styles.error_sub}></p>
+                </div>
               </div>
             </div>
             <Link href="/scheduling">
               <button
-                hidden={q4end || q2end || q3end}
+                hidden={!(q4end === 'No') || !(q2end === 'No') || !   (q3end === 'No')}
                 type="submit"
                 form="patient-form"
                 className={styles.submitbutton}

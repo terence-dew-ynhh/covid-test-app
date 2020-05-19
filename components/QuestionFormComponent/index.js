@@ -92,10 +92,6 @@ const QuestionFormComponent = () => {
                   <div className="select-wrapper">
                     <select disabled={isCovidPositive} className="select">
                       <option value="value1">Yale New Haven Hospital</option>
-                      <option value="value1">Bridgeport Hospital</option>
-                      <option value="value2">Greenwich Hospital</option>
-                      <option value="value3">L&M Hospital</option>
-                      <option value="value3">Westerly</option>
                     </select>
                   </div>
                 </fieldset>

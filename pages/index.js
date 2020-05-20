@@ -22,13 +22,18 @@ export default function Home() {
       </Head>
 
         <div className="loading_container">
-          <h1>Loading...</h1>        
+        <img src="/YHlogo_color.png"></img>
+        <span className="divider"></span>
+        <h1 className="loading_h1">Loading...</h1>        
         </div>
 
       <style jsx>{`
       .container{
         height: 100vh;
         width: 100%;
+      }
+      .loading_h1{
+        text-align: center;
       }
       .loading_container{
           height: 100%;

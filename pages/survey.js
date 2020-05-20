@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import QuestionFormComponent from '../components/QuestionFormComponent';
 
-export default function Home() {
+export default function Survey() {
   const [isCovidPositive, setIsCovidPositive] = useState('');
   const [isTwoWeeksSince, setIsTwoWeeksSince] = useState('');
 
@@ -129,8 +129,8 @@ export default function Home() {
         </div>
       </div>
       {questionShowComponent}
-      <Link href='https://usability.yale.edu/web-accessibility/accessibility-yale'>
-        <a>Accessibility at yale</a>
+      <Link href='/faq'>
+        <a>FAQs</a>
       </Link>
 
       <style jsx>{`

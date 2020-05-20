@@ -4,7 +4,7 @@ import ErrorMessageComponent from "../components/ErrorMessageComponent";
 
 export default function Home() {
   return (
-    <div className="container">
+    <>
       <Head>
         <title>YNHH COVID-19 Test Scheduler</title>
         <link rel="icon" href="/favicon.ico" />
@@ -14,7 +14,7 @@ export default function Home() {
         </img><span className="divider"></span>
         
       <div className="scheduleContainer">
-  <iframe id="openSchedulingFrame" className="widgetframe" scrolling="no" src="https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=78061,78102&vt=2102&dept=101010165&view=plain&public=1"></iframe>
+  <iframe id="openSchedulingFrame" className="widgetframe" scrolling="yes" src="https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=78061,78102&vt=2102&dept=101010165&view=plain&public=1"></iframe>
     </div>
       <style jsx>{`
         .scheduleContainer, iframe{
@@ -26,6 +26,6 @@ export default function Home() {
           border:none;
         }
       `}</style>
-    </div>
+    </>
   )
 }

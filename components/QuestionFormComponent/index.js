@@ -5,23 +5,9 @@ import styles from './QuestionFormComponent.module.css';
 const QuestionFormComponent = () => {
   const [isCovidPositive, setIsCovidPositive] = useState(false);
   const [patientData, setPatientData] = useState({
-    age_range: '',
-    fever_higher: '',
-    cough: '',
-    diff_breath: '',
-    asthma_lung: '',
-    diabetes: '',
-    obesity: '',
-    cirrhosis: '',
-    pregnancy: '',
-    heart_cond: '',
-    diseases_cough: '',
-    kidney_failure: '',
-    immune_system: '',
-    nursing_home: '',
-    health_care: '',
-    treatment_facility: '',
-    caregiver: ''
+    prev_pos_test: '',
+    location: '',
+
   });
 
   function submitLog(evt) {

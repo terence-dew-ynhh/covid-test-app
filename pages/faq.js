@@ -10,7 +10,6 @@ export default function FAQ() {
   
 
   return (
-    <>
     <div className="container">
       <Head>
         <title>Yale COVID-19 Test Scheduler</title>
@@ -25,9 +24,11 @@ export default function FAQ() {
                        
             <h2>Frequently Asked Questions</h2>
             <h3>YNHHS COVID screening</h3>
+            
             <p><b>Q:</b>Is this testing mandatory?<br></br>
             <b>A:</b>No.  Employees are provided the option to be tested.  Testing is not required at this time.
             </p>
+
             <p><b>Q:</b>Who is eligible to participate in the testing?<br></br>
             <b>A:</b>Eventually, our goal is to offer testing to anyone who works at YNHHS/YM and our affiliate sites. 
              As we work toward that goal, eligible areas will be added in phases.  
@@ -37,7 +38,8 @@ export default function FAQ() {
              
             <p><b>Q:</b>	If I tested positive in the past should I be tested again?<br></br>
             <b>A:</b>If you have already tested positive for COVID19, you should not be tested again for at least 6 weeks.
-            
+            </p>
+
             <p><b>Q:</b>If I have tested negative in the past can I be tested again at this time?
             <br></br>
             <b>A:</b> If you’ve been tested at all in the past 4 weeks, you should not be retested at this time.
@@ -60,14 +62,17 @@ export default function FAQ() {
             <p><b>Q:</b>Will I be charged a copay or fee for this test?<br></br>
             <b>A:</b>	There will be no out of pocket expense for the employee.
             </p>
+
             <p><b>Q:</b>How long will it take to receive my results?<br></br>
             <b>A:</b>Results will be typically be available within 24 hours from sample collection. 
             </p>
+
             <p><b>Q:</b>How will I find out my results?<br></br>
-            <b>A:</b>All results will be shared with you through MyChart.  Employees will be prompted to activate a MyChart account after scheduling an appointment.  If you are still unable to access MyChart, you can call Occupational Health at the Call Center for results ((203) 688-1700 and select option #2 Occupational Health after selecting a language)).  
+            <b>A:</b>All results will be shared with you through MyChart.  Employees will be prompted to activate a MyChart account after scheduling an appointment.  If you are still unable to access MyChart, you can call Occupational Health at the Call Center for results (203) 688-1700 and select option #2 Occupational Health after selecting a language.  
             Please wait at least 12 hours after sample collection to inquire about results.<br></br>
             Additionally, clinician’s from the Occupational Health Call Center will contact employees with positive results by phone.  
             </p>
+
             <p><b>Q:</b>If I test positive what are the next steps?<br></br>
             <b>A:</b>	If you receive a positive result notification while at work, you must leave the hospital/other workplace and notify your supervisor. 
             An Occupational Health clinician will be contacting you to review home isolation guidelines and provide information on when you will be able to return to work.<br></br>
@@ -79,13 +84,16 @@ export default function FAQ() {
             <p><b>Q:</b>If I test positive how long will I be required to be out of work?<br></br>
             <b>A:</b>Occupational Health will advise employees who test positive regarding work status on a case by case basis.
             </p>
+
             <p><b>Q:</b>If I test positive and have to be out of work how will I be paid?<br></br>
             Employees will be paid their regular scheduled hours while out of work after screening positive. 
              Employees will not have to use PTO.
             </p>
+
             <p><b>Q:</b>If I test positive is my immediate family eligible to be tested?<br></br>
             <b>A:</b>Screening is only available to YNHHS/ YM employees at this time. Immediate family members will be tested according to the public testing protocols.  
             </p>
+
             <p><b>Q:</b>If I test negative and then develop symptoms how long should I wait to be retested?<br></br>
             <b>A:</b>	If you are experiencing any symptoms while at work, you must leave the hospital/other workplace and notify your supervisor.
              Contact Occupational Health via the Call Center to be evaluated.<br></br>
@@ -134,6 +142,5 @@ export default function FAQ() {
 
       `}</style>
     </div>
-    </>
   );
 }

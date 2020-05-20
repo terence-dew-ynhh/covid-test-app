@@ -2,15 +2,18 @@ import React, { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import QuestionFormComponent from '../components/QuestionFormComponent';
+import {parseCookies, logInfo} from './utils/actions';
+import Cookie from 'js-cookie'
 
 export default function Survey() {
   const [isCovidPositive, setIsCovidPositive] = useState('');
   const [isTwoWeeksSince, setIsTwoWeeksSince] = useState('');
+  
 
   const questionShowComponent =
     (isCovidPositive === 'No')
     ? (
-      <QuestionFormComponent />
+      <QuestionFormComponent casUser={user} />
     ) : null;
 
     
@@ -227,3 +230,10 @@ export default function Survey() {
     </div>
   );
 }
+
+Home.getInitialProps = ({req}) =>{
+  const cookies = parseCookies(req);
+  return{
+    user: cookies.token
+  }
+} 

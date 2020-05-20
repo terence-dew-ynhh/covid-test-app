@@ -1,6 +1,6 @@
 import axios from 'axios';
 import BASE_URL from './constants';
-import Router from "next/router";
+import Router from 'next/router'
 import cookie from 'cookie';
 
 function parseCookies (req){
@@ -8,13 +8,14 @@ function parseCookies (req){
 }
 
 function logInfo (payload) {
-
-  axios.post(`${BASE_URL}/api/statistics/`, JSON.stringify(payload))
+  axios.post(`/api/log`, payload)
     .then((response) => {
-      console.log(response.data);
-      Router.push('/scheduling');      
+      console.log(response.data);      
     })
     .catch((err) => err);
+
+    Router.push('/scheduling');  
+    
 };
 
 export { logInfo, parseCookies };

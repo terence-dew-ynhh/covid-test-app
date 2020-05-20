@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import QuestionFormComponent from '../components/QuestionFormComponent';
-import {parseCookies, logInfo} from './utils/actions';
+import {parseCookies, logInfo} from '../utils/actions';
 import Cookie from 'js-cookie'
 
-export default function Survey() {
+export default function Survey({user}) {
   const [isCovidPositive, setIsCovidPositive] = useState('');
   const [isTwoWeeksSince, setIsTwoWeeksSince] = useState('');
   
@@ -71,9 +71,11 @@ export default function Survey() {
       <span className="divider"></span>
 
       <h1 className="title">
-       See if you qualify for coronavirus (COVID 19) screening
-      </h1>
-
+       See if you qualify for coronavirus (COVID 19) screening      
+       </h1>
+      <Link href='/faq'>
+        <a>Covid Testing FAQ</a>
+      </Link>
       <div className="grid">
         <div className="grid_subcontainer">
           <div className="question_div">
@@ -132,9 +134,7 @@ export default function Survey() {
         </div>
       </div>
       {questionShowComponent}
-      <Link href='/faq'>
-        <a>FAQs</a>
-      </Link>
+
 
       <style jsx>{`
         .grid {
@@ -231,7 +231,7 @@ export default function Survey() {
   );
 }
 
-Home.getInitialProps = ({req}) =>{
+Survey.getInitialProps = ({req}) =>{
   const cookies = parseCookies(req);
   return{
     user: cookies.token

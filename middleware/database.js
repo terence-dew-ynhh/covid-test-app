@@ -1,10 +1,5 @@
-import { MongoClient } from 'mongodb';
 import nextConnect from 'next-connect';
 
-const client = new MongoClient('mongodb://spinup-00115d.spinup.yale.edu:27017', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
 
 async function database(req, res, next) {
   if (!client.isConnected()) await client.connect();

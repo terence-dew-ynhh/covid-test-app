@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import styles from './QuestionFormComponent.module.css';
-import {logInfo} from '../../pages/utils/actions';
+import {logInfo} from '../../utils/actions';
 import { Router } from 'next/router';
 
 
@@ -229,7 +229,7 @@ const QuestionFormComponent = ({casUser}) => {
             </div>
 
               <button
-                hidden={!(q4end === 'No') && !(q2end === 'No') && !(q3end === 'No')}
+                hidden={!(q4end === 'No' && q2end === 'No' && q3end === 'No')}
                 type="submit"
                 form="patient-form"
                 className={styles.submitbutton}

@@ -13,9 +13,7 @@ export default function Scheduling() {
         <img src="/YHlogo_color.png"></img>
         <span className="divider"></span>
         
-      <div className="scheduleContainer">
   <iframe id="openSchedulingFrame" className="widgetframe" scrolling="yes" src="https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?vt=2215&dept=601010040,601010041&view=plain&public=1"></iframe>
-    </div>
       <style jsx>{`
         .scheduleContainer, iframe{
           width: 100%;

@@ -10,7 +10,7 @@ function parseCookies (req){
 function logInfo (payload) {
   axios.post(`/api/log`, payload)
     .then((response) => {
-      console.log(response.data);      
+      // console.log(response.data);      
     })
     .catch((err) => err);
 

@@ -4,6 +4,7 @@ import styles from './QuestionFormComponent.module.css';
 
 const QuestionFormComponent = () => {
   const [isCovidPositive, setIsCovidPositive] = useState(false);
+  const [hasSymptoms, setHasSymptoms] = useState('');
   const [patientData, setPatientData] = useState({
     prev_pos_test: '',
     location: '',
@@ -15,11 +16,87 @@ const QuestionFormComponent = () => {
     logInfo(patientData);
   }
 
+  const handleChecked = (e) => {
+
+      if(e.target.id === 'prev_covid_none_of_the_above' && e.target.checked === true){
+        
+        checkboxesArray.forEach(element => {
+        if(!(element === 'None_of_the_Above')){
+          let symtomsChk = document.getElementById(`prev_covid_${element.toLowerCase()}`);
+          symtomsChk.checked = false;
+          symtomsChk.disabled = true;          
+        }
+        });
+        setHasSymptoms('No');
+      }else{
+        checkboxesArray.forEach(element => {
+          let symtomsChk = document.getElementById(`prev_covid_${element.toLowerCase()}`);
+          symtomsChk.disabled = false;
+          });
+          setHasSymptoms('');
+      }
+
+      // If any of the boxes are checked beside None of the Above
+    
+      if(!(e.target.id === 'prev_covid_none_of_the_above')){
+        let shouldDisable = false;
+
+        checkboxesArray.forEach(element => {
+        let symptom = document.getElementById(`prev_covid_${element.toLowerCase()}`);
+        if(symptom.checked === true){
+          shouldDisable = true;
+        }
+      });
+
+        let noneChk = document.getElementById(`prev_covid_none_of_the_above`);
+        if(shouldDisable){
+          noneChk.checked = false;
+          noneChk.disabled = true;
+          setHasSymptoms('Yes');
+        }else{
+          noneChk.disabled = false;
+          setHasSymptoms('');
+        }
+        
+      } 
+  
+  }
+
   const handleChange = (e) => {
     let value = patientData[e.target.name] === 'Yes' ? '' : e.target.value;
 
     setPatientData({ ...patientData, [e.target.name]: value });
   };
+
+  let checkboxesArray = ['Fever', 'Vomiting', 'Diarrhea', 'Cough', 'Shortness_of_Breath', 'Body_Aches', 'Fatigue', 'Nausea', 'Headaches', 'Sore_throat', 'None_of_the_Above'];
+  const regex = /_/gi;
+  let checkboxes = checkboxesArray.map((checkbox, idx) =>
+  
+  checkbox === 'None_of_the_Above'
+  ?<div className="chk_row_item">
+  <input
+    id={`prev_covid_${checkbox.toLowerCase()}`}
+    type="checkbox"
+    key={checkbox.replace(regex,' ')}
+    value={checkbox.replace(regex,' ')}
+    name="symptoms"
+    onChange={(e) => {handleChecked(e)}}
+  ></input>
+  <label htmlFor={`prev_covid_${checkbox.toLowerCase()}`}>{checkbox.replace(regex,' ')}</label>
+  </div> 
+
+  : <div className="chk_row_item">
+  <input
+    id={`prev_covid_${checkbox.toLowerCase()}`}
+    key={checkbox.replace(regex,' ')}
+    type="checkbox"
+    value={checkbox.replace(regex,' ')}
+    name="symptoms"
+    onChange={(e) => {handleChecked(e)}}
+  ></input>
+  <label htmlFor={`prev_covid_${checkbox.toLowerCase()}`}>{checkbox.replace(regex,' ')}</label>
+  </div>
+  )
 
   return (
     <>
@@ -68,6 +145,21 @@ const QuestionFormComponent = () => {
                 </div>
                 <p className="error" hidden={!isCovidPositive}>Unfortunately retesting is currently not recommended</p>
               </div>
+              <div className={styles.question_row_item}>
+                <div className={styles.question_row_item_sub}>
+                  <fieldset>
+                    <legend>
+                    Select any of the following symptoms that you are currently experiencing
+                    </legend>
+                    <div className={styles.q1_grid}>
+                    {checkboxes}
+                    </div>
+                  </fieldset>
+                </div>
+                <p className="error" hidden={!(hasSymptoms === 'Yes')}>If you are at work, notify your manager and leave work.  
+                If you are home, stay home.  Please call Occupational Health to be screened and tested today at the 
+                COVID-19 Call Center at 203-688-1700. Please select a language then option 2 to speak with occupational health.</p>
+              </div>
             </div>
             <span className={styles.divider}></span>
             <div className={styles.question_row_item}>
@@ -85,7 +177,7 @@ const QuestionFormComponent = () => {
             </div>
             <div className={styles.question_row_item}>
               <div className={styles.question_row_item_sub}>
-            <button disabled={isCovidPositive} type="submit" form="patient-form" className="button">
+            <button hidden={!((isCovidPositive === false) && hasSymptoms === 'No')} type="submit" form="patient-form" className="button">
               Select Date and Time
             </button>
             </div>

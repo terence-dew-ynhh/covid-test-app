@@ -14,7 +14,8 @@
 }
 
 .question_row_item{
-padding: 25px 35px; 
+padding: 25px 35px;
+width: 90%; 
 }
 
 .question_input_txt{
@@ -45,17 +46,17 @@ margin: 20px 0;
 }
 
 .q1_grid{
-display: -ms-grid;
-display: grid;
-width: 85%;
--ms-grid-columns: (1fr)[2];
-grid-template-columns: repeat(2, 1fr);
--ms-grid-rows: auto 1em auto 1em auto 1em auto 1em auto;
-grid-template-rows: repeat(5, auto);
-row-gap: 1em;
-margin-top: 20px;
-
-}
+    display: -ms-grid;
+    display: grid;
+    width: 85%;
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2, 1fr);
+    -ms-grid-rows: auto 1em auto 1em auto 1em auto 1em auto 1em auto;
+    grid-template-rows: repeat(6, auto);
+    row-gap: 1em;
+    margin-top: 20px;
+    
+    }
 
 .q1_grid > *:nth-child(1){
     -ms-grid-row: 1;
@@ -114,6 +115,12 @@ margin-top: 20px;
 .q1_grid > *:nth-child(10){
     -ms-grid-row: 9;
     -ms-grid-column: 2;
+
+}
+
+.q1_grid > *:nth-child(11){
+    -ms-grid-row: 11;
+    -ms-grid-column: 1;
 
 }
 

@@ -143,7 +143,7 @@ const QuestionFormComponent = () => {
                     </div>
                   </fieldset>
                 </div>
-                <p className="error" hidden={!isCovidPositive}>Unfortunately retesting is currently not recommended</p>
+                <p className="error" hidden={!isCovidPositive}>Those that have previously tested positive are currently not eligible for COVID-19 screening.</p>
               </div>
               <div className={styles.question_row_item}>
                 <div className={styles.question_row_item_sub}>

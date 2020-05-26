@@ -161,20 +161,6 @@ const QuestionFormComponent = () => {
                 COVID-19 Call Center at 203-688-1700. Please select a language then option 2 to speak with occupational health.</p>
               </div>
             </div>
-            <span className={styles.divider}></span>
-            <div className={styles.question_row_item}>
-              <div className={styles.question_row_item_sub}>
-                <fieldset>
-                  <legend>What is your preferred collection location?</legend>
-
-                  <div className="select-wrapper">
-                    <select disabled={isCovidPositive} className="select">
-                      <option value="value1">Yale New Haven Hospital</option>
-                    </select>
-                  </div>
-                </fieldset>
-              </div>
-            </div>
             <div className={styles.question_row_item}>
               <div className={styles.question_row_item_sub}>
             <button hidden={!((isCovidPositive === false) && hasSymptoms === 'No')} type="submit" form="patient-form" className="button">

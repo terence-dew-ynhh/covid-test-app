@@ -79,7 +79,7 @@ fieldset {
 
 .question_row_item,
 .question_div {
-  padding: 25px 35px;
+  padding: 25px 2%;
 }
 .error{
   color:red;

@@ -20,8 +20,8 @@
   "devDependencies": {},
   "scripts": {
     "build": "next build",
-    "dev": "node server/server.js",
-    "start": "node server/server.js"
+    "dev": "node server/app.js",
+    "start": "node server/app.js"
   },
   "repository": {
     "type": "git",

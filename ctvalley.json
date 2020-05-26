@@ -1,0 +1,9 @@
+{
+    "apps": [
+        {
+            "name": "ctvalley-app",
+            "script": "npm",
+            "args" : "start"
+        }
+    ]
+}

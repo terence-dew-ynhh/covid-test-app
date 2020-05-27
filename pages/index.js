@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Head from "next/head";
 import QuestionFormComponent from "../components/QuestionFormComponent";
+import Link from "next/link";
 
 export default function Home() {
   const [isEmployee, setIsEmployee] = useState(true);
@@ -32,7 +33,7 @@ export default function Home() {
 
                   <div className="select-wrapper">
                     <select className="select">
-                      <option value="value1">Yale New Haven Hospital</option>
+                      <option value="value1">Connecticut Valley Hospital</option>
                     </select>
                   </div>
                 </fieldset>
@@ -40,11 +41,14 @@ export default function Home() {
                 </div>
             </div>
             <div>
-            <button onClick={()=>setContinueButton(true)} className="button">Continue</button>                
+              <Link href="/scheduling">
+            {/* <button onClick={()=>setContinueButton(true)} className="button">Continue</button>  */}
+            <button className="button">Continue</button> 
+            </Link>               
             </div>
           </div>
         </div>
-        {questionShowComponent}
+        {/* {questionShowComponent} */}
       <style jsx>{`        
         .grid {
           display: -webkit-box;

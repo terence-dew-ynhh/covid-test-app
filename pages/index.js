@@ -16,22 +16,13 @@ export default function Home() {
   return (
     <div className="container">
       <Head>
-        <title>YNHH COVID-19 Test Scheduler</title>
+        <title>CVH COVID-19 Test Scheduler</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
           <img src="/YNHHSLogo.png"></img>
           <span className="divider"></span>
-
-        <h1 className="title">
-          See if you qualify for coronavirus (COVID-19) testing
-        </h1>
-
-        <p className="description">
-          Test supplies are extremely limited. Help those who need testing the
-          most by answering truthfully.
-        </p>
-
+        
         <div className="grid">
           <div className="grid_subcontainer">
             <div className="question_div">

@@ -1,0 +1,9 @@
+{
+    "apps": [
+        {
+            "name": "occuhealth-app",
+            "script": "npm",
+            "args" : "start"
+        }
+    ]
+}

@@ -108,6 +108,8 @@ const QuestionFormComponent = () => {
     'Nausea',
     'Headaches',
     'Sore_throat',
+    'New loss of taste or smell',
+    'Congestion or runny nose',    
     'None_of_the_Above'
   ];
   const regex = /_/gi;

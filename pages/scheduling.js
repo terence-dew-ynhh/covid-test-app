@@ -46,7 +46,7 @@ Home.getInitialProps = async ({ query }) => {
     {
       name: 'Bridgeport Hospital',
       link:
-        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=78404&vt=2102&dept=103010111&view=plain&public=1'
+        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=78404,78810&vt=2102&dept=103010111,103010111&view=plain&public=1'
     },
     {
       name: 'Bridgeport Hospital - MC',

@@ -27,10 +27,6 @@ export default function Home() {
           See if you qualify for coronavirus (COVID-19) testing
         </h1>
 
-        <p className="description">
-          Test supplies are extremely limited. Help those who need testing the
-          most by answering truthfully.
-        </p>
 
         <div className="grid">
           <div className="grid_subcontainer">

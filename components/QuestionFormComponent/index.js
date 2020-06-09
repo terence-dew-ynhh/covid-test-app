@@ -82,7 +82,8 @@ const QuestionFormComponent = () => {
     'Lawrence - Memorial Hospital',
     'Westerly Hospital',
     'Yale New Haven Hospital - SRC',
-    'Yale New Haven Hospital - YSC'
+    'Yale New Haven Hospital - YSC',
+    'Off Campus Mass Testing Site'
   ];
 
   const locationOptions = locationMapping.map((option, idx) => (

@@ -210,7 +210,7 @@ const QuestionFormComponent = () => {
                 <div className={styles.question_row_item_sub}>
                   <fieldset>
                     <legend>
-                      Select any of the following symptoms that you are
+                      <b>Required Question: </b>Select any of the following symptoms that you are
                       currently experiencing
                     </legend>
                     <div className={styles.q1_grid}>{checkboxes}</div>

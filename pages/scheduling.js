@@ -56,7 +56,7 @@ Home.getInitialProps = async ({ query }) => {
     {
       name: 'Greenwich Hospital',
       link:
-        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=78403&vt=2102&dept=104010088&view=plain&public=1'
+        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=78403,78920&vt=2102&dept=104010088&view=plain&public=1'
     },
     {
       name: 'Lawrence - Memorial Hospital',

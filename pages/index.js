@@ -1,18 +1,30 @@
 import React, { useState } from "react";
 import Head from "next/head";
 import QuestionFormComponent from "../components/QuestionFormComponent";
-import Link from "next/link";
+import {useRouter} from "next/router";
 
 export default function Home() {
   const [isEmployee, setIsEmployee] = useState(true);
   const [continueButton, setContinueButton] = useState(false);
+  const [location, setLocation] = useState("Bridgeport Hospital Testing Tent")
 
+  const router = useRouter()
+  
+  const submitLocation = () =>{
+    
+    router.push(`/scheduling?endpoint=${location}`,'/schedule-testing')
+    
+  } 
   const questionShowComponent =
     (isEmployee && continueButton) ? (
       <QuestionFormComponent />
     ) : null;
 
+  const locationArr = ["Bridgeport Hospital Testing Tent","Connecticut Valley Hospital"]
+                      .map( location => <option key={location} value={location}>{location}</option>);
+
   
+
 
   return (
     <div className="container">
@@ -32,8 +44,8 @@ export default function Home() {
                   <legend>What is your preferred collection location?</legend>
 
                   <div className="select-wrapper">
-                    <select className="select">
-                      <option value="value1">Connecticut Valley Hospital</option>
+                    <select onChange={(e)=> setLocation(e.target.value) } className="select">
+                      {locationArr}
                     </select>
                   </div>
                 </fieldset>
@@ -41,10 +53,9 @@ export default function Home() {
                 </div>
             </div>
             <div>
-              <Link href="/scheduling">
+
             {/* <button onClick={()=>setContinueButton(true)} className="button">Continue</button>  */}
-            <button className="button">Continue</button> 
-            </Link>               
+            <button onClick={()=> submitLocation()} className="button">Continue</button> 
             </div>
           </div>
         </div>

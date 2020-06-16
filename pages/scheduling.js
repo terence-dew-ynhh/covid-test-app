@@ -81,7 +81,7 @@ Home.getInitialProps = async ({ query }) => {
     {
       name: 'Off Campus Mass Testing Site',
       link:
-        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=78866,79098,79099&vt=2102&dept=100001318&view=plain&public=1'
+        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=78866,79098,79099,79104,79110,79116&vt=2102&dept=100001318&view=plain&public=1'
     }
   ];
 

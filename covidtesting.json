@@ -1,7 +1,7 @@
 {
     "apps": [
         {
-            "name": "ctvalley-app",
+            "name": "covidtesting-app",
             "script": "npm",
             "args" : "start"
         }

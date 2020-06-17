@@ -6,7 +6,7 @@ import {useRouter} from "next/router";
 export default function Home() {
   const [isEmployee, setIsEmployee] = useState(true);
   const [continueButton, setContinueButton] = useState(false);
-  const [location, setLocation] = useState("Bridgeport Hospital Testing Tent")
+  const [location, setLocation] = useState("Placeholder")
 
   const router = useRouter()
   
@@ -45,7 +45,7 @@ export default function Home() {
 
                   <div className="select-wrapper">
                     <select onChange={(e)=> setLocation(e.target.value) } className="select">
-                      {locationArr}
+                      {/* {locationArr} */}
                     </select>
                   </div>
                 </fieldset>

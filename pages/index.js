@@ -12,7 +12,7 @@ export default function Home() {
   
   const submitLocation = () =>{
     
-    router.push(`/scheduling?endpoint=${location}`,'/schedule-testing')
+    router.push(`/scheduling`,'/schedule-testing')
     
   } 
   const questionShowComponent =
@@ -20,7 +20,7 @@ export default function Home() {
       <QuestionFormComponent />
     ) : null;
 
-  const locationArr = ["Bridgeport Hospital Testing Tent","Connecticut Valley Hospital"]
+  const locationArr = ["Currently No Location"]
                       .map( location => <option key={location} value={location}>{location}</option>);
 
   
@@ -45,7 +45,7 @@ export default function Home() {
 
                   <div className="select-wrapper">
                     <select onChange={(e)=> setLocation(e.target.value) } className="select">
-                      {/* {locationArr} */}
+                      {locationArr}
                     </select>
                   </div>
                 </fieldset>

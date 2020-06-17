@@ -1,8 +1,7 @@
-import Head from 'next/head'
-import ErrorMessageComponent from "../components/ErrorMessageComponent";
+import Head from 'next/head';
+import ErrorMessageComponent from '../components/ErrorMessageComponent';
 
-
-export default function Home({link}) {
+export default function Home({ link }) {
   return (
     <>
       <Head>
@@ -10,24 +9,30 @@ export default function Home({link}) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-        <img src="/YNHHSLogo.png">
-        </img><span className="divider"></span>
-        
+      <img src="/YNHHSLogo.png"></img>
+      <span className="divider"></span>
+
       <div className="scheduleContainer">
-  <iframe id="openSchedulingFrame" className="widgetframe" scrolling="yes" src={link}></iframe>
-    </div>
+        <iframe
+          id="openSchedulingFrame"
+          className="widgetframe"
+          scrolling="yes"
+          src={link}
+        ></iframe>
+      </div>
       <style jsx>{`
-        .scheduleContainer, iframe{
+        .scheduleContainer,
+        iframe {
           width: 100%;
           height: 100vh;
-          display:flex;
+          display: flex;
           align-items: center;
           justify-items: center;
-          border:none;
+          border: none;
         }
       `}</style>
     </>
-  )
+  );
 }
 
 // Home.getInitialProps = async ({ query }) => {

@@ -1,30 +1,26 @@
-import React, { useState } from "react";
-import Head from "next/head";
-import QuestionFormComponent from "../components/QuestionFormComponent";
-import {useRouter} from "next/router";
+import React, { useState } from 'react';
+import Head from 'next/head';
+import QuestionFormComponent from '../components/QuestionFormComponent';
+import { useRouter } from 'next/router';
 
 export default function Home() {
   const [isEmployee, setIsEmployee] = useState(true);
   const [continueButton, setContinueButton] = useState(false);
-  const [location, setLocation] = useState("Placeholder")
+  const [location, setLocation] = useState('Placeholder');
 
-  const router = useRouter()
-  
-  const submitLocation = () =>{
-    
-    router.push(`/scheduling`,'/schedule-testing')
-    
-  } 
+  const router = useRouter();
+
+  const submitLocation = () => {
+    router.push(`/scheduling`, '/schedule-testing');
+  };
   const questionShowComponent =
-    (isEmployee && continueButton) ? (
-      <QuestionFormComponent />
-    ) : null;
+    isEmployee && continueButton ? <QuestionFormComponent /> : null;
 
-  const locationArr = ["Currently No Location"]
-                      .map( location => <option key={location} value={location}>{location}</option>);
-
-  
-
+  const locationArr = ['Currently No Location'].map((location) => (
+    <option key={location} value={location}>
+      {location}
+    </option>
+  ));
 
   return (
     <div className="container">
@@ -33,48 +29,54 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-          <img src="/YNHHSLogo.png"></img>
-          <span className="divider"></span>
-        
-        <div className="grid">
-          <div className="grid_subcontainer">
-            <div className="question_div">
-                <div className="radio_grp">
-                <fieldset>
-                  <legend>What is your preferred collection location?</legend>
+      <img src="/YNHHSLogo.png"></img>
+      <span className="divider"></span>
 
-                  <div className="select-wrapper">
-                    <select onChange={(e)=> setLocation(e.target.value) } className="select">
-                      {locationArr}
-                    </select>
-                  </div>
-                </fieldset>
-                  <p className="error" hidden={isEmployee}>Sorry, please navigate to a public testing website to schedule your test</p>
+      <div className="grid">
+        <div className="grid_subcontainer">
+          <div className="question_div">
+            <div className="radio_grp">
+              <fieldset>
+                <legend>What is your preferred collection location?</legend>
+
+                <div className="select-wrapper">
+                  <select
+                    onChange={(e) => setLocation(e.target.value)}
+                    className="select"
+                  >
+                    {locationArr}
+                  </select>
                 </div>
-            </div>
-            <div>
-
-            {/* <button onClick={()=>setContinueButton(true)} className="button">Continue</button>  */}
-            <button onClick={()=> submitLocation()} className="button">Continue</button> 
+              </fieldset>
+              <p className="error" hidden={isEmployee}>
+                Sorry, please navigate to a public testing website to schedule
+                your test
+              </p>
             </div>
           </div>
+          <div>
+            <button onClick={() => submitLocation()} className="button">
+              Continue
+            </button>
+          </div>
         </div>
-        {/* {questionShowComponent} */}
-      <style jsx>{`        
+      </div>
+      {/* {questionShowComponent} */}
+      <style jsx>{`
         .grid {
           display: -webkit-box;
           display: -ms-flexbox;
           display: flex;
           -webkit-box-align: center;
-              -ms-flex-align: center;
-                  align-items: center;
+          -ms-flex-align: center;
+          align-items: center;
           -webkit-box-pack: center;
-              -ms-flex-pack: center;
-                  justify-content: center;
+          -ms-flex-pack: center;
+          justify-content: center;
           -webkit-box-orient: vertical;
           -webkit-box-direction: normal;
-              -ms-flex-direction: column;
-                  flex-direction: column;
+          -ms-flex-direction: column;
+          flex-direction: column;
           color: white;
           width: 100%;
           margin-top: 3rem;
@@ -86,28 +88,28 @@ export default function Home() {
           display: -ms-flexbox;
           display: flex;
           -webkit-box-pack: center;
-              -ms-flex-pack: center;
-                  justify-content: center;
+          -ms-flex-pack: center;
+          justify-content: center;
           -webkit-box-orient: vertical;
           -webkit-box-direction: normal;
-              -ms-flex-direction: column;
-                  flex-direction: column;
+          -ms-flex-direction: column;
+          flex-direction: column;
         }
         .question_div {
           display: -webkit-box;
           display: -ms-flexbox;
           display: flex;
           -webkit-box-align: start;
-              -ms-flex-align: start;
-                  align-items: flex-start;
+          -ms-flex-align: start;
+          align-items: flex-start;
           -webkit-box-pack: start;
-              -ms-flex-pack: start;
-                  justify-content: flex-start;
+          -ms-flex-pack: start;
+          justify-content: flex-start;
           margin: 0 0 3% 0;
           -webkit-box-orient: horizontal;
           -webkit-box-direction: normal;
-              -ms-flex-direction: row;
-                  flex-direction: row;
+          -ms-flex-direction: row;
+          flex-direction: row;
           width: 100%;
         }
         .age_check,
@@ -116,15 +118,15 @@ export default function Home() {
           display: -ms-flexbox;
           display: flex;
           -webkit-box-align: start;
-              -ms-flex-align: start;
-                  align-items: flex-start;
+          -ms-flex-align: start;
+          align-items: flex-start;
           -webkit-box-pack: center;
-              -ms-flex-pack: center;
-                  justify-content: center;
+          -ms-flex-pack: center;
+          justify-content: center;
           -webkit-box-orient: vertical;
           -webkit-box-direction: normal;
-              -ms-flex-direction: column;
-                  flex-direction: column;
+          -ms-flex-direction: column;
+          flex-direction: column;
         }
         .div_hide {
           display: none;
@@ -143,8 +145,8 @@ export default function Home() {
             width: 100%;
             -webkit-box-orient: vertical;
             -webkit-box-direction: normal;
-                -ms-flex-direction: column;
-                    flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
           }
         }
       `}</style>

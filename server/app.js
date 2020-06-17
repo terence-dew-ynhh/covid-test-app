@@ -27,13 +27,13 @@ app
     server.use('/', router);
     server.get('*', (req, res) => handle(req, res));
 
-    httpServer.listen(port, err => {
+    httpServer.listen(port, (err) => {
       if (err) throw err;
       // eslint-disable-next-line no-console
       console.log(`> Custom server ready on http://localhost:${port}`);
     });
   })
-  .catch(err => {
+  .catch((err) => {
     // eslint-disable-line no-console
     console.error(err.stack);
     process.exit(1);

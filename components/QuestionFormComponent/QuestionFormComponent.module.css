@@ -36,6 +36,17 @@
   margin-top: 25px;
 }
 
+.chk_row_item{
+    border: solid 2px white;
+    padding: 30px 0;    
+}
+
+.prev_none_label{
+  color: white;
+  font-weight: 600;
+}
+
+
 .divider {
   display: block;
   background: white;

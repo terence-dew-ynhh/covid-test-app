@@ -4,7 +4,7 @@ import { logInfo } from './actions';
 import styles from './QuestionFormComponent.module.css';
 
 const QuestionFormComponent = () => {
-  const [isCovidPositive, setIsCovidPositive] = useState(false);
+  const [isCovidPositive, setIsCovidPositive] = useState('');
   const [hasSymptoms, setHasSymptoms] = useState('');
   const [schedulerEndpoint, setSchedulerEndpoint] = useState(
     'Bridgeport Hospital'
@@ -18,54 +18,54 @@ const QuestionFormComponent = () => {
   function submitLog(evt) {
     evt.preventDefault();
 
-  const locationMapping = [
-    {
-      name: 'Bridgeport Hospital',
-      link:
-        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=78810&vt=2102&dept=103010111&view=plain&public=1'
-    },
-    {
-      name: 'Bridgeport Hospital - MC',
-      link:
-        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=78405,78870&vt=2102&dept=103700024&view=plain&public=1'
-    },
-    {
-      name: 'Greenwich Hospital',
-      link:
-        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=78403,78920&vt=2102&dept=104010088&view=plain&public=1'
-    },
-    {
-      name: 'Lawrence - Memorial Hospital',
-      link:
-        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=78406,79102&vt=2102&dept=108010095&view=plain&public=1'
-    },
-    {
-      name: 'Westerly Hospital',
-      link:
-        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=78407&vt=2102&dept=108710069&view=plain&public=1'
-    },
-    {
-      name: 'Yale New Haven Hospital - SRC',
-      link:
-        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=78402,78676,79062&vt=2102&dept=102010091&view=plain&public=1'
-    },
-    {
-      name: 'Yale New Haven Hospital - YSC',
-      link:
-        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=78061,78102,78419,79061&vt=2102&dept=101010165&view=plain&public=1'
-    },    
-    {
-      name: 'Off Campus Mass Testing Site',
-      link:
-        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=78866,79098,79099,79104,79110,79116,79159&vt=2102&dept=100001318&view=plain&public=1'
-    }
-  ];
+    const locationMapping = [
+      {
+        name: 'Bridgeport Hospital',
+        link:
+          'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=78810&vt=2102&dept=103010111&view=plain&public=1'
+      },
+      {
+        name: 'Bridgeport Hospital - MC',
+        link:
+          'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=78405,78870&vt=2102&dept=103700024&view=plain&public=1'
+      },
+      {
+        name: 'Greenwich Hospital',
+        link:
+          'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=78403,78920&vt=2102&dept=104010088&view=plain&public=1'
+      },
+      {
+        name: 'Lawrence - Memorial Hospital',
+        link:
+          'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=78406,79102&vt=2102&dept=108010095&view=plain&public=1'
+      },
+      {
+        name: 'Westerly Hospital',
+        link:
+          'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=78407&vt=2102&dept=108710069&view=plain&public=1'
+      },
+      {
+        name: 'Yale New Haven Hospital - SRC',
+        link:
+          'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=78402,78676,79062&vt=2102&dept=102010091&view=plain&public=1'
+      },
+      {
+        name: 'Yale New Haven Hospital - YSC',
+        link:
+          'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=78061,78102,78419,79061&vt=2102&dept=101010165&view=plain&public=1'
+      },
+      {
+        name: 'Off Campus Mass Testing Site',
+        link:
+          'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=78866,79098,79099,79104,79110,79116,79159&vt=2102&dept=100001318&view=plain&public=1'
+      }
+    ];
 
-  locationMapping.forEach((element) => {
-    if (schedulerEndpoint === element.name) {
-      window.location.href = element.link;
-    }
-  });
+    locationMapping.forEach((element) => {
+      if (schedulerEndpoint === element.name) {
+        window.location.href = element.link;
+      }
+    });
   }
 
   const handleChecked = (e) => {
@@ -154,24 +154,25 @@ const QuestionFormComponent = () => {
     'Headaches',
     'Sore_throat',
     'New loss of taste or smell',
-    'Congestion or runny nose',    
+    'Congestion or runny nose',
     'None_of_the_Above'
   ];
   const regex = /_/gi;
   let checkboxes = checkboxesArray.map((checkbox, idx) =>
     checkbox === 'None_of_the_Above' ? (
-      <div className="chk_row_item">
+      <div className={styles.chk_row_item}>
         <input
           id={`prev_covid_${checkbox.toLowerCase()}`}
           type="checkbox"
           key={checkbox.replace(regex, ' ')}
           value={checkbox.replace(regex, ' ')}
+          disabled={!(isCovidPositive === "No")}
           name="symptoms"
           onChange={(e) => {
             handleChecked(e);
           }}
         ></input>
-        <label htmlFor={`prev_covid_${checkbox.toLowerCase()}`}>
+        <label className={styles.prev_none_label} htmlFor={`prev_covid_${checkbox.toLowerCase()}`}>
           {checkbox.replace(regex, ' ')}
         </label>
       </div>
@@ -182,6 +183,7 @@ const QuestionFormComponent = () => {
           key={checkbox.replace(regex, ' ')}
           type="checkbox"
           value={checkbox.replace(regex, ' ')}
+          disabled={!(isCovidPositive === "No")}
           name="symptoms"
           onChange={(e) => {
             handleChecked(e);
@@ -224,20 +226,19 @@ const QuestionFormComponent = () => {
                         name="prev_covid"
                         onClick={(e) => {
                           handleChange(e);
-                          setIsCovidPositive(true);
+                          setIsCovidPositive(e.target.value);
                         }}
                       ></input>
                       <label htmlFor="prev_covid_yes">Yes</label>
                       <div className="radio_row_item">
                         <input
-                          defaultChecked
                           id="prev_covid_no"
                           type="radio"
-                          value=""
+                          value="No"
                           name="prev_covid"
                           onClick={(e) => {
                             handleChange(e);
-                            setIsCovidPositive(false);
+                            setIsCovidPositive(e.target.value);
                           }}
                         ></input>
                         <label htmlFor="prev_covid_no">No</label>
@@ -245,7 +246,7 @@ const QuestionFormComponent = () => {
                     </div>
                   </fieldset>
                 </div>
-                <p className="error" hidden={!isCovidPositive}>
+                <p className="error" hidden={!(isCovidPositive === "Yes")}>
                   Those that have previously tested positive are currently not
                   eligible for COVID-19 screening.
                 </p>
@@ -254,8 +255,8 @@ const QuestionFormComponent = () => {
                 <div className={styles.question_row_item_sub}>
                   <fieldset>
                     <legend>
-                      <b>Required Question: </b>Select any of the following symptoms that you are
-                      currently experiencing
+                      <b>Required Question: </b>Select any of the following
+                      symptoms that you are currently experiencing
                     </legend>
                     <div className={styles.q1_grid}>{checkboxes}</div>
                   </fieldset>
@@ -269,8 +270,8 @@ const QuestionFormComponent = () => {
                 </p>
               </div>
             </div>
-            <span className={styles.divider}></span>
-            <div className={styles.question_row_item}>
+            <span hidden={!(hasSymptoms === "No")} className={styles.divider}></span>
+            <div hidden={!(hasSymptoms === "No")} className={styles.question_row_item}>
               <div className={styles.question_row_item_sub}>
                 <fieldset>
                   <legend>What is your preferred collection location?</legend>
@@ -278,7 +279,6 @@ const QuestionFormComponent = () => {
                   <div className="select-wrapper">
                     <select
                       onChange={(e) => setSchedulerEndpoint(e.target.value)}
-                      disabled={isCovidPositive}
                       className="select"
                     >
                       {locationOptions}
@@ -290,7 +290,7 @@ const QuestionFormComponent = () => {
             <div className={styles.question_row_item}>
               <div className={styles.question_row_item_sub}>
                 <button
-                  hidden={!(isCovidPositive === false && hasSymptoms === 'No')}
+                  hidden={!(isCovidPositive === "No" && hasSymptoms === 'No')}
                   type="submit"
                   form="patient-form"
                   className="button"

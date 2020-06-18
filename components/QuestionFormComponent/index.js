@@ -32,7 +32,7 @@ const QuestionFormComponent = () => {
       {
         name: 'Greenwich Hospital',
         link:
-          'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=78403,78920&vt=2102&dept=104010088&view=plain&public=1'
+          'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=78403,78920,79171&vt=2102&dept=104010088&view=plain&public=1'
       },
       {
         name: 'Lawrence - Memorial Hospital',
@@ -161,6 +161,7 @@ const QuestionFormComponent = () => {
   let checkboxes = checkboxesArray.map((checkbox, idx) =>
     checkbox === 'None_of_the_Above' ? (
       <div className={styles.chk_row_item}>
+        <label className={styles.none_label_or}>Or :</label>
         <input
           id={`prev_covid_${checkbox.toLowerCase()}`}
           type="checkbox"
@@ -256,7 +257,7 @@ const QuestionFormComponent = () => {
                   <fieldset>
                     <legend>
                       <b>Required Question: </b>Select any of the following
-                      symptoms that you are currently experiencing
+                      symptoms that you are currently experiencing.
                     </legend>
                     <div className={styles.q1_grid}>{checkboxes}</div>
                   </fieldset>

@@ -56,7 +56,7 @@ const QuestionFormComponent = () => {
       {
         name: 'Additional Employee Testing Sites',
         link:
-          'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=78866,79098,79099,79104,79110,79116,79159&vt=2102&dept=100001318&view=plain&public=1'
+          'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=78866,79098,79099,79104,79110,79116,79159,79255&vt=2102&dept=100001318&view=plain&public=1'
       }
     ];
 

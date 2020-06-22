@@ -251,7 +251,7 @@ const QuestionFormComponent = () => {
                   eligible for COVID-19 screening.
                 </p>
               </div>
-              <div className={styles.question_row_item}>
+              <div hidden={!(isCovidPositive === "No")} className={styles.question_row_item}>
                 <div className={styles.question_row_item_sub}>
                   <fieldset>
                     <legend>
@@ -270,8 +270,7 @@ const QuestionFormComponent = () => {
                 </p>
               </div>
             </div>
-            <span hidden={!(hasSymptoms === "No")} className={styles.divider}></span>
-            <div hidden={!(hasSymptoms === "No")} className={styles.question_row_item}>
+            <div hidden={!(hasSymptoms === "No") || !(isCovidPositive === "No") } className={styles.question_row_item}>
               <div className={styles.question_row_item_sub}>
                 <fieldset>
                   <legend>What is your preferred collection location?</legend>

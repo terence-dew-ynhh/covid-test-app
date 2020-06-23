@@ -20,12 +20,10 @@ export default function Home() {
       <QuestionFormComponent />
     ) : null;
 
-  const locationArr = ["Bridgeport Hospital Testing Tent","Connecticut Valley Hospital"]
+  const locationArr = ["Bridgeport Hospital Testing Tent","Connecticut Mental Health Center","Connecticut Valley Hospital"]
                       .map( location => <option key={location} value={location}>{location}</option>);
 
   
-
-
   return (
     <div className="container">
       <Head>

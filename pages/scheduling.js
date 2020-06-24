@@ -95,3 +95,4 @@ Home.getInitialProps = async ({ query }) => {
     link
   };
 };
+ 

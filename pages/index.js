@@ -5,20 +5,51 @@ import { useRouter } from 'next/router';
 
 export default function Home() {
   const [isEmployee, setIsEmployee] = useState(true);
-  const [continueButton, setContinueButton] = useState(false);
-  const [location, setLocation] = useState('Placeholder');
+  const [schedulerEndpoint, setSchedulerEndpoint] = useState(
+    'Bridgeport Hospital'
+  );
 
   const router = useRouter();
 
   const submitLocation = () => {
     router.push(`/scheduling`, '/schedule-testing');
   };
-  const questionShowComponent =
-    isEmployee && continueButton ? <QuestionFormComponent /> : null;
 
-  const locationArr = ['Currently No Location'].map((location) => (
-    <option key={location} value={location}>
-      {location}
+
+    const locationMapping = [
+      {
+        name: 'Bridgeport Region',
+        link:
+          'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79285,79286&vt=2228&dept=100001340&view=plain&public=1'
+      },
+      {
+        name: 'New Haven Region',
+        link:
+          'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79287,79288,79289&vt=2228&dept=100001341&view=plain&public=1'
+      },
+      {
+        name: 'New London Region ',
+        link:
+          'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79290&vt=2228&dept=100001342&view=plain&public=1'
+      }
+    ];  
+
+  //   locationMapping.forEach((element) => {
+  //     if (schedulerEndpoint === element.name) {
+  //       window.location.href = element.link;
+  //     }
+  //   });
+  // }
+
+  const locationMapping = [
+    'Bridgeport Region',
+    'New Haven Region',
+    'New London Region'
+  ];
+
+  const locationOptions = locationMapping.map((option, idx) => (
+    <option key={idx} value={option}>
+      {option}
     </option>
   ));
 
@@ -41,10 +72,10 @@ export default function Home() {
 
                 <div className="select-wrapper">
                   <select
-                    onChange={(e) => setLocation(e.target.value)}
+                    onChange={(e) => setSchedulerEndpoint(e.target.value)}
                     className="select"
                   >
-                    {locationArr}
+                    {locationOptions}
                   </select>
                 </div>
               </fieldset>
@@ -61,7 +92,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-      {/* {questionShowComponent} */}
       <style jsx>{`
         .grid {
           display: -webkit-box;

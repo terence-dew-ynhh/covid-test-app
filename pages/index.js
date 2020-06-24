@@ -6,48 +6,23 @@ import { useRouter } from 'next/router';
 export default function Home() {
   const [isEmployee, setIsEmployee] = useState(true);
   const [schedulerEndpoint, setSchedulerEndpoint] = useState(
-    'Bridgeport Hospital'
+    'Bridgeport Region'
   );
 
   const router = useRouter();
 
   const submitLocation = () => {
-    router.push(`/scheduling`, '/schedule-testing');
-  };
+    router.push(`/scheduling?endpoint=${schedulerEndpoint}`,'/schedule-testing')
+  };  
 
 
-    const locationMapping = [
-      {
-        name: 'Bridgeport Region',
-        link:
-          'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79285,79286&vt=2228&dept=100001340&view=plain&public=1'
-      },
-      {
-        name: 'New Haven Region',
-        link:
-          'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79287,79288,79289&vt=2228&dept=100001341&view=plain&public=1'
-      },
-      {
-        name: 'New London Region ',
-        link:
-          'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79290&vt=2228&dept=100001342&view=plain&public=1'
-      }
-    ];  
-
-  //   locationMapping.forEach((element) => {
-  //     if (schedulerEndpoint === element.name) {
-  //       window.location.href = element.link;
-  //     }
-  //   });
-  // }
-
-  const locationMapping = [
+  const locations = [
     'Bridgeport Region',
     'New Haven Region',
     'New London Region'
   ];
 
-  const locationOptions = locationMapping.map((option, idx) => (
+  const locationOptions = locations.map((option, idx) => (
     <option key={idx} value={option}>
       {option}
     </option>

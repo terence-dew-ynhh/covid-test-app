@@ -1,6 +1,8 @@
-import Head from 'next/head';
+import { useState } from 'react';
+import styles from './PreviousSymptomsComponent.module.css'
 
-export default function EmployeeQuestion() {
+const PreviousSymptoms = ({isNextEnabled, isPrevEnabled}) => {
+
     const [isCovidPositive, setIsCovidPositive] = useState('');
 
 
@@ -21,7 +23,7 @@ export default function EmployeeQuestion() {
                         value="Yes"
                         name="prev_covid"
                         onClick={(e) => {
-                          handleChange(e);
+                          isNextEnabled(false);
                           setIsCovidPositive(e.target.value);
                         }}
                       ></input>
@@ -33,7 +35,7 @@ export default function EmployeeQuestion() {
                           value="No"
                           name="prev_covid"
                           onClick={(e) => {
-                            handleChange(e);
+                            isNextEnabled(true);
                             setIsCovidPositive(e.target.value);
                           }}
                         ></input>
@@ -52,3 +54,5 @@ export default function EmployeeQuestion() {
     </>
   );
 }
+
+export default PreviousSymptoms;

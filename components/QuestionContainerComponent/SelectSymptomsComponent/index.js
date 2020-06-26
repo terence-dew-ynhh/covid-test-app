@@ -1,7 +1,63 @@
-import Head from 'next/head';
+import styles from './SelectSymptomsComponent.module.css'
+import { useState } from 'react';
 
-export default function SelectSymptoms() {
 
+ const SelectSymptoms = ({isNextEnabled, isPrevEnabled}) => {
+
+  const[hasSymptoms, setHasSymptoms] = useState('');
+
+  const handleChecked = (e) => {
+    if (
+      e.target.id === 'prev_covid_none_of_the_above' &&
+      e.target.checked === true
+    ) {
+      checkboxesArray.forEach((element) => {
+        if (!(element === 'None_of_the_Above')) {
+          let symtomsChk = document.getElementById(
+            `prev_covid_${element.toLowerCase()}`
+          );
+          symtomsChk.checked = false;
+          symtomsChk.disabled = true;
+        }
+      });
+      setHasSymptoms('No');
+      isNextEnabled(true);
+    } else {
+      checkboxesArray.forEach((element) => {
+        let symtomsChk = document.getElementById(
+          `prev_covid_${element.toLowerCase()}`
+        );
+        symtomsChk.disabled = false;
+      });
+      setHasSymptoms('');
+      isNextEnabled(false);
+    }
+
+    // If any of the boxes are checked beside None of the Above
+
+    if (!(e.target.id === 'prev_covid_none_of_the_above')) {
+      let shouldDisable = false;
+
+      checkboxesArray.forEach((element) => {
+        let symptom = document.getElementById(
+          `prev_covid_${element.toLowerCase()}`
+        );
+        if (symptom.checked === true) {
+          shouldDisable = true;
+        }
+      });
+
+      let noneChk = document.getElementById(`prev_covid_none_of_the_above`);
+      if (shouldDisable) {
+        noneChk.checked = false;
+        noneChk.disabled = true;
+        setHasSymptoms('Yes');
+      } else {
+        noneChk.disabled = false;
+        setHasSymptoms('');
+      }
+    }
+  };
 
   let checkboxesArray = [
     'Fever',
@@ -29,7 +85,6 @@ export default function SelectSymptoms() {
           type="checkbox"
           key={checkbox.replace(regex, ' ')}
           value={checkbox.replace(regex, ' ')}
-          disabled={!(isCovidPositive === "No")}
           name="symptoms"
           onChange={(e) => {
             handleChecked(e);
@@ -46,7 +101,6 @@ export default function SelectSymptoms() {
           key={checkbox.replace(regex, ' ')}
           type="checkbox"
           value={checkbox.replace(regex, ' ')}
-          disabled={!(isCovidPositive === "No")}
           name="symptoms"
           onChange={(e) => {
             handleChecked(e);
@@ -58,6 +112,7 @@ export default function SelectSymptoms() {
       </div>
     )
   );
+
 
   return (
     <>
@@ -83,3 +138,5 @@ export default function SelectSymptoms() {
     </>
   );
 }
+
+export default SelectSymptoms;

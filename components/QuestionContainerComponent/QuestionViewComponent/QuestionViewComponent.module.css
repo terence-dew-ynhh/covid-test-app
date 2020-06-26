@@ -1,27 +1,22 @@
 .questionContainer {
-    width: 60%;
+    width: 100%;
     background: #48bce8;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
+    -webkit-box-pack: space-between;
+    -ms-flex-pack: space-between;
+    justify-content: space-between;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    padding-left: 40px;
   }
 
-  @media(max-width:430px){
-    .questionContainer{
-      width: 100%;
-      padding-left: 20px;
-    }
+  .buttonContainer{
+    padding-top: 35px;
+    padding-left: 25px;
   }
-
-
   
   
   

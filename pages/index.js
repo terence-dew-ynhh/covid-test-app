@@ -1,15 +1,9 @@
 import React, { useState } from "react";
 import Head from "next/head";
-import QuestionFormComponent from "../components/QuestionFormComponent";
+import QuestionContainerComponent from "../components/QuestionContainerComponent";
 
 export default function Home() {
   const [continueButton, setContinueButton] = useState(false);
-
-  const questionShowComponent =
-    (isEmployee && continueButton) ? (
-      <QuestionFormComponent />
-    ) : null;
-
   
 
   return (
@@ -19,27 +13,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-          <img src="/YNHHSLogo.png"></img>
-          <span className="divider"></span>
-
-        <h1 className="title">
-          See if you qualify for coronavirus (COVID-19) testing
-        </h1>
-
-
-        <div className="grid">
-          <div className="grid_subcontainer">
-            <div className="question_div">
-
-
-            </div>
-            <div>
-            <button onClick={()=>setContinueButton(true)} className="button">Continue</button>                
-            </div>
-          </div>
-        </div>
-        {questionShowComponent}
-      <style jsx>{`        
+      <QuestionContainerComponent></QuestionContainerComponent>
+      {/* <style jsx>{`        
         .grid {
           display: -webkit-box;
           display: -ms-flexbox;
@@ -126,7 +101,7 @@ export default function Home() {
                     flex-direction: column;
           }
         }
-      `}</style>
+      `}</style> */}
     </div>
   );
 }

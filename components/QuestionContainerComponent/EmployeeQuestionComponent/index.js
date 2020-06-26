@@ -1,22 +1,25 @@
-import Head from 'next/head';
+import { useState } from 'react';
+import styles from './EmployeeQuestionComponent.module.css'
 
-export default function EmployeeQuestion() {
+
+ const EmployeeQuestion =({isNextEnabled, isPrevEnabled}) => {
+  
   const [isEmployee, setIsEmployee] = useState(true);
 
-  return (
+    return (
     <>
-      <div className="radio_grp">
+      <div className={styles.question_row_item}>
         <fieldset className="radio_grp_set">
           <legend>
             Are you an employee or medical staff member of Yale New Haven
             Health/ Yale Medicine?
           </legend>
           <input
-            defaultChecked
             id="employee_staff_check_yes"
             type="radio"
             name="employee_staff"
             onClick={() => {
+              isNextEnabled(true);
               setIsEmployee(true);
             }}
           ></input>
@@ -27,6 +30,7 @@ export default function EmployeeQuestion() {
             type="radio"
             name="employee_staff"
             onClick={() => {
+              isNextEnabled(false);
               setIsEmployee(false);
             }}
           ></input>
@@ -41,3 +45,5 @@ export default function EmployeeQuestion() {
     </>
   );
 }
+
+export default EmployeeQuestion;

@@ -1,10 +1,16 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styles from './EmployeeQuestionComponent.module.css'
 
 
- const EmployeeQuestion =({isNextEnabled, isPrevEnabled}) => {
+ const EmployeeQuestion =({isNextEnabled, isPrevEnabled, isDoneEnabled}) => {
   
   const [isEmployee, setIsEmployee] = useState(true);
+
+  useEffect(() => {
+    isNextEnabled(false);
+    isPrevEnabled(false);
+    isDoneEnabled(false);
+  }, []);
 
     return (
     <>

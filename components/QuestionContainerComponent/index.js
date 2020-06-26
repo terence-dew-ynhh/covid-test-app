@@ -28,6 +28,7 @@ const QuestionFormComponent = ({}) => {
 
   return (
     <div className={styles.questionContainer}>
+
       <QuestionView
         nextPage={nextPage}
         prevPage={prevPage}

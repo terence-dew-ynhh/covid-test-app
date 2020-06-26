@@ -40,21 +40,21 @@ small {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: flex-start;
+      -ms-flex-pack: flex-start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
 }
 
-.grid,
-.grid_subcontainer{
+.grid{
   width:100%;
+  align-self: flex-start;
 }
 
-h1,p{
+p{
   width:100%;
 }
 
@@ -90,13 +90,13 @@ fieldset {
   display: block;
   background: #131313;
   height: 1px;
-  width: 90%;
+  width: 100%;
   margin: 10px 0;
 }
 
 label,
 legend {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   width: 100%;
 }
 
@@ -106,11 +106,13 @@ li{
 
 img{
   width:300px;
+  margin: 20px 0;
 
 }
 
 .title{
   font-size: 2em;
+  margin: 30px 0;
 }
 
 .description{

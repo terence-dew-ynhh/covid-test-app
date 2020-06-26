@@ -1,10 +1,15 @@
 import styles from './SelectSymptomsComponent.module.css'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 
  const SelectSymptoms = ({isNextEnabled, isPrevEnabled}) => {
 
   const[hasSymptoms, setHasSymptoms] = useState('');
+
+  useEffect(() => {
+    isNextEnabled(false);
+    isPrevEnabled(true);
+  }, []);
 
   const handleChecked = (e) => {
     if (

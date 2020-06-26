@@ -1,9 +1,16 @@
 import styles from './SelectLocationComponent.module.css'
+import { useEffect } from 'react';
 
 
- const SelectLocation  = ({ setSchedulerURL }) => {
+ const SelectLocation  = ({isNextEnabled, isPrevEnabled,isDoneEnabled,setSchedulerURL }) => {
 
-  const locations = ['Bridgeport Hospital', 'Greenwich Hospital'] 
+  const locations = ['Bridgeport Hospital', 'Greenwich Hospital'];
+  
+  useEffect(() => {
+    isNextEnabled(false);
+    isPrevEnabled(true);
+    isDoneEnabled(true);
+  }, []);
 
   const locationOptions = locations.map((option, idx) => (
     <option key={idx} value={option}>

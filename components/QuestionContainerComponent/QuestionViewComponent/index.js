@@ -49,16 +49,16 @@ const QuestionViewComponent = ({
         setSchedulerURL={setSchedulerURL}
       />
       </div>
-      <div className={styles.buttonContainer}>
-      <button className="button" hidden={!doneEnabled} onClick={schedulePush}>
-        Done
-      </button>      
+      <div className={styles.buttonContainer}>          
       <button className="button" hidden={!prevEnabled} onClick={prevPage}>
         Back
       </button>
       <button className="button" hidden={!nextEnabled} onClick={nextPage}>
         Next
       </button>
+      <button className="button" hidden={!doneEnabled} onClick={schedulePush}>
+        Done
+      </button>  
       </div>
     </div>
   );

@@ -2,12 +2,13 @@ import styles from './SelectSymptomsComponent.module.css'
 import { useState, useEffect } from 'react';
 
 
- const SelectSymptoms = ({isNextEnabled, isPrevEnabled}) => {
+ const SelectSymptoms = ({isNextEnabled, isPrevEnabled, isDoneEnabled}) => {
 
   const[hasSymptoms, setHasSymptoms] = useState('');
 
   useEffect(() => {
     isNextEnabled(false);
+    isDoneEnabled(false);
     isPrevEnabled(true);
   }, []);
 
@@ -84,7 +85,7 @@ import { useState, useEffect } from 'react';
   let checkboxes = checkboxesArray.map((checkbox, idx) =>
     checkbox === 'None_of_the_Above' ? (
       <div className={styles.chk_row_item}>
-        <label className={styles.none_label_or}>Or :</label>
+        <label className={styles.none_label_or}> Or if you currently experience no symptoms :</label>
         <input
           id={`prev_covid_${checkbox.toLowerCase()}`}
           type="checkbox"

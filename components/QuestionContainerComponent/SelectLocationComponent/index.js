@@ -1,11 +1,23 @@
-import styles from './SelectLocationComponent.module.css'
+import styles from './SelectLocationComponent.module.css';
 import { useEffect } from 'react';
 
+const SelectLocation = ({
+  isNextEnabled,
+  isPrevEnabled,
+  isDoneEnabled,
+  setSchedulerURL,
+}) => {
+  const locations = [
+    'Bridgeport Hospital',
+    'Bridgeport Hospital - MC',
+    'Greenwich Hospital',
+    'Lawrence - Memorial Hospital',
+    'Westerly Hospital',
+    'Yale New Haven Hospital - SRC',
+    'Yale New Haven Hospital - YSC',
+    'Additional Employee Testing Sites'
+  ];
 
- const SelectLocation  = ({isNextEnabled, isPrevEnabled,isDoneEnabled,setSchedulerURL }) => {
-
-  const locations = ['Bridgeport Hospital', 'Greenwich Hospital'];
-  
   useEffect(() => {
     isNextEnabled(false);
     isPrevEnabled(true);
@@ -13,16 +25,14 @@ import { useEffect } from 'react';
   }, []);
 
   const locationOptions = locations.map((option, idx) => (
-    <option key={idx} value={option}>
+    <option key={option} value={option}>
       {option}
     </option>
   ));
-  
+
   return (
     <>
-      <div
-        className={styles.question_row_item}
-      >
+      <div className={styles.question_row_item}>
         <div className={styles.question_row_item_sub}>
           <fieldset>
             <legend>What is your preferred collection location?</legend>
@@ -41,6 +51,6 @@ import { useEffect } from 'react';
       <style jsx>{``}</style>
     </>
   );
-}
+};
 
 export default SelectLocation;

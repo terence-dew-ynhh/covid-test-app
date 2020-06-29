@@ -7,10 +7,11 @@ import { useRouter } from 'next/router';
 const QuestionFormComponent = ({}) => {
 
   const [viewIdx, setviewIdx] = useState(0);
+  const [endPoint, setEndpoint] = useState('Bridgeport Hospital');
   const compNames = ['employee', 'symptoms', 'symptomssel', 'location'];
   const router = useRouter();
 
-
+  
   const nextPage = () => {
     let index = viewIdx <= 2 ? viewIdx + 1 : viewIdx;
     setviewIdx(index);
@@ -21,10 +22,16 @@ const QuestionFormComponent = ({}) => {
     setviewIdx(index);
   };
 
-  const schedulePush = (endpointURL) => {
+  const schedulePush = () => {
 
-    router.push(`/scheduling?endpoint=${endpointURL}`);
+    router.push(`/scheduling?endpoint=${endPoint}`,'/scheduling');
   };
+
+  const updateLocation = (endpoint) =>{
+    setEndpoint(endpoint);
+  }
+
+
 
   return (
     <div className={styles.questionContainer}>
@@ -34,6 +41,7 @@ const QuestionFormComponent = ({}) => {
         prevPage={prevPage}
         compName={compNames[viewIdx]}
         schedulePush={schedulePush}
+        updateLocation={updateLocation}
       ></QuestionView>
     </div>
   );

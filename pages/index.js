@@ -3,8 +3,7 @@ import Head from "next/head";
 import QuestionContainerComponent from "../components/QuestionContainerComponent";
 
 export default function Home() {
-  const [continueButton, setContinueButton] = useState(false);
-  
+ 
 
   return (
     <div className="container">

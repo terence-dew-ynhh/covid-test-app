@@ -40,7 +40,6 @@ export default function Home({ link }) {
 
 Home.getInitialProps = async ({ query }) => {
   const { endpoint } = query;
-  console.log(endpoint);
   let link = '';
   const locationMapping = [
     {

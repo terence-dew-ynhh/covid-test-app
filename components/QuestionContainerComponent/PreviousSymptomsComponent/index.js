@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
 import styles from './PreviousSymptomsComponent.module.css';
 
-const PreviousSymptoms = ({ isNextEnabled, isPrevEnabled }) => {
+const PreviousSymptoms = ({ isNextEnabled, isPrevEnabled, isDoneEnabled }) => {
   const [isCovidPositive, setIsCovidPositive] = useState('');
 
   useEffect(() => {
     isNextEnabled(false);
+    isDoneEnabled(false);
     isPrevEnabled(true);
   }, []);
 

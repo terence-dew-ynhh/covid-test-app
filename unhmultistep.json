@@ -1,7 +1,7 @@
 {
     "apps": [
         {
-            "name": "occuhealth-app",
+            "name": "unhmultistep-app",
             "script": "npm",
             "args" : "start"
         }

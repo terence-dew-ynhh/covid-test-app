@@ -315,6 +315,12 @@ label:hover:before {
   display: none;
 }
 
+@media(max-width:768px){
+  .title{
+    padding: 0;
+  }
+}
+
 @media(max-width:430px){
   .select {
     font-size: 13px;

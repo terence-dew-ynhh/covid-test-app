@@ -51,6 +51,10 @@ Home.getInitialProps = async ({ query }) => {
       name: 'New Haven Judicial District',
       link:
         'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79325&vt=2228&dept=100001343&view=plain&public=1'
+    },{
+      name: 'Bridgeport Judiciary',
+      link:
+        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79272&vt=2228&dept=100001339&view=plain&public=1'
     }
   ];
 

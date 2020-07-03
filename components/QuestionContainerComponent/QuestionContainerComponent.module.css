@@ -1,6 +1,8 @@
 .questionContainer {
     width: 60%;
-    background: #48bce8;
+    background: white;
+    border-top: solid 15px #0f4d92;
+    box-shadow: 0 0 10px 5px rgba(0,0,0,0.1);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

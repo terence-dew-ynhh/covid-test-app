@@ -15,6 +15,10 @@ const PreviousSymptoms = ({ isNextEnabled, isPrevEnabled, isDoneEnabled }) => {
       <div className="radio_grp">
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
+          <p className="error" hidden={!(isCovidPositive === 'Yes')}>
+            Those that have previously tested positive are currently not
+            eligible for COVID-19 screening.
+          </p>
             <fieldset>
               <legend>Have you previously tested Positive for COVID?:</legend>
 
@@ -45,11 +49,7 @@ const PreviousSymptoms = ({ isNextEnabled, isPrevEnabled, isDoneEnabled }) => {
                 </div>
               </div>
             </fieldset>
-          </div>
-          <p className="error" hidden={!(isCovidPositive === 'Yes')}>
-            Those that have previously tested positive are currently not
-            eligible for COVID-19 screening.
-          </p>
+          </div>          
         </div>
       </div>
       <style jsx>{``}</style>

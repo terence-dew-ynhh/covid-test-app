@@ -15,6 +15,10 @@ import styles from './EmployeeQuestionComponent.module.css'
     return (
     <>
       <div className={styles.question_row_item}>
+      <p className="error" hidden={isEmployee}>
+          Sorry, please navigate to a public testing website to schedule your
+          test
+        </p>
         <fieldset className="radio_grp_set">
           <legend>
             Are you an employee or medical staff member of Yale New Haven
@@ -41,11 +45,7 @@ import styles from './EmployeeQuestionComponent.module.css'
             }}
           ></input>
           <label htmlFor="employee_staff_check_no">No</label>
-        </fieldset>
-        <p className="error" hidden={isEmployee}>
-          Sorry, please navigate to a public testing website to schedule your
-          test
-        </p>
+        </fieldset>        
       </div>
       <style jsx>{``}</style>
     </>

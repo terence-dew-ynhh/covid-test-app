@@ -13,7 +13,6 @@ export default function Home() {
       </Head>
       <div className='grid'>
       <img src="/YNHHSLogo.png"></img>
-      <span className="divider"></span>
       </div>
       <h1 className="title">
           See if you qualify for coronavirus (COVID-19) testing

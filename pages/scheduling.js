@@ -42,7 +42,7 @@ Scheduler.getInitialProps = async ({ query }) => {
     {
       name: 'Bridgeport Region',
       link:
-        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79285,79286&vt=2228&dept=100001340&view=plain&public=1'
+        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79285,79286,79548,79549&vt=2228&dept=100001340&view=plain&public=1'
     },
     {
       name: 'New Haven Region',
@@ -52,7 +52,7 @@ Scheduler.getInitialProps = async ({ query }) => {
     {
       name: 'New London Region',
       link:
-        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79290&vt=2228&dept=100001342&view=plain&public=1'
+        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79290,79561,79562&vt=2228&dept=100001342&view=plain&public=1'
     }
   ];  
 

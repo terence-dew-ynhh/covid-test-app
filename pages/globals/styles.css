@@ -30,6 +30,10 @@ small {
   font-size: 1em;
 }
 
+iframe{
+  margin-top: 40px;
+}
+
 .container {
   min-height: 100vh;
   display: -webkit-box;
@@ -307,8 +311,8 @@ label:hover:before {
 .select {
   -moz-appearance: none;
   -webkit-appearance: none;
-  background: #0f4d92;
-  border: none;
+  background: white;
+  border: solid 1px black ;
   border-radius: 0;
   cursor: pointer;
   padding: 12px;
@@ -325,6 +329,9 @@ label:hover:before {
 @media(max-width:768px){
   .title{
     padding: 0;
+  }
+  .error{
+    margin-right: 50px;
   }
 }
 

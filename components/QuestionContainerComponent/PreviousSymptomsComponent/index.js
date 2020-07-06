@@ -1,11 +1,10 @@
 import { useState, useEffect } from 'react';
 import styles from './PreviousSymptomsComponent.module.css';
 
-const PreviousSymptoms = ({ isNextEnabled, isPrevEnabled, isDoneEnabled }) => {
+const PreviousSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
   const [isCovidPositive, setIsCovidPositive] = useState('');
 
   useEffect(() => {
-    isNextEnabled(false);
     isDoneEnabled(false);
     isPrevEnabled(true);
   }, []);
@@ -29,7 +28,6 @@ const PreviousSymptoms = ({ isNextEnabled, isPrevEnabled, isDoneEnabled }) => {
                   value="Yes"
                   name="prev_covid"
                   onClick={(e) => {
-                    isNextEnabled(false);
                     setIsCovidPositive(e.target.value);
                   }}
                 ></input>
@@ -41,7 +39,7 @@ const PreviousSymptoms = ({ isNextEnabled, isPrevEnabled, isDoneEnabled }) => {
                     value="No"
                     name="prev_covid"
                     onClick={(e) => {
-                      isNextEnabled(true);
+                      nextPage();
                       setIsCovidPositive(e.target.value);
                     }}
                   ></input>

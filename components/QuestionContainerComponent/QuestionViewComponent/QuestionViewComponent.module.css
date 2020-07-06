@@ -17,5 +17,9 @@
     padding-top: 35px;
   }
   
+  @media(max-width:430px){
+    .select {
+      font-size: 13px;
+    }}
   
   

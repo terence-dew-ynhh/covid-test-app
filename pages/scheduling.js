@@ -12,8 +12,9 @@ export default function Home({ link }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <div className='grid'>
       <img src="/YNHHSLogo.png"></img>
-      <span className="divider"></span>
+      </div>
 
       <div className="scheduleContainer">
         <iframe

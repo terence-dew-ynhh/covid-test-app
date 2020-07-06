@@ -2,12 +2,11 @@ import { useState, useEffect } from 'react';
 import styles from './EmployeeQuestionComponent.module.css'
 
 
- const EmployeeQuestion =({isNextEnabled, isPrevEnabled, isDoneEnabled}) => {
+ const EmployeeQuestion =({nextPage, isPrevEnabled, isDoneEnabled}) => {
   
   const [isEmployee, setIsEmployee] = useState(true);
 
   useEffect(() => {
-    isNextEnabled(false);
     isPrevEnabled(false);
     isDoneEnabled(false);
   }, []);
@@ -29,7 +28,7 @@ import styles from './EmployeeQuestionComponent.module.css'
             type="radio"
             name="employee_staff"
             onClick={() => {
-              isNextEnabled(true);
+              nextPage()
               setIsEmployee(true);
             }}
           ></input>
@@ -40,7 +39,6 @@ import styles from './EmployeeQuestionComponent.module.css'
             type="radio"
             name="employee_staff"
             onClick={() => {
-              isNextEnabled(false);
               setIsEmployee(false);
             }}
           ></input>

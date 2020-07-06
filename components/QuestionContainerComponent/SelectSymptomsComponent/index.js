@@ -2,12 +2,11 @@ import styles from './SelectSymptomsComponent.module.css'
 import { useState, useEffect } from 'react';
 
 
- const SelectSymptoms = ({isNextEnabled, isPrevEnabled, isDoneEnabled}) => {
+ const SelectSymptoms = ({nextPage, isPrevEnabled, isDoneEnabled}) => {
 
   const[hasSymptoms, setHasSymptoms] = useState('');
 
   useEffect(() => {
-    isNextEnabled(false);
     isDoneEnabled(false);
     isPrevEnabled(true);
   }, []);
@@ -27,7 +26,7 @@ import { useState, useEffect } from 'react';
         }
       });
       setHasSymptoms('No');
-      isNextEnabled(true);
+      nextPage();
     } else {
       checkboxesArray.forEach((element) => {
         let symtomsChk = document.getElementById(
@@ -36,7 +35,6 @@ import { useState, useEffect } from 'react';
         symtomsChk.disabled = false;
       });
       setHasSymptoms('');
-      isNextEnabled(false);
     }
 
     // If any of the boxes are checked beside None of the Above
@@ -123,14 +121,14 @@ import { useState, useEffect } from 'react';
   return (
     <>
        <div className={styles.question_row_item}>
-                <div className={styles.question_row_item_sub}>
-                <p className="error" hidden={!(hasSymptoms === 'Yes')}>
+         <p className="error" hidden={!(hasSymptoms === 'Yes')}>
                   If you are at work, notify your manager and leave work. If you
                   are home, stay home. Please call Occupational Health to be
                   screened and tested today at the COVID-19 Call Center at
                   203-688-1700. Please select a language then option 2 to speak
                   with occupational health.
                 </p>
+                <div className={styles.question_row_item_sub}>                
                   <fieldset>
                     <legend>
                       <b>Required Question: </b>Select any of the following

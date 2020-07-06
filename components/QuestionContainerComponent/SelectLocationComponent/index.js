@@ -2,7 +2,6 @@ import styles from './SelectLocationComponent.module.css';
 import { useEffect } from 'react';
 
 const SelectLocation = ({
-  isNextEnabled,
   isPrevEnabled,
   isDoneEnabled,
   setSchedulerURL,
@@ -19,7 +18,6 @@ const SelectLocation = ({
   ];
 
   useEffect(() => {
-    isNextEnabled(false);
     isPrevEnabled(true);
     isDoneEnabled(true);
   }, []);

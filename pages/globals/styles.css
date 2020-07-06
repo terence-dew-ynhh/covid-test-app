@@ -339,6 +339,13 @@ label:hover:before {
   .select {
     font-size: 13px;
   }
+  .button{
+    margin: 0 2% 2% 0;
+    padding: 20px 25px;
+  }
+  .title{
+    width: 90%;
+  }
 
 }.example {
     display: -ms-grid;

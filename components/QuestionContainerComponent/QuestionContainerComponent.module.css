@@ -1,7 +1,6 @@
 .questionContainer {
     width: 60%;
     background: white;
-    border-top: solid 15px #0f4d92;
     box-shadow: 0 0 10px 5px rgba(0,0,0,0.1);
     display: -webkit-box;
     display: -ms-flexbox;
@@ -18,8 +17,8 @@
 
   @media(max-width:700px){
     .questionContainer{
-      width: 90%;
-      padding: 40px;
+      width: 100%;
+      padding-left: 40px;
     }
   }
 

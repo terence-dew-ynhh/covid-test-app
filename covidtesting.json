@@ -1,0 +1,9 @@
+{
+    "apps": [
+        {
+            "name": "unhcovidtesting",
+            "script": "npm",
+            "args" : "start"
+        }
+    ]
+}

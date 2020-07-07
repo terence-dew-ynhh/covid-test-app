@@ -36,7 +36,7 @@ const QuestionFormComponent = ({}) => {
 
   return (
     <div className={styles.questionContainer}>
-          <div style={{  
+          {/* <div style={{  
             content: '',
 	          position: 'fixed',
 	          bottom: '0px',
@@ -46,7 +46,7 @@ const QuestionFormComponent = ({}) => {
             fontWeight: '600',
             paddingLeft: `${progressWidth-15}%`,
             color: '#0f4d92',
-            borderBottom: '15px solid #0f4d92'}} >{`${progressWidth}%`}</div>
+            borderBottom: '15px solid #0f4d92'}} >{`${progressWidth}%`}</div> */}
 
       <QuestionView
         nextPage={nextPage}

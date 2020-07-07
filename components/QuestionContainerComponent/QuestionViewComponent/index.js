@@ -1,7 +1,4 @@
 import { useState } from 'react';
-import EmployeeQuestion from '../EmployeeQuestionComponent';
-import PreviousSymptoms from '../PreviousSymptomsComponent';
-import SelectSymptoms from '../SelectSymptomsComponent';
 import SelectLocation from '../SelectLocationComponent';
 import styles from './QuestionViewComponent.module.css'
 

@@ -7,14 +7,9 @@ const SelectLocation = ({
   setSchedulerURL,
 }) => {
   const locations = [
-    'Bridgeport Hospital',
-    'Bridgeport Hospital - MC',
-    'Greenwich Hospital',
-    'Lawrence - Memorial Hospital',
-    'Westerly Hospital',
-    'Yale New Haven Hospital - SRC',
-    'Yale New Haven Hospital - YSC',
-    'Additional Employee Testing Sites'
+    'Bridgeport Region',
+    'New Haven Region',
+    'New London Region'
   ];
 
   useEffect(() => {

@@ -1,20 +1,13 @@
 import styles from './SelectLocationComponent.module.css';
 import { useEffect } from 'react';
 
-const SelectLocation = ({
-  isPrevEnabled,
-  isDoneEnabled,
-  setSchedulerURL,
-}) => {
+const SelectLocation = ({ isPrevEnabled, isDoneEnabled, setSchedulerURL }) => {
   const locations = [
-    'Bridgeport Hospital',
-    'Bridgeport Hospital - MC',
-    'Greenwich Hospital',
-    'Lawrence - Memorial Hospital',
-    'Westerly Hospital',
-    'Yale New Haven Hospital - SRC',
-    'Yale New Haven Hospital - YSC',
-    'Additional Employee Testing Sites'
+    'Bridgeport Hospital Testing Tent',
+    'Connecticut Mental Health Center',
+    'Connecticut Valley Hospital',
+    'New Haven Judicial District',
+    'Bridgeport Judiciary'
   ];
 
   useEffect(() => {

@@ -1,7 +1,7 @@
 {
     "apps": [
         {
-            "name": "unhmultistep-app",
+            "name": "covidtesting",
             "script": "npm",
             "args" : "start"
         }

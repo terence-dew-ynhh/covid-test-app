@@ -28,13 +28,10 @@ const QuestionViewComponent = ({
   const setSchedulerURL = (location) => {updateLocation(location)};
   
   const components = {
-    employee: EmployeeQuestion,
-    symptoms: PreviousSymptoms,
-    symptomssel: SelectSymptoms,
     location: SelectLocation
   };
 
-  const ComponentName = components[compName || 'employee'];
+  const ComponentName = components[compName || 'location'];
 
   return (
     <div className={styles.questionContainer}>

@@ -1,13 +1,9 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
-import Link from 'next/link';
-import QuestionFormComponent from '../components/QuestionFormComponent';
 
 export default function FAQ() {
   const [isCovidPositive, setIsCovidPositive] = useState('');
-  const [isTwoWeeksSince, setIsTwoWeeksSince] = useState('');
-
-  
+  const [isTwoWeeksSince, setIsTwoWeeksSince] = useState('');  
 
   return (
     <div className="container">

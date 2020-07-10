@@ -68,7 +68,7 @@ Home.getInitialProps = async ({ query }) => {
     {
       name: 'Mohegan Sun Employees',
       link:
-        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79643&vt=2228&dept=204530001&view=plain&public=1'
+        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79643&vt=2228&dept=100001358&view=plain&public=1'
     },{
       name: 'Capital Region Mental Health Center',
       link:

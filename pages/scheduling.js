@@ -69,7 +69,20 @@ Home.getInitialProps = async ({ query }) => {
       name: 'Mohegan Sun Employees',
       link:
         'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79643&vt=2228&dept=204530001&view=plain&public=1'
+    },{
+      name: 'Capital Region Mental Health Center',
+      link:
+        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79598&vt=2228&dept=100001355&view=plain&public=1'
+    },{
+      name: 'Southeast Mental Health Authority',
+      link:
+        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79599&vt=2228&dept=100001356&view=plain&public=1'
+    },{
+      name: 'Western CT Mental Health Network',
+      link:
+        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79600&vt=2228&dept=100001357&view=plain&public=1'
     }
+
   ];
 
   locationMapping.forEach((element) => {

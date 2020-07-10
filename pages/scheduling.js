@@ -64,6 +64,11 @@ Home.getInitialProps = async ({ query }) => {
       name: 'Bridgeport Judiciary',
       link:
         'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79272&vt=2228&dept=100001339&view=plain&public=1'
+    },
+    {
+      name: 'Mohegan Sun Employees',
+      link:
+        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79643&vt=2228&dept=204530001&view=plain&public=1'
     }
   ];
 

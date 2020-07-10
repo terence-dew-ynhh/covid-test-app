@@ -7,7 +7,8 @@ const SelectLocation = ({ isPrevEnabled, isDoneEnabled, setSchedulerURL }) => {
     'Connecticut Mental Health Center',
     'Connecticut Valley Hospital',
     'New Haven Judicial District',
-    'Bridgeport Judiciary'
+    'Bridgeport Judiciary',
+    'Mohegan Sun Employees' 
   ];
 
   useEffect(() => {

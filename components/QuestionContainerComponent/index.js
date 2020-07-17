@@ -7,7 +7,7 @@ import { useRouter } from 'next/router';
 const QuestionFormComponent = ({}) => {
 
   const [viewIdx, setviewIdx] = useState(0);
-  const [endPoint, setEndpoint] = useState('Bridgeport Hospital Testing Tent');
+  const [endPoint, setEndpoint] = useState('Mohegan Sun Employees');
   const compNames = ['location'];
   const router = useRouter();
 

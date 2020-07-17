@@ -15,7 +15,8 @@ export default function Home() {
       <img src="/YNHHSLogo.png"></img>
       </div>
       <h1 className="title">
-          See if you qualify for coronavirus (COVID-19) testing
+      An appointment is required to be tested; if there is not availability at your assigned location and preferred date, please search for an future date / time at your assigned location.  
+      If none are available at your location please check back.
         </h1>
       <QuestionContainerComponent></QuestionContainerComponent>
       

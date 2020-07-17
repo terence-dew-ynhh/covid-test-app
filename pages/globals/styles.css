@@ -72,6 +72,10 @@ p{
   color: #000;
 }
 
+.choice-button{
+  margin: 0 0 6% 6%;
+}
+
 .radio_grp_set,
 fieldset {
   border: none;
@@ -119,7 +123,7 @@ img{
 }
 
 .title{
-  font-size: 2em; 
+  font-size: 1.5em; 
   font-weight: 400;
   width: 60%;
   text-align: center;
@@ -333,6 +337,9 @@ label:hover:before {
   .error{
     margin-right: 50px;
   }
+  .choice-button{
+    margin: 0 0 6% 9%
+  }
 }
 
 @media(max-width:430px){
@@ -340,9 +347,13 @@ label:hover:before {
     font-size: 13px;
   }
   .button{
-    margin: 0 2% 2% 0;
     padding: 20px 25px;
   }
+
+  .choice-button{
+    margin: 0 0 6% 11%
+  }
+
   .title{
     width: 90%;
   }

@@ -3,15 +3,8 @@ import { useEffect } from 'react';
 
 const SelectLocation = ({ isPrevEnabled, isDoneEnabled, setSchedulerURL }) => {
   const locations = [
-    'Bridgeport Hospital Testing Tent',
-    'Connecticut Mental Health Center',
-    'Connecticut Valley Hospital',
-    'New Haven Judicial District',
-    'Bridgeport Judiciary',
-    'Mohegan Sun Employees',
-    'Capital Region Mental Health Center',
-    'Southeast Mental Health Authority',
-    'Western CT Mental Health Network'
+    'Mohegan Sun Employees'
+
   ];
 
   useEffect(() => {

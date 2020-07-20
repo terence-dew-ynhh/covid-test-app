@@ -8,7 +8,6 @@ const SelectLocation = ({ isPrevEnabled, isDoneEnabled, setSchedulerURL }) => {
     'Connecticut Valley Hospital',
     'New Haven Judicial District',
     'Bridgeport Judiciary',
-    'Mohegan Sun Employees',
     'Capital Region Mental Health Center',
     'Southeast Mental Health Authority',
     'Western CT Mental Health Network'

@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 
 const SelectLocation = ({ isPrevEnabled, isDoneEnabled, setSchedulerURL }) => {
   const locations = [
-    'Mohegan Sun Employees'
+    'SNF Placeholder'
 
   ];
 

@@ -44,7 +44,7 @@ Home.getInitialProps = async ({ query }) => {
   let link = '';
   const locationMapping = [    
     {
-      name: 'Mohegan Sun Employees',
+      name: 'SNF Placeholder',
       link:
         'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79643&vt=2228&dept=204530001&view=plain&public=1'
     }

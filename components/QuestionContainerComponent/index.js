@@ -7,13 +7,12 @@ import { useRouter } from 'next/router';
 const QuestionFormComponent = ({}) => {
 
   const [viewIdx, setviewIdx] = useState(0);
-  const [endPoint, setEndpoint] = useState('Mohegan Sun Employees');
+  const [endPoint, setEndpoint] = useState('Advanced Nursing and Rehab Mass Testing');
   const compNames = ['location'];
   const router = useRouter();
 
   
   const nextPage = () => {
-    console.log("made it")
     let index = viewIdx <= 2 ? viewIdx + 1 : viewIdx;
     setviewIdx(index);
   };

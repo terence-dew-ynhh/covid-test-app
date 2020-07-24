@@ -12,8 +12,8 @@ export default function Home({ link }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className='grid'>
-      <img src="/YNHHSLogo.png"></img>
+      <div className="grid">
+        <img src="/YNHHSLogo.png"></img>
       </div>
 
       <div className="scheduleContainer">
@@ -42,11 +42,11 @@ export default function Home({ link }) {
 Home.getInitialProps = async ({ query }) => {
   const { endpoint } = query;
   let link = '';
-  const locationMapping = [    
+  const locationMapping = [
     {
-      name: 'Advanced Nursing & Rehab Mass Testing',
+      name: 'Advanced Nursing and Rehab Mass Testing',
       link:
-        ' https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79243&vt=2228&dept=100001336&view=plain&public=1'
+        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79243&vt=2228&dept=100001336&view=plain&public=1'
     },
     {
       name: 'Apple Rehab Guilford Mass Testing',
@@ -74,138 +74,115 @@ Home.getInitialProps = async ({ query }) => {
         'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=790488&vt=2228&dept=100001353&view=plain&public=1'
     },
     {
-      name: 'Edgehill Mass Testing'
-,
+      name: 'Edgehill Mass Testing',
       link:
         'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79199&vt=2228&dept=100001329&view=plain&public=1'
     },
     {
-      name: 'Fairview Groton Mass Testing'
-,
+      name: 'Fairview Groton Mass Testing',
       link:
         'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79134&vt=2228&dept=100001327&view=plain&public=1'
     },
     {
-      name: 'Greentree Manor Testing'
-,
+      name: 'Greentree Manor Testing',
       link:
         'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79470&vt=2228&dept=100001345&view=plain&public=1'
     },
     {
-      name: 'Greenwich Woods Mass Testing'
-,
+      name: 'Greenwich Woods Mass Testing',
       link:
         'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79239&vt=2228&dept=100001334&view=plain&public=1'
     },
     {
-      name: 'Guilford Mass Testing'
-,
+      name: 'Guilford Mass Testing',
       link:
         'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=78835&vt=2228&dept=100001316&view=plain&public=1'
     },
     {
-      name: 'Hamden Health Mass Testing'
-,
+      name: 'Hamden Health Mass Testing',
       link:
         'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79236&vt=2228&dept=100001332&view=plain&public=1'
     },
     {
-      name: 'Jewish Services Mass Testing'
-,
+      name: 'Jewish Services Mass Testing',
       link:
         'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=78938&vt=2228&dept=100001322&view=plain&public=1'
     },
     {
-      name: 'Lord Chamberlain Mass Testing'
-,
+      name: 'Lord Chamberlain Mass Testing',
       link:
         'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79566&vt=2228&dept=100001354&view=plain&public=1'
     },
     {
-      name: 'Ludlowe Center for Health & Rehab Testing'
-,
+      name: 'Ludlowe Center for Health and Rehab Testing',
       link:
         'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79473&vt=2228&dept=100001348&view=plain&public=1'
     },
     {
-      name: 'Milford Health & Rehab Testing'
-,
+      name: 'Milford Health and Rehab Testing',
       link:
         'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79486&vt=2228&dept=100001351&view=plain&public=1'
     },
     {
-      name: 'Montowese Mass Testing'
-,
+      name: 'Montowese Mass Testing',
       link:
         'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79222&vt=2228&dept=100001331&view=plain&public=1'
     },
     {
-      name: 'Mystic Health Mass Testing'
-,
+      name: 'Mystic Health Mass Testing',
       link:
         'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79132&vt=2228&dept=100001325&view=plain&public=1'
     },
     {
-      name: 'Nathaniel Witherell Mass Testing'
-,
+      name: 'Nathaniel Witherell Mass Testing',
       link:
         'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79247&vt=2228&dept=100001337&view=plain&public=1'
     },
     {
-      name: 'New London Rehab Mass Testing'
-,
+      name: 'New London Rehab Mass Testing',
       link:
         'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79241&vt=2228&dept=100001335&view=plain&public=1'
     },
     {
-      name: 'Northbridge Health Care Center Testing'
-,
+      name: 'Northbridge Health Care Center Testing',
       link:
         'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79472&vt=2228&dept=100001347&view=plain&public=1'
     },
     {
-      name: 'Pendleton Mass Testing'
-,
+      name: 'Pendleton Mass Testing',
       link:
         'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=78836&vt=2228&dept=100001317&view=plain&public=1'
     },
     {
-      name: 'Spring at Watermark Testing'
-,
+      name: 'Spring at Watermark Testing',
       link:
         'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79484&vt=2228&dept=100001349&view=plain&public=1'
     },
     {
-      name: 'St Joseph Testing'
-,
+      name: 'St Joseph Testing',
       link:
         'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79485&vt=2228&dept=100001350&view=plain&public=1'
     },
     {
-      name: 'Waveny Mass Testing'
-,
+      name: 'Waveny Mass Testing',
       link:
         'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79221&vt=2228&dept=100001330&view=plain&public=1'
     },
     {
-      name: 'West River Mass Testing'
-,
+      name: 'West River Mass Testing',
       link:
         'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=78939&vt=2228&dept=100001323&view=plain&public=1'
     },
     {
-      name: 'Westfield Care and Rehab Testing'
-,
+      name: 'Westfield Care and Rehab Testing',
       link:
         'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79469&vt=2228&dept=100001344&view=plain&public=1'
     },
     {
-      name: 'Whitney Rehab Mass Testing'
-,
+      name: 'Whitney Rehab Mass Testing',
       link:
         'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=78937&vt=2228&dept=100001321&view=plain&public=1'
     }
-    
   ];
 
   locationMapping.forEach((element) => {
@@ -218,4 +195,3 @@ Home.getInitialProps = async ({ query }) => {
     link
   };
 };
- 

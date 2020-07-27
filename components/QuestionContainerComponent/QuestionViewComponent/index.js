@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import SelectLocation from '../SelectLocationComponent';
+import SelectSymptoms from '../SelectSymptomsComponent';
 import styles from './QuestionViewComponent.module.css'
 
 
@@ -25,10 +26,11 @@ const QuestionViewComponent = ({
   const setSchedulerURL = (location) => {updateLocation(location)};
   
   const components = {
+    symptoms: SelectSymptoms,
     location: SelectLocation
   };
 
-  const ComponentName = components[compName || 'employee'];
+  const ComponentName = components[compName || 'symptoms'];
 
   return (
     <div className={styles.questionContainer}>
@@ -41,9 +43,9 @@ const QuestionViewComponent = ({
       />
       </div>
       <div className={styles.buttonContainer}>          
-      {/* <button className="button" hidden={!prevEnabled} onClick={prevPage}>
+      <button className="button" hidden={!prevEnabled} onClick={prevPage}>
         {`< Back`}
-      </button> */}
+      </button>
       <button className="button" hidden={!doneEnabled} onClick={schedulePush}>
         Schedule Appoinment
       </button>  

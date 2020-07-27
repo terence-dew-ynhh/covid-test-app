@@ -8,12 +8,11 @@ const QuestionFormComponent = ({}) => {
 
   const [viewIdx, setviewIdx] = useState(0);
   const [endPoint, setEndpoint] = useState('Bridgeport Region');
-  const compNames = ['location'];
+  const compNames = ['symptoms','location'];
   const router = useRouter();
 
   
   const nextPage = () => {
-    console.log("made it")
     let index = viewIdx <= 2 ? viewIdx + 1 : viewIdx;
     setviewIdx(index);
   };

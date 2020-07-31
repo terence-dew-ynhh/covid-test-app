@@ -82,7 +82,16 @@ Home.getInitialProps = async ({ query }) => {
       name: 'Western CT Mental Health Network',
       link:
         'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79600&vt=2228&dept=100001357&view=plain&public=1'
+    },{
+      name: 'Bridgeport Corrections and Parole',
+      link:
+        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79980&vt=2228&dept=100001362&view=plain&public=1'
+    },{
+      name: 'New Haven Corrections and Parole',
+      link:
+        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79981&vt=2228&dept=100001363&view=plain&public=1'
     }
+    
   ];
 
   locationMapping.forEach((element) => {

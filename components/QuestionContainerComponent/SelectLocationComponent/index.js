@@ -10,7 +10,9 @@ const SelectLocation = ({ isPrevEnabled, isDoneEnabled, setSchedulerURL }) => {
     'Bridgeport Judiciary',
     'Capital Region Mental Health Center',
     'Southeast Mental Health Authority',
-    'Western CT Mental Health Network'
+    'Western CT Mental Health Network',
+    'Bridgeport Corrections and Parole',
+    'New Haven Corrections and Parole'
   ];
 
   useEffect(() => {

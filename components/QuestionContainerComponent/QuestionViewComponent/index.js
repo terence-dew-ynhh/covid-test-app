@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import EmployeeQuestion from '../EmployeeQuestionComponent';
-import PreviousSymptoms from '../PreviousSymptomsComponent';
+import ConsentComponent from '../ConsentComponent';
 import SelectSymptoms from '../SelectSymptomsComponent';
-import SelectLocation from '../SelectLocationComponent';
+import Over18Component from '../Over18Component';
 import styles from './QuestionViewComponent.module.css'
 
 
@@ -29,9 +29,9 @@ const QuestionViewComponent = ({
   
   const components = {
     employee: EmployeeQuestion,
-    symptoms: PreviousSymptoms,
+    overeighteen: Over18Component,
     symptomssel: SelectSymptoms,
-    location: SelectLocation
+    consent: ConsentComponent,    
   };
 
   const ComponentName = components[compName || 'employee'];

@@ -1,25 +1,25 @@
 import { useState, useEffect } from 'react';
-import styles from './EmployeeQuestionComponent.module.css'
+import styles from './Over18Component.module.css'
 
 
- const EmployeeQuestion =({nextPage, isPrevEnabled, isDoneEnabled}) => {
+ const Over18Component =({nextPage, isPrevEnabled, isDoneEnabled}) => {
   
-  const [isEmployee, setIsEmployee] = useState(true);
+  const [isOver18, setIsOver18] = useState(true);
 
   useEffect(() => {
-    isPrevEnabled(false);
+    isPrevEnabled(true);
     isDoneEnabled(false);
   }, []);
 
     return (
     <>
       <div className={styles.question_row_item}>
-      <p className="error" hidden={isEmployee}>
-      Testing is only available to active students, employees, or faculty of University of New Haven
+      <p className="error" hidden={isOver18}>
+      Please contact us at 203-932-7079 to discuss a process for you. 
         </p>
         <fieldset className="radio_grp_set">
           <legend>
-          Are you an active student, employee, or faculty of University of New Haven?
+          Are you over the age of 18? 
           </legend>
           <input
             id="employee_staff_check_yes"
@@ -27,7 +27,7 @@ import styles from './EmployeeQuestionComponent.module.css'
             name="employee_staff"
             onClick={() => {
               nextPage()
-              setIsEmployee(true);
+              setIsOver18(true);
             }}
           ></input>
           <label htmlFor="employee_staff_check_yes">Yes</label>
@@ -37,7 +37,7 @@ import styles from './EmployeeQuestionComponent.module.css'
             type="radio"
             name="employee_staff"
             onClick={() => {
-              setIsEmployee(false);
+              setIsOver18(false);
             }}
           ></input>
           <label htmlFor="employee_staff_check_no">No</label>
@@ -48,4 +48,4 @@ import styles from './EmployeeQuestionComponent.module.css'
   );
 }
 
-export default EmployeeQuestion;
+export default Over18Component;

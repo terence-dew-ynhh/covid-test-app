@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import MandatedTest from '../MandatedTestComponent';
+import ContactTracing from '../ContactTracingComponent';
 import SelectLocation from '../SelectLocationComponent';
 import styles from './QuestionViewComponent.module.css'
 
@@ -25,10 +27,12 @@ const QuestionViewComponent = ({
   const setSchedulerURL = (location) => {updateLocation(location)};
   
   const components = {
-    location: SelectLocation
+    location: SelectLocation,
+    mandated: MandatedTest,
+    contact: ContactTracing
   };
 
-  const ComponentName = components[compName || 'location'];
+  const ComponentName = components[compName || 'mandated'];
 
   return (
     <div className={styles.questionContainer}>

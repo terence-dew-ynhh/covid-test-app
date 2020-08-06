@@ -28,8 +28,8 @@ const QuestionViewComponent = ({
   
   const components = {
     location: SelectLocation,
-    mandated: MandatedTest,
-    contact: ContactTracing
+    mandated: MandatedTest
+
   };
 
   const ComponentName = components[compName || 'mandated'];

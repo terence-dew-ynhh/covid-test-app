@@ -20,7 +20,7 @@ import styles from './MandatedTestComponent.module.css'
         </p>
         <fieldset className="radio_grp_set">
           <legend>
-          Are you mandated by your supervisor to be tested one time after June 18, 2020?
+          Are you mandated by your supervisor to be tested one time after June 18, 2020 or for Contact tracing?
           </legend>
           <input
             id="mandated_test_check_yes"

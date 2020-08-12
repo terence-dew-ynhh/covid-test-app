@@ -1,4 +1,8 @@
-  
+#employee_staff_check_yes{
+  padding: 10px 0;
+  font-size: 1em;
+  text-align: center;
+}  
   .question_row_item {
     padding: 35px 40px;
     width: 90%;

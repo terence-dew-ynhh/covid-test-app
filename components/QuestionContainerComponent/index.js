@@ -8,18 +8,21 @@ const QuestionFormComponent = ({}) => {
 
   const [viewIdx, setviewIdx] = useState(0);
   const [endPoint, setEndpoint] = useState('Bridgeport Hospital');
-  const compNames = ['employee', 'symptoms', 'symptomssel', 'location'];
+  const compNames = ['age', 'gender', 'pregnancy', 'hepatitis', 'cancer', 'treatment','history'];
   const router = useRouter();
 
   
-  const nextPage = () => {
-    console.log("made it")
-    let index = viewIdx <= 2 ? viewIdx + 1 : viewIdx;
+  const nextPage = (e, pageIncrement) => {
+    console.log(pageIncrement)
+    let increment = pageIncrement ? pageIncrement: 1 ;
+    let index = viewIdx <= 6 ? viewIdx + increment : viewIdx;
     setviewIdx(index);
   };
 
-  const prevPage = () => {
-    let index = viewIdx > 0 ? viewIdx - 1 : viewIdx;
+  const prevPage = (e, pageIncrement) => {
+    console.log(pageIncrement)
+    let increment = pageIncrement ? pageIncrement: 1 ;
+    let index = viewIdx <= 6 ? viewIdx - increment : viewIdx;
     setviewIdx(index);
   };
 
@@ -32,7 +35,7 @@ const QuestionFormComponent = ({}) => {
     setEndpoint(endpoint);
   }
 
- let progressWidth = 100*((viewIdx+1)/4);
+ let progressWidth = Math.floor(100*((viewIdx+1)/7));
 
   return (
     <div className={styles.questionContainer}>

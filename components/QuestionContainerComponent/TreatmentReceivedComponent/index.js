@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import styles from './PreviousSymptomsComponent.module.css';
+import styles from './TreatmentReceivedComponent.module.css';
 
-const PreviousSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
+const TreatmentReceivedComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
   const [isCovidPositive, setIsCovidPositive] = useState('');
 
   useEffect(() => {
@@ -19,7 +19,7 @@ const PreviousSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
             eligible for COVID-19 screening.
           </p>
             <fieldset>
-              <legend>Have you previously tested Positive for COVID?:</legend>
+              <legend>Do you currently receive any treatment with immunosuppressive therapy, including cytotoxic agents or systemic corticosteroids ?:</legend>
 
               <div className="radio_row_item">
                 <input
@@ -28,6 +28,7 @@ const PreviousSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
                   value="Yes"
                   name="prev_covid"
                   onClick={(e) => {
+                    nextPage(e);
                     setIsCovidPositive(e.target.value);
                   }}
                 ></input>
@@ -39,7 +40,7 @@ const PreviousSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
                     value="No"
                     name="prev_covid"
                     onClick={(e) => {
-                      nextPage();
+                      nextPage(e);
                       setIsCovidPositive(e.target.value);
                     }}
                   ></input>
@@ -55,4 +56,4 @@ const PreviousSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
   );
 };
 
-export default PreviousSymptoms;
+export default TreatmentReceivedComponent;

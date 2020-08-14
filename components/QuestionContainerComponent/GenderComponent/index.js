@@ -2,13 +2,19 @@ import { useState, useEffect } from 'react';
 import styles from './GenderComponent.module.css';
 
 const GenderComponent = ({ nextPage, isPrevEnabled, isNextEnabled, isDoneEnabled }) => {
-  const [isCovidPositive, setIsCovidPositive] = useState('');
+  const [isMale, setIsMale] = useState('');
 
   useEffect(() => {
     isDoneEnabled(false);
     isPrevEnabled(true);
     isNextEnabled(false);
   }, []);
+
+  const choiceSelected = (e) => {
+    nextPage(e,2);
+    setIsMale(e.target.value);
+    updateField('is_male', isMale);
+  }
 
   return (
     <>
@@ -25,8 +31,7 @@ const GenderComponent = ({ nextPage, isPrevEnabled, isNextEnabled, isDoneEnabled
                   value="Yes"
                   name="prev_covid"
                   onClick={(e) => {
-                    nextPage(e,2);
-                    setIsCovidPositive(e.target.value);
+                    choiceSelected
                   }}
                 ></input>
                 <label htmlFor="prev_covid_yes">Male</label>
@@ -37,8 +42,7 @@ const GenderComponent = ({ nextPage, isPrevEnabled, isNextEnabled, isDoneEnabled
                     value="No"
                     name="prev_covid"
                     onClick={(e) => {
-                      nextPage(e);
-                      setIsCovidPositive(e.target.value);
+                      choiceSelected
                     }}
                   ></input>
                   <label htmlFor="prev_covid_no">Female</label>

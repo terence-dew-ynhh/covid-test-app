@@ -2,12 +2,19 @@ import { useState, useEffect } from 'react';
 import styles from './PregnantComponent.module.css';
 
 const PregnantComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
-  const [isCovidPositive, setIsCovidPositive] = useState('');
+  const [isPregnant, setIsPregnant] = useState('');
 
   useEffect(() => {
     isDoneEnabled(false);
     isPrevEnabled(true);
   }, []);
+
+  const choiceSelected = (e) => {
+    nextPage(e);
+    isPregnant(e.target.value);
+    updateField('is_pregnant', isPregnant);
+  }
+
 
   return (
     <>
@@ -28,8 +35,7 @@ const PregnantComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
                   value="Yes"
                   name="prev_covid"
                   onClick={(e) => {
-                    nextPage(e);
-                    setIsCovidPositive(e.target.value);
+                    choiceSelected
                   }}
                 ></input>
                 <label htmlFor="prev_covid_yes">Yes</label>
@@ -40,8 +46,7 @@ const PregnantComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
                     value="No"
                     name="prev_covid"
                     onClick={(e) => {
-                      nextPage(e);
-                      setIsCovidPositive(e.target.value);
+                      choiceSelected
                     }}
                   ></input>
                   <label htmlFor="prev_covid_no">No</label>

@@ -2,11 +2,19 @@ import { useState, useEffect } from 'react';
 import styles from './HistoryComponent.module.css';
 
 const HistoryComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
-  const [isCovidPositive, setIsCovidPositive] = useState('');
+  const [hasAdverseReaction, setHasAdverseReaction] = useState('');
 
   useEffect(() => {
     isPrevEnabled(true);
   }, []);
+
+  const choiceSelected = (e) => {
+    nextPage(e);
+    isDoneEnabled(true);
+    setHasAdverseReaction(e.target.value);
+    updateField('adverse_reaction', hasAdverseReaction);
+  }
+
 
   return (
     <>
@@ -23,8 +31,7 @@ const HistoryComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
                   value="Yes"
                   name="prev_covid"
                   onClick={(e) => {
-                    setIsCovidPositive(e.target.value);
-                    isDoneEnabled(true);
+                    choiceSelected
                   }}
                 ></input>
                 <label htmlFor="prev_covid_yes">Yes</label>
@@ -35,8 +42,7 @@ const HistoryComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
                     value="No"
                     name="prev_covid"
                     onClick={(e) => {
-                      setIsCovidPositive(e.target.value);
-                      isDoneEnabled(true);
+                      choiceSelected
                     }}
                   ></input>
                   <label htmlFor="prev_covid_no">No</label>

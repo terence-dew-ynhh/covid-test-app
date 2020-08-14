@@ -4,7 +4,7 @@ import styles from './QuestionContainerComponent.module.css'
 import { useRouter } from 'next/router';
 
 
-const QuestionFormComponent = ({}) => {
+const QuestionFormComponent = ({uuid}) => {
 
   const [viewIdx, setviewIdx] = useState(0);
   const [endPoint, setEndpoint] = useState('Bridgeport Hospital');
@@ -57,6 +57,7 @@ const QuestionFormComponent = ({}) => {
         compName={compNames[viewIdx]}
         schedulePush={schedulePush}
         updateLocation={updateLocation}
+        uuid={uuid}
       ></QuestionView>
     </div>
   );

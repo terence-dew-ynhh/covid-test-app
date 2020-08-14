@@ -13,19 +13,21 @@ import styles from './AgeQuestionComponent.module.css'
     isNextEnabled(true);
   }, []);
 
+
+
   const ageChanged = (e) =>{
     if (e.target.value >= 0 && e.target.value <= 120 ) setAgeCount(e.target.value)
       
     
-    if(e.target.value > 17) isNextEnabled(true)
-    else isNextEnabled(false)
+    if(e.target.value > 17) isNextEnabled(true,ageCount)
+    else isNextEnabled(false,ageCount)
   }
 
     return (
     <>
       <div className={styles.question_row_item}>
-      <p className="error" hidden={isEmployee}>
-        </p>
+      {/* <p className="error" hidden={isEmployee}>
+        </p> */}
         <fieldset className="radio_grp_set">
           <legend>
           How old are you?

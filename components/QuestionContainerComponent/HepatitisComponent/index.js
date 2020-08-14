@@ -2,12 +2,18 @@ import { useState, useEffect } from 'react';
 import styles from './HepatitisComponent.module.css';
 
 const HepatitisComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
-  const [isCovidPositive, setIsCovidPositive] = useState('');
+  const [isDiagnosed, setIsDiagnosed] = useState('');
 
   useEffect(() => {
     isDoneEnabled(false);
     isPrevEnabled(true);
   }, []);
+
+  const choiceSelected = (e) => {
+    nextPage(e);
+    setIsMale(e.target.value);
+    updateField('is_diagnosed', isDiagnosed);
+  }
 
   return (
     <>
@@ -24,8 +30,7 @@ const HepatitisComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
                   value="Yes"
                   name="prev_covid"
                   onClick={(e) => {
-                    nextPage(e);
-                    setIsCovidPositive(e.target.value);
+                    choiceSelected
                   }}
                 ></input>
                 <label htmlFor="prev_covid_yes">Yes</label>
@@ -36,8 +41,7 @@ const HepatitisComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
                     value="No"
                     name="prev_covid"
                     onClick={(e) => {
-                      nextPage(e);
-                      setIsCovidPositive(e.target.value);
+                      choiceSelected
                     }}
                   ></input>
                   <label htmlFor="prev_covid_no">No</label>

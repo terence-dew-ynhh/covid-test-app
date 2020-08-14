@@ -5,7 +5,6 @@ import QuestionContainerComponent from "../components/QuestionContainerComponent
 
 
 function Home({uuid}) {
- 
 
   return (
     <div className="container">
@@ -19,7 +18,7 @@ function Home({uuid}) {
       <h1 className="title">
           See if you qualify for coronavirus (COVID-19) testing
         </h1>
-      <QuestionContainerComponent uuid={uuid}></QuestionContainerComponent>
+      <QuestionContainerComponent uuid={uuid}/>
       
     </div>
   );
@@ -28,11 +27,7 @@ function Home({uuid}) {
 Home.getInitialProps = async (context) => {
   const res = await fetch("http://localhost:3011/api/uuid");
   const json = await res.json();
-  return {
-    props: {
-      uuid: json,
-    },
-  };
+  return {uuid: json}
 }
 
 export default Home

@@ -7,6 +7,7 @@ import { useRouter } from 'next/router';
 const QuestionFormComponent = ({uuid}) => {
 
   const [viewIdx, setviewIdx] = useState(0);
+  const [uuidString, setUUIDString] = useState(uuid);
   const [endPoint, setEndpoint] = useState('Bridgeport Hospital');
   const compNames = ['age', 'gender', 'pregnancy', 'hepatitis', 'cancer', 'treatment','history'];
   const router = useRouter();
@@ -57,7 +58,7 @@ const QuestionFormComponent = ({uuid}) => {
         compName={compNames[viewIdx]}
         schedulePush={schedulePush}
         updateLocation={updateLocation}
-        uuid={uuid}
+        uuid={uuidString}
       ></QuestionView>
     </div>
   );

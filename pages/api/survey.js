@@ -5,7 +5,8 @@ const handler = nextConnect();
 
 handler.use(middleware);
 
-handler.get(async (req, res) => {
+handler.post(async (req, res) => {
+  console.log("here");
   let { uuid, field, data } = req.body;
 
   let updateQuery = {

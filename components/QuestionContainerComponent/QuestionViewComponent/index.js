@@ -43,7 +43,7 @@ const QuestionViewComponent = ({
 
   
   const updateField = async (propName,propValue) => {
-    const res = await fetch('http://localhost:3011/api/response', {
+    const res = await fetch('http://localhost:3011/api/survey', {
       method: 'post',
       body: JSON.stringify({uuid:uuid, [propName]:propValue})
     })

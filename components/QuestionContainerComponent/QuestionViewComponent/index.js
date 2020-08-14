@@ -1,3 +1,4 @@
+import fetch from 'isomorphic-unfetch'
 import { useState } from 'react';
 import AgeQuestionComponent from '../AgeQuestionComponent';
 import GenderComponent from '../GenderComponent';
@@ -21,7 +22,6 @@ const QuestionViewComponent = ({
   const [nextEnabled, setNextEnabled] = useState(false);
   const [doneEnabled, setDoneEnabled] = useState(false);
   const [pageProgress, setPageProgress] = useState(1);
-  const [uuid, setUUID] = useState('');
   const [patientAge, setPatientAge] = useState(18);
 
   const isPrevEnabled = (isEnabled) => {

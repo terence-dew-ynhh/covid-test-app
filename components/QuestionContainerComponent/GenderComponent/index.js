@@ -10,10 +10,10 @@ const GenderComponent = ({ nextPage, isPrevEnabled, isNextEnabled, isDoneEnabled
     isNextEnabled(false);
   }, []);
 
-  const choiceSelected = (e) => {
-    nextPage(e,2);
+  const choiceSelected = (e,progressVal) => {
+    nextPage(e,progressVal);
     setIsMale(e.target.value);
-    updateField('is_male', isMale);
+    // updateField('is_male', isMale);
   }
 
   return (
@@ -31,7 +31,7 @@ const GenderComponent = ({ nextPage, isPrevEnabled, isNextEnabled, isDoneEnabled
                   value="Yes"
                   name="prev_covid"
                   onClick={(e) => {
-                    choiceSelected
+                    choiceSelected(e,2)
                   }}
                 ></input>
                 <label htmlFor="prev_covid_yes">Male</label>
@@ -42,7 +42,7 @@ const GenderComponent = ({ nextPage, isPrevEnabled, isNextEnabled, isDoneEnabled
                     value="No"
                     name="prev_covid"
                     onClick={(e) => {
-                      choiceSelected
+                      choiceSelected(e,1)
                     }}
                   ></input>
                   <label htmlFor="prev_covid_no">Female</label>

@@ -12,7 +12,7 @@ const CancerComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateField }
   const choiceSelected = (e) => {
     nextPage(e);
     setIsCancerPositive(e.target.value);
-    updateField('cancer_diagnosed', isCancerPositive);
+    // updateField('cancer_diagnosed', isCancerPositive);
   }
 
   return (
@@ -28,9 +28,9 @@ const CancerComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateField }
                   type="radio"
                   value="Yes"
                   name="prev_covid"
-                  onClick={(e) => {
+                  onClick={ 
                     choiceSelected
-                  }}
+                  }
                 ></input>
                 <label htmlFor="prev_covid_yes">Yes</label>
                 <div className="radio_row_item">
@@ -39,9 +39,9 @@ const CancerComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateField }
                     type="radio"
                     value="No"
                     name="prev_covid"
-                    onClick={(e) => {
+                    onClick={ 
                       choiceSelected
-                    }}
+                    }
                   ></input>
                   <label htmlFor="prev_covid_no">No</label>
                 </div>

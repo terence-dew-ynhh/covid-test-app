@@ -5,8 +5,14 @@ const handler = nextConnect();
 
 handler.use(middleware);
 
+handler.get(async (req, res) => {
+ 
+  res.json("Cool")
+});
+
 handler.post(async (req, res) => {
-  console.log("here");
+  console.log('here');
+
   let { uuid, field, data } = req.body;
 
   let updateQuery = {
@@ -19,11 +25,12 @@ handler.post(async (req, res) => {
     }
   };
 
-  const items = await db
+  const items = await req.db
     .collection('survey_answers')
     .findOneAndUpdate(updateQuery, updateVals, { upsert: true });
-    console.log(items);
-    res.json(doc);
+  console.log(items);
+
+  res.json(items);
 });
 
-export default handler;
+export default (req, res) => handler.apply(req, res) ;

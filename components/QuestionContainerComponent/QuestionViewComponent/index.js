@@ -16,6 +16,7 @@ const QuestionViewComponent = ({
   prevPage,
   schedulePush,
   updateLocation,
+  // updateField,
   uuid
 }) => {
   const [prevEnabled, setPrevEnabled] = useState(false);
@@ -39,14 +40,6 @@ const QuestionViewComponent = ({
   
   const hasSubQuestion = () =>{
     setPageProgress(2)
-  }
-
-  
-  const updateField = async (propName,propValue) => {
-    const res = await fetch('http://localhost:3011/api/survey', {
-      method: 'post',
-      body: JSON.stringify({uuid:uuid, [propName]:propValue})
-    })
   }
 
   const setSchedulerURL = (location) => {updateLocation(location)};
@@ -73,14 +66,17 @@ const QuestionViewComponent = ({
         isDoneEnabled={isDoneEnabled}
         hasSubQuestion={hasSubQuestion}
         setSchedulerURL={setSchedulerURL}
-        updateField={updateField}
+        uuid={uuid}
+        // updateField={updateField}  
       />
       </div>
       <div className={styles.buttonContainer}>              
       <button className="button" hidden={!prevEnabled} onClick={ e => compName === 'hepatitis' ? prevPage(e,2) : prevPage(e) }>
         {`< Back`}
       </button>
-      <button className="button" hidden={!nextEnabled} onClick={() => {nextPage; updateField('age',patientAge)}}>
+      {/* <button className="button" hidden={!nextEnabled} onClick={() => {nextPage; updateField('age',patientAge)}}> */}
+      <button className="button" hidden={!nextEnabled} onClick={nextPage}>
+
         {`Next >`}
       </button>  
       <button className="button" hidden={!doneEnabled} onClick={schedulePush}>

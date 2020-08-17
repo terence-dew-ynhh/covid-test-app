@@ -9,10 +9,10 @@ const HistoryComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
   }, []);
 
   const choiceSelected = (e) => {
-    nextPage(e);
+    // nextPage(e);
     isDoneEnabled(true);
     setHasAdverseReaction(e.target.value);
-    updateField('adverse_reaction', hasAdverseReaction);
+    // updateField('adverse_reaction', hasAdverseReaction);
   }
 
 
@@ -30,9 +30,9 @@ const HistoryComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
                   type="radio"
                   value="Yes"
                   name="prev_covid"
-                  onClick={(e) => {
+                  onClick={ 
                     choiceSelected
-                  }}
+                  }
                 ></input>
                 <label htmlFor="prev_covid_yes">Yes</label>
                 <div className="radio_row_item">
@@ -41,9 +41,9 @@ const HistoryComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
                     type="radio"
                     value="No"
                     name="prev_covid"
-                    onClick={(e) => {
+                    onClick={ 
                       choiceSelected
-                    }}
+                    }
                   ></input>
                   <label htmlFor="prev_covid_no">No</label>
                 </div>

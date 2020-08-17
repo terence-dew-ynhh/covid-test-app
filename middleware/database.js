@@ -7,6 +7,7 @@ const client = new MongoClient('mongodb://localhost:27017', {
 });
 
 async function database(req, res, next) {
+  console.log("Test")
   if (!client.isConnected()) await client.connect();
   req.dbClient = client;
   req.db = client.db('covidvaccine');

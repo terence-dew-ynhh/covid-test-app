@@ -11,8 +11,8 @@ const PregnantComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
 
   const choiceSelected = (e) => {
     nextPage(e);
-    isPregnant(e.target.value);
-    updateField('is_pregnant', isPregnant);
+    setIsPregnant(e.target.value);
+    // updateField('is_pregnant', isPregnant);
   }
 
 
@@ -34,9 +34,9 @@ const PregnantComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
                   type="radio"
                   value="Yes"
                   name="prev_covid"
-                  onClick={(e) => {
+                  onClick={ 
                     choiceSelected
-                  }}
+                  }
                 ></input>
                 <label htmlFor="prev_covid_yes">Yes</label>
                 <div className="radio_row_item">
@@ -45,9 +45,9 @@ const PregnantComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
                     type="radio"
                     value="No"
                     name="prev_covid"
-                    onClick={(e) => {
+                    onClick={ 
                       choiceSelected
-                    }}
+                    }
                   ></input>
                   <label htmlFor="prev_covid_no">No</label>
                 </div>

@@ -99,7 +99,7 @@ export default function FAQ() {
         </p>
 
         <Link href="/questions">
-          <a>Begin Questionnaire ></a>
+          <a><b>{'Begin Questionnaire >'} </b></a>
         </Link>
       </div>
 

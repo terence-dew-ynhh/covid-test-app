@@ -41,55 +41,8 @@ export default function Home({ link }) {
 
 Home.getInitialProps = async ({ query }) => {
   const { endpoint } = query;
-  let link = '';
-  const locationMapping = [
-    {
-      name: 'Bridgeport Hospital',
-      link:
-        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=78810&vt=2102&dept=103010111&view=plain&public=1'
-    },
-    {
-      name: 'Bridgeport Hospital - MC',
-      link:
-        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=78405,78870&vt=2102&dept=103700024&view=plain&public=1'
-    },
-    {
-      name: 'Greenwich Hospital',
-      link:
-        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=78403,78920&vt=2102&dept=104010088&view=plain&public=1'
-    },
-    {
-      name: 'Lawrence - Memorial Hospital',
-      link:
-        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=78406,79102&vt=2102&dept=108010095&view=plain&public=1'
-    },
-    {
-      name: 'Westerly Hospital',
-      link:
-        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=78407&vt=2102&dept=108710069&view=plain&public=1'
-    },
-    {
-      name: 'Yale New Haven Hospital - SRC',
-      link:
-        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=78402,78676,79062&vt=2102&dept=102010091&view=plain&public=1'
-    },
-    {
-      name: 'Yale New Haven Hospital - YSC',
-      link:
-        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=78061,78102,78419,79061&vt=2102&dept=101010165&view=plain&public=1'
-    },    
-    {
-      name: 'Additional Employee Testing Sites',
-      link:
-        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=78866,79098,79099,79104,79110,79116,79159&vt=2102&dept=100001318&view=plain&public=1'
-    }
-  ];
-
-  locationMapping.forEach((element) => {
-    if (endpoint === element.name) {
-      link = element.link;
-    }
-  });
+  let link = 'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79929&vt=2102&dept=201570001&view=plain&public=1';
+  
 
   return {
     link

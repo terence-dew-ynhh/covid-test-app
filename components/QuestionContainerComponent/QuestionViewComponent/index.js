@@ -16,7 +16,7 @@ const QuestionViewComponent = ({
   prevPage,
   schedulePush,
   updateLocation,
-  // updateField,
+  updateField,
   uuid
 }) => {
   const [prevEnabled, setPrevEnabled] = useState(false);
@@ -67,15 +67,15 @@ const QuestionViewComponent = ({
         hasSubQuestion={hasSubQuestion}
         setSchedulerURL={setSchedulerURL}
         uuid={uuid}
-        // updateField={updateField}  
+        updateField={updateField}  
       />
       </div>
       <div className={styles.buttonContainer}>              
       <button className="button" hidden={!prevEnabled} onClick={ e => compName === 'hepatitis' ? prevPage(e,2) : prevPage(e) }>
         {`< Back`}
       </button>
-      {/* <button className="button" hidden={!nextEnabled} onClick={() => {nextPage; updateField('age',patientAge)}}> */}
-      <button className="button" hidden={!nextEnabled} onClick={nextPage}>
+      <button className="button" hidden={!nextEnabled} onClick={() => {nextPage; updateField('age',patientAge)}}>
+      {/* <button className="button" hidden={!nextEnabled} onClick={nextPage}> */}
 
         {`Next >`}
       </button>  

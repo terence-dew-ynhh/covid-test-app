@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import styles from './TreatmentReceivedComponent.module.css';
 
-const TreatmentReceivedComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
+const TreatmentReceivedComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateField }) => {
   const [istreatmentReceived, setIsTreatmentReceived] = useState('');
 
   useEffect(() => {
@@ -12,7 +12,7 @@ const TreatmentReceivedComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) 
   const choiceSelected = (e) => {
     nextPage(e);
     setIsTreatmentReceived(e.target.value);
-    // updateField('is_pregnant', isPregnant);
+    updateField('is_pregnant', isPregnant);
   }
 
   

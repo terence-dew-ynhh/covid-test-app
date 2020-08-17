@@ -12,7 +12,7 @@ const CancerComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateField }
   const choiceSelected = (e) => {
     nextPage(e);
     setIsCancerPositive(e.target.value);
-    // updateField('cancer_diagnosed', isCancerPositive);
+    updateField('cancer_diagnosed', isCancerPositive);
   }
 
   return (

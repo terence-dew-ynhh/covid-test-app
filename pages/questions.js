@@ -6,15 +6,16 @@ import QuestionContainerComponent from "../components/QuestionContainerComponent
 
 function Home({uuid}) {
 
-  // const updateField = async (propName,propValue) => {
-  //   const action = 'post';
-  //   const res = await fetch('http://localhost:3011/api/survey', {
-  //     method: action,
-  //     body: JSON.stringify({uuid:uuid, [propName]:propValue})
-  //   })
+  const updateField = async (propName,propValue) => {
+    const action = 'POST';
+    const res = await fetch('http://localhost:3011/api/responses', {
+      method: action,
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({uuid:uuid, [propName]:propValue})
+    })
 
-  //   // console.log(res)
-  // }
+    console.log(res)
+  }
 
   return (
     <div className="container">
@@ -28,8 +29,8 @@ function Home({uuid}) {
       <h1 className="title">
           See if you qualify for coronavirus (COVID-19) testing
         </h1>
-      {/* <QuestionContainerComponent uuid={uuid} updateField={updateField}/> */}
-      <QuestionContainerComponent uuid={uuid} />
+      <QuestionContainerComponent uuid={uuid} updateField={updateField}/>
+      {/* <QuestionContainerComponent uuid={uuid} /> */}
       
     </div>
   );

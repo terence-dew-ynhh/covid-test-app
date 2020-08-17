@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import styles from './GenderComponent.module.css';
 
-const GenderComponent = ({ nextPage, isPrevEnabled, isNextEnabled, isDoneEnabled }) => {
+const GenderComponent = ({ nextPage, isPrevEnabled, isNextEnabled, isDoneEnabled, updateField }) => {
   const [isMale, setIsMale] = useState('');
 
   useEffect(() => {
@@ -13,7 +13,7 @@ const GenderComponent = ({ nextPage, isPrevEnabled, isNextEnabled, isDoneEnabled
   const choiceSelected = (e,progressVal) => {
     nextPage(e,progressVal);
     setIsMale(e.target.value);
-    // updateField('is_male', isMale);
+    updateField('is_male', isMale);
   }
 
   return (

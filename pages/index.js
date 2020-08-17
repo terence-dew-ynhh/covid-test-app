@@ -20,7 +20,7 @@ export default function FAQ() {
 
         <p>
           <b>Your Contribution</b>
-          <br></br>
+          <br></br><br></br>
             vaccine and medicine we have today was studied in hundreds and
             usually thousands of people. Currently, there are no approved
             vaccines available to prevent COVID-19 and the disease has spread
@@ -32,7 +32,7 @@ export default function FAQ() {
 
         <p>
           <b>About This Study</b>
-          <br></br>
+          <br></br><br></br>
             This study will take place in 3 stages and involves testing a
             placebo against multiple investigational vaccines, at different dose
             levels (amounts of vaccine), to try and prevent COVID-19. Each
@@ -42,7 +42,7 @@ export default function FAQ() {
 
         <p>
           <b>What to Expect</b>
-          <br></br>
+          <br></br><br></br>
             You will be randomly assigned (by chance) to receive the study
             vaccine or placebo (inactive substance). This assignment will be
             made by a computer and not by the study team. Neither you nor the
@@ -59,7 +59,7 @@ export default function FAQ() {
 
         <p>
           <b>Study Visits</b>
-          <br></br>
+          <br></br><br></br>
           • At each study visit, the study team will ask about your general
           health and complete study procedures such as a physical exam or taking
           your blood pressure
@@ -77,7 +77,7 @@ export default function FAQ() {
 
         <p>
           <b>Recording Reactions</b>
-          <br></br>☑ An electronic diary (e-diary) (a device or app on your
+          <br></br><br></br>☑ An electronic diary (e-diary) (a device or app on your
           phone)<br></br> ☑ A digital thermometer<br></br> ☑ A caliper (a device
           to measure any redness and swelling at the injection site)
           <br></br>
@@ -89,7 +89,7 @@ export default function FAQ() {
 
         <p>
           <b>Q&A: We Are Here to Help</b>
-          <br></br>
+          <br></br><br></br>
           We want to make sure that any questions you have are fully answered.
           If you have questions or concerns about anything related to this
           vaccine research study as you consider volunteering, please let the
@@ -132,12 +132,18 @@ export default function FAQ() {
           color: white;
           width: 60%;
         }
+        p{
+          width: 70%;
+        }
         ul {
           width: 100%;
         }
-        @media (max-width: 422px) {
+        @media (max-width: 475px) {
           .main-link {
             font-size: 1.5em;
+          }
+          p{
+            width: 90%;
           }
         }
       `}</style>

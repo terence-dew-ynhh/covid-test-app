@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import styles from './PregnantComponent.module.css';
 
-const PregnantComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
+const PregnantComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateField }) => {
   const [isPregnant, setIsPregnant] = useState('');
 
   useEffect(() => {
@@ -12,7 +12,7 @@ const PregnantComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
   const choiceSelected = (e) => {
     nextPage(e);
     setIsPregnant(e.target.value);
-    // updateField('is_pregnant', isPregnant);
+    updateField('is_pregnant', isPregnant);
   }
 
 

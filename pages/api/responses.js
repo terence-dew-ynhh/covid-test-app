@@ -1,17 +1,11 @@
 import nextConnect from 'next-connect';
-import middleware from '../../middleware/database';
+import database from '../../middlewares/database';
 
 const handler = nextConnect();
 
-handler.use(middleware);
+handler.use(database);
 
-handler.get(async (req, res) => {
- 
-  res.json("Cool")
-});
-
-handler.post(async (req, res) => {
-  console.log('here');
+handler.all(async (req, res) => {
 
   let { uuid, field, data } = req.body;
 
@@ -33,4 +27,10 @@ handler.post(async (req, res) => {
   res.json(items);
 });
 
-export default (req, res) => handler.apply(req, res) ;
+export const config = {
+  api: {
+    bodyParser: process.env.NODE_ENV !== 'production'
+  }
+};
+
+export default handler;

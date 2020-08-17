@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import styles from './HistoryComponent.module.css';
 
-const HistoryComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
+const HistoryComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateField }) => {
   const [hasAdverseReaction, setHasAdverseReaction] = useState('');
 
   useEffect(() => {
@@ -12,7 +12,7 @@ const HistoryComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
     // nextPage(e);
     isDoneEnabled(true);
     setHasAdverseReaction(e.target.value);
-    // updateField('adverse_reaction', hasAdverseReaction);
+    updateField('adverse_reaction', hasAdverseReaction);
   }
 
 

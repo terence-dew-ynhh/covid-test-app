@@ -28,8 +28,6 @@ const QuestionViewComponent = ({
   const setSchedulerURL = (location) => {updateLocation(location)};
   
   const components = {
-    employee: EmployeeQuestion,
-    overeighteen: Over18Component,
     symptomssel: SelectSymptoms,
     consent: ConsentComponent,    
   };

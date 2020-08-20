@@ -16,23 +16,25 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
     ) {
       checkboxesArray.forEach((element) => {
         if (!(element === 'None_of_the_Above')) {
-          let symtomsChk = document.getElementById(
+          let symptomsChk = document.getElementById(
             `prev_covid_${element.toLowerCase()}`
           );
-          symtomsChk.checked = false;
-          symtomsChk.disabled = true;
+          symptomsChk.checked = false;
+          symptomsChk.disabled = true;
         }
       });
       setHasSymptoms('No');
-      nextPage();
+      isDoneEnabled(true);
+      // nextPage();
     } else {
       checkboxesArray.forEach((element) => {
-        let symtomsChk = document.getElementById(
+        let symptomsChk = document.getElementById(
           `prev_covid_${element.toLowerCase()}`
         );
-        symtomsChk.disabled = false;
+        symptomsChk.disabled = false;
       });
       setHasSymptoms('');
+      isDoneEnabled(false);
     }
 
     // If any of the boxes are checked beside None of the Above
@@ -54,9 +56,12 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
         noneChk.checked = false;
         noneChk.disabled = true;
         setHasSymptoms('Yes');
+        isDoneEnabled(true);
+
       } else {
         noneChk.disabled = false;
         setHasSymptoms('');
+        isDoneEnabled(false);
       }
     }
   };
@@ -124,12 +129,6 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
   return (
     <>
       <div className={styles.question_row_item}>
-        <p className="error" hidden={!(hasSymptoms === 'Yes')}>
-          If you are a student and on campus, isolate yourself from contact with
-          others and call the student health center to schedule a consultation
-          203-932-7079. <br></br> If you are a faculty member or employee, notify your
-          manager and leave work. If you are home, stay home. Call 203-932-7079
-        </p>
         <div className={styles.question_row_item_sub}>
           <fieldset>
             <legend>

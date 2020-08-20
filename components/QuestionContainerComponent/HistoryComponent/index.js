@@ -11,8 +11,7 @@ const HistoryComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateField 
   const choiceSelected = (e) => {
     // nextPage(e);
     isDoneEnabled(true);
-    setHasAdverseReaction(e.target.value);
-    updateField('adverse_reaction', hasAdverseReaction);
+    setHasAdverseReaction(e.target.value);    
   }
 
 
@@ -31,7 +30,10 @@ const HistoryComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateField 
                   value="Yes"
                   name="prev_covid"
                   onClick={ 
-                    choiceSelected
+                    (e) =>{
+                      updateField('adverse_reaction', true);
+                      choiceSelected(e)
+                    }
                   }
                 ></input>
                 <label htmlFor="prev_covid_yes">Yes</label>
@@ -42,7 +44,10 @@ const HistoryComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateField 
                     value="No"
                     name="prev_covid"
                     onClick={ 
-                      choiceSelected
+                      (e) =>{
+                        updateField('adverse_reaction', false);
+                        choiceSelected(e)
+                      }
                     }
                   ></input>
                   <label htmlFor="prev_covid_no">No</label>

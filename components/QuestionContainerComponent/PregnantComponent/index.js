@@ -11,8 +11,7 @@ const PregnantComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateField
 
   const choiceSelected = (e) => {
     nextPage(e);
-    setIsPregnant(e.target.value);
-    updateField('is_pregnant', isPregnant);
+    setIsPregnant(e.target.value);    
   }
 
 
@@ -35,7 +34,10 @@ const PregnantComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateField
                   value="Yes"
                   name="prev_covid"
                   onClick={ 
-                    choiceSelected
+                    (e) =>{
+                      updateField('is_pregnant', true);
+                      choiceSelected(e)
+                    }
                   }
                 ></input>
                 <label htmlFor="prev_covid_yes">Yes</label>
@@ -46,7 +48,10 @@ const PregnantComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateField
                     value="No"
                     name="prev_covid"
                     onClick={ 
-                      choiceSelected
+                      (e) =>{
+                        updateField('is_pregnant', false);
+                        choiceSelected(e)
+                      }
                     }
                   ></input>
                   <label htmlFor="prev_covid_no">No</label>

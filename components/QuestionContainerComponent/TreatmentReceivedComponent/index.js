@@ -11,8 +11,7 @@ const TreatmentReceivedComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, up
 
   const choiceSelected = (e) => {
     nextPage(e);
-    setIsTreatmentReceived(e.target.value);
-    updateField('is_pregnant', isPregnant);
+    setIsTreatmentReceived(e.target.value);    
   }
 
   
@@ -36,7 +35,10 @@ const TreatmentReceivedComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, up
                   value="Yes"
                   name="prev_covid"
                   onClick={
-                    choiceSelected
+                    (e) =>{
+                      updateField('is_pregnant', true);
+                      choiceSelected(e)
+                    }
                   }
                 ></input>
                 <label htmlFor="prev_covid_yes">Yes</label>
@@ -47,7 +49,10 @@ const TreatmentReceivedComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, up
                     value="No"
                     name="prev_covid"
                     onClick={
-                      choiceSelected
+                      (e) =>{
+                        updateField('is_pregnant', false);
+                        choiceSelected(e)
+                      }
                     }
                   ></input>
                   <label htmlFor="prev_covid_no">No</label>

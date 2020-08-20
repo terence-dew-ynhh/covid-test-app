@@ -9,7 +9,8 @@ const client = new MongoClient('mongodb://localhost:27017', {
 async function database(req, res, next) {
   if (!client.isConnected()) await client.connect();
   req.dbClient = client;
-  req.db = client.db('covidvaccine');
+  req.db = client.db('covid_vaccine');
+  console.log(`Connected MongoDB ${req.db.namespace}`)
   return next();
 }
 

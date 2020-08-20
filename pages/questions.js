@@ -4,18 +4,7 @@ import Head from "next/head";
 import QuestionContainerComponent from "../components/QuestionContainerComponent";
 
 
-function Home({uuid}) {
-
-  const updateField = async (propName,propValue) => {
-    const action = 'POST';
-    const res = await fetch('http://localhost:3011/api/responses', {
-      method: action,
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({uuid:uuid, [propName]:propValue})
-    })
-
-    console.log(res)
-  }
+  function Home({uuid}) {
 
   return (
     <div className="container">
@@ -29,7 +18,7 @@ function Home({uuid}) {
       <h1 className="title">
           See if you qualify for coronavirus (COVID-19) testing
         </h1>
-      <QuestionContainerComponent uuid={uuid} updateField={updateField}/>
+      <QuestionContainerComponent uuid={uuid} />
       {/* <QuestionContainerComponent uuid={uuid} /> */}
       
     </div>
@@ -37,9 +26,9 @@ function Home({uuid}) {
 }
 
 Home.getInitialProps = async (context) => {
-  const res = await fetch("http://localhost:3011/api/uuid");
-  const json = await res.json();
-  return {uuid: json}
+  let uuid = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+
+  return {uuid: uuid}
 }
 
 export default Home

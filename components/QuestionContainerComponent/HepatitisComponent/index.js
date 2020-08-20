@@ -12,7 +12,7 @@ const HepatitisComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateFiel
   const choiceSelected = (e) => {
     nextPage(e);
     setIsDiagnosed(e.target.value);
-    updateField('is_diagnosed', isDiagnosed);
+    
   }
 
   return (
@@ -30,7 +30,10 @@ const HepatitisComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateFiel
                   value="Yes"
                   name="prev_covid"
                   onClick={ 
-                    choiceSelected
+                    (e) =>{
+                      updateField('is_diagnosed', true);
+                      choiceSelected(e)
+                    }
                   }
                 ></input>
                 <label htmlFor="prev_covid_yes">Yes</label>
@@ -41,7 +44,10 @@ const HepatitisComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateFiel
                     value="No"
                     name="prev_covid"
                     onClick={
-                      choiceSelected
+                      (e) =>{
+                        updateField('is_diagnosed', false);
+                        choiceSelected(e)
+                      }
                     }
                   ></input>
                   <label htmlFor="prev_covid_no">No</label>

@@ -61,7 +61,6 @@ const QuestionFormComponent = ({uuid, updateField}) => {
         schedulePush={schedulePush}
         updateLocation={updateLocation}
         uuid={uuidString}
-        updateField={updateField}
       ></QuestionView>
     </div>
   );

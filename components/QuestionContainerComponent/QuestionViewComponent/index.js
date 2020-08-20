@@ -1,5 +1,4 @@
-import fetch from 'isomorphic-unfetch'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import AgeQuestionComponent from '../AgeQuestionComponent';
 import GenderComponent from '../GenderComponent';
 import HepatitisComponent from '../HepatitisComponent';
@@ -16,33 +15,47 @@ const QuestionViewComponent = ({
   prevPage,
   schedulePush,
   updateLocation,
-  updateField,
   uuid
 }) => {
+  const [age, setAge] = useState(0);
   const [prevEnabled, setPrevEnabled] = useState(false);
   const [nextEnabled, setNextEnabled] = useState(false);
   const [doneEnabled, setDoneEnabled] = useState(false);
-  const [pageProgress, setPageProgress] = useState(1);
-  const [patientAge, setPatientAge] = useState(18);
+
+  useEffect(() => {
+    setAge(18);
+  }, []);
 
   const isPrevEnabled = (isEnabled) => {
     setPrevEnabled(isEnabled);
   };
 
   const isNextEnabled = (isEnabled,age) => {
+    setAge(age);
     setNextEnabled(isEnabled);
-    setPatientAge(age);
   };
 
   const isDoneEnabled = (isEnabled) => {
     setDoneEnabled(isEnabled);    
   }; 
   
-  const hasSubQuestion = () =>{
-    setPageProgress(2)
+  const setSchedulerURL = (location) => {updateLocation(location)};
+
+  const updateField = async (field, fieldVal) => {
+    console.log(fieldVal)
+    const action = 'post';
+    const res = await fetch('/api/responses', {
+      method: action,
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({'uuid':uuid, 'field':field, 'fieldVal': fieldVal})
+    })
   }
 
-  const setSchedulerURL = (location) => {updateLocation(location)};
+  const updateAndProgress = (e) => {
+    const patientAgeData = age;
+    updateField('age', patientAgeData);
+    nextPage();
+  }
   
   const components = {
     age: AgeQuestionComponent,
@@ -64,7 +77,6 @@ const QuestionViewComponent = ({
         isPrevEnabled={isPrevEnabled}
         isNextEnabled={isNextEnabled}        
         isDoneEnabled={isDoneEnabled}
-        hasSubQuestion={hasSubQuestion}
         setSchedulerURL={setSchedulerURL}
         uuid={uuid}
         updateField={updateField}  
@@ -74,7 +86,7 @@ const QuestionViewComponent = ({
       <button className="button" hidden={!prevEnabled} onClick={ e => compName === 'hepatitis' ? prevPage(e,2) : prevPage(e) }>
         {`< Back`}
       </button>
-      <button className="button" hidden={!nextEnabled} onClick={() => {nextPage; updateField('age',patientAge)}}>
+      <button className="button" hidden={!nextEnabled} onClick={(e) => updateAndProgress(e)}>
       {/* <button className="button" hidden={!nextEnabled} onClick={nextPage}> */}
 
         {`Next >`}

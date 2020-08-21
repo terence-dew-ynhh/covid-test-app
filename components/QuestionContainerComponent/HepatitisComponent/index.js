@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import styles from './HepatitisComponent.module.css';
 
-const HepatitisComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateField }) => {
+const HepatitisComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateField, schedulePush }) => {
   const [isDiagnosed, setIsDiagnosed] = useState('');
 
   useEffect(() => {
@@ -10,7 +10,8 @@ const HepatitisComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateFiel
   }, []);
 
   const choiceSelected = (e) => {
-    nextPage(e);
+    if(e.target.value === 'Yes') schedulePush(true);
+    else nextPage(e.target.value); 
     setIsDiagnosed(e.target.value);
     
   }

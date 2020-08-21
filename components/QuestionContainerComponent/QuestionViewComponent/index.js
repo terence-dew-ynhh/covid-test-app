@@ -54,7 +54,9 @@ const QuestionViewComponent = ({
   const updateAndProgress = (e) => {
     const patientAgeData = age;
     updateField('age', patientAgeData);
-    nextPage();
+    
+    if(patientAgeData > 17 && patientAgeData <= 85){ nextPage();}
+    else {schedulePush(true);}
   }
   
   const components = {
@@ -79,7 +81,8 @@ const QuestionViewComponent = ({
         isDoneEnabled={isDoneEnabled}
         setSchedulerURL={setSchedulerURL}
         uuid={uuid}
-        updateField={updateField}  
+        updateField={updateField}
+        schedulePush ={schedulePush}  
       />
       </div>
       <div className={styles.buttonContainer}>              

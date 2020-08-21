@@ -16,10 +16,9 @@ import QuestionContainerComponent from "../components/QuestionContainerComponent
       <img src="/YNHHSLogo.png"></img>
       </div>      
       <h1 className="title">
-          See if you qualify for coronavirus (COVID-19) testing
+          Pre-screening for Vaccine Trial
         </h1>
       <QuestionContainerComponent uuid={uuid} />
-      {/* <QuestionContainerComponent uuid={uuid} /> */}
       
     </div>
   );

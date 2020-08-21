@@ -19,8 +19,7 @@ import styles from './AgeQuestionComponent.module.css'
     if (e.target.value >= 0 && e.target.value <= 120 ) setAgeCount(e.target.value)
       
     
-    if(e.target.value > 17) isNextEnabled(true,ageCount)
-    else isNextEnabled(false,ageCount)
+   isNextEnabled(true,e.target.value) 
   }
 
     return (

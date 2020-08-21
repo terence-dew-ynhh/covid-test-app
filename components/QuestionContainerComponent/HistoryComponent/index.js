@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import styles from './HistoryComponent.module.css';
 
-const HistoryComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateField }) => {
+const HistoryComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateField, schedulePush  }) => {
   const [hasAdverseReaction, setHasAdverseReaction] = useState('');
 
   useEffect(() => {
@@ -10,7 +10,8 @@ const HistoryComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateField 
 
   const choiceSelected = (e) => {
     // nextPage(e);
-    isDoneEnabled(true);
+    if(e.target.value === 'Yes') schedulePush(true);
+    else isDoneEnabled(true);
     setHasAdverseReaction(e.target.value);    
   }
 

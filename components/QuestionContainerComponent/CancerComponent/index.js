@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import styles from './CancerComponent.module.css';
 
-const CancerComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateField }) => {
+const CancerComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateField, schedulePush }) => {
   const [isCancerPositive, setIsCancerPositive] = useState('');
 
   useEffect(() => {
@@ -9,9 +9,10 @@ const CancerComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateField }
     isPrevEnabled(true);
   }, []);
 
-  const choiceSelected = (e) => {
-    nextPage(e);
+  const choiceSelected = (e) => {    
     setIsCancerPositive(e.target.value);
+    if(e.target.value === 'Yes') schedulePush(true);
+    else nextPage(e.target.value); 
   }
 
   return (

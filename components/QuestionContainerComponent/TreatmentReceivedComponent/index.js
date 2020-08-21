@@ -10,7 +10,8 @@ const TreatmentReceivedComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, up
   }, []);
 
   const choiceSelected = (e) => {
-    nextPage(e);
+    if(e.target.value === 'Yes') schedulePush(true);
+    else nextPage(e.target.value); 
     setIsTreatmentReceived(e.target.value);    
   }
 

@@ -4,8 +4,7 @@ import styles from './QuestionContainerComponent.module.css'
 import { useRouter } from 'next/router';
 
 
-const QuestionFormComponent = ({uuid, updateField}) => {
-// const QuestionFormComponent = ({uuid}) => {
+const QuestionFormComponent = ({uuid}) => {
 
 
   const [viewIdx, setviewIdx] = useState(0);
@@ -29,9 +28,10 @@ const QuestionFormComponent = ({uuid, updateField}) => {
     setviewIdx(index);
   };
 
-  const schedulePush = () => {
+  const schedulePush = (isdisqualified) => {
 
-    router.push(`/scheduling?endpoint=${endPoint}`,'/scheduling');
+    if(isdisqualified) router.push(`/thankyou`);
+    else router.push(`/scheduling?endpoint=${endPoint}`,'/scheduling');
   };
 
   const updateLocation = (endpoint) =>{

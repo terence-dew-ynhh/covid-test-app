@@ -13,7 +13,7 @@ export default function Home() {
         <img src="/YNHHSLogo.png"></img>
       </div>
       <h1 className="title">
-        University of New Haven Health Services COVID – 19 Testing
+        Yale New Haven Health Services COVID – 19 Testing
       </h1>
       <QuestionContainerComponent></QuestionContainerComponent>
     </div>

@@ -94,7 +94,7 @@ const QuestionViewComponent = ({
 
         {`Next >`}
       </button>  
-      <button className="button" hidden={!doneEnabled} onClick={schedulePush}>
+      <button className="button" hidden={!doneEnabled} onClick={() => schedulePush(false)}>
         Schedule Appoinment
       </button>  
       </div>

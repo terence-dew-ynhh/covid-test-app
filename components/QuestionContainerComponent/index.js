@@ -7,7 +7,7 @@ import { useRouter } from 'next/router';
 const QuestionFormComponent = ({}) => {
 
   const [viewIdx, setviewIdx] = useState(0);
-  const [endPoint, setEndpoint] = useState('Bridgeport Hospital');
+  const [endPoint, setEndpoint] = useState('Asymptomatic');
   const compNames = ['consent', 'symptomssel'];
   const router = useRouter();
 
@@ -21,6 +21,11 @@ const QuestionFormComponent = ({}) => {
     let index = viewIdx > 0 ? viewIdx - 1 : viewIdx;
     setviewIdx(index);
   };
+
+  const appointmentType = (hasSymptoms) => {
+    console.log(hasSymptoms)
+      hasSymptoms ? setEndpoint('Symptomatic'):setEndpoint('Asymptomatic')
+  }
 
   const schedulePush = () => {
 
@@ -53,6 +58,7 @@ const QuestionFormComponent = ({}) => {
         compName={compNames[viewIdx]}
         schedulePush={schedulePush}
         updateLocation={updateLocation}
+        appointmentType={appointmentType}
       ></QuestionView>
     </div>
   );

@@ -12,8 +12,8 @@ export default function Home({ link }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className='grid'>
-      <img src="/YNHHSLogo.png"></img>
+      <div className="grid">
+        <img src="/YNHHSLogo.png"></img>
       </div>
 
       <div className="scheduleContainer">
@@ -41,11 +41,13 @@ export default function Home({ link }) {
 
 Home.getInitialProps = async ({ query }) => {
   const { endpoint } = query;
-  let link = 'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=81079&vt=2228&dept=103720003&view=plain&public=1';
-  
+
+  let link =
+    endpoint === 'Asymptomatic'
+      ? 'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=81079&vt=2228&dept=103720003&view=plain&public=1'
+      : 'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=81079&vt=2242&dept=103720003&view=plain&public=1';
 
   return {
     link
   };
 };
- 

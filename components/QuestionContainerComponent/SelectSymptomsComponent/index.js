@@ -1,7 +1,7 @@
 import styles from './SelectSymptomsComponent.module.css';
 import { useState, useEffect } from 'react';
 
-const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
+const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled, appointmentType }) => {
   const [hasSymptoms, setHasSymptoms] = useState('');
 
   useEffect(() => {
@@ -25,7 +25,7 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
       });
       setHasSymptoms('No');
       isDoneEnabled(true);
-      // nextPage();
+      appointmentType(false);
     } else {
       checkboxesArray.forEach((element) => {
         let symptomsChk = document.getElementById(
@@ -57,7 +57,7 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
         noneChk.disabled = true;
         setHasSymptoms('Yes');
         isDoneEnabled(true);
-
+        appointmentType(true);
       } else {
         noneChk.disabled = false;
         setHasSymptoms('');

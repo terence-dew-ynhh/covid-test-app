@@ -65,7 +65,7 @@ const ConsentComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
         <label className={styles.none_label_or}>
           {' '}
           <b>Signature:</b><br></br>
-          I understand that by scheduling this test I will need to register for a MyChart account in order to get my results.  I will only receive a call if I have a positive or invalid test result, negative test results will only be delivered to you in your MyChart account. 
+          I understand that by scheduling this test I will need to register for a MyChart account in order to get my results. Negative results will be available only through MyChart. I will only receive a call if my results are positive or invalid.  
         </label>
         <input
           id={`prev_covid_${checkbox.toLowerCase()}`}

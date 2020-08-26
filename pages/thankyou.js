@@ -15,7 +15,7 @@ export default function ThankYou({ link }) {
         <img src="/YNHHSLogo.png"></img>
       </div>
       <h1 className="title">
-      Thank you for your interest in this vaccine trial
+      Thank You for your Interest in this Vaccine Trial
         </h1>
       <div className="questionContainer">
         <p>
@@ -41,7 +41,7 @@ export default function ThankYou({ link }) {
           -webkit-box-direction: normal;
           -ms-flex-direction: column;
           flex-direction: column;
-          padding-left: 40px;
+          padding: 40px;
         }
       
         @media(max-width:700px){
@@ -50,10 +50,6 @@ export default function ThankYou({ link }) {
             padding-left: 40px;
           }
         }   
-        
-        
-        
-
       `}</style>
     </div>
   );

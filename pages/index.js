@@ -15,13 +15,13 @@ export default function FAQ() {
       <div className='grid'>
       <img src="/YNHHSLogo.png"></img>
       </div>   
-      <div className="questions_div">
-        <h2>Information</h2>
+      <h1>Yale COVID-19 Test Scheduler - Introduction</h1>      
+      <div className="questions_div">        
 
         <p>
           <b>Your Contribution</b>
           <br></br><br></br>
-            vaccine and medicine we have today was studied in hundreds and
+            Vaccine and medicine we have today was studied in hundreds and
             usually thousands of people. Currently, there are no approved
             vaccines available to prevent COVID-19 and the disease has spread
             across the world. Each and every person involved in clinical
@@ -99,18 +99,21 @@ export default function FAQ() {
         </p>
 
         <Link href="/questions">
-          <a><b>{'Begin Questionnaire >'} </b></a>
+          <a><b>{'Get Started >'} </b></a>
         </Link>
       </div>
 
       <style jsx>{`
         .questions_div {
+          width: 80%;
+          background: white;
+          box-shadow: 0 0 10px 5px rgba(0,0,0,0.1);
           display: -webkit-box;
           display: -ms-flexbox;
           display: flex;
           -webkit-box-align: start;
           -ms-flex-align: start;
-          align-items: flex-start;
+          align-items: center;
           -webkit-box-pack: start;
           -ms-flex-pack: start;
           justify-content: flex-start;
@@ -119,12 +122,16 @@ export default function FAQ() {
           -webkit-box-direction: normal;
           -ms-flex-direction: column;
           flex-direction: column;
-          width: 100%;
           padding-left: 2%;
+          padding-top: 3%;
+          padding-bottom: 3%;
         }
-        h2,
+        h1,
         .main-h {
           color: #0070c0;
+        }
+        a{
+          margin-top: 1%;
         }
         .main-link {
           background: #00008b;
@@ -133,7 +140,7 @@ export default function FAQ() {
           width: 60%;
         }
         p{
-          width: 70%;
+          width: 80%;
         }
         ul {
           width: 100%;

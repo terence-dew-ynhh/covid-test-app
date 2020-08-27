@@ -4,22 +4,21 @@ import styles from './AgeQuestionComponent.module.css'
 
  const AgeQuestionComponent =({nextPage, isPrevEnabled, isNextEnabled, isDoneEnabled}) => {
   
-  const [isEmployee, setIsEmployee] = useState(true);
   const [ageCount, setAgeCount] = useState(18);
 
   useEffect(() => {
     isPrevEnabled(false);
     isDoneEnabled(false);
     isNextEnabled(true);
+    setAgeCount(18);
   }, []);
 
 
 
   const ageChanged = (e) =>{
-    if (e.target.value >= 0 && e.target.value <= 120 ) setAgeCount(e.target.value)
-      
+    if (e.target.value >= 0 && e.target.value <= 120 ) setAgeCount(parseInt(e.target.value))      
     
-   isNextEnabled(true,e.target.value) 
+    isNextEnabled(true, e.target.value)
   }
 
     return (
@@ -38,7 +37,7 @@ import styles from './AgeQuestionComponent.module.css'
             min="1"
             max="120"
             value={ageCount}
-            onChange={e=> ageChanged(e)}
+            onChange={e => ageChanged(e)}
             name="employee_staff"            
           ></input>
         </fieldset>        

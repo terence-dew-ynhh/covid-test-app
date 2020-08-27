@@ -15,14 +15,12 @@ const QuestionFormComponent = ({uuid}) => {
 
   
   const nextPage = (e, pageIncrement) => {
-    console.log(pageIncrement)
     let increment = pageIncrement ? pageIncrement: 1 ;
     let index = viewIdx <= 6 ? viewIdx + increment : viewIdx;
     setviewIdx(index);
   };
 
   const prevPage = (e, pageIncrement) => {
-    console.log(pageIncrement)
     let increment = pageIncrement ? pageIncrement: 1 ;
     let index = viewIdx <= 6 ? viewIdx - increment : viewIdx;
     setviewIdx(index);

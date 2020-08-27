@@ -9,13 +9,14 @@ export default function FAQ() {
   return (
     <div className="container">
       <Head>
-        <title>Yale COVID-19 Test Scheduler</title>
+        <title>Yale COVID-19 Vaccine Clinical Trial</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className='grid'>
       <img src="/YNHHSLogo.png"></img>
       </div>   
-      <h1>Yale COVID-19 Test Scheduler - Introduction</h1>      
+      <h1>Yale COVID-19 Vaccine Clinical Trial</h1>
+      <h2>Introduction & Appointment Scheduler</h2>      
       <div className="questions_div">        
 
         <p>

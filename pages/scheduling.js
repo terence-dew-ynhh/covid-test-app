@@ -4,11 +4,10 @@ import { useRouter } from 'next/router';
 export default function Home({ link }) {
   const router = useRouter();
   const { endpoint } = router.query;
-  console.log(endpoint);
   return (
     <>
       <Head>
-        <title>YNHH COVID-19 Test Scheduler</title>
+        <title>Yale COVID-19 Vaccine Clinical Trial</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

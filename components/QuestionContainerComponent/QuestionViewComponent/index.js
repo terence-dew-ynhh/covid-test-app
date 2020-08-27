@@ -17,7 +17,7 @@ const QuestionViewComponent = ({
   updateLocation,
   uuid
 }) => {
-  const [age, setAge] = useState(0);
+  const [age, setAge] = useState(18);
   const [prevEnabled, setPrevEnabled] = useState(false);
   const [nextEnabled, setNextEnabled] = useState(false);
   const [doneEnabled, setDoneEnabled] = useState(false);
@@ -30,9 +30,10 @@ const QuestionViewComponent = ({
     setPrevEnabled(isEnabled);
   };
 
-  const isNextEnabled = (isEnabled,age) => {
-    setAge(age);
+  const isNextEnabled = (isEnabled,input) => {
     setNextEnabled(isEnabled);
+    setAge(parseInt(input));
+
   };
 
   const isDoneEnabled = (isEnabled) => {
@@ -42,7 +43,6 @@ const QuestionViewComponent = ({
   const setSchedulerURL = (location) => {updateLocation(location)};
 
   const updateField = async (field, fieldVal) => {
-    console.log(fieldVal)
     const action = 'post';
     const res = await fetch('/api/responses', {
       method: action,

@@ -12,7 +12,7 @@ export default function ThankYou({ link }) {
   return (
     <div className="container">
       <Head>
-        <title>Yale COVID-19 Test Scheduler</title>
+        <title>Yale COVID-19 Vaccine Clinical Trial</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="grid">
@@ -22,17 +22,17 @@ export default function ThankYou({ link }) {
         Thank You for your Interest in this Vaccine Trial
       </h1>
       <div className="questionContainer">
-        {/* <p>
-          Based on your responses you do not qualify for this clinical trial. If
-          you would like to be contacted about future vaccine trials, please
-          contact our team at Yale <a href="helpusdiscover@yale.edu">helpusdiscover@yale.edu</a>
-        </p> */}
         <p>
           Based on your responses you do not qualify for this clinical trial. If
           you would like to be contacted about future vaccine trials, please
-          enter your contact details below:
+          contact our team at Yale <a href="helpusdiscover@yale.edu">helpusdiscover@yale.edu</a>
         </p>
-        <fieldset className="radio_grp_set">
+        {/* <p>
+          Based on your responses you do not qualify for this clinical trial. If
+          you would like to be contacted about future vaccine trials, please
+          enter your contact details below:
+        </p> */}
+        {/* <fieldset className="radio_grp_set">
           <div className="question_row_item">
             <label htmlFor="employee_staff_check_yes">Name:</label>
             <input
@@ -58,7 +58,7 @@ export default function ThankYou({ link }) {
         </fieldset>
         <button className="button" hidden={false} onClick={ e => console.log(e) }>
         {`Submit`}
-      </button>
+      </button> */}
       </div>
 
       <style jsx>{`

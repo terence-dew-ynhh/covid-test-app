@@ -8,7 +8,7 @@ const QuestionFormComponent = ({}) => {
 
   const [viewIdx, setviewIdx] = useState(0);
   const [endPoint, setEndpoint] = useState('Asymptomatic');
-  const compNames = ['consent', 'symptomssel'];
+  const compNames = ['priortest','consent', 'symptomssel'];
   const router = useRouter();
 
   

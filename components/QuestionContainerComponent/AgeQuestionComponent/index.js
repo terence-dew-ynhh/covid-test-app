@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import styles from './AgeQuestionComponent.module.css'
 
 
- const AgeQuestionComponent =({nextPage, isPrevEnabled, isNextEnabled, isDoneEnabled}) => {
+ const AgeQuestionComponent =({nextPage, isPrevEnabled, isNextEnabled, isDoneEnabled, updateAge}) => {
   
   const [ageCount, setAgeCount] = useState(18);
 
@@ -10,15 +10,15 @@ import styles from './AgeQuestionComponent.module.css'
     isPrevEnabled(false);
     isDoneEnabled(false);
     isNextEnabled(true);
-    setAgeCount(18);
+    updateAge(18)
   }, []);
 
 
 
   const ageChanged = (e) =>{
-    if (e.target.value >= 0 && e.target.value <= 120 ) setAgeCount(parseInt(e.target.value))      
-    
-    isNextEnabled(true, e.target.value)
+    if (e.target.value >= 0 && e.target.value <= 120 ) setAgeCount(parseInt(e.target.value))     
+    isNextEnabled(true)
+    updateAge(e.target.value)
   }
 
     return (

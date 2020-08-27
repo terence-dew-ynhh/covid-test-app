@@ -32,7 +32,6 @@ const QuestionViewComponent = ({
 
   const isNextEnabled = (isEnabled,input) => {
     setNextEnabled(isEnabled);
-    setAge(parseInt(input));
 
   };
 
@@ -55,8 +54,12 @@ const QuestionViewComponent = ({
     const patientAgeData = age;
     updateField('age', patientAgeData);
     
-    if(patientAgeData > 17 && patientAgeData <= 85){ nextPage();}
-    else {schedulePush(true);}
+    if(patientAgeData > 17 && patientAgeData <= 85){ nextPage()}
+    else {schedulePush(true)}
+  }
+
+  const updateAge = (input) => {
+    setAge(parseInt(input));
   }
   
   const components = {
@@ -82,11 +85,12 @@ const QuestionViewComponent = ({
         setSchedulerURL={setSchedulerURL}
         uuid={uuid}
         updateField={updateField}
-        schedulePush ={schedulePush}  
+        schedulePush ={schedulePush} 
+        updateAge={updateAge} 
       />
       </div>
       <div className={styles.buttonContainer}>              
-      <button className="button" hidden={!prevEnabled} onClick={ e => compName === 'hepatitis' ? prevPage(e,2) : prevPage(e) }>
+      <button className="button" hidden={!prevEnabled} onClick={ (e) => {compName === 'hepatitis' ? prevPage(e,2) : prevPage(e);} }>
         {`< Back`}
       </button>
       <button className="button" hidden={!nextEnabled} onClick={(e) => updateAndProgress(e)}>

@@ -23,10 +23,13 @@ export default function FAQ() {
           <br></br>
           <br></br>
           Currently, there are no approved vaccines available to prevent
-          COVID-19 and the disease has spread across the world. Each and every
-          person involved in clinical research plays a powerful role.
-          Volunteering for this study can make a difference as we try to find
-          potential vaccines to prevent COVID-19.
+          COVID-19 and the disease has spread across the world. The COVID
+          vaccine we are studying at Yale has already been studied in thousands
+          of people for dosing and safety. This round is the largest so far to
+          help determine how well the vaccine works and identify any new more
+          rare side effects. Each and every person involved in clinical research
+          plays a powerful role. Volunteering for this study can make a
+          difference as we try to find potential vaccines to prevent COVID-19.
         </p>
 
         <p>
@@ -101,8 +104,10 @@ export default function FAQ() {
           below at any time
         </p>
 
-      <h3>Due to great demand and interest, extra hours added for this Saturday August 29</h3>
-
+        <h3>
+          Due to great demand and interest, extra hours added for this Saturday
+          August 29
+        </h3>
 
         <Link href="/questions">
           <a>
@@ -138,7 +143,7 @@ export default function FAQ() {
         .main-h {
           color: #0070c0;
         }
-        h3{
+        h3 {
           color: #0070c0;
         }
         a {

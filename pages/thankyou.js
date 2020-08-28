@@ -9,6 +9,22 @@ export default function ThankYou({ link }) {
   const router = useRouter();
   const { endpoint } = router.query;
 
+  const updateField = async (field, fieldVal) => {
+    const action = 'post';
+    const res = await fetch('/api/responses', {
+      method: action,
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({'uuid':uuid, 'field':field, 'fieldVal': fieldVal})
+    })
+  }
+
+  const submitInfo = () => {
+    const emailExpression = new RegExp('/\S+@\S+/');
+    const nameExpression = new RegExp("/^[a-zA-Z'- ]+$/"); 
+
+    const validEmail = emailExpression.test(String('my-email@test.com').toLowerCase())
+  }
+
   return (
     <div className="container">
       <Head>
@@ -22,19 +38,19 @@ export default function ThankYou({ link }) {
         Thank You for your Interest in this Vaccine Trial
       </h1>
       <div className="questionContainer">
-        <p>
-          Based on your responses you do not qualify for this clinical trial. If
-          you would like to be contacted about future vaccine trials, please
-          contact our team at Yale <a href="helpusdiscover@yale.edu">helpusdiscover@yale.edu</a>
-        </p>
         {/* <p>
           Based on your responses you do not qualify for this clinical trial. If
           you would like to be contacted about future vaccine trials, please
-          enter your contact details below:
+          contact our team at Yale <a href="helpusdiscover@yale.edu">helpusdiscover@yale.edu</a>
         </p> */}
-        {/* <fieldset className="radio_grp_set">
+        <p>
+          Based on your responses you do not qualify for this clinical trial. If
+          you would like to be contacted about future vaccine trials, please
+          enter your contact details below:
+        </p>
+         <fieldset className="radio_grp_set">
           <div className="question_row_item">
-            <label htmlFor="employee_staff_check_yes">Name:</label>
+            <label htmlFor="employee_staff_check_yes">Full Name:</label>
             <input
               id="employee_staff_check_yes"
               type="text"
@@ -56,9 +72,19 @@ export default function ThankYou({ link }) {
             ></input>
           </div>
         </fieldset>
+        <div className ="buttonContainer">              
         <button className="button" hidden={false} onClick={ e => console.log(e) }>
         {`Submit`}
-      </button> */}
+      </button> 
+      <button className="button" hidden={true} onClick={(e) => updateAndProgress(e)}>
+
+        {`Next >`}
+      </button>  
+      <button className="button" hidden={true} onClick={() => schedulePush(false)}>
+        Schedule Appoinment
+      </button>  
+      </div>
+        
       </div>
 
       <style jsx>{`
@@ -79,6 +105,9 @@ export default function ThankYou({ link }) {
           padding: 40px;
         }
 
+        .buttonContainer{
+          padding-top: 25px;
+        }
         @media (max-width: 700px) {
           .questionContainer {
             width: 100%;

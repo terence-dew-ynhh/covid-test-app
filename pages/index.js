@@ -6,6 +6,13 @@ export default function FAQ() {
   const [isCovidPositive, setIsCovidPositive] = useState('');
   const [isTwoWeeksSince, setIsTwoWeeksSince] = useState('');
 
+  const isAfter29th = () =>{
+    let GivenDate = '2020-08-29';
+    let CurrentDate = new Date();
+    GivenDate = new Date(GivenDate);
+
+    GivenDate > CurrentDate ? true : false
+  }
   return (
     <div className="container">
       <Head>
@@ -104,7 +111,7 @@ export default function FAQ() {
           below at any time
         </p>
 
-        <h3>
+        <h3 hidden={isAfter29th}>
           Due to great demand and interest, extra hours added for this Saturday
           August 29
         </h3>

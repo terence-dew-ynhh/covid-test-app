@@ -12,58 +12,58 @@ export default function FAQ() {
         <title>Yale COVID-19 Vaccine Clinical Trial</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className='grid'>
-      <img src="/YNHHSLogo.png"></img>
-      </div>   
+      <div className="grid">
+        <img src="/YNHHSLogo.png"></img>
+      </div>
       <h1>Yale COVID-19 Vaccine Clinical Trial</h1>
-      <h2>Introduction & Appointment Scheduler</h2>      
-      <div className="questions_div">        
-
+      <h2>Introduction & Appointment Scheduler</h2>
+      <div className="questions_div">
         <p>
           <b>Your Contribution</b>
-          <br></br><br></br>
-            Vaccine and medicine we have today was studied in hundreds and
-            usually thousands of people. Currently, there are no approved
-            vaccines available to prevent COVID-19 and the disease has spread
-            across the world. Each and every person involved in clinical
-            research plays a powerful role. Volunteering for this study can make
-            a difference as we try to find potential vaccines to prevent
-            COVID-19.
+          <br></br>
+          <br></br>
+          Currently, there are no approved vaccines available to prevent
+          COVID-19 and the disease has spread across the world. Each and every
+          person involved in clinical research plays a powerful role.
+          Volunteering for this study can make a difference as we try to find
+          potential vaccines to prevent COVID-19.
         </p>
 
         <p>
           <b>About This Study</b>
-          <br></br><br></br>
-            This study will take place in 3 stages and involves testing a
-            placebo against multiple investigational vaccines, at different dose
-            levels (amounts of vaccine), to try and prevent COVID-19. Each
-            vaccine is slightly different, but is intended to work in the same
-            way. All are given by injection.
+          <br></br>
+          <br></br>
+          This study will take place in 3 stages and involves testing a placebo
+          against multiple investigational vaccines, at different dose levels
+          (amounts of vaccine), to try and prevent COVID-19. Each vaccine is
+          slightly different, but is intended to work in the same way. All are
+          given by injection.
         </p>
 
         <p>
           <b>What to Expect</b>
-          <br></br><br></br>
-            You will be randomly assigned (by chance) to receive the study
-            vaccine or placebo (inactive substance). This assignment will be
-            made by a computer and not by the study team. Neither you nor the
-            study doctor will be told which group you are in nor, if you are
-            receiving a vaccine, which one it is. In the event of an emergency,
-            the study team will quickly find out this information.
-            <br></br>
-            Each participant will receive 2 injections. Some participants will
-            receive their injections 3 weeks apart and some will receive their
-            injections 2 months apart. The study doctor will explain to
-            participants when they will have their two injections. The study
-            team will be able to schedule the appointments.
+          <br></br>
+          <br></br>
+          You will be randomly assigned (by chance) to receive the study vaccine
+          or placebo (inactive substance). This assignment will be made by a
+          computer and not by the study team. Neither you nor the study doctor
+          will be told which group you are in nor, if you are receiving a
+          vaccine, which one it is. In the event of an emergency, the study team
+          will quickly find out this information.
+          <br></br>
+          Each participant will receive 2 injections. Some participants will
+          receive their injections 3 weeks apart and some will receive their
+          injections 2 months apart. The study doctor will explain to
+          participants when they will have their two injections. The study team
+          will be able to schedule the appointments.
         </p>
 
         <p>
           <b>Study Visits</b>
-          <br></br><br></br>
-          • At each study visit, the study team will ask about your general
-          health and complete study procedures such as a physical exam or taking
-          your blood pressure
+          <br></br>
+          <br></br>• At each study visit, the study team will ask about your
+          general health and complete study procedures such as a physical exam
+          or taking your blood pressure
           <br></br>• On injection days, the study vaccine or placebo will be
           given through an injection into the muscle of the upper arm and nasal
           swabs will be collected
@@ -78,7 +78,8 @@ export default function FAQ() {
 
         <p>
           <b>Recording Reactions</b>
-          <br></br><br></br>☑ An electronic diary (e-diary) (a device or app on your
+          <br></br>
+          <br></br>☑ An electronic diary (e-diary) (a device or app on your
           phone)<br></br> ☑ A digital thermometer<br></br> ☑ A caliper (a device
           to measure any redness and swelling at the injection site)
           <br></br>
@@ -90,7 +91,8 @@ export default function FAQ() {
 
         <p>
           <b>Q&A: We Are Here to Help</b>
-          <br></br><br></br>
+          <br></br>
+          <br></br>
           We want to make sure that any questions you have are fully answered.
           If you have questions or concerns about anything related to this
           vaccine research study as you consider volunteering, please let the
@@ -99,8 +101,13 @@ export default function FAQ() {
           below at any time
         </p>
 
+      <h3>Due to great demand and interest, extra hours added for this Saturday August 29</h3>
+
+
         <Link href="/questions">
-          <a><b>{'Get Started >'} </b></a>
+          <a>
+            <b>{'Get Started >'} </b>
+          </a>
         </Link>
       </div>
 
@@ -108,7 +115,7 @@ export default function FAQ() {
         .questions_div {
           width: 80%;
           background: white;
-          box-shadow: 0 0 10px 5px rgba(0,0,0,0.1);
+          box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1);
           display: -webkit-box;
           display: -ms-flexbox;
           display: flex;
@@ -131,8 +138,12 @@ export default function FAQ() {
         .main-h {
           color: #0070c0;
         }
-        a{
+        h3{
+          color: #0070c0;
+        }
+        a {
           margin-top: 1%;
+          font-size: 1.3em;
         }
         .main-link {
           background: #00008b;
@@ -140,7 +151,7 @@ export default function FAQ() {
           color: white;
           width: 60%;
         }
-        p{
+        p {
           width: 80%;
         }
         ul {
@@ -150,7 +161,7 @@ export default function FAQ() {
           .main-link {
             font-size: 1.5em;
           }
-          p{
+          p {
             width: 90%;
           }
         }

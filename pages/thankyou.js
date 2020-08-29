@@ -5,6 +5,8 @@ import Head from 'next/head';
 export default function ThankYou({ link }) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+
 
   const router = useRouter();
   const { endpoint } = router.query;
@@ -19,10 +21,14 @@ export default function ThankYou({ link }) {
   }
 
   const submitInfo = () => {
-    const emailExpression = new RegExp('/\S+@\S+/');
-    const nameExpression = new RegExp("/^[a-zA-Z'- ]+$/"); 
+    const emailExpression = new RegExp('\\S+@\\S+');
+    // const nameExpression = new RegExp("[a-zA-Z'- ]+$"); 
 
-    const validEmail = emailExpression.test(String('my-email@test.com').toLowerCase())
+    const validEmail = emailExpression.test(String(email).toLowerCase())
+    // const validName = nameExpression.test(String(name).toLowerCase())
+
+    if(!validEmail)setErrorMessage('Invalid Email')
+    // if(validName)setErrorMessage('Invalid Name')
   }
 
   return (
@@ -38,11 +44,9 @@ export default function ThankYou({ link }) {
         Thank You for your Interest in this Vaccine Trial
       </h1>
       <div className="questionContainer">
-        {/* <p>
-          Based on your responses you do not qualify for this clinical trial. If
-          you would like to be contacted about future vaccine trials, please
-          contact our team at Yale <a href="helpusdiscover@yale.edu">helpusdiscover@yale.edu</a>
-        </p> */}
+        <p hidden={errorMessage === ''}>
+            {errorMessage}
+        </p>
         <p>
           Based on your responses you do not qualify for this clinical trial. If
           you would like to be contacted about future vaccine trials, please
@@ -56,7 +60,7 @@ export default function ThankYou({ link }) {
               type="text"
               placeholder='Enter your Name'
               value={name}
-              onChange={(e) => setName(e)}
+              onChange={(e) => setName(e.target.value)}
               name="applicant_name"
             ></input>
           </div>
@@ -67,13 +71,13 @@ export default function ThankYou({ link }) {
               type="text"
               placeholder='Enter your Email'
               value={email}
-              onChange={(e) => setEmail(e)}
+              onChange={(e) => setEmail(e.target.value)}
               name="applicant_email"
             ></input>
           </div>
         </fieldset>
         <div className ="buttonContainer">              
-        <button className="button" hidden={false} onClick={ e => console.log(e) }>
+        <button className="button" hidden={false} onClick={ e => submitInfo() }>
         {`Submit`}
       </button> 
       <button className="button" hidden={true} onClick={(e) => updateAndProgress(e)}>

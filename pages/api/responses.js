@@ -40,7 +40,8 @@ handler.post(async (req, res) => {
 // console.log(`${field} + ${fieldVal}`)
   let updateVals = {
     $set: {
-      [field]: fieldVal
+      [field]: fieldVal,
+      date: new Date(Date.now()).toISOString()
     }
   };
 try{

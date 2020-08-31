@@ -8,12 +8,12 @@ const QuestionFormComponent = ({}) => {
 
   const [viewIdx, setviewIdx] = useState(0);
   const [endPoint, setEndpoint] = useState('Bridgeport Region');
-  const compNames = ['symptoms','location'];
+  const compNames = ['provider','lastscreening','breastissue','ultrasound','location'];
   const router = useRouter();
 
   
   const nextPage = () => {
-    let index = viewIdx <= 2 ? viewIdx + 1 : viewIdx;
+    let index = viewIdx <= 3 ? viewIdx + 1 : viewIdx;
     setviewIdx(index);
   };
 

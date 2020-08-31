@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import styles from './PreviousSymptomsComponent.module.css';
+import styles from './LastScreeningComponent.module.css';
 
-const PreviousSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
+const LastScreening = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
   const [isCovidPositive, setIsCovidPositive] = useState('');
 
   useEffect(() => {
@@ -14,12 +14,12 @@ const PreviousSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
       <div className="radio_grp">
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
-          <p className="error" hidden={!(isCovidPositive === 'Yes')}>
+          {/* <p className="error" hidden={!(isCovidPositive === 'Yes')}>
             Those that have previously tested positive are currently not
             eligible for COVID-19 screening.
-          </p>
+          </p> */}
             <fieldset>
-              <legend>Have you previously tested Positive for COVID?:</legend>
+              <legend>Was your last screening more than 1 year ago today?:</legend>
 
               <div className="radio_row_item">
                 <input
@@ -55,4 +55,4 @@ const PreviousSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
   );
 };
 
-export default PreviousSymptoms;
+export default LastScreening;

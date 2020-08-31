@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import SelectLocation from '../SelectLocationComponent';
-import SelectSymptoms from '../SelectSymptomsComponent';
+import ProviderQuestion from '../ProviderQuestionComponent';
+import BreastIssueQuestion from '../BreastIssueQuestionComponent';
+import UltrasoundQuestion from '../UltrasoundQuestionComponent';
+import LastScreening from '../LastScreeningComponent';
 import styles from './QuestionViewComponent.module.css'
 
 
@@ -26,7 +29,10 @@ const QuestionViewComponent = ({
   const setSchedulerURL = (location) => {updateLocation(location)};
   
   const components = {
-    symptoms: SelectSymptoms,
+    provider: ProviderQuestion,
+    lastscreening: LastScreening,
+    breastissue: BreastIssueQuestion,
+    ultrasound: UltrasoundQuestion,
     location: SelectLocation
   };
 

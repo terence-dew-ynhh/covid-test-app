@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import styles from './EmployeeQuestionComponent.module.css'
+import styles from './ProviderQuestionComponent.module.css'
 
 
  const EmployeeQuestion =({nextPage, isPrevEnabled, isDoneEnabled}) => {
@@ -14,14 +14,10 @@ import styles from './EmployeeQuestionComponent.module.css'
     return (
     <>
       <div className={styles.question_row_item}>
-      <p className="error" hidden={isEmployee}>
-          Sorry, please navigate to a public testing website to schedule your
-          test
-        </p>
+     
         <fieldset className="radio_grp_set">
           <legend>
-            Are you an employee or medical staff member of Yale New Haven
-            Health/ Yale Medicine?
+            Do you have a current referring provider your results can be sent to?
           </legend>
           <input
             id="employee_staff_check_yes"

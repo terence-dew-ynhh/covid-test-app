@@ -8,15 +8,15 @@ export default function Home() {
   return (
     <div className="container">
       <Head>
-        <title>YNHH COVID-19 Test Scheduler</title>
+        <title>YNHH Mammogram and Breast Ultrasound Screening</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className='grid'>
       <img src="/YNHHSLogo.png"></img>
       </div>
       <h1 className="title">
-          See if you qualify for coronavirus (COVID-19) testing
-        </h1>
+          YNHH Mammogram and Breast Ultrasound Screening
+      </h1>
       <QuestionContainerComponent></QuestionContainerComponent>
       
     </div>

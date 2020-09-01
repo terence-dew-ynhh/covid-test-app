@@ -44,8 +44,8 @@ Home.getInitialProps = async ({ query }) => {
 
   let link =
     endpoint === 'Asymptomatic'
-      ? 'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=81079&vt=2102&dept=103720003&view=plain&public=1'
-      : 'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=81079&vt=2228&dept=103720003&view=plain&public=1';
+      ? 'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=81079,81452&vt=2102&dept=103720003,100001365&view=plain&public=1'
+      : 'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=81079,81452&vt=2228&dept=103720003,100001365&view=plain&public=1';
 
   return {
     link

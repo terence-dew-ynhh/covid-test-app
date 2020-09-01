@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import styles from './LastScreeningComponent.module.css';
 
-const LastScreening = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
+const LastScreening = ({ nextPage, isPrevEnabled, isDoneEnabled,toAppendix }) => {
   const [isCovidPositive, setIsCovidPositive] = useState('');
 
   useEffect(() => {
@@ -28,6 +28,7 @@ const LastScreening = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
                   value="Yes"
                   name="prev_covid"
                   onClick={(e) => {
+                    nextPage();
                     setIsCovidPositive(e.target.value);
                   }}
                 ></input>
@@ -39,7 +40,7 @@ const LastScreening = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
                     value="No"
                     name="prev_covid"
                     onClick={(e) => {
-                      nextPage();
+                      toAppendix();
                       setIsCovidPositive(e.target.value);
                     }}
                   ></input>

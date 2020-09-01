@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import styles from './BreastIssueQuestionComponent.module.css'
 
 
- const BreastIssueQuestion =({nextPage, isPrevEnabled, isDoneEnabled}) => {
+ const BreastIssueQuestion =({nextPage, isPrevEnabled, isDoneEnabled, toAppendix}) => {
   
   const [isEmployee, setIsEmployee] = useState(true);
 
@@ -27,7 +27,7 @@ import styles from './BreastIssueQuestionComponent.module.css'
             type="radio"
             name="employee_staff"
             onClick={() => {
-              nextPage()
+              toAppendix();
               setIsEmployee(true);
             }}
           ></input>
@@ -38,6 +38,7 @@ import styles from './BreastIssueQuestionComponent.module.css'
             type="radio"
             name="employee_staff"
             onClick={() => {
+              nextPage();
               setIsEmployee(false);
             }}
           ></input>

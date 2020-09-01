@@ -27,6 +27,11 @@ const QuestionFormComponent = ({}) => {
     router.push(`/scheduling?endpoint=${endPoint}`,'/scheduling');
   };
 
+  const toAppendix = () => {
+
+    router.push(`/appendix`,'/appendix');
+  };
+
   const updateLocation = (endpoint) =>{
     setEndpoint(endpoint);
   }
@@ -53,6 +58,7 @@ const QuestionFormComponent = ({}) => {
         compName={compNames[viewIdx]}
         schedulePush={schedulePush}
         updateLocation={updateLocation}
+        toAppendix={toAppendix}
       ></QuestionView>
     </div>
   );

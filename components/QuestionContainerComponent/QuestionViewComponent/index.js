@@ -12,7 +12,8 @@ const QuestionViewComponent = ({
   nextPage,
   prevPage,
   schedulePush,
-  updateLocation
+  updateLocation,
+  toAppendix
 }) => {
   const [prevEnabled, setPrevEnabled] = useState(false);
   const [doneEnabled, setDoneEnabled] = useState(false);
@@ -24,7 +25,7 @@ const QuestionViewComponent = ({
 
   const isDoneEnabled = (isEnabled) => {
     setDoneEnabled(isEnabled);    
-  };     
+  };   
 
   const setSchedulerURL = (location) => {updateLocation(location)};
   
@@ -46,6 +47,7 @@ const QuestionViewComponent = ({
         isPrevEnabled={isPrevEnabled}        
         isDoneEnabled={isDoneEnabled}
         setSchedulerURL={setSchedulerURL}
+        toAppendix={toAppendix}
       />
       </div>
       <div className={styles.buttonContainer}>          

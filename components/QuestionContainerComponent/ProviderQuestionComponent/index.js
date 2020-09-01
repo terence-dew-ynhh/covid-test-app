@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import styles from './ProviderQuestionComponent.module.css'
 
 
- const EmployeeQuestion =({nextPage, isPrevEnabled, isDoneEnabled}) => {
+ const EmployeeQuestion =({nextPage, isPrevEnabled, isDoneEnabled, toAppendix}) => {
   
   const [isEmployee, setIsEmployee] = useState(true);
 
@@ -35,6 +35,7 @@ import styles from './ProviderQuestionComponent.module.css'
             type="radio"
             name="employee_staff"
             onClick={() => {
+              toAppendix();
               setIsEmployee(false);
             }}
           ></input>

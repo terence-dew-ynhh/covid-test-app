@@ -8,12 +8,12 @@ const QuestionFormComponent = ({}) => {
 
   const [viewIdx, setviewIdx] = useState(0);
   const [endPoint, setEndpoint] = useState('Asymptomatic');
-  const compNames = ['priortest','consent', 'symptomssel'];
+  const compNames = ['priortest','eighteen','consent', 'symptomssel'];
   const router = useRouter();
 
   
   const nextPage = () => {
-    let index = viewIdx <= 2 ? viewIdx + 1 : viewIdx;
+    let index = viewIdx <= 3 ? viewIdx + 1 : viewIdx;
     setviewIdx(index);
   };
 
@@ -36,7 +36,7 @@ const QuestionFormComponent = ({}) => {
     setEndpoint(endpoint);
   }
 
- let progressWidth = 100*((viewIdx+1)/4);
+ let progressWidth = 100*((viewIdx+1)/5);
 
   return (
     <div className={styles.questionContainer}>

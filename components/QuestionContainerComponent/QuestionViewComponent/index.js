@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import PriorTest from '../PriorTestQuestionComponent';
+import OverEighteen from '../Over18Component';
 import ConsentComponent from '../ConsentComponent';
 import SelectSymptoms from '../SelectSymptomsComponent';
 import styles from './QuestionViewComponent.module.css'
@@ -29,6 +30,7 @@ const QuestionViewComponent = ({
   
   const components = {
     symptomssel: SelectSymptoms,
+    eighteen: OverEighteen,
     consent: ConsentComponent,
     priortest: PriorTest    
   };

@@ -15,7 +15,7 @@ import styles from './Over18Component.module.css'
     <>
       <div className={styles.question_row_item}>
       <p className="error" hidden={isOver18}>
-      Please contact us at 203-932-7079 to discuss a process for you. 
+      This service is recommended for patients age 18 and over. We recommend contacting your medical provider directly or call the YNHHS COVID Call Center at 1-888-ASK-YNHH for a clinical assessment.
         </p>
         <fieldset className="radio_grp_set">
           <legend>

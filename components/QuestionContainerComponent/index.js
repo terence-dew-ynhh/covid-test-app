@@ -13,7 +13,6 @@ const QuestionFormComponent = ({}) => {
 
   
   const nextPage = () => {
-    console.log("made it")
     let index = viewIdx <= 2 ? viewIdx + 1 : viewIdx;
     setviewIdx(index);
   };

@@ -31,7 +31,7 @@ const SelectLocation = ({ isPrevEnabled, isDoneEnabled, setSchedulerURL }) => {
       <div className={styles.question_row_item}>
         <div className={styles.question_row_item_sub}>
           <fieldset>
-            <legend>What is your preferred collection location?</legend>
+            <legend>What is your preferred vaccination location?</legend>
 
             <div className="select-wrapper">
               <select

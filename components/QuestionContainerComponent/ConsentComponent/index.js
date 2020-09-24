@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import styles from './MandatedTestComponent.module.css'
+import styles from './ConsentComponent.module.css'
 
 
- const MandatedTest =({nextPage, isPrevEnabled, isDoneEnabled}) => {
+ const Consent =({nextPage, isPrevEnabled, isDoneEnabled}) => {
   
   const [isMandated, setIsMandated] = useState(true);
 
@@ -20,8 +20,7 @@ import styles from './MandatedTestComponent.module.css'
         </p>
         <fieldset className="radio_grp_set">
           <legend>
-          Are you mandated by your supervisor to be tested one time after June 18, 2020 or for Contact tracing?
-          </legend>
+          o	I understand that information regarding this vaccination will be copied from Epic into my occupational health record, for purposes of documenting compliance with YNHHS vaccination requirements, and I hereby consent to the disclosure of this information for such purposes.          </legend>
           <input
             id="mandated_test_check_yes"
             type="radio"
@@ -49,4 +48,4 @@ import styles from './MandatedTestComponent.module.css'
   );
 }
 
-export default MandatedTest;
+export default Consent;

@@ -13,13 +13,11 @@ const EmployeeQuestion = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
     <>
       <div className={styles.question_row_item}>
         <p className="error" hidden={isEmployee}>
-          Sorry, please navigate to a public testing website to schedule your
-          test
+        *Please note that these flu fairs are for individuals affiliated with YNHHS only.
         </p>
         <fieldset className="radio_grp_set">
           <legend>
             Are you a Employee, Provider, Volunteer, Student or Vendor ?
-            <br>*Please note that these flu fairs are for individuals affiliated with YNHHS only.</br>
           </legend>
           <input
             id="employee_staff_check_yes"

@@ -1,6 +1,6 @@
 FROM node:12
 
-ENV PORT 3013
+ENV PORT 3014
 
 # Create app directory
 RUN mkdir -p /usr/src/app

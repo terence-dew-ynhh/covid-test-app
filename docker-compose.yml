@@ -3,7 +3,7 @@ version: "3.3"
 services:
   nextjs:
     ports:
-      - 3013:3013
+      - 3014:3014
     build:
       context: ./
       dockerfile: Dockerfile

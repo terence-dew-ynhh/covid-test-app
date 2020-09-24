@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import MandatedTest from '../MandatedTestComponent';
-import ContactTracing from '../ContactTracingComponent';
+import EmployeeQuestion from '../EmployeeQuestionComponent';
+import PreviousSymptoms from '../PreviousSymptomsComponent';
+import Consent from '../ConsentComponent';
 import SelectLocation from '../SelectLocationComponent';
 import styles from './QuestionViewComponent.module.css'
 
@@ -27,12 +28,14 @@ const QuestionViewComponent = ({
   const setSchedulerURL = (location) => {updateLocation(location)};
   
   const components = {
-    location: SelectLocation,
-    mandated: MandatedTest
+    employee: EmployeeQuestion,
+    previous: PreviousSymptoms,
+    consent: Consent,
+    selectlocation: SelectLocation
 
   };
 
-  const ComponentName = components[compName || 'mandated'];
+  const ComponentName = components[compName || 'employee'];
 
   return (
     <div className={styles.questionContainer}>

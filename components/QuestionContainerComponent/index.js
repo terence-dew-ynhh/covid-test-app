@@ -13,7 +13,7 @@ const QuestionFormComponent = ({}) => {
 
   
   const nextPage = () => {
-    let index = viewIdx <= 2 ? viewIdx + 1 : viewIdx;
+    let index = viewIdx <= 4 ? viewIdx + 1 : viewIdx;
     setviewIdx(index);
   };
 
@@ -22,9 +22,10 @@ const QuestionFormComponent = ({}) => {
     setviewIdx(index);
   };
 
-  const schedulePush = () => {
+  const schedulePush = (isdisqualified) => {
 
-    router.push(`/scheduling?endpoint=${endPoint}`,'/scheduling');
+    if(isdisqualified) router.push(`/callservice`);
+    else router.push(`/scheduling?endpoint=${endPoint}`,'/scheduling');
   };
 
   const updateLocation = (endpoint) =>{

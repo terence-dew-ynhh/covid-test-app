@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import styles from './ConsentComponent.module.css'
 
 
- const Consent =({nextPage, isPrevEnabled, isDoneEnabled}) => {
+ const Consent =({nextPage, isPrevEnabled, isDoneEnabled, schedulePush}) => {
   
   const [isMandated, setIsMandated] = useState(true);
 
@@ -20,7 +20,7 @@ import styles from './ConsentComponent.module.css'
         </p>
         <fieldset className="radio_grp_set">
           <legend>
-          o	I understand that information regarding this vaccination will be copied from Epic into my occupational health record, for purposes of documenting compliance with YNHHS vaccination requirements, and I hereby consent to the disclosure of this information for such purposes.          </legend>
+          I understand that information regarding this vaccination will be copied from Epic into my occupational health record, for purposes of documenting compliance with YNHHS vaccination requirements, and I hereby consent to the disclosure of this information for such purposes.          </legend>
           <input
             id="mandated_test_check_yes"
             type="radio"
@@ -30,7 +30,7 @@ import styles from './ConsentComponent.module.css'
               setIsMandated(true);
             }}
           ></input>
-          <label htmlFor="mandated_test_check_yes">Yes</label>
+          <label htmlFor="mandated_test_check_yes">I Agree</label>
 
           <input
             id="mandated_test_check_no"
@@ -38,9 +38,10 @@ import styles from './ConsentComponent.module.css'
             name="mandated_test"
             onClick={() => {
               setIsMandated(false);
+              schedulePush(true);
             }}
           ></input>
-          <label htmlFor="mandated_test_check_no">No</label>
+          <label htmlFor="mandated_test_check_no">Do Not Agree</label>
         </fieldset>        
       </div>
       <style jsx>{``}</style>

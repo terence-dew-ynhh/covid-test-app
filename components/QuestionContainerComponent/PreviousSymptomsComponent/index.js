@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import styles from './PreviousSymptomsComponent.module.css';
 
-const PreviousSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
+const PreviousSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled, schedulePush }) => {
   const [isCovidPositive, setIsCovidPositive] = useState('');
 
   useEffect(() => {
@@ -20,12 +20,13 @@ const PreviousSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
             </p>
             <fieldset>
               <legend>
-                Have you had any of the following? 
-                <br>A serious reaction to a flu
-                shot</br> <br>Guillain-Barré syndrome</br>
-                <br> Allergy to chicken eggs or chicken
-                egg product</br>
+                Have you had any of the following?                 
               </legend>
+              <legend> - A serious reaction to a flu
+                shot</legend> 
+                <legend> - Guillain-Barré syndrome</legend>
+                <legend> - Allergy to chicken eggs or chicken
+                egg product</legend>
 
               <div className="radio_row_item">
                 <input
@@ -35,6 +36,7 @@ const PreviousSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
                   name="prev_covid"
                   onClick={(e) => {
                     setIsCovidPositive(e.target.value);
+                    schedulePush(true);
                   }}
                 ></input>
                 <label htmlFor="prev_covid_yes">Yes</label>

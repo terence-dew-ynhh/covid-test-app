@@ -2,50 +2,36 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 
-export default function ThankYou({ link }) {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
+export default function CallService({ link }) {
+
 
 
   const router = useRouter();
   const { endpoint } = router.query;
 
-  const updateField = async (field, fieldVal) => {
-    const action = 'post';
-    const res = await fetch('/api/responses', {
-      method: action,
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({'uuid':uuid, 'field':field, 'fieldVal': fieldVal})
-    })
-  }
 
-  const submitInfo = () => {
-    const emailExpression = new RegExp('/\S+@\S+/');
-    const nameExpression = new RegExp("/^[a-zA-Z'- ]+$/"); 
-
-    const validEmail = emailExpression.test(String(em).toLowerCase())
-    const validName = nameExpression.test(String('my-email@test.com').toLowerCase())
-  }
 
   return (
     <div className="container">
       <Head>
-        <title>Yale COVID-19 Vaccine Clinical Trial</title>
+        <title>YNHH Affiliates Flu Vaccination</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="grid">
         <img src="/YNHHSLogo.png"></img>
       </div>
       <h1 className="title">
-      Call Occupational Medicine and Wellness Services:
+      YNHH Affiliates Flu Vaccination
       </h1>
       <div className="questionContainer">
         <p>
-        <br>Bridgeport: 203.384.3613</br>
-        <br>Greenwich: 203.863.3483</br>
-        <br>New Haven: 203.688.2462</br>
-        <br>New London: 860.442.0711, ext. 2288</br>
-        <br>Westerly: 401.348.3783</br>
+        <p>Call Occupational Medicine and Wellness Services:
+</p>
+        <p>Bridgeport: 203.384.3613</p>
+        <p>Greenwich: 203.863.3483</p>
+        <p>New Haven: 203.688.2462</p>
+        <p>New London: 860.442.0711, ext. 2288</p>
+        <p>Westerly: 401.348.3783</p>
         </p>
 
       </div>

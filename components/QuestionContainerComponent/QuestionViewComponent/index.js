@@ -45,6 +45,7 @@ const QuestionViewComponent = ({
         isPrevEnabled={isPrevEnabled}        
         isDoneEnabled={isDoneEnabled}
         setSchedulerURL={setSchedulerURL}
+        schedulePush={schedulePush}
       />
       </div>
       <div className={styles.buttonContainer}>          

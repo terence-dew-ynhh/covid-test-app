@@ -9,6 +9,10 @@ const PreviousSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled, schedulePush
     isPrevEnabled(true);
   }, []);
 
+  const toCallService = (e) => {
+    setIsCovidPositive(e.target.value);
+                    schedulePush(true);
+  }
   return (
     <>
       <div className="radio_grp">
@@ -35,8 +39,7 @@ const PreviousSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled, schedulePush
                   value="Yes"
                   name="prev_covid"
                   onClick={(e) => {
-                    setIsCovidPositive(e.target.value);
-                    schedulePush(true);
+                    toCallService(e)
                   }}
                 ></input>
                 <label htmlFor="prev_covid_yes">Yes</label>

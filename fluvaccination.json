@@ -1,7 +1,7 @@
 {
     "apps": [
         {
-            "name": "affiliatescovidtesting",
+            "name": "fluvaccination",
             "script": "npm",
             "args" : "start"
         }

@@ -8,7 +8,7 @@ export default function Home({ link }) {
   return (
     <>
       <Head>
-        <title>YNHH COVID-19 Test Scheduler</title>
+        <title>Mohegan Sun Flu Test Scheduler</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

@@ -5,7 +5,7 @@ const Chemo = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
   const [isCovidPositive, setIsCovidPositive] = useState('');
 
   useEffect(() => {
-    isDoneEnabled(false);
+    isDoneEnabled(true);
     isPrevEnabled(true);
   }, []);
 
@@ -19,7 +19,7 @@ const Chemo = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
             eligible for COVID-19 screening.
           </p>
             <fieldset>
-              <legend>Have you previously tested Positive for COVID?:</legend>
+              <legend>Are you presently receiving chemotherapy, radiation or Immune-suppressive medication?</legend>
 
               <div className="radio_row_item">
                 <input
@@ -39,7 +39,6 @@ const Chemo = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
                     value="No"
                     name="prev_covid"
                     onClick={(e) => {
-                      nextPage();
                       setIsCovidPositive(e.target.value);
                     }}
                   ></input>

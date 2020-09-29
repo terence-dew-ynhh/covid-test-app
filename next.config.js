@@ -3,7 +3,7 @@ require('dotenv').config();
 module.exports = {
   publicRuntimeConfig: {
     NODE_ENV: process.env.NODE_ENV,
-    PORT: process.env.PORT || 3014
+    PORT: process.env.PORT || 3013
   },
   devIndicators: {
     autoPrerender: false,

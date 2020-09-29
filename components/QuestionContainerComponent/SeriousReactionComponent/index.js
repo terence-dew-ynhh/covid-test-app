@@ -20,16 +20,14 @@ import styles from './SeriousReactionComponent.module.css'
         </p>
         <fieldset className="radio_grp_set">
           <legend>
-            Are you an employee or medical staff member of Yale New Haven
-            Health/ Yale Medicine?
+          Have you ever had a serious reaction to a Flu vaccine other than local redness/swelling/fatigue/low grade temperature?
           </legend>
           <input
             id="employee_staff_check_yes"
             type="radio"
             name="employee_staff"
             onClick={() => {
-              nextPage()
-              setIsEmployee(true);
+              setIsEmployee(false);
             }}
           ></input>
           <label htmlFor="employee_staff_check_yes">Yes</label>
@@ -39,7 +37,8 @@ import styles from './SeriousReactionComponent.module.css'
             type="radio"
             name="employee_staff"
             onClick={() => {
-              setIsEmployee(false);
+              nextPage()
+              setIsEmployee(true);
             }}
           ></input>
           <label htmlFor="employee_staff_check_no">No</label>

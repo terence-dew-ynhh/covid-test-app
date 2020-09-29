@@ -20,16 +20,15 @@ import styles from './AntibioticComponent.module.css'
         </p>
         <fieldset className="radio_grp_set">
           <legend>
-          Are you mandated by your supervisor to be tested one time after June 18, 2020 or for Contact tracing?
+          Are you currently taking an antibiotic for infection?
           </legend>
           <input
             id="mandated_test_check_yes"
             type="radio"
             name="mandated_test"
             onClick={() => {
-              nextPage()
-              setIsMandated(true);
-            }}
+              setIsMandated(false);
+            }}            
           ></input>
           <label htmlFor="mandated_test_check_yes">Yes</label>
 
@@ -38,7 +37,8 @@ import styles from './AntibioticComponent.module.css'
             type="radio"
             name="mandated_test"
             onClick={() => {
-              setIsMandated(false);
+              nextPage()
+              setIsMandated(true);
             }}
           ></input>
           <label htmlFor="mandated_test_check_no">No</label>

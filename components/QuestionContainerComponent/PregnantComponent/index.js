@@ -19,7 +19,7 @@ const Pregnant = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
             eligible for COVID-19 screening.
           </p>
             <fieldset>
-              <legend>Have you previously tested Positive for COVID?:</legend>
+              <legend>If you are a female, are you pregnant?</legend>
 
               <div className="radio_row_item">
                 <input

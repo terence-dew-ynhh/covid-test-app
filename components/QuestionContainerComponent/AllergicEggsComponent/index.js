@@ -19,7 +19,7 @@ const AllergicEggs = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
             eligible for COVID-19 screening.
           </p>
             <fieldset>
-              <legend>Have you previously tested Positive for COVID?:</legend>
+              <legend>Are you allergic to eggs?</legend>
 
               <div className="radio_row_item">
                 <input

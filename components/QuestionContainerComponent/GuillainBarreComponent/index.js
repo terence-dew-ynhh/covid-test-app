@@ -14,12 +14,16 @@ const GuillainBarre = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
       <div className="radio_grp">
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
-          <p className="error" hidden={!(isCovidPositive === 'Yes')}>
-            Those that have previously tested positive are currently not
-            eligible for COVID-19 screening.
-          </p>
+            <p className="error" hidden={!(isCovidPositive === 'Yes')}>
+              Those that have previously tested positive are currently not
+              eligible for COVID-19 screening.
+            </p>
             <fieldset>
-              <legend>Have you previously tested Positive for COVID?:</legend>
+              <legend>
+                Have you ever had Guillain-Barre? (a disorder in which the
+                body's immune system attacks part of the peripheral nervous
+                system)
+              </legend>
 
               <div className="radio_row_item">
                 <input
@@ -42,12 +46,13 @@ const GuillainBarre = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
                       nextPage();
                       setIsCovidPositive(e.target.value);
                     }}
+
                   ></input>
                   <label htmlFor="prev_covid_no">No</label>
                 </div>
               </div>
             </fieldset>
-          </div>          
+          </div>
         </div>
       </div>
       <style jsx>{``}</style>

@@ -5,7 +5,7 @@ const Chemo = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
   const [isCovidPositive, setIsCovidPositive] = useState('');
 
   useEffect(() => {
-    isDoneEnabled(true);
+    isDoneEnabled(false);
     isPrevEnabled(true);
   }, []);
 
@@ -40,6 +40,7 @@ const Chemo = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
                     name="prev_covid"
                     onClick={(e) => {
                       setIsCovidPositive(e.target.value);
+                      isDoneEnabled(true);
                     }}
                   ></input>
                   <label htmlFor="prev_covid_no">No</label>

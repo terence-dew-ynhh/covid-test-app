@@ -5,6 +5,7 @@ import Chemo from '../ChemoComponent';
 import Fever from '../FeverComponent';
 import FluShot from '../FluShotComponent';
 import GuillainBarre from '../GuillainBarreComponent';
+import Consent from '../ConsentComponent';
 import Pregnant from '../PregnantComponent';
 import SeriousReaction from '../SeriousReactionComponent';
 import styles from './QuestionViewComponent.module.css';
@@ -32,7 +33,7 @@ const QuestionViewComponent = ({
   };
 
   const components = {
-
+    consent: Consent,
     allergiceggs: AllergicEggs,
     antibiotic: Antibiotic,
     chemotherapy: Chemo,

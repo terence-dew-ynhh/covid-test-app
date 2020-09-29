@@ -7,7 +7,7 @@ import styles from './AntibioticComponent.module.css'
   const [isMandated, setIsMandated] = useState(true);
 
   useEffect(() => {
-    isPrevEnabled(false);
+    isPrevEnabled(true);
     isDoneEnabled(false);
   }, []);
 

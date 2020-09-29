@@ -7,7 +7,7 @@ import styles from './SeriousReactionComponent.module.css'
   const [isEmployee, setIsEmployee] = useState(true);
 
   useEffect(() => {
-    isPrevEnabled(false);
+    isPrevEnabled(true);
     isDoneEnabled(false);
   }, []);
 

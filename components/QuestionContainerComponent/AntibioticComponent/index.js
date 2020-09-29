@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import styles from './MandatedTestComponent.module.css'
+import styles from './AntibioticComponent.module.css'
 
 
- const MandatedTest =({nextPage, isPrevEnabled, isDoneEnabled}) => {
+ const Antibiotic =({nextPage, isPrevEnabled, isDoneEnabled}) => {
   
   const [isMandated, setIsMandated] = useState(true);
 
@@ -49,4 +49,4 @@ import styles from './MandatedTestComponent.module.css'
   );
 }
 
-export default MandatedTest;
+export default Antibiotic;

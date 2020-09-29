@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import styles from './EmployeeQuestionComponent.module.css'
+import styles from './SeriousReactionComponent.module.css'
 
 
- const EmployeeQuestion =({nextPage, isPrevEnabled, isDoneEnabled}) => {
+ const SeriousReaction =({nextPage, isPrevEnabled, isDoneEnabled}) => {
   
   const [isEmployee, setIsEmployee] = useState(true);
 
@@ -50,4 +50,4 @@ import styles from './EmployeeQuestionComponent.module.css'
   );
 }
 
-export default EmployeeQuestion;
+export default SeriousReaction;

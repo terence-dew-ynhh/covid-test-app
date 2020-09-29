@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import styles from './PreviousSymptomsComponent.module.css';
+import styles from './FeverComponent.module.css';
 
-const PreviousSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
+const Fever = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
   const [isCovidPositive, setIsCovidPositive] = useState('');
 
   useEffect(() => {
@@ -55,4 +55,4 @@ const PreviousSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
   );
 };
 
-export default PreviousSymptoms;
+export default Fever;

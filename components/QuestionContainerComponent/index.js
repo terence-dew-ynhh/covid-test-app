@@ -8,13 +8,12 @@ const QuestionFormComponent = ({}) => {
 
   const [viewIdx, setviewIdx] = useState(0);
   const [endPoint, setEndpoint] = useState('Bridgeport Hospital Testing Tent');
-  const compNames = ['mandated','location'];
+  const compNames = ['flushot','seriousreaction','allergiceggs','antibiotic','fever','guillainbarre','pregnant','chemotherapy'];
   const router = useRouter();
 
   
   const nextPage = () => {
-    console.log("made it")
-    let index = viewIdx <= 2 ? viewIdx + 1 : viewIdx;
+    let index = viewIdx <= 7 ? viewIdx + 1 : viewIdx;
     setviewIdx(index);
   };
 
@@ -25,7 +24,7 @@ const QuestionFormComponent = ({}) => {
 
   const schedulePush = () => {
 
-    router.push(`/scheduling?endpoint=${endPoint}`,'/scheduling');
+    router.push(`/scheduling`,'/scheduling');
   };
 
   const updateLocation = (endpoint) =>{

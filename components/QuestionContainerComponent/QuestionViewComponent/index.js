@@ -1,9 +1,13 @@
 import { useState } from 'react';
-import MandatedTest from '../MandatedTestComponent';
-import ContactTracing from '../ContactTracingComponent';
-import SelectLocation from '../SelectLocationComponent';
-import styles from './QuestionViewComponent.module.css'
-
+import AllergicEggs from '../AllergicEggsComponent';
+import Antibiotic from '../AntibioticComponent';
+import Chemo from '../ChemoComponent';
+import Fever from '../FeverComponent';
+import FluShot from '../FluShotComponent';
+import GuillainBarre from '../GuillainBarreComponent';
+import Pregnant from '../PregnantComponent';
+import SeriousReaction from '../SeriousReactionComponent';
+import styles from './QuestionViewComponent.module.css';
 
 const QuestionViewComponent = ({
   compName,
@@ -19,38 +23,49 @@ const QuestionViewComponent = ({
     setPrevEnabled(isEnabled);
   };
 
-
   const isDoneEnabled = (isEnabled) => {
-    setDoneEnabled(isEnabled);    
-  };     
-
-  const setSchedulerURL = (location) => {updateLocation(location)};
-  
-  const components = {
-    location: SelectLocation,
-    mandated: MandatedTest
-
+    setDoneEnabled(isEnabled);
   };
 
-  const ComponentName = components[compName || 'mandated'];
+  const setSchedulerURL = (location) => {
+    updateLocation(location);
+  };
+
+  const components = {
+
+    allergiceggs: AllergicEggs,
+    antibiotic: Antibiotic,
+    chemotherapy: Chemo,
+    fever: Fever,
+    flushot: FluShot,
+    guillainbarre: GuillainBarre,
+    pregnant: Pregnant,
+    seriousreaction: SeriousReaction
+  };
+
+  const ComponentName = components[compName || 'flushot'];
 
   return (
     <div className={styles.questionContainer}>
       <div className={styles.questionContainer}>
-      <ComponentName
-        nextPage={nextPage}
-        isPrevEnabled={isPrevEnabled}        
-        isDoneEnabled={isDoneEnabled}
-        setSchedulerURL={setSchedulerURL}
-      />
+        <ComponentName
+          nextPage={nextPage}
+          isPrevEnabled={isPrevEnabled}
+          isDoneEnabled={isDoneEnabled}
+          setSchedulerURL={setSchedulerURL}
+        />
       </div>
-      <div className={styles.buttonContainer}>          
-      <button className="button" hidden={!prevEnabled} onClick={prevPage}>
-        {`< Back`}
-      </button>
-      <button className="button choice-button" hidden={!doneEnabled} onClick={schedulePush}>
-        Schedule Appoinment
-      </button>  
+      <div className={styles.buttonContainer}>
+        <button className="button" hidden={!prevEnabled} onClick={prevPage}>
+          {`< Back`}
+        </button>
+        <button
+          className="button choice-button"
+          hidden={!doneEnabled}
+          onClick={schedulePush}
+        >
+          Schedule Appoinment
+        </button>
       </div>
     </div>
   );

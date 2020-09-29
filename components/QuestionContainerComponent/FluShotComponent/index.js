@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import styles from './ContactTracingComponent.module.css'
+import styles from './FluShotComponent.module.css'
 
 
- const ContactTracing =({nextPage, isPrevEnabled, isDoneEnabled}) => {
+ const FluShot =({nextPage, isPrevEnabled, isDoneEnabled}) => {
   
   const [isContactTracing, setIsContactTracing] = useState(true);
 
@@ -19,7 +19,7 @@ import styles from './ContactTracingComponent.module.css'
         </p>
         <fieldset className="radio_grp_set">
           <legend>
-          Are you being tested because of contact tracing ?
+          Have you ever had a serious reaction to a Flu vaccine other than local redness/swelling/fatigue/low grade temperature?
           </legend>
           <input
             id="mandated_test_check_yes"
@@ -48,4 +48,4 @@ import styles from './ContactTracingComponent.module.css'
   );
 }
 
-export default ContactTracing;
+export default FluShot;

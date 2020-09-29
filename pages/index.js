@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div className="container">
       <Head>
-        <title>YNHH COVID-19 Test Scheduler</title>
+        <title>YNHH Affiliates Flu Vaccination</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="grid">

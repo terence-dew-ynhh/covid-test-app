@@ -7,8 +7,8 @@ import { useRouter } from 'next/router';
 const QuestionFormComponent = ({}) => {
 
   const [viewIdx, setviewIdx] = useState(0);
-  const [endPoint, setEndpoint] = useState('Bridgeport Hospital Testing Tent');
-  const compNames = ['employee','previous','consent','selectlocation'];
+  const [endPoint, setEndpoint] = useState('BH FLU FAIR CLINIC');
+  const compNames = ['selectlocation'];
   const router = useRouter();
 
   
@@ -24,8 +24,7 @@ const QuestionFormComponent = ({}) => {
 
   const schedulePush = (isdisqualified) => {
 
-    if(isdisqualified) router.push(`/callservice`);
-    else router.push(`/scheduling?endpoint=${endPoint}`,'/scheduling');
+     router.push(`/scheduling?endpoint=${endPoint}`,'/scheduling');
   };
 
   const updateLocation = (endpoint) =>{

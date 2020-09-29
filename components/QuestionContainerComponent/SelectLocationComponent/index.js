@@ -3,7 +3,19 @@ import { useEffect } from 'react';
 
 const SelectLocation = ({ isPrevEnabled, isDoneEnabled, setSchedulerURL }) => {
   const locations = [
-    'Bridgeport Hospital Testing Tent',
+    'BH FLU FAIR CLINIC',
+    'GH FLU FAIR CLINIC',
+    'LM FLU FAIR CLINIC',
+    'WH FLU FAIR CLINIC',
+    'YNHH - SRC FLU FAIR CLINIC',
+    'YNHH - YSC FLU FAIR CLINIC',
+    'YNHH OFF SITE FLU FAIR CLINIC',
+    "YALE PHYSICIAN'S BUILDING FLU FAIR CLINIC",
+    'NE PRACTICES: BRIDGEPORT FLU FAIR CLINIC',
+    'NE PRACTICES: NEW HAVEN FLU FAIR CLINIC',
+    'NE PRACTICES: GREENWICH FLU FAIR CLINIC ',
+    'NE PRACTICES: NEW LONDON FLU FAIR CLINIC',
+    'LM OFFSITE FLU FAIR CLINIC'
 
   ];
 

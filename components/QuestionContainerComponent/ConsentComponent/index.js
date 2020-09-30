@@ -6,7 +6,7 @@ const ConsentComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
 
   useEffect(() => {
     isDoneEnabled(false);
-    isPrevEnabled(false);
+    isPrevEnabled(true);
   }, []);
 
   const handleChecked = (e) => {
@@ -24,7 +24,7 @@ const ConsentComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
         }
       });
       setHasConsent('No');
-      nextPage();
+      isDoneEnabled(true);
     }    
 
     // If any of the boxes are checked beside None of the Above
@@ -59,13 +59,15 @@ const ConsentComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
   ];
 
   const regex = /_/gi;
+  
+
 
   let checkboxes = checkboxesArray.map((checkbox, idx) =>
       (<div className={styles.chk_row_item}>
         <label className={styles.none_label_or}>
           {' '}
-          <b>Signature:</b><br></br>
-          I hereby consent to receiving the flu vaccination from YNHHS and attest to the information provided as accurate to the best of my knowledge.
+          <b>Consent for Vaccination:</b><br></br>
+          I have read and/or had explained to me the <a href="/flu_inactive.pdf" target="_blank">Influenza Vaccine Information Statement</a> and the Yale New Haven Health System Question and Answer form.  I will be able to ask questions and discuss in detail any information that I did not understand when receiving my vaccination..  I have answered all required questions and will discuss any “Yes” answers with the vaccinator and, to the best of my knowledge, do not have any contraindications to receiving the influenza vaccine.  I understand the benefits and risks of the vaccine/vaccination as read and/or discussed and know that I may experience side effects from the vaccine.  I wish to receive the influenza vaccine free of charge.
         </label>
         <input
           id={`prev_covid_${checkbox.toLowerCase()}`}

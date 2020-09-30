@@ -27,6 +27,7 @@ import styles from './SeriousReactionComponent.module.css'
             type="radio"
             name="employee_staff"
             onClick={() => {
+              nextPage();              
               setIsEmployee(false);
             }}
           ></input>

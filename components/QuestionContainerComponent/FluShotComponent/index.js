@@ -7,16 +7,16 @@ import styles from './FluShotComponent.module.css'
   const [isContactTracing, setIsContactTracing] = useState(true);
 
   useEffect(() => {
-    isPrevEnabled(true);
+    isPrevEnabled(false);
     isDoneEnabled(false);
   }, []);
 
     return (
     <>
       <div className={styles.question_row_item}>
-      <p className="error" hidden={isContactTracing}>
+      {/* <p className="error" hidden={isContactTracing}>
         Please contact your supervisor and do not schedule a flu shot.
-        </p>
+        </p> */}
         <fieldset className="radio_grp_set">
           <legend>
           Have you ever had a Flu shot before?          
@@ -26,8 +26,8 @@ import styles from './FluShotComponent.module.css'
             type="radio"
             name="mandated_test"
             onClick={() => {
-              
-              setIsContactTracing(false);
+              nextPage();              
+              setIsContactTracing(true);
             }}
           ></input>
           <label htmlFor="mandated_test_check_yes">Yes</label>

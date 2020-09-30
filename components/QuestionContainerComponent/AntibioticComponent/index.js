@@ -14,10 +14,10 @@ import styles from './AntibioticComponent.module.css'
     return (
     <>
       <div className={styles.question_row_item}>
-      <p className="error" hidden={isMandated}>
+      {/* <p className="error" hidden={isMandated}>
           Sorry, please navigate to a public testing website to schedule your
           test.
-        </p>
+        </p> */}
         <fieldset className="radio_grp_set">
           <legend>
           Are you currently taking an antibiotic for infection?
@@ -28,6 +28,7 @@ import styles from './AntibioticComponent.module.css'
             name="mandated_test"
             onClick={() => {
               setIsMandated(false);
+              nextPage();  
             }}            
           ></input>
           <label htmlFor="mandated_test_check_yes">Yes</label>

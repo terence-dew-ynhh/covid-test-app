@@ -15,8 +15,8 @@ const Pregnant = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
           <p className="error" hidden={!(isCovidPositive === 'Yes')}>
-            Those that have previously tested positive are currently not
-            eligible for COVID-19 screening.
+          Please contact a healthcare professional or your primary care physician. If you do not have a primary care clinician please call 860-464-3900
+
           </p>
             <fieldset>
               <legend>If you are a female, are you pregnant?</legend>

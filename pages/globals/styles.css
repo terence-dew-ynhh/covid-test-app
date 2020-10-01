@@ -75,7 +75,7 @@ p{
 .radio_grp_set,
 fieldset {
   border: none;
-  display: inline;
+  display: block;
   margin-right: 50px;
 }
 
@@ -87,11 +87,18 @@ fieldset {
 .question_div {
   padding: 25px 35px;
 }
-.error{
+.error, .advisement{
   color:white;
-  background: red;
   padding: 15px 20px;
   font-weight: 600;
+}
+
+.error{
+  background: red;
+}
+
+.advisement{
+  background: blue;
 }
 
 .divider {

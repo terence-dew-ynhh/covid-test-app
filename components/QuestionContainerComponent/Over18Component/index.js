@@ -15,10 +15,11 @@ import styles from './Over18Component.module.css'
     <>
       <div className={styles.question_row_item}>
       <p className="error" hidden={isOver18}>
-      This service is recommended for patients age 18 and over. We recommend contacting your medical provider directly or call the YNHHS COVID Call Center at 1-888-ASK-YNHH for a clinical assessment.
+      If you are under the age of 18, a parent or guardian is required to schedule this appointment. We recommend contacting your medical provider directly or call the YNHHS COVID Call Center at 1-888-ASK-YNHH for a clinical assessment.
         </p>
-        <p className="error" hidden={isOver18andProxy}>
-        For any patient under the age of 18, a parent, legal guardian or designated adult is required to be present at the time of the test.        </p>
+        <p className="advisement" hidden={isOver18andProxy}>
+        For any patient under the age of 18, a parent, legal guardian or designated adult is required to be present at the time of the test.        
+        </p>
         <fieldset className="radio_grp_set">
           <legend>
           Are you over the age of 18? 
@@ -32,8 +33,18 @@ import styles from './Over18Component.module.css'
               setIsOver18(true);
             }}
           ></input>
-          <label htmlFor="employee_staff_check_yes">Yes</label>
-
+          <label htmlFor="employee_staff_check_yes">I am over the age of 18</label>
+          <input
+            id="employee_staff_check_yes"
+            type="radio"
+            name="employee_staff"
+            onClick={() => {
+              nextPage();
+              setIsOver18(false);
+              setIsOver18andProxy(true);
+            }}
+          ></input>
+          <label htmlFor="employee_staff_check_yes">I am over the age of 18 and scheduling for someone under the age of 18</label>
           <input
             id="employee_staff_check_no"
             type="radio"
@@ -42,7 +53,7 @@ import styles from './Over18Component.module.css'
               setIsOver18(false);
             }}
           ></input>
-          <label htmlFor="employee_staff_check_no">No</label>
+          <label htmlFor="employee_staff_check_no">I am under the age of 18</label>
         </fieldset>        
       </div>
       <style jsx>{``}</style>

@@ -7,7 +7,7 @@ import styles from './ConsentComponent.module.css'
   const [isMandated, setIsMandated] = useState(true);
 
   useEffect(() => {
-    isPrevEnabled(false);
+    isPrevEnabled(true);
     isDoneEnabled(false);
   }, []);
 

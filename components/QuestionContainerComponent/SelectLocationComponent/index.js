@@ -8,7 +8,7 @@ const SelectLocation = ({ isPrevEnabled, isDoneEnabled, setSchedulerURL }) => {
   ];
 
   useEffect(() => {
-    isPrevEnabled(true);
+    isPrevEnabled(false);
     isDoneEnabled(true);
   }, []);
 

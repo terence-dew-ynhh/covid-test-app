@@ -33,9 +33,9 @@ import styles from './Over18Component.module.css'
               setIsOver18(true);
             }}
           ></input>
-          <label htmlFor="employee_staff_check_yes">I am over the age of 18</label>
+          <label id={styles.blocking_label} htmlFor="employee_staff_check_yesno">I am over the age of 18</label>
           <input
-            id="employee_staff_check_yes"
+            id="employee_staff_check_yesno"
             type="radio"
             name="employee_staff"
             onClick={() => {
@@ -44,7 +44,7 @@ import styles from './Over18Component.module.css'
               setIsOver18andProxy(true);
             }}
           ></input>
-          <label htmlFor="employee_staff_check_yes">I am over the age of 18 and scheduling for someone under the age of 18</label>
+          <label id={styles.blocking_label} htmlFor="employee_staff_check_yes">I am over the age of 18 and scheduling for someone under the age of 18</label>
           <input
             id="employee_staff_check_no"
             type="radio"
@@ -53,10 +53,11 @@ import styles from './Over18Component.module.css'
               setIsOver18(false);
             }}
           ></input>
-          <label htmlFor="employee_staff_check_no">I am under the age of 18</label>
+          <label id={styles.blocking_label} htmlFor="employee_staff_check_no">I am under the age of 18</label>
         </fieldset>        
       </div>
-      <style jsx>{``}</style>
+      <style jsx>{``}    
+      </style>
     </>
   );
 }

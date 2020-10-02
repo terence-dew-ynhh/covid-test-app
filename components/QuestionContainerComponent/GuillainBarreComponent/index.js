@@ -31,6 +31,7 @@ const GuillainBarre = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
                   value="Yes"
                   name="prev_covid"
                   onClick={(e) => {
+                    nextPage();
                     setIsCovidPositive(e.target.value);
                   }}
                 ></input>

@@ -32,6 +32,9 @@ const SelectLocation = ({
     <>
       <div className={styles.question_row_item}>
         <div className={styles.question_row_item_sub}>
+        <p className="disclaimer">
+        *For <b>EP 4-6 Contact Tracing</b> please choose <b>Yale New Haven Hospital – YSC</b> in the drop down as your preferred location
+          </p>
           <fieldset>
             <legend>What is your preferred collection location?</legend>
 

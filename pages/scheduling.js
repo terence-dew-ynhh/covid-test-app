@@ -61,7 +61,7 @@ Home.getInitialProps = async ({ query }) => {
     {
       name: 'Lawrence - Memorial Hospital',
       link:
-        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=78406,79102&vt=2102&dept=108010095&view=plain&public=1'
+        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=78406,79102,82534&vt=2102&dept=108010095&view=plain&public=1'
     },
     {
       name: 'Westerly Hospital',

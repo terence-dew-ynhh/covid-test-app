@@ -13,7 +13,7 @@ export default function Home() {
         <img src="/YNHHSLogo.png"></img>
       </div>
       <h1 className="title">
-      Mohegan Sun Flu Vaccine Scheduler
+      Mohegan Flu Vaccine Scheduler
       </h1>
       <QuestionContainerComponent></QuestionContainerComponent>
     </div>

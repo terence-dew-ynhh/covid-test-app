@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div className="container">
       <Head>
-        <title>Mohegan Sun Flu Vaccine Scheduler</title>
+        <title>Mohegan Flu Vaccine Scheduler</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="grid">

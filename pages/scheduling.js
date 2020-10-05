@@ -5,7 +5,7 @@ export default function Home({ link }) {
   return (
     <>
       <Head>
-        <title>Mohegan Sun Flu Vaccine Scheduler</title>
+        <title>Mohegan Flu Vaccine Scheduler</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

@@ -56,7 +56,7 @@ Home.getInitialProps = async ({ query }) => {
     {
       name: 'New London Region',
       link:
-        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79290,79561,79562,79290&vt=2228&dept=100001342&view=plain&public=1'
+        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=82647,79290,79561,79562&vt=2228&dept=100001342&view=plain&public=1'
     }
   ];  
 

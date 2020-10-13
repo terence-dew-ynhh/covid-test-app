@@ -138,7 +138,7 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled, appointmentTyp
             <div className={styles.q1_grid}>{checkboxes}</div>
           </fieldset>
         </div>
-        <p className="error">If you are experiencing symptoms, we recommend contacting your medical provider directly or call the YNHHS COVID Call Center at 1-888-ASK-YNHH for a clinical assessment.</p>
+        <p className="error">If you are experiencing symptoms, we recommend contacting your medical provider directly or call the YNHHS COVID Call Center at 1-833-ASK-YNHH for a clinical assessment.</p>
       </div>
       <style jsx>{``}</style>
     </>

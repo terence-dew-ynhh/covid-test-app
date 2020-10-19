@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import EmployeeQuestion from '../EmployeeQuestionComponent';
 import SelectSymptoms from '../SelectSymptomsComponent';
+import ConsentComponent from '../OutOfWorkConsentComponent';
 import RequireCovidTestingComponent from '../RequireCovidTestingComponent';
 import ReturnedFromHighRiskComponent from '../ReturnedFromHighRiskComponent';
 import TravelTestingComponent from '../TravelTestingComponent';
@@ -33,7 +34,7 @@ const QuestionViewComponent = ({
   const components = {
     employee: EmployeeQuestion,
     symptomssel: SelectSymptoms,
-    consent: SelectLocation,
+    consent: ConsentComponent,
     needcovidtesting: RequireCovidTestingComponent,
     traveltesting: TravelTestingComponent,
     returnfromhighrisk: ReturnedFromHighRiskComponent,

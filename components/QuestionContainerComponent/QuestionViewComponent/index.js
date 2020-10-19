@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import EmployeeQuestion from '../EmployeeQuestionComponent';
-import PreviousSymptoms from '../PreviousSymptomsComponent';
 import SelectSymptoms from '../SelectSymptomsComponent';
+import RequireCovidTestingComponent from '../RequireCovidTestingComponent';
+import ReturnedFromHighRiskComponent from '../ReturnedFromHighRiskComponent';
+import TravelTestingComponent from '../TravelTestingComponent';
 import SelectLocation from '../SelectLocationComponent';
 import styles from './QuestionViewComponent.module.css'
 
@@ -27,10 +29,14 @@ const QuestionViewComponent = ({
 
   const setSchedulerURL = (location) => {updateLocation(location)};
   
+  // 'employee','symptomssel', 'consent', 'needcovidtesting', 'traveltesting','returnfromhighrisk', 'consent', 'location'
   const components = {
     employee: EmployeeQuestion,
-    symptoms: PreviousSymptoms,
     symptomssel: SelectSymptoms,
+    consent: SelectLocation,
+    needcovidtesting: RequireCovidTestingComponent,
+    traveltesting: TravelTestingComponent,
+    returnfromhighrisk: ReturnedFromHighRiskComponent,
     location: SelectLocation
   };
 

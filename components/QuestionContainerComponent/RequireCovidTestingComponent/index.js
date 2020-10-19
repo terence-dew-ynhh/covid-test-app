@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import styles from './EmployeeQuestionComponent.module.css'
+import styles from './RequireCovidTestingComponent.module.css'
 
 
- const EmployeeQuestion =({nextPage, isPrevEnabled, isDoneEnabled}) => {
+ const RequireCovidTesting =({nextPage, isPrevEnabled, isDoneEnabled}) => {
   
   const [isEmployee, setIsEmployee] = useState(true);
 
@@ -15,12 +15,11 @@ import styles from './EmployeeQuestionComponent.module.css'
     <>
       <div className={styles.question_row_item}>
       <p className="error" hidden={isEmployee}>
-          Sorry, please navigate to a public testing website to schedule your
-          test
+      Follow up with your manager regarding any workplace exposure concerns and testing per guidance from Infection Prevention
         </p>
         <fieldset className="radio_grp_set">
           <legend>
-          Are you an employee or medical staff of Yale New Haven Health or Yale Medicine…?
+          Do you need COVID testing related:
           </legend>
           <input
             id="employee_staff_check_yes"
@@ -31,7 +30,7 @@ import styles from './EmployeeQuestionComponent.module.css'
               setIsEmployee(true);
             }}
           ></input>
-          <label htmlFor="employee_staff_check_yes">Yes</label>
+          <label htmlFor="employee_staff_check_yes">Return from travel?</label>
 
           <input
             id="employee_staff_check_no"
@@ -41,7 +40,7 @@ import styles from './EmployeeQuestionComponent.module.css'
               setIsEmployee(false);
             }}
           ></input>
-          <label htmlFor="employee_staff_check_no">No</label>
+          <label htmlFor="employee_staff_check_no">Workplace Exposure?</label>
         </fieldset>        
       </div>
       <style jsx>{``}</style>
@@ -49,4 +48,4 @@ import styles from './EmployeeQuestionComponent.module.css'
   );
 }
 
-export default EmployeeQuestion;
+export default RequireCovidTesting;

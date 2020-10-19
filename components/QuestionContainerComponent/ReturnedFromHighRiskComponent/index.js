@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import styles from './EmployeeQuestionComponent.module.css'
+import styles from './ReturnedFromHighRiskComponent.module.css'
 
 
- const EmployeeQuestion =({nextPage, isPrevEnabled, isDoneEnabled}) => {
+ const ReturnedFromHighRisk =({nextPage, isPrevEnabled, isDoneEnabled}) => {
   
   const [isEmployee, setIsEmployee] = useState(true);
 
@@ -15,12 +15,13 @@ import styles from './EmployeeQuestionComponent.module.css'
     <>
       <div className={styles.question_row_item}>
       <p className="error" hidden={isEmployee}>
-          Sorry, please navigate to a public testing website to schedule your
-          test
+      We are not testing employees who travel to non-high risk locations<br></br>
+      We are not scheduling tests for travelers returning beyond 1 week from a high risk location
+
         </p>
         <fieldset className="radio_grp_set">
           <legend>
-          Are you an employee or medical staff of Yale New Haven Health or Yale Medicine…?
+          Have you returned OR will you be returning within 1 week from a High Risk Location and need a COVID-19 test to be cleared to return to work?
           </legend>
           <input
             id="employee_staff_check_yes"
@@ -49,4 +50,4 @@ import styles from './EmployeeQuestionComponent.module.css'
   );
 }
 
-export default EmployeeQuestion;
+export default ReturnedFromHighRisk;

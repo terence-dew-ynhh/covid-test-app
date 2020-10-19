@@ -7,19 +7,21 @@ import { useRouter } from 'next/router';
 const QuestionFormComponent = ({}) => {
 
   const [viewIdx, setviewIdx] = useState(0);
+  const [pageProgress, setPageProgress] = useState(0);
   const [endPoint, setEndpoint] = useState('Bridgeport Hospital');
-  const compNames = ['employee', 'symptoms', 'symptomssel', 'location'];
+  const compNames = ['employee','symptomssel', 'consent', 'needcovidtesting', 'traveltesting','returnfromhighrisk', 'consent', 'location'];
   const router = useRouter();
 
   
-  const nextPage = () => {
-    console.log("made it")
-    let index = viewIdx <= 2 ? viewIdx + 1 : viewIdx;
+  const nextPage = (e, pageJump) => {
+    let pageProg = pageJump ? pageJump : 1;
+    let index = pageProg > 1 ? viewIdx + pageProg : viewIdx <= 5 ? viewIdx + 1 : viewIdx;
+    setPageProgress(pageProg);
     setviewIdx(index);
   };
 
-  const prevPage = () => {
-    let index = viewIdx > 0 ? viewIdx - 1 : viewIdx;
+  const prevPage = (e) => {
+    let index = viewIdx > 0 ? viewIdx - pageProgress : viewIdx;
     setviewIdx(index);
   };
 

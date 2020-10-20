@@ -21,7 +21,10 @@ import styles from './ReturnedFromHighRiskComponent.module.css'
         </p>
         <fieldset className="radio_grp_set">
           <legend>
-          Have you returned OR will you be returning within 1 week from a High Risk Location and need a COVID-19 test to be cleared to return to work?
+          Have you returned OR will you be returning within 1 week from a High Risk Location and need a COVID-19 test to be cleared to return to work? <br></br><br></br>
+        	Within the U.S.: <a href='https://portal.ct.gov/Coronavirus/Covid-19-Knowledge-Base/Travel-In-or-Out-of-CT'>https://portal.ct.gov/Coronavirus/Covid-19-Knowledge-Base/Travel-In-or-Out-of-CT</a><br></br><br></br>
+          International: <a href='https://www.cdc.gov/coronavirus/2019-ncov/travelers/map-and-travel-notices.html'>https://www.cdc.gov/coronavirus/2019-ncov/travelers/map-and-travel-notices.html</a>
+
           </legend>
           <input
             id="employee_staff_check_yes"

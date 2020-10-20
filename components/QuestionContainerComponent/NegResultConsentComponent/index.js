@@ -64,7 +64,7 @@ const NegResultConsent = ({ nextPage, isPrevEnabled, isDoneEnabled,schedulePush}
           <fieldset>
             <legend>
               You are out of work until you have a negative test result, have no
-              symptoms, and have clearance from Occupational Health
+              symptoms, and have clearance from Occupational Health.
             </legend>
             <div className={styles.q1_grid}>{checkboxes}</div>
           </fieldset>

@@ -10,7 +10,9 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
     isPrevEnabled(true);
   }, []);
 
-  const handleChecked = (e, idx) => {
+  const handleChecked = (e, isSevere) => {
+    console.log(e);
+    console.log(isSevere);
     if (
       e.target.id === 'prev_covid_none_of_the_above' &&
       e.target.checked === true
@@ -50,12 +52,21 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
         }
       });
 
+      severeCheckboxesArr.forEach((element) => {
+        let symptom = document.getElementById(
+          `prev_covid_${element.toLowerCase()}`
+        );
+        if (symptom.checked === true) {
+          shouldDisable = true;
+        }
+      });
+
       let noneChk = document.getElementById(`prev_covid_none_of_the_above`);
       if (shouldDisable) {
         noneChk.checked = false;
         noneChk.disabled = true;
         setHasSymptoms('Yes');
-        if(idx < 5){
+        if(isSevere){
           setHasSevereSymptoms('Yes');
         }else{
           nextPage();
@@ -63,19 +74,22 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
       } else {
         noneChk.disabled = false;
         setHasSymptoms('');
-        if(idx < 5){
+        if(isSevere){
           setHasSevereSymptoms('');
         }
       }
     }
   };
 
-  let checkboxesArray = [
+  let severeCheckboxesArr =[
     'Trouble Breathing',
     'Persistent Pain/Pressure in the Chest',
     'Confusion',
     'Difficulty with Waking',
     'Bluish lips on the Face ',
+  ]
+  let checkboxesArray = [
+    'Conjunctivitis',
     'Fever',
     'Vomiting',
     'Diarrhea',
@@ -92,6 +106,27 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
   ];
 
   const regex = /_/gi;
+  let severeCheckboxes = severeCheckboxesArr.map((checkbox, idx) => 
+
+    (
+      <div className="chk_row_item">
+        <input
+          id={`prev_covid_${checkbox.toLowerCase()}`}
+          key={idx}
+          type="checkbox"
+          value={checkbox.replace(regex, ' ')}
+          name="symptoms"
+          onChange={(e) => {
+            handleChecked(e, true);
+          }}
+        ></input>
+        <label htmlFor={`prev_covid_${checkbox.toLowerCase()}`}>
+          {checkbox.replace(regex, ' ')}
+        </label>
+      </div>
+    )
+  );
+
   let checkboxes = checkboxesArray.map((checkbox, idx) => 
 
     checkbox === 'None_of_the_Above' ? (
@@ -107,7 +142,7 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
           value={checkbox.replace(regex, ' ')}
           name="symptoms"
           onChange={(e) => {
-            handleChecked(e, idx);
+            handleChecked(e, false);
           }}
         ></input>
         <label
@@ -126,7 +161,7 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
           value={checkbox.replace(regex, ' ')}
           name="symptoms"
           onChange={(e) => {
-            handleChecked(e, idx);
+            handleChecked(e, false);
           }}
         ></input>
         <label htmlFor={`prev_covid_${checkbox.toLowerCase()}`}>
@@ -150,6 +185,7 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
             <legend>
               <b>Required Question: </b>Do you have the following symptoms:
             </legend>
+            <div className={styles.q2_grid}>{severeCheckboxes}</div>
             <div className={styles.q1_grid}>{checkboxes}</div>
           </fieldset>
         </div>

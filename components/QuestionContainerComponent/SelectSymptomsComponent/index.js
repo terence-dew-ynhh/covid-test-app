@@ -71,11 +71,11 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
   };
 
   let checkboxesArray = [
-    'Trouble breathing',
-    'Persistent pain/pressure in the chest',
+    'Trouble Breathing',
+    'Persistent Pain/Pressure in the Chest',
     'Confusion',
-    'Difficulty with waking',
-    'Bluish lips on the face ',
+    'Difficulty with Waking',
+    'Bluish lips on the Face ',
     'Fever',
     'Vomiting',
     'Diarrhea',
@@ -92,7 +92,7 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
   ];
 
   const regex = /_/gi;
-  let checkboxes = checkboxesArray.map((checkbox, idx) => {
+  let checkboxes = checkboxesArray.map((checkbox, idx) => 
 
     checkbox === 'None_of_the_Above' ? (
       <div className={styles.chk_row_item}>
@@ -103,11 +103,11 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
         <input
           id={`prev_covid_${checkbox.toLowerCase()}`}
           type="checkbox"
-          key={checkbox.replace(regex, ' ')}
+          key={idx}
           value={checkbox.replace(regex, ' ')}
           name="symptoms"
           onChange={(e) => {
-            handleChecked(e);
+            handleChecked(e, idx);
           }}
         ></input>
         <label
@@ -121,12 +121,12 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
       <div className="chk_row_item">
         <input
           id={`prev_covid_${checkbox.toLowerCase()}`}
-          key={checkbox.replace(regex, ' ')}
+          key={idx}
           type="checkbox"
           value={checkbox.replace(regex, ' ')}
           name="symptoms"
           onChange={(e) => {
-            handleChecked(e);
+            handleChecked(e, idx);
           }}
         ></input>
         <label htmlFor={`prev_covid_${checkbox.toLowerCase()}`}>
@@ -134,7 +134,7 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
         </label>
       </div>
     )
-  });
+  );
 
   return (
     <>

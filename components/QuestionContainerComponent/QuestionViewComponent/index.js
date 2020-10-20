@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import EmployeeQuestion from '../EmployeeQuestionComponent';
 import SelectSymptoms from '../SelectSymptomsComponent';
-import ConsentComponent from '../OutOfWorkConsentComponent';
+import OutOfWorkConsentComponent from '../OutOfWorkConsentComponent';
+import NegResultConsentComponent from '../NegResultConsentComponent';
 import RequireCovidTestingComponent from '../RequireCovidTestingComponent';
 import ReturnedFromHighRiskComponent from '../ReturnedFromHighRiskComponent';
 import TravelTestingComponent from '../TravelTestingComponent';
@@ -30,11 +31,11 @@ const QuestionViewComponent = ({
 
   const setSchedulerURL = (location) => {updateLocation(location)};
   
-  // 'employee','symptomssel', 'consent', 'needcovidtesting', 'traveltesting','returnfromhighrisk', 'consent', 'location'
   const components = {
     employee: EmployeeQuestion,
     symptomssel: SelectSymptoms,
-    consent: ConsentComponent,
+    outworkconsent: OutOfWorkConsentComponent,
+    negconsent: NegResultConsentComponent,
     needcovidtesting: RequireCovidTestingComponent,
     traveltesting: TravelTestingComponent,
     returnfromhighrisk: ReturnedFromHighRiskComponent,
@@ -51,6 +52,7 @@ const QuestionViewComponent = ({
         isPrevEnabled={isPrevEnabled}        
         isDoneEnabled={isDoneEnabled}
         setSchedulerURL={setSchedulerURL}
+        schedulePush={schedulePush}
       />
       </div>
       <div className={styles.buttonContainer}>          

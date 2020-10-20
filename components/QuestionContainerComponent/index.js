@@ -9,7 +9,7 @@ const QuestionFormComponent = ({}) => {
   const [viewIdx, setviewIdx] = useState(0);
   const [pageProgress, setPageProgress] = useState(0);
   const [endPoint, setEndpoint] = useState('Bridgeport Hospital');
-  const compNames = ['employee','symptomssel', 'consent', 'needcovidtesting', 'traveltesting','returnfromhighrisk', 'consent', 'location'];
+  const compNames = ['employee','symptomssel', 'outworkconsent', 'needcovidtesting', 'traveltesting','returnfromhighrisk', 'negconsent', 'location'];
   const router = useRouter();
 
   
@@ -34,7 +34,7 @@ const QuestionFormComponent = ({}) => {
     setEndpoint(endpoint);
   }
 
- let progressWidth = 100*((viewIdx+1)/4);
+ let progressWidth = Math.floor(100*((viewIdx+1)/7));
 
   return (
     <div className={styles.questionContainer}>

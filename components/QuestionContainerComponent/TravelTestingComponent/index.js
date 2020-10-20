@@ -7,7 +7,7 @@ import styles from './TravelTestingComponent.module.css'
   const [isEmployee, setIsEmployee] = useState(true);
 
   useEffect(() => {
-    isPrevEnabled(false);
+    isPrevEnabled(true);
     isDoneEnabled(false);
   }, []);
 
@@ -19,7 +19,7 @@ import styles from './TravelTestingComponent.module.css'
         </p>
         <fieldset className="radio_grp_set">
           <legend>
-          Are you an employee or medical staff of Yale New Haven Health or Yale Medicine…?
+          Have you tested positive for COVID-19 within the past 90 days?
           </legend>
           <input
             id="employee_staff_check_yes"

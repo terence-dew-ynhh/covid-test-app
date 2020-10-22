@@ -28,8 +28,8 @@ export default function Home({ link }) {
           scrolling="yes"
           src={link}
         ></iframe>
-        <button className="button" onClick={schedulePush}>
-        Completed Scheduling 
+        <button className="button button_schedule" onClick={schedulePush}>
+        I've Completed Scheduling 
       </button> 
       </div>
       <style jsx>{`
@@ -41,6 +41,12 @@ export default function Home({ link }) {
           align-items: center;
           justify-items: center;
           border: none;
+        }
+        .button_schedule{
+          position: fixed;
+          padding: 25px 30px;
+          left: 10px;
+          top: 85%;
         }
       `}</style>
     </>

@@ -102,6 +102,20 @@ fieldset {
   margin: 10px 0;
 }
 
+.vert_img{
+  position: absolute;
+  left: 20px;
+  top: 25%;
+  height: 70%;
+}
+
+.horiz_img{
+  position: absolute;
+  left: 27%;
+  top: 4%;
+  height: 11%;
+}
+
 label,
 legend {
   margin-bottom: 25px;
@@ -333,6 +347,13 @@ label:hover:before {
   .error{
     margin-right: 50px;
   }
+  .vert_img{
+    display: none;
+  }
+  
+  .horiz_img{
+    display: none;
+  }
 }
 
 @media(max-width:430px){
@@ -345,6 +366,15 @@ label:hover:before {
   }
   .title{
     width: 90%;
+  }
+
+  .vert_img{
+    display: none;
+  }
+  
+  .horiz_img{
+    position: fixed;
+    display: none;
   }
 
 }.example {

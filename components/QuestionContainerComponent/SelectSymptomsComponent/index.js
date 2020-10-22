@@ -6,7 +6,7 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
 
   useEffect(() => {
     isDoneEnabled(false);
-    isPrevEnabled(false);
+    isPrevEnabled(true);
   }, []);
 
   const handleChecked = (e) => {

@@ -4,22 +4,26 @@ import styles from './QuestionContainerComponent.module.css'
 import { useRouter } from 'next/router';
 
 
-const QuestionFormComponent = ({}) => {
+const QuestionFormComponent = ({showHideVertBanner,showHideHorizBanner}) => {
 
   const [viewIdx, setviewIdx] = useState(0);
   const [endPoint, setEndpoint] = useState('Bridgeport Region');
-  const compNames = ['symptoms','location'];
+  const compNames = ['employee','symptoms','location'];
   const router = useRouter();
 
   
   const nextPage = () => {
     let index = viewIdx <= 2 ? viewIdx + 1 : viewIdx;
     setviewIdx(index);
+    if(viewIdx === 0){ showHideVertBanner(false); showHideHorizBanner(true)}
+    else { showHideVertBanner(true); showHideHorizBanner(false)}
   };
 
   const prevPage = () => {
     let index = viewIdx > 0 ? viewIdx - 1 : viewIdx;
     setviewIdx(index);
+    if(viewIdx === 0){ showHideVertBanner(false); showHideHorizBanner(true)}
+    else { showHideVertBanner(true); showHideHorizBanner(false)}
   };
 
   const schedulePush = () => {
@@ -46,7 +50,7 @@ const QuestionFormComponent = ({}) => {
             paddingLeft: `${progressWidth-15}%`,
             color: '#0f4d92',
             borderBottom: '15px solid #0f4d92'}} >{`${progressWidth}%`}</div> */}
-
+      
       <QuestionView
         nextPage={nextPage}
         prevPage={prevPage}

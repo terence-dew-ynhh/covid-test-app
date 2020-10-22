@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import EmployeeQuestion from '../EmployeeQuestionComponent';
 import SelectLocation from '../SelectLocationComponent';
 import SelectSymptoms from '../SelectSymptomsComponent';
 import styles from './QuestionViewComponent.module.css'
@@ -27,7 +28,8 @@ const QuestionViewComponent = ({
   
   const components = {
     symptoms: SelectSymptoms,
-    location: SelectLocation
+    location: SelectLocation,
+    employee: EmployeeQuestion
   };
 
   const ComponentName = components[compName || 'symptoms'];

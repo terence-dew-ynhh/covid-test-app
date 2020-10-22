@@ -4,7 +4,12 @@ import { useRouter } from 'next/router';
 export default function Home({ link }) {
   const router = useRouter();
   const { endpoint } = router.query;
-  console.log(endpoint);
+
+  const schedulePush = () => {
+
+    router.push(`/thankyou`,'/thankyou');
+  };
+
   return (
     <>
       <Head>
@@ -23,6 +28,9 @@ export default function Home({ link }) {
           scrolling="yes"
           src={link}
         ></iframe>
+        <button className="button" onClick={schedulePush}>
+        Completed Scheduling 
+      </button> 
       </div>
       <style jsx>{`
         .scheduleContainer,

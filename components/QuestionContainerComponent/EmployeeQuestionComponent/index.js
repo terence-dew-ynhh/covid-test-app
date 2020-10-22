@@ -1,9 +1,7 @@
 import { useState, useEffect } from 'react';
-import styles from './EmployeeQuestionComponent.module.css'
+import styles from './EmployeeQuestionComponent.module.css';
 
-
- const EmployeeQuestion =({nextPage, isPrevEnabled, isDoneEnabled}) => {
-  
+const EmployeeQuestion = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
   const [isEmployee, setIsEmployee] = useState(true);
 
   useEffect(() => {
@@ -11,10 +9,10 @@ import styles from './EmployeeQuestionComponent.module.css'
     isDoneEnabled(false);
   }, []);
 
-    return (
+  return (
     <>
       <div className={styles.question_row_item}>
-      <p className="error" hidden={isEmployee}>
+        <p className="error" hidden={isEmployee}>
           Sorry, please navigate to a public testing website to schedule your
           test
         </p>
@@ -28,7 +26,7 @@ import styles from './EmployeeQuestionComponent.module.css'
             type="radio"
             name="employee_staff"
             onClick={() => {
-              nextPage()
+              nextPage();
               setIsEmployee(true);
             }}
           ></input>
@@ -43,11 +41,11 @@ import styles from './EmployeeQuestionComponent.module.css'
             }}
           ></input>
           <label htmlFor="employee_staff_check_no">No</label>
-        </fieldset>        
+        </fieldset>
       </div>
       <style jsx>{``}</style>
     </>
   );
-}
+};
 
 export default EmployeeQuestion;

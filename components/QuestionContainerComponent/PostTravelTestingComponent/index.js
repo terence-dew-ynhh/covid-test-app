@@ -7,7 +7,7 @@ import styles from './PostTravelTestingComponent.module.css'
   const [isEmployee, setIsEmployee] = useState(true);
 
   useEffect(() => {
-    isPrevEnabled(false);
+    isPrevEnabled(true);
     isDoneEnabled(false);
   }, []);
 
@@ -30,8 +30,9 @@ import styles from './PostTravelTestingComponent.module.css'
               nextPage(e)
             }}
           ></input>
-          <label htmlFor="employee_staff_check_yes">1st Baseline Test upon return from travel</label>
-
+          <label className={styles.blocking_label} htmlFor="employee_staff_check_yes">1st Baseline Test upon return from travel</label>
+          <br></br>
+          <br></br>
           <input
             id="employee_staff_check_no"
             type="radio"
@@ -40,7 +41,7 @@ import styles from './PostTravelTestingComponent.module.css'
               schedulePush()
             }}
           ></input>
-          <label htmlFor="employee_staff_check_no">2nd Test, please schedule yourself on the 7th day after returning from travel</label>
+          <label className={styles.blocking_label} htmlFor="employee_staff_check_no">2nd Test, please schedule yourself on the 7th day after returning from travel</label>
         </fieldset>        
       </div>
       <style jsx>{``}</style>

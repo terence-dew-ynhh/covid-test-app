@@ -10,6 +10,7 @@ const QuestionFormComponent = ({}) => {
   const [endPoint, setEndpoint] = useState('Bridgeport Hospital');
   const compNames = ['employee', 'needcovidtesting','symptomssel', 'sevsymptomsstatment', 'symptomsstatment', 'outworkconsent', 'traveltesting', 'highriskstatement','returnfromhighrisk','posttravel', 'negconsent', 'location'];
   const [jumpTracking, setJumpTracking] = useState([]);
+  const [progressBarVal, setProgressBarVal] = useState(12);
   const router = useRouter();
 
   
@@ -19,14 +20,29 @@ const QuestionFormComponent = ({}) => {
     let newjumpArr = [...jumpTracking,pageProg]
     setJumpTracking(newjumpArr)
     setviewIdx(index);
+    recalculateProgress();
   };
+
+  const recalculateProgress = () =>{
+    console.log(viewIdx)
+    if(viewIdx < 2){     
+      setProgressBarVal(12);
+    }
+    if(viewIdx == 2){     
+      setProgressBarVal(3);
+    }
+    if(viewIdx == 1){     
+      setProgressBarVal(11);
+    }
+  }
 
   const prevPage = (e) => {
     let index = viewIdx > 0 ? viewIdx - jumpTracking[jumpTracking.length - 1] : viewIdx;
     let newjumpArr = [...jumpTracking]
     newjumpArr.splice((jumpTracking.length-1),1)
-    setJumpTracking(newjumpArr)
+    setJumpTracking(newjumpArr);
     setviewIdx(index);
+    recalculateProgress()
   };
 
   const schedulePush = () => {
@@ -38,7 +54,7 @@ const QuestionFormComponent = ({}) => {
     setEndpoint(endpoint);
   }
 
- let progressWidth = Math.floor(100*((viewIdx+1)/7));
+ let progressWidth = Math.floor(100*((viewIdx+1)/progressBarVal));
 
   return (
     <div className={styles.questionContainer}>

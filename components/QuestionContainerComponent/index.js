@@ -7,21 +7,25 @@ import { useRouter } from 'next/router';
 const QuestionFormComponent = ({}) => {
 
   const [viewIdx, setviewIdx] = useState(0);
-  const [pageProgress, setPageProgress] = useState(0);
   const [endPoint, setEndpoint] = useState('Bridgeport Hospital');
-  const compNames = ['employee','symptomssel', 'outworkconsent', 'needcovidtesting', 'traveltesting','returnfromhighrisk', 'negconsent', 'location'];
+  const compNames = ['employee', 'needcovidtesting','symptomssel', 'sevsymptomsstatment', 'symptomsstatment', 'outworkconsent', 'traveltesting', 'highriskstatement','returnfromhighrisk','posttravel', 'negconsent', 'location'];
+  const [jumpTracking, setJumpTracking] = useState([]);
   const router = useRouter();
 
   
   const nextPage = (e, pageJump) => {
     let pageProg = pageJump ? pageJump : 1;
-    let index = pageProg > 1 ? viewIdx + pageProg : viewIdx <= 5 ? viewIdx + 1 : viewIdx;
-    setPageProgress(pageProg);
+    let index = pageProg > 1 ? viewIdx + pageProg : viewIdx + 1;
+    let newjumpArr = [...jumpTracking,pageProg]
+    setJumpTracking(newjumpArr)
     setviewIdx(index);
   };
 
   const prevPage = (e) => {
-    let index = viewIdx > 0 ? viewIdx - pageProgress : viewIdx;
+    let index = viewIdx > 0 ? viewIdx - jumpTracking[jumpTracking.length - 1] : viewIdx;
+    let newjumpArr = [...jumpTracking]
+    newjumpArr.splice((jumpTracking.length-1),1)
+    setJumpTracking(newjumpArr)
     setviewIdx(index);
   };
 

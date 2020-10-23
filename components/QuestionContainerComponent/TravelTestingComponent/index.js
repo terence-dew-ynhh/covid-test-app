@@ -35,9 +35,8 @@ import styles from './TravelTestingComponent.module.css'
             id="employee_staff_check_no"
             type="radio"
             name="employee_staff"
-            onClick={() => {
-              setIsEmployee(true);
-              nextPage()
+            onClick={(e) => {
+              nextPage(e,1);
             }}
           ></input>
           <label htmlFor="employee_staff_check_no">No</label>

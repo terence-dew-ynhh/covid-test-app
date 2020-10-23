@@ -16,7 +16,6 @@ import styles from './ReturnedFromHighRiskComponent.module.css'
       <div className={styles.question_row_item}>
       <p className="error" hidden={isEmployee}>
       We are not testing employees who travel to non-high risk locations<br></br>
-      We are not scheduling tests for travelers returning beyond 1 week from a high risk location
 
         </p>
         <fieldset className="radio_grp_set">
@@ -30,8 +29,8 @@ import styles from './ReturnedFromHighRiskComponent.module.css'
             id="employee_staff_check_yes"
             type="radio"
             name="employee_staff"
-            onClick={() => {
-              nextPage()
+            onClick={(e) => {
+              nextPage(e)
               setIsEmployee(true);
             }}
           ></input>

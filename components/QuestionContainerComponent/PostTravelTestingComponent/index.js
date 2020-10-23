@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import styles from './EmployeeQuestionComponent.module.css'
+import styles from './PostTravelTestingComponent.module.css'
 
 
- const EmployeeQuestion =({nextPage, isPrevEnabled, isDoneEnabled}) => {
+ const PostTravelTesting =({nextPage, isPrevEnabled, isDoneEnabled, schedulePush}) => {
   
   const [isEmployee, setIsEmployee] = useState(true);
 
@@ -20,28 +20,27 @@ import styles from './EmployeeQuestionComponent.module.css'
         </p>
         <fieldset className="radio_grp_set">
           <legend>
-          Are you an employee or medical staff of Yale New Haven Health or Yale Medicine?
+        	Choose which post-travel testing you would like to schedule:
           </legend>
           <input
             id="employee_staff_check_yes"
             type="radio"
             name="employee_staff"
-            onClick={() => {
-              nextPage()
-              setIsEmployee(true);
+            onClick={(e) => {
+              nextPage(e)
             }}
           ></input>
-          <label htmlFor="employee_staff_check_yes">Yes</label>
+          <label htmlFor="employee_staff_check_yes">1st Baseline Test upon return from travel</label>
 
           <input
             id="employee_staff_check_no"
             type="radio"
             name="employee_staff"
             onClick={() => {
-              setIsEmployee(false);
+              schedulePush()
             }}
           ></input>
-          <label htmlFor="employee_staff_check_no">No</label>
+          <label htmlFor="employee_staff_check_no">2nd Test, please schedule yourself on the 7th day after returning from travel</label>
         </fieldset>        
       </div>
       <style jsx>{``}</style>
@@ -49,4 +48,4 @@ import styles from './EmployeeQuestionComponent.module.css'
   );
 }
 
-export default EmployeeQuestion;
+export default PostTravelTesting;

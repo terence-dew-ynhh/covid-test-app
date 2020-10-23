@@ -27,7 +27,7 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
         }
       });
       setHasSymptoms('No');
-      nextPage(e,2);
+      setHasSevereSymptoms('No');
     } else {
       checkboxesArray.forEach((element) => {
         let symtomsChk = document.getElementById(
@@ -67,9 +67,9 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
         noneChk.disabled = true;
         setHasSymptoms('Yes');
         if(isSevere){
-          setHasSevereSymptoms('Yes');
+          nextPage(e);
         }else{
-          nextPage();
+          nextPage(e,2);
         }
       } else {
         noneChk.disabled = false;
@@ -174,11 +174,8 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
   return (
     <>
       <div className={styles.question_row_item}>
-        <p className="error" hidden={!(hasSymptoms === 'Yes' && hasSevereSymptoms === '')}>
-        If you are at work, please ensure you are wearing a mask now and notify your manager and leave work. If you are home, stay home.
-        </p>
-        <p className="error" hidden={!(hasSymptoms === 'Yes' && hasSevereSymptoms === 'Yes')}>
-        Call 911
+        <p className="error" hidden={!(hasSymptoms === 'No' && hasSevereSymptoms === 'No')}>
+        If you have other symptoms, please contact your Primary care doctor to discuss your concerns.
         </p>
         <div className={styles.question_row_item_sub}>
           <fieldset>

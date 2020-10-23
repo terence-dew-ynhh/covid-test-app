@@ -1,10 +1,14 @@
 import { useState } from 'react';
 import EmployeeQuestion from '../EmployeeQuestionComponent';
 import SelectSymptoms from '../SelectSymptomsComponent';
+import SevereSympStatement from '../SevereSympStatementComponent';
+import SymptomsStatement from '../SymptomsStatementComponent';
 import OutOfWorkConsentComponent from '../OutOfWorkConsentComponent';
 import NegResultConsentComponent from '../NegResultConsentComponent';
+import HighRiskStatementComponent from '../HighRiskStatementComponent';
 import RequireCovidTestingComponent from '../RequireCovidTestingComponent';
 import ReturnedFromHighRiskComponent from '../ReturnedFromHighRiskComponent';
+import PostTravelTestingComponent from '../PostTravelTestingComponent';
 import TravelTestingComponent from '../TravelTestingComponent';
 import SelectLocation from '../SelectLocationComponent';
 import styles from './QuestionViewComponent.module.css'
@@ -34,11 +38,15 @@ const QuestionViewComponent = ({
   const components = {
     employee: EmployeeQuestion,
     symptomssel: SelectSymptoms,
+    sevsymptomsstatment: SevereSympStatement,
+    symptomsstatment: SymptomsStatement,
     outworkconsent: OutOfWorkConsentComponent,
     negconsent: NegResultConsentComponent,
+    highriskstatement:HighRiskStatementComponent,
     needcovidtesting: RequireCovidTestingComponent,
     traveltesting: TravelTestingComponent,
     returnfromhighrisk: ReturnedFromHighRiskComponent,
+    posttravel: PostTravelTestingComponent ,
     location: SelectLocation
   };
 

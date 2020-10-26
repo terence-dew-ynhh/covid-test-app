@@ -42,8 +42,8 @@ export default function Home({ link }) {
 Home.getInitialProps = async ({ query }) => {
   const { asymp } = query;
   let link = asymp === "true"
-    ? 'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=81452,81079,82106,82111,82112,82383,76698,76704&vt=2275&dept=100001365,103720003,104360001,108010098,108710071,101050022,103010061,103700005&view=plain&public=1'
-    : 'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=81452,81079,82106,82111,82112,82383,76698,76704&vt=2276&dept=100001365,103720003,104360001,108010098,108710071,101050022,103010061,103700005&view=plain&public=1';
+    ? 'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=81452,81079,82106,82111,82112,82383,76698,76704,76700,76703,76701,76702&vt=2275&dept=100001365,103720003,104360001,108010098,108710071,101050022,103010061,103700005,104010062,108010035,102010045,108710023&view=plain&public=1'
+    : 'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=81452,81079,82106,82111,82112,82383,76698,76704,76700,76703,76701,76702&vt=2276&dept=100001365,103720003,104360001,108010098,108710071,101050022,103010061,103700005,104010062,108010035,102010045,108710023&view=plain&public=1';
 
   // const locationMapping = [
   //   {

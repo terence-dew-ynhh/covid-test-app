@@ -68,11 +68,11 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
         if(isSevere){
           nextPage(e);
         }else{
-          // if(e.target.id.includes("fever") || e.target.id.includes("cough") || e.target.id.includes("body") ){
+          if(e.target.id.includes("fever") || e.target.id.includes("cough") || e.target.id.includes("body") ){
             nextPage(e,2);
-          // }else{
-            
-          // }
+          }else{
+            nextPage(e,3);
+          }
           
         }
       } else {

@@ -63,9 +63,9 @@ const HighRiskStatement = ({ nextPage, isPrevEnabled, isDoneEnabled,schedulePush
         <div className={styles.question_row_item_sub}>
           <fieldset>
             <legend>
-            a.	Returning from a high risk travel location requires you to remain off work until you have 1 (one) negative baseline PCR test.<br></br><br></br>
-            b.	Afterwards, you will need a 2nd PCR test 7 days after you have arrived back. <br></br><br></br>
-            c.	If your first baseline PCR test is negative AND you are asymptomatic, you may return to work as scheduled. You do not require clearance from Occupational Health.<br></br><br></br>
+            -	Returning from a high risk travel location requires you to remain off work until you have 1 (one) negative baseline PCR test.<br></br><br></br>
+            -	Afterwards, you will need a 2nd PCR test 7 days after you have arrived back. <br></br><br></br>
+            -	If your first baseline PCR test is negative AND you are asymptomatic, you may return to work as scheduled. You do not require clearance from Occupational Health.<br></br><br></br>
 
             </legend>
             <div className={styles.q1_grid}>{checkboxes}</div>

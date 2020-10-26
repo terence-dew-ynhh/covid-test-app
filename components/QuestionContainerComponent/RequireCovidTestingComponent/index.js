@@ -19,7 +19,7 @@ import styles from './RequireCovidTestingComponent.module.css'
         </p> */}
         <fieldset className="radio_grp_set">
           <legend>
-          Do you need COVID testing related:
+          Why do you need COVID testing?:
           </legend>
           <input
             id="employee_staff_check_yes"
@@ -30,7 +30,8 @@ import styles from './RequireCovidTestingComponent.module.css'
             }}
           ></input>
           <label htmlFor="employee_staff_check_yes">Having Symptoms?</label>
-
+          <br></br>
+          <br></br>
           <input
             id="employee_staff_check_no"
             type="radio"
@@ -39,7 +40,7 @@ import styles from './RequireCovidTestingComponent.module.css'
               nextPage(e,5)
             }}
           ></input>
-          <label htmlFor="employee_staff_check_no">Return from Travel?</label>
+          <label htmlFor="employee_staff_check_no">Return from Travel to a High Risk Area?</label>
         </fieldset>        
       </div>
       <style jsx>{``}</style>

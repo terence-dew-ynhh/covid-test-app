@@ -69,13 +69,13 @@ const OutOfWorkConsent = ({
       <div className={styles.question_row_item}>
         <div className={styles.question_row_item_sub}>
           <p className="disclaimer">
-            If you are at work, please ensure you are wearing a mask now and
-            notify your manager and leave work. If you are home, stay home.
+            If you are at work, please ensure you are wearing a mask now,
+            notify your supervisor and leave work. If you are home, stay home.
           </p>
           <fieldset>
             <legend>
-              You are out of work for 48 or more hours pending a test result and
-              clearance from Occupational Health.
+              Once you have been tested, you must stay out of work for 48 or more hours or more pending the result and
+              clearance from Occupational Health at the COVID-19 Call Center.
             </legend>
             <div className={styles.q1_grid}>{checkboxes}</div>
           </fieldset>

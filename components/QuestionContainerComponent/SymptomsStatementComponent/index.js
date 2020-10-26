@@ -14,12 +14,13 @@ const SymptomsStatement = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
       <div className={styles.question_row_item}>
         <fieldset className="radio_grp_set">
           <legend>
-            Although COVID-19 testing may be indicated, please be aware of the
-            following: Symptoms of fever, cough, body aches/myalgias may
-            indicate the flu. Please contact your primary care provider for
+            - COVID-19 testing is indicated <br></br><br></br>
+            - Symptoms such as fever, cough or body aches may
+            indicate the flu. <br></br><br></br>
+            - Contact your primary care provider or Urgent Care for
             advice and/or treatment regarding this, especially if you age 65
-            years or older, have chronic medical conditions, and/or are
-            pregnant.
+            years or older, have a chronic medical condition, and/or are
+            pregnant.<br></br><br></br>
           </legend>
           <input
             id="employee_staff_check_yes"

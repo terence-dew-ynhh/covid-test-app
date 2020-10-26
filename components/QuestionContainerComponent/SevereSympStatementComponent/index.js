@@ -1,9 +1,7 @@
 import { useState, useEffect } from 'react';
-import styles from './SevereSympStatementComponent.module.css'
+import styles from './SevereSympStatementComponent.module.css';
 
-
- const SevereSympStatement =({nextPage, isPrevEnabled, isDoneEnabled}) => {
-  
+const SevereSympStatement = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
   const [isEmployee, setIsEmployee] = useState(true);
 
   useEffect(() => {
@@ -11,20 +9,19 @@ import styles from './SevereSympStatementComponent.module.css'
     isDoneEnabled(false);
   }, []);
 
-    return (
+  return (
     <>
       <div className={styles.question_row_item}>
- 
+        <p className="error">
+          You Have an Emergencny Symptom. Call 911 instead.
+        </p>
         <fieldset className="radio_grp_set">
-          <legend>
-          If you have the following symptoms, please proceed to Call 911
-          </legend>
-
-        </fieldset>        
+          <legend></legend>
+        </fieldset>
       </div>
       <style jsx>{``}</style>
     </>
   );
-}
+};
 
 export default SevereSympStatement;

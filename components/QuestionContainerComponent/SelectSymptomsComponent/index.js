@@ -11,8 +11,7 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
   }, []);
 
   const handleChecked = (e, isSevere) => {
-    console.log(e);
-    console.log(isSevere);
+
     if (
       e.target.id === 'prev_covid_none_of_the_above' &&
       e.target.checked === true
@@ -69,7 +68,12 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
         if(isSevere){
           nextPage(e);
         }else{
-          nextPage(e,2);
+          // if(e.target.id.includes("fever") || e.target.id.includes("cough") || e.target.id.includes("body") ){
+            nextPage(e,2);
+          // }else{
+            
+          // }
+          
         }
       } else {
         noneChk.disabled = false;

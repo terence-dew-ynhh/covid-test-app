@@ -29,7 +29,7 @@ const OutOfWorkConsent = ({
         }
       });
       // setHasConsent('No');
-      schedulePush();
+      schedulePush(false);
     }
 
     // If any of the boxes are checked beside None of the Above

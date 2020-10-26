@@ -45,9 +45,9 @@ const QuestionFormComponent = ({}) => {
     recalculateProgress()
   };
 
-  const schedulePush = () => {
+  const schedulePush = (asymp) => {
 
-    router.push(`/scheduling?endpoint=${endPoint}`,'/scheduling');
+    router.push(`/scheduling?asymp=${asymp}`,'/scheduling');
   };
 
   const updateLocation = (endpoint) =>{

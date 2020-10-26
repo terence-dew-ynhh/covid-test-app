@@ -38,7 +38,7 @@ import styles from './PostTravelTestingComponent.module.css'
             type="radio"
             name="employee_staff"
             onClick={() => {
-              schedulePush()
+              schedulePush(true)
             }}
           ></input>
           <label className={styles.blocking_label} htmlFor="employee_staff_check_no">2nd Test, please schedule yourself on the 7th day after returning from travel</label>

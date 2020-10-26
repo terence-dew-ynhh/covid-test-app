@@ -8,7 +8,7 @@ const QuestionFormComponent = ({}) => {
 
   const [viewIdx, setviewIdx] = useState(0);
   const [endPoint, setEndpoint] = useState('Bridgeport Hospital');
-  const compNames = ['employee', 'needcovidtesting','symptomssel', 'sevsymptomsstatment', 'symptomsstatment', 'outworkconsent', 'traveltesting', 'highriskstatement','returnfromhighrisk','posttravel', 'negconsent', 'location'];
+  const compNames = ['employee', 'needcovidtesting','symptomssel', 'sevsymptomsstatment', 'outworkconsent', 'traveltesting', 'highriskstatement','returnfromhighrisk','posttravel', 'negconsent', 'location'];
   const [jumpTracking, setJumpTracking] = useState([]);
   const [progressBarVal, setProgressBarVal] = useState(12);
   const router = useRouter();

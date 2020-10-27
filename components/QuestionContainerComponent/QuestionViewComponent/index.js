@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import EmployeeQuestion from '../EmployeeQuestionComponent';
 import SelectLocation from '../SelectLocationComponent';
+import PreviousSymptomsComponent from '../PreviousSymptomsComponent';
 import SelectSymptoms from '../SelectSymptomsComponent';
 import styles from './QuestionViewComponent.module.css'
 
@@ -29,7 +30,8 @@ const QuestionViewComponent = ({
   const components = {
     symptoms: SelectSymptoms,
     location: SelectLocation,
-    employee: EmployeeQuestion
+    employee: EmployeeQuestion,
+    prevsymptoms: PreviousSymptomsComponent
   };
 
   const ComponentName = components[compName || 'symptoms'];

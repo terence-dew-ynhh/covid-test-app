@@ -104,8 +104,8 @@ fieldset {
 
 .vert_img{
   position: absolute;
-  left: 20px;
-  top: 25%;
+  right: 20px;
+  top: 20%;
   height: 70%;
 }
 

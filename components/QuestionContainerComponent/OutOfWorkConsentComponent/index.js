@@ -68,25 +68,25 @@ const OutOfWorkConsent = ({
     <>
       <div className={styles.question_row_item}>
         <div className={styles.question_row_item_sub}>
-          <p className="error">
-            - Symptoms such as fever, cough or body aches may indicate the flu.{' '}
-            <br></br>
-            <br></br>- Contact your primary care provider or Urgent Care for
-            advice and/or treatment regarding this, especially if you age 65
-            years or older, have a chronic medical condition, and/or are
-            pregnant.<br></br>
-            <br></br>
-          </p>
+
           <p className="disclaimer">
             If you are at work, please ensure you are wearing a mask now, notify
             your supervisor and leave work. If you are home, stay home.
           </p>
           <fieldset>
             <legend>
-              Once you have been tested, you must stay out of work for 48 or
+              Once you have been tested for COVID, you must stay out of work for 48 or
               more hours or more pending the result and clearance from
               Occupational Health at the COVID-19 Call Center.
             </legend>
+            <p className="error">
+            - Symptoms such as fever, cough or body aches may also indicate the flu.{' '}
+            <br></br>
+            <br></br>- Contact your primary care provider or Urgent Care for testing and medical advice regarding this, especially if you age 65
+            years or older, have a chronic medical condition, and/or are
+            pregnant.<br></br>
+            <br></br>
+          </p>
             <div className={styles.q1_grid}>{checkboxes}</div>
           </fieldset>
         </div>

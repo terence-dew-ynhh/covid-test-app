@@ -18,7 +18,7 @@ const SymptomsStatement = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
             - Symptoms such as fever, cough or body aches may
             indicate the flu. <br></br><br></br>
             - Contact your primary care provider or Urgent Care for
-            advice and/or treatment regarding this, especially if you age 65
+            testing and medical regarding this, especially if you age 65
             years or older, have a chronic medical condition, and/or are
             pregnant.<br></br><br></br>
           </legend>

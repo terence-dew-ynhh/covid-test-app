@@ -63,8 +63,9 @@ const NegResultConsent = ({ nextPage, isPrevEnabled, isDoneEnabled,schedulePush}
         <div className={styles.question_row_item_sub}>
           <fieldset>
             <legend>
-              You are out of work until you have a negative test result, have no
-              symptoms, and have clearance from Occupational Health.
+            -	You are out of work until you have a negative test.<br></br><br></br>
+            -	You do not need clearance from Occupational Health unless you become symptomatic and/or you receive a positive test result.<br></br><br></br>
+            -	You will need to be tested again in 7 days but you can continue to work unless you become symptomatic.<br></br><br></br>
             </legend>
             <div className={styles.q1_grid}>{checkboxes}</div>
           </fieldset>

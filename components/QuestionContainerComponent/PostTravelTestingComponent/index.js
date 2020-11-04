@@ -20,7 +20,7 @@ import styles from './PostTravelTestingComponent.module.css'
         </p>
         <fieldset className="radio_grp_set">
           <legend>
-        	Choose which post-travel testing you would like to schedule:
+        	You must schedule both tests separately. Do not schedule your 2nd test until you get the result of your 1st test. If either test is positive, you must stay off work and call the Occupational Health Call Center:
           </legend>
           <input
             id="employee_staff_check_yes"

@@ -18,7 +18,7 @@ export default function Home() {
         COVID testing if you have symptoms or have already been tested since
         June 18th
       </h1>
-      <QuestionContainerComponent></QuestionContainerComponent>
+      <div className={styles.questionContainer}></div>
     </div>
   );
 }

@@ -23,9 +23,13 @@ const QuestionFormComponent = ({}) => {
     setviewIdx(index);
   };
 
-  const schedulePush = () => {
+  const viewPush = (isscheduleView) => {
 
+    if(isscheduleView)
     router.push(`/scheduling?endpoint=${endPoint}`,'/scheduling');
+    else{
+    router.push(`/error`,'/error');
+    }
   };
 
   const updateLocation = (endpoint) =>{
@@ -52,7 +56,7 @@ const QuestionFormComponent = ({}) => {
         nextPage={nextPage}
         prevPage={prevPage}
         compName={compNames[viewIdx]}
-        schedulePush={schedulePush}
+        viewPush={viewPush}
         updateLocation={updateLocation}
       ></QuestionView>
     </div>

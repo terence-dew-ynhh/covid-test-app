@@ -1,7 +1,7 @@
 import styles from './SelectSymptomsComponent.module.css';
 import { useState, useEffect } from 'react';
 
-const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
+const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled, viewPush }) => {
   const [hasSymptoms, setHasSymptoms] = useState('');
 
   useEffect(() => {
@@ -23,8 +23,7 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
           symtomsChk.disabled = true;
         }
       });
-      setHasSymptoms('No');
-      setHasSevereSymptoms('No');
+      nextPage();
       
     } else {
       checkboxesArray.forEach((element) => {
@@ -64,13 +63,11 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
         noneChk.checked = false;
         noneChk.disabled = true;
         setHasSymptoms('Yes');
-        nextPage(e);
+        viewPush(false)
       } else {
         noneChk.disabled = false;
         setHasSymptoms('');
-        if (isSevere) {
-          setHasSevereSymptoms('');
-        }
+
       }
     }
   };

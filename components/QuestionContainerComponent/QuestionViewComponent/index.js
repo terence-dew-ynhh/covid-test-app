@@ -2,6 +2,8 @@ import { useState } from 'react';
 import MandatedTest from '../MandatedTestComponent';
 import EmployeeQuestionComponent from '../EmployeeQuestionComponent';
 import PreviousSymptomsComponent from '../PreviousSymptomsComponent';
+import SelectSymptomsComponent from '../SelectSymptomsComponent';
+import SelectLocationComponent from '../SelectLocationComponent';
 import styles from './QuestionViewComponent.module.css'
 
 
@@ -9,7 +11,7 @@ const QuestionViewComponent = ({
   compName,
   nextPage,
   prevPage,
-  schedulePush,
+  viewPush,
   updateLocation
 }) => {
   const [prevEnabled, setPrevEnabled] = useState(false);
@@ -28,7 +30,10 @@ const QuestionViewComponent = ({
   
   const components = {
     employee: EmployeeQuestionComponent,
-    mandated: MandatedTest
+    mandated: MandatedTest,
+    previoussymptoms: PreviousSymptomsComponent,
+    selsymptoms:SelectSymptomsComponent,
+    location: SelectLocationComponent
 
   };
 
@@ -42,13 +47,14 @@ const QuestionViewComponent = ({
         isPrevEnabled={isPrevEnabled}        
         isDoneEnabled={isDoneEnabled}
         setSchedulerURL={setSchedulerURL}
+        viewPush={viewPush}
       />
       </div>
       <div className={styles.buttonContainer}>          
       <button className="button" hidden={!prevEnabled} onClick={prevPage}>
         {`< Back`}
       </button>
-      <button className="button choice-button" hidden={!doneEnabled} onClick={schedulePush}>
+      <button className="button choice-button" hidden={!doneEnabled} onClick={viewPush}>
         Schedule Appoinment
       </button>  
       </div>

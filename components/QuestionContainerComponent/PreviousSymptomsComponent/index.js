@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import styles from './PreviousSymptomsComponent.module.css';
 
-const PreviousSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
+const PreviousSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled, viewPush }) => {
   const [isCovidPositive, setIsCovidPositive] = useState('');
 
   useEffect(() => {
@@ -15,14 +15,7 @@ const PreviousSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
             <p className="error" hidden={!(isCovidPositive === 'Yes')}>
-              Please visit <b>https://ocucovidtesting.ynhhs.org</b> 
-              <br></br><br></br>
-              This site is
-              available for employees who have symptoms that are suggestive of
-              COVID-19 and want to tested, and also before return to work for
-              employees who have travelled to areas with high rates of
-              infection. Note: Out-of-state or international travel is strongly
-              discouraged, but testing is available if travel cannot be avoided.
+            Please reach out to your manager for testing associated with contact tracing.
             </p>
             <fieldset>
               <legend>Why do you need COVID Testing?:</legend>
@@ -37,7 +30,7 @@ const PreviousSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
                     nextPage();
                   }}
                 ></input>
-                <label htmlFor="prev_covid_yes">
+                <label htmlFor="prev_covid_asymp">
                   Asymptomatic Healthcare Testing
                 </label>
               </div>
@@ -49,10 +42,10 @@ const PreviousSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
                   value="Yes"
                   name="prev_covid"
                   onClick={(e) => {
-                    setIsCovidPositive(e.target.value);
+                    viewPush(false);
                   }}
                 ></input>
-                <label htmlFor="prev_covid_no">Having Symptoms?</label>
+                <label htmlFor="prev_covid_symp">Having Symptoms?</label>
               </div>
               <br></br>
               <div className="radio_row_item">
@@ -62,11 +55,26 @@ const PreviousSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
                   value="Yes"
                   name="prev_covid"
                   onClick={(e) => {                    
+                    viewPush(false);
+                  }}
+                ></input>
+                <label htmlFor="prev_covid_travel">
+                  Return from Travel to a High Risk Area?
+                </label>
+              </div>
+              <br></br>
+              <div className="radio_row_item">
+                <input
+                  id="prev_covid_contact"
+                  type="radio"
+                  value="Yes"
+                  name="prev_covid"
+                  onClick={(e) => {                    
                     setIsCovidPositive(e.target.value);
                   }}
                 ></input>
-                <label htmlFor="prev_covid_no">
-                  Return from Travel to a High Risk Area?
+                <label htmlFor="prev_covid_contact">
+                  Contact Tracing
                 </label>
               </div>
             </fieldset>

@@ -97,6 +97,12 @@ fieldset {
   padding: 15px 20px;
   font-weight: 600;
 }
+.disclaimer{
+  color:white;
+  background: darkblue;
+  padding: 15px 20px;
+  font-weight: 600;
+}
 
 .divider {
   display: block;
@@ -120,6 +126,14 @@ li{
 img{
   height:100px;
   margin: 0 35px;
+}
+
+a{
+  color: white;
+}
+
+a:hover{
+  color: red;
 }
 
 .title{

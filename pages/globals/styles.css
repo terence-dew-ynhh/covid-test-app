@@ -99,9 +99,9 @@ fieldset {
 }
 .disclaimer{
   color:white;
-  background: darkblue;
+  background: #0f4d92;
   padding: 15px 20px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .divider {
@@ -130,6 +130,7 @@ img{
 
 a{
   color: white;
+  font-weight: 600;
 }
 
 a:hover{

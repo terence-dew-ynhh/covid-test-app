@@ -13,6 +13,9 @@ export default function Error() {
           <img src="/YNHHSLogo.png"></img>
         </div>
         <div className="questionContainer">
+        <h1 className="title">
+
+      </h1>
           <p className="disclaimer">
             Please visit{' '}
             <a href="https://ocucovidtesting.ynhhs.org">
@@ -23,7 +26,9 @@ export default function Error() {
             This site is available for employees who have symptoms that are
             suggestive of COVID-19 and want to tested, and also before return to
             work for employees who have travelled to areas with high rates of
-            infection. Note: Out-of-state or international travel is strongly
+            infection. 
+            <br></br><br></br>
+            <b>Note:</b> Out-of-state or international travel is strongly
             discouraged, but testing is available if travel cannot be avoided.
           </p>
         </div>

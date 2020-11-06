@@ -34,7 +34,7 @@ const PreviousSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled, viewPush }) 
                   Asymptomatic Healthcare Testing
                 </label>
               </div>
-              <br></br>
+              <br></br><br></br>
               <div className="radio_row_item">
                 <input
                   id="prev_covid_symp"
@@ -47,7 +47,7 @@ const PreviousSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled, viewPush }) 
                 ></input>
                 <label htmlFor="prev_covid_symp">Having Symptoms?</label>
               </div>
-              <br></br>
+              <br></br><br></br>
               <div className="radio_row_item">
                 <input
                   id="prev_covid_travel"
@@ -62,7 +62,7 @@ const PreviousSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled, viewPush }) 
                   Return from Travel to a High Risk Area?
                 </label>
               </div>
-              <br></br>
+              <br></br><br></br>
               <div className="radio_row_item">
                 <input
                   id="prev_covid_contact"

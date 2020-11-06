@@ -13,10 +13,10 @@ export default function Home() {
         <img src="/YNHHSLogo.png"></img>
       </div>
       <h1 className="title">
-        One time testing is available for state mandated individuals – ask your
+        {/* One time testing is available for state mandated individuals – ask your
         supervisor if you have any questions. Do not sign up for asymptomatic
         COVID testing if you have symptoms or have already been tested since
-        June 18th
+        June 18th */}
       </h1>
       <QuestionContainerComponent></QuestionContainerComponent>
     </div>

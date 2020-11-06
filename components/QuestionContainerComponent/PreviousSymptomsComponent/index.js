@@ -59,7 +59,7 @@ const PreviousSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled, viewPush }) 
                   }}
                 ></input>
                 <label htmlFor="prev_covid_travel">
-                  Return from Travel to a High Risk Area?
+                  Return from Travel from a High Risk Area?
                 </label>
               </div>
               <br></br><br></br>

@@ -14,16 +14,37 @@ const PreviousSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
       <div className="radio_grp">
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
-          <p className="error" hidden={!(isCovidPositive === 'Yes')}>
-            Those that have previously tested positive are currently not
-            eligible for COVID-19 screening.
-          </p>
+            <p className="error" hidden={!(isCovidPositive === 'Yes')}>
+              Please visit <b>https://ocucovidtesting.ynhhs.org</b> 
+              <br></br><br></br>
+              This site is
+              available for employees who have symptoms that are suggestive of
+              COVID-19 and want to tested, and also before return to work for
+              employees who have travelled to areas with high rates of
+              infection. Note: Out-of-state or international travel is strongly
+              discouraged, but testing is available if travel cannot be avoided.
+            </p>
             <fieldset>
-              <legend>Have you previously tested Positive for COVID?:</legend>
+              <legend>Why do you need COVID Testing?:</legend>
 
               <div className="radio_row_item">
                 <input
-                  id="prev_covid_yes"
+                  id="prev_covid_asymp"
+                  type="radio"
+                  value="No"
+                  name="prev_covid"
+                  onClick={(e) => {
+                    nextPage();
+                  }}
+                ></input>
+                <label htmlFor="prev_covid_yes">
+                  Asymptomatic Healthcare Testing
+                </label>
+              </div>
+              <br></br>
+              <div className="radio_row_item">
+                <input
+                  id="prev_covid_symp"
                   type="radio"
                   value="Yes"
                   name="prev_covid"
@@ -31,23 +52,25 @@ const PreviousSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
                     setIsCovidPositive(e.target.value);
                   }}
                 ></input>
-                <label htmlFor="prev_covid_yes">Yes</label>
-                <div className="radio_row_item">
-                  <input
-                    id="prev_covid_no"
-                    type="radio"
-                    value="No"
-                    name="prev_covid"
-                    onClick={(e) => {
-                      nextPage();
-                      setIsCovidPositive(e.target.value);
-                    }}
-                  ></input>
-                  <label htmlFor="prev_covid_no">No</label>
-                </div>
+                <label htmlFor="prev_covid_no">Having Symptoms?</label>
+              </div>
+              <br></br>
+              <div className="radio_row_item">
+                <input
+                  id="prev_covid_travel"
+                  type="radio"
+                  value="Yes"
+                  name="prev_covid"
+                  onClick={(e) => {                    
+                    setIsCovidPositive(e.target.value);
+                  }}
+                ></input>
+                <label htmlFor="prev_covid_no">
+                  Return from Travel to a High Risk Area?
+                </label>
               </div>
             </fieldset>
-          </div>          
+          </div>
         </div>
       </div>
       <style jsx>{``}</style>

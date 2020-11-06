@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import MandatedTest from '../MandatedTestComponent';
-import ContactTracing from '../ContactTracingComponent';
-import SelectLocation from '../SelectLocationComponent';
+import EmployeeQuestionComponent from '../EmployeeQuestionComponent';
+import PreviousSymptomsComponent from '../PreviousSymptomsComponent';
 import styles from './QuestionViewComponent.module.css'
 
 
@@ -27,7 +27,7 @@ const QuestionViewComponent = ({
   const setSchedulerURL = (location) => {updateLocation(location)};
   
   const components = {
-    location: SelectLocation,
+    employee: EmployeeQuestionComponent,
     mandated: MandatedTest
 
   };

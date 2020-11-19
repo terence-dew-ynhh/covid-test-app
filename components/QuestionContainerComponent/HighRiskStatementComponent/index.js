@@ -64,8 +64,7 @@ const HighRiskStatement = ({ nextPage, isPrevEnabled, isDoneEnabled,schedulePush
           <fieldset>
             <legend>
             -	Returning from a high risk travel location requires you to remain off work until you have 1 (one) negative baseline RNA test.<br></br><br></br>
-            -	Afterwards, you will need a 2nd RNA test 7 days after you have arrived back. <br></br><br></br>
-            -	If your first baseline RNA test is negative AND you are asymptomatic, you may return to work as scheduled. You do not require clearance from Occupational Health.<br></br><br></br>
+            -	If your baseline RNA test is negative AND you are asymptomatic, you may return to work as scheduled. You do not require clearance from Occupational Health.<br></br><br></br>
 
             </legend>
             <div className={styles.q1_grid}>{checkboxes}</div>

@@ -43,7 +43,18 @@ export default function Home() {
         showHideVertBanner={showHideVertBanner}
         showHideHorizBanner={showHideHorizBanner}
       ></QuestionContainerComponent>
+      <a
+          className="horiz_img_link_btm"
+          target="__blank"
+          href="https://medicine.yale.edu/ycci/clinicaltrials/covid-trials/"
+        >
+          <img
+            className="horiz_img_btm"
+            src="/horiz_banner_1.jpg"
+          ></img>
+        </a>
       </div>
+      
       <a
         className="vert_img_link"
         target="__blank"

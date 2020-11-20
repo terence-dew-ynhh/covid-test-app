@@ -45,7 +45,9 @@ const QuestionViewComponent = ({
       />
       </div>
       <div className={styles.buttonContainer}>          
-
+      <button className="button" hidden={!prevEnabled} onClick={prevPage}>
+        {`< Back`}
+      </button>
       <button className="button choice-button" hidden={!doneEnabled} onClick={schedulePush}>
         Schedule Appoinment
       </button>  

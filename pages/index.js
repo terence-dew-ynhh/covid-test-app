@@ -3,10 +3,8 @@ import Head from 'next/head';
 import QuestionContainerComponent from '../components/QuestionContainerComponent';
 
 export default function Home() {
-  const [hideVertBanner, setHideVertBanner] = useState(true);
-  const [hideHorizontalBanner, setHideHorizontalBanner] = useState(false);
-  const [hideVert2Banner, setHideVert2Banner] = useState(true);
-  const [hideHorizontal2Banner, setHideHorizontal2Banner] = useState(true);
+  const [hideHorizontalBanner, setHideHorizontalBanner] = useState(true);
+  const [hideVertBanner, setHideVertBanner] = useState(false);
 
   const showHideVertBanner = (flag) => {
     setHideVertBanner(flag);
@@ -16,13 +14,6 @@ export default function Home() {
     setHideHorizontalBanner(flag);
   };
 
-  const showHideVert2Banner = (flag) => {
-    setHideVert2Banner(flag);
-  };
-
-  const showHideHoriz2Banner = (flag) => {
-    setHideHorizontal2Banner(flag);
-  };
 
   return (
     <div className="container">
@@ -37,19 +28,9 @@ export default function Home() {
           className="horiz_img"
           src="/horiz_banner_1.jpg"
         ></img>
-        <img
-          hidden={hideHorizontal2Banner}
-          className="horiz_img"
-          src="/horiz_banner_2.jpg"
-        ></img>
       </div>
       <img
         hidden={hideVertBanner}
-        className="vert_img"
-        src="/vert_banner_2.jpg"
-      ></img>
-      <img
-        hidden={hideVert2Banner}
         className="vert_img"
         src="/vert_banner_1.jpg"
       ></img>
@@ -57,8 +38,6 @@ export default function Home() {
         See if you qualify for coronavirus (COVID-19) testing
       </h1>
       <QuestionContainerComponent
-        showHideVert2Banner={showHideVert2Banner}
-        showHideHoriz2Banner={showHideHoriz2Banner}
         showHideVertBanner={showHideVertBanner}
         showHideHorizBanner={showHideHorizBanner}
       ></QuestionContainerComponent>

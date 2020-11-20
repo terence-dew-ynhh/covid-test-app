@@ -113,6 +113,20 @@ legend {
   font-size: 1.2em;
 }
 
+.vert_img{
+  position: absolute;
+  right: 20px;
+  top: 20%;
+  height: 70%;
+}
+
+.horiz_img{
+  position: absolute;
+  left: 27%;
+  top: 4%;
+  height: 11%;
+}
+
 li{
   margin-bottom: 2%;
 }

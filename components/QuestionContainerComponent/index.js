@@ -4,28 +4,28 @@ import styles from './QuestionContainerComponent.module.css'
 import { useRouter } from 'next/router';
 
 
-const QuestionFormComponent = ({showHideVertBanner,showHideVert2Banner, showHideHorizBanner, showHideHoriz2Banner}) => {
+const QuestionFormComponent = ({showHideVertBanner, showHideHorizBanner}) => {
 
   const [viewIdx, setviewIdx] = useState(0);
   const [endPoint, setEndpoint] = useState('Advanced Nursing and Rehab Mass Testing');
-  const compNames = ['location'];
+  const compNames = ['employee','previous','location'];
   const router = useRouter();
 
   
   const nextPage = () => {
     let index = viewIdx <= 2 ? viewIdx + 1 : viewIdx;
     setviewIdx(index);
-    if(viewIdx === 0){ showHideVertBanner(false); showHideHorizBanner(true); showHideVert2Banner(true); showHideHoriz2Banner(true)}
-    else if(viewIdx === 1){showHideVertBanner(true); showHideHorizBanner(true); showHideVert2Banner(true); showHideHoriz2Banner(false)}
-    else{showHideVertBanner(true); showHideHorizBanner(true); showHideVert2Banner(false); showHideHoriz2Banner(true)}
+    if(viewIdx === 0){ showHideVertBanner(true); showHideHorizBanner(false);}
+    else if(viewIdx === 1){showHideVertBanner(false); showHideHorizBanner(true);}
+    else{showHideVertBanner(true); showHideHorizBanner(false); }
   };
 
   const prevPage = () => {
     let index = viewIdx > 0 ? viewIdx - 1 : viewIdx;
     setviewIdx(index);
-    if(viewIdx === 0){ showHideVertBanner(false); showHideHorizBanner(true); showHideVert2Banner(true); showHideHoriz2Banner(true)}
-    else if(viewIdx === 1){showHideVertBanner(true); showHideHorizBanner(true); showHideVert2Banner(true); showHideHoriz2Banner(false)}
-    else{showHideVertBanner(true); showHideHorizBanner(true); showHideVert2Banner(false); showHideHoriz2Banner(true)}
+    if(viewIdx === 0){ showHideVertBanner(false); showHideHorizBanner(true);}
+    else if(viewIdx === 1){showHideVertBanner(false); showHideHorizBanner(true);}
+    else{showHideVertBanner(true); showHideHorizBanner(false); }
   };
 
   const schedulePush = () => {

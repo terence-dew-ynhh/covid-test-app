@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import EmployeeQuestion from '../EmployeeQuestionComponent';
+import PreviousSymptoms from '../PreviousSymptomsComponent';
 import SelectLocation from '../SelectLocationComponent';
 import styles from './QuestionViewComponent.module.css'
 
@@ -25,6 +27,8 @@ const QuestionViewComponent = ({
   const setSchedulerURL = (location) => {updateLocation(location)};
   
   const components = {
+    employee: EmployeeQuestion,
+    previous: PreviousSymptoms,
     location: SelectLocation
   };
 

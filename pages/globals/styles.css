@@ -113,18 +113,38 @@ legend {
   font-size: 1.2em;
 }
 
+.subcontainer{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.questiondiv{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 5%;
+  align-items: center;
+}
+
 .vert_img{
-  position: absolute;
-  right: 20px;
-  top: 20%;
-  height: 70%;
+  height: 75%;
+}
+
+.vert_img_link{
+  padding-top: 5%;
 }
 
 .horiz_img{
-  position: absolute;
-  left: 27%;
-  top: 4%;
-  height: 11%;
+  width: 100%;
+  margin: 0;
+  justify-self: flex-end;
+}
+
+.horiz_img_link{
+  justify-self: flex-end;
+  width: 50%;
+  margin: 0 0 0 7%
 }
 
 li{
@@ -353,6 +373,21 @@ label:hover:before {
   }
   .choice-button{
     margin: 0 0 6% 9%
+  }
+  .vert_img{
+    display: none;
+  }
+  
+  .vert_img_link{
+    display: none;
+  }
+  
+  .horiz_img{
+    display: none;
+  }
+  
+  .horiz_img_link{
+    display: none;
   }
 }
 

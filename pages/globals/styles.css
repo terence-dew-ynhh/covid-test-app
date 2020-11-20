@@ -141,6 +141,7 @@ legend {
 }
 
 .horiz_img_link{
+  width: 50%;
   margin: 0 0 0 7%
 }
 
@@ -149,7 +150,7 @@ legend {
 }
 
 .horiz_img_link_btm{
-  
+  display: none;
 }
 
 li{

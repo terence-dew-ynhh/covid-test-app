@@ -41,7 +41,7 @@ handler.post(async (req, res) => {
 
 try{
   const items = await req.db
-    .collection('survey_answers')
+    .collection('sel_agency')
     .insertOne(updateVals);
 
    res.status(200);

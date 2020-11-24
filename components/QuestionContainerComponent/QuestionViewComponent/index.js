@@ -27,7 +27,7 @@ const QuestionViewComponent = ({
   
   const sendData = (agency) => {
 
-    axios.post('/api/responses', { sel_agency: agency })
+    axios.post('/api/responses', { agency: agency })
     .then(function (response) {
       console.log(response);
     })

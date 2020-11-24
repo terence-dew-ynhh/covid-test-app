@@ -32,23 +32,17 @@ handler.post(async (req, res) => {
 
   await runMiddleware(req, res, cors)  
 
-  let { uuid, field, fieldVal } = req.body;
+  let { agency } = req.body;
 
-  let updateQuery = {
-    _id: uuid
-  };
-// console.log(`${field} + ${fieldVal}`)
   let updateVals = {
-    $set: {
-      [field]: fieldVal,
+      agency: agency,
       date: new Date(Date.now()).toISOString()
-    }
   };
+
 try{
   const items = await req.db
     .collection('survey_answers')
-    .findOneAndUpdate(updateQuery, updateVals, { upsert: true });
-  // console.log(req.db)
+    .insertOne(updateVals);
 
    res.status(200);
     res.send("Document Updated");

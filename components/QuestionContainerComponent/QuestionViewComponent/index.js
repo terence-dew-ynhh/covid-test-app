@@ -1,11 +1,8 @@
-import { useState, useEffect } from 'react';
-import AgeQuestionComponent from '../AgeQuestionComponent';
-import GenderComponent from '../GenderComponent';
-import HepatitisComponent from '../HepatitisComponent';
-import PregnantComponent from '../PregnantComponent';
-import CancerComponent from '../CancerComponent';
-import HistoryComponent from '../HistoryComponent';
-import TreatmentReceivedComponent from '../TreatmentReceivedComponent';
+import { useState } from 'react';
+const axios = require('axios');
+import SelectDepartment from '../SelectDepartmentComponent';
+import ConsentComponent from '../ConsentComponent';
+import NeedCovidTest from '../NeedCovidTestComponent';
 import styles from './QuestionViewComponent.module.css'
 
 
@@ -15,90 +12,57 @@ const QuestionViewComponent = ({
   prevPage,
   schedulePush,
   updateLocation,
-  uuid
 }) => {
-  const [age, setAge] = useState(18);
   const [prevEnabled, setPrevEnabled] = useState(false);
-  const [nextEnabled, setNextEnabled] = useState(false);
   const [doneEnabled, setDoneEnabled] = useState(false);
-
-  useEffect(() => {
-    setAge(18);
-  }, []);
 
   const isPrevEnabled = (isEnabled) => {
     setPrevEnabled(isEnabled);
   };
 
-  const isNextEnabled = (isEnabled,input) => {
-    setNextEnabled(isEnabled);
-
-  };
 
   const isDoneEnabled = (isEnabled) => {
     setDoneEnabled(isEnabled);    
   }; 
   
-  const setSchedulerURL = (location) => {updateLocation(location)};
+  const sendData = (agency) => {
 
-  const updateField = async (field, fieldVal) => {
-    const action = 'post';
-    const res = await fetch('/api/responses', {
-      method: action,
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({'uuid':uuid, 'field':field, 'fieldVal': fieldVal})
+    axios.post('/api/responses', { sel_agency: agency })
+    .then(function (response) {
+      console.log(response);
     })
-  }
+    .catch(function (error) {
+      console.log(error);
+    });
+   };
 
-  const updateAndProgress = (e) => {
-    const patientAgeData = age;
-    updateField('age', patientAgeData);
-    
-    if(patientAgeData > 17 && patientAgeData <= 85){ nextPage()}
-    else {schedulePush(true)}
-  }
-
-  const updateAge = (input) => {
-    setAge(parseInt(input));
-  }
+  const setSchedulerURL = (location) => {updateLocation(location)};
   
   const components = {
-    age: AgeQuestionComponent,
-    treatment: TreatmentReceivedComponent,
-    gender: GenderComponent,
-    pregnancy: PregnantComponent,
-    hepatitis: HepatitisComponent,
-    cancer: CancerComponent,
-    history: HistoryComponent
+    seldept: SelectDepartment,
+    needcovid: NeedCovidTest,
+    consent: ConsentComponent,    
   };
 
-  const ComponentName = components[compName || 'age'];
+  const ComponentName = components[compName || 'seldept'];
 
   return (
     <div className={styles.questionContainer}>
       <div className={styles.questionContainer}>
       <ComponentName
         nextPage={nextPage}
-        isPrevEnabled={isPrevEnabled}
-        isNextEnabled={isNextEnabled}        
+        isPrevEnabled={isPrevEnabled}        
         isDoneEnabled={isDoneEnabled}
         setSchedulerURL={setSchedulerURL}
-        uuid={uuid}
-        updateField={updateField}
-        schedulePush ={schedulePush} 
-        updateAge={updateAge} 
+        schedulePush={schedulePush}
+        sendData={sendData}
       />
       </div>
-      <div className={styles.buttonContainer}>              
-      <button className="button" hidden={!prevEnabled} onClick={ (e) => {compName === 'hepatitis' ? prevPage(e,2) : prevPage(e);} }>
+      <div className={styles.buttonContainer}>          
+      <button className="button" hidden={!prevEnabled} onClick={prevPage}>
         {`< Back`}
       </button>
-      <button className="button" hidden={!nextEnabled} onClick={(e) => updateAndProgress(e)}>
-      {/* <button className="button" hidden={!nextEnabled} onClick={nextPage}> */}
-
-        {`Next >`}
-      </button>  
-      <button className="button" hidden={!doneEnabled} onClick={() => schedulePush(false)}>
+      <button className="button" hidden={!doneEnabled} onClick={schedulePush}>
         Schedule Appoinment
       </button>  
       </div>
@@ -107,4 +71,3 @@ const QuestionViewComponent = ({
 };
 
 export default QuestionViewComponent;
-

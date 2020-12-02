@@ -82,7 +82,7 @@ const OutOfWorkConsent = ({
             <p className="error">
             - Symptoms such as fever, cough or body aches may also indicate the flu.{' '}
             <br></br>
-            <br></br>- Contact your primary care provider or Urgent Care for testing and medical advice regarding this, especially if you age 65
+            <br></br>- We recommend contacting your primary care provider or Urgent Care for testing and medical advice regarding this, especially if you age 65
             years or older, have a chronic medical condition, and/or are
             pregnant.<br></br>
             <br></br>

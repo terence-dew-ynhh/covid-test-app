@@ -3,16 +3,10 @@ const axios = require('axios');
 import SelectDepartment from '../SelectDepartmentComponent';
 import ConsentComponent from '../ConsentComponent';
 import NeedCovidTest from '../NeedCovidTestComponent';
-import PathywayOne from '../PathywayOneComponent';
-import PathywayTwo from '../PathywayTwoComponent';
-import PathywayThree from '../PathywayThreeComponent';
-import PathywayFour from '../PathywayFourComponent';
-import PathywayFive from '../PathywayFiveComponent';
-import PathywaySix from '../PathywaySixComponent';
-import styles from './QuestionViewComponent.module.css'
+import styles from './PathywayTwoComponent.module.css'
 
 
-const QuestionViewComponent = ({
+const PathywayTwoComponent = ({
   compName,
   nextPage,
   prevPage,
@@ -76,4 +70,4 @@ const QuestionViewComponent = ({
   );
 };
 
-export default QuestionViewComponent;
+export default PathywayTwoComponent;

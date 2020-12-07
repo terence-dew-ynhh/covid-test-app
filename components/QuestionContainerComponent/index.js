@@ -1,29 +1,37 @@
 import React, { useState } from 'react';
-import QuestionView from './QuestionViewComponent';
+import PathSelectComponent from '../PathSelectComponent';
+import PathywayOne from '../PathywayOneComponent';
+import PathywayTwo from '../PathywayTwoComponent';
+import PathywayThree from '../PathywayThreeComponent';
+import PathywayFour from '../PathywayFourComponent';
+import PathywayFive from '../PathywayFiveComponent';
+import PathywaySix from '../PathywaySixComponent';
 import styles from './QuestionContainerComponent.module.css';
 import { useRouter } from 'next/router';
 
 const QuestionFormComponent = ({}) => {
   const [viewIdx, setviewIdx] = useState(0);
-  const [endPoint, setEndpoint] = useState('Bridgeport Hospital');
-  const compNames = ['seldept', 'needcovid', 'consent'];
-  const router = useRouter();
+  const components = [
+    PathSelectComponent,
+    PathywayOne,
+    PathywayTwo,
+    PathywayThree,
+    PathywayFour,
+    PathywayFive,
+    PathywaySix
+  ];
 
   let progressWidth = Math.floor(100 * ((viewIdx + 1) / 3));
 
-  const nextPage = () => {
-    let index = viewIdx <= 2 ? viewIdx + 1 : viewIdx;
-    setviewIdx(index);
+  const selectPathway = (idx) => {
+    setviewIdx(idx);
   };
 
-  const prevPage = () => {
-    let index = viewIdx > 0 ? viewIdx - 1 : viewIdx;
-    setviewIdx(index);
-  };
+  const ComponentName = components[viewIdx || 0];
 
-  const schedulePush = () => {
-    router.push(`/scheduling`, '/scheduling');
-  };
+  // const schedulePush = () => {
+  //   router.push(`/scheduling`, '/scheduling');
+  // };
 
   return (
     <div className={styles.questionContainer}>
@@ -42,12 +50,7 @@ const QuestionFormComponent = ({}) => {
         }}
       >{`${progressWidth}%`}</div>
 
-      <QuestionView
-        nextPage={nextPage}
-        prevPage={prevPage}
-        compName={compNames[viewIdx]}
-        schedulePush={schedulePush}
-      ></QuestionView>
+      <ComponentName selectPathway={selectPathway}></ComponentName>
     </div>
   );
 };

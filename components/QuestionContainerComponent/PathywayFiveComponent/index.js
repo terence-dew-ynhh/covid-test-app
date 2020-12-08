@@ -15,15 +15,33 @@ const PathywayFiveComponent = ({
 }) => {
   const [prevEnabled, setPrevEnabled] = useState(false);
   const [doneEnabled, setDoneEnabled] = useState(false);
-
+  const [viewIdx, setviewIdx] = useState(0);
+  const components = [COVIDPosResultSympComponent];
   const isPrevEnabled = (isEnabled) => {
     setPrevEnabled(isEnabled);
   };
+
+  // TODO: Yes: route to Testing website: https://ocucovidtesting.ynhhs.org/ || No: Symptom Recovery Questions
 
 
   const isDoneEnabled = (isEnabled) => {
     setDoneEnabled(isEnabled);    
   }; 
+
+  // const nextPage = () => {
+  //   let index = viewIdx <= 2 ? viewIdx + 1 : viewIdx;
+  //   setviewIdx(index);
+  // };
+
+  // const prevPage = () => {
+  //   let index = viewIdx > 0 ? viewIdx - 1 : viewIdx;
+  //   setviewIdx(index);
+  // };
+
+  // const schedulePush = () => {
+  //   router.push(`/scheduling`, '/scheduling');
+  // };
+  
   
   const sendData = (agency) => {
 
@@ -38,13 +56,7 @@ const PathywayFiveComponent = ({
 
   const setSchedulerURL = (location) => {updateLocation(location)};
   
-  const components = {
-    seldept: SelectDepartment,
-    needcovid: NeedCovidTest,
-    consent: ConsentComponent,    
-  };
-
-  const ComponentName = components[compName || 'seldept'];
+  const ComponentName = components[0];
 
   return (
     <div className={styles.questionContainer}>

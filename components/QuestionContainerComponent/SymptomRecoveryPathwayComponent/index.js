@@ -1,18 +1,10 @@
 import { useState } from 'react';
 const axios = require('axios');
-import SelectDepartment from '../SelectDepartmentComponent';
-import ConsentComponent from '../ConsentComponent';
-import NeedCovidTest from '../NeedCovidTestComponent';
-import PathywayOne from '../PathywayOneComponent';
-import PathywayTwo from '../PathywayTwoComponent';
-import PathywayThree from '../PathywayThreeComponent';
-import PathywayFour from '../PathywayFourComponent';
-import PathywayFive from '../PathywayFiveComponent';
-import PathywaySix from '../PathywaySixComponent';
-import styles from './QuestionViewComponent.module.css'
+import COVIDNegResultSympComponent from './COVIDNegResultSympComponent';
+import styles from './PathywayTwoComponent.module.css'
 
 
-const QuestionViewComponent = ({
+const PathywayTwoComponent = ({
   compName,
   nextPage,
   prevPage,
@@ -21,15 +13,24 @@ const QuestionViewComponent = ({
 }) => {
   const [prevEnabled, setPrevEnabled] = useState(false);
   const [doneEnabled, setDoneEnabled] = useState(false);
+  const [viewIdx, setviewIdx] = useState(0);
+  const components = [COVIDNegResultSympComponent];
+  
+  // TODO: Click Consent in COVIDNegResultSympComponent route to the data collection page
 
+  
   const isPrevEnabled = (isEnabled) => {
     setPrevEnabled(isEnabled);
   };
 
-
   const isDoneEnabled = (isEnabled) => {
     setDoneEnabled(isEnabled);    
   }; 
+
+  // const schedulePush = () => {
+  //   router.push(`/scheduling`, '/scheduling');
+  // };
+  
   
   const sendData = (agency) => {
 
@@ -44,13 +45,7 @@ const QuestionViewComponent = ({
 
   const setSchedulerURL = (location) => {updateLocation(location)};
   
-  const components = {
-    seldept: SelectDepartment,
-    needcovid: NeedCovidTest,
-    consent: ConsentComponent,    
-  };
-
-  const ComponentName = components[compName || 'seldept'];
+  const ComponentName = components[0];
 
   return (
     <div className={styles.questionContainer}>
@@ -76,4 +71,5 @@ const QuestionViewComponent = ({
   );
 };
 
-export default QuestionViewComponent;
+
+export default PathywayTwoComponent;

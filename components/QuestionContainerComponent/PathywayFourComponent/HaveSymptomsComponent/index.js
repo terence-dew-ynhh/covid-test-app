@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import styles from './NeedCovidTestComponent.module.css';
+import styles from './HaveSymptomsComponent.module.css';
 
-const NeedCovidTestComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
+const HaveSymptomsComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
   const [isCovidPositive, setIsCovidPositive] = useState('');
 
   useEffect(() => {
@@ -20,7 +20,7 @@ const NeedCovidTestComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
               1-833-ASK-YNHH for a clinical assessment.
             </p>
             <fieldset>
-              <legend>Why do you need COVID Testing?:</legend>
+              <legend>Do you currently have any symptoms?:</legend>
 
               <div className="radio_row_item">
                 <input
@@ -69,4 +69,4 @@ const NeedCovidTestComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
   );
 };
 
-export default NeedCovidTestComponent;
+export default HaveSymptomsComponent;

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import styles from './NeedCovidTestComponent.module.css';
+import styles from './Less14DaysContactComponent.module.css';
 
-const NeedCovidTestComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
+const Less14DaysContactComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
   const [isCovidPositive, setIsCovidPositive] = useState('');
 
   useEffect(() => {
@@ -20,7 +20,7 @@ const NeedCovidTestComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
               1-833-ASK-YNHH for a clinical assessment.
             </p>
             <fieldset>
-              <legend>Why do you need COVID Testing?:</legend>
+              <legend>Has it been more than 14 days since your last close contact* with the COVID-19 Positive person in your Household?:</legend>
 
               <div className="radio_row_item">
                 <input
@@ -32,7 +32,7 @@ const NeedCovidTestComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
                     setIsCovidPositive(e.target.value);
                   }}
                 ></input>
-                <label htmlFor="prev_covid_yes">Having Symptoms</label>
+                <label htmlFor="prev_covid_yes">Yes</label>
               </div>
               <br></br><br></br>
               <div className="radio_row_item">
@@ -45,20 +45,7 @@ const NeedCovidTestComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
                     nextPage();
                   }}
                 ></input>
-                <label htmlFor="prev_covid_no">Exposure to COVID </label>
-              </div>
-              <br></br><br></br>
-              <div className="radio_row_item">
-                <input
-                  id="prev_covid_no"
-                  type="radio"
-                  value="No"
-                  name="prev_covid"
-                  onClick={(e) => {
-                    nextPage();
-                  }}
-                ></input>
-                <label htmlFor="prev_covid_no">Work Clearance</label>
+                <label htmlFor="prev_covid_no">No </label>
               </div>
             </fieldset>
           </div>
@@ -69,4 +56,4 @@ const NeedCovidTestComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
   );
 };
 
-export default NeedCovidTestComponent;
+export default Less14DaysContactComponent;

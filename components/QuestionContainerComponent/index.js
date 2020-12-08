@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import PathSelectComponent from '../PathSelectComponent';
-import PathywayOne from '../PathywayOneComponent';
-import PathywayTwo from '../PathywayTwoComponent';
-import PathywayThree from '../PathywayThreeComponent';
-import PathywayFour from '../PathywayFourComponent';
-import PathywayFive from '../PathywayFiveComponent';
-import PathywaySix from '../PathywaySixComponent';
+import PathSelectComponent from './PathSelectComponent';
+import PathywayOne from './PathywayOneComponent';
+import PathywayTwo from './PathywayTwoComponent';
+import PathywayThree from './PathywayThreeComponent';
+import PathywayFour from './PathywayFourComponent';
+import PathywayFive from './PathywayFiveComponent';
 import styles from './QuestionContainerComponent.module.css';
 import { useRouter } from 'next/router';
 
@@ -17,21 +16,21 @@ const QuestionFormComponent = ({}) => {
     PathywayTwo,
     PathywayThree,
     PathywayFour,
-    PathywayFive,
-    PathywaySix
+    PathywayFive
   ];
 
   let progressWidth = Math.floor(100 * ((viewIdx + 1) / 3));
 
   const selectPathway = (idx) => {
+    console.log(idx);
     setviewIdx(idx);
   };
 
-  const ComponentName = components[viewIdx || 0];
+  const schedulePush = (page) => {
+    router.push(`/${page}`);
+  };
 
-  // const schedulePush = () => {
-  //   router.push(`/scheduling`, '/scheduling');
-  // };
+  const PathComponentName = components[viewIdx || 0];
 
   return (
     <div className={styles.questionContainer}>
@@ -50,7 +49,10 @@ const QuestionFormComponent = ({}) => {
         }}
       >{`${progressWidth}%`}</div>
 
-      <ComponentName selectPathway={selectPathway}></ComponentName>
+      <PathComponentName
+        schedulePush={schedulePush}
+        selectPathway={selectPathway}
+      ></PathComponentName>
     </div>
   );
 };

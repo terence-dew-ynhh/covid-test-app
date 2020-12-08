@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
-import styles from './NeedCovidTestComponent.module.css';
+import styles from './PathSelectComponent.module.css';
 
-const NeedCovidTestComponent = ({ selectPathway }) => {
+const PathSelectComponent = ({ selectPathway }) => {
   const [isCovidPositive, setIsCovidPositive] = useState('');
 
   useEffect(() => {
-    isDoneEnabled(false);
-    isPrevEnabled(true);
+    // isDoneEnabled(false);
+    // isPrevEnabled(true);
   }, []);
 
   return (
@@ -24,74 +24,80 @@ const NeedCovidTestComponent = ({ selectPathway }) => {
 
               <div className="radio_row_item">
                 <input
-                  id="prev_covid_yes"
+                  id="had_pos_res"
                   type="radio"
-                  value="Yes"
+                  value="1"
                   name="prev_covid"
                   onClick={(e) => {
+                    selectPathway(e.target.value);
                   }}
                 ></input>
-                <label htmlFor="prev_covid_yes">Had a COVID-Positive result and was out of work</label>
+                <label htmlFor="had_pos_res">Had a COVID-Positive result and was out of work</label>
               </div>
               <br></br><br></br>
               <div className="radio_row_item">
                 <input
-                  id="prev_covid_no"
+                  id="had_neg_res"
                   type="radio"
-                  value="No"
+                  value="2"
                   name="prev_covid"
                   onClick={(e) => {
+                    selectPathway(e.target.value);
                   }}
                 ></input>
-                <label htmlFor="prev_covid_no">Had a COVID-Negative result, had symptoms and was out of work</label>
+                <label htmlFor="had_neg_res">Had a COVID-Negative result, had symptoms and was out of work</label>
               </div>
               <br></br><br></br>
               <div className="radio_row_item">
                 <input
-                  id="prev_covid_no"
+                  id="no_covid_test"
                   type="radio"
-                  value="No"
+                  value="3"
                   name="prev_covid"
                   onClick={(e) => {
+                    selectPathway(e.target.value);
                   }}
                 ></input>
-                <label htmlFor="prev_covid_no">Did not have a COVID test but had symptoms and was out of work</label>
+                <label htmlFor="no_covid_test">Did not have a COVID test but had symptoms and was out of work</label>
               </div>
               <br></br><br></br>
               <div className="radio_row_item">
                 <input
-                  id="prev_covid_no"
+                  id="high_risk_expo"
                   type="radio"
-                  value="No"
+                  value="4"
                   name="prev_covid"
                   onClick={(e) => {
+                    selectPathway(e.target.value);
                   }}
                 ></input>
-                <label htmlFor="prev_covid_no">Had a High Risk Household Exposure and completed my 14 day Quarantine</label>
+                <label htmlFor="high_risk_expo">Had a High Risk Household Exposure and completed my 14 day Quarantine</label>
               </div>
               <br></br><br></br>
               <div className="radio_row_item">
                 <input
-                  id="prev_covid_no"
+                  id="high_risk_travel"
                   type="radio"
-                  value="No"
+                  value="5"
                   name="prev_covid"
                   onClick={(e) => {
+                    selectPathway(e.target.value);
                   }}
                 ></input>
-                <label htmlFor="prev_covid_no">Returned from a High Risk Travel Location</label>
+                <label htmlFor="high_risk_travel">Returned from a High Risk Travel Location</label>
               </div>
               <br></br><br></br>
               <div className="radio_row_item">
                 <input
-                  id="prev_covid_no"
+                  id="personal_illness"
                   type="radio"
-                  value="No"
+                  value="6"
                   name="prev_covid"
                   onClick={(e) => {
+                    selectPathway(e.target.value);
                   }}
                 ></input>
-                <label htmlFor="prev_covid_no">Personal Illness unrelated to COVID-19 </label>
+                <label htmlFor="personal_illness">Personal Illness unrelated to COVID-19 </label>
               </div>
             </fieldset>
           </div>
@@ -102,4 +108,4 @@ const NeedCovidTestComponent = ({ selectPathway }) => {
   );
 };
 
-export default NeedCovidTestComponent;
+export default PathSelectComponent;

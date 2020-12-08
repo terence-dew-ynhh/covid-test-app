@@ -1,7 +1,7 @@
-import styles from './ConsentComponent.module.css';
+import styles from './COVIDNegResultSympComponent.module.css';
 import { useState, useEffect } from 'react';
 
-const ConsentComponent = ({
+const COVIDNegResultSympComponent = ({
   nextPage,
   isPrevEnabled,
   isDoneEnabled,
@@ -11,7 +11,7 @@ const ConsentComponent = ({
 
   useEffect(() => {
     isDoneEnabled(false);
-    isPrevEnabled(true);
+    // isPrevEnabled(true);
   }, []);
 
   const handleChecked = (e) => {
@@ -26,12 +26,8 @@ const ConsentComponent = ({
     <div className={styles.chk_row_item}>
       <label className={styles.none_label_or}>
         {' '}
-        <b>Signature:</b>
-        <br></br>I understand that by scheduling this test I will need to
-        register for a MyChart account in order to get my results. Negative
-        results will be available only through MyChart. I will only receive a
-        call if my results are positive or invalid. You can also get your
-        results by calling the COVID Call Center at 833-ASK-YNHH.{' '}
+        You chose this option because you had a negative COVID-19 test and out
+        of work due to symptoms.{' '}
       </label>
       <input
         id={`prev_covid_${checkbox.toLowerCase()}`}
@@ -47,7 +43,7 @@ const ConsentComponent = ({
         className={styles.prev_none_label}
         htmlFor={`prev_covid_${checkbox.toLowerCase()}`}
       >
-        {'By checking this box I agree to the above'}
+        {'Continue'}
       </label>
     </div>
   ));
@@ -67,4 +63,4 @@ const ConsentComponent = ({
   );
 };
 
-export default ConsentComponent;
+export default COVIDNegResultSympComponent;

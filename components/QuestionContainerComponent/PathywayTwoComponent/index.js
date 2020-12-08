@@ -1,8 +1,6 @@
 import { useState } from 'react';
 const axios = require('axios');
-import SelectDepartment from '../SelectDepartmentComponent';
-import ConsentComponent from '../ConsentComponent';
-import NeedCovidTest from '../NeedCovidTestComponent';
+import COVIDNegResultSympComponent from './COVIDNegResultSympComponent';
 import styles from './PathywayTwoComponent.module.css'
 
 
@@ -15,15 +13,23 @@ const PathywayTwoComponent = ({
 }) => {
   const [prevEnabled, setPrevEnabled] = useState(false);
   const [doneEnabled, setDoneEnabled] = useState(false);
-
+  const [viewIdx, setviewIdx] = useState(0);
+  const components = [COVIDNegResultSympComponent];
   const isPrevEnabled = (isEnabled) => {
     setPrevEnabled(isEnabled);
   };
+
+    // TODO: Click Consent in COVIDNegResultSympComponent route to the data collection page
 
 
   const isDoneEnabled = (isEnabled) => {
     setDoneEnabled(isEnabled);    
   }; 
+
+  // const schedulePush = () => {
+  //   router.push(`/scheduling`, '/scheduling');
+  // };
+  
   
   const sendData = (agency) => {
 
@@ -38,13 +44,7 @@ const PathywayTwoComponent = ({
 
   const setSchedulerURL = (location) => {updateLocation(location)};
   
-  const components = {
-    seldept: SelectDepartment,
-    needcovid: NeedCovidTest,
-    consent: ConsentComponent,    
-  };
-
-  const ComponentName = components[compName || 'seldept'];
+  const ComponentName = components[0];
 
   return (
     <div className={styles.questionContainer}>
@@ -69,5 +69,6 @@ const PathywayTwoComponent = ({
     </div>
   );
 };
+
 
 export default PathywayTwoComponent;

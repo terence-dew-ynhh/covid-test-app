@@ -1,29 +1,35 @@
-import { useState } from 'react';
-const axios = require('axios');
-import SelectDepartment from '../SelectDepartmentComponent';
-import ConsentComponent from '../ConsentComponent';
-import NeedCovidTest from '../NeedCovidTestComponent';
-import styles from './PathywaySixComponent.module.css'
+import { useState, useEffect } from 'react';
+import styles from './RecentCovidTestComponent.module.css';
+
+const RecentCovidTestComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
+
+  const [viewIdx, setviewIdx] = useState(0);
+  const components = [COVIDPosResultSympComponent];
 
 
-const PathywaySixComponent = ({
-  compName,
-  nextPage,
-  prevPage,
-  schedulePush,
-  updateLocation,
-}) => {
-  const [prevEnabled, setPrevEnabled] = useState(false);
-  const [doneEnabled, setDoneEnabled] = useState(false);
-
-  const isPrevEnabled = (isEnabled) => {
-    setPrevEnabled(isEnabled);
-  };
+  // const isPrevEnabled = (isEnabled) => {
+  //   setPrevEnabled(isEnabled);
+  // };
 
 
-  const isDoneEnabled = (isEnabled) => {
-    setDoneEnabled(isEnabled);    
-  }; 
+  // const isDoneEnabled = (isEnabled) => {
+  //   setDoneEnabled(isEnabled);    
+  // }; 
+
+  // const nextPage = () => {
+  //   let index = viewIdx <= 2 ? viewIdx + 1 : viewIdx;
+  //   setviewIdx(index);
+  // };
+
+  // const prevPage = () => {
+  //   let index = viewIdx > 0 ? viewIdx - 1 : viewIdx;
+  //   setviewIdx(index);
+  // };
+
+  // const schedulePush = () => {
+  //   router.push(`/scheduling`, '/scheduling');
+  // };
+  
   
   const sendData = (agency) => {
 
@@ -38,13 +44,7 @@ const PathywaySixComponent = ({
 
   const setSchedulerURL = (location) => {updateLocation(location)};
   
-  const components = {
-    seldept: SelectDepartment,
-    needcovid: NeedCovidTest,
-    consent: ConsentComponent,    
-  };
-
-  const ComponentName = components[compName || 'seldept'];
+  const ComponentName = components[0];
 
   return (
     <div className={styles.questionContainer}>
@@ -70,4 +70,4 @@ const PathywaySixComponent = ({
   );
 };
 
-export default PathywaySixComponent;
+export default RecentCovidTestComponent;

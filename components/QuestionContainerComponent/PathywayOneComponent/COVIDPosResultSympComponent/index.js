@@ -1,7 +1,11 @@
 import { useState, useEffect } from 'react';
-import styles from './NeedCovidTestComponent.module.css';
+import styles from './COVIDPosResultSympComponent.module.css';
 
-const NeedCovidTestComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
+const COVIDPosResultSympComponent = ({
+  nextPage,
+  isPrevEnabled,
+  isDoneEnabled
+}) => {
   const [isCovidPositive, setIsCovidPositive] = useState('');
 
   useEffect(() => {
@@ -15,12 +19,21 @@ const NeedCovidTestComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
             <p className="error" hidden={!(isCovidPositive === 'Yes')}>
-              If you are experiencing symptoms, we recommend contacting your
-              medical provider directly or call the YNHHS COVID Call Center at
-              1-833-ASK-YNHH for a clinical assessment.
+              You chose this option because you had a Positive COVID-19 test and
+              you were out of work due to a home isolation requirement.
             </p>
             <fieldset>
-              <legend>Why do you need COVID Testing?:</legend>
+              <legend>
+                If you had symptoms associated with COVID-19, has it been at
+                least 10 days since the start of your symptoms? (at least 20
+                days if you are immunocompromised)
+                <br></br>
+                or
+                <br></br>
+                b. If you did not have symptoms, has it been at least 10 days
+                since your COVID-19 positive test (the day you were swabbed)?
+                (at least 20 days if you are immunocompromised)
+              </legend>
 
               <div className="radio_row_item">
                 <input
@@ -29,12 +42,13 @@ const NeedCovidTestComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
                   value="Yes"
                   name="prev_covid"
                   onClick={(e) => {
-                    setIsCovidPositive(e.target.value);
+                    // setIsCovidPositive(e.target.value);
                   }}
                 ></input>
-                <label htmlFor="prev_covid_yes">Having Symptoms</label>
+                <label htmlFor="prev_covid_yes">Yes</label>
               </div>
-              <br></br><br></br>
+              <br></br>
+              <br></br>
               <div className="radio_row_item">
                 <input
                   id="prev_covid_no"
@@ -42,23 +56,10 @@ const NeedCovidTestComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
                   value="No"
                   name="prev_covid"
                   onClick={(e) => {
-                    nextPage();
+                    // nextPage();
                   }}
                 ></input>
-                <label htmlFor="prev_covid_no">Exposure to COVID </label>
-              </div>
-              <br></br><br></br>
-              <div className="radio_row_item">
-                <input
-                  id="prev_covid_no"
-                  type="radio"
-                  value="No"
-                  name="prev_covid"
-                  onClick={(e) => {
-                    nextPage();
-                  }}
-                ></input>
-                <label htmlFor="prev_covid_no">Work Clearance</label>
+                <label htmlFor="prev_covid_no">No</label>
               </div>
             </fieldset>
           </div>
@@ -69,4 +70,4 @@ const NeedCovidTestComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
   );
 };
 
-export default NeedCovidTestComponent;
+export default COVIDPosResultSympComponent;

@@ -36,9 +36,9 @@ const SymptomRecoveryPathwayComponent = ({
     setviewIdx(index);
   };
 
-  const pushTocontactSubmission = () => {
+  const pushTocontactSubmission = (RTWStatus) => {
     const router = useRouter ();
-    router.push('/submissionform');
+    router.push(`/submissionform?pathway=${pathway}&rtwstatus=${RTWStatus}`, '/contact');
   }
 
   

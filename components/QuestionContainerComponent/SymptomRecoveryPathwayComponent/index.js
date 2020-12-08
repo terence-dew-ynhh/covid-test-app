@@ -1,13 +1,14 @@
 import { useState } from 'react';
-const axios = require('axios');
 import WithinDaySelectSymptomsComponent from './WithinDaySelectSymptomsComponent';
 import CurrentSelectSymptomsComponent from './CurrentSelectSymptomsComponent';
 import SympImprovingOrMildComponent from './SympImprovingOrMildComponent';
 import styles from './SymptomRecoveryPathwayComponent.module.css'
+import {useRouter} from 'next/router'
 
 
 const SymptomRecoveryPathwayComponent = ({
-  schedulePush
+  schedulePush,
+  pathway
 }) => {
   const [prevEnabled, setPrevEnabled] = useState(false);
   const [doneEnabled, setDoneEnabled] = useState(false);
@@ -35,6 +36,11 @@ const SymptomRecoveryPathwayComponent = ({
     setviewIdx(index);
   };
 
+  const pushTocontactSubmission = () => {
+    const router = useRouter ();
+    router.push('/submissionform');
+  }
+
   
   const ComponentName = components[viewIdx || 0];
 
@@ -47,6 +53,7 @@ const SymptomRecoveryPathwayComponent = ({
         isPrevEnabled={isPrevEnabled}        
         isDoneEnabled={isDoneEnabled}
         schedulePush={schedulePush}
+        pushTocontactSubmission={pushTocontactSubmission}
       />
       </div>
       <div className={styles.buttonContainer}>          

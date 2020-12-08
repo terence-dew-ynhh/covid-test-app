@@ -12,6 +12,7 @@ import { useRouter } from 'next/router';
 const QuestionFormComponent = ({}) => {
   const router = useRouter();
   const [viewIdx, setviewIdx] = useState(0);
+  const [pathway, setPathway] = useState(0)
   const components = [
     PathSelectComponent,
     PathywayOne,
@@ -27,6 +28,9 @@ const QuestionFormComponent = ({}) => {
   const selectPathway = (idx) => {
     console.log(idx);
     setviewIdx(idx);
+    if(idx > 0 && idx < 6){
+      setPathway(idx)
+    }
   };
 
   const schedulePush = (page) => {
@@ -55,6 +59,7 @@ const QuestionFormComponent = ({}) => {
       <PathComponentName
         schedulePush={schedulePush}
         selectPathway={selectPathway}
+        pathway={pathway}
       ></PathComponentName>
     </div>
   );

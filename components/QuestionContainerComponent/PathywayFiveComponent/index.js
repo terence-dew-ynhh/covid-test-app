@@ -1,5 +1,3 @@
-import { useState } from 'react';
-const axios = require('axios');
 import ReturnFromHighRiskComponent from './ReturnFromHighRiskComponent';
 import styles from './PathywayFiveComponent.module.css'
 import { useRouter } from 'next/router';

@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import Link from 'next/link'
 import Head from 'next/head';
+import {useRouter} from 'next/router'
 
 export default function FAQ() {
+  const router = useRouter();
   return (
     <div className="container">
       <Head>
@@ -13,8 +15,8 @@ export default function FAQ() {
       <img src="/YHlogo_color.png"></img>
       <span className="divider"></span>
 
-      <div className="questions_div">
-        <h2>ale New Haven Health System</h2>
+      <div className="questionContainer">
+        <h2>Yale New Haven Health System</h2>
         <h3>Occupational Health Return to Work Clearance</h3>
 
         <p>
@@ -30,30 +32,34 @@ export default function FAQ() {
           203-688-1700; after choosing a language, choose option # 2 for
           employee health.
         </p>
+        <br></br>
+        <div className="buttonContainer">
+        <button className="button" onClick={()=>{router.push('/questions')}}>
+          {`Continue >`}
+        </button>
+
+      </div>
       </div>
 
-      <Link href="/questions">
-          <a>Continue</a>
-        </Link> 
+ 
 
       <style jsx>{`
-        .questions_div {
+        .questionContainer {
+          width: 85%;
+          background: white;
+          box-shadow: 0 0 10px 5px rgba(0,0,0,0.1);
           display: -webkit-box;
           display: -ms-flexbox;
           display: flex;
-          -webkit-box-align: start;
-          -ms-flex-align: start;
-          align-items: flex-start;
-          -webkit-box-pack: start;
-          -ms-flex-pack: start;
-          justify-content: flex-start;
-          margin: 0 0 3% 0;
-          -webkit-box-orient: horizontal;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          justify-content: center;
+          -webkit-box-orient: vertical;
           -webkit-box-direction: normal;
           -ms-flex-direction: column;
           flex-direction: column;
-          width: 100%;
-          padding-left: 2%;
+          padding: 20px 10%;
+          margin-top: 40px;
         }
         h2,
         .main-h {

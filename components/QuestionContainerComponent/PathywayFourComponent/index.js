@@ -1,5 +1,4 @@
 import { useState } from 'react';
-const axios = require('axios');
 import CovidTestResultComponent from './CovidTestResultComponent';
 import HaveSymptomsComponent from './HaveSymptomsComponent';
 import Less14DaysContactComponent from './Less14DaysContactComponent';
@@ -39,17 +38,6 @@ const PathywayFourComponent = ({ selectPathway, schedulePush }) => {
     let index = viewIdx - 1;
     setviewIdx(index);
   };
-
-  // const sendData = (agency) => {
-  //   axios
-  //     .post('/api/responses', { agency: agency })
-  //     .then(function (response) {
-  //       console.log(response);
-  //     })
-  //     .catch(function (error) {
-  //       console.log(error);
-  //     });
-  // };
 
   const setSchedulerURL = (location) => {
     updateLocation(location);

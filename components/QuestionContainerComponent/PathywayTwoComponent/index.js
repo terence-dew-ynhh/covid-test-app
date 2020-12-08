@@ -1,5 +1,4 @@
 import { useState } from 'react';
-const axios = require('axios');
 import COVIDNegResultSympComponent from './COVIDNegResultSympComponent';
 import styles from './PathywayTwoComponent.module.css'
 

@@ -1,7 +1,11 @@
 import styles from './WithinDaySelectSymptomsComponent.module.css';
 import { useState, useEffect } from 'react';
 
-const WithinDaySelectSymptomsComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
+const WithinDaySelectSymptomsComponent = ({
+  nextPage,
+  isPrevEnabled,
+  isDoneEnabled
+}) => {
   const [hasSymptoms, setHasSymptoms] = useState('');
 
   useEffect(() => {
@@ -10,7 +14,6 @@ const WithinDaySelectSymptomsComponent = ({ nextPage, isPrevEnabled, isDoneEnabl
   }, []);
 
   const handleChecked = (e) => {
-
     if (
       e.target.id === 'prev_covid_none_of_the_above' &&
       e.target.checked === true
@@ -24,7 +27,7 @@ const WithinDaySelectSymptomsComponent = ({ nextPage, isPrevEnabled, isDoneEnabl
           symtomsChk.disabled = true;
         }
       });
-      setHasSymptoms('No');
+      nextPage();
     } else {
       checkboxesArray.forEach((element) => {
         let symtomsChk = document.getElementById(
@@ -32,7 +35,6 @@ const WithinDaySelectSymptomsComponent = ({ nextPage, isPrevEnabled, isDoneEnabl
         );
         symtomsChk.disabled = false;
       });
-      setHasSymptoms('');
     }
 
     // If any of the boxes are checked beside None of the Above
@@ -53,9 +55,8 @@ const WithinDaySelectSymptomsComponent = ({ nextPage, isPrevEnabled, isDoneEnabl
       if (shouldDisable) {
         noneChk.checked = false;
         noneChk.disabled = true;
-        setHasSymptoms('Yes');
-
-          nextPage(e,2);
+        setHasSymptoms('No');
+        isDoneEnabled(true);
       } else {
         noneChk.disabled = false;
         setHasSymptoms('');
@@ -73,8 +74,7 @@ const WithinDaySelectSymptomsComponent = ({ nextPage, isPrevEnabled, isDoneEnabl
 
   const regex = /_/gi;
 
-  let checkboxes = checkboxesArray.map((checkbox, idx) => 
-
+  let checkboxes = checkboxesArray.map((checkbox, idx) =>
     checkbox === 'None_of_the_Above' ? (
       <div className={styles.chk_row_item}>
         <label className={styles.none_label_or}>
@@ -121,12 +121,14 @@ const WithinDaySelectSymptomsComponent = ({ nextPage, isPrevEnabled, isDoneEnabl
     <>
       <div className={styles.question_row_item}>
         <p className="error" hidden={!(hasSymptoms === 'No')}>
-        If you have other symptoms, please contact your Primary care doctor to discuss your concerns.
+          If you have other symptoms, please contact your Primary care doctor to
+          discuss your concerns.
         </p>
         <div className={styles.question_row_item_sub}>
           <fieldset>
             <legend>
-            Please select any of the following symptoms that you have experienced within the last 24 hours:
+              Please select any of the following symptoms that you have
+              experienced within the last 24 hours:
             </legend>
             <div className={styles.q1_grid}>{checkboxes}</div>
           </fieldset>

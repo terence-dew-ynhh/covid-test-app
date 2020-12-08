@@ -1,5 +1,5 @@
 import { useState } from 'react';
-const axios = require('axios');
+import {useRouter} from 'next/router'
 import COVIDPosResultSympComponent from './COVIDPosResultSympComponent';
 import styles from './PathywayOneComponent.module.css'
 

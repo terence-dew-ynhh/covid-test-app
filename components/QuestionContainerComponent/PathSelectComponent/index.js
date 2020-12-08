@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import styles from './PathSelectComponent.module.css';
 
-const PathSelectComponent = ({ selectPathway }) => {
+const PathSelectComponent = ({ selectPathway, schedulePush }) => {
   const [isCovidPositive, setIsCovidPositive] = useState('');
 
   useEffect(() => {
@@ -34,7 +34,7 @@ const PathSelectComponent = ({ selectPathway }) => {
                 ></input>
                 <label htmlFor="had_pos_res">Had a COVID-Positive result and was out of work</label>
               </div>
-              <br></br><br></br>
+              <br></br><br></br><br></br>
               <div className="radio_row_item">
                 <input
                   id="had_neg_res"
@@ -47,7 +47,7 @@ const PathSelectComponent = ({ selectPathway }) => {
                 ></input>
                 <label htmlFor="had_neg_res">Had a COVID-Negative result, had symptoms and was out of work</label>
               </div>
-              <br></br><br></br>
+              <br></br><br></br><br></br>
               <div className="radio_row_item">
                 <input
                   id="no_covid_test"
@@ -60,7 +60,7 @@ const PathSelectComponent = ({ selectPathway }) => {
                 ></input>
                 <label htmlFor="no_covid_test">Did not have a COVID test but had symptoms and was out of work</label>
               </div>
-              <br></br><br></br>
+              <br></br><br></br><br></br>
               <div className="radio_row_item">
                 <input
                   id="high_risk_expo"
@@ -73,7 +73,7 @@ const PathSelectComponent = ({ selectPathway }) => {
                 ></input>
                 <label htmlFor="high_risk_expo">Had a High Risk Household Exposure and completed my 14 day Quarantine</label>
               </div>
-              <br></br><br></br>
+              <br></br><br></br><br></br>
               <div className="radio_row_item">
                 <input
                   id="high_risk_travel"
@@ -86,7 +86,7 @@ const PathSelectComponent = ({ selectPathway }) => {
                 ></input>
                 <label htmlFor="high_risk_travel">Returned from a High Risk Travel Location</label>
               </div>
-              <br></br><br></br>
+              <br></br><br></br><br></br>
               <div className="radio_row_item">
                 <input
                   id="personal_illness"
@@ -94,7 +94,7 @@ const PathSelectComponent = ({ selectPathway }) => {
                   value="6"
                   name="prev_covid"
                   onClick={(e) => {
-                    
+                    schedulePush('personalillness');
                   }}
                 ></input>
                 <label htmlFor="personal_illness">Personal Illness unrelated to COVID-19 </label>

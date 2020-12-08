@@ -1,8 +1,11 @@
 import styles from './CurrentSelectSymptomsComponent.module.css';
 import { useState, useEffect } from 'react';
 
-
-const CurrentSelectSymptomsComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
+const CurrentSelectSymptomsComponent = ({
+  nextPage,
+  isPrevEnabled,
+  isDoneEnabled
+}) => {
   const [hasSymptoms, setHasSymptoms] = useState('');
 
   useEffect(() => {
@@ -11,7 +14,6 @@ const CurrentSelectSymptomsComponent = ({ nextPage, isPrevEnabled, isDoneEnabled
   }, []);
 
   const handleChecked = (e) => {
-
     if (
       e.target.id === 'prev_covid_none_of_the_above' &&
       e.target.checked === true
@@ -26,6 +28,7 @@ const CurrentSelectSymptomsComponent = ({ nextPage, isPrevEnabled, isDoneEnabled
         }
       });
       setHasSymptoms('No');
+      isDoneEnabled(true);
     } else {
       checkboxesArray.forEach((element) => {
         let symtomsChk = document.getElementById(
@@ -54,7 +57,6 @@ const CurrentSelectSymptomsComponent = ({ nextPage, isPrevEnabled, isDoneEnabled
       if (shouldDisable) {
         noneChk.checked = false;
         noneChk.disabled = true;
-        setHasSymptoms('Yes');
         nextPage();
       } else {
         noneChk.disabled = false;
@@ -64,22 +66,21 @@ const CurrentSelectSymptomsComponent = ({ nextPage, isPrevEnabled, isDoneEnabled
   };
 
   let checkboxesArray = [
-  'Cough',
-  'Shortness_of_Breath',
-  'Body_Aches',
-  'Fatigue',
-  'Nausea',
-  'Headaches',
-  'Sore_throat',
-  'Sinus Congestion',
-  'Rhinorrhea (Runny Nose)',
-  'None_of_the_Above'
-];
+    'Cough',
+    'Shortness_of_Breath',
+    'Body_Aches',
+    'Fatigue',
+    'Nausea',
+    'Headaches',
+    'Sore_throat',
+    'Sinus Congestion',
+    'Rhinorrhea (Runny Nose)',
+    'None_of_the_Above'
+  ];
 
   const regex = /_/gi;
 
-  let checkboxes = checkboxesArray.map((checkbox, idx) => 
-
+  let checkboxes = checkboxesArray.map((checkbox, idx) =>
     checkbox === 'None_of_the_Above' ? (
       <div className={styles.chk_row_item}>
         <label className={styles.none_label_or}>
@@ -126,12 +127,18 @@ const CurrentSelectSymptomsComponent = ({ nextPage, isPrevEnabled, isDoneEnabled
     <>
       <div className={styles.question_row_item}>
         <p className="error" hidden={!(hasSymptoms === 'No')}>
-        If you have other symptoms, please contact your Primary care doctor to discuss your concerns.
+          Occupational Health will review your responses. If approved, a return
+          to work letter will be sent to you ONLY via My-Chart. You may share
+          the letter with your manager if requested. <br></br>
+          <br></br>
+          Your manager will be able to see your updated return to work clearance
+          date in ESS.
         </p>
         <div className={styles.question_row_item_sub}>
           <fieldset>
             <legend>
-            Please select any of the following symptoms that you have experienced within the last 24 hours:
+              Please select any of the following symptoms that you have
+              experienced within the last 24 hours:
             </legend>
             <div className={styles.q1_grid}>{checkboxes}</div>
           </fieldset>

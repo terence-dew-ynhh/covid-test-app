@@ -14,7 +14,7 @@ export default function FAQ() {
       <span className="divider"></span>
 
       <div className="questions_div">
-        <h2>ale New Haven Health System</h2>
+        <h2>Yale New Haven Health System</h2>
         <h3>Occupational Health Return to Work Clearance</h3>
 
         <p>

@@ -5,10 +5,12 @@ import PathywayTwo from './PathywayTwoComponent';
 import PathywayThree from './PathywayThreeComponent';
 import PathywayFour from './PathywayFourComponent';
 import PathywayFive from './PathywayFiveComponent';
+import SymptomRecoveryPathwayComponent from './SymptomRecoveryPathwayComponent';
 import styles from './QuestionContainerComponent.module.css';
 import { useRouter } from 'next/router';
 
 const QuestionFormComponent = ({}) => {
+  const router = useRouter();
   const [viewIdx, setviewIdx] = useState(0);
   const components = [
     PathSelectComponent,
@@ -16,7 +18,8 @@ const QuestionFormComponent = ({}) => {
     PathywayTwo,
     PathywayThree,
     PathywayFour,
-    PathywayFive
+    PathywayFive,
+    SymptomRecoveryPathwayComponent
   ];
 
   let progressWidth = Math.floor(100 * ((viewIdx + 1) / 3));

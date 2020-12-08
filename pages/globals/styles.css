@@ -87,7 +87,7 @@ fieldset {
 .question_div {
   padding: 25px 35px;
 }
-.error, .banner{
+.error, .banner, .disclaimer{
   color:white;
   background: red;
   padding: 15px 20px;
@@ -97,6 +97,14 @@ fieldset {
 .banner{
   font-size: 1em;
   margin: 0;
+
+}
+
+.disclaimer{
+  font-size: 1em;
+  margin: 0;
+  background: #0f4d92;
+
 
 }
 

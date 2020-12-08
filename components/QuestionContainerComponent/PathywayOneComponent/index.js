@@ -4,10 +4,10 @@ import COVIDPosResultSympComponent from './COVIDPosResultSympComponent';
 import styles from './PathywayOneComponent.module.css'
 
 
-const PathywayOneComponent = ({}) => {
+const PathywayOneComponent = ({selectPathway}) => {
+  const router = useRouter();
   const [prevEnabled, setPrevEnabled] = useState(false);
   const [doneEnabled, setDoneEnabled] = useState(false);
-  const [viewIdx, setviewIdx] = useState(0);
   const components = [COVIDPosResultSympComponent];
   const isPrevEnabled = (isEnabled) => {
     setPrevEnabled(isEnabled);
@@ -20,34 +20,9 @@ const PathywayOneComponent = ({}) => {
 
   // TODO: If Yes route to the data collection page || If No Show popup statement
   
-
-  // const nextPage = () => {
-  //   let index = viewIdx <= 2 ? viewIdx + 1 : viewIdx;
-  //   setviewIdx(index);
-  // };
-
-  // const prevPage = () => {
-  //   let index = viewIdx > 0 ? viewIdx - 1 : viewIdx;
-  //   setviewIdx(index);
-  // };
-
   const schedulePush = () => {
     router.push(`/scheduling`, '/scheduling');
   };
-  
-  
-  const sendData = (agency) => {
-
-    axios.post('/api/responses', { agency: agency })
-    .then(function (response) {
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-   };
-
-  const setSchedulerURL = (location) => {updateLocation(location)};
   
   const ComponentName = components[0];
 
@@ -55,12 +30,10 @@ const PathywayOneComponent = ({}) => {
     <div className={styles.questionContainer}>
       <div className={styles.questionContainer}>
       <ComponentName
-        // nextPage={nextPage}
         isPrevEnabled={isPrevEnabled}        
         isDoneEnabled={isDoneEnabled}
-        // setSchedulerURL={setSchedulerURL}
+        selectPathway={selectPathway}
         schedulePush={schedulePush}
-        // sendData={sendData}
       />
       </div>
       <div className={styles.buttonContainer}>          

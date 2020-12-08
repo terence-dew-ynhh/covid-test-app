@@ -1,20 +1,18 @@
 import { useState } from 'react';
 const axios = require('axios');
-import COVIDNegResultSympComponent from './COVIDNegResultSympComponent';
-import styles from './PathywayTwoComponent.module.css'
+import WithinDaySelectSymptomsComponent from './WithinDaySelectSymptomsComponent';
+import CurrentSelectSymptomsComponent from './CurrentSelectSymptomsComponent';
+import SympImprovingOrMildComponent from './SympImprovingOrMildComponent';
+import styles from './SymptomRecoveryPathwayComponent.module.css'
 
 
-const PathywayTwoComponent = ({
-  compName,
-  nextPage,
-  prevPage,
-  schedulePush,
-  updateLocation,
+const SymptomRecoveryPathwayComponent = ({
+  schedulePush
 }) => {
   const [prevEnabled, setPrevEnabled] = useState(false);
   const [doneEnabled, setDoneEnabled] = useState(false);
   const [viewIdx, setviewIdx] = useState(0);
-  const components = [COVIDNegResultSympComponent];
+  const components = [WithinDaySelectSymptomsComponent,CurrentSelectSymptomsComponent,SympImprovingOrMildComponent];
   
   // TODO: Click Consent in COVIDNegResultSympComponent route to the data collection page
 
@@ -27,36 +25,28 @@ const PathywayTwoComponent = ({
     setDoneEnabled(isEnabled);    
   }; 
 
-  // const schedulePush = () => {
-  //   router.push(`/scheduling`, '/scheduling');
-  // };
-  
-  
-  const sendData = (agency) => {
+  const nextPage = () => {
+    let index = viewIdx + 1;
+    setviewIdx(index);
+  };
 
-    axios.post('/api/responses', { agency: agency })
-    .then(function (response) {
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-   };
+  const prevPage = () => {
+    let index = viewIdx - 1;
+    setviewIdx(index);
+  };
 
-  const setSchedulerURL = (location) => {updateLocation(location)};
   
-  const ComponentName = components[0];
+  const ComponentName = components[viewIdx || 0];
 
   return (
     <div className={styles.questionContainer}>
       <div className={styles.questionContainer}>
       <ComponentName
         nextPage={nextPage}
+        prevPage={prevPage}
         isPrevEnabled={isPrevEnabled}        
         isDoneEnabled={isDoneEnabled}
-        setSchedulerURL={setSchedulerURL}
         schedulePush={schedulePush}
-        sendData={sendData}
       />
       </div>
       <div className={styles.buttonContainer}>          
@@ -64,7 +54,7 @@ const PathywayTwoComponent = ({
         {`< Back`}
       </button>
       <button className="button" hidden={!doneEnabled} onClick={schedulePush}>
-        Schedule Appoinment
+        Submit
       </button>  
       </div>
     </div>
@@ -72,4 +62,4 @@ const PathywayTwoComponent = ({
 };
 
 
-export default PathywayTwoComponent;
+export default SymptomRecoveryPathwayComponent;

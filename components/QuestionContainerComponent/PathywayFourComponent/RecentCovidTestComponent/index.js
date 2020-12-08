@@ -1,72 +1,67 @@
 import { useState, useEffect } from 'react';
 import styles from './RecentCovidTestComponent.module.css';
 
-const RecentCovidTestComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
+const RecentCovidTestComponent = ({
+  nextPage,
+  isPrevEnabled,
+  isDoneEnabled
+}) => {
+  const [isCovidPositive, setIsCovidPositive] = useState('');
 
-  const [viewIdx, setviewIdx] = useState(0);
-  const components = [COVIDPosResultSympComponent];
-
-
-  // const isPrevEnabled = (isEnabled) => {
-  //   setPrevEnabled(isEnabled);
-  // };
-
-
-  // const isDoneEnabled = (isEnabled) => {
-  //   setDoneEnabled(isEnabled);    
-  // }; 
-
-  // const nextPage = () => {
-  //   let index = viewIdx <= 2 ? viewIdx + 1 : viewIdx;
-  //   setviewIdx(index);
-  // };
-
-  // const prevPage = () => {
-  //   let index = viewIdx > 0 ? viewIdx - 1 : viewIdx;
-  //   setviewIdx(index);
-  // };
-
-  // const schedulePush = () => {
-  //   router.push(`/scheduling`, '/scheduling');
-  // };
-  
-  
-  const sendData = (agency) => {
-
-    axios.post('/api/responses', { agency: agency })
-    .then(function (response) {
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-   };
-
-  const setSchedulerURL = (location) => {updateLocation(location)};
-  
-  const ComponentName = components[0];
+  useEffect(() => {
+    isDoneEnabled(false);
+    isPrevEnabled(true);
+  }, []);
 
   return (
-    <div className={styles.questionContainer}>
-      <div className={styles.questionContainer}>
-      <ComponentName
-        nextPage={nextPage}
-        isPrevEnabled={isPrevEnabled}        
-        isDoneEnabled={isDoneEnabled}
-        setSchedulerURL={setSchedulerURL}
-        schedulePush={schedulePush}
-        sendData={sendData}
-      />
+    <>
+      <div className="radio_grp">
+        <div className={styles.question_row_item}>
+          <div className={styles.question_row_item_sub}>
+            <p className="error" hidden={!(isCovidPositive === 'No')}>
+              A COVID test is required prior to completing your quarantine. For
+              COVID-19 testing, please contact OCC Health Call Center at
+              203-688-1700 (select a language and then option # 2 for employee
+              health
+            </p>
+            <fieldset>
+              <legend>
+                Have you had a recent COVID-19 test prior to completing your
+                quarantine?
+              </legend>
+
+              <div className="radio_row_item">
+                <input
+                  id="prev_covid_yes"
+                  type="radio"
+                  value="Yes"
+                  name="prev_covid"
+                  onClick={(e) => {
+                    nextPage();
+                  }}
+                ></input>
+                <label htmlFor="prev_covid_yes">Yes</label>
+              </div>
+              <br></br>
+              <br></br>
+              <div className="radio_row_item">
+                <input
+                  id="prev_covid_no"
+                  type="radio"
+                  value="No"
+                  name="prev_covid"
+                  onClick={(e) => {
+                    setIsCovidPositive(e.target.value)
+                  }}
+                ></input>
+                <label htmlFor="prev_covid_no">No</label>
+              </div>
+            </fieldset>
+          </div>
+        </div>
       </div>
-      <div className={styles.buttonContainer}>          
-      <button className="button" hidden={!prevEnabled} onClick={prevPage}>
-        {`< Back`}
-      </button>
-      <button className="button" hidden={!doneEnabled} onClick={schedulePush}>
-        Schedule Appoinment
-      </button>  
-      </div>
-    </div>
+      <style jsx>{``}</style>
+    </>
   );
 };
 

@@ -1,13 +1,7 @@
 import { useState, useEffect } from 'react';
 import styles from './NoCovidTestComponent.module.css';
 
-const NoCovidTestComponent = ({ schedulePush, isPrevEnabled, isDoneEnabled }) => {
-  const [isCovidPositive, setIsCovidPositive] = useState('');
-
-  useEffect(() => {
-    isDoneEnabled(false);
-    isPrevEnabled(true);
-  }, []);
+const NoCovidTestComponent = ({ schedulePush, selectPathway}) => {
 
   return (
     <>
@@ -38,7 +32,7 @@ const NoCovidTestComponent = ({ schedulePush, isPrevEnabled, isDoneEnabled }) =>
                   value="No"
                   name="prev_covid"
                   onClick={(e) => {
-                    nextPage();
+                    selectPathway(6);
                   }}
                 ></input>
                 <label htmlFor="prev_covid_no">No</label>

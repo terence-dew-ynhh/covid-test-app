@@ -2,20 +2,13 @@ import styles from './COVIDNegResultSympComponent.module.css';
 import { useState, useEffect } from 'react';
 
 const COVIDNegResultSympComponent = ({
-  nextPage,
-  isPrevEnabled,
   isDoneEnabled,
-  schedulePush
+  selectPathway
 }) => {
   const [hasConsent, setHasConsent] = useState('');
 
-  useEffect(() => {
-    isDoneEnabled(false);
-    // isPrevEnabled(true);
-  }, []);
-
   const handleChecked = (e) => {
-    schedulePush();
+    selectPathway(6);
   };
 
   let checkboxesArray = ['None_of_the_Above'];

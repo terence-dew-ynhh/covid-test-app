@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import styles from './CovidTestResultComponent.module.css';
 
-const CovidTestResultComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
+const CovidTestResultComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, selectPathway}) => {
   const [isCovidPositive, setIsCovidPositive] = useState('');
 
   useEffect(() => {
@@ -29,7 +29,7 @@ const CovidTestResultComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) =>
                   value="Yes"
                   name="prev_covid"
                   onClick={(e) => {
-                    setIsCovidPositive(e.target.value);
+                    selectPathway(1);
                   }}
                 ></input>
                 <label htmlFor="prev_covid_yes">Positive</label>

@@ -94,7 +94,7 @@ const PathSelectComponent = ({ selectPathway }) => {
                   value="6"
                   name="prev_covid"
                   onClick={(e) => {
-                    selectPathway(e.target.value);
+                    
                   }}
                 ></input>
                 <label htmlFor="personal_illness">Personal Illness unrelated to COVID-19 </label>

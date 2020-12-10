@@ -9,7 +9,7 @@ const client = new MongoClient('mongodb://localhost:27017', {
 async function database(req, res, next) {
   if (!client.isConnected()) await client.connect();
   req.dbClient = client;
-  req.db = client.db('first_responder');
+  req.db = client.db('rtw_contact');
   console.log(`Connected MongoDB ${req.db.namespace}`)
   return next();
 }

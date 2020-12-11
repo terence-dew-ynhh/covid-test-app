@@ -39,7 +39,7 @@ const SymptomRecoveryPathwayComponent = ({
   };
 
   const pushTocontactSubmission = () => {
-    router.push(`/submissionform?pathway=${pathway}&rtwstatus=${rtwStatus}`, '/contactform');
+    router.push(`/submissionform?pathway=${pathway}&rtwstatus=${rtwStatus}`, '/submissionform');
   }
 
   

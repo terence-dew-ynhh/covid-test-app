@@ -35,7 +35,7 @@ const QuestionFormComponent = ({}) => {
 
   const schedulePush = (page) => {
     if(viewIdx == 4){
-    router.push(`/submissionform?pathway=${4}&rtwstatus=${true}`, '/contactform');
+    router.push(`/submissionform?pathway=${4}&rtwstatus=${true}`, '/submissionform');
     }
     else{
     router.push(`/${page}`);

@@ -7,7 +7,7 @@ export default function FAQ() {
   const router = useRouter();
 
   useEffect(() => {
-    if (prefetch) router.prefetch('/questions');
+     router.prefetch('/questions');
 });
 
   return (

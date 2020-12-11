@@ -7,8 +7,10 @@ export default function FAQ() {
   const router = useRouter();
 
   useEffect(() => {
-    //  router.prefetch('/questions');
+     router.prefetch('/questions');
 });
+
+
 
   return (
     <div className="container">
@@ -39,7 +41,7 @@ export default function FAQ() {
         </p>
         <br></br>
         <div className="buttonContainer">
-        <button className="button" onClick={()=>{router.push('/questions')}}>
+        <button className="button" onClick={()=>router.push('/questions')}>
           {`Continue >`}
         </button>
 

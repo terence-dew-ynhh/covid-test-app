@@ -4,13 +4,15 @@ import { useState, useEffect } from 'react';
 const WithinDaySelectSymptomsComponent = ({
   nextPage,
   isPrevEnabled,
-  isDoneEnabled
+  isDoneEnabled,
+  setRtwStatus
 }) => {
   const [hasSymptoms, setHasSymptoms] = useState('');
 
   useEffect(() => {
     isDoneEnabled(false);
     isPrevEnabled(false);
+    setRtwStatus(false);
   }, []);
 
   const handleChecked = (e) => {

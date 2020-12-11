@@ -1,6 +1,7 @@
 import middleware from '../../middlewares/database';
 import nextConnect from 'next-connect';
 import Cors from 'cors';
+const ObjectId = require('mongodb').ObjectId;
 
 const handler = nextConnect();
 
@@ -28,29 +29,41 @@ function runMiddleware(req, res, fn) {
 handler.post(async (req, res) => {
   await runMiddleware(req, res, cors);
 
-  console.log(req.body);
+  if (req.body.phone) {
+    console.log(req.body)
+    let contact = {
+      ...req.body
+    };
 
-  let updateVals = {
-    ...req.body,
-    date: new Date(Date.now()).toISOString()
-  };
+    try {
+      const items = await req.db.collection('rtw_contacts').insertOne(contact);
 
-  try {
-    const items = await req.db.collection('rtw_contacts').insertOne(updateVals);
+      res.status(200);
+      res.send('Document Updated');
+    } catch (err) {
+      res.status(400);
+      res.end(`Something went wrong: ${err}`);
+    }
+  } else {
+    console.log(req.body)
+    const { id, occ_review } = req.body;
 
-    res.status(200);
-    res.send('Document Updated');
-  } catch (err) {
-    res.status(400);
-    res.end(`Something went wrong: ${err}`);
+    const myquery = { _id: ObjectId(id) };
+    const updatedStatus = { $set: { occ_health_review: occ_review } };
+    await req.db
+      .collection('rtw_contacts')
+      .findOneAndUpdate(myquery, updatedStatus)
+      .then(() =>{
+        res.send(`Updated ${id}`);
+      })
+      .catch((err) => console.log(err));
   }
 });
 
 handler.get(async (req, res) => {
-
   await runMiddleware(req, res, cors);
 
- await req.db
+  await req.db
     .collection('rtw_contacts')
     .find({})
     .toArray((err, rtwcontacts) => {

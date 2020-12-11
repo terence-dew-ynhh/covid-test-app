@@ -54,8 +54,6 @@ const PathywayFourComponent = ({ selectPathway, schedulePush }) => {
           isDoneEnabled={isDoneEnabled}
           setSchedulerURL={setSchedulerURL}
           selectPathway={selectPathway}
-          // schedulePush={schedulePush}
-          // sendData={sendData}
         />
       </div>
       <div className={styles.buttonContainer}>

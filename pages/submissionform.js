@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import DatePicker from 'react-datepicker';
+import { useRouter } from 'next/router';
 
 const axios = require('axios');
 
 export default function SubmissionForm({ rtwStatus, pathway }) {
+  const router = useRouter();
   const intialValues = { firstName: '', lastName: '', phone: '', dob: '' };
   const [formValues, setFormValues] = useState(intialValues);
   const [formErrors, setFormErrors] = useState({});
@@ -23,9 +25,10 @@ export default function SubmissionForm({ rtwStatus, pathway }) {
       phone: formValues.phone,
       dob: JSON.stringify(formValues.dob),
       pathway: pathway,
-      rtwstatus: rtwStatus,
+      rtwStatus: rtwStatus,
       finalrtwdate: rtwStatus ? JSON.stringify(today) : null,
       outofworkdate: rtwStatus ? null : JSON.stringify(twodaysFromToday),
+      date: JSON.stringify(today),
       occ_health_review: false
     };
 
@@ -38,9 +41,13 @@ export default function SubmissionForm({ rtwStatus, pathway }) {
         console.log(error);
       });
     console.log(contactData);
+    if (pathway === '4') {
+      router.push('/mychart');
+    }
   };
 
   const handleChange = (e) => {
+    setIsSubmitting(false);
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
   };
@@ -119,18 +126,15 @@ export default function SubmissionForm({ rtwStatus, pathway }) {
   return (
     <div className="container">
       <Head>
-        <title>Yale COVID-19 Test Scheduler</title>
+        <title>COVID-19 Employee Return to Work Clearance</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <div className="grid">
         <img src="/YNHHSLogo.png"></img>
       </div>
-      <h1 className="title">
-      Please Enter your Contact Info:
-      </h1>
+      <h1 className="title">Please Enter your Contact Info:</h1>
       <div className="questionContainer">
-
         <form onSubmit={handleSubmit}>
           <label>First Name:</label>
           <input
@@ -219,7 +223,7 @@ export default function SubmissionForm({ rtwStatus, pathway }) {
                 </button>
               </div>
             )}
-            className={`${formErrors.dob && 'input-error'}`}
+            className={`${formErrors.dob && 'input-error'} date-input`}
             isClearable
             selected={formValues.dob}
             onChange={(date) =>
@@ -266,8 +270,11 @@ export default function SubmissionForm({ rtwStatus, pathway }) {
         .form-input {
           height: 35px;
         }
+        .date-input {
+          width: 100%;
+        }
         .input-error {
-          border: solid 2px red;
+          border: solid 2px red !important;
         }
         .centered_button {
           padding: 15px 35px;
@@ -297,6 +304,12 @@ export default function SubmissionForm({ rtwStatus, pathway }) {
           .main-link {
             font-size: 1.5em;
           }
+          .questionContainer {
+            width: 90%;
+          }
+          form {
+            width: 80%;
+          }
         }
       `}</style>
     </div>
@@ -304,7 +317,8 @@ export default function SubmissionForm({ rtwStatus, pathway }) {
 }
 
 SubmissionForm.getInitialProps = async ({ query }) => {
-  const { rtwStatus, pathway } = { rtwStatus: false, pathway: 2 };
+  const { rtwstatus, pathway } = query;
+  let rtwStatus = rtwstatus == 'true' ? true : false;
 
   return {
     rtwStatus,

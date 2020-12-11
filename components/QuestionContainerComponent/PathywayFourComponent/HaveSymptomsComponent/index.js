@@ -4,7 +4,8 @@ import styles from './HaveSymptomsComponent.module.css';
 const HaveSymptomsComponent = ({
   isPrevEnabled,
   isDoneEnabled,
-  selectPathway
+  selectPathway,
+  pushTocontactSubmission
 }) => {
   const [isCovidPositive, setIsCovidPositive] = useState('');
 

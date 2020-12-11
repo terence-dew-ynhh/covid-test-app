@@ -12,9 +12,11 @@ const SymptomRecoveryPathwayComponent = ({
 }) => {
   const [prevEnabled, setPrevEnabled] = useState(false);
   const [doneEnabled, setDoneEnabled] = useState(false);
+  const [rtwStatus, setRtwStatus] = useState(false);
   const [viewIdx, setviewIdx] = useState(0);
   const components = [WithinDaySelectSymptomsComponent,CurrentSelectSymptomsComponent,SympImprovingOrMildComponent];
-  
+  const router = useRouter ();
+
   // TODO: Click Consent in COVIDNegResultSympComponent route to the data collection page
 
   
@@ -36,9 +38,8 @@ const SymptomRecoveryPathwayComponent = ({
     setviewIdx(index);
   };
 
-  const pushTocontactSubmission = (RTWStatus) => {
-    const router = useRouter ();
-    router.push(`/submissionform?pathway=${pathway}&rtwstatus=${RTWStatus}`, '/contact');
+  const pushTocontactSubmission = () => {
+    router.push(`/submissionform?pathway=${pathway}&rtwstatus=${rtwStatus}`, '/contactform');
   }
 
   
@@ -53,14 +54,14 @@ const SymptomRecoveryPathwayComponent = ({
         isPrevEnabled={isPrevEnabled}        
         isDoneEnabled={isDoneEnabled}
         schedulePush={schedulePush}
-        pushTocontactSubmission={pushTocontactSubmission}
+        setRtwStatus={setRtwStatus}
       />
       </div>
       <div className={styles.buttonContainer}>          
       <button className="button" hidden={!prevEnabled} onClick={prevPage}>
         {`< Back`}
       </button>
-      <button className="button" hidden={!doneEnabled} onClick={schedulePush}>
+      <button className="button" hidden={!doneEnabled} onClick={pushTocontactSubmission}>
         Submit
       </button>  
       </div>

@@ -2,15 +2,17 @@ import { useState, useEffect } from 'react';
 import styles from './SympImprovingOrMildComponent.module.css';
 
 const SympImprovingOrMildComponent = ({
-  nextPage,
   isPrevEnabled,
-  isDoneEnabled
+  isDoneEnabled,
+  setRtwStatus
 }) => {
   const [isCovidPositive, setIsCovidPositive] = useState('');
 
   useEffect(() => {
     isDoneEnabled(false);
     isPrevEnabled(true);
+    setRtwStatus(false);
+
   }, []);
 
   return (

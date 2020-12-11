@@ -17,27 +17,16 @@ export default function FAQ() {
 
       <div className="questionContainer">
         <h2>COVID-19 Employee Return to Work Clearance</h2>
-        <h3>Occupational Health Return to Work Clearance</h3>
 
         <p>
-          COVID-19 Employee Return to Work Clearance cares about your well-being and wants to
-          make the process of your return to work clearance as quick and easy as
-          possible. Please choose “continue” for the return to work process and
-          complete all required data fields.
+          Do you Need to Activate your MyChart?
         </p>
 
-        <p>
-          If at any point you prefer to speak with someone from Occupational
-          Health, please contact the Occupational Health COVID Call Center at
-          203-688-1700; after choosing a language, choose option # 2 for
-          employee health.
-        </p>
-        <br></br>
+      
         <div className="buttonContainer">
-        <button className="button" onClick={()=>{router.push('/questions')}}>
-          {`Continue >`}
+        <button className="button" onClick={() => window.location.href = 'https://mychart.ynhhs.org/mychart-prd/signup'}>
+          {`To My Chart activation >`}
         </button>
-
       </div>
       </div>
 

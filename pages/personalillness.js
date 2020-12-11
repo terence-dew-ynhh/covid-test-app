@@ -6,7 +6,7 @@ export default function PersonalIllness() {
   return (
     <div className="container">
       <Head>
-        <title>Yale COVID-19 Test Scheduler</title>
+        <title>COVID-19 Employee Return to Work Clearance</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -15,7 +15,7 @@ export default function PersonalIllness() {
       </div>
 
       <div className="questionContainer">
-        <h2>Yale New Haven Health System</h2>
+        <h2>COVID-19 Employee Return to Work Clearance</h2>
         <h3>Occupational Health Return to Work Clearance</h3>
 
         <p>

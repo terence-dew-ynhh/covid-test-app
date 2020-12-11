@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import ContactTableItem from '../ContactTableItem'
+import ContactTableItem from './ContactTableItem'
+import ContactTableHeader from './ContactTableHeader'
 import styles from './RTWTableComponent.module.css'
 const axios = require('axios');
 
 
 function RTWTableComponent(props) {
-    const [facilityItems, setFacilityItems] = useState([]);
+    const [rtwContacts, setRtwContacts] = useState([]);
     //   const [orderBy, setOrderBy] = useState("name");
     // const [dataReady, setDataReady] = useState(false);
 
@@ -24,18 +25,18 @@ function RTWTableComponent(props) {
             }).then((rtwcontacts) => {
 
                 let rtwContactArr = rtwcontacts.map((rtwcontact, index) => {
-                    return (<ContactTableItem key={index}
+                    return (<ContactTableItem key={index} checkId={index}
                         contactInfo={rtwcontact}
                     />)
                 });
-                setFacilityItems(rtwContactArr);
+                setRtwContacts(rtwContactArr);
             })
 
 
     // fetch('/api/facilities?delivery_net=' + props.deliveryNetwork)
     //   .then(data => data.json())
     //   .then(function (facilities) {
-    //     let facilityItems = facilities
+    //     let rtwContacts = facilities
     //       .filter(facility => facility.name.toLowerCase().includes(props.filter))
     //       .sort((a, b) => {
     //         let searchBedType = props.covidMode ? "covid_beds" : "beds"; 
@@ -52,7 +53,7 @@ function RTWTableComponent(props) {
     //            />)
     //       });
     //     setDataReady(true);
-    //     setFacilityItems(facilityItems);
+    //     setrtwContacts(rtwContacts);
     //   })
     //   .catch(function (error) {
     //     // handle error
@@ -66,19 +67,9 @@ function RTWTableComponent(props) {
     return (
         <>
             <div className={styles.FacilityDisplayTable}>
-                <div className={styles.ContactItem}>
-                    <button className={styles.contact_button}>First Name</button>
-                    <button className={styles.contact_button}>Last Name</button>
-                    <button className={styles.contact_button}>Phone</button>
-                    <button className={styles.contact_button}>Date of Birth</button>
-                    <button className={styles.contact_button}>Submitted Pathway #</button>
-                    <button className={styles.contact_button}>RTW Status</button>
-                    <button className={styles.contact_button}>Final RTW Date</button>
-                    <button className={styles.contact_button}>Out of Work Date</button>
-                    <button className={styles.contact_button}>Submitted Date</button>
-                </div>
+                <ContactTableHeader></ContactTableHeader>
                 {/* {!dataReady ? <img src={process.env.PUBLIC_URL + 'logoynhhospital2x.png'} alt="Logo" /> : null} */}
-                {facilityItems}
+                {rtwContacts}
             </div>
         </>)
 }

@@ -17,14 +17,14 @@ export default function Home() {
   return (
     <div className="container">
       <Head>
-        <title>Yale COVID-19 Vaccine Clinical Trial</title>
+        <title>COVID-19 Employee Return to Work Clearance</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className='grid'>
       <img src="/YNHHSLogo.png"></img>
       </div>      
       <h1 className="title">
-      Yale COVID-19 Vaccine Clinical Trial
+      COVID-19 Employee Return to Work Clearance
         </h1>
         <h1 className="loading_h1">Reloading...</h1>        
     </div>     

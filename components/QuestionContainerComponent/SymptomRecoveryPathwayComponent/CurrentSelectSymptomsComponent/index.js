@@ -4,13 +4,15 @@ import { useState, useEffect } from 'react';
 const CurrentSelectSymptomsComponent = ({
   nextPage,
   isPrevEnabled,
-  isDoneEnabled
+  isDoneEnabled,
+  setRtwStatus
 }) => {
   const [hasSymptoms, setHasSymptoms] = useState('');
 
   useEffect(() => {
     isDoneEnabled(false);
     isPrevEnabled(true);
+    setRtwStatus(true);
   }, []);
 
   const handleChecked = (e) => {

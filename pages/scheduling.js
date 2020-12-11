@@ -7,7 +7,7 @@ export default function Home({ link }) {
   return (
     <>
       <Head>
-        <title>Yale COVID-19 Vaccine Clinical Trial</title>
+        <title>COVID-19 Employee Return to Work Clearance</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

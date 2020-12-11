@@ -28,14 +28,20 @@ const QuestionFormComponent = ({}) => {
   const selectPathway = (idx) => {
     console.log(idx);
     setviewIdx(idx);
-    if(idx > 0 && idx < 6){
+    if(idx > 0 && idx < 5){
       setPathway(idx)
     }
   };
 
   const schedulePush = (page) => {
+    if(viewIdx == 4){
+    router.push(`/submissionform?pathway=${4}&rtwstatus=${true}`, '/contactform');
+    }
+    else{
     router.push(`/${page}`);
+    }
   };
+
 
   const PathComponentName = components[viewIdx || 0];
 

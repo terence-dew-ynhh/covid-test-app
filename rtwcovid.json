@@ -1,7 +1,7 @@
 {
     "apps": [
         {
-            "name": "firstrespondercovid",
+            "name": "rtwcovid",
             "script": "npm",
             "args" : "start"
         }

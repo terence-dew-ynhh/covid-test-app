@@ -42,6 +42,8 @@ const PreviousSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled, viewPush }) 
                   value="Yes"
                   name="prev_covid"
                   onClick={(e) => {
+                    // TODO: Update logic to go to nextPage();
+                    // TODO: Bring viewPush() into next component 
                     viewPush(false);
                   }}
                 ></input>

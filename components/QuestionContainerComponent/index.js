@@ -8,18 +8,18 @@ const QuestionFormComponent = ({}) => {
 
   const [viewIdx, setviewIdx] = useState(0);
   const [endPoint, setEndpoint] = useState('Bridgeport Hospital');
+  // TODO: add key for component to compNames after previoussymptoms
   const compNames = ['employee', 'previoussymptoms','selsymptoms','location'];
   const router = useRouter();
 
   
   const nextPage = () => {
-    console.log("made it")
-    let index = viewIdx <= 2 ? viewIdx + 1 : viewIdx;
+    let index = viewIdx + 1;
     setviewIdx(index);
   };
 
   const prevPage = () => {
-    let index = viewIdx > 0 ? viewIdx - 1 : viewIdx;
+    let index = viewIdx - 1;
     setviewIdx(index);
   };
 

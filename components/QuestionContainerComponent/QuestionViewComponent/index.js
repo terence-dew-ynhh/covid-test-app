@@ -4,6 +4,7 @@ import EmployeeQuestionComponent from '../EmployeeQuestionComponent';
 import PreviousSymptomsComponent from '../PreviousSymptomsComponent';
 import SelectSymptomsComponent from '../SelectSymptomsComponent';
 import SelectLocationComponent from '../SelectLocationComponent';
+// TODO: import Component 
 import styles from './QuestionViewComponent.module.css'
 
 
@@ -34,7 +35,7 @@ const QuestionViewComponent = ({
     previoussymptoms: PreviousSymptomsComponent,
     selsymptoms:SelectSymptomsComponent,
     location: SelectLocationComponent
-
+// TODO: add key and Component value to this object
   };
 
   const ComponentName = components[compName || 'mandated'];

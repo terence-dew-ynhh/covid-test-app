@@ -4,7 +4,8 @@ import EmployeeQuestionComponent from '../EmployeeQuestionComponent';
 import PreviousSymptomsComponent from '../PreviousSymptomsComponent';
 import SelectSymptomsComponent from '../SelectSymptomsComponent';
 import SelectLocationComponent from '../SelectLocationComponent';
-// TODO: import Component 
+import VaccineDoseComponent from '../VaccineDoseComponent';
+import ExposureToCovidComponent from '../ExposureToCovidComponent';
 import styles from './QuestionViewComponent.module.css'
 
 
@@ -34,8 +35,9 @@ const QuestionViewComponent = ({
     mandated: MandatedTest,
     previoussymptoms: PreviousSymptomsComponent,
     selsymptoms:SelectSymptomsComponent,
-    location: SelectLocationComponent
-// TODO: add key and Component value to this object
+    location: SelectLocationComponent,
+    vaccinedose: VaccineDoseComponent,
+    exposuretocovid: ExposureToCovidComponent
   };
 
   const ComponentName = components[compName || 'mandated'];

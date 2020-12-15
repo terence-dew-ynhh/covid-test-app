@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
-import styles from './NewComponent.module.css'
+import styles from './ExposureToCovidComponent.module.css'
 
 
- const NewComponent =({nextPage, isPrevEnabled, isDoneEnabled}) => {
-  
+const ExposureToCovidComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
+
   const [isEmployee, setIsEmployee] = useState(true);
 
   useEffect(() => {
@@ -11,17 +11,15 @@ import styles from './NewComponent.module.css'
     isDoneEnabled(false);
   }, []);
 
-    return (
+  return (
     <>
       <div className={styles.question_row_item}>
-      <p className="error" hidden={isEmployee}>
-          Sorry, please navigate to a public testing website to schedule your
-          test
+        <p className="error" hidden={isEmployee}>
+          Your symptoms may be related to COVID-19 Vaccine Side Effects. You may continue working as scheduled, you do not need COVID-19 testing PCR testing right now.<br></br><br></br>If you took yourself out of work due to these symptoms and your symptoms have improved or resolved, you may return to work, you do not require OCC-Health Clearance If your symptoms persist or worsen for more than 48 hours, contact the Call Center.”
         </p>
         <fieldset className="radio_grp_set">
           <legend>
-            Are you an employee or medical staff member of Yale New Haven
-            Health/ Yale Medicine?
+            Have you had an exposure to a COVID-19 positive individual in the past 10 days?
           </legend>
           <input
             id="employee_staff_check_yes"
@@ -43,11 +41,11 @@ import styles from './NewComponent.module.css'
             }}
           ></input>
           <label htmlFor="employee_staff_check_no">No</label>
-        </fieldset>        
+        </fieldset>
       </div>
       <style jsx>{``}</style>
     </>
   );
 }
 
-export default NewComponent;
+export default ExposureToCovidComponent;

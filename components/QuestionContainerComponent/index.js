@@ -8,8 +8,7 @@ const QuestionFormComponent = ({}) => {
 
   const [viewIdx, setviewIdx] = useState(0);
   const [endPoint, setEndpoint] = useState('Bridgeport Hospital');
-  // TODO: add key for component to compNames after previoussymptoms
-  const compNames = ['employee', 'previoussymptoms','selsymptoms','location'];
+  const compNames = ['employee', 'previoussymptoms', 'vaccinedose', 'exposuretocovid','selsymptoms','location'];
   const router = useRouter();
 
   

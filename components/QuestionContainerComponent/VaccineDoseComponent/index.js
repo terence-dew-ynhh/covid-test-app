@@ -20,7 +20,8 @@ const VaccineDoseComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
           <legend>
             Did you receive a COVID-19 Vaccine Dose in the past 48 hours AND
             afterwards developed any of the following symptoms ONLY?
-            <br></br> Fever (temp ≥ 38.0 degrees C / 100.0 degrees F)
+            <br></br>
+            <br></br>• Fever (temp ≥ 38.0 degrees C / 100.0 degrees F)
             <br></br>
             <br></br>• Chills
             <br></br>

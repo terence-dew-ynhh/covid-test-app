@@ -11,6 +11,8 @@ import ReturnedFromHighRiskComponent from '../ReturnedFromHighRiskComponent';
 import PostTravelTestingComponent from '../PostTravelTestingComponent';
 import TravelTestingComponent from '../TravelTestingComponent';
 import SelectLocation from '../SelectLocationComponent';
+import VaccineDoseComponent from '../VaccineDoseComponent';
+import ExposureToCovidComponent from '../ExposureToCovidComponent';
 import styles from './QuestionViewComponent.module.css'
 
 
@@ -47,7 +49,9 @@ const QuestionViewComponent = ({
     traveltesting: TravelTestingComponent,
     returnfromhighrisk: ReturnedFromHighRiskComponent,
     posttravel: PostTravelTestingComponent ,
-    location: SelectLocation
+    location: SelectLocation,
+    vaccinedose: VaccineDoseComponent,
+    exposuretocovid: ExposureToCovidComponent
   };
 
   const ComponentName = components[compName || 'employee'];

@@ -20,7 +20,7 @@ const SympImprovingOrMildComponent = ({
       <div className="radio_grp">
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
-            <p className="error" hidden={!(isCovidPositive === 'Yes')}>
+            <p className="error" hidden={!(isCovidPositive === 'No')}>
               You are NOT eligible to return to work. Your symptoms must be mild
               and improving for at least 24 hours in order to return to work.
               Please continue to self-isolate at home. Your out of work status
@@ -32,7 +32,7 @@ const SympImprovingOrMildComponent = ({
               contact the OCC-Health Call Center at 203-688-1700 (select a
               language and then option # 2 for employee health).”
             </p>
-            <p className="error" hidden={!(isCovidPositive === 'No')}>
+            <p className="error" hidden={!(isCovidPositive === 'Yes')}>
               Occupational Health will review your responses. If approved, a
               return to work letter will be sent to you ONLY via My-Chart. You
               may share the letter with your manager if requested.

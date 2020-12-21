@@ -49,7 +49,8 @@ const VaccineDoseComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
             id="employee_staff_check_no"
             type="radio"
             name="employee_staff"
-            onClick={() => {
+            onClick={(e) => {
+              nextPage(e, 2);
               setIsEmployee(false);
             }}
           ></input>

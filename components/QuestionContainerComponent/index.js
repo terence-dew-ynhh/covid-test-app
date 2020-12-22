@@ -6,6 +6,7 @@ import { useRouter } from 'next/router';
 const QuestionFormComponent = ({}) => {
   const [viewIdx, setviewIdx] = useState(0);
   const [endPoint, setEndpoint] = useState('Bridgeport Hospital');
+  const [hasSymptoms, setHasSymptoms] = useState(false);
   const compNames = ['seldept', 'needcovid', 'consent'];
   const router = useRouter();
 
@@ -21,8 +22,12 @@ const QuestionFormComponent = ({}) => {
     setviewIdx(index);
   };
 
+  const updatedHasSymptoms = (symptoms) =>{
+    
+  }
+
   const schedulePush = () => {
-    router.push(`/scheduling`, '/scheduling');
+    router.push(`/scheduling?hasSymptoms=${hasSymptoms}`, '/scheduling');
   };
 
   return (

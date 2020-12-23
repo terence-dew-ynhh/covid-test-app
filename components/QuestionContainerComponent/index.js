@@ -6,27 +6,22 @@ import { useRouter } from 'next/router';
 const QuestionFormComponent = ({}) => {
   const [viewIdx, setviewIdx] = useState(0);
   const [endPoint, setEndpoint] = useState('Bridgeport Hospital');
-  const [hasSymptoms, setHasSymptoms] = useState(false);
   const compNames = ['seldept', 'needcovid', 'consent'];
   const router = useRouter();
 
   let progressWidth = Math.floor(100 * ((viewIdx + 1) / 3));
 
   const nextPage = () => {
-    let index = viewIdx <= 2 ? viewIdx + 1 : viewIdx;
+    let index = viewIdx + 1;
     setviewIdx(index);
   };
 
   const prevPage = () => {
-    let index = viewIdx > 0 ? viewIdx - 1 : viewIdx;
+    let index = viewIdx - 1;
     setviewIdx(index);
   };
 
-  const updatedHasSymptoms = (symptoms) =>{
-    
-  }
-
-  const schedulePush = () => {
+  const schedulePush = (hasSymptoms) => {
     router.push(`/scheduling?hasSymptoms=${hasSymptoms}`, '/scheduling');
   };
 

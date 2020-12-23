@@ -30,7 +30,7 @@ const NeedCovidTestComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, schedu
                   name="prev_covid"
                   onClick={(e) => {
                     schedulePush(true);
-                    setIsCovidPositive(e.target.value);
+                    // setIsCovidPositive(e.target.value);
                   }}
                 ></input>
                 <label htmlFor="prev_covid_yes">Having Symptoms</label>

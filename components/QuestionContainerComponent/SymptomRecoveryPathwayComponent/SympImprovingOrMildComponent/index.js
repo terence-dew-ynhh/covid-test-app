@@ -56,7 +56,7 @@ const SympImprovingOrMildComponent = ({
                   name="prev_covid"
                   onClick={(e) => {
                     setIsCovidPositive(e.target.value);
-                    isDoneEnabled(false);
+                    isDoneEnabled(true);
                   }}
                 ></input>
                 <label htmlFor="prev_covid_yes">Yes</label>
@@ -71,7 +71,7 @@ const SympImprovingOrMildComponent = ({
                   name="prev_covid"
                   onClick={(e) => {
                     setIsCovidPositive(e.target.value);
-                    isDoneEnabled(true);
+                    isDoneEnabled(false);
                   }}
                 ></input>
                 <label htmlFor="prev_covid_no">No</label>

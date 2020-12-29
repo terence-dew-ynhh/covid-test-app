@@ -37,7 +37,7 @@ import styles from './RequireCovidTestingComponent.module.css'
             type="radio"
             name="employee_staff"
             onClick={(e) => {
-              nextPage(e,6)
+              nextPage(e,7)
             }}
           ></input>
           <label htmlFor="employee_staff_check_no">Return from Travel to a High Risk Area?</label>

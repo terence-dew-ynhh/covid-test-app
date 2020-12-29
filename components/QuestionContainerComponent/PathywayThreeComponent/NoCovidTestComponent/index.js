@@ -8,7 +8,21 @@ const NoCovidTestComponent = ({ schedulePush, selectPathway}) => {
       <div className="radio_grp">
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
-
+          <p className="error">
+            {' '}
+            ATTENTION: You DO NOT NEED Occupational Health Clearance to return
+            to work ONLY if the following applies to you: <br></br>
+            <br></br>• You had a COVID-19 Vaccine dose in the past 48 hours AND
+            <br></br>
+            <br></br>• You developed ONLY vaccine side effects (fever, chills,
+            muscle or joint aches, headaches, nausea, transient vomiting)
+            lasting less than 48 hours AND<br></br>
+            <br></br>• You took yourself out of work due to the symptoms for less than 48 hours<br></br>
+            <br></br>
+            If the above criteria do not apply to you and you still need
+            clearance, please press Continue<br></br>
+            <br></br>
+          </p>
             <fieldset>
               <legend>Are you still experiencing symptoms at this time and need a COVID-19 test?:</legend>
 

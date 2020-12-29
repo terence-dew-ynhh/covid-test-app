@@ -26,8 +26,7 @@ const RecentCovidTestComponent = ({
             </p>
             <fieldset>
               <legend>
-                Have you had a recent COVID-19 test prior to completing your
-                quarantine?
+              Have you had a recent COVID-19 test on or after day # 6 of your quarantine to come out of quarantine of 7 days?
               </legend>
 
               <div className="radio_row_item">
@@ -41,6 +40,20 @@ const RecentCovidTestComponent = ({
                   }}
                 ></input>
                 <label htmlFor="prev_covid_yes">Yes</label>
+              </div>
+              <br></br>
+              <br></br>
+              <div className="radio_row_item">
+                <input
+                  id="prev_covid_yes"
+                  type="radio"
+                  value="Yes"
+                  name="prev_covid"
+                  onClick={(e) => {
+                    nextPage(2);
+                  }}
+                ></input>
+                <label htmlFor="prev_covid_yes">I do not need a test since I completed my 10 day Quarantine</label>
               </div>
               <br></br>
               <br></br>

@@ -29,8 +29,8 @@ const PathywayFourComponent = ({ selectPathway, schedulePush }) => {
     setDoneEnabled(isEnabled);
   };
 
-  const nextPage = () => {
-    let index = viewIdx + 1;
+  const nextPage = (jump = 1) => {
+    let index = viewIdx + jump;
     setviewIdx(index);
   };
 

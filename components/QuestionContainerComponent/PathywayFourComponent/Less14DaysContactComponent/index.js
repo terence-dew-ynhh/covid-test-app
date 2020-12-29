@@ -24,8 +24,14 @@ const Less14DaysContactComponent = ({
             </p>
             <fieldset>
               <legend>
-                Has it been more than 14 days since your last close contact*
-                with the COVID-19 Positive person in your Household?:
+                Has it been at least 7 days since your last close contact*
+                with the COVID-19 Positive person in your Household AND you had a negative COVID-19 test on or after day # 6 of your quarantine?:
+                <br></br>
+                <br></br>
+                OR
+                <br></br>
+                <br></br>
+                Has it been more than 10 days since your last close contact* with the COVID-19 Positive person in your Household (no testing required)?
                 <br></br>
                 <br></br>
                 *Close contact is defined as: no mask use, within 6 feet, and

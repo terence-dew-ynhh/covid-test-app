@@ -71,7 +71,7 @@ const PathSelectComponent = ({ selectPathway, schedulePush }) => {
                     selectPathway(e.target.value);
                   }}
                 ></input>
-                <label htmlFor="high_risk_expo">Had a High Risk Household Exposure and completed my 14 day Quarantine</label>
+                <label htmlFor="high_risk_expo">Had a High Risk Household Exposure and completed my Quarantine</label>
               </div>
               <br></br><br></br><br></br>
               <div className="radio_row_item">

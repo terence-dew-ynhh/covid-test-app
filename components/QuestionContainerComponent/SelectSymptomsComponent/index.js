@@ -10,7 +10,7 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
     isPrevEnabled(true);
   }, []);
 
-  const handleChecked = (e, isSevere) => {
+  const handleChecked = (e, isSevere, idx = 0) => {
 
     if (
       e.target.id === 'prev_covid_none_of_the_above' &&
@@ -68,7 +68,8 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
         if(isSevere){
           nextPage(e);
         }else{
-          nextPage(e,2);
+          if(idx < 2 || idx == 3 ) nextPage(e,3)
+          else nextPage(e,2);
         }
       } else {
         noneChk.disabled = false;
@@ -88,19 +89,21 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
     'Bluish lips on the Face ',
   ]
   let checkboxesArray = [
-    'Conjunctivitis',
+    
     'Fever',
+    'Cough',    
+    'Shortness_of_Breath',
+    'Body Aches',
+    'Profound Fatigue',
+    'New Headaches',
+    'Sore throat',
+    'New loss of taste or smell',
+    'Sinus Congestion',
+    'Rhinorrhea', 
+    'Conjunctivitis',
+    'Nausea',
     'Vomiting',
     'Diarrhea',
-    'Cough',
-    'Shortness_of_Breath',
-    'Body_Aches',
-    'Fatigue',
-    'Nausea',
-    'Headaches',
-    'Sore_throat',
-    'New loss of taste or smell',
-    'Congestion or runny nose',
     'None_of_the_Above'
   ];
 
@@ -160,7 +163,7 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
           value={checkbox.replace(regex, ' ')}
           name="symptoms"
           onChange={(e) => {
-            handleChecked(e, false);
+            handleChecked(e, false, idx);
           }}
         ></input>
         <label htmlFor={`prev_covid_${checkbox.toLowerCase()}`}>

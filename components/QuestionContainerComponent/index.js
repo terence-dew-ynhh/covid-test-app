@@ -14,6 +14,7 @@ const QuestionFormComponent = ({}) => {
     'symptomssel',
     'sevsymptomsstatment',
     'outworkconsent',
+    'possibleflu',
     'traveltesting',
     'highriskstatement',
     'returnfromhighrisk',
@@ -57,7 +58,7 @@ const QuestionFormComponent = ({}) => {
     recalculateProgress();
   };
 
-  const schedulePush = (asymp) => {
+  const schedulePush = (asymp = false) => {
     router.push(`/scheduling?asymp=${asymp}`, '/scheduling');
   };
 

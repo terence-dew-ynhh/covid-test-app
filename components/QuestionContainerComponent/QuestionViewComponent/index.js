@@ -13,6 +13,7 @@ import TravelTestingComponent from '../TravelTestingComponent';
 import SelectLocation from '../SelectLocationComponent';
 import VaccineDoseComponent from '../VaccineDoseComponent';
 import ExposureToCovidComponent from '../ExposureToCovidComponent';
+import PossibleFluConsent from '../PossibleFluConsentComponent'
 import styles from './QuestionViewComponent.module.css'
 
 
@@ -51,7 +52,8 @@ const QuestionViewComponent = ({
     posttravel: PostTravelTestingComponent ,
     location: SelectLocation,
     vaccinedose: VaccineDoseComponent,
-    exposuretocovid: ExposureToCovidComponent
+    exposuretocovid: ExposureToCovidComponent,
+    possibleflu:PossibleFluConsent
   };
 
   const ComponentName = components[compName || 'employee'];

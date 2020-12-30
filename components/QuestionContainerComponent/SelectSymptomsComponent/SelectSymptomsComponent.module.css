@@ -80,7 +80,7 @@
   padding-left: 1px;
   -ms-grid-columns: 1fr 1fr;
   grid-template-columns: repeat(2, 1fr);
-  -ms-grid-rows: auto 1em auto 1em auto 1em auto 1em ;
+  -ms-grid-rows: auto 1em auto 1em auto 1em  auto 1em auto 1em ;
   grid-template-rows: repeat(4, auto);
 }
 
@@ -175,11 +175,14 @@
 }
 
 .q1_grid>*:nth-child(14) {
+  -ms-grid-row: 13;
+  -ms-grid-column: 2;
+}
+
+.q1_grid>*:nth-child(15) {
   -ms-grid-row: 15;
   -ms-grid-column: 1;
 }
-
-
 
 
 

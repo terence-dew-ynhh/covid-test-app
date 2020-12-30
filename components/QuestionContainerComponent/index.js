@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 const QuestionFormComponent = ({}) => {
   const [viewIdx, setviewIdx] = useState(0);
   const [endPoint, setEndpoint] = useState('Bridgeport Hospital');
-  const compNames = ['seldept', 'needcovid', 'consent'];
+  const compNames = ['firstresponder', 'seldept', 'needcovid', 'consent'];
   const router = useRouter();
 
   let progressWidth = Math.floor(100 * ((viewIdx + 1) / 3));

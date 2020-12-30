@@ -3,6 +3,7 @@ const axios = require('axios');
 import SelectDepartment from '../SelectDepartmentComponent';
 import ConsentComponent from '../ConsentComponent';
 import NeedCovidTest from '../NeedCovidTestComponent';
+import FirstResponderComponent from '../FirstResponderComponent';
 import styles from './QuestionViewComponent.module.css'
 
 
@@ -41,7 +42,8 @@ const QuestionViewComponent = ({
   const components = {
     seldept: SelectDepartment,
     needcovid: NeedCovidTest,
-    consent: ConsentComponent,    
+    consent: ConsentComponent, 
+    firstresponder: FirstResponderComponent  
   };
 
   const ComponentName = components[compName || 'seldept'];

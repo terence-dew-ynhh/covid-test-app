@@ -1,5 +1,5 @@
 import styles from './SelectDepartmentComponent.module.css';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const SelectLocation = ({
   isPrevEnabled,
@@ -7,6 +7,8 @@ const SelectLocation = ({
   nextPage,
   sendData
 }) => {
+  const [deptName, setDeptName] = useState('');
+
   useEffect(() => {
     isPrevEnabled(false);
     isDoneEnabled(false);
@@ -67,7 +69,18 @@ const SelectLocation = ({
               </select>
             </div>
             <div className="other-txt">
-
+              <label>Other:</label>
+              <input
+                id="other"
+                className="form-input"
+                name="other"
+                value={deptName}
+                pattern="[A-Za-z]"
+                onChange={(e) => {
+                  setDeptName(e.target.value);
+                }}
+              />
+              <button onClick={(e) => {sendData(deptName);}}>Next</button>
             </div>
             <div className={styles.chk_row_item}>
               <label className={styles.none_label_or}>

@@ -68,19 +68,30 @@ const SelectLocation = ({
                 {locationOptions}
               </select>
             </div>
+            <br></br>
+            <br></br>
             <div className="other-txt">
               <label>Other:</label>
               <input
                 id="other"
-                className="form-input"
+                type="text"
+                className={styles.form_input}
                 name="other"
                 value={deptName}
                 pattern="[A-Za-z]"
                 onChange={(e) => {
-                  setDeptName(e.target.value);
-                }}
+                  setDeptName(e.target.value.replace(/[0-9]/g, ""));
+                }}              
               />
-              <button onClick={(e) => {sendData(deptName);}}>Next</button>
+              <button
+              className="button"
+                onClick={(e) => {
+                  sendData(deptName);
+                  nextPage();
+                }}
+              >
+                Submit
+              </button>
             </div>
             <div className={styles.chk_row_item}>
               <label className={styles.none_label_or}>

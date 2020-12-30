@@ -66,6 +66,9 @@ const SelectLocation = ({
                 {locationOptions}
               </select>
             </div>
+            <div className="other-txt">
+
+            </div>
             <div className={styles.chk_row_item}>
               <label className={styles.none_label_or}>
                 {' '}

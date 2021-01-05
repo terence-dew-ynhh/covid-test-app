@@ -31,6 +31,7 @@ const PathywayFourComponent = ({ selectPathway, schedulePush }) => {
 
   const nextPage = (jump = 1) => {
     let index = viewIdx + jump;
+    console.log(jump)
     setviewIdx(index);
   };
 

@@ -45,7 +45,7 @@ const RecentCovidTestComponent = ({
               <br></br>
               <div className="radio_row_item">
                 <input
-                  id="prev_covid_yes"
+                  id="prev_covid_none"
                   type="radio"
                   value="Yes"
                   name="prev_covid"
@@ -53,7 +53,7 @@ const RecentCovidTestComponent = ({
                     nextPage(2);
                   }}
                 ></input>
-                <label htmlFor="prev_covid_yes">I do not need a test since I completed my 10 day Quarantine</label>
+                <label htmlFor="prev_covid_none">I do not need a test since I completed my 10 day Quarantine</label>
               </div>
               <br></br>
               <br></br>

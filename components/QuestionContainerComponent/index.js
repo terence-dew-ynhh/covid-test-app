@@ -41,11 +41,17 @@ const QuestionFormComponent = () => {
   const nextPage = (e, pageIncrement = 1) => {
     let index = viewIdx + pageIncrement;
     setviewIdx(index);
+    let newjumpArr = [...viewJump, pageIncrement];
+    setviewJump(newjumpArr);
     // setView
   };
 
-  const prevPage = (e, pageIncrement = 1) => {
-    let index = viewIdx - pageIncrement;
+  const prevPage = (e) => {
+    let index =
+       viewIdx - viewJump[viewJump.length - 1];
+    let newjumpArr = [...viewJump];
+    newjumpArr.splice(viewJump.length - 1, 1);
+    setviewJump(newjumpArr);
     setviewIdx(index);
   };
 

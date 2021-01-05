@@ -8,7 +8,11 @@ const ListedConditionsConsent = ({
   updateField,
   schedulePush
 }) => {
-  const [hasConsent, setHasConsent] = useState('');
+
+  useEffect(() => {
+    isDoneEnabled(false);
+    isPrevEnabled(true);
+  }, []);
 
   const handleChecked = (e) => {
     nextPage(e);

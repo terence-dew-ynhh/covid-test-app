@@ -67,8 +67,7 @@ const WithinDaySelectSymptomsComponent = ({
   };
 
   let checkboxesArray = [
-    'Conjunctivitis',
-    'Fever',
+    'Fever (>100 Fahrenheit) while off any fever-reducing or anti-inflammatory medications',
     'Vomiting',
     'Diarrhea',
     'None_of_the_Above'
@@ -123,8 +122,16 @@ const WithinDaySelectSymptomsComponent = ({
     <>
       <div className={styles.question_row_item}>
         <p className="error" hidden={!(hasSymptoms === 'No')}>
-          If you have other symptoms, please contact your Primary care doctor to
-          discuss your concerns.
+          You are NOT eligible to return to work. You must have full resolution
+          of fever, diarrhea, and/or vomiting for at least 24 hours in order to
+          return to work. Please continue to self-isolate at home. Your out of
+          work status will be extended for another 48 hours.
+          <br></br>
+          <br></br>
+          If your symptoms are persistent or worsening, please call your Primary
+          Care Provider or visit an Urgent Care. You may also contact the
+          OCC-Health Call Center at 203-688-1700 (select a language and then
+          option # 2 for employee health).
         </p>
         <div className={styles.question_row_item_sub}>
           <fieldset>
@@ -132,7 +139,7 @@ const WithinDaySelectSymptomsComponent = ({
               Please select any of the following symptoms that you have
               experienced within the last 24 hours:
             </legend>
-            <div className={styles.q1_grid}>{checkboxes}</div>
+            <div className={styles.q2_grid}>{checkboxes}</div>
           </fieldset>
         </div>
       </div>

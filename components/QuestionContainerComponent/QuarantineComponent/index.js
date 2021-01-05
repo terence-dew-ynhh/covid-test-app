@@ -1,18 +1,19 @@
 import { useState, useEffect } from 'react';
-import styles from './CancerComponent.module.css';
+import styles from './QuarantineComponent.module.css';
 
-const CancerComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateField, schedulePush }) => {
-  const [isCancerPositive, setIsCancerPositive] = useState('');
+const QuarantineComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateField, schedulePush }) => {
+  const [isDiagnosed, setIsDiagnosed] = useState('');
 
   useEffect(() => {
     isDoneEnabled(false);
     isPrevEnabled(true);
   }, []);
 
-  const choiceSelected = (e) => {    
-    setIsCancerPositive(e.target.value);
+  const choiceSelected = (e) => {
     if(e.target.value === 'Yes') schedulePush(true);
     else nextPage(e.target.value); 
+    setIsDiagnosed(e.target.value);
+    
   }
 
   return (
@@ -21,17 +22,18 @@ const CancerComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateField, 
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
             <fieldset>
-              <legend>Have you ever been diagnosed with cancer?:</legend>
+              <legend>Are you in quarantine for Covid-19 related exposure?:</legend>
               <div className="radio_row_item">
                 <input
                   id="prev_covid_yes"
                   type="radio"
                   value="Yes"
                   name="prev_covid"
-                  onClick={ (e) =>{
-                    updateField('cancer_diagnosed', true);
-                    choiceSelected(e)
-                  }}
+                  onClick={ 
+                    (e) =>{
+                      
+                    }
+                  }
                 ></input>
                 <label htmlFor="prev_covid_yes">Yes</label>
                 <div className="radio_row_item">
@@ -40,10 +42,11 @@ const CancerComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateField, 
                     type="radio"
                     value="No"
                     name="prev_covid"
-                    onClick={ (e) =>{
-                      updateField('cancer_diagnosed', false);
-                      choiceSelected(e)
-                    }}
+                    onClick={
+                      (e) =>{
+                        schedulePush();
+                      }
+                    }
                   ></input>
                   <label htmlFor="prev_covid_no">No</label>
                 </div>
@@ -57,4 +60,4 @@ const CancerComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateField, 
   );
 };
 
-export default CancerComponent;
+export default QuarantineComponent;

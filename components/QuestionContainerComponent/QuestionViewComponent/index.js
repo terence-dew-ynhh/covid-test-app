@@ -1,13 +1,16 @@
 import { useState, useEffect } from 'react';
-import AgeQuestionComponent from '../AgeQuestionComponent';
-import GenderComponent from '../GenderComponent';
-import HepatitisComponent from '../HepatitisComponent';
-import PregnantComponent from '../PregnantComponent';
-import CancerComponent from '../CancerComponent';
-import HistoryComponent from '../HistoryComponent';
-import TreatmentReceivedComponent from '../TreatmentReceivedComponent';
-import styles from './QuestionViewComponent.module.css'
-
+import DepartmentSelectComponent from '../DepartmentSelectComponent';
+import PinInputComponent from '../PinInputComponent';
+import VaccineDateSelectComponent from '../VaccineDateSelectComponent';
+import FirstDoseComponent from '../FirstDoseComponent';
+import ListedConditionsConsent from '../ListedConditionsConsent';
+import TestedPositiveComponent from '../TestedPositiveComponent';
+import CovidSymptomsComponent from '../CovidSymptomsComponent';
+import FactSheetComponent from '../FactSheetComponent';
+import SelectVaccineComponent from '../SelectVaccineComponent';
+import QuarantineComponent from '../QuarantineComponent';
+import SelectSymptomsComponent from '../SelectSymptomsComponent'
+import styles from './QuestionViewComponent.module.css';
 
 const QuestionViewComponent = ({
   compName,
@@ -15,96 +18,82 @@ const QuestionViewComponent = ({
   prevPage,
   schedulePush,
   updateLocation,
-  uuid
+  setDepartment,
+  verifyPin,
+  isPfizer,
+  pfizerSelected
 }) => {
-  const [age, setAge] = useState(18);
   const [prevEnabled, setPrevEnabled] = useState(false);
   const [nextEnabled, setNextEnabled] = useState(false);
   const [doneEnabled, setDoneEnabled] = useState(false);
 
-  useEffect(() => {
-    setAge(18);
-  }, []);
+  useEffect(() => {}, []);
 
   const isPrevEnabled = (isEnabled) => {
     setPrevEnabled(isEnabled);
   };
 
-  const isNextEnabled = (isEnabled,input) => {
+  const isNextEnabled = (isEnabled) => {
     setNextEnabled(isEnabled);
-
   };
 
   const isDoneEnabled = (isEnabled) => {
-    setDoneEnabled(isEnabled);    
-  }; 
-  
-  const setSchedulerURL = (location) => {updateLocation(location)};
-
-  const updateField = async (field, fieldVal) => {
-    const action = 'post';
-    const res = await fetch('/api/responses', {
-      method: action,
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({'uuid':uuid, 'field':field, 'fieldVal': fieldVal})
-    })
-  }
-
-  const updateAndProgress = (e) => {
-    const patientAgeData = age;
-    updateField('age', patientAgeData);
-    
-    if(patientAgeData > 17 && patientAgeData <= 85){ nextPage()}
-    else {schedulePush(true)}
-  }
-
-  const updateAge = (input) => {
-    setAge(parseInt(input));
-  }
-  
-  const components = {
-    age: AgeQuestionComponent,
-    treatment: TreatmentReceivedComponent,
-    gender: GenderComponent,
-    pregnancy: PregnantComponent,
-    hepatitis: HepatitisComponent,
-    cancer: CancerComponent,
-    history: HistoryComponent
+    setDoneEnabled(isEnabled);
   };
 
-  const ComponentName = components[compName || 'age'];
+  const setSchedulerURL = (location) => {
+    updateLocation(location);
+  };
+
+  const components = {
+    deptselect: DepartmentSelectComponent,
+    pininput: PinInputComponent,
+    firstdose: FirstDoseComponent,
+    listconditions: ListedConditionsConsent,
+    testedpositive: TestedPositiveComponent,
+    covidsymptoms: CovidSymptomsComponent,
+    factsheet: FactSheetComponent,
+    selectedvaccine: SelectVaccineComponent,
+    vaccinedateselect: VaccineDateSelectComponent,
+    quartinecovid: QuarantineComponent,
+    selectsymptoms: SelectSymptomsComponent
+  };
+
+  const ComponentName = components[compName || 'pininput'];
 
   return (
     <div className={styles.questionContainer}>
       <div className={styles.questionContainer}>
-      <ComponentName
-        nextPage={nextPage}
-        isPrevEnabled={isPrevEnabled}
-        isNextEnabled={isNextEnabled}        
-        isDoneEnabled={isDoneEnabled}
-        setSchedulerURL={setSchedulerURL}
-        uuid={uuid}
-        updateField={updateField}
-        schedulePush ={schedulePush} 
-        updateAge={updateAge} 
-      />
+        <ComponentName
+          nextPage={nextPage}
+          isPrevEnabled={isPrevEnabled}
+          isNextEnabled={isNextEnabled}
+          isDoneEnabled={isDoneEnabled}
+          setSchedulerURL={setSchedulerURL}
+          schedulePush={schedulePush}
+          setDepartment={setDepartment}
+          verifyPin={verifyPin}
+          isPfizer={isPfizer}
+          pfizerSelected={pfizerSelected}
+        />
       </div>
-      <div className={styles.buttonContainer}>              
-      <button className="button" hidden={!prevEnabled} onClick={ (e) => {compName === 'hepatitis' ? prevPage(e,2) : prevPage(e);} }>
-        {`< Back`}
-      </button>
-      <button className="button" hidden={!nextEnabled} onClick={(e) => updateAndProgress(e)}>
-      {/* <button className="button" hidden={!nextEnabled} onClick={nextPage}> */}
-
-        {`Next >`}
-      </button>  
-      <button className="button" hidden={!doneEnabled} onClick={() => schedulePush(false)}>
-        Schedule Appoinment
-      </button>  
+      <div className={styles.buttonContainer}>
+        <button className="button" hidden={!prevEnabled} onClick={prevPage}>
+          {`< Back`}
+        </button>
+        <button className="button" hidden={!nextEnabled} onClick={nextPage}>
+          {`Next >`}
+        </button>
+        <button
+          className="button"
+          hidden={!doneEnabled}
+          onClick={() => schedulePush(false)}
+        >
+          Schedule Appoinment
+        </button>
       </div>
     </div>
   );
 };
 
 export default QuestionViewComponent;
-

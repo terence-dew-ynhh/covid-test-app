@@ -1,29 +1,39 @@
 import { useState, useEffect } from 'react';
-import styles from './HistoryComponent.module.css';
+import styles from './TestedPositiveComponent.module.css';
 
-const HistoryComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateField, schedulePush  }) => {
-  const [hasAdverseReaction, setHasAdverseReaction] = useState('');
+const TestedPositiveComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateField, schedulePush }) => {
+  const [isDiagnosed, setIsDiagnosed] = useState('');
 
   useEffect(() => {
+    isDoneEnabled(false);
     isPrevEnabled(true);
   }, []);
 
   const choiceSelected = (e) => {
-    // nextPage(e);
     if(e.target.value === 'Yes') schedulePush(true);
-    else isDoneEnabled(true);
-    setHasAdverseReaction(e.target.value);    
+    else nextPage(e.target.value); 
+    setIsDiagnosed(e.target.value);
+    
   }
-
 
   return (
     <>
       <div className="radio_grp">
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
+          <p className="error" hidden={!isDiagnosed}>
+          COVID Vaccination is recommended after 4 weeks from your intitial positive COVID-19 test
+          <br></br><br></br>
+          When this time has passed please return to MyChart to schedule your vaccinate appointment. 
+            </p>
+         
             <fieldset>
-              <legend>Do you have a history of severe adverse reaction associated with a vaccine?:</legend>
-
+              <legend>
+                Have you tested positive for Covid-19 in the last 4 weeks?:
+                <br></br><br></br>
+                <b>You must wait for 4 weeks or more after your initial positive COVID-19 test before being vaccinated</b>
+              </legend>
+              
               <div className="radio_row_item">
                 <input
                   id="prev_covid_yes"
@@ -32,8 +42,7 @@ const HistoryComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateField,
                   name="prev_covid"
                   onClick={ 
                     (e) =>{
-                      updateField('adverse_reaction', true);
-                      choiceSelected(e)
+                     setIsDiagnosed(true) 
                     }
                   }
                 ></input>
@@ -44,10 +53,9 @@ const HistoryComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateField,
                     type="radio"
                     value="No"
                     name="prev_covid"
-                    onClick={ 
+                    onClick={
                       (e) =>{
-                        updateField('adverse_reaction', false);
-                        choiceSelected(e)
+                        nextPage(e)
                       }
                     }
                   ></input>
@@ -63,4 +71,4 @@ const HistoryComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateField,
   );
 };
 
-export default HistoryComponent;
+export default TestedPositiveComponent;

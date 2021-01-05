@@ -1,18 +1,19 @@
 import { useState, useEffect } from 'react';
-import styles from './GenderComponent.module.css';
+import styles from './FirstDoseComponent.module.css';
 
-const GenderComponent = ({ nextPage, isPrevEnabled, isNextEnabled, isDoneEnabled, updateField}) => {
-  const [isMale, setIsMale] = useState('');
+const FirstDoseComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateField, schedulePush }) => {
+  const [isDiagnosed, setIsDiagnosed] = useState('');
 
   useEffect(() => {
     isDoneEnabled(false);
-    isPrevEnabled(true);
-    isNextEnabled(false);
+    isPrevEnabled(false);
   }, []);
 
-  const choiceSelected = (e,progressVal) => {
-    nextPage(e,progressVal);
-    // setIsMale(e.target.value);
+  const choiceSelected = (e) => {
+    if(e.target.value === 'Yes') schedulePush(true);
+    else nextPage(e.target.value); 
+    setIsDiagnosed(e.target.value);
+    
   }
 
   return (
@@ -21,7 +22,7 @@ const GenderComponent = ({ nextPage, isPrevEnabled, isNextEnabled, isDoneEnabled
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
             <fieldset>
-              <legend>What is your gender?:</legend>
+              <legend>Are you scheduling for your first dose of COVID19 vaccine?:</legend>
 
               <div className="radio_row_item">
                 <input
@@ -29,24 +30,26 @@ const GenderComponent = ({ nextPage, isPrevEnabled, isNextEnabled, isDoneEnabled
                   type="radio"
                   value="Yes"
                   name="prev_covid"
-                  onClick={(e) => {
-                    updateField('is_male', true);
-                    choiceSelected(e,2)
-                  }}
+                  onClick={ 
+                    (e) =>{
+                      nextPage(e);
+                    }
+                  }
                 ></input>
-                <label htmlFor="prev_covid_yes">Male</label>
+                <label htmlFor="prev_covid_yes">Yes</label>
                 <div className="radio_row_item">
                   <input
                     id="prev_covid_no"
                     type="radio"
                     value="No"
                     name="prev_covid"
-                    onClick={(e) => {
-                      updateField('is_male', false);
-                      choiceSelected(e,1)
-                    }}
+                    onClick={
+                      (e) =>{
+                        nextPage(e,6)
+                      }
+                    }
                   ></input>
-                  <label htmlFor="prev_covid_no">Female</label>
+                  <label htmlFor="prev_covid_no">No</label>
                 </div>
               </div>
             </fieldset>
@@ -58,4 +61,4 @@ const GenderComponent = ({ nextPage, isPrevEnabled, isNextEnabled, isDoneEnabled
   );
 };
 
-export default GenderComponent;
+export default FirstDoseComponent;

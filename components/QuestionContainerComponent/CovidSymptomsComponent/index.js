@@ -1,45 +1,42 @@
 import { useState, useEffect } from 'react';
-import styles from './PregnantComponent.module.css';
+import styles from './CovidSymptomsComponent.module.css';
 
-const PregnantComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateField, schedulePush  }) => {
-  const [isPregnant, setIsPregnant] = useState('');
+const CovidSymptomsComponent = ({
+  nextPage,
+  isPrevEnabled,
+  isDoneEnabled,
+  updateField,
+  schedulePush
+}) => {
+  const [isDiagnosed, setIsDiagnosed] = useState('');
 
   useEffect(() => {
     isDoneEnabled(false);
     isPrevEnabled(true);
   }, []);
 
-  const choiceSelected = (e) => {
-    if(e.target.value === 'Yes') schedulePush(true);
-    else nextPage(e.target.value); 
-    setIsPregnant(e.target.value);    
-  }
-
-
   return (
     <>
       <div className="radio_grp">
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
-          {/* <p className="error" hidden={!(isCovidPositive === 'Yes')}>
+            <p className="error" hidden={!(isDiagnosed === 'Yes')}>
             Those that have previously tested positive are currently not
             eligible for COVID-19 screening.
-          </p> */}
+          </p>
             <fieldset>
-              <legend>Are you pregnant or breastfeeding?:</legend>
-
+              <legend>
+                Do you have any of the following Covid-19 symptoms? Fever, nasal
+                congestion, new loss of taste or smell, runny nose, sore throat,
+                conjunctivitis ("red eye"), shortness of breath, new headaches, body aches, nausea/vomiting, diarrhea, or severe fatigue:
+              </legend>
               <div className="radio_row_item">
                 <input
                   id="prev_covid_yes"
                   type="radio"
                   value="Yes"
                   name="prev_covid"
-                  onClick={ 
-                    (e) =>{
-                      updateField('is_pregnant', true);
-                      choiceSelected(e)
-                    }
-                  }
+                  onClick={(e) => { setIsDiagnosed('Yes')}}
                 ></input>
                 <label htmlFor="prev_covid_yes">Yes</label>
                 <div className="radio_row_item">
@@ -48,18 +45,15 @@ const PregnantComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateField
                     type="radio"
                     value="No"
                     name="prev_covid"
-                    onClick={ 
-                      (e) =>{
-                        updateField('is_pregnant', false);
-                        choiceSelected(e)
-                      }
-                    }
+                    onClick={(e) => {
+                      nextPage(e);
+                    }}
                   ></input>
                   <label htmlFor="prev_covid_no">No</label>
                 </div>
               </div>
             </fieldset>
-          </div>          
+          </div>
         </div>
       </div>
       <style jsx>{``}</style>
@@ -67,4 +61,4 @@ const PregnantComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateField
   );
 };
 
-export default PregnantComponent;
+export default CovidSymptomsComponent;

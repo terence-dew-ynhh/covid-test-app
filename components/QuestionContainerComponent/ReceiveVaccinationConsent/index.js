@@ -23,7 +23,11 @@ const ReceiveVaccinationConsent = ({
 
   let checkboxes = checkboxesArray.map((checkbox, idx) => (
     <div className={styles.chk_row_item}>
-      <label className={styles.none_label_or}></label>
+      <label className={styles.none_label_or}>
+        {' '}
+        I declare that I am currently eligible to receive vaccine in the State
+        of Connecticut.
+      </label>
       <input
         id={`prev_covid_${checkbox.toLowerCase()}`}
         type="checkbox"
@@ -64,10 +68,6 @@ const ReceiveVaccinationConsent = ({
               us know and you can reschedule your appointment once eligible.
               <br></br>
               <br></br>
-              <b>
-                I declare that I am currently eligible to receive vaccine in the
-                State of Connecticut.
-              </b>
             </legend>
             <div className={styles.q1_grid}>{checkboxes}</div>
           </fieldset>

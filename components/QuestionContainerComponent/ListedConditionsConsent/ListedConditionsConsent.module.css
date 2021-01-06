@@ -37,21 +37,18 @@
   }
   
   .chk_row_item{
-      border: solid 2px white;
-      padding: 30px 0 30px 10px;    
-  }
-  
-  .prev_none_label{
-    color: white;
-    font-weight: 600;
-  }
-  
-  .none_label_or{
-    color: white;
-    font-weight: 700;
-    display: block;
-    font-size: 1.1em;
-  }
+    border: solid 2px black;
+    padding: 20px 0 20px 10px;
+    width: 40%;    
+}
+
+
+.none_label_or{
+  color: black;
+  font-weight: 700;
+  display: block;
+  font-size: 1.1em;
+}
   
   .divider {
     display: block;

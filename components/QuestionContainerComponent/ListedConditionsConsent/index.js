@@ -8,7 +8,6 @@ const ListedConditionsConsent = ({
   updateField,
   schedulePush
 }) => {
-
   useEffect(() => {
     isDoneEnabled(false);
     isPrevEnabled(true);
@@ -24,7 +23,11 @@ const ListedConditionsConsent = ({
 
   let checkboxes = checkboxesArray.map((checkbox, idx) => (
     <div className={styles.chk_row_item}>
-      <label className={styles.none_label_or}></label>
+      <label className={styles.none_label_or}>
+        {' '}
+        Please note: Immunocompromised persons may not be adequately develop an
+        immune response to the vaccine but will be offered it.
+      </label>
       <input
         id={`prev_covid_${checkbox.toLowerCase()}`}
         type="checkbox"
@@ -77,11 +80,6 @@ const ListedConditionsConsent = ({
               anti-coagulant ("blood thinner")?
               <br></br>
               <br></br>
-              <b>
-                Please note: Immunocompromised persons may not be adequately
-                develop an immune response to the vaccine but will be offered
-                it.
-              </b>
             </legend>
             <div className={styles.q1_grid}>{checkboxes}</div>
           </fieldset>

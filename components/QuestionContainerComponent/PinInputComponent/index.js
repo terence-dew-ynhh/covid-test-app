@@ -39,7 +39,7 @@ const PinInputComponent = ({
             <p className="error" hidden={isSuccess}>
               Invalid Pin Number
             </p>
-            <label>Enter Pin:</label>
+            <label>Enter Employer Pin:</label>
             <br></br>
             <br></br>
             <TextField

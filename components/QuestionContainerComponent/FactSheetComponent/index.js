@@ -36,9 +36,16 @@ const FactSheetComponent = ({
             <fieldset>
               <legend>
                 Have you read the Emergency Use Authorization Fact Sheet and
-                consent to receiving the vaccination for Covid-19?
-                <a href='https://www.fda.gov/media/144414/download'>Pfizer Vaccination EUA</a>
-                <a href='https://www.fda.gov/media/144638/download'>Moderna Vaccination EUA</a>
+                consent to receiving the vaccination for Covid-19? <br></br>
+                <br></br>
+                <a target='__blank' href="https://www.fda.gov/media/144414/download">
+                  Pfizer Vaccination EUA
+                </a>{' '}
+                <br></br>
+                <br></br>
+                <a target='__blank' href="https://www.fda.gov/media/144638/download">
+                  Moderna Vaccination EUA
+                </a>
               </legend>
               <div className="radio_row_item">
                 <input

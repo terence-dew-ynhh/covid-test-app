@@ -46,7 +46,7 @@ const DepartmentSelectComponent = ({
             name="employee_staff"
           ></input>
         </fieldset> */}
-        <label>Please Select Department:</label>
+        <label>Please Select Employee:</label>
         <br></br>
         <br></br>
         <Autocomplete

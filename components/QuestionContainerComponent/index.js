@@ -16,7 +16,7 @@ const QuestionFormComponent = () => {
   const [isPfizer, setIsPfizer] = useState(true);
   const [viewJump, setviewJump] = useState([]);
 
-  const compNames = ['deptselect','pininput','firstdose','listconditions','testedpositive','covidsymptoms','factsheet', 'quartinecovid','selectedvaccine','vaccinedateselect','selectsymptoms'];
+  const compNames = ['deptselect','pininput','vaccineconsent','firstdose','listconditions','testedpositive','covidsymptoms','factsheet', 'quartinecovid','selectedvaccine','vaccinedateselect','selectsymptoms'];
   
   const router = useRouter();
 

@@ -33,17 +33,12 @@ const FactSheetComponent = ({
               <br></br>
               Thank you, you may close the page at this time.
             </p>
-            <p className="error" hidden={!(isDiagnosed === 'No')}>
-              Follow instructions below, or contact your provider's office to
-              schedule.
-              <br></br>
-              <br></br>
-              You have declined to shcedule a Covid-19 Vaccine at this time. You may close this tab.
-            </p>
             <fieldset>
               <legend>
                 Have you read the Emergency Use Authorization Fact Sheet and
                 consent to receiving the vaccination for Covid-19?
+                <a href='https://www.fda.gov/media/144414/download'>Pfizer Vaccination EUA</a>
+                <a href='https://www.fda.gov/media/144638/download'>Moderna Vaccination EUA</a>
               </legend>
               <div className="radio_row_item">
                 <input
@@ -55,22 +50,6 @@ const FactSheetComponent = ({
                   }}
                 ></input>
                 <label htmlFor="prev_covid_agree">Agree</label>
-              </div>
-              <br></br>
-              <br></br>
-              <div className="radio_row_item">
-                <input
-                  id="prev_covid_yes"
-                  type="radio"
-                  value="Yes"
-                  name="prev_covid"
-                  onClick={(e) => {
-                    nextPage(e,4)
-                  }}
-                ></input>
-                <label htmlFor="prev_covid_yes">
-                  Received/Will Receive Vaccine Elsewhere
-                </label>
               </div>
               <br></br>
               <br></br>

@@ -7,7 +7,7 @@ export default function Home({ link }) {
   return (
     <>
       <Head>
-        <title>Yale COVID-19 Vaccine Clinical Trial</title>
+        <title>YNHH COVID-19 Vaccine Scheduler</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

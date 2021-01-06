@@ -60,7 +60,7 @@ const VaccineDateSelectComponent = ({
       <div className="radio_grp">
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
-            <label>What was your First Vaccine Date:</label>
+            <label>Select Date you Received First Dose:</label>
             <br></br>
             <br></br>
             <MuiPickersUtilsProvider utils={DateFnsUtils}>

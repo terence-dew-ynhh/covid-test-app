@@ -10,6 +10,7 @@ import FactSheetComponent from '../FactSheetComponent';
 import SelectVaccineComponent from '../SelectVaccineComponent';
 import QuarantineComponent from '../QuarantineComponent';
 import SelectSymptomsComponent from '../SelectSymptomsComponent'
+import ReceiveVaccinationConsent from '../ReceiveVaccinationConsent'
 import styles from './QuestionViewComponent.module.css';
 
 const QuestionViewComponent = ({
@@ -56,7 +57,8 @@ const QuestionViewComponent = ({
     selectedvaccine: SelectVaccineComponent,
     vaccinedateselect: VaccineDateSelectComponent,
     quartinecovid: QuarantineComponent,
-    selectsymptoms: SelectSymptomsComponent
+    selectsymptoms: SelectSymptomsComponent,
+    vaccineconsent: ReceiveVaccinationConsent
   };
 
   const ComponentName = components[compName || 'pininput'];

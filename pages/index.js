@@ -9,14 +9,14 @@ import QuestionContainerComponent from "../components/QuestionContainerComponent
   return (
     <div className="container">
       <Head>
-        <title>Yale COVID-19 Vaccine Clinical Trial</title>
+        <title>YNHH COVID-19 Vaccine Scheduler</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className='grid'>
       <img src="/YNHHSLogo.png"></img>
       </div>      
       <h1 className="title">
-      Yale COVID-19 Vaccine Clinical Trial
+      YNHH COVID-19 Vaccine Scheduler
         </h1>
       <QuestionContainerComponent uuid={uuid} />
       

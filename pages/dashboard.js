@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Head from 'next/head';
 import RTWTableComponent from '../components/dashboard/RTWTableComponent';
 
+
 export default function Home() {
   return (
     <div className="container">

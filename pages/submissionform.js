@@ -11,6 +11,7 @@ export default function SubmissionForm({ rtwStatus, pathway }) {
   const [formValues, setFormValues] = useState(intialValues);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitSuccessful, setSubmitSuccessful] = useState(false);
 
   // /^[A-Za-z]+$/i
   // /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/
@@ -36,6 +37,8 @@ export default function SubmissionForm({ rtwStatus, pathway }) {
       .post('/api/rtwinfo', contactData)
       .then(function (response) {
         console.log(response);
+        alert('Thank You For Your Submission');
+        setSubmitSuccessful(true);
       })
       .catch(function (error) {
         console.log(error);
@@ -231,7 +234,11 @@ export default function SubmissionForm({ rtwStatus, pathway }) {
             }
           />
           {formErrors.dob && <span className="">{formErrors.dob}</span>}
-          <input className="centered_button" type="submit" />
+          <input
+            className="centered_button"
+            disabled={submitSuccessful}
+            type="submit"
+          />
         </form>
       </div>
 

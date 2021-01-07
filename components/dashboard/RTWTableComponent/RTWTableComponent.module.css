@@ -35,6 +35,10 @@
     padding: 0;
 }
 
+.table{
+    margin-top: 25px;
+}
+
 .contact_button:hover {
     color: lightgray;
 

@@ -2,21 +2,20 @@ import React, { useState } from 'react';
 import styles from './ContactTableItem.module.css';
 const axios = require('axios');
 
-
 function ContactTableItem({ contactInfo, checkId }) {
-const [isChecked, setIschecked] = useState(contactInfo.occ_health_review)
-  const handleChecked= (e) => {
+  const [isChecked, setIschecked] = useState(contactInfo.occ_health_review);
+  const handleChecked = (e) => {
     setIschecked(!isChecked);
-    console.log(contactInfo["_id"]);
+    console.log(contactInfo['_id']);
     axios
-      .post('/api/rtwinfo', {id:contactInfo["_id"],occ_review: !isChecked})
+      .post('/api/rtwinfo', { id: contactInfo['_id'], occ_review: !isChecked })
       .then(function (response) {
         console.log(response);
       })
       .catch(function (error) {
         console.log(error);
       });
-  }
+  };
   const formatDate = (date) => {
     if (!date) return null;
     let year = date.slice(1, 5);
@@ -40,6 +39,36 @@ const [isChecked, setIschecked] = useState(contactInfo.occ_health_review)
 
     return `${months[parseInt(month) - 1]}-${day}-${year}`;
   };
+
+  const checkbox = isChecked ? (
+    <>
+      {' '}
+      <input
+        id={`checkbox_${checkId}`}
+        type="checkbox"
+        checked
+        name="reviewed"
+        onChange={(e) => {
+          handleChecked(e);
+        }}
+      ></input>
+      <label className={styles.label} htmlFor={`checkbox_${checkId}`}></label>{' '}
+    </>
+  ) : (
+    <>
+      {' '}
+      <input
+        id={`checkbox_${checkId}`}
+        type="checkbox"
+        name="reviewed"
+        onChange={(e) => {
+          handleChecked(e);
+        }}
+      ></input>
+      <label className={styles.label} htmlFor={`checkbox_${checkId}`}></label>{' '}
+    </>
+  );
+
   return (
     <div className={styles.ContactItem}>
       <p className={styles.contact_p}>{contactInfo.firstName}</p>
@@ -57,19 +86,7 @@ const [isChecked, setIschecked] = useState(contactInfo.occ_health_review)
       <p className={styles.contact_p}>
         {formatDate(contactInfo.date) || 'None'}
       </p>
-      <input
-        id={`checkbox_${checkId}`}
-        type="checkbox"
-        checked={isChecked}
-        name="reviewed"
-        onChange={(e) => {
-          handleChecked(e);
-        }}
-      ></input>
-        <label
-        className={styles.label}
-        htmlFor={`checkbox_${checkId}`}
-      ></label>
+      {checkbox}
     </div>
   );
 }

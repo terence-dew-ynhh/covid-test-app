@@ -50,6 +50,8 @@ try{
     .findOneAndUpdate(updateQuery, updateVals, { upsert: true });
   // console.log(req.db)
 
+  
+
    res.status(200);
     res.send("Document Updated");
   } catch (err) {

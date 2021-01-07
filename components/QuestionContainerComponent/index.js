@@ -100,6 +100,7 @@ const QuestionFormComponent = () => {
         isPfizer={isPfizer}
         pfizerSelected={pfizerSelected}
         setReccDate={setReccDate}
+        department={department}
       ></QuestionView>
     </div>
   );

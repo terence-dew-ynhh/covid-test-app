@@ -7,11 +7,12 @@ const PinInputComponent = ({
   isPrevEnabled,
   isNextEnabled,
   isDoneEnabled,
-  updateField,
-  verifyPin
+  verifyPin,
+  department
 }) => {
   const [pin, setPin] = useState('');
   const [isSuccess, setIsSuccess] = useState(true);
+  const [isOverAttempts, setIsOverAttempts] = useState(false);
 
   useEffect(() => {
     isDoneEnabled(false);
@@ -24,8 +25,13 @@ const PinInputComponent = ({
 
     verifyPin(pin).then((data) => {
       console.log(data);
+
+      if(!data.overCount){
       isValid = data.isValid;
       setIsSuccess(isValid);
+      }else{
+        setIsOverAttempts(true);
+      }
 
       if (isValid) nextPage(null);
     });
@@ -38,6 +44,9 @@ const PinInputComponent = ({
           <div className={styles.question_row_item_sub}>
             <p className="error" hidden={isSuccess}>
               Invalid Pin Number
+            </p>
+            <p className="error" hidden={!isOverAttempts}>
+              {`Sorry, ${department} doesn’t have any additional open slots available.`} 
             </p>
             <label>Enter Employer Pin:</label>
             <br></br>

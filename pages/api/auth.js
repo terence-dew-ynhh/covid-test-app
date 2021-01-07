@@ -31,14 +31,31 @@ handler.post(async (req, res) => {
   let { department, pin } = req.body;
 
   try {
-    const items = await req.db
+    const employer = await req.db
       .collection('pin_list')
       .findOne({ department: department, pin: pin });
 
-    let result = ( items == null ) ? false : true;
+      console.log(employer.count);
+    if (employer.count > 0) {
+      let updateVals = {
+        $set: {
+          count: employer.count - 1
+        }
+      };
+      try {
+        const items = await req.db
+          .collection('pin_list')
+          .findOneAndUpdate({ department: department }, updateVals, {
+            upsert: true
+          });
+      } finally {
+        let result = employer == null ? false : true;
 
-    res.status(200).send({isValid: result});
-
+        res.status(200).send({ isValid: result });
+      }
+    } else {
+      res.status(500).send({ overCount: true });
+    }
   } catch (err) {
     res.status(400).send(`Something went wrong: ${err}`);
   }

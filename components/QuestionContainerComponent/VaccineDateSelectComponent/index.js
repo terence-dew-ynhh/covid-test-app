@@ -14,7 +14,8 @@ const VaccineDateSelectComponent = ({
   isDoneEnabled,
   updateField,
   verifyPin,
-  isPfizer
+  isPfizer,
+  setReccDate
 }) => {
   const [selectedDate, setSelectedDate] = useState(new Date());
 
@@ -22,11 +23,13 @@ const VaccineDateSelectComponent = ({
     isDoneEnabled(true);
     isPrevEnabled(true);
     isNextEnabled(false);
+    setReccDate(getFormattedDate( new Date()));
   }, []);
 
   const handleDateChange = (date) => {
     console.log(date);
     setSelectedDate(date);
+    setReccDate(getFormattedDate(date));
   };
 
   Date.prototype.addDays = function (days) {

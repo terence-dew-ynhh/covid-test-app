@@ -13,8 +13,9 @@ const QuestionFormComponent = () => {
 
   //New States
   const [department, setDepartment] = useState("Cornell Scott");
-  const [isPfizer, setIsPfizer] = useState(true);
+  const [isPfizer, setIsPfizer] = useState(null);
   const [viewJump, setviewJump] = useState([]);
+  const [selDate, setSelDate] = useState('')
 
   const compNames = ['deptselect','pininput','vaccineconsent','firstdose','listconditions','testedpositive','covidsymptoms','factsheet', 'quartinecovid','selectedvaccine','vaccinedateselect','selectsymptoms'];
   
@@ -59,10 +60,13 @@ const QuestionFormComponent = () => {
     setIsPfizer(isPfizerSelected);
   }
 
-  const schedulePush = (isdisqualified) => {
+  const setReccDate = (date) => {
+    setSelDate(date);
+  }
 
-    if(isdisqualified) router.push(`/thankyou`);
-    else router.push(`/scheduling?endpoint=${endPoint}`,'/scheduling');
+  const schedulePush = () => {
+
+     router.push(`/scheduling?recc_date=${selDate}&second_dose=${(isPfizer == null ? false : true)}`,'/scheduling');
   };
 
   const updateLocation = (endpoint) =>{
@@ -95,6 +99,7 @@ const QuestionFormComponent = () => {
         verifyPin = {verifyPin}
         isPfizer={isPfizer}
         pfizerSelected={pfizerSelected}
+        setReccDate={setReccDate}
       ></QuestionView>
     </div>
   );

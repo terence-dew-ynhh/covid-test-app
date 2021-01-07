@@ -53,7 +53,7 @@ const PinInputComponent = ({
             <br></br>
             <TextField
               error={!isSuccess}
-              label="Enter Your Department Pin"
+              label="Enter Your Employer Pin"
               onChange={(e) => setPin(e.target.value)}
               variant="outlined"
             />

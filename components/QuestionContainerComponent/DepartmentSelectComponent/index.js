@@ -47,7 +47,7 @@ const DepartmentSelectComponent = ({
           renderInput={(params) => (
             <TextField
               {...params}
-              label="Select Department"
+              label="Select Employer"
               variant="outlined"
             />
           )}

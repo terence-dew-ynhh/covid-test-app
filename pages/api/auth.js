@@ -61,20 +61,20 @@ handler.post(async (req, res) => {
   }
 });
 
-// handler.post(async (req, res) => {
-//   await runMiddleware(req, res, cors);
+handler.post(async (req, res) => {
+  await runMiddleware(req, res, cors);
 
-//   let { department, pin } = req.body;
+  let { department, pin } = req.body;
 
-//   try {
-//     const items = await req.db
-//       .collection('pin_list')
-//       .insertOne({ department: department, pin: pin });
+  try {
+    const items = await req.db
+      .collection('pin_list')
+      .insertOne({ department: department, pin: pin });
 
-//     res.status(200).send('Document Updated');
-//   } catch (err) {
-//     res.status(400).end(`Something went wrong: ${err}`);
-//   }
-// });
+    res.status(200).send('Document Updated');
+  } catch (err) {
+    res.status(400).end(`Something went wrong: ${err}`);
+  }
+});
 
 export default handler;

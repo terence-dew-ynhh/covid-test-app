@@ -26,7 +26,7 @@ const FactSheetComponent = ({
       <div className="radio_grp">
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
-            <p className="error" hidden={!(isDiagnosed === 'Yes')}>
+            <p className="error" hidden={!(isDiagnosed === 'No')}>
               Follow instructions below, or contact your provider's office to
               schedule.
               <br></br>
@@ -38,14 +38,38 @@ const FactSheetComponent = ({
                 Have you read the Emergency Use Authorization Fact Sheet and
                 consent to receiving the vaccination for Covid-19? <br></br>
                 <br></br>
-                <a target='__blank' href="https://www.fda.gov/media/144414/download">
+                <a
+                  target="__blank"
+                  href="https://www.fda.gov/media/144414/download"
+                >
                   Pfizer Vaccination EUA
                 </a>{' '}
                 <br></br>
                 <br></br>
-                <a target='__blank' href="https://www.fda.gov/media/144638/download">
+                <a
+                  target="__blank"
+                  href="https://www.fda.gov/media/144638/download"
+                >
                   Moderna Vaccination EUA
                 </a>
+                <br></br>
+                <br></br>
+                <a
+                  target="__blank"
+                  href="https://mychart.ynhhs.org/MyChart-PRD/en-US/PDF/ESPCOVIDPfizerVaccineFactSheet.pdf"
+                >
+                  Pfizer Vaccination EUA (Spanish)
+                </a>{' '}
+                <br></br>
+                <br></br>
+                <a
+                  target="__blank"
+                  href="https://mychart.ynhhs.org/MyChart-PRD/en-US/PDF/ESPCOVIDModernaVaccineFactSheet.pdf"
+                >
+                  Moderna Vaccination EUA (Spanish)
+                </a>
+                <br></br>
+                <br></br>
               </legend>
               <div className="radio_row_item">
                 <input

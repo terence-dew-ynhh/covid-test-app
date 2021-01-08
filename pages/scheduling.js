@@ -10,13 +10,14 @@ export default function Home({ link, recc_date, second_dose }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className='grid'>
-      <img src="/YNHHSLogo.png"></img>
+      <div className="grid">
+        <img src="/YNHHSLogo.png"></img>
       </div>
 
-      
       <div className="scheduleContainer">
-      <h3>{(second_dose == 'true') && `Please Select Date After ${recc_date}`}</h3>
+        <h3>
+          {second_dose == 'true' && `Please Select Date After ${recc_date}`}
+        </h3>
         <iframe
           id="openSchedulingFrame"
           className="widgetframe"
@@ -34,7 +35,7 @@ export default function Home({ link, recc_date, second_dose }) {
           justify-items: center;
           border: none;
         }
-        h3{
+        h3 {
           margin-left: 25px;
         }
       `}</style>
@@ -44,8 +45,10 @@ export default function Home({ link, recc_date, second_dose }) {
 
 Home.getInitialProps = async ({ query }) => {
   const { recc_date, second_dose } = query;
-  let link = 'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=11959,11961&vt=10542&dept=105150003&view=plain&public=1';
-  
+  let link =
+    second_dose == 'true'
+      ? 'https://mychartnp.ynhhs.org/POC/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=83667&vt=2295&dept=204150016&view=plain&public=1'
+      : 'https://mychartnp.ynhhs.org/POC/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=83666&vt=2293&dept=204150016&view=plain&public=1';
 
   return {
     link,
@@ -53,4 +56,3 @@ Home.getInitialProps = async ({ query }) => {
     second_dose
   };
 };
- 

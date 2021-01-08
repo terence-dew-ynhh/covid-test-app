@@ -36,6 +36,7 @@ handler.post(async (req, res) => {
       .findOne({ department: department, pin: pin });
 
       console.log(employer.count);
+      
     if (employer.count > 0) {
       let updateVals = {
         $set: {
@@ -57,7 +58,7 @@ handler.post(async (req, res) => {
       res.status(500).send({ overCount: true });
     }
   } catch (err) {
-    res.status(400).send(`Something went wrong: ${err}`);
+    res.status(200).send({ isValid: false });
   }
 });
 

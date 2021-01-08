@@ -27,23 +27,13 @@ const SelectVaccineComponent = ({
       <div className="radio_grp">
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
+            <p className="banner">
+              Please bring Vaccine card from dose 1 to appointment.
+            </p>
+            <br></br><br></br>
             <fieldset>
               <legend>Which Vaccine Did you Receive?</legend>
-              <div className="radio_row_item">
-                <input
-                  id="prev_covid_yes"
-                  type="radio"
-                  value="Yes"
-                  name="prev_covid"
-                  onClick={(e) => {
-                    pfizerSelected(true);
-                    nextPage(e);
-                  }}
-                ></input>
-                <label htmlFor="prev_covid_yes">Pfizer</label>
-              </div>
-              <br></br>
-              <br></br>
+
               <div className="radio_row_item">
                 <input
                   id="prev_covid_no"
@@ -56,6 +46,21 @@ const SelectVaccineComponent = ({
                   }}
                 ></input>
                 <label htmlFor="prev_covid_no">Moderna</label>
+              </div>
+              <br></br>
+              <br></br>
+              <div className="radio_row_item">
+                <input
+                  id="prev_covid_yes"
+                  type="radio"
+                  value="Yes"
+                  name="prev_covid"
+                  onClick={(e) => {
+                    pfizerSelected(true);
+                    nextPage(e);
+                  }}
+                ></input>
+                <label htmlFor="prev_covid_yes">Pfizer</label>
               </div>
             </fieldset>
           </div>

@@ -9,20 +9,21 @@ const QuarantineComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateFie
     isPrevEnabled(true);
   }, []);
 
-  const choiceSelected = (e) => {
-    if(e.target.value === 'Yes') schedulePush(true);
-    else nextPage(e.target.value); 
-    setIsDiagnosed(e.target.value);
-    
-  }
+
 
   return (
     <>
       <div className="radio_grp">
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
+          <p className="error" hidden={!(isDiagnosed === 'Yes')}>
+              You are in quarantine and are not eligible for the vaccination at this time.
+              <br></br>
+              <br></br>
+              Thank you, you may close the page at this time.
+            </p>
             <fieldset>
-              <legend>Are you in quarantine for Covid-19 related exposure?:</legend>
+              <legend>Are you in Quarantine for Covid-19 related exposure?:</legend>
               <div className="radio_row_item">
                 <input
                   id="prev_covid_yes"
@@ -31,7 +32,7 @@ const QuarantineComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateFie
                   name="prev_covid"
                   onClick={ 
                     (e) =>{
-                      
+                      setIsDiagnosed(e.target.value);
                     }
                   }
                 ></input>

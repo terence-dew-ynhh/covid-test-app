@@ -21,6 +21,7 @@ const FirstDoseComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateFiel
       <div className="radio_grp">
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
+
             <fieldset>
               <legend>Are you scheduling for your first dose of COVID19 vaccine?:</legend>
 

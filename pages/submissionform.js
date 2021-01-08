@@ -122,6 +122,7 @@ export default function SubmissionForm({ rtwStatus, pathway }) {
 
   useEffect(() => {
     if (Object.keys(formErrors).length === 0 && isSubmitting) {
+      setIsSubmitting(false);
       sendData();
     }
   }, [formErrors, isSubmitting, sendData]);
@@ -236,7 +237,7 @@ export default function SubmissionForm({ rtwStatus, pathway }) {
           {formErrors.dob && <span className="">{formErrors.dob}</span>}
           <input
             className="centered_button"
-            disabled={submitSuccessful}
+            hidden={submitSuccessful}
             type="submit"
           />
         </form>

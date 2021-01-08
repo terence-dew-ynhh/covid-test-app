@@ -26,7 +26,7 @@ const RecentCovidTestComponent = ({
             </p>
             <fieldset>
               <legend>
-              Have you had a recent COVID-19 test on or after day # 6 of your quarantine to come out of quarantine of 7 days?
+              Have you had a recent COVID-19 test on or after day # 10 of your quarantine to come out of quarantine of 10 days?
               </legend>
 
               <div className="radio_row_item">

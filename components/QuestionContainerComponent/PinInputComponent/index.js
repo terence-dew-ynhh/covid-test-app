@@ -63,6 +63,7 @@ const PinInputComponent = ({
               label="Enter Your Employer Pin"
               onChange={(e) => setPin(e.target.value)}
               variant="outlined"
+              autoFocus
             />
           </div>
           <button className={styles.button} hidden={(attempts == 0)} onClick={onSubmit}>

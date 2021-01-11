@@ -49,6 +49,7 @@ const DepartmentSelectComponent = ({
               {...params}
               label="Select Employer"
               variant="outlined"
+              autoFocus
             />
           )}
         />

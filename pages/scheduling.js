@@ -44,11 +44,11 @@ export default function Home({ link, recc_date, second_dose }) {
 }
 
 Home.getInitialProps = async ({ query }) => {
-  const { recc_date, second_dose } = query;
+  const { recc_date, second_dose, isPfizer } = query;
   let link =
     second_dose == 'true'
-      ? 'https://mychartnp.ynhhs.org/POC/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=83667&vt=2295&dept=204150016&view=plain&public=1'
-      : 'https://mychartnp.ynhhs.org/POC/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=83666&vt=2293&dept=204150016&view=plain&public=1';
+      ? isPfizer == 'true' ? 'https://mychartnp.ynhhs.org/POC/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=83667&vt=2295&dept=204150016&view=plain&public=1' : 'https://mychart.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=83667&vt=2295&dept=204150016&view=plain&public=1'
+      : 'https://mychart.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=83666&vt=2293&dept=204150016&view=plain&public=1';
 
   return {
     link,

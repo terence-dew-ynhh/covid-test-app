@@ -66,7 +66,7 @@ const QuestionFormComponent = () => {
 
   const schedulePush = () => {
 
-     router.push(`/scheduling?recc_date=${selDate}&second_dose=${(isPfizer == null ? false : true)}`,'/scheduling');
+     router.push(`/scheduling?recc_date=${selDate}&second_dose=${(isPfizer == null ? false : true)}&isPfizer=${isPfizer}`,'/scheduling');
   };
 
   const updateLocation = (endpoint) =>{

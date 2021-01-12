@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import styles from './TestedPositiveComponent.module.css';
 
-const TestedPositiveComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateField, schedulePush }) => {
+const TestedPositiveComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateAnswerData, schedulePush }) => {
   const [isDiagnosed, setIsDiagnosed] = useState('');
 
   useEffect(() => {
@@ -9,12 +9,6 @@ const TestedPositiveComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updat
     isPrevEnabled(true);
   }, []);
 
-  const choiceSelected = (e) => {
-    if(e.target.value === 'Yes') schedulePush(true);
-    else nextPage(e.target.value); 
-    setIsDiagnosed(e.target.value);
-    
-  }
 
   return (
     <>
@@ -55,6 +49,7 @@ const TestedPositiveComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updat
                     name="prev_covid"
                     onClick={
                       (e) =>{
+                        updateAnswerData({tested_pos_4_weeks: e.target.value});
                         nextPage(e)
                       }
                     }

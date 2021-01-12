@@ -5,8 +5,7 @@ const CovidSymptomsComponent = ({
   nextPage,
   isPrevEnabled,
   isDoneEnabled,
-  updateField,
-  schedulePush
+  updateAnswerData
 }) => {
   const [isDiagnosed, setIsDiagnosed] = useState('');
 
@@ -46,6 +45,7 @@ const CovidSymptomsComponent = ({
                     value="No"
                     name="prev_covid"
                     onClick={(e) => {
+                      updateAnswerData({prev_test_pos: e.target.value})
                       nextPage(e);
                     }}
                   ></input>

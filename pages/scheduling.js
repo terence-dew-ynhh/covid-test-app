@@ -49,7 +49,7 @@ Home.getInitialProps = async ({ query }) => {
     second_dose == 'true'
       ? isPfizer == 'true'
         ? 'https://mychartnp.ynhhs.org/POC/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=83667&vt=2295&dept=204150016&view=plain&public=1'
-        : 'https://mychart.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=83667&vt=2295&dept=204150016&view=plain&public=1'
+        : 'https://mychart.ynhhs.org/MYCHART-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=83667&vt=2338&dept=204150016&view=plain&public=1'
       : 'https://mychart.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=83666&vt=2293&dept=204150016&view=plain&public=1';
 
   return {

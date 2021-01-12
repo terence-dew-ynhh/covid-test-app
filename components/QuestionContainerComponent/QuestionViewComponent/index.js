@@ -18,13 +18,13 @@ const QuestionViewComponent = ({
   nextPage,
   prevPage,
   schedulePush,
-  updateLocation,
   setDepartment,
   verifyPin,
   isPfizer,
   pfizerSelected,
   setReccDate,
-  department
+  department,
+  updateAnswerData
 }) => {
   const [prevEnabled, setPrevEnabled] = useState(false);
   const [nextEnabled, setNextEnabled] = useState(false);
@@ -81,6 +81,7 @@ const QuestionViewComponent = ({
           pfizerSelected={pfizerSelected}
           setReccDate={setReccDate}
           department={department}
+          updateAnswerData={updateAnswerData}
         />
       </div>
       <div className={styles.buttonContainer}>

@@ -10,7 +10,8 @@ const DepartmentSelectComponent = ({
   isNextEnabled,
   isDoneEnabled,
   updateAge,
-  setDepartment
+  setDepartment,
+  updateAnswerData
 }) => {
   const [ageCount, setAgeCount] = useState(18);
 
@@ -41,6 +42,7 @@ const DepartmentSelectComponent = ({
           getOptionLabel={(dept) => dept}
           onChange={(e, selDept) => {
             setDepartment(selDept);
+            updateAnswerData({employer: selDept});
             isNextEnabled(true);
           }}
           style={{ width: 300 }}

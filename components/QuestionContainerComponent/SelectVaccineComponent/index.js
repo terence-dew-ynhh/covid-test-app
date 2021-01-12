@@ -7,7 +7,8 @@ const SelectVaccineComponent = ({
   isDoneEnabled,
   updateField,
   schedulePush,
-  pfizerSelected
+  pfizerSelected,
+  updateAnswerData
 }) => {
   const [isDiagnosed, setIsDiagnosed] = useState('');
 
@@ -41,6 +42,7 @@ const SelectVaccineComponent = ({
                   value="No"
                   name="prev_covid"
                   onClick={(e) => {
+                    updateAnswerData({sel_vaccine: 'Moderna'});
                     pfizerSelected(false);
                     nextPage(e);
                   }}
@@ -56,6 +58,7 @@ const SelectVaccineComponent = ({
                   value="Yes"
                   name="prev_covid"
                   onClick={(e) => {
+                    updateAnswerData({sel_vaccine: 'Pfizer'});
                     pfizerSelected(true);
                     nextPage(e);
                   }}

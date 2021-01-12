@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import styles from './FirstDoseComponent.module.css';
 
-const FirstDoseComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateField, schedulePush }) => {
+                      
+const FirstDoseComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateAnswerData }) => {
   const [isDiagnosed, setIsDiagnosed] = useState('');
 
   useEffect(() => {
@@ -9,12 +10,6 @@ const FirstDoseComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateFiel
     isPrevEnabled(false);
   }, []);
 
-  const choiceSelected = (e) => {
-    if(e.target.value === 'Yes') schedulePush(true);
-    else nextPage(e.target.value); 
-    setIsDiagnosed(e.target.value);
-    
-  }
 
   return (
     <>
@@ -33,6 +28,7 @@ const FirstDoseComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateFiel
                   name="prev_covid"
                   onClick={ 
                     (e) =>{
+                      updateAnswerData({first_dose: e.target.value});
                       nextPage(e);
                     }
                   }
@@ -46,6 +42,7 @@ const FirstDoseComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateFiel
                     name="prev_covid"
                     onClick={
                       (e) =>{
+                        updateAnswerData({first_dose: e.target.value});
                         nextPage(e,6)
                       }
                     }

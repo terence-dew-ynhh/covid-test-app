@@ -15,7 +15,8 @@ const VaccineDateSelectComponent = ({
   updateField,
   verifyPin,
   isPfizer,
-  setReccDate
+  setReccDate,
+  updateAnswerData
 }) => {
   const [selectedDate, setSelectedDate] = useState(new Date());
 

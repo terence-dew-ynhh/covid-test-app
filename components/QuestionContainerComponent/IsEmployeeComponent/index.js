@@ -11,7 +11,7 @@ const IsEmployeeComponent = ({
 
   useEffect(() => {
     isDoneEnabled(false);
-    isPrevEnabled(true);
+    isPrevEnabled(false);
   }, []);
 
   return (

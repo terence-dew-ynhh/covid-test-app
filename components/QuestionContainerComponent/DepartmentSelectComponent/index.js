@@ -16,7 +16,7 @@ const DepartmentSelectComponent = ({
   const [ageCount, setAgeCount] = useState(18);
 
   useEffect(() => {
-    isPrevEnabled(false);
+    isPrevEnabled(true);
     isDoneEnabled(false);
     isNextEnabled(false);
     // updateAge(18);

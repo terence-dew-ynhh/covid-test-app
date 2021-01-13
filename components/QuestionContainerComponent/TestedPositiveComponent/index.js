@@ -1,7 +1,13 @@
 import { useState, useEffect } from 'react';
 import styles from './TestedPositiveComponent.module.css';
 
-const TestedPositiveComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateAnswerData, schedulePush }) => {
+const TestedPositiveComponent = ({
+  nextPage,
+  isPrevEnabled,
+  isDoneEnabled,
+  updateAnswerData,
+  schedulePush
+}) => {
   const [isDiagnosed, setIsDiagnosed] = useState('');
 
   useEffect(() => {
@@ -9,36 +15,36 @@ const TestedPositiveComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updat
     isPrevEnabled(true);
   }, []);
 
-
   return (
     <>
       <div className="radio_grp">
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
-          <p className="error" hidden={!isDiagnosed}>
-          COVID Vaccination is recommended after 4 weeks from your intitial positive COVID-19 test
-          <br></br><br></br>
-          When this time has passed please return to MyChart to schedule your vaccinate appointment. 
+            <p className="error" hidden={!isDiagnosed}>
+              When this time has passed, please return to this page to schedule
+              your vaccine appointment
             </p>
-         
+
             <fieldset>
               <legend>
                 Have you tested positive for Covid-19 in the last 4 weeks?:
-                <br></br><br></br>
-                <b>You must wait for 4 weeks or more after your initial positive COVID-19 test before being vaccinated</b>
+                <br></br>
+                <br></br>
+                <b>
+                  You must wait for 4 weeks or more after your initial positive
+                  COVID-19 test before being vaccinated
+                </b>
               </legend>
-              
+
               <div className="radio_row_item">
                 <input
                   id="prev_covid_yes"
                   type="radio"
                   value="Yes"
                   name="prev_covid"
-                  onClick={ 
-                    (e) =>{
-                     setIsDiagnosed(true) 
-                    }
-                  }
+                  onClick={(e) => {
+                    setIsDiagnosed(true);
+                  }}
                 ></input>
                 <label htmlFor="prev_covid_yes">Yes</label>
                 <div className="radio_row_item">
@@ -47,18 +53,16 @@ const TestedPositiveComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updat
                     type="radio"
                     value="No"
                     name="prev_covid"
-                    onClick={
-                      (e) =>{
-                        updateAnswerData({tested_pos_4_weeks: e.target.value});
-                        nextPage(e)
-                      }
-                    }
+                    onClick={(e) => {
+                      updateAnswerData({ tested_pos_4_weeks: e.target.value });
+                      nextPage(e);
+                    }}
                   ></input>
                   <label htmlFor="prev_covid_no">No</label>
                 </div>
               </div>
             </fieldset>
-          </div>          
+          </div>
         </div>
       </div>
       <style jsx>{``}</style>

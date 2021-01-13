@@ -11,6 +11,8 @@ import SelectVaccineComponent from '../SelectVaccineComponent';
 import QuarantineComponent from '../QuarantineComponent';
 import SelectSymptomsComponent from '../SelectSymptomsComponent'
 import ReceiveVaccinationConsent from '../ReceiveVaccinationConsent'
+import IsEmployeeComponent from '../IsEmployeeComponent'
+import AgeComponent from '../AgeComponent'
 import styles from './QuestionViewComponent.module.css';
 
 const QuestionViewComponent = ({
@@ -24,7 +26,8 @@ const QuestionViewComponent = ({
   pfizerSelected,
   setReccDate,
   department,
-  updateAnswerData
+  updateAnswerData,
+  updateHeader
 }) => {
   const [prevEnabled, setPrevEnabled] = useState(false);
   const [nextEnabled, setNextEnabled] = useState(false);
@@ -60,7 +63,9 @@ const QuestionViewComponent = ({
     vaccinedateselect: VaccineDateSelectComponent,
     quartinecovid: QuarantineComponent,
     selectsymptoms: SelectSymptomsComponent,
-    vaccineconsent: ReceiveVaccinationConsent
+    vaccineconsent: ReceiveVaccinationConsent,
+    employee: IsEmployeeComponent,
+    age: AgeComponent
   };
 
   const ComponentName = components[compName || 'pininput'];
@@ -82,6 +87,7 @@ const QuestionViewComponent = ({
           setReccDate={setReccDate}
           department={department}
           updateAnswerData={updateAnswerData}
+          updateHeader={updateHeader}
         />
       </div>
       <div className={styles.buttonContainer}>
@@ -94,9 +100,9 @@ const QuestionViewComponent = ({
         <button
           className="button"
           hidden={!doneEnabled}
-          onClick={() => schedulePush(false)}
+          onClick={() => {schedulePush(false);}}
         >
-          Schedule Appoinment
+          Schedule Appointment
         </button>
       </div>
     </div>

@@ -3,7 +3,7 @@ import QuestionView from './QuestionViewComponent';
 import styles from './QuestionContainerComponent.module.css';
 import { useRouter } from 'next/router';
 
-const QuestionFormComponent = () => {
+const QuestionFormComponent = ({updateHeader}) => {
   const [viewIdx, setviewIdx] = useState(0);
 
    //New States
@@ -12,9 +12,10 @@ const QuestionFormComponent = () => {
   const [viewJump, setviewJump] = useState([]);
   const [selDate, setSelDate] = useState('');
   const [responseData, setResponseData] = useState({});
-  const [responseOrder, setResponseOrder] = useState([]);
 
   const compNames = [
+    'employee',
+    'age',
     'deptselect',
     'pininput',
     'vaccineconsent',
@@ -44,6 +45,20 @@ const QuestionFormComponent = () => {
         department: department,
         pin: pin
       })
+    });
+    return res.json();
+  };
+
+  const submitData = async () => {
+    //axios POST request to auth
+    //next page if response true
+    // error message if false
+
+    const action = 'post';
+    const res = await fetch('/api/responses', {
+      method: action,
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(responseData)
     });
     return res.json();
   };
@@ -79,6 +94,7 @@ const QuestionFormComponent = () => {
   }
 
   const schedulePush = () => {
+    submitData(); 
     router.push(
       `/scheduling?recc_date=${selDate}&second_dose=${
         isPfizer == null ? false : true
@@ -87,7 +103,7 @@ const QuestionFormComponent = () => {
     );
   };
 
-
+  
   let progressWidth = Math.floor(100 * ((viewIdx + 1) / 7));
 
   return (
@@ -119,6 +135,8 @@ const QuestionFormComponent = () => {
         setReccDate={setReccDate}
         department={department}
         updateAnswerData={updateAnswerData}
+        submitData={submitData}
+        updateHeader={updateHeader}
       ></QuestionView>
     </div>
   );

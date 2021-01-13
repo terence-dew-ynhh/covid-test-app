@@ -31,6 +31,7 @@ const VaccineDateSelectComponent = ({
     console.log(date);
     setSelectedDate(date);
     setReccDate(getFormattedDate(date));
+    updateAnswerData({first_dose_date: getFormattedDate(date)})
   };
 
   Date.prototype.addDays = function (days) {

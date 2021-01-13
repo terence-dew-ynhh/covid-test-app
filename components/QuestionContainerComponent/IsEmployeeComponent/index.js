@@ -1,14 +1,13 @@
 import { useState, useEffect } from 'react';
-import styles from './CovidSymptomsComponent.module.css';
+import styles from './IsEmployeeComponent.module.css';
 
-const CovidSymptomsComponent = ({
+const IsEmployeeComponent = ({
   nextPage,
   isPrevEnabled,
   isDoneEnabled,
-  updateField,
-  schedulePush
+  updateAnswerData,
+  updateHeader
 }) => {
-  const [isDiagnosed, setIsDiagnosed] = useState('');
 
   useEffect(() => {
     isDoneEnabled(false);
@@ -20,15 +19,10 @@ const CovidSymptomsComponent = ({
       <div className="radio_grp">
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
-            <p className="error" hidden={!(isDiagnosed === 'Yes')}>
-            Those that have previously tested positive are currently not
-            eligible for COVID-19 screening.
-          </p>
-            <fieldset>
+
+          <fieldset>
               <legend>
-                Do you have any of the following Covid-19 symptoms? Fever, nasal
-                congestion, new loss of taste or smell, runny nose, sore throat,
-                conjunctivitis ("red eye"), shortness of breath, new headaches, body aches, nausea/vomiting, diarrhea, or severe fatigue:
+              What kind of COVID19 vaccination invite do you have?
               </legend>
               <div className="radio_row_item">
                 <input
@@ -36,9 +30,12 @@ const CovidSymptomsComponent = ({
                   type="radio"
                   value="Yes"
                   name="prev_covid"
-                  onClick={(e) => { setIsDiagnosed('Yes')}}
+                  onClick={(e) => {
+                    updateAnswerData({ is_employee: e.target.value });
+                    nextPage(e, 2);
+                  }}
                 ></input>
-                <label htmlFor="prev_covid_yes">Yes</label>
+                <label htmlFor="prev_covid_yes">Organizational</label>
                 <div className="radio_row_item">
                   <input
                     id="prev_covid_no"
@@ -46,10 +43,12 @@ const CovidSymptomsComponent = ({
                     value="No"
                     name="prev_covid"
                     onClick={(e) => {
+                      updateAnswerData({ is_employee: e.target.value });
+                      updateHeader(true);
                       nextPage(e);
                     }}
                   ></input>
-                  <label htmlFor="prev_covid_no">No</label>
+                  <label htmlFor="prev_covid_no">Individual</label>
                 </div>
               </div>
             </fieldset>
@@ -61,4 +60,4 @@ const CovidSymptomsComponent = ({
   );
 };
 
-export default CovidSymptomsComponent;
+export default IsEmployeeComponent;

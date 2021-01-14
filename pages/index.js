@@ -24,7 +24,7 @@ function Home({ uuid }) {
         <img src="/YNHHSLogo.png"></img>
       </div>
       <h1 className="title">COVID-19 Vaccine Scheduler</h1>
-      {callText}
+      {/* {callText} */}
       <QuestionContainerComponent uuid={uuid} updateHeader={updateHeader} />
     </div>
   );

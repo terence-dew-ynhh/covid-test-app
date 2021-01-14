@@ -22,7 +22,7 @@ const IsEmployeeComponent = ({
 
           <fieldset>
               <legend>
-              What kind of COVID19 vaccination invite do you have?
+              Are you been vaccinated as part of:
               </legend>
               <div className="radio_row_item">
                 <input
@@ -35,7 +35,7 @@ const IsEmployeeComponent = ({
                     nextPage(e, 2);
                   }}
                 ></input>
-                <label htmlFor="prev_covid_yes">Organizational</label>
+                <label htmlFor="prev_covid_yes">An Organization</label>
                 {/* <div className="radio_row_item">
                   <input
                     id="prev_covid_no"
@@ -48,7 +48,7 @@ const IsEmployeeComponent = ({
                       nextPage(e);
                     }}
                   ></input>
-                  <label htmlFor="prev_covid_no">Individual</label>
+                  <label htmlFor="prev_covid_no">As an Individual</label>
                 </div> */}
               </div>
             </fieldset>

@@ -55,6 +55,8 @@ const ReceiveVaccinationConsent = ({
             <legend>
               Only the following individuals are eligible to receive vaccine:
               <br></br>
+              <br></br>- 75 years of age or older.
+              <br></br>
               <br></br>- Healthcare personnel
               <br></br>
               <br></br>- Long-term care facility residents

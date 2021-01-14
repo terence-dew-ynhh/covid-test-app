@@ -60,13 +60,6 @@ const ListedConditionsConsent = ({
               appointment. If you would like to wait to schedule your vaccine
               appointment until you speak to a provider, that is up to you.
               <br></br>
-              <br></br>- You are or could be currently pregnant, or planning to
-              be pregnant in the next 3 months. (Person receiving vaccination
-              should speak with: Obstetrician/Midwife)
-              <br></br>
-              <br></br>- You are currently breastfeeding (Person receiving
-              vaccination should speak with: Obstetrician/Midwife/Pediatrician)
-              <br></br>
               <br></br>- You had an anaphylactic or other severe reaction to any
               type of vaccine, injectable drug, or food in the past. (Person
               receiving vaccination should speak with: Primary Care/Allergist)
@@ -78,6 +71,13 @@ const ListedConditionsConsent = ({
               <br></br>- You have a serious bleeding disorder (such as
               hemophilia), very low platelets (less than 50,000) or are on an
               anti-coagulant ("blood thinner")?
+              <br></br>
+              <br></br>- You are or could be currently pregnant, or planning to
+              be pregnant in the next 3 months. (Person receiving vaccination
+              should speak with: Obstetrician/Midwife)
+              <br></br>
+              <br></br>- You are currently breastfeeding (Person receiving
+              vaccination should speak with: Obstetrician/Midwife/Pediatrician)
               <br></br>
               <br></br>
             </legend>

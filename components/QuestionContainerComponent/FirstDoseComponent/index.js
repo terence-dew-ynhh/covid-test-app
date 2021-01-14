@@ -43,7 +43,7 @@ const FirstDoseComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateAnsw
                     onClick={
                       (e) =>{
                         updateAnswerData({first_dose: e.target.value});
-                        nextPage(e,6)
+                        nextPage(e,7)
                       }
                     }
                   ></input>

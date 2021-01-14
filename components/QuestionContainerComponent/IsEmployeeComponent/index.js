@@ -36,6 +36,8 @@ const IsEmployeeComponent = ({
                   }}
                 ></input>
                 <label htmlFor="prev_covid_yes">An Organization</label>
+                <br></br>
+                <br></br>
                 <div className="radio_row_item">
                   <input
                     id="prev_covid_no"

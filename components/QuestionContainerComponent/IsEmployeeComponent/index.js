@@ -36,7 +36,7 @@ const IsEmployeeComponent = ({
                   }}
                 ></input>
                 <label htmlFor="prev_covid_yes">Organizational</label>
-                <div className="radio_row_item">
+                {/* <div className="radio_row_item">
                   <input
                     id="prev_covid_no"
                     type="radio"
@@ -49,7 +49,7 @@ const IsEmployeeComponent = ({
                     }}
                   ></input>
                   <label htmlFor="prev_covid_no">Individual</label>
-                </div>
+                </div> */}
               </div>
             </fieldset>
           </div>

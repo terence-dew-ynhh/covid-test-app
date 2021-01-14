@@ -14,8 +14,8 @@ const QuestionFormComponent = ({updateHeader}) => {
   const [responseData, setResponseData] = useState({});
 
   const compNames = [
-    // 'employee',
-    // 'age',
+    'employee',
+    'age',
     'deptselect',
     'pininput',
     'vaccineconsent',

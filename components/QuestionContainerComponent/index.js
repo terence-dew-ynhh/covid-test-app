@@ -23,6 +23,7 @@ const QuestionFormComponent = ({updateHeader}) => {
     'listconditions',
     'testedpositive',
     'covidsymptoms',
+    'monoclonal',
     'factsheet',
     'quartinecovid',
     'selectedvaccine',

@@ -13,6 +13,7 @@ import SelectSymptomsComponent from '../SelectSymptomsComponent'
 import ReceiveVaccinationConsent from '../ReceiveVaccinationConsent'
 import IsEmployeeComponent from '../IsEmployeeComponent'
 import AgeComponent from '../AgeComponent'
+import MonoclonalComponent from '../MonoclonalComponent'
 import styles from './QuestionViewComponent.module.css';
 
 const QuestionViewComponent = ({
@@ -65,7 +66,8 @@ const QuestionViewComponent = ({
     selectsymptoms: SelectSymptomsComponent,
     vaccineconsent: ReceiveVaccinationConsent,
     employee: IsEmployeeComponent,
-    age: AgeComponent
+    age: AgeComponent,
+    monoclonal: MonoclonalComponent
   };
 
   const ComponentName = components[compName || 'pininput'];

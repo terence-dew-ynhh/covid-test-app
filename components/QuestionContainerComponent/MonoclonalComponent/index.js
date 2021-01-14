@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import styles from './QuarantineComponent.module.css';
+import styles from './MonoclonalComponent.module.css';
 
-const QuarantineComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateField, schedulePush }) => {
+const MonoclonalComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateAnswerData }) => {
   const [isDiagnosed, setIsDiagnosed] = useState('');
 
   useEffect(() => {
@@ -17,13 +17,10 @@ const QuarantineComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateFie
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
           <p className="error" hidden={!(isDiagnosed === 'Yes')}>
-              You are in quarantine and are not eligible for the vaccination at this time.
-              <br></br>
-              <br></br>
-              Thank you, you may close the page at this time.
+              CDC recommends vaccination should be deferred for at least 90 days after monoclonal antibody treatment.
             </p>
             <fieldset>
-              <legend>Are you in Quarantine for Covid-19 related exposure?:</legend>
+              <legend>Have you received monoclonal antibodies as part of COVID-19 treatment in the last 90 days?</legend>
               <div className="radio_row_item">
                 <input
                   id="prev_covid_yes"
@@ -45,8 +42,8 @@ const QuarantineComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateFie
                     name="prev_covid"
                     onClick={
                       (e) =>{
-                        updateAnswerData({first_dose: e.target.value});
-                        schedulePush();
+                        updateAnswerData({monoclonal: e.target.value});
+                        nextPage(e);
                       }
                     }
                   ></input>
@@ -62,4 +59,4 @@ const QuarantineComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateFie
   );
 };
 
-export default QuarantineComponent;
+export default MonoclonalComponent;

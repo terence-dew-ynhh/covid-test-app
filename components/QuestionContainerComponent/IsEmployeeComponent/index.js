@@ -22,7 +22,7 @@ const IsEmployeeComponent = ({
 
           <fieldset>
               <legend>
-              Are you been vaccinated as part of:
+              Are you getting vaccinated as part of an organization or as an individual?
               </legend>
               <div className="radio_row_item">
                 <input

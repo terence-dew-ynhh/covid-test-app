@@ -48,9 +48,9 @@ Home.getInitialProps = async ({ query }) => {
   let link =
     second_dose == 'true'
       ? isPfizer == 'true'
-        ? 'https://mychartnp.ynhhs.org/POC/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=83667&vt=2295&dept=204150016&view=plain&public=1'
-        : 'https://mychart.ynhhs.org/MYCHART-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=83667&vt=2338&dept=204150016&view=plain&public=1'
-      : 'https://mychart.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=83666&vt=2293&dept=204150016&view=plain&public=1';
+        ? 'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=83668,83667,74622,84623,83665,83652,83656&vt=2339&dept=204150016,204590014,201280003,208040011,204010005,204400009&view=plain&public=1'
+        : 'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=83667,83868,83874,83664,83653,83655&vt=2338&dept=204150016,204590014,201280003,208040011,204010005,204400009&view=plain&public=1'
+      : 'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=83666,83867,83873,83663,83651,83654&vt=2293&dept=204150016,204590014,201280003,208040011,204010005,204400009&view=plain&public=1';
 
   return {
     link,

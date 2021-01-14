@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import styles from './QuarantineComponent.module.css';
 
-const QuarantineComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateField, schedulePush }) => {
+const QuarantineComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateAnswerData, schedulePush }) => {
   const [isDiagnosed, setIsDiagnosed] = useState('');
 
   useEffect(() => {
@@ -45,7 +45,7 @@ const QuarantineComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateFie
                     name="prev_covid"
                     onClick={
                       (e) =>{
-                        updateAnswerData({first_dose: e.target.value});
+                        updateAnswerData({quarantined: e.target.value});
                         schedulePush();
                       }
                     }

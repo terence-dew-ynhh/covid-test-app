@@ -23,7 +23,12 @@ const AgeComponent = ({
               Sorry you are not eligible for the COVID19 vaccine at this time.
             </p>
             <fieldset>
-              <legend>Are you 75 years or older?</legend>
+              <legend>
+                Are you 75 years or older? <br></br>
+                <br></br>
+                Bring an ID (photo ID if possible) and wear a face mask or
+                covering when visiting the vaccination site.
+              </legend>
               <div className="radio_row_item">
                 <input
                   id="prev_covid_yes"
@@ -32,7 +37,7 @@ const AgeComponent = ({
                   name="prev_covid"
                   onClick={(e) => {
                     updateAnswerData({ over_75: e.target.value });
-                    nextPage(e,3);
+                    nextPage(e, 3);
                   }}
                 ></input>
                 <label htmlFor="prev_covid_yes">Yes</label>

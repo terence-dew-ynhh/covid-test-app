@@ -87,11 +87,15 @@ fieldset {
 .question_div {
   padding: 25px 35px;
 }
-.error{
+.error,.disclaimer{
   color:white;
   background: red;
   padding: 15px 20px;
   font-weight: 600;
+}
+
+.disclaimer{
+  background:  #0f4d92;
 }
 
 .divider {

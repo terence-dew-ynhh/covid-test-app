@@ -70,6 +70,14 @@ const FactSheetComponent = ({
                 </a>
                 <br></br>
                 <br></br>
+                <a
+                  target="__blank"
+                  href="https://mychart.ynhhs.org/mychart-prd/en-US/PDF/YNHHCOVIDConsent.pdf"
+                >
+                  YNHHS Vaccination Consent
+                </a>{' '}
+                <br></br>
+                <br></br>
               </legend>
               <div className="radio_row_item">
                 <input
@@ -80,7 +88,20 @@ const FactSheetComponent = ({
                     nextPage(e);
                   }}
                 ></input>
-                <label htmlFor="prev_covid_agree">Agree</label>
+                <label htmlFor="prev_covid_agree">Yes, and I wish to be vaccinated</label>
+              </div>
+              <br></br>
+              <br></br>
+              <div className="radio_row_item">
+                <input
+                  id="prev_covid_later"
+                  type="radio"
+                  name="prev_covid_later"
+                  onClick={(e) => {
+                    nextPage(e);
+                  }}
+                ></input>
+                <label htmlFor="prev_covid_later">I will read it upon arrival to Vaccination Fair</label>
               </div>
               <br></br>
               <br></br>

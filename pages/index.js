@@ -10,8 +10,8 @@ function Home({ uuid }) {
     setIsIndividual(isIndividualAns);
   };
 
-  let callText = isIndividual && (
-    <h3>For questions, please call (XXX) XXX XXXX </h3>
+  let callText =  (
+    <h3>If you are having technical issues scheduling your vaccine please call 475-246-8041 for assistance.</h3>
   );
 
   return (
@@ -24,8 +24,9 @@ function Home({ uuid }) {
         <img src="/YNHHSLogo.png"></img>
       </div>
       <h1 className="title">COVID-19 Vaccine Scheduler</h1>
-      {/* {callText} */}
+      
       <QuestionContainerComponent uuid={uuid} updateHeader={updateHeader} />
+      {callText}
     </div>
   );
 }

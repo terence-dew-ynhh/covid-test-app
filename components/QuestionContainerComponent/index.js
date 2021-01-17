@@ -105,7 +105,7 @@ const QuestionFormComponent = ({updateHeader}) => {
   };
 
   
-  let progressWidth = Math.floor(100 * ((viewIdx + 1) / 7));
+  let progressWidth = Math.floor(100 * ((viewIdx + 1) / compNames.length));
 
   return (
     <div className={styles.questionContainer}>

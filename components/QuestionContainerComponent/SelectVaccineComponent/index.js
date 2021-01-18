@@ -29,7 +29,7 @@ const SelectVaccineComponent = ({
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
             <p className="banner">
-              Please bring Vaccine card from dose 1 to appointment. Please don’t schedule 2nd dose appointment until you’ve received your 1st dose of vaccine 
+              Please bring Vaccine card from dose 1 to appointment. It is recommended that you obtain dose 2 from the same location where you got dose 1 
             </p>
             <br></br><br></br>
             <fieldset>

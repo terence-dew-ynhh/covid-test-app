@@ -66,7 +66,7 @@ const VaccineDateSelectComponent = ({
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
           <p className="banner">
-              Please don’t schedule 2nd dose appointment until you’ve received your 1st dose of vaccine 
+          It is recommended that you obtain dose 2 from the same location where you got dose 1
             </p>
             <br></br><br></br>
             <label>Select Date you Received First Dose:</label>

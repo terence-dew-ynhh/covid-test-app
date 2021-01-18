@@ -24,14 +24,16 @@ const VaccineDateSelectComponent = ({
     isDoneEnabled(true);
     isPrevEnabled(true);
     isNextEnabled(false);
-    setReccDate(getFormattedDate( new Date()));
+    setReccDate(getFormattedDate(new Date()));
   }, []);
 
   const handleDateChange = (date) => {
-    console.log(date);
     setSelectedDate(date);
-    setReccDate(getFormattedDate(date));
-    updateAnswerData({first_dose_date: getFormattedDate(date)})
+    let recc_date = isPfizer
+      ? getFormattedDate(date.addDays(19))
+      : getFormattedDate(date.addDays(26));
+    setReccDate(recc_date);
+    updateAnswerData({ first_dose_date: getFormattedDate(date) });
   };
 
   Date.prototype.addDays = function (days) {
@@ -53,22 +55,24 @@ const VaccineDateSelectComponent = ({
   }
 
   let suggestedText = isPfizer
-    ? `${getFormattedDate(
-        selectedDate.addDays(19)
-      )} - ${getFormattedDate(selectedDate.addDays(24))}`
-    : `${getFormattedDate(
-        selectedDate.addDays(26)
-      )} - ${getFormattedDate(selectedDate.addDays(31))}`;
+    ? `${getFormattedDate(selectedDate.addDays(19))} - ${getFormattedDate(
+        selectedDate.addDays(24)
+      )}`
+    : `${getFormattedDate(selectedDate.addDays(26))} - ${getFormattedDate(
+        selectedDate.addDays(31)
+      )}`;
 
   return (
     <>
       <div className="radio_grp">
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
-          <p className="banner">
-          It is recommended that you obtain dose 2 from the same location where you got dose 1
+            <p className="banner">
+              It is recommended that you obtain dose 2 from the same location
+              where you got dose 1
             </p>
-            <br></br><br></br>
+            <br></br>
+            <br></br>
             <label>Select Date you Received First Dose:</label>
             <br></br>
             <br></br>

@@ -12,10 +12,15 @@ function Home({ uuid }) {
 
   let callText = (
     <div>
-    <h4>If you are having MyChart or technical issues scheduling your vaccine please call 475-246-8041 for assistance 
-    </h4>
-    <h4>    If you have questions about the vaccine or need help scheduling your vaccine please call 1-833-ASK-YNHH  (275-9644) for assistance.
-    </h4>
+      <h4>
+        {' '}
+        If you have questions about the vaccine or need help scheduling your
+        vaccine please call 1-833-ASK-YNHH (275-9644) for assistance.
+      </h4>
+      <h4>
+        If you are having MyChart or technical issues scheduling your vaccine
+        please call 475-246-8041 for assistance
+      </h4>
     </div>
   );
 

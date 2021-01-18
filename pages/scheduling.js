@@ -53,7 +53,7 @@ Home.getInitialProps = async ({ query }) => {
       ? isPfizer == 'true'
         ? 'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=83668,83667,74622,84623,83665,83652,83656,84799,84798,84796,84797,84800&vt=2339&dept=204150016,204590014,201280003,208040011,204010005,204400009,102360001,102350001,108120001,102370001,102340001&view=plain&public=1'
         : 'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=83667,83868,83874,83664,83653,83655,84793,84794,84791,84792,94795&vt=2338&dept=204150016,204590014,201280003,208040011,204010005,204400009,102360001,102350001,108120001,102370001,102340001&view=plain&public=1'
-      : 'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=83666,83867,83873,83663,83651,83654&vt=2293&dept=204150016,204590014,201280003,208040011,204010005,204400009&view=plain&public=1';
+      : 'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=83666,83867,83873,83663,83651,83654,84788,84789,84786,84787,84790&vt=2293&dept=204150016,204590014,201280003,208040011,204010005,204400009,102360001,102350001,108120001,102370001,102340001&view=plain&public=1';
 
   return {
     link,

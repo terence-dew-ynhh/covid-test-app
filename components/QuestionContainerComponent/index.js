@@ -8,17 +8,20 @@ const QuestionFormComponent = ({}) => {
 
   const [viewIdx, setviewIdx] = useState(0);
   const [endPoint, setEndpoint] = useState('Bridgeport Hospital');
-  const compNames = ['employee', 'overeighteen', 'symptomssel', 'consent'];
+  const compNames = ['employee', 'overeighteen', 'symptomssel', 'healthcare', 'consent'];
+  const [jumpArr, setJumpArr] = useState([]);
   const router = useRouter();
 
   
-  const nextPage = () => {
-    let index = viewIdx <= 2 ? viewIdx + 1 : viewIdx;
+  const nextPage = (e, jump=1) => {
+    let index = viewIdx + jump;
+    let tmpJmpArry = [...jumpArr,jump];
+    setJumpArr(tmpJmpArry);
     setviewIdx(index);
   };
 
-  const prevPage = () => {
-    let index = viewIdx > 0 ? viewIdx - 1 : viewIdx;
+  const prevPage = (e) => {
+    let index =  viewIdx - jumpArr[viewIdx-1];
     setviewIdx(index);
   };
 

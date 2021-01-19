@@ -1,12 +1,18 @@
 import styles from './SelectSymptomsComponent.module.css';
 import { useState, useEffect } from 'react';
 
-const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
+const SelectSymptoms = ({
+  nextPage,
+  isPrevEnabled,
+  isDoneEnabled,
+  isNextEnabled
+}) => {
   const [hasSymptoms, setHasSymptoms] = useState('');
 
   useEffect(() => {
     isDoneEnabled(false);
     isPrevEnabled(true);
+    isNextEnabled(false);
   }, []);
 
   const handleChecked = (e) => {
@@ -24,7 +30,7 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
         }
       });
       setHasSymptoms('No');
-      nextPage();
+      nextPage(e, 2);
     } else {
       checkboxesArray.forEach((element) => {
         let symtomsChk = document.getElementById(
@@ -54,6 +60,7 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
         noneChk.checked = false;
         noneChk.disabled = true;
         setHasSymptoms('Yes');
+        isNextEnabled(true);
       } else {
         noneChk.disabled = false;
         setHasSymptoms('');
@@ -127,8 +134,10 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
         <p className="error" hidden={!(hasSymptoms === 'Yes')}>
           If you are a student and on campus, isolate yourself from contact with
           others and call the student health center to schedule a consultation
-          203-932-7079. <br></br> If you are a faculty member or employee, notify your
+          203-932-7079 If you are a faculty member or employee, notify your
           manager and leave work. If you are home, stay home. Call 203-932-7079
+          during normal operations, or contact emergency services if you are
+          experiencing a life threating emergency.
         </p>
         <div className={styles.question_row_item_sub}>
           <fieldset>

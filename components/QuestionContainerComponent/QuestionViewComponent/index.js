@@ -3,6 +3,7 @@ import EmployeeQuestion from '../EmployeeQuestionComponent';
 import ConsentComponent from '../ConsentComponent';
 import SelectSymptoms from '../SelectSymptomsComponent';
 import Over18Component from '../Over18Component';
+import HealthCenterComponent from '../HealthCenterComponent';
 import styles from './QuestionViewComponent.module.css'
 
 
@@ -15,6 +16,7 @@ const QuestionViewComponent = ({
 }) => {
   const [prevEnabled, setPrevEnabled] = useState(false);
   const [doneEnabled, setDoneEnabled] = useState(false);
+  const [nextEnabled, setNextEnabled] = useState(false);
 
   const isPrevEnabled = (isEnabled) => {
     setPrevEnabled(isEnabled);
@@ -23,7 +25,11 @@ const QuestionViewComponent = ({
 
   const isDoneEnabled = (isEnabled) => {
     setDoneEnabled(isEnabled);    
-  };     
+  };    
+  
+  const isNextEnabled = (isEnabled) => {
+    setNextEnabled(isEnabled);    
+  };   
 
   const setSchedulerURL = (location) => {updateLocation(location)};
   
@@ -31,7 +37,8 @@ const QuestionViewComponent = ({
     employee: EmployeeQuestion,
     overeighteen: Over18Component,
     symptomssel: SelectSymptoms,
-    consent: ConsentComponent,    
+    consent: ConsentComponent,  
+    healthcare: HealthCenterComponent  
   };
 
   const ComponentName = components[compName || 'employee'];
@@ -43,6 +50,7 @@ const QuestionViewComponent = ({
         nextPage={nextPage}
         isPrevEnabled={isPrevEnabled}        
         isDoneEnabled={isDoneEnabled}
+        isNextEnabled={isNextEnabled}
         setSchedulerURL={setSchedulerURL}
       />
       </div>
@@ -53,6 +61,9 @@ const QuestionViewComponent = ({
       <button className="button" hidden={!doneEnabled} onClick={schedulePush}>
         Schedule Appoinment
       </button>  
+      <button className="button" hidden={!nextEnabled} onClick={nextPage}>
+        {`Next >`}
+      </button>
       </div>
     </div>
   );

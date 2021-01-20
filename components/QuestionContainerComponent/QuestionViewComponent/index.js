@@ -12,7 +12,7 @@ const QuestionViewComponent = ({
   nextPage,
   prevPage,
   schedulePush,
-  updateLocation
+  updateSymptoms
 }) => {
   const [prevEnabled, setPrevEnabled] = useState(false);
   const [doneEnabled, setDoneEnabled] = useState(false);
@@ -31,8 +31,7 @@ const QuestionViewComponent = ({
     setNextEnabled(isEnabled);    
   };   
 
-  const setSchedulerURL = (location) => {updateLocation(location)};
-  
+
   const components = {
     employee: EmployeeQuestion,
     overeighteen: Over18Component,
@@ -51,7 +50,8 @@ const QuestionViewComponent = ({
         isPrevEnabled={isPrevEnabled}        
         isDoneEnabled={isDoneEnabled}
         isNextEnabled={isNextEnabled}
-        setSchedulerURL={setSchedulerURL}
+        updateSymptoms={updateSymptoms}
+        
       />
       </div>
       <div className={styles.buttonContainer}>          

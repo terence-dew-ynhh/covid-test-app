@@ -40,8 +40,8 @@ export default function Home({ link }) {
 }
 
 Home.getInitialProps = async ({ query }) => {
-  const { endpoint } = query;
-  let link = 'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79929,82746&vt=2102&dept=201570001&view=plain&public=1';
+  const { symptoms } = query;
+  let link = symptoms == true ? '' : 'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79929,82746&vt=2102&dept=201570001&view=plain&public=1';
   
 
   return {

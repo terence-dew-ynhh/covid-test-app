@@ -61,6 +61,7 @@ const SelectSymptoms = ({
         noneChk.disabled = true;
         setHasSymptoms('Yes');
         isNextEnabled(true);
+        updateSymptoms(true);
       } else {
         noneChk.disabled = false;
         setHasSymptoms('');

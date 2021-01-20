@@ -7,7 +7,7 @@ import { useRouter } from 'next/router';
 const QuestionFormComponent = ({}) => {
 
   const [viewIdx, setviewIdx] = useState(0);
-  const [endPoint, setEndpoint] = useState('Bridgeport Hospital');
+  const [symptomatic, setSymptomatic] = useState(false);
   const compNames = ['employee', 'overeighteen', 'symptomssel', 'healthcare', 'consent'];
   const [jumpArr, setJumpArr] = useState([]);
   const router = useRouter();
@@ -27,11 +27,11 @@ const QuestionFormComponent = ({}) => {
 
   const schedulePush = () => {
 
-    router.push(`/scheduling?endpoint=${endPoint}`,'/scheduling');
+    router.push(`/scheduling?symptoms=${endPoint}`,'/scheduling');
   };
 
-  const updateLocation = (endpoint) =>{
-    setEndpoint(endpoint);
+  const updateSymptoms = (isSymptomatic) =>{
+    setSymptomatic(isSymptomatic);
   }
 
  let progressWidth = 100*((viewIdx+1)/4);
@@ -55,7 +55,7 @@ const QuestionFormComponent = ({}) => {
         prevPage={prevPage}
         compName={compNames[viewIdx]}
         schedulePush={schedulePush}
-        updateLocation={updateLocation}
+        updateSymptoms={updateSymptoms}
       ></QuestionView>
     </div>
   );

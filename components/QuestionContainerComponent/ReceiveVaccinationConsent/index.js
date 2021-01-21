@@ -64,9 +64,9 @@ const ReceiveVaccinationConsent = ({
               <br></br>- Medical first responders
               <br></br>
               <br></br>- You have received another vaccine recently
-              <br></br>
+              {/* <br></br>
               <br></br>-I am a resident of CT or regularly receive clinical care
-              in CT
+              in CT */}
               <br></br>
               <br></br>By attending this clinic, you are attesting to meeting
               these eligibility requirements.

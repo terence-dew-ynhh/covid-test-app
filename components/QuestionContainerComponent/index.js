@@ -15,7 +15,6 @@ const QuestionFormComponent = ({updateHeader}) => {
 
   const compNames = [
     'employee',
-    'age',
     'deptselect',
     'pininput',
     'vaccineconsent',

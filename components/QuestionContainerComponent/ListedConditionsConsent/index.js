@@ -80,6 +80,11 @@ const ListedConditionsConsent = ({
               vaccination should speak with: Obstetrician/Midwife/Pediatrician)
               <br></br>
               <br></br>
+              <br></br>- You have received another vaccine recently
+              <br></br>
+              <br></br>
+              (CDC recommends a minimum interval of 14 days between any other
+              vaccine and the COVID vaccine)
             </legend>
             <div className={styles.q1_grid}>{checkboxes}</div>
           </fieldset>

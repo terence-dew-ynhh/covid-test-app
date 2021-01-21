@@ -47,7 +47,7 @@ const IsEmployeeComponent = ({
                     onClick={(e) => {
                       updateAnswerData({ is_employee: e.target.value });
                       updateHeader(true);
-                      nextPage(e);
+                      nextPage(e, 3);
                     }}
                   ></input>
                   <label htmlFor="prev_covid_no">As an Individual</label>

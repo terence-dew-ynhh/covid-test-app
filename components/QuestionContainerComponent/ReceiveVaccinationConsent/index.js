@@ -63,13 +63,29 @@ const ReceiveVaccinationConsent = ({
               <br></br>
               <br></br>- Medical first responders
               <br></br>
+              <br></br>- You have received another vaccine recently
+              <br></br>
+              <br></br>-I am a resident of CT or regularly receive clinical care
+              in CT
+              <br></br>
               <br></br>By attending this clinic, you are attesting to meeting
               these eligibility requirements.
               <br></br>
-              <br></br>If you are not eligible in the current phase, please let
-              us know and you can reschedule your appointment once eligible.
+              <br></br>If you are not eligible in the current phase, but would
+              like to be contacted when eligibility requirements change, please
+              go{' '}
+              <a
+                href="https://ynhh.co1.qualtrics.com/jfe/form/SV_6rK4bO0F4VaGw3s"
+                target="__blank"
+              >
+                here
+              </a>
               <br></br>
               <br></br>
+              <b>
+                Bring an ID (photo ID if possible) and wear a face mask or
+                covering when visiting the vaccination site.
+              </b>
             </legend>
             <div className={styles.q1_grid}>{checkboxes}</div>
           </fieldset>

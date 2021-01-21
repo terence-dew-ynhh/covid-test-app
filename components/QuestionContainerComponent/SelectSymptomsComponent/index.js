@@ -5,7 +5,8 @@ const SelectSymptoms = ({
   nextPage,
   isPrevEnabled,
   isDoneEnabled,
-  isNextEnabled
+  isNextEnabled,
+  updateSymptoms
 }) => {
   const [hasSymptoms, setHasSymptoms] = useState('');
 

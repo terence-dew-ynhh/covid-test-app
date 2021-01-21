@@ -22,8 +22,7 @@ const HealthCenterComponent = ({
         <p className="error" hidden={!(hasSpokenToClinician == 'Yes')}>
           Please do not come down unless you have a scheduled appointment and
           spoken with student health services and had a visit with the nurse
-          practitioner. • proceed to consent,, gather insurance info/mychart and
-          schedule.
+          practitioner.
         </p>
         <p className="error" hidden={!(hasSpokenToClinician == 'No')}>
           Please call the student health center to schedule a consultation at

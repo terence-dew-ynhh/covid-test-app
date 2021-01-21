@@ -27,7 +27,7 @@ const QuestionFormComponent = ({}) => {
 
   const schedulePush = () => {
 
-    router.push(`/scheduling?symptoms=${endPoint}`,'/scheduling');
+    router.push(`/scheduling?symptoms=${symptomatic}`,'/scheduling');
   };
 
   const updateSymptoms = (isSymptomatic) =>{

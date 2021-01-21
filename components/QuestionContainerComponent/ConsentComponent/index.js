@@ -24,7 +24,7 @@ const ConsentComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
         }
       });
       setHasConsent('No');
-      nextPage();
+      isDoneEnabled(true);
     }    
 
     // If any of the boxes are checked beside None of the Above

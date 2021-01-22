@@ -12,15 +12,23 @@ const IsEmployeeComponent = ({
   useEffect(() => {
     isDoneEnabled(false);
     isPrevEnabled(false);
+    
   }, []);
+
 
   return (
     <>
       <div className="radio_grp">
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
+            
+            <h2 color="red">Update on COVID Vaccines</h2>
+            <p>At this time all vaccine appointments are full. </p>
+            <p> Our scheudling system is being updated as we confirm vaccine availability</p>
+            <a href="https://ynhh.co1.qualtrics.com/jfe/form/SV_6rK4bO0F4VaGw3s">Sign up for updates on appointment scheduling</a><br></br><br></br>
+            <a href="https://portal.ct.gov/Coronavirus/COVID-19-Vaccinations">Learn about the State of Connecticut Phase 1b Guidelines</a>
 
-          <fieldset>
+          {/* <fieldset>
               <legend>
               Are you getting vaccinated as part of an organization or as an individual?
               </legend>
@@ -53,11 +61,21 @@ const IsEmployeeComponent = ({
                   <label htmlFor="prev_covid_no">As an Individual</label>
                 </div>
               </div>
-            </fieldset>
+            </fieldset> */}
           </div>
         </div>
       </div>
-      <style jsx>{``}</style>
+      <style jsx>{`
+      h2{
+        color:red;
+      }
+      p{
+        color: grey;
+      }
+      a{
+        color: blue;
+      }
+      `}</style>
     </>
   );
 };

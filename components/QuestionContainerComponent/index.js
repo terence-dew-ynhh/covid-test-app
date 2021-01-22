@@ -14,17 +14,17 @@ const QuestionFormComponent = ({updateHeader}) => {
   const [responseData, setResponseData] = useState({});
 
   const compNames = [
-    'employee',
-    'deptselect',
-    'pininput',
+    // 'employee',
+    // 'deptselect',
+    // 'pininput',
     'vaccineconsent',
-    'firstdose',
-    'listconditions',
-    'testedpositive',
-    'covidsymptoms',
-    'monoclonal',
-    'factsheet',
-    'quartinecovid',
+    // 'firstdose',
+    // 'listconditions',
+    // 'testedpositive',
+    // 'covidsymptoms',
+    // 'monoclonal',
+    // 'factsheet',
+    // 'quartinecovid',
     'selectedvaccine',
     'vaccinedateselect',
     'selectsymptoms'

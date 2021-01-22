@@ -33,7 +33,7 @@ const SelectVaccineComponent = ({
             </p>
             <br></br><br></br>
             <fieldset>
-              <legend>Which Vaccine Did you Receive?</legend>
+              <legend>Which Vaccine Did you Receive for Dose 1?</legend>
 
               <div className="radio_row_item">
                 <input

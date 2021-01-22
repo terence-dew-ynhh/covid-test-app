@@ -29,9 +29,9 @@
   },
   "devDependencies": {},
   "scripts": {
-    "dev": "next -p 3011",
+    "dev": "next -p 3009",
     "build": "next build",
-    "start": "next start -p 3011"
+    "start": "next start -p 3009"
   },
   "repository": {
     "type": "git",

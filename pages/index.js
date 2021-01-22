@@ -32,6 +32,7 @@ function Home({ uuid }) {
 
   return (
     <div className="container">
+
       <Head>
         <title>COVID-19 Vaccine Scheduler</title>
         <link rel="icon" href="/favicon.ico" />
@@ -40,9 +41,15 @@ function Home({ uuid }) {
         <img src="/YNHHSLogo.png"></img>
       </div>
       <h1 className="title">COVID-19 Vaccine Scheduler</h1>
-
+      <h2>Dose 2 scheduling only</h2>
       <QuestionContainerComponent uuid={uuid} updateHeader={updateHeader} />
       {callText}
+      <style jsx>{`
+        h2{
+          color:red;
+          margin-top: 1px;
+        }
+      `}</style>
     </div>
   );
 }

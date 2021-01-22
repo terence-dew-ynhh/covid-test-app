@@ -24,7 +24,7 @@ const IsEmployeeComponent = ({
             
             <h2 color="red">Update on COVID Vaccines</h2>
             <p>At this time all vaccine appointments are full. </p>
-            <p> Our scheudling system is being updated as we confirm vaccine availability</p>
+            <p> Our scheduling system is being updated as we confirm vaccine availability</p>
             <a href="https://ynhh.co1.qualtrics.com/jfe/form/SV_6rK4bO0F4VaGw3s">Sign up for updates on appointment scheduling</a><br></br><br></br>
             <a href="https://portal.ct.gov/Coronavirus/COVID-19-Vaccinations">Learn about the State of Connecticut Phase 1b Guidelines</a>
 

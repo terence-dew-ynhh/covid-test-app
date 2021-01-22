@@ -1,52 +1,60 @@
-import fetch from 'isomorphic-unfetch';
-import React, { useState } from 'react';
-import Head from 'next/head';
-import QuestionContainerComponent from '../components/QuestionContainerComponent';
+// import fetch from 'isomorphic-unfetch';
+// import React, { useState, useEffect } from 'react';
+// import Head from 'next/head';
+// import QuestionContainerComponent from '../components/QuestionContainerComponent';
+import redirect from 'nextjs-redirect'
 
-function Home({ uuid }) {
-  const [isIndividual, setIsIndividual] = useState(false);
 
-  const updateHeader = (isIndividualAns) => {
-    setIsIndividual(isIndividualAns);
-  };
+// function Home({ uuid }) {
+//   const [isIndividual, setIsIndividual] = useState(false);
 
-  let callText = (
-    <div>
-      <h4>
-        {' '}
-        If you have questions about the vaccine or need help scheduling your
-        vaccine please call 1-833-ASK-YNHH (275-9644) for assistance.
-      </h4>
-      <h4>
-        If you are having MyChart or technical issues scheduling your vaccine
-        please call 475-246-8041 for assistance
-      </h4>
-    </div>
-  );
+//   useEffect(() => {
+    
+//   }, []);
 
-  return (
-    <div className="container">
-      <Head>
-        <title>COVID-19 Vaccine Scheduler</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <div className="grid">
-        <img src="/YNHHSLogo.png"></img>
-      </div>
-      <h1 className="title">COVID-19 Vaccine Scheduler</h1>
+//   const updateHeader = (isIndividualAns) => {
+//     setIsIndividual(isIndividualAns);
+//   };
 
-      <QuestionContainerComponent uuid={uuid} updateHeader={updateHeader} />
-      {callText}
-    </div>
-  );
-}
+//   let callText = (
+//     <div>
+//       <h4>
+//         {' '}
+//         If you have questions about the vaccine or need help scheduling your
+//         vaccine please call 1-833-ASK-YNHH (275-9644) for assistance.
+//       </h4>
+//       <h4>
+//         If you are having MyChart or technical issues scheduling your vaccine
+//         please call 475-246-8041 for assistance
+//       </h4>
+//     </div>
+//   );
 
-Home.getInitialProps = async (context) => {
-  let uuid =
-    Math.random().toString(36).substring(2, 15) +
-    Math.random().toString(36).substring(2, 15);
+//   return (
+//     <div className="container">
+//       <Head>
+//         <title>COVID-19 Vaccine Scheduler</title>
+//         <link rel="icon" href="/favicon.ico" />
+//       </Head>
+//       <div className="grid">
+//         <img src="/YNHHSLogo.png"></img>
+//       </div>
+//       <h1 className="title">COVID-19 Vaccine Scheduler</h1>
 
-  return { uuid: uuid };
-};
+//       <QuestionContainerComponent uuid={uuid} updateHeader={updateHeader} />
+//       {callText}
+//     </div>
+//   );
+// }
 
-export default Home;
+// Home.getInitialProps = async (context) => {
+//   let uuid =
+//     Math.random().toString(36).substring(2, 15) +
+//     Math.random().toString(36).substring(2, 15);
+
+//   return { uuid: uuid };
+// };
+
+// export default Home;
+
+export default redirect('http://www.ynhhs.org/covidvaccine');

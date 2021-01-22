@@ -16,6 +16,7 @@ import AgeComponent from '../AgeComponent'
 import MonoclonalComponent from '../MonoclonalComponent'
 import styles from './QuestionViewComponent.module.css';
 
+
 const QuestionViewComponent = ({
   compName,
   nextPage,
@@ -34,7 +35,9 @@ const QuestionViewComponent = ({
   const [nextEnabled, setNextEnabled] = useState(false);
   const [doneEnabled, setDoneEnabled] = useState(false);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    
+  }, []);
 
   const isPrevEnabled = (isEnabled) => {
     setPrevEnabled(isEnabled);

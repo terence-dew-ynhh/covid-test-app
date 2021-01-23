@@ -69,9 +69,6 @@ const IsEmployeeComponent = ({
       h2{
         color:red;
       }
-      p{
-        color: grey;
-      }
       a{
         color: blue;
       }

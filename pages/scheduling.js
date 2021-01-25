@@ -26,9 +26,6 @@ export default function Home({ link, recc_date, second_dose }) {
         <h3>
           {second_dose == 'true' && `Please Select Date After ${recc_date}`}
         </h3>
-        <h3>
-          {second_dose == 'false' && `Please Select Date After ${recc_date}`}
-        </h3>
         <iframe
           id="openSchedulingFrame"
           className="widgetframe"

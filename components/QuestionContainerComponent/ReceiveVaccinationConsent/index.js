@@ -52,8 +52,8 @@ const ReceiveVaccinationConsent = ({
       <div className={styles.question_row_item}>
         <div className={styles.question_row_item_sub}>
           <fieldset>
-            <legend>
-              Only the following individuals are eligible to receive vaccine:
+          <legend>
+              In the State of Connecticut only the following individuals are eligible to receive vaccine:
               <br></br>
               <br></br>- 75 years of age or older.
               <br></br>
@@ -62,8 +62,6 @@ const ReceiveVaccinationConsent = ({
               <br></br>- Long-term care facility residents
               <br></br>
               <br></br>- Medical first responders
-              <br></br>
-              <br></br>- You have received another vaccine recently
               {/* <br></br>
               <br></br>-I am a resident of CT or regularly receive clinical care
               in CT */}

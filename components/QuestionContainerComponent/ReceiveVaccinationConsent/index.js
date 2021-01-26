@@ -10,7 +10,7 @@ const ReceiveVaccinationConsent = ({
 }) => {
   useEffect(() => {
     isDoneEnabled(false);
-    isPrevEnabled(true);
+    isPrevEnabled(false);
   }, []);
 
   const handleChecked = (e) => {
@@ -53,7 +53,8 @@ const ReceiveVaccinationConsent = ({
         <div className={styles.question_row_item_sub}>
           <fieldset>
           <legend>
-              In the State of Connecticut only the following individuals are eligible to receive vaccine:
+          I attest that I am a Connecticut resident or a patient of Yale New Health System, Northeast Medical Group or Yale Medicine who lives outside Connecticut and meet one of the following State of Connecticut eligibility criteria:
+:
               <br></br>
               <br></br>- 75 years of age or older.
               <br></br>
@@ -66,18 +67,7 @@ const ReceiveVaccinationConsent = ({
               <br></br>-I am a resident of CT or regularly receive clinical care
               in CT */}
               <br></br>
-              <br></br>By attending this clinic, you are attesting to meeting
-              these eligibility requirements.
-              <br></br>
-              <br></br>If you are not eligible in the current phase, but would
-              like to be contacted when eligibility requirements change, please
-              go{' '}
-              <a
-                href="https://ynhh.co1.qualtrics.com/jfe/form/SV_6rK4bO0F4VaGw3s"
-                target="__blank"
-              >
-                here
-              </a>
+              <br></br>If you do not meet the criteria above, your appointment will be cancelled and you will not be allowed to enter a vaccination site.
               <br></br>
               <br></br>
               <b>

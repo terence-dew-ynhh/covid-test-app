@@ -83,8 +83,8 @@ const ListedConditionsConsent = ({
               <br></br>- You have received another vaccine recently
               <br></br>
               <br></br>
-              (CDC recommends a minimum interval of 14 days between any other
-              vaccine and the COVID vaccine)
+              <b>CDC recommends a minimum interval of 14 days between any other
+              vaccine and the COVID vaccine</b>
             </legend>
             <div className={styles.q1_grid}>{checkboxes}</div>
           </fieldset>

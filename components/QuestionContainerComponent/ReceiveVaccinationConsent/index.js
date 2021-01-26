@@ -53,16 +53,16 @@ const ReceiveVaccinationConsent = ({
         <div className={styles.question_row_item_sub}>
           <fieldset>
           <legend>
-          I attest that I am a Connecticut resident or a patient of Yale New Health System, Northeast Medical Group or Yale Medicine who lives outside Connecticut and meet one of the following State of Connecticut eligibility criteria:
+          I attest that I am a Connecticut resident or a patient of Yale New Health System, Northeast Medical Group or Yale Medicine who lives outside Connecticut and meet one of the following State of Connecticut eligibility criteria
 :
               <br></br>
-              <br></br>- 75 years of age or older.
+              <br></br>- 75 years of age or older
               <br></br>
               <br></br>- Healthcare personnel
               <br></br>
-              <br></br>- Long-term care facility residents
+              <br></br>- Long-term care facility resident
               <br></br>
-              <br></br>- Medical first responders
+              <br></br>- Medical first responder
               {/* <br></br>
               <br></br>-I am a resident of CT or regularly receive clinical care
               in CT */}

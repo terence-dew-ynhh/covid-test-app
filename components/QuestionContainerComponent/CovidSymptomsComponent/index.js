@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';
 import styles from './CovidSymptomsComponent.module.css';
+import csText from './covidsymptoms.json';
 
 const CovidSymptomsComponent = ({
   nextPage,
   isPrevEnabled,
   isDoneEnabled,
   updateField,
-  schedulePush
+  schedulePush,
+  isSpanish
 }) => {
   const [isDiagnosed, setIsDiagnosed] = useState('');
 
@@ -15,20 +17,20 @@ const CovidSymptomsComponent = ({
     isPrevEnabled(true);
   }, []);
 
+  let CSText = isSpanish ? csText.sp : csText.en
+
+
   return (
     <>
       <div className="radio_grp">
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
             <p className="error" hidden={!(isDiagnosed === 'Yes')}>
-            Those that have previously tested positive are currently not
-            eligible for COVID-19 screening.
+            {CSText[1]}
           </p>
             <fieldset>
               <legend>
-                Do you have any of the following Covid-19 symptoms? Fever, nasal
-                congestion, new loss of taste or smell, runny nose, sore throat,
-                conjunctivitis ("red eye"), shortness of breath, new headaches, body aches, nausea/vomiting, diarrhea, or severe fatigue:
+                {CSText[0]}
               </legend>
               <div className="radio_row_item">
                 <input
@@ -38,7 +40,7 @@ const CovidSymptomsComponent = ({
                   name="prev_covid"
                   onClick={(e) => { setIsDiagnosed('Yes')}}
                 ></input>
-                <label htmlFor="prev_covid_yes">Yes</label>
+                <label htmlFor="prev_covid_yes">{CSText[2]}</label>
                 <div className="radio_row_item">
                   <input
                     id="prev_covid_no"
@@ -49,7 +51,7 @@ const CovidSymptomsComponent = ({
                       nextPage(e);
                     }}
                   ></input>
-                  <label htmlFor="prev_covid_no">No</label>
+                  <label htmlFor="prev_covid_no">{CSText[3]}</label>
                 </div>
               </div>
             </fieldset>

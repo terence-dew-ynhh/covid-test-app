@@ -6,6 +6,8 @@ import {
   MuiPickersUtilsProvider
 } from '@material-ui/pickers';
 import styles from './VaccineDateSelectComponent.module.css';
+import vdsText from './vaccinedate.json';
+
 
 const VaccineDateSelectComponent = ({
   nextPage,
@@ -16,9 +18,12 @@ const VaccineDateSelectComponent = ({
   verifyPin,
   isPfizer,
   setReccDate,
-  updateAnswerData
+  updateAnswerData,
+  isSpanish
 }) => {
   const [selectedDate, setSelectedDate] = useState(new Date());
+  let VDSText = isSpanish ? vdsText.sp : vdsText.en
+
 
   useEffect(() => {
     isDoneEnabled(true);
@@ -68,12 +73,11 @@ const VaccineDateSelectComponent = ({
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
             <p className="banner">
-              It is recommended that you obtain dose 2 from the same location
-              where you got dose 1
+            {VDSText[1]}
             </p>
             <br></br>
             <br></br>
-            <label>Select Date you Received First Dose:</label>
+            <label>{VDSText[0]}</label>
             <br></br>
             <br></br>
             <MuiPickersUtilsProvider utils={DateFnsUtils}>
@@ -83,7 +87,7 @@ const VaccineDateSelectComponent = ({
                 format="MM/dd/yyyy"
                 margin="normal"
                 id="date-picker-dialog"
-                label="Date picker dialog"
+                label={VDSText[2]}
                 value={selectedDate}
                 onChange={handleDateChange}
                 KeyboardButtonProps={{
@@ -94,7 +98,7 @@ const VaccineDateSelectComponent = ({
 
             <br></br>
             <br></br>
-            <h3>Suggested Dates:</h3>
+            <h3>{VDSText[3]}</h3>
             <p>{suggestedText}</p>
           </div>
         </div>

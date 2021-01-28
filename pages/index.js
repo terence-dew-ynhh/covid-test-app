@@ -2,11 +2,14 @@ import fetch from 'isomorphic-unfetch';
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import QuestionContainerComponent from '../components/QuestionContainerComponent';
-// import redirect from 'nextjs-redirect'
+import appText from '../data/questioncontainertext.json';
 
 
 function Home({ uuid }) {
   const [isIndividual, setIsIndividual] = useState(false);
+   const [isSpanish, setIsSpanish] = useState(false);
+
+   let homeText = isSpanish ? appText.sp : appText.en
 
   useEffect(() => {
     
@@ -20,12 +23,10 @@ function Home({ uuid }) {
     <div>
       <h4>
         {' '}
-        If you have questions about the vaccine or need help scheduling your
-        vaccine please call 1-833-ASK-YNHH (275-9644) for assistance.
+        {homeText[0]}
       </h4>
       <h4>
-        If you are having MyChart or technical issues scheduling your vaccine
-        please call 475-246-8041 for assistance
+      {homeText[1]}
       </h4>
     </div>
   );
@@ -38,10 +39,13 @@ function Home({ uuid }) {
       </Head>
       <div className="grid">
         <img src="/YNHHSLogo.png"></img>
+        <button className="" onClick={(e) => setIsSpanish(!isSpanish)}>
+          {isSpanish ? 'English' : `Español`}
+        </button>
       </div>
-      <h1 className="title">COVID-19 Vaccine Scheduler</h1>
+      <h1 className="title">{homeText[2]}</h1>
 
-      <QuestionContainerComponent uuid={uuid} updateHeader={updateHeader} />
+      <QuestionContainerComponent isSpanish={isSpanish} uuid={uuid} updateHeader={updateHeader} />
       {callText}
     </div>
   );

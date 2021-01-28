@@ -1,12 +1,15 @@
 import { useState, useEffect } from 'react';
 import styles from './TestedPositiveComponent.module.css';
+import tpText from './testedpositive.json';
+
 
 const TestedPositiveComponent = ({
   nextPage,
   isPrevEnabled,
   isDoneEnabled,
   updateAnswerData,
-  schedulePush
+  schedulePush,
+  isSpanish
 }) => {
   const [isDiagnosed, setIsDiagnosed] = useState('');
 
@@ -15,24 +18,24 @@ const TestedPositiveComponent = ({
     isPrevEnabled(true);
   }, []);
 
+  let TPText = isSpanish ? tpText.sp : tpText.en
+
   return (
     <>
       <div className="radio_grp">
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
             <p className="error" hidden={!isDiagnosed}>
-              When this time has passed, please return to this page to schedule
-              your vaccine appointment
+            {TPText[2]}
             </p>
 
             <fieldset>
               <legend>
-                Have you tested positive for Covid-19 in the last 4 weeks?:
+                {TPText[0]}
                 <br></br>
                 <br></br>
                 <b>
-                  You must wait for 4 weeks or more after your initial positive
-                  COVID-19 test before being vaccinated
+                {TPText[1]}
                 </b>
               </legend>
 
@@ -46,7 +49,7 @@ const TestedPositiveComponent = ({
                     setIsDiagnosed(true);
                   }}
                 ></input>
-                <label htmlFor="prev_covid_yes">Yes</label>
+                <label htmlFor="prev_covid_yes">{TPText[3]}</label>
                 <div className="radio_row_item">
                   <input
                     id="prev_covid_no"
@@ -58,7 +61,7 @@ const TestedPositiveComponent = ({
                       nextPage(e);
                     }}
                   ></input>
-                  <label htmlFor="prev_covid_no">No</label>
+                  <label htmlFor="prev_covid_no">{TPText[4]}</label>
                 </div>
               </div>
             </fieldset>

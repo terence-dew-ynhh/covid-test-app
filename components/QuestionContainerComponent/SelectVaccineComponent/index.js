@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import styles from './SelectVaccineComponent.module.css';
+import svText from './selvaccine.json';
+
 
 const SelectVaccineComponent = ({
   nextPage,
@@ -8,7 +10,8 @@ const SelectVaccineComponent = ({
   updateField,
   schedulePush,
   pfizerSelected,
-  updateAnswerData
+  updateAnswerData,
+  isSpanish
 }) => {
   const [isDiagnosed, setIsDiagnosed] = useState('');
 
@@ -23,17 +26,20 @@ const SelectVaccineComponent = ({
     setIsDiagnosed(e.target.value);
   };
 
+  let SVText = isSpanish ? svText.sp : svText.en;
+
+
   return (
     <>
       <div className="radio_grp">
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
             <p className="banner">
-              Please bring Vaccine card from dose 1 to appointment. It is recommended that you obtain dose 2 from the same location where you got dose 1 
+            {SVText[1]} 
             </p>
             <br></br><br></br>
             <fieldset>
-              <legend>Which Vaccine Did you Receive?</legend>
+              <legend>{SVText[0]}</legend>
 
               <div className="radio_row_item">
                 <input

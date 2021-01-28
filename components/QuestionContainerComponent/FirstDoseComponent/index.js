@@ -1,14 +1,17 @@
 import { useState, useEffect } from 'react';
 import styles from './FirstDoseComponent.module.css';
+import fdText from './firstdose.json';
 
                       
-const FirstDoseComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateAnswerData }) => {
+const FirstDoseComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateAnswerData, isSpanish }) => {
   const [isDiagnosed, setIsDiagnosed] = useState('');
 
   useEffect(() => {
     isDoneEnabled(false);
     isPrevEnabled(false);
   }, []);
+
+  let FDText = isSpanish ? fdText.sp : fdText.en
 
 
   return (
@@ -18,7 +21,7 @@ const FirstDoseComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateAnsw
           <div className={styles.question_row_item_sub}>
 
             <fieldset>
-              <legend>Are you scheduling for your first dose of COVID19 vaccine?:</legend>
+              <legend>{FDText[0]}</legend>
 
               <div className="radio_row_item">
                 <input
@@ -33,7 +36,7 @@ const FirstDoseComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateAnsw
                     }
                   }
                 ></input>
-                <label htmlFor="prev_covid_yes">Yes</label>
+                <label htmlFor="prev_covid_yes">{FDText[1]}</label>
                 <div className="radio_row_item">
                   <input
                     id="prev_covid_no"
@@ -47,7 +50,7 @@ const FirstDoseComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateAnsw
                       }
                     }
                   ></input>
-                  <label htmlFor="prev_covid_no">No</label>
+                  <label htmlFor="prev_covid_no">{FDText[2]}</label>
                 </div>
               </div>
             </fieldset>

@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';
 import styles from './ListedConditionsConsent.module.css';
+import lcText from './listedconditions.json';
 
 const ListedConditionsConsent = ({
   nextPage,
   isPrevEnabled,
   isDoneEnabled,
   updateField,
-  schedulePush
+  schedulePush,
+  isSpanish
 }) => {
   useEffect(() => {
     isDoneEnabled(false);
@@ -19,14 +21,15 @@ const ListedConditionsConsent = ({
 
   let checkboxesArray = ['None_of_the_Above'];
 
+  let LCText = isSpanish ? lcText.sp : lcText.en
+
   const regex = /_/gi;
 
   let checkboxes = checkboxesArray.map((checkbox, idx) => (
     <div className={styles.chk_row_item}>
       <label className={styles.none_label_or}>
         {' '}
-        Please note: Immunocompromised persons may not be adequately develop an
-        immune response to the vaccine but will be offered it.
+        {LCText[8]}
       </label>
       <input
         id={`prev_covid_${checkbox.toLowerCase()}`}
@@ -42,7 +45,7 @@ const ListedConditionsConsent = ({
         // className={styles.prev_none_label}
         htmlFor={`prev_covid_${checkbox.toLowerCase()}`}
       >
-        {'Acknowledge'}
+        {LCText[9]}
       </label>
     </div>
   ));
@@ -53,38 +56,23 @@ const ListedConditionsConsent = ({
         <div className={styles.question_row_item_sub}>
           <fieldset>
             <legend>
-              Listed below are some conditions/situations where you may want to
-              have a discussion with a care provider prior to receiving the
-              Covid-19 Vaccine. You are eligible for the vaccine, even if these
-              apply to you, so you will be able to continue on to schedule an
-              appointment. If you would like to wait to schedule your vaccine
-              appointment until you speak to a provider, that is up to you.
+            {LCText[0]}
               <br></br>
-              <br></br>- You had an anaphylactic or other severe reaction to any
-              type of vaccine, injectable drug, or food in the past. (Person
-              receiving vaccination should speak with: Primary Care/Allergist)
+              <br></br>{LCText[1]}
               <br></br>
-              <br></br>- You have a severe allergy requiriing you to carry an
-              Epi-Pen. (Person receiving vaccination should speak with: Primary
-              Care Provider/ Allergist)
+              <br></br>{LCText[2]}
               <br></br>
-              <br></br>- You have a serious bleeding disorder (such as
-              hemophilia), very low platelets (less than 50,000) or are on an
-              anti-coagulant ("blood thinner")?
+              <br></br>{LCText[3]}
               <br></br>
-              <br></br>- You are or could be currently pregnant, or planning to
-              be pregnant in the next 3 months. (Person receiving vaccination
-              should speak with: Obstetrician/Midwife)
+              <br></br>{LCText[4]}
               <br></br>
-              <br></br>- You are currently breastfeeding (Person receiving
-              vaccination should speak with: Obstetrician/Midwife/Pediatrician)
+              <br></br>{LCText[5]}
               <br></br>
               <br></br>
-              <br></br>- You have received another vaccine recently
+              <br></br>{LCText[6]}
               <br></br>
               <br></br>
-              <b>CDC recommends a minimum interval of 14 days between any other
-              vaccine and the COVID vaccine</b>
+              <b>{LCText[7]}</b>
             </legend>
             <div className={styles.q1_grid}>{checkboxes}</div>
           </fieldset>

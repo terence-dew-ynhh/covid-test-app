@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 // import redirect from 'nextjs-redirect'
 
 
-export default function Home({ link, recc_date, second_dose }) {
+export default function Home({ link, recc_date, second_dose, isSpanish }) {
   const router = useRouter();
 
   useEffect(() => {
@@ -24,7 +24,7 @@ export default function Home({ link, recc_date, second_dose }) {
 
       <div className="scheduleContainer">
         <h3>
-          {second_dose == 'true' && `Please Select Date After ${recc_date}`}
+          {second_dose == 'true' ? (isSpanish == 'true' ? `Seleccione una fecha posterior a ${recc_date}`  : `Please Select Date After ${recc_date}`) : ''}
         </h3>
         <iframe
           id="openSchedulingFrame"
@@ -52,7 +52,7 @@ export default function Home({ link, recc_date, second_dose }) {
 }
 
 Home.getInitialProps = async ({ query }) => {
-  const { recc_date, second_dose, isPfizer } = query;
+  const { recc_date, second_dose, isPfizer, isSpanish } = query;
   let link =
     second_dose == 'true'
       ? isPfizer == 'true'
@@ -65,7 +65,8 @@ Home.getInitialProps = async ({ query }) => {
   return {
     link,
     recc_date,
-    second_dose
+    second_dose,
+    isSpanish
   };
 };
 // export default redirect('http://www.ynhhs.org/covidvaccine');

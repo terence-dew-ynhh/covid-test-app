@@ -1,0 +1,14 @@
+{
+    "en": [
+        "Have you received monoclonal antibodies as part of COVID-19 treatment in the last 90 days?",
+        "CDC recommends vaccination should be deferred for at least 90 days after monoclonal antibody treatment.",
+        "Yes",
+        "No"
+        ],
+    "sp": [
+        "¿Ha recibido anticuerpos monoclonales como parte del tratamiento contra el COVID-19 en los últimos 90 días?",
+        "Los Centros para el Control y la Prevención de Enfermedades (CDC) recomiendan que se difiera la vacunación al menos 90 días después del tratamiento con anticuerpos monoclonales.",
+        "Si",
+        "No"
+    ]
+}

@@ -1,7 +1,15 @@
 import { useState, useEffect } from 'react';
 import styles from './QuarantineComponent.module.css';
+import qText from './quarantine.json';
 
-const QuarantineComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateAnswerData, schedulePush }) => {
+const QuarantineComponent = ({
+  nextPage,
+  isPrevEnabled,
+  isDoneEnabled,
+  updateAnswerData,
+  schedulePush,
+  isSpanish
+}) => {
   const [isDiagnosed, setIsDiagnosed] = useState('');
 
   useEffect(() => {
@@ -9,52 +17,48 @@ const QuarantineComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateAns
     isPrevEnabled(true);
   }, []);
 
-
+  let QText = isSpanish ? qText.sp : qText.en;
 
   return (
     <>
       <div className="radio_grp">
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
-          <p className="error" hidden={!(isDiagnosed === 'Yes')}>
-              You are in quarantine and are not eligible for the vaccination at this time.
+            <p className="error" hidden={!(isDiagnosed === 'Yes')}>
+              {QText[1]}
               <br></br>
               <br></br>
-              Thank you, you may close the page at this time.
+              {QText[2]}
             </p>
             <fieldset>
-              <legend>Are you in Quarantine for Covid-19 related exposure?:</legend>
+              <legend>{QText[0]}</legend>
               <div className="radio_row_item">
                 <input
                   id="prev_covid_yes"
                   type="radio"
                   value="Yes"
                   name="prev_covid"
-                  onClick={ 
-                    (e) =>{
-                      setIsDiagnosed(e.target.value);
-                    }
-                  }
+                  onClick={(e) => {
+                    setIsDiagnosed(e.target.value);
+                  }}
                 ></input>
-                <label htmlFor="prev_covid_yes">Yes</label>
+                <label htmlFor="prev_covid_yes">{QText[3]}</label>
                 <div className="radio_row_item">
                   <input
                     id="prev_covid_no"
                     type="radio"
                     value="No"
                     name="prev_covid"
-                    onClick={
-                      (e) =>{
-                        updateAnswerData({quarantined: e.target.value});
-                        schedulePush();
-                      }
-                    }
+                    onClick={(e) => {
+                      updateAnswerData({ quarantined: e.target.value });
+                      schedulePush();
+                    }}
                   ></input>
-                  <label htmlFor="prev_covid_no">No</label>
+                  <label htmlFor="prev_covid_no">{QText[4]}</label>
                 </div>
               </div>
             </fieldset>
-          </div>          
+          </div>
         </div>
       </div>
       <style jsx>{``}</style>

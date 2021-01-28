@@ -1,12 +1,15 @@
 import { useState, useEffect } from 'react';
 import styles from './FactSheetComponent.module.css';
+import fsText from './factsheet.json';
+
 
 const FactSheetComponent = ({
   nextPage,
   isPrevEnabled,
   isDoneEnabled,
   updateField,
-  schedulePush
+  schedulePush,
+  isSpanish
 }) => {
   const [isDiagnosed, setIsDiagnosed] = useState('');
 
@@ -14,6 +17,9 @@ const FactSheetComponent = ({
     isDoneEnabled(false);
     isPrevEnabled(true);
   }, []);
+
+  let FSText = isSpanish ? fsText.sp : fsText.en
+
 
   const choiceSelected = (e) => {
     if (e.target.value === 'Yes') schedulePush(true);
@@ -27,16 +33,14 @@ const FactSheetComponent = ({
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
             <p className="error" hidden={!(isDiagnosed === 'No')}>
-              Follow instructions below, or contact your provider's office to
-              schedule.
+              {FSText[1]}
               <br></br>
               <br></br>
-              Thank you, you may close the page at this time.
+              {FSText[2]}
             </p>
             <fieldset>
               <legend>
-                Have you read the Emergency Use Authorization Fact Sheet and
-                consent to receiving the vaccination for Covid-19? <br></br>
+              {FSText[0]}<br></br>
                 <br></br>
                 <a
                   target="__blank"
@@ -58,7 +62,7 @@ const FactSheetComponent = ({
                   target="__blank"
                   href="https://mychart.ynhhs.org/MyChart-PRD/en-US/PDF/ESPCOVIDPfizerVaccineFactSheet.pdf"
                 >
-                  Pfizer Vaccination EUA (Spanish)
+                  {FSText[3]}
                 </a>{' '}
                 <br></br>
                 <br></br>
@@ -66,7 +70,7 @@ const FactSheetComponent = ({
                   target="__blank"
                   href="https://mychart.ynhhs.org/MyChart-PRD/en-US/PDF/ESPCOVIDModernaVaccineFactSheet.pdf"
                 >
-                  Moderna Vaccination EUA (Spanish)
+                  {FSText[4]}
                 </a>
                 <br></br>
                 <br></br>
@@ -74,7 +78,7 @@ const FactSheetComponent = ({
                   target="__blank"
                   href="https://mychart.ynhhs.org/mychart-prd/en-US/PDF/YNHHCOVIDConsent.pdf"
                 >
-                  YNHHS Vaccination Consent
+                  {FSText[5]}
                 </a>{' '}
                 <br></br>
                 <br></br>
@@ -88,7 +92,7 @@ const FactSheetComponent = ({
                     nextPage(e);
                   }}
                 ></input>
-                <label htmlFor="prev_covid_agree">Yes, and I wish to be vaccinated</label>
+                <label htmlFor="prev_covid_agree">{FSText[6]}</label>
               </div>
               <br></br>
               <br></br>
@@ -101,7 +105,7 @@ const FactSheetComponent = ({
                     nextPage(e);
                   }}
                 ></input>
-                <label htmlFor="prev_covid_later">I will read it upon arrival to Vaccination Fair</label>
+                <label htmlFor="prev_covid_later">{FSText[7]}</label>
               </div>
               <br></br>
               <br></br>
@@ -115,7 +119,7 @@ const FactSheetComponent = ({
                     setIsDiagnosed(e.target.value);
                   }}
                 ></input>
-                <label htmlFor="prev_covid_no">Don't Agree</label>
+                <label htmlFor="prev_covid_no">{FSText[8]}</label>
               </div>
             </fieldset>
           </div>

@@ -3,7 +3,7 @@ import QuestionView from './QuestionViewComponent';
 import styles from './QuestionContainerComponent.module.css';
 import { useRouter } from 'next/router';
 
-const QuestionFormComponent = ({updateHeader}) => {
+const QuestionFormComponent = ({updateHeader, isSpanish}) => {
   const [viewIdx, setviewIdx] = useState(0);
 
    //New States
@@ -95,7 +95,7 @@ const QuestionFormComponent = ({updateHeader}) => {
     router.push(
       `/scheduling?recc_date=${selDate}&second_dose=${
         isPfizer == null ? false : true
-      }&isPfizer=${isPfizer}`,
+      }&isPfizer=${isPfizer}&isSpanish=${isSpanish}`,
       '/scheduling'
     );
   };
@@ -134,6 +134,7 @@ const QuestionFormComponent = ({updateHeader}) => {
         updateAnswerData={updateAnswerData}
         submitData={submitData}
         updateHeader={updateHeader}
+        isSpanish={isSpanish}
       ></QuestionView>
     </div>
   );

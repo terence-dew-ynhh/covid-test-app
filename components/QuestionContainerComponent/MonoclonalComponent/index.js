@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 import styles from './MonoclonalComponent.module.css';
+import mText from './monoclonal.json';
 
-const MonoclonalComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateAnswerData }) => {
+
+const MonoclonalComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateAnswerData, isSpanish }) => {
   const [isDiagnosed, setIsDiagnosed] = useState('');
 
   useEffect(() => {
@@ -9,6 +11,7 @@ const MonoclonalComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateAns
     isPrevEnabled(true);
   }, []);
 
+  let MText = isSpanish ? mText.sp : mText.en
 
 
   return (
@@ -17,10 +20,10 @@ const MonoclonalComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateAns
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
           <p className="error" hidden={!(isDiagnosed === 'Yes')}>
-              CDC recommends vaccination should be deferred for at least 90 days after monoclonal antibody treatment.
+          {MText[1]}
             </p>
             <fieldset>
-              <legend>Have you received monoclonal antibodies as part of COVID-19 treatment in the last 90 days?</legend>
+              <legend>{MText[0]}</legend>
               <div className="radio_row_item">
                 <input
                   id="prev_covid_yes"
@@ -33,7 +36,7 @@ const MonoclonalComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateAns
                     }
                   }
                 ></input>
-                <label htmlFor="prev_covid_yes">Yes</label>
+                <label htmlFor="prev_covid_yes">{MText[2]}</label>
                 <div className="radio_row_item">
                   <input
                     id="prev_covid_no"
@@ -47,7 +50,7 @@ const MonoclonalComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateAns
                       }
                     }
                   ></input>
-                  <label htmlFor="prev_covid_no">No</label>
+                  <label htmlFor="prev_covid_no">{MText[3]}</label>
                 </div>
               </div>
             </fieldset>

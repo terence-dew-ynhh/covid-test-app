@@ -62,12 +62,12 @@ iframe{
 }
 
 .langButton{
-  color: blue;
-  width: 4%;
-  border: none;
+  color: red;
   margin-right: 2%;
   font-weight: 700;
   text-decoration: underline;
+  border: none;
+  font-size: 1.3em;
 }
 
 p{

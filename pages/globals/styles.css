@@ -58,6 +58,16 @@ iframe{
   align-items: center;
   box-shadow: 0 0 16px -4px rgba(0,0,0,0.1);
   height: 150px;
+  justify-content: space-between;
+}
+
+.langButton{
+  color: blue;
+  width: 4%;
+  border: none;
+  margin-right: 2%;
+  font-weight: 700;
+  text-decoration: underline;
 }
 
 p{

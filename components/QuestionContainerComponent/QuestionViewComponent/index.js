@@ -99,17 +99,17 @@ const QuestionViewComponent = ({
       </div>
       <div className={styles.buttonContainer}>
         <button className="button" hidden={!prevEnabled} onClick={prevPage}>
-          {`< Back`}
+          {isSpanish ? `< Atrás` : `< Back`}
         </button>
         <button className="button" hidden={!nextEnabled} onClick={nextPage}>
-          {`Next >`}
+          {isSpanish ? `Próximo >` : `Next >`}
         </button>
         <button
           className="button"
           hidden={!doneEnabled}
           onClick={() => {schedulePush(false);}}
         >
-          Schedule Appointment
+          {isSpanish ? `Programar una Cita` : `Schedule Appointment`}
         </button>
       </div>
     </div>

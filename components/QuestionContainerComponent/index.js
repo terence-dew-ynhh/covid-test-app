@@ -15,7 +15,7 @@ const QuestionFormComponent = ({updateHeader, isSpanish}) => {
 
   const compNames = [
     'vaccineconsent',
-    'firstdose',
+    // 'firstdose',
     'listconditions',
     'testedpositive',
     'covidsymptoms',

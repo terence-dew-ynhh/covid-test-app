@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import styles from './ReceiveVaccinationConsent.module.css';
 import veText from './vaccineelidgibility.json';
 
-
 const ReceiveVaccinationConsent = ({
   nextPage,
   isPrevEnabled,
@@ -20,8 +19,7 @@ const ReceiveVaccinationConsent = ({
     nextPage(e);
   };
 
-  let VEText = isSpanish ? veText.sp : veText.en
-
+  let VEText = isSpanish ? veText.sp : veText.en;
 
   let checkboxesArray = ['None_of_the_Above'];
 
@@ -29,10 +27,7 @@ const ReceiveVaccinationConsent = ({
 
   let checkboxes = checkboxesArray.map((checkbox, idx) => (
     <div className={styles.chk_row_item}>
-      <label className={styles.none_label_or}>
-        {' '}
-        {VEText[7]}
-      </label>
+      <label className={styles.none_label_or}> {VEText[7]}</label>
       <input
         id={`prev_covid_${checkbox.toLowerCase()}`}
         type="checkbox"
@@ -57,26 +52,32 @@ const ReceiveVaccinationConsent = ({
       <div className={styles.question_row_item}>
         <div className={styles.question_row_item_sub}>
           <fieldset>
-          <legend>
-          {VEText[0]}
+            <legend>
+              {VEText[0]}
               <br></br>
-              <br></br>{VEText[1]}
               <br></br>
-              <br></br>{VEText[2]}
+              {VEText[1]}
               <br></br>
-              <br></br>{VEText[3]}
               <br></br>
-              <br></br>{VEText[4]}
+              {VEText[2]}
+              <br></br>
+              <br></br>
+              {VEText[3]}
+              <br></br>
+              <br></br>
+              {VEText[4]}
+              <br></br>
+              <br></br>
+              {VEText[9]}
               {/* <br></br>
               <br></br>-I am a resident of CT or regularly receive clinical care
               in CT */}
               <br></br>
-              <br></br>{VEText[5]}
+              <br></br>
+              {VEText[5]}
               <br></br>
               <br></br>
-              <b>
-              {VEText[6]}
-              </b>
+              <b>{VEText[6]}</b>
             </legend>
             <div className={styles.q1_grid}>{checkboxes}</div>
           </fieldset>

@@ -1,16 +1,16 @@
-import fetch from 'isomorphic-unfetch';
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import QuestionContainerComponent from '../components/QuestionContainerComponent';
-// import redirect from 'nextjs-redirect'
 
+// import redirect from 'nextjs-redirect'
 
 function Home({ uuid }) {
   const [isIndividual, setIsIndividual] = useState(false);
 
   useEffect(() => {
-    
-  }, []);
+
+      window.location.assign('https://covidvaccine.ynhh.org/');
+  });
 
   const updateHeader = (isIndividualAns) => {
     setIsIndividual(isIndividualAns);
@@ -32,7 +32,6 @@ function Home({ uuid }) {
 
   return (
     <div className="container">
-
       <Head>
         <title>COVID-19 Vaccine Scheduler</title>
         <link rel="icon" href="/favicon.ico" />
@@ -45,8 +44,8 @@ function Home({ uuid }) {
       <QuestionContainerComponent uuid={uuid} updateHeader={updateHeader} />
       {callText}
       <style jsx>{`
-        h2{
-          color:red;
+        h2 {
+          color: red;
           margin-top: 1px;
         }
       `}</style>

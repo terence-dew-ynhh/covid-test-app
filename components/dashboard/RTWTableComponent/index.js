@@ -26,9 +26,9 @@ function RTWTableComponent(props) {
               return 1;
             }
             return 0;
-          }).sort((x, y) => {
+          }).filter((x) => {
         // false values first
-        return (x.occ_health_review === y.occ_health_review)? 0 : x.occ_health_review? 1 : -1;
+        return x.occ_health_review === false;
           })
 
         let rtwContactArr = sortedArr.map((rtwcontact, index) => {

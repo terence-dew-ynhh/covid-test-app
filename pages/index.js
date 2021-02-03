@@ -61,4 +61,3 @@ Home.getInitialProps = async (context) => {
 
 export default Home;
 
-// export default redirect('http://www.ynhhs.org/covidvaccine');

@@ -4,6 +4,7 @@ import ConsentComponent from '../ConsentComponent';
 import SelectSymptoms from '../SelectSymptomsComponent';
 import Over18Component from '../Over18Component';
 import HealthCenterComponent from '../HealthCenterComponent';
+import ResidentQuestionComponent from '../ResidentQuestionComponent';
 import styles from './QuestionViewComponent.module.css'
 
 
@@ -34,6 +35,7 @@ const QuestionViewComponent = ({
 
   const components = {
     employee: EmployeeQuestion,
+    resident: ResidentQuestionComponent,
     overeighteen: Over18Component,
     symptomssel: SelectSymptoms,
     consent: ConsentComponent,  

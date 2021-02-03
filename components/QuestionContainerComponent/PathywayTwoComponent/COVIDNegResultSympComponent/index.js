@@ -46,7 +46,7 @@ const COVIDNegResultSympComponent = ({ isDoneEnabled, selectPathway }) => {
             {' '}
             ATTENTION: You DO NOT NEED Occupational Health Clearance to return
             to work ONLY if the following applies to you: <br></br>
-            <br></br>• You had a COVID-19 Vaccine dose in the past 48 hours AND
+            <br></br>• You had a COVID-19 Vaccine dose in the past 72 hours AND
             <br></br>
             <br></br>• You developed ONLY vaccine side effects (fever, chills,
             muscle or joint aches, headaches, nausea, transient vomiting)

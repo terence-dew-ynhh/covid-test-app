@@ -27,14 +27,14 @@ const COVIDPosResultSympComponent = ({
             <fieldset>
               <legend>
                 If you had symptoms associated with COVID-19, has it been at
-                least 14 days since the start of your symptoms? (at least 20
+                least 10 days since the start of your symptoms? (at least 20
                 days if you are immunocompromised)
                 <br></br>
                 <br></br>
                 <b>OR</b>
                 <br></br>
                 <br></br>
-                If you did not have symptoms, has it been at least 14 days
+                If you did not have symptoms, has it been at least 10 days
                 since your COVID-19 positive test (the day you were swabbed)?
                 (at least 20 days if you are immunocompromised)
               </legend>
@@ -67,7 +67,7 @@ const COVIDPosResultSympComponent = ({
               </div>
             </fieldset>
             <p className="error" hidden={!(isCovidPositive === 'No')}>
-              The required home isolation period is 14 days (20 days if
+              The required home isolation period is 10 days (20 days if
               immunocompromised) for anyone who is COVID-19 positive from their
               onset of symptoms (if ever symptomatic) or from their positive
               test result date (if never symptomatic).

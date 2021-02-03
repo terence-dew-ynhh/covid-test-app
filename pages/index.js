@@ -36,7 +36,7 @@ export default function FAQ() {
         <p>
           If at any point you prefer to speak with someone from Occupational
           Health, please contact the Occupational Health COVID Call Center at
-          203-688-1700; after choosing a language, choose option # 2 for
+          844-543-2147; after choosing a language, choose option # 2 for
           employee health.
         </p>
         <br></br>

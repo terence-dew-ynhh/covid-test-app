@@ -20,7 +20,7 @@ const Less14DaysContactComponent = ({
           <div className={styles.question_row_item_sub}>
             <p className="error" hidden={!(isCovidPositive === 'Yes')}>
               The required duration for quarantine after a high risk household
-              exposure is 14 days from last close contact date
+              exposure is 10 days from last close contact date
             </p>
             <fieldset>
               <legend>
@@ -31,7 +31,7 @@ const Less14DaysContactComponent = ({
                 OR
                 <br></br>
                 <br></br>
-                Has it been more than 14 days since your last close contact* with the COVID-19 Positive person in your Household (no testing required)?
+                Has it been more than 10 days since your last close contact* with the COVID-19 Positive person in your Household (no testing required)?
                 <br></br>
                 <br></br>
                 *Close contact is defined as: no mask use, within 6 feet, and

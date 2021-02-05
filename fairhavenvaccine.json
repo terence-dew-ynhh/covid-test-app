@@ -1,7 +1,7 @@
 {
     "apps": [
         {
-            "name": "covidvaccine",
+            "name": "fairhavenvaccine",
             "script": "npm",
             "args" : "start"
         }

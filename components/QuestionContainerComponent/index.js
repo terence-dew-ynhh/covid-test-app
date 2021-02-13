@@ -14,7 +14,7 @@ const QuestionFormComponent = ({updateHeader, isSpanish}) => {
   const [responseData, setResponseData] = useState({});
 
   const compNames = [
-    // 'employee',
+    'employee',
     'vaccineconsent',
     // 'firstdose',
     'listconditions',

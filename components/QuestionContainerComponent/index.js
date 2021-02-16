@@ -15,7 +15,7 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
   const [responseData, setResponseData] = useState({});
 
   const compNames = [
-    'zipcode',
+    // 'zipcode',
     // 'employee',
     'vaccineconsent',
     // 'firstdose',
@@ -100,7 +100,9 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
   const schedulePush = () => {
     submitData();
     router.push(
-      `/scheduling?recc_date=${selDate}&in_zip_range=${isInZipCodeRange}&isPfizer=${isPfizer}&isSpanish=${isSpanish}`,
+      `/scheduling?recc_date=${selDate}&in_zip_range=${isInZipCodeRange}&second_dose=${
+        isPfizer == null ? false : true
+      }&isPfizer=${isPfizer}&isSpanish=${isSpanish}`,
       '/scheduling'
     );
   };
@@ -141,7 +143,7 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
         isSpanish={isSpanish}
         zipCodeInRange={zipCodeInRange}
       ></QuestionView>
-      <p>{`Zip Code ${isInZipCodeRange ? 'is' : 'is not'} in range`}</p>
+      {/* <p>{`Zip Code ${isInZipCodeRange ? 'is' : 'is not'} in range`}</p> */}
     </div>
   );
 };

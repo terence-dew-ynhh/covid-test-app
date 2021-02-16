@@ -3,18 +3,20 @@ import QuestionView from './QuestionViewComponent';
 import styles from './QuestionContainerComponent.module.css';
 import { useRouter } from 'next/router';
 
-const QuestionFormComponent = ({updateHeader, isSpanish}) => {
+const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
   const [viewIdx, setviewIdx] = useState(0);
 
-   //New States
+  //New States
   const [department, setDepartment] = useState('Cornell Scott');
   const [isPfizer, setIsPfizer] = useState(null);
+  const [isInZipCodeRange, setIsInZipCodeRange] = useState(false);
   const [viewJump, setviewJump] = useState([]);
   const [selDate, setSelDate] = useState('');
   const [responseData, setResponseData] = useState({});
 
   const compNames = [
-    'employee',
+    'zipcode',
+    // 'employee',
     'vaccineconsent',
     // 'firstdose',
     'listconditions',
@@ -81,6 +83,10 @@ const QuestionFormComponent = ({updateHeader, isSpanish}) => {
     setIsPfizer(isPfizerSelected);
   };
 
+  const zipCodeInRange = (isZipCodeInRange) => {
+    setIsInZipCodeRange(isZipCodeInRange);
+  };
+
   const setReccDate = (date) => {
     setSelDate(date);
   };
@@ -88,20 +94,17 @@ const QuestionFormComponent = ({updateHeader, isSpanish}) => {
   const updateAnswerData = (questionData) => {
     // const dataKey = questionData.keys()
     // setResponseOrder([...responseOrder, ...dataKey[0]]);
-    setResponseData({...responseData, ...questionData});
-  }
+    setResponseData({ ...responseData, ...questionData });
+  };
 
   const schedulePush = () => {
-    submitData(); 
+    submitData();
     router.push(
-      `/scheduling?recc_date=${selDate}&second_dose=${
-        isPfizer == null ? false : true
-      }&isPfizer=${isPfizer}&isSpanish=${isSpanish}`,
+      `/scheduling?recc_date=${selDate}&in_zip_range=${isInZipCodeRange}&isPfizer=${isPfizer}&isSpanish=${isSpanish}`,
       '/scheduling'
     );
   };
 
-  
   let progressWidth = Math.floor(100 * ((viewIdx + 1) / compNames.length));
 
   return (
@@ -136,7 +139,9 @@ const QuestionFormComponent = ({updateHeader, isSpanish}) => {
         submitData={submitData}
         updateHeader={updateHeader}
         isSpanish={isSpanish}
+        zipCodeInRange={zipCodeInRange}
       ></QuestionView>
+      <p>{`Zip Code ${isInZipCodeRange ? 'is' : 'is not'} in range`}</p>
     </div>
   );
 };

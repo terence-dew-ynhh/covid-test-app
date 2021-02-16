@@ -14,6 +14,7 @@ import ReceiveVaccinationConsent from '../ReceiveVaccinationConsent'
 import IsEmployeeComponent from '../IsEmployeeComponent'
 import AgeComponent from '../AgeComponent'
 import MonoclonalComponent from '../MonoclonalComponent'
+import ZipInputComponent from '../ZipInputComponent';
 import styles from './QuestionViewComponent.module.css';
 
 
@@ -30,7 +31,8 @@ const QuestionViewComponent = ({
   department,
   updateAnswerData,
   updateHeader,
-  isSpanish
+  isSpanish,
+  zipCodeInRange
 }) => {
   const [prevEnabled, setPrevEnabled] = useState(false);
   const [nextEnabled, setNextEnabled] = useState(false);
@@ -71,7 +73,8 @@ const QuestionViewComponent = ({
     vaccineconsent: ReceiveVaccinationConsent,
     employee: IsEmployeeComponent,
     age: AgeComponent,
-    monoclonal: MonoclonalComponent
+    monoclonal: MonoclonalComponent,
+    zipcode: ZipInputComponent
   };
 
   const ComponentName = components[compName || 'pininput'];
@@ -95,6 +98,7 @@ const QuestionViewComponent = ({
           updateAnswerData={updateAnswerData}
           updateHeader={updateHeader}
           isSpanish={isSpanish}
+          zipCodeInRange={zipCodeInRange}
         />
       </div>
       <div className={styles.buttonContainer}>

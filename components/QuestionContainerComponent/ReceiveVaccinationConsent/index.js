@@ -51,6 +51,9 @@ const ReceiveVaccinationConsent = ({
     <>
       <div className={styles.question_row_item}>
         <div className={styles.question_row_item_sub}>
+        <p className="error" hidden={!(isDiagnosed === 'Yes')}>
+              {VEText[10]}
+            </p>
           <fieldset>
             <legend>
               {VEText[0]}

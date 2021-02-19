@@ -9,8 +9,8 @@
         "Bring an ID (photo ID if possible) and wear a face mask or covering when visiting the vaccination site.",
         "I declare that I am currently eligible to receive vaccine in the State of Connecticut.",
         "Agree",
-        "- Please bring proof of employment (Badge or paystub)"
-
+        "- Please bring proof of employment (Badge or paystub)",
+        "Please note that this web from is only to be used to schedule your first vaccine dose. You should be scheduling your 2nd dose appointment at the same place you received your 1st Dose"
 
     ],
     "sp": [
@@ -22,6 +22,7 @@
         "Si no cumple con los criterios anteriores, su cita será cancelada y no se le permitirá ingresar a un sitio de vacunación.",
         "Traiga una identificación (identificación con foto si es posible) y use una mascarilla o una cubierta cuando visite el sitio de vacunación.",
         "Declaro que actualmente soy elegible para recibir la vacuna en el estado de Connecticut.",
-        "Estoy de acuerdo"
+        "Estoy de acuerdo",
+        "Tenga en cuenta que esta página web solo se debe utilizar para programar su primera dosis de vacuna. Debe programar su cita para la segunda dosis en el mismo lugar en el que recibió su primera dosis"
     ]
 }

@@ -51,7 +51,7 @@ const ReceiveVaccinationConsent = ({
     <>
       <div className={styles.question_row_item}>
         <div className={styles.question_row_item_sub}>
-        <p className="error">
+        <p className="message">
               {VEText[10]}
             </p>
           <fieldset>

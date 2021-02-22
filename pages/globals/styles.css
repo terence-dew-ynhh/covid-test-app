@@ -97,7 +97,7 @@ fieldset {
 .question_div {
   padding: 25px 35px;
 }
-.error, .banner{
+.error, .banner, .message{
   color:white;
   background: red;
   padding: 15px 20px;
@@ -108,8 +108,13 @@ fieldset {
   background: #0f4d92;
   font-size: 1em;
   margin: 0;
-
 }
+
+.message{
+  background: rgba(255, 166, 0, 0.856);
+  font-size: 1em;
+}
+
 
 .phone{
   text-decoration: underline;

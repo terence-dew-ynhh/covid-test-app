@@ -1,6 +1,15 @@
 import { useState, useEffect } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 import styles from './ReceiveVaccinationConsent.module.css';
+import Tooltip from '@material-ui/core/Tooltip';
+import InfoIcon from '@material-ui/icons/Info';
 import veText from './vaccineelidgibility.json';
+
+const useStyles = makeStyles(() => ({
+  tooltip: {
+    fontSize: 23,
+  },
+}));
 
 const ReceiveVaccinationConsent = ({
   nextPage,
@@ -10,6 +19,9 @@ const ReceiveVaccinationConsent = ({
   schedulePush,
   isSpanish
 }) => {
+
+  const classes = useStyles();
+
   useEffect(() => {
     isDoneEnabled(false);
     isPrevEnabled(false);
@@ -72,12 +84,9 @@ const ReceiveVaccinationConsent = ({
               <br></br>
               <br></br>
               {VEText[12]}
-              <br></br>              
-              <br></br>
-              <b>{VEText[13]}</b>
-              <br></br>              
-              <br></br>
-              <b>{VEText[14]}</b>
+              <Tooltip title={`${VEText[13]}${VEText[14]}`} placement="top-end" className={classes.tooltip}>
+                <InfoIcon fontSize="small"></InfoIcon>
+              </Tooltip>
               <br></br>              
               <br></br>
               {VEText[9]}

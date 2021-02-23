@@ -72,7 +72,13 @@ const ReceiveVaccinationConsent = ({
               <br></br>
               <br></br>
               {VEText[12]}
+              <br></br>              
               <br></br>
+              <b>{VEText[13]}</b>
+              <br></br>              
+              <br></br>
+              <b>{VEText[14]}</b>
+              <br></br>              
               <br></br>
               {VEText[9]}
               {/* <br></br>

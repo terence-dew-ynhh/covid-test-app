@@ -59,7 +59,7 @@ const ReceiveVaccinationConsent = ({
               {VEText[0]}
               <br></br>
               <br></br>
-              {VEText[1]}
+              {VEText[11]}
               <br></br>
               <br></br>
               {VEText[2]}
@@ -69,6 +69,9 @@ const ReceiveVaccinationConsent = ({
               <br></br>
               <br></br>
               {VEText[4]}
+              <br></br>
+              <br></br>
+              {VEText[12]}
               <br></br>
               <br></br>
               {VEText[9]}

@@ -10,7 +10,9 @@
         "I declare that I am currently eligible to receive vaccine in the State of Connecticut.",
         "Agree",
         "- Please bring proof of employment (Badge or paystub)",
-        "Please note that this web form is only to be used to schedule your first vaccine dose. Your 2nd dose appointment will be scheduled after you receive your 1st dose."
+        "Please note that this web form is only to be used to schedule your first vaccine dose. Your 2nd dose appointment will be scheduled after you receive your 1st dose.",
+        "- 55 years of age or older",
+        "- Educators and Child Care Providers"
 
     ],
     "sp": [
@@ -23,6 +25,8 @@
         "Traiga una identificación (identificación con foto si es posible) y use una mascarilla o una cubierta cuando visite el sitio de vacunación.",
         "Declaro que actualmente soy elegible para recibir la vacuna en el estado de Connecticut.",
         "Estoy de acuerdo",
-        "Tenga en cuenta que este formulario web solo se debe utilizar para programar su primera dosis de vacuna. Su cita para la segunda dosis se programará después de que reciba su primera dosis"
+        "Tenga en cuenta que este formulario web solo se debe utilizar para programar su primera dosis de vacuna. Su cita para la segunda dosis se programará después de que reciba su primera dosis",
+        "- Personas mayores de 55 años",
+        "- Educadores y proveedores de cuidado infantil"
     ]
 }

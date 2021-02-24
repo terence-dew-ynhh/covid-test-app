@@ -7,7 +7,7 @@ import veText from './vaccineelidgibility.json';
 
 const useStyles = makeStyles(() => ({
   tooltip: {
-    fontSize: 23,
+    fontSize: 25,
   },
 }));
 
@@ -84,7 +84,7 @@ const ReceiveVaccinationConsent = ({
               <br></br>
               <br></br>
               {VEText[12]}
-              <Tooltip title={`${VEText[13]}${VEText[14]}`} placement="top-end" className={classes.tooltip}>
+              <Tooltip title={<p style={{ fontSize: "16px", lineHeight: "20px"}}>{VEText[13]}<br></br><br></br>{VEText[14]}</p>} placement="top-end" className={classes.tooltip}>
                 <InfoIcon fontSize="small"></InfoIcon>
               </Tooltip>
               <br></br>              

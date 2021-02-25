@@ -71,7 +71,7 @@ const ReceiveVaccinationConsent = ({
               {VEText[0]}
               <br></br>
               <br></br>
-              {VEText[11]}
+              {/* {VEText[11]}
               <br></br>
               <br></br>
               {VEText[2]}
@@ -82,7 +82,7 @@ const ReceiveVaccinationConsent = ({
               <br></br>
               {VEText[4]}
               <br></br>
-              <br></br>
+              <br></br> */}
               {VEText[12]}
               <Tooltip title={<p style={{ fontSize: "16px", lineHeight: "20px"}}>{VEText[13]}<br></br><br></br>{VEText[14]}</p>} placement="top-end" className={classes.tooltip}>
                 <InfoIcon fontSize="small"></InfoIcon>

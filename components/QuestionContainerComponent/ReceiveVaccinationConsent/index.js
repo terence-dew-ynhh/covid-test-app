@@ -15,6 +15,7 @@ const ReceiveVaccinationConsent = ({
   nextPage,
   isPrevEnabled,
   isDoneEnabled,
+  isNextEnabled,
   updateField,
   schedulePush,
   isSpanish
@@ -24,6 +25,7 @@ const ReceiveVaccinationConsent = ({
 
   useEffect(() => {
     isDoneEnabled(false);
+    isNextEnabled(false);
     isPrevEnabled(true);
   }, []);
 

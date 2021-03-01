@@ -7,7 +7,7 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
   const [viewIdx, setviewIdx] = useState(0);
 
   //New States
-  const [department, setDepartment] = useState('Cornell Scott');
+  const [isFairHaven, setIsFairHaven] = useState(false);
   const [isPfizer, setIsPfizer] = useState(null);
   const [isInZipCodeRange, setIsInZipCodeRange] = useState(false);
   const [viewJump, setviewJump] = useState([]);
@@ -15,7 +15,7 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
   const [responseData, setResponseData] = useState({});
 
   const compNames = [
-    'zipcode',
+    'deptselect',
     // 'employee',
     'vaccineconsent',
     // 'firstdose',
@@ -99,12 +99,14 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
 
   const schedulePush = () => {
     submitData();
+
     router.push(
       `/scheduling?recc_date=${selDate}&in_zip_range=${isInZipCodeRange}&second_dose=${
         isPfizer == null ? false : true
       }&isPfizer=${isPfizer}&isSpanish=${isSpanish}`,
       '/scheduling'
     );
+
   };
 
   let progressWidth = Math.floor(100 * ((viewIdx + 1) / compNames.length));
@@ -131,12 +133,12 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
         prevPage={prevPage}
         compName={compNames[viewIdx]}
         schedulePush={schedulePush}
-        setDepartment={setDepartment}
+        setIsFairHaven={setIsFairHaven}
         verifyPin={verifyPin}
         isPfizer={isPfizer}
         pfizerSelected={pfizerSelected}
         setReccDate={setReccDate}
-        department={department}
+        isFairHaven={isFairHaven}
         updateAnswerData={updateAnswerData}
         submitData={submitData}
         updateHeader={updateHeader}

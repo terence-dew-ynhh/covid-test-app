@@ -10,7 +10,7 @@ const DepartmentSelectComponent = ({
   isNextEnabled,
   isDoneEnabled,
   updateAge,
-  setDepartment,
+  setIsFairHaven,
   updateAnswerData
 }) => {
   const [ageCount, setAgeCount] = useState(18);
@@ -33,7 +33,7 @@ const DepartmentSelectComponent = ({
     <>
       <div className={styles.question_row_item}>
 
-        <label>Please Select Employer:</label>
+        <label>Please Select Your School District:</label>
         <br></br>
         <br></br>
         <Autocomplete
@@ -41,15 +41,19 @@ const DepartmentSelectComponent = ({
           options={departmentsObj.departments}
           getOptionLabel={(dept) => dept}
           onChange={(e, selDept) => {
-            setDepartment(selDept);
-            updateAnswerData({employer: selDept});
+            if(selDept == "Fair Haven School District")
+            setIsFairHaven(true);
+            else{
+              setIsFairHaven(false);
+            }
+            // updateAnswerData({employer: selDept});
             isNextEnabled(true);
           }}
           style={{ width: 300 }}
           renderInput={(params) => (
             <TextField
               {...params}
-              label="Select Employer"
+              label="Select School District"
               variant="outlined"
               autoFocus
             />

@@ -23,12 +23,12 @@ const QuestionViewComponent = ({
   nextPage,
   prevPage,
   schedulePush,
-  setDepartment,
+  setIsFairHaven,
   verifyPin,
   isPfizer,
   pfizerSelected,
   setReccDate,
-  department,
+  isFairHaven,
   updateAnswerData,
   updateHeader,
   isSpanish,
@@ -89,12 +89,11 @@ const QuestionViewComponent = ({
           isDoneEnabled={isDoneEnabled}
           setSchedulerURL={setSchedulerURL}
           schedulePush={schedulePush}
-          setDepartment={setDepartment}
+          setIsFairHaven={setIsFairHaven}
           verifyPin={verifyPin}
           isPfizer={isPfizer}
           pfizerSelected={pfizerSelected}
           setReccDate={setReccDate}
-          department={department}
           updateAnswerData={updateAnswerData}
           updateHeader={updateHeader}
           isSpanish={isSpanish}
@@ -105,7 +104,8 @@ const QuestionViewComponent = ({
         <button className="button" hidden={!prevEnabled} onClick={prevPage}>
           {isSpanish ? `< Atrás` : `< Back`}
         </button>
-        <button className="button" hidden={!nextEnabled} onClick={nextPage}>
+        <button className="button" hidden={!nextEnabled} onClick={() => {if(isFairHaven) nextPage(); else window.location.href = "https://teachersvaccine.ynhh.org/"
+ }}>
           {isSpanish ? `Próximo >` : `Next >`}
         </button>
         <button

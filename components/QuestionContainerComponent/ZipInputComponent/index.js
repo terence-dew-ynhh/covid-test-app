@@ -29,18 +29,9 @@ const PinInputComponent = ({
       '06511': true,
       '06519': true,
       '06516': true,
-      '06514': true,
       '06515': true,
       '06405': true,
-      '06517': true,
-      '06473': true,
-      '06492': true,
-      '06450': true,
-      '06451': true,
-      '06437': true,
       '06510': true,
-      '06518': true,
-      '06418': true,
     };
     if(zipCodesList[zipCode]) zipCodeInRange(true)
     else zipCodeInRange(false)

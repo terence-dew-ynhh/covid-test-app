@@ -8,8 +8,8 @@ import Link from 'next/link';
 
 const useStyles = makeStyles(() => ({
   tooltip: {
-    fontSize: 25,
-  },
+    fontSize: 25
+  }
 }));
 
 const VaccinationScheduleConsent = ({
@@ -20,7 +20,6 @@ const VaccinationScheduleConsent = ({
   schedulePush,
   isSpanish
 }) => {
-
   const classes = useStyles();
 
   useEffect(() => {
@@ -64,19 +63,34 @@ const VaccinationScheduleConsent = ({
     <>
       <div className={styles.question_row_item}>
         <div className={styles.question_row_item_sub}>
-        <p className="message">
-              {VEText[3]}
-            </p>
+          <p className="message">{VEText[3]}</p>
           <fieldset>
             <legend>
-            <br></br>
+              <br></br>
               <br></br>
               {VEText[0]}
               <br></br>
               <br></br>
-              <div className='imgcontainer'>
-              <p className='versiontxt'>v1 3.1.21</p>
-              <a href='/info' target='_blank' rel="noreferrer"><img style={{height: '50%' }} src="Schedule.PNG" passHref></img></a>            
+              <div className="imgcontainer">
+                <p className="versiontxt">v1 3.1.21</p>
+                <a href="/info" target="_blank" rel="noreferrer">
+                  <img
+                    style={{ height: '50%' }}
+                    src="Schedule.PNG"
+                    passHref
+                  ></img>
+                </a>
+                <p>
+                  All three COVID-19 vaccines (Pfizer, Moderna, and J&J) are
+                  safe and effective. All have been shown to reduce the risk of
+                  becoming infected with COVID-19 and being hospitalized. Most
+                  importantly, all have been shown to eliminate the risk of
+                  developing severe disease and death due to COVID-19. All 3
+                  vaccines are well-tolerated. Pfizer and Moderna are a 2-dose
+                  series. J&J is a single dose option. Getting vaccinated as
+                  soon as possible with the vaccine that is available will help
+                  protect you and your family against COVID
+                </p>
               </div>
             </legend>
             <div className={styles.q1_grid}>{checkboxes}</div>
@@ -84,23 +98,23 @@ const VaccinationScheduleConsent = ({
         </div>
       </div>
       <style jsx>{`
-      img:hover{
-        border: 2px solid rgba(255, 166, 0, 0.856);
-      }
-      img{
-        margin: 0;
-      }
-      .versiontxt{
-        font-size: .7em;
-        text-align: center;
-        margin: 1px;
-      }
-      .imgcontainer{
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
+        img:hover {
+          border: 2px solid rgba(255, 166, 0, 0.856);
+        }
+        img {
+          margin: 0;
+        }
+        .versiontxt {
+          font-size: 0.7em;
+          text-align: center;
+          margin: 1px;
+        }
+        .imgcontainer {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
       `}</style>
     </>
   );

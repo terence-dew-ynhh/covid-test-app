@@ -119,17 +119,6 @@ const FactSheetComponent = ({
                 <br></br>
               </legend>
 
-              <button
-                className={styles.button}
-                type="button"
-                onClick={handleOpen}
-              >
-                View Vaccination Calendar
-              </button>
-              <br></br>
-              <br></br>
-              <br></br>
-              <br></br>
               <div className="radio_row_item">
                 <input
                   id="prev_covid_agree"

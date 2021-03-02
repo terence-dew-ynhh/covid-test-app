@@ -25,6 +25,7 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
     'monoclonal',
     'factsheet',
     'quartinecovid',
+    'vaccineschedule',
     'selectedvaccine',
     'vaccinedateselect',
     'selectsymptoms'

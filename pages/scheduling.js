@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Modal from '@material-ui/core/Modal';
 import { makeStyles } from '@material-ui/core/styles';
+import IconButton from '@material-ui/core/IconButton';
+import ClearIcon from '@material-ui/icons/Clear';
 
 function getModalStyle() {
   const top = 50;
@@ -49,7 +51,14 @@ export default function Home({ link, recc_date, second_dose, isSpanish }) {
 
   const body = (
     <div style={modalStyle} className={classes.paper}>
-      <img style={{height: '100%' }} src="Schedule.PNG"></img>
+      <img style={{ height: '100%' }} src="Schedule.PNG"></img>
+
+      <IconButton style={{ position: 'absolute'}} onClick={handleClose}>
+        <ClearIcon
+          style={{ border: '2px solid red', position: 'absolute', color: 'red' }}
+          fontSize="large"
+        ></ClearIcon>
+      </IconButton>
     </div>
   );
 
@@ -73,15 +82,8 @@ export default function Home({ link, recc_date, second_dose, isSpanish }) {
             : ''}
         </h3>
         <button
-          style={{
-            border: 'none',
-            background: 'transparent',
-            color: 'blue',
-            textDecoration: 'underline',            
-            fontSize: '1.2em',
-            padding: 0,
-            width: '15%'
-          }}
+          className="button"
+          style={{ marginBottom: 0 }}
           type="button"
           onClick={handleOpen}
         >
@@ -112,9 +114,16 @@ export default function Home({ link, recc_date, second_dose, isSpanish }) {
           justify-items: center;
           border: none;
         }
+        button {
+          width: 15%;
+        }
         h3 {
           margin-left: 25px;
         }
+        @media (max-width: 475px) {
+          button {
+            width: 100%;
+          }
       `}</style>
     </>
   );

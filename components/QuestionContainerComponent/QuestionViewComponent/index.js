@@ -15,6 +15,7 @@ import IsEmployeeComponent from '../IsEmployeeComponent'
 import AgeComponent from '../AgeComponent'
 import MonoclonalComponent from '../MonoclonalComponent'
 import ZipInputComponent from '../ZipInputComponent';
+import VaccinationScheduleConsent from '../VaccinationScheduleConsent';
 import styles from './QuestionViewComponent.module.css';
 
 
@@ -74,7 +75,8 @@ const QuestionViewComponent = ({
     employee: IsEmployeeComponent,
     age: AgeComponent,
     monoclonal: MonoclonalComponent,
-    zipcode: ZipInputComponent
+    zipcode: ZipInputComponent,
+    vaccineschedule: VaccinationScheduleConsent
   };
 
   const ComponentName = components[compName || 'pininput'];

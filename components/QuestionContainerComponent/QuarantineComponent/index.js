@@ -51,7 +51,7 @@ const QuarantineComponent = ({
                     name="prev_covid"
                     onClick={(e) => {
                       updateAnswerData({ quarantined: e.target.value });
-                      schedulePush();
+                      nextPage()
                     }}
                   ></input>
                   <label htmlFor="prev_covid_no">{QText[4]}</label>

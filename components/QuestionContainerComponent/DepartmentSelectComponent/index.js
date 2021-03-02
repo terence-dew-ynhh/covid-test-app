@@ -41,10 +41,10 @@ const DepartmentSelectComponent = ({
           options={departmentsObj.departments}
           getOptionLabel={(dept) => dept}
           onChange={(e, selDept) => {
-            if(selDept == "Fair Haven School District")
-            setIsFairHaven(true);
+            if(selDept == "Other")
+            setIsFairHaven(false);
             else{
-              setIsFairHaven(false);
+              setIsFairHaven(true);
             }
             // updateAnswerData({employer: selDept});
             isNextEnabled(true);

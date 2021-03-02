@@ -1,8 +1,8 @@
 {
     "departments": [
-        "Fair Haven School District",
         "New Haven School District",
-        "East Haven School District"
+        "East Haven School District",
+        "Other"
     ]
 }
 

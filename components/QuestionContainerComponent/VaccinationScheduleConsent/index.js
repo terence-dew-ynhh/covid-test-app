@@ -75,7 +75,7 @@ const VaccinationScheduleConsent = ({
               <br></br>
               <br></br>
               <div className='imgcontainer'>
-              <p>v1 3.1.21</p>
+              <p className='versiontxt'>v1 3.1.21</p>
               <a href='/info' target='_blank' rel="noreferrer"><img style={{height: '50%' }} src="Schedule.PNG" passHref></img></a>            
               </div>
             </legend>
@@ -90,7 +90,7 @@ const VaccinationScheduleConsent = ({
       img{
         margin: 0;
       }
-      p{
+      .versiontxt{
         font-size: .7em;
         text-align: center;
         margin: 1px;

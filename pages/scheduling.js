@@ -49,7 +49,7 @@ export default function Home({ link, recc_date, second_dose, isSpanish }) {
 
   const body = (
     <div style={modalStyle} className={classes.paper}>
-      <img style={{maxHeight: '100%' }} src="Schedule.PNG"></img>
+      <img style={{height: '100%' }} src="Schedule.PNG"></img>
     </div>
   );
 

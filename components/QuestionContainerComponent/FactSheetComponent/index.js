@@ -58,7 +58,7 @@ const FactSheetComponent = ({
 
   const body = (
     <div style={modalStyle} className={classes.paper}>
-      <img style={{maxHeight: '100%' }} src="Schedule.PNG"></img>
+      <img style={{height: '100%' }} src="Schedule.PNG"></img>
     </div>
   );
 

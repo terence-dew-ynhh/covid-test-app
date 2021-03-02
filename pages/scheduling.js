@@ -87,7 +87,7 @@ export default function Home({ link, recc_date, second_dose, isSpanish }) {
           type="button"
           onClick={handleOpen}
         >
-          View Vaccination Calendar
+          Click here to see Vaccine Schedule 
         </button>
         <iframe
           id="openSchedulingFrame"

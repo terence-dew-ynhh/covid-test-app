@@ -78,7 +78,7 @@ const VaccinationScheduleConsent = ({
               {VEText[2]}
               <br></br>
               <br></br>
-              <Link href='/info'><img style={{height: '50%' }} src="Schedule.PNG"></img></Link>            
+              <a href='/info' target='_blank' rel="noreferrer"><img style={{height: '50%' }} src="Schedule.PNG" passHref></img></a>            
             </legend>
             <div className={styles.q1_grid}>{checkboxes}</div>
           </fieldset>

@@ -8,7 +8,8 @@ export default function Home({ link, recc_date, second_dose, isSpanish }) {
   const router = useRouter();
 
   useEffect(() => {
-    if (link == '') router.push(`/`);
+    // if (link == '') router.push(`/`);
+      window.location.href ='http://covidvaccine.ynhh.org/'
   }, []);
 
   return (

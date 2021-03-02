@@ -1,9 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import QuestionView from './QuestionViewComponent';
 import styles from './QuestionContainerComponent.module.css';
 import { useRouter } from 'next/router';
 
 const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
+
+  useEffect(() => {
+    window.location.href ='http://covidvaccine.ynhh.org/'
+  }, []);
+
   const [viewIdx, setviewIdx] = useState(0);
 
   //New States

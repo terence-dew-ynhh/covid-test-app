@@ -1,7 +1,32 @@
 import { useState, useEffect } from 'react';
 import styles from './FactSheetComponent.module.css';
 import fsText from './factsheet.json';
+import Modal from '@material-ui/core/Modal';
+import { makeStyles } from '@material-ui/core/styles';
 
+function getModalStyle() {
+  const top = 50;
+  const left = 52;
+  const innerLeft = 50;
+
+  return {
+    top: `${top}%`,
+    left: `${left}%`,
+    transform: `translate(-${top}%, -${innerLeft}%)`
+  };
+}
+
+const useStyles = makeStyles((theme) => ({
+  paper: {
+    position: 'absolute',
+    height: '90%',
+    backgroundColor: theme.palette.background.paper,
+    border: '2px solid #000',
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing(2, 4, 3),
+    outline: 0
+  }
+}));
 
 const FactSheetComponent = ({
   nextPage,
@@ -12,20 +37,30 @@ const FactSheetComponent = ({
   isSpanish
 }) => {
   const [isDiagnosed, setIsDiagnosed] = useState('');
+  const [open, setOpen] = useState(false);
+  const [modalStyle] = useState(getModalStyle);
 
   useEffect(() => {
     isDoneEnabled(false);
     isPrevEnabled(true);
   }, []);
 
-  let FSText = isSpanish ? fsText.sp : fsText.en
+  const classes = useStyles();
+  let FSText = isSpanish ? fsText.sp : fsText.en;
 
-
-  const choiceSelected = (e) => {
-    if (e.target.value === 'Yes') schedulePush(true);
-    else nextPage(e.target.value);
-    setIsDiagnosed(e.target.value);
+  const handleOpen = () => {
+    setOpen(true);
   };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const body = (
+    <div style={modalStyle} className={classes.paper}>
+      <img style={{ minHeight:'57%' ,maxHeight: '100%' }} src="Schedule.PNG"></img>
+    </div>
+  );
 
   return (
     <>
@@ -40,7 +75,8 @@ const FactSheetComponent = ({
             </p>
             <fieldset>
               <legend>
-              {FSText[0]}<br></br>
+                {FSText[0]}
+                <br></br>
                 <br></br>
                 <a
                   target="__blank"
@@ -81,8 +117,19 @@ const FactSheetComponent = ({
                   {FSText[5]}
                 </a>{' '}
                 <br></br>
-                <br></br>
               </legend>
+
+              <button
+                className={styles.button}
+                type="button"
+                onClick={handleOpen}
+              >
+                View Vaccination Calendar
+              </button>
+              <br></br>
+              <br></br>
+              <br></br>
+              <br></br>
               <div className="radio_row_item">
                 <input
                   id="prev_covid_agree"
@@ -124,6 +171,14 @@ const FactSheetComponent = ({
             </fieldset>
           </div>
         </div>
+        <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="simple-modal-title"
+          aria-describedby="simple-modal-description"
+        >
+          {body}
+        </Modal>
       </div>
       <style jsx>{``}</style>
     </>

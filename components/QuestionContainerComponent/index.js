@@ -16,7 +16,8 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
 
   const compNames = [
     // 'zipcode',
-    'employee',
+    // 'employee',
+    'quartinecovid',
     'vaccineconsent',
     // 'firstdose',
     'listconditions',

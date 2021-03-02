@@ -1,15 +1,57 @@
 import Head from 'next/head';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-// import redirect from 'nextjs-redirect'
+import Modal from '@material-ui/core/Modal';
+import { makeStyles } from '@material-ui/core/styles';
 
+function getModalStyle() {
+  const top = 50;
+  const left = 52;
+  const innerLeft = 50;
+
+  return {
+    top: `${top}%`,
+    left: `${left}%`,
+    transform: `translate(-${top}%, -${innerLeft}%)`
+  };
+}
+
+const useStyles = makeStyles((theme) => ({
+  paper: {
+    position: 'absolute',
+    height: '90%',
+    backgroundColor: theme.palette.background.paper,
+    border: '2px solid #000',
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing(2, 4, 3),
+    outline: 0
+  }
+}));
 
 export default function Home({ link, recc_date, second_dose, isSpanish }) {
+  const [open, setOpen] = useState(false);
+  const [modalStyle] = useState(getModalStyle);
+
   const router = useRouter();
+  const classes = useStyles();
 
   useEffect(() => {
     if (link == '') router.push(`/`);
   }, []);
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const body = (
+    <div style={modalStyle} className={classes.paper}>
+      <img style={{ minHeight:'57%' ,maxHeight: '100%' }} src="Schedule.PNG"></img>
+    </div>
+  );
 
   return (
     <>
@@ -24,14 +66,41 @@ export default function Home({ link, recc_date, second_dose, isSpanish }) {
 
       <div className="scheduleContainer">
         <h3>
-          {second_dose == 'true' ? (isSpanish == 'true' ? `Seleccione una fecha posterior a ${recc_date}`  : `Please Select Date After ${recc_date}`) : ''}
+          {second_dose == 'true'
+            ? isSpanish == 'true'
+              ? `Seleccione una fecha posterior a ${recc_date}`
+              : `Please Select Date After ${recc_date}`
+            : ''}
         </h3>
+        <button
+          style={{
+            border: 'none',
+            background: 'transparent',
+            color: 'blue',
+            textDecoration: 'underline',            
+            fontSize: '1.2em',
+            padding: 0,
+            width: '15%'
+          }}
+          type="button"
+          onClick={handleOpen}
+        >
+          View Vaccination Calendar
+        </button>
         <iframe
           id="openSchedulingFrame"
           className="widgetframe"
           scrolling="yes"
           src={link}
         ></iframe>
+        <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="simple-modal-title"
+          aria-describedby="simple-modal-description"
+        >
+          {body}
+        </Modal>
       </div>
       <style jsx>{`
         .scheduleContainer,
@@ -57,12 +126,12 @@ Home.getInitialProps = async ({ query }) => {
     second_dose == 'true'
       ? isPfizer == 'true'
         ? 'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=83668,83667,74622,84623,83665,83652,83656,84799,84798,84796,84797,84800,84816,85109,85376&vt=2339&dept=204150016,204590014,201280003,208040011,204010005,204400009,102360001,102350001,102370001,102340001,102380001,102400001,101960001&view=plain&public=1'
-        :  'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=83667,83868,83874,83664,83653,83655,84793,84794,84791,84792,84795,84815,85108,85375&vt=2338&dept=204150016,204590014,201280003,208040011,204010005,204400009,102360001,102350001,102390001,102370001,102340001,102380001,102400001,101960001&view=plain&public=1'
+        : 'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=83667,83868,83874,83664,83653,83655,84793,84794,84791,84792,84795,84815,85108,85375&vt=2338&dept=204150016,204590014,201280003,208040011,204010005,204400009,102360001,102350001,102390001,102370001,102340001,102380001,102400001,101960001&view=plain&public=1'
       : 'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=83666,83867,83873,83663,83651,83654,84788,84789,84786,84787,84790,84814,85097,85374&vt=2293&dept=204150016,204590014,201280003,208040011,204010005,204400009,102360001,102350001,102390001,102370001,102340001,102380001,102400001,101960001&view=plain&public=1';
 
-      if(isSpanish == 'true') link = link + "&lang=espanol"
-      else link = link + "&lang=english"
-      if(second_dose == null) link = '';
+  if (isSpanish == 'true') link = link + '&lang=espanol';
+  else link = link + '&lang=english';
+  if (second_dose == null) link = '';
 
   return {
     link,

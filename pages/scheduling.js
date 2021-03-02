@@ -81,28 +81,28 @@ export default function Home({ link, recc_date, second_dose, isSpanish }) {
               : `Please Select Date After ${recc_date}`
             : ''}
         </h3>
-        <button
+        {/* <button
           className="button"
           style={{ marginBottom: 0 }}
           type="button"
           onClick={handleOpen}
         >
           Click here to see Vaccine Schedule 
-        </button>
+        </button> */}
         <iframe
           id="openSchedulingFrame"
           className="widgetframe"
           scrolling="yes"
           src={link}
         ></iframe>
-        <Modal
+        {/* <Modal
           open={open}
           onClose={handleClose}
           aria-labelledby="simple-modal-title"
           aria-describedby="simple-modal-description"
         >
           {body}
-        </Modal>
+        </Modal> */}
       </div>
       <style jsx>{`
         .scheduleContainer,

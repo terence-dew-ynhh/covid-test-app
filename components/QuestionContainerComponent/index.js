@@ -17,6 +17,7 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
   const compNames = [
     // 'zipcode',
     // 'employee',
+    'vaccineschedule',
     'vaccineconsent',
     // 'firstdose',
     'listconditions',
@@ -25,7 +26,7 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
     'monoclonal',
     'factsheet',
     'quartinecovid',
-    // 'vaccineschedule',
+    'vaccineschedule',
     'selectedvaccine',
     'vaccinedateselect',
     'selectsymptoms'

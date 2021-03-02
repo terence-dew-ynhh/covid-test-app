@@ -81,14 +81,14 @@ export default function Home({ link, recc_date, second_dose, isSpanish }) {
               : `Please Select Date After ${recc_date}`
             : ''}
         </h3>
-        {/* <button
+        <button
           className="button"
           style={{ marginBottom: 0 }}
           type="button"
           onClick={handleOpen}
         >
           Click here to see Vaccine Schedule 
-        </button> */}
+        </button>
         <iframe
           id="openSchedulingFrame"
           className="widgetframe"

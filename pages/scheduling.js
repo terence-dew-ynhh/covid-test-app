@@ -65,7 +65,7 @@ export default function Home({ link, recc_date, second_dose, isSpanish }) {
   return (
     <>
       <Head>
-        <title>COVID-19 Vaccine Scheduler</title>
+        <title>YNHH COVID19 Vaccination</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

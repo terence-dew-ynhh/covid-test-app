@@ -16,7 +16,7 @@ export default function FAQ() {
   return (
     <div className="container">
       <Head>
-        <title>Yale COVID-19 Vaccine Clinical Trial</title>
+        <title>YNHH COVID19 Vaccination</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       

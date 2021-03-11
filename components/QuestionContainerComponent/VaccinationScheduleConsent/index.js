@@ -72,7 +72,7 @@ const VaccinationScheduleConsent = ({
               <br></br>
               <br></br>
               <div className="imgcontainer">
-                <p className="versiontxt">v1 3.1.21</p>
+                <p className="versiontxt">v2 3.10.21</p>
                 <a href="/info" target="_blank" rel="noreferrer">
                   <img
                     style={{ height: '50%' }}

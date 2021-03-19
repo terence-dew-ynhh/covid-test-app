@@ -75,8 +75,7 @@ const VaccinationScheduleConsent = ({
                 <p className="versiontxt">v3 3.18.21</p>
                 <a href="/info" target="_blank" rel="noreferrer">
                   <img
-                    style={{  }}
-                    src="Schedule.png"
+                    src="/Schedule.PNG"
                     passHref
                   ></img>
                 </a>

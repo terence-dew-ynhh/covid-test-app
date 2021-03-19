@@ -20,7 +20,7 @@ export default function FAQ() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       
-      <img style={{ }} src="Schedule.PNG"></img>
+      <img style={{ }} src="/Schedule.PNG"></img>
 
       <style jsx>{`
         img {

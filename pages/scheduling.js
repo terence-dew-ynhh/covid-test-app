@@ -61,8 +61,8 @@ Home.getInitialProps = async ({ query }) => {
   //       :  'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=83667,83868,83874,83664,83653,83655,84793,84794,84791,84792,84795,84815,85108&vt=2338&dept=204150016,204590014,201280003,208040011,204010005,204400009,102360001,102350001,102390001,102370001,102340001,102380001,102400001&view=plain&public=1'
   //     : 'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=83666,83867,83873,83663,83651,83654,84788,84789,84786,84787,84790,84814,85097&vt=2293&dept=204150016,204590014,201280003,208040011,204010005,204400009,102360001,102350001,102390001,102370001,102340001,102380001,102400001,421030003&view=plain&public=1';
 
-      if(in_zip_range === 'true') link = 'https://mychartnp.ynhhs.org/poc/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=83833,83836,83835,83834,85604&vt=2293&dept=421010023,421020006,421090007,421160004,421030003&view=plain&public=1';
-      else link = 'https://mychartnp.ynhhs.org/poc/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=84788,84789,84786,84787,84790,84814,85097,85374,85635,85636,85637,85638,85639,85640,85642,85643&vt=2293&dept=102360001,102350001,102390001,102370001,102340001,102380001,102400001,101960001&view=plain&public=1' 
+      if(in_zip_range === 'true') link = 'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=83833,83836,83835,83834,85604&vt=2293&dept=421010023,421020006,421090007,421160004,421030003&view=plain&public=1';
+      else link = 'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=84788,84789,84786,84787,84790,84814,85097,85374,85635,85636,85637,85638,85639,85640,85642,85643&vt=2293&dept=102360001,102350001,102390001,102370001,102340001,102380001,102400001,101960001&view=plain&public=1' 
 
       console.log(link)
       if(isSpanish == 'true') link = link + "&lang=espanol"

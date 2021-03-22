@@ -11,7 +11,7 @@ import SelectVaccineComponent from '../SelectVaccineComponent';
 import QuarantineComponent from '../QuarantineComponent';
 import SelectSymptomsComponent from '../SelectSymptomsComponent'
 import ReceiveVaccinationConsent from '../ReceiveVaccinationConsent'
-import IsEmployeeComponent from '../IsEmployeeComponent'
+import SlotsFilledComponent from '../SlotsFilledComponent'
 import AgeComponent from '../AgeComponent'
 import MonoclonalComponent from '../MonoclonalComponent'
 import ZipInputComponent from '../ZipInputComponent'
@@ -71,7 +71,7 @@ const QuestionViewComponent = ({
     quartinecovid: QuarantineComponent,
     selectsymptoms: SelectSymptomsComponent,
     vaccineconsent: ReceiveVaccinationConsent,
-    employee: IsEmployeeComponent,
+    slotsfilled: SlotsFilledComponent,
     age: AgeComponent,
     monoclonal: MonoclonalComponent,
     zipcode: ZipInputComponent

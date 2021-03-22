@@ -26,6 +26,28 @@ function runMiddleware(req, res, fn) {
   })
 }
 
+handler.post(async (req, res) => {
+
+  await runMiddleware(req, res, cors)  
+
+  let { openFlag } = req.body;
+
+
+try{
+  const appStateFlag = await req.db
+    .collection('appstate')
+    .findOneAndUpdate({},{ $set: {open: openFlag}},{upsert: true});
+  
+
+   res.status(200);
+    res.send(appStateFlag);
+  } catch (err) {
+    res.status(400);
+    res.end(`Something went wrong: ${err}`);
+  }
+
+});
+
 
 
 handler.get(async (req, res) => {
@@ -37,7 +59,7 @@ try{
   const appStateFlag = await req.db
     .collection('appstate')
     .findOne({})
-  // console.log(req.db)
+  console.log(appStateFlag)
 
   
 

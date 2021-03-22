@@ -3,17 +3,14 @@ import styles from './ZipInputComponent.module.css';
 import TextField from '@material-ui/core/TextField';
 
 const currentAppState = async () => {
-  //axios POST request to auth
-  //next page if response true
-  // error message if false
 
-  const action = 'get';
-  const res = await fetch('/api/appstate');
-
-  return res.json();
+  return await fetch('/api/appstate')
+  .then(res => res.json())
+  .then(res => res.open)
+  
 };
 
-const PinInputComponent = ({
+const ZipInputComponent = ({
   nextPage,
   isPrevEnabled,
   isNextEnabled,
@@ -23,18 +20,17 @@ const PinInputComponent = ({
   zipCodeInRange
 }) => {
   const [zipCode, setZipCode] = useState('');
+  const [applicationOn, setApplicationOn] = useState(false);
   const [isSuccess, setIsSuccess] = useState(true);
-  const [isOverAttempts, setIsOverAttempts] = useState(false);
-  const [appState, setAppState] = useState(false);
 
   useEffect(() => {
     isDoneEnabled(false);
     isPrevEnabled(true);
     isNextEnabled(false);
-    setAppState(currentAppState);
-  }, [currentAppState, setAppState]);
+    currentAppState().then(appFlag => setApplicationOn(appFlag));
+  }, [currentAppState, setApplicationOn]);
 
-  const onSubmit = async () => {
+  const onSubmit = async (e) => {
     let zipCodesList = {
       '06513': true,
       '06512': true,
@@ -47,10 +43,10 @@ const PinInputComponent = ({
     };
     if (zipCodesList[zipCode]) {
       zipCodeInRange(true);
-      nextPage(2);
+      nextPage(e,2);
     } else {
       zipCodeInRange(false);
-      if(appState) nextPage(2);
+      if(applicationOn) nextPage(e,2);
       else nextPage();
     }
 
@@ -82,7 +78,7 @@ const PinInputComponent = ({
               autoFocus
             />
           </div>
-          <button className={styles.button} onClick={onSubmit}>
+          <button className={styles.button} onClick={(e) => onSubmit(e)}>
             {`Submit`}
           </button>
         </div>
@@ -92,4 +88,4 @@ const PinInputComponent = ({
   );
 };
 
-export default PinInputComponent;
+export default ZipInputComponent;

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import styles from './IsEmployeeComponent.module.css';
+import styles from './SlotsFilledComponent.module.css';
 
-const IsEmployeeComponent = ({
+const SlotsFilledComponent = ({
   nextPage,
   isPrevEnabled,
   isDoneEnabled,
@@ -77,4 +77,4 @@ const IsEmployeeComponent = ({
   );
 };
 
-export default IsEmployeeComponent;
+export default SlotsFilledComponent;

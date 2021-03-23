@@ -78,9 +78,24 @@ const FactSheetComponent = ({
                   target="__blank"
                   href="https://mychart.ynhhs.org/mychart-prd/en-US/PDF/YNHHCOVIDConsent.pdf"
                 >
-                  {FSText[5]}
+                {FSText[5]}
                 </a>{' '}
                 <br></br>
+                <br></br>
+                <a
+                  target="__blank"
+                  href="https://mychart.ynhhs.org/mychart-prd/en-US/PDF/JJEUA.pdf"
+                >
+                  {FSText[9]}
+                </a>{' '}
+                <br></br>
+                <br></br>
+                <a
+                  target="__blank"
+                  href="https://mychart.ynhhs.org/mychart-prd/en-US/PDF/JJEUA_ESP.pdf"
+                >
+                  {FSText[10]}
+                </a>{' '}
                 <br></br>
               </legend>
               <div className="radio_row_item">

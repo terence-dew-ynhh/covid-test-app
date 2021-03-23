@@ -35,11 +35,6 @@ const ZipInputComponent = ({
       '06513': true,
       '06512': true,
       '06511': true,
-      '06519': true,
-      '06516': true,
-      '06515': true,
-      '06405': true,
-      '06510': true
     };
     if (zipCodesList[zipCode]) {
       zipCodeInRange(true);

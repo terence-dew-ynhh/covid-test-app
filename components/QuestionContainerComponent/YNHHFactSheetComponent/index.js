@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import styles from './FactSheetComponent.module.css';
-import fsText from './factsheet.json';
+import styles from './YNHHFactSheetComponent.module.css';
+import fsText from './ynhhfactsheet.json';
 import Modal from '@material-ui/core/Modal';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const FactSheetComponent = ({
+const YNHHFactSheetComponent = ({
   nextPage,
   isPrevEnabled,
   isDoneEnabled,
@@ -80,49 +80,9 @@ const FactSheetComponent = ({
                 <br></br>
                 <a
                   target="__blank"
-                  href="https://www.fda.gov/media/144414/download"
-                >
-                  Pfizer Vaccination EUA
-                </a>{' '}
-                <br></br>
-                <br></br>
-                <a
-                  target="__blank"
-                  href="https://www.fda.gov/media/144638/download"
-                >
-                  Moderna Vaccination EUA
-                </a>
-                <br></br>
-                <br></br>
-                <a
-                  target="__blank"
-                  href="https://mychart.ynhhs.org/MyChart-PRD/en-US/PDF/ESPCOVIDPfizerVaccineFactSheet.pdf"
+                  href="https://mychart.ynhhs.org/mychart-prd/en-US/PDF/YNHHCOVIDConsent.pdf"
                 >
                   {FSText[3]}
-                </a>{' '}
-                <br></br>
-                <br></br>
-                <a
-                  target="__blank"
-                  href="https://mychart.ynhhs.org/MyChart-PRD/en-US/PDF/ESPCOVIDModernaVaccineFactSheet.pdf"
-                >
-                  {FSText[4]}
-                </a>
-                <br></br>
-                <br></br>
-                <a
-                  target="__blank"
-                  href="https://mychart.ynhhs.org/mychart-prd/en-US/PDF/JJEUA.pdf"
-                >
-                  {FSText[9]}
-                </a>{' '}
-                <br></br>
-                <br></br>
-                <a
-                  target="__blank"
-                  href="https://mychart.ynhhs.org/mychart-prd/en-US/PDF/JJEUA_ESP.pdf"
-                >
-                  {FSText[10]}
                 </a>{' '}
                 <br></br>
                 
@@ -137,7 +97,7 @@ const FactSheetComponent = ({
                     nextPage(e);
                   }}
                 ></input>
-                <label htmlFor="prev_covid_agree">{FSText[6]}</label>
+                <label htmlFor="prev_covid_agree">{FSText[4]}</label>
               </div>
               <br></br>
               <br></br>
@@ -150,7 +110,7 @@ const FactSheetComponent = ({
                     nextPage(e);
                   }}
                 ></input>
-                <label htmlFor="prev_covid_later">{FSText[7]}</label>
+                <label htmlFor="prev_covid_later">{FSText[5]}</label>
               </div>
               <br></br>
               <br></br>
@@ -164,7 +124,7 @@ const FactSheetComponent = ({
                     setIsDiagnosed(e.target.value);
                   }}
                 ></input>
-                <label htmlFor="prev_covid_no">{FSText[8]}</label>
+                <label htmlFor="prev_covid_no">{FSText[6]}</label>
               </div>
             </fieldset>
           </div>
@@ -183,4 +143,4 @@ const FactSheetComponent = ({
   );
 };
 
-export default FactSheetComponent;
+export default YNHHFactSheetComponent;

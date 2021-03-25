@@ -10,21 +10,23 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
   const [department, setDepartment] = useState('Cornell Scott');
   const [isPfizer, setIsPfizer] = useState(null);
   const [isInZipCodeRange, setIsInZipCodeRange] = useState(false);
+  const [isOver18, setIsOver18] = useState(false);
   const [viewJump, setviewJump] = useState([]);
   const [selDate, setSelDate] = useState('');
   const [responseData, setResponseData] = useState({});
 
   const compNames = [
+    
+    'slotsfilled',
+    'overeighteen',
     // 'zipcode',
-    // 'slotsfilled',
-    // 'vaccineschedule',
     'vaccineconsent',
-    // 'firstdose',
     'listconditions',
     'testedpositive',
     'covidsymptoms',
     'monoclonal',
     'factsheet',
+    'ynhhfactsheet',
     'quartinecovid',
     'vaccineschedule',
     'selectedvaccine',
@@ -89,6 +91,10 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
     setIsInZipCodeRange(isZipCodeInRange);
   };
 
+  const overEighteen = (isOver18) => {
+    setIsOver18(isOver18);
+  };
+
   const setReccDate = (date) => {
     setSelDate(date);
   };
@@ -144,6 +150,7 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
         updateHeader={updateHeader}
         isSpanish={isSpanish}
         zipCodeInRange={zipCodeInRange}
+        overEighteen={overEighteen}
       ></QuestionView>
       {/* <p>{`Zip Code ${isInZipCodeRange ? 'is' : 'is not'} in range`}</p> */}
     </div>

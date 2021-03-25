@@ -16,6 +16,8 @@ import AgeComponent from '../AgeComponent'
 import MonoclonalComponent from '../MonoclonalComponent'
 import ZipInputComponent from '../ZipInputComponent';
 import VaccinationScheduleConsent from '../VaccinationScheduleConsent';
+import Over18Component from '../Over18Component';
+import YNHHFactSheetComponent from '../YNHHFactSheetComponent';
 import styles from './QuestionViewComponent.module.css';
 
 
@@ -33,7 +35,8 @@ const QuestionViewComponent = ({
   updateAnswerData,
   updateHeader,
   isSpanish,
-  zipCodeInRange
+  zipCodeInRange,
+  overEighteen
 }) => {
   const [prevEnabled, setPrevEnabled] = useState(false);
   const [nextEnabled, setNextEnabled] = useState(false);
@@ -76,7 +79,9 @@ const QuestionViewComponent = ({
     age: AgeComponent,
     monoclonal: MonoclonalComponent,
     zipcode: ZipInputComponent,
-    vaccineschedule: VaccinationScheduleConsent
+    vaccineschedule: VaccinationScheduleConsent,
+    ynhhfactsheet: YNHHFactSheetComponent,
+    overeighteen: Over18Component,
   };
 
   const ComponentName = components[compName || 'pininput'];
@@ -101,6 +106,7 @@ const QuestionViewComponent = ({
           updateHeader={updateHeader}
           isSpanish={isSpanish}
           zipCodeInRange={zipCodeInRange}
+          overEighteen={overEighteen}
         />
       </div>
       <div className={styles.buttonContainer}>

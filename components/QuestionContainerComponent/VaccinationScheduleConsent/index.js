@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import styles from './VaccinationScheduleConsent.module.css';
 import Tooltip from '@material-ui/core/Tooltip';
 import InfoIcon from '@material-ui/icons/Info';
-import veText from './vaccineelidgibility.json';
+import vsText from './vaccineschedule.json';
 import Link from 'next/link';
 
 const useStyles = makeStyles(() => ({
@@ -31,7 +31,7 @@ const VaccinationScheduleConsent = ({
     schedulePush(e);
   };
 
-  let VEText = isSpanish ? veText.sp : veText.en;
+  let VSText = isSpanish ? vsText.sp : vsText.en;
 
   let checkboxesArray = ['Acknowledge'];
 
@@ -54,7 +54,7 @@ const VaccinationScheduleConsent = ({
         className={styles.none_label_or}
         htmlFor={`prev_covid_${checkbox.toLowerCase()}`}
       >
-        {'Acknowledge'}
+        {VSText[3]}
       </label>
     </div>
   ));
@@ -63,12 +63,12 @@ const VaccinationScheduleConsent = ({
     <>
       <div className={styles.question_row_item}>
         <div className={styles.question_row_item_sub}>
-          <p className="message">{VEText[3]}</p>
+          <p className="message">{VSText[2]}</p>
           <fieldset>
             <legend>
               <br></br>
               <br></br>
-              {VEText[0]}
+              {VSText[0]}
               <br></br>
               <br></br>
               <div className="imgcontainer">
@@ -80,15 +80,7 @@ const VaccinationScheduleConsent = ({
                   ></img>
                 </a>
                 <p>
-                  All three COVID-19 vaccines (Pfizer, Moderna, and J&J) are
-                  safe and effective. All have been shown to reduce the risk of
-                  becoming infected with COVID-19 and being hospitalized. Most
-                  importantly, all have been shown to eliminate the risk of
-                  developing severe disease and death due to COVID-19. All 3
-                  vaccines are well-tolerated. Pfizer and Moderna are a 2-dose
-                  series. J&J is a single dose option. Getting vaccinated as
-                  soon as possible with the vaccine that is available will help
-                  protect you and your family against COVID
+                  {VSText[1]}
                 </p>
               </div>
             </legend>

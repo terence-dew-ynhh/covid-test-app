@@ -39,9 +39,9 @@ function Home({ uuid }) {
       </Head>
       <div className="grid">
         <img src="/YNHHSLogo.png"></img>
-        {/* <button className="langButton" onClick={(e) => setIsSpanish(!isSpanish)}>
+        <button className="langButton" onClick={(e) => setIsSpanish(!isSpanish)}>
           {isSpanish ? 'English' : `Español`}
-        </button> */}
+        </button>
       </div>
       <h1 className="title">{homeText[2]}</h1>
 

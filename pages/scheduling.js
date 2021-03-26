@@ -9,7 +9,7 @@ export default function Home({ link, recc_date, second_dose, isSpanish }) {
 
   useEffect(() => {
     // if (link == '') router.push(`/`);
-      window.location.href ='http://covidvaccine.ynhh.org/'
+      // window.location.href ='http://covidvaccine.ynhh.org/'
   }, []);
 
   return (

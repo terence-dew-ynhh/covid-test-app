@@ -21,6 +21,7 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
 
   const compNames = [
     'pininput',
+    'over18',
     'vaccineconsent',
     'listconditions',
     'testedpositive',

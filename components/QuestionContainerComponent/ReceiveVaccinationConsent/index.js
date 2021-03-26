@@ -4,6 +4,7 @@ import styles from './ReceiveVaccinationConsent.module.css';
 import Tooltip from '@material-ui/core/Tooltip';
 import InfoIcon from '@material-ui/icons/Info';
 import veText from './vaccineelidgibility.json';
+import { TramRounded } from '@material-ui/icons';
 
 const useStyles = makeStyles(() => ({
   tooltip: {
@@ -24,7 +25,7 @@ const ReceiveVaccinationConsent = ({
 
   useEffect(() => {
     isDoneEnabled(false);
-    isPrevEnabled(true);
+    isPrevEnabled(TramRounded);
   }, []);
 
   const handleChecked = (e) => {
@@ -74,16 +75,16 @@ const ReceiveVaccinationConsent = ({
               {VEText[1]}
               <br></br>
               <br></br>
-              {VEText[2]}
+              <a href="https://portal.ct.gov/DDS/Legal/Eligibility/Eligibility-for-DDS-Services">Eligibility for DDS Services (ct.gov)</a>
               <br></br>
               <br></br>
-              {VEText[3]}
-              <br></br>
-              <br></br>
-              <a href="https://portal.ct.gov/DDS/Legal/Eligibility/Eligibility-for-DDS-Services">{VEText[4]}</a>
+              {VEText[5]}
               <br></br>
               <br></br>
               <b>{VEText[6]}</b>
+              <br></br>
+              <br></br>
+              <b>{VEText[9]}</b>
             </legend>
             <div className={styles.q1_grid}>{checkboxes}</div>
           </fieldset>

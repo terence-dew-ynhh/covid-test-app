@@ -65,22 +65,30 @@ const VaccinationScheduleConsent = ({
         <div className={styles.question_row_item_sub}>
           <fieldset>
             <legend>
-
               <div className="imgcontainer">
                 <p>
-                  Yale New Haven Health is pleased to offer the following
-                  clinics for the Connecticut Department of Developmental
-                  Services (DDS). All sites will offer the Pfizer vaccine.{' '}
+                  <b>
+                    Yale New Haven Health is pleased to offer the following
+                    clinics for the Connecticut Department of Developmental
+                    Services (DDS). All sites will offer the Pfizer vaccine.{' '}
+                  </b>
                 </p>
                 <ul>
                   <li>
-                    Floyd Little Fieldhouse, New Haven, CT <br></br> Accessible
-                    entrance: <br></br> Main entrance: <br></br> Tuesday and
-                    Wednesday, April 6, 7, 13 and 14
+                    <b>YNHHS Vaccination Clinic</b> <br></br>{' '}
+                    <b>Floyd Little Athletic Center</b>
+                    <br></br> 476 Sherman Parkway New Haven, CT 06511
+                    <br></br> *Use Crescent Street parking lot for accessible
+                    entrance
                   </li>
+                  <br></br>
+
                   <li>
-                    Mitchell College, New London, CT<br></br> Tuesday April
-                    6 and 13
+                    <b>YNHHS Vaccination Clinic</b>
+                    <br></br>
+                    <b>Mitchell College</b>
+                    <br></br> 3 De Biasi Drive
+                    <br></br>New London, CT 06320
                   </li>
                 </ul>
 

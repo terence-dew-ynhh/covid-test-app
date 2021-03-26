@@ -20,6 +20,7 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
   const [responseData, setResponseData] = useState({});
 
   const compNames = [
+    'vaccineschedule',
     'pininput',
     'over18',
     'vaccineconsent',

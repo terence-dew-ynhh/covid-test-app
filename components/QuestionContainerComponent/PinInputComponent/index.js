@@ -17,7 +17,7 @@ const PinInputComponent = ({
 
   useEffect(() => {
     isDoneEnabled(false);
-    isPrevEnabled(true);
+    isPrevEnabled(false);
     isNextEnabled(false);
   }, []);
 

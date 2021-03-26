@@ -17,9 +17,8 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
 
   const compNames = [
     
-    'slotsfilled',
+    // 'slotsfilled',
     'overeighteen',
-    // 'zipcode',
     'vaccineconsent',
     'listconditions',
     'testedpositive',
@@ -151,6 +150,7 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
         isSpanish={isSpanish}
         zipCodeInRange={zipCodeInRange}
         overEighteen={overEighteen}
+        isOver18={isOver18}
       ></QuestionView>
       {/* <p>{`Zip Code ${isInZipCodeRange ? 'is' : 'is not'} in range`}</p> */}
     </div>

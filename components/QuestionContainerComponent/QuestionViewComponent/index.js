@@ -36,7 +36,8 @@ const QuestionViewComponent = ({
   updateHeader,
   isSpanish,
   zipCodeInRange,
-  overEighteen
+  overEighteen,
+  isOver18
 }) => {
   const [prevEnabled, setPrevEnabled] = useState(false);
   const [nextEnabled, setNextEnabled] = useState(false);
@@ -106,6 +107,7 @@ const QuestionViewComponent = ({
           updateHeader={updateHeader}
           isSpanish={isSpanish}
           zipCodeInRange={zipCodeInRange}
+          isOver18={isOver18}
           overEighteen={overEighteen}
         />
       </div>

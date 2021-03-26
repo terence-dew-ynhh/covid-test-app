@@ -34,7 +34,8 @@ const FactSheetComponent = ({
   isDoneEnabled,
   updateField,
   schedulePush,
-  isSpanish
+  isSpanish, 
+  isOver18
 }) => {
   const [isDiagnosed, setIsDiagnosed] = useState('');
   const [open, setOpen] = useState(false);
@@ -62,6 +63,41 @@ const FactSheetComponent = ({
     </div>
   );
 
+  const links = isOver18 ? ( 
+    <>             
+    <br></br>
+    <br></br>
+    <a
+      target="__blank"
+      href="https://www.fda.gov/media/144638/download"
+    >
+      Moderna Vaccination EUA
+    </a>
+    <br></br>
+    <br></br>
+    <a
+      target="__blank"
+      href="https://mychart.ynhhs.org/MyChart-PRD/en-US/PDF/ESPCOVIDModernaVaccineFactSheet.pdf"
+    >
+      {FSText[4]}
+    </a>
+    <br></br>
+    <br></br>
+    <a
+      target="__blank"
+      href="https://mychart.ynhhs.org/mychart-prd/en-US/PDF/JJEUA.pdf"
+    >
+      {FSText[9]}
+    </a>{' '}
+    <br></br>
+    <br></br>
+    <a
+      target="__blank"
+      href="https://mychart.ynhhs.org/mychart-prd/en-US/PDF/JJEUA_ESP.pdf"
+    >
+      {FSText[10]}
+    </a></>) : null;
+
   return (
     <>
       <div className="radio_grp">
@@ -88,44 +124,12 @@ const FactSheetComponent = ({
                 <br></br>
                 <a
                   target="__blank"
-                  href="https://www.fda.gov/media/144638/download"
-                >
-                  Moderna Vaccination EUA
-                </a>
-                <br></br>
-                <br></br>
-                <a
-                  target="__blank"
                   href="https://mychart.ynhhs.org/MyChart-PRD/en-US/PDF/ESPCOVIDPfizerVaccineFactSheet.pdf"
                 >
                   {FSText[3]}
                 </a>{' '}
-                <br></br>
-                <br></br>
-                <a
-                  target="__blank"
-                  href="https://mychart.ynhhs.org/MyChart-PRD/en-US/PDF/ESPCOVIDModernaVaccineFactSheet.pdf"
-                >
-                  {FSText[4]}
-                </a>
-                <br></br>
-                <br></br>
-                <a
-                  target="__blank"
-                  href="https://mychart.ynhhs.org/mychart-prd/en-US/PDF/JJEUA.pdf"
-                >
-                  {FSText[9]}
-                </a>{' '}
-                <br></br>
-                <br></br>
-                <a
-                  target="__blank"
-                  href="https://mychart.ynhhs.org/mychart-prd/en-US/PDF/JJEUA_ESP.pdf"
-                >
-                  {FSText[10]}
-                </a>{' '}
-                <br></br>
-                
+                {links}
+                <br></br>                
               </legend>
 
               <div className="radio_row_item">

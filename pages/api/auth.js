@@ -35,25 +35,12 @@ handler.post(async (req, res) => {
       .collection('pin_list')
       .findOne({ department: department, pin: pin });
 
-      console.log(employer.count);
+      console.log(employer);
       
-    if (employer.count > 0) {
-      let updateVals = {
-        $set: {
-          count: employer.count - 1
-        }
-      };
-      try {
-        const items = await req.db
-          .collection('pin_list')
-          .findOneAndUpdate({ department: department }, updateVals, {
-            upsert: true
-          });
-      } finally {
-        let result = employer == null ? false : true;
+    if (employer.pin) {
 
-        res.status(200).send({ isValid: result });
-      }
+        res.status(200).send({ isValid: true });
+      // }
     } else {
       res.status(500).send({ overCount: true });
     }
@@ -62,20 +49,20 @@ handler.post(async (req, res) => {
   }
 });
 
-handler.post(async (req, res) => {
-  await runMiddleware(req, res, cors);
+// handler.post(async (req, res) => {
+//   await runMiddleware(req, res, cors);
 
-  let { department, pin } = req.body;
+//   let { department, pin } = req.body;
 
-  try {
-    const items = await req.db
-      .collection('pin_list')
-      .insertOne({ department: department, pin: pin });
+//   try {
+//     const items = await req.db
+//       .collection('pin_list')
+//       .insertOne({ department: department, pin: pin });
 
-    res.status(200).send('Document Updated');
-  } catch (err) {
-    res.status(400).end(`Something went wrong: ${err}`);
-  }
-});
+//     res.status(200).send('Document Updated');
+//   } catch (err) {
+//     res.status(400).end(`Something went wrong: ${err}`);
+//   }
+// });
 
 export default handler;

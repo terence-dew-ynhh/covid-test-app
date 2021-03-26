@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
 
   useEffect(() => {
-    window.location.href ='http://covidvaccine.ynhh.org/'
+    // window.location.href ='http://covidvaccine.ynhh.org/'
   }, []);
 
   const [viewIdx, setviewIdx] = useState(0);
@@ -20,16 +20,15 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
   const [responseData, setResponseData] = useState({});
 
   const compNames = [
-    // 'zipcode',
-    // 'employee',
+    'pininput',
     'vaccineconsent',
-    // 'firstdose',
     'listconditions',
     'testedpositive',
     'covidsymptoms',
     'monoclonal',
     'factsheet',
     'quartinecovid',
+    'vaccineschedule',
     'selectedvaccine',
     'vaccinedateselect',
     'selectsymptoms'
@@ -47,7 +46,7 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
       method: action,
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        department: department,
+        department: 'YNHH',
         pin: pin
       })
     });

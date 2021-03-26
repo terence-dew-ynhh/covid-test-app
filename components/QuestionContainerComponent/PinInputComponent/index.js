@@ -27,17 +27,10 @@ const PinInputComponent = ({
     verifyPin(pin).then((data) => {
       console.log(data);
 
-      if(!data.overCount){
       isValid = data.isValid;
       setIsSuccess(isValid);
-      if(!isValid) setAttempts((attempts - 1));
-      console.log(`attempts: ${attempts}`)
-      if(attempts == 1) isPrevEnabled(false);
-      }else{
-        setIsOverAttempts(true);
-      }
 
-      if (isValid) nextPage(null);
+      if (isValid) nextPage();
     });
   };
 

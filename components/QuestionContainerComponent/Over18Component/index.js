@@ -19,7 +19,7 @@ import oeText from './over18.json';
     <>
       <div className={styles.question_row_item}>
       <p className="banner" >
-      The following questions should be answered on behalf on the individual being scheduled for vaccination. 
+      The following questions should be answered on behalf of the individual being scheduled for vaccination. 
         </p>
         <br></br>
         <br></br>

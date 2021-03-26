@@ -48,12 +48,12 @@ const PinInputComponent = ({
             <p className="error" hidden={!(attempts == 0)}>
               Number of Allowed Attempts Exceeded.
             </p>
-            <label>Enter Employer Pin:</label>
+            <label>Enter  Pin:</label>
             <br></br>
             <br></br>
             <TextField
               error={!isSuccess}
-              label="Enter Your Employer Pin"
+              label="Enter Pin"
               onChange={(e) => setPin(e.target.value)}
               variant="outlined"
               autoFocus

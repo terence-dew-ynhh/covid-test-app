@@ -41,8 +41,9 @@ const ZipInputComponent = ({
       nextPage(e,2);
     } else {
       zipCodeInRange(false);
-      if(applicationOn) nextPage(e,2);
-      else nextPage();
+      window.location.href = 'https://covidvaccine.ynhh.org/';
+      // if(applicationOn) nextPage(e,2);
+      // else nextPage();
     }
 
     
@@ -53,15 +54,6 @@ const ZipInputComponent = ({
       <div className="radio_grp">
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
-            {/* <p className="error" hidden={(attempts == 0) || isSuccess}>
-              Invalid Pin Number
-            </p>
-            <p className="error" hidden={!isOverAttempts}>
-              {`Sorry, ${department} doesn’t have any additional open slots available.`} 
-            </p>
-            <p className="error" hidden={!(attempts == 0)}>
-              Number of Allowed Attempts Exceeded.
-            </p> */}
             <label>Enter Your Zip Code:</label>
             <br></br>
             <br></br>

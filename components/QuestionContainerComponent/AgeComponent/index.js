@@ -19,16 +19,14 @@ const AgeComponent = ({
       <div className="radio_grp">
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
-            <p className="error" hidden={!isDiagnosed}>
-              Sorry you are not eligible for the COVID19 vaccine at this time.
+            <p className="banner">
+              The following questions should be answered on behalf of the
+              individual being scheduled for vaccination.
             </p>
+            <br></br>
+            <br></br>
             <fieldset>
-              <legend>
-                Are you 75 years or older? <br></br>
-                <br></br>
-                Bring an ID (photo ID if possible) and wear a face mask or
-                covering when visiting the vaccination site.
-              </legend>
+              <legend>I am currently scheduling for:</legend>
               <div className="radio_row_item">
                 <input
                   id="prev_covid_yes"
@@ -36,11 +34,14 @@ const AgeComponent = ({
                   value="Yes"
                   name="prev_covid"
                   onClick={(e) => {
-                    updateAnswerData({ over_75: e.target.value });
-                    nextPage(e, 3);
+                    nextPage();
                   }}
                 ></input>
-                <label htmlFor="prev_covid_yes">Yes</label>
+                <label htmlFor="prev_covid_yes">
+                  Someone who is currently 18 years of age or older
+                </label>
+                <br></br>
+                <br></br>
                 <div className="radio_row_item">
                   <input
                     id="prev_covid_no"
@@ -48,10 +49,12 @@ const AgeComponent = ({
                     value="No"
                     name="prev_covid"
                     onClick={(e) => {
-                      setIsDiagnosed(true);
+                      window.location.href = 'https://covidvaccine.ynhh.org/'
                     }}
                   ></input>
-                  <label htmlFor="prev_covid_no">No</label>
+                  <label htmlFor="prev_covid_no">
+                    Someone who is 16 or 17 years old
+                  </label>
                 </div>
               </div>
             </fieldset>

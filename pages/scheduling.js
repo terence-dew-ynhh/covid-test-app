@@ -51,7 +51,7 @@ Home.getInitialProps = async ({ query }) => {
     {
       name: 'New Haven Region',
       link:
-        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79287,79288,79289,82068,82088,82312,82333,82519,82520,82521,82522,82523,82524,82687,82688,82689,82690,82828,82864,83261,83260,85739&vt=2102&dept=100001341&view=plain&public=1'
+        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79287,79288,79289,82068,82088,82312,82333,82519,82520,82521,82522,82523,82524,82687,82688,82689,82690,82828,82864,83261,83260,85739,86212&vt=2102&dept=100001341&view=plain&public=1'
     },
     {
       name: 'New London Region',

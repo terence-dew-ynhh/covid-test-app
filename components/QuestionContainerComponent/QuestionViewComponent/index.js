@@ -37,7 +37,8 @@ const QuestionViewComponent = ({
   isSpanish,
   zipCodeInRange,
   overEighteen,
-  isOver18
+  isOver18,
+  setRiskGroup
 }) => {
   const [prevEnabled, setPrevEnabled] = useState(false);
   const [nextEnabled, setNextEnabled] = useState(false);
@@ -109,6 +110,7 @@ const QuestionViewComponent = ({
           zipCodeInRange={zipCodeInRange}
           isOver18={isOver18}
           overEighteen={overEighteen}
+          setRiskGroup={setRiskGroup}
         />
       </div>
       <div className={styles.buttonContainer}>

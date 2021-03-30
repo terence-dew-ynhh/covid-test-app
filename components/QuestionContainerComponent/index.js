@@ -11,6 +11,7 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
   const [isPfizer, setIsPfizer] = useState(null);
   const [isInZipCodeRange, setIsInZipCodeRange] = useState(false);
   const [isOver18, setIsOver18] = useState(false);
+  const [isRiskGroup, setIsRiskGroup] = useState(false);
   const [viewJump, setviewJump] = useState([]);
   const [selDate, setSelDate] = useState('');
   const [responseData, setResponseData] = useState({});
@@ -20,6 +21,7 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
     // 'slotsfilled',
     'overeighteen',
     'vaccineconsent',
+    'selectsymptoms',
     'listconditions',
     'testedpositive',
     'covidsymptoms',
@@ -98,6 +100,10 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
     setSelDate(date);
   };
 
+  const setRiskGroup = (isRiskGroup) => {
+    setIsRiskGroup(isRiskGroup);
+  };
+
   const updateAnswerData = (questionData) => {
     // const dataKey = questionData.keys()
     // setResponseOrder([...responseOrder, ...dataKey[0]]);
@@ -109,7 +115,7 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
     router.push(
       `/scheduling?recc_date=${selDate}&in_zip_range=${isInZipCodeRange}&second_dose=${
         isPfizer == null ? false : true
-      }&isPfizer=${isPfizer}&isSpanish=${isSpanish}`,
+      }&isPfizer=${isPfizer}&isSpanish=${isSpanish}&isRiskGroup=${isRiskGroup}&isOver18=${isOver18}`,
       '/scheduling'
     );
   };
@@ -151,6 +157,7 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
         zipCodeInRange={zipCodeInRange}
         overEighteen={overEighteen}
         isOver18={isOver18}
+        setRiskGroup={setRiskGroup}
       ></QuestionView>
       {/* <p>{`Zip Code ${isInZipCodeRange ? 'is' : 'is not'} in range`}</p> */}
     </div>

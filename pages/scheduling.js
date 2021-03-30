@@ -30,7 +30,14 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function Home({ link, recc_date, second_dose, isSpanish }) {
+export default function Home({
+  link,
+  recc_date,
+  second_dose,
+  isSpanish,
+  isRiskGroup,
+  isOver18
+}) {
   const [open, setOpen] = useState(false);
   const [modalStyle] = useState(getModalStyle);
 
@@ -53,9 +60,13 @@ export default function Home({ link, recc_date, second_dose, isSpanish }) {
     <div style={modalStyle} className={classes.paper}>
       <img style={{ height: '100%' }} src="/Schedule.PNG"></img>
 
-      <IconButton style={{ position: 'absolute'}} onClick={handleClose}>
+      <IconButton style={{ position: 'absolute' }} onClick={handleClose}>
         <ClearIcon
-          style={{ border: '2px solid red', position: 'absolute', color: 'red' }}
+          style={{
+            border: '2px solid red',
+            position: 'absolute',
+            color: 'red'
+          }}
           fontSize="large"
         ></ClearIcon>
       </IconButton>
@@ -81,13 +92,24 @@ export default function Home({ link, recc_date, second_dose, isSpanish }) {
               : `Please Select Date After ${recc_date}`
             : ''}
         </h3>
+
+        <h3>
+          {isOver18 == 'true'
+            ? isRiskGroup == 'true'
+              ? `Over 18 - High Risk`
+              : `Over 18- Low Risk`
+            : isRiskGroup == 'true'
+            ? `16 or 17 - High Risk`
+            : `16 or 17- Low Risk`}
+        </h3>
+
         <button
           className="button"
           style={{ marginBottom: 0 }}
           type="button"
           onClick={handleOpen}
         >
-          Click here to see Vaccine Schedule 
+          Click here to see Vaccine Schedule
         </button>
         <iframe
           id="openSchedulingFrame"
@@ -130,7 +152,14 @@ export default function Home({ link, recc_date, second_dose, isSpanish }) {
 }
 
 Home.getInitialProps = async ({ query }) => {
-  const { recc_date, second_dose, isPfizer, isSpanish } = query;
+  const {
+    recc_date,
+    second_dose,
+    isPfizer,
+    isSpanish,
+    isRiskGroup,
+    isOver18
+  } = query;
   let link =
     second_dose == 'true'
       ? isPfizer == 'true'
@@ -146,7 +175,9 @@ Home.getInitialProps = async ({ query }) => {
     link,
     recc_date,
     second_dose,
-    isSpanish
+    isSpanish,
+    isRiskGroup,
+    isOver18
   };
 };
 // export default redirect('http://www.ynhhs.org/covidvaccine');

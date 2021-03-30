@@ -1,15 +1,19 @@
 import { useState, useEffect } from 'react';
-import styles from './HaveSymptomsComponent.module.css'
+import styles from './HaveSymptomsComponent.module.css';
 import oeText from './havesymptoms.json';
 
-
-
- const HaveSymptomsComponent =({nextPage, isPrevEnabled, isDoneEnabled, overEighteen, isSpanish, setRiskGroup}) => {
-  
+const HaveSymptomsComponent = ({
+  nextPage,
+  isPrevEnabled,
+  isDoneEnabled,
+  overEighteen,
+  isSpanish,
+  setRiskGroup
+}) => {
   const [isOver18, setIsOver18] = useState(true);
 
   useEffect(() => {
-    isPrevEnabled(false);
+    isPrevEnabled(true);
     isDoneEnabled(false);
   }, []);
 
@@ -21,27 +25,30 @@ import oeText from './havesymptoms.json';
     'End Stage Kidney Disease on Dialysis ',
     'Active Cancer Treatment',
     'Solid Organ Transplant',
-    'Patient of Yale New Haven Children\'s Hospital',
-    'None of the Above',
+    "Patient of Yale New Haven Children's Hospital",
+    'None of the Above'
   ];
 
-  let conditions = checkboxesArray.map((checkbox, idx) => 
-      <>
-      <p>{checkbox}</p> </>
-  )
+  let conditions = checkboxesArray.map((checkbox, idx) => (
+    <>
+      <b>
+        <p>{checkbox}</p>
+      </b>{' '}
+    </>
+  ));
 
-    return (
+  return (
     <>
       <div className={styles.question_row_item}>
-      {/* <p className="banner" >
+        {/* <p className="banner" >
       The following questions should be answered on behalf of the individual being scheduled for vaccination. 
         </p> */}
         <br></br>
         <br></br>
         <fieldset className="radio_grp_set">
           <legend>
-          {OEText[2]}
-          {conditions}
+            {OEText[2]}
+            {conditions}
           </legend>
           <input
             id="employee_staff_check_yes"
@@ -53,8 +60,8 @@ import oeText from './havesymptoms.json';
             }}
           ></input>
           <label htmlFor="employee_staff_check_yes">{OEText[0]}</label>
-            <br></br>
-            <br></br>
+          <br></br>
+          <br></br>
           <input
             id="employee_staff_check_no"
             type="radio"
@@ -65,11 +72,11 @@ import oeText from './havesymptoms.json';
             }}
           ></input>
           <label htmlFor="employee_staff_check_no">{OEText[1]}</label>
-        </fieldset>        
+        </fieldset>
       </div>
       <style jsx>{``}</style>
     </>
   );
-}
+};
 
 export default HaveSymptomsComponent;

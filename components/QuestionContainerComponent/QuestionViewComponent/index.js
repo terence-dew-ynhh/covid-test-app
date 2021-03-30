@@ -9,7 +9,7 @@ import CovidSymptomsComponent from '../CovidSymptomsComponent';
 import FactSheetComponent from '../FactSheetComponent';
 import SelectVaccineComponent from '../SelectVaccineComponent';
 import QuarantineComponent from '../QuarantineComponent';
-import SelectSymptomsComponent from '../SelectSymptomsComponent'
+import HaveSymptomsComponent from '../HaveSymptomsComponent'
 import ReceiveVaccinationConsent from '../ReceiveVaccinationConsent'
 import SlotsFilledComponent from '../SlotsFilledComponent'
 import AgeComponent from '../AgeComponent'
@@ -75,7 +75,7 @@ const QuestionViewComponent = ({
     selectedvaccine: SelectVaccineComponent,
     vaccinedateselect: VaccineDateSelectComponent,
     quartinecovid: QuarantineComponent,
-    selectsymptoms: SelectSymptomsComponent,
+    selectsymptoms: HaveSymptomsComponent,
     vaccineconsent: ReceiveVaccinationConsent,
     slotsfilled: SlotsFilledComponent,
     age: AgeComponent,

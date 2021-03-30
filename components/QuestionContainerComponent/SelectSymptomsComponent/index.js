@@ -132,7 +132,7 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled, setRiskGroup }
         <div className={styles.question_row_item_sub}>
           <fieldset>
             <legend>
-              <b>Required Question: </b>Do you have the following symptoms:
+              :
             </legend>
             <div className={styles.q1_grid}>{checkboxes}</div>
           </fieldset>

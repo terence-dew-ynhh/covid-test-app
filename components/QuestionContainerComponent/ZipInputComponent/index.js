@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import styles from './ZipInputComponent.module.css';
 import TextField from '@material-ui/core/TextField';
+import zpText from './zipinput.json';
+
 
 const currentAppState = async () => {
 
@@ -17,7 +19,8 @@ const ZipInputComponent = ({
   isDoneEnabled,
   verifyPin,
   department,
-  zipCodeInRange
+  zipCodeInRange,
+  isSpanish
 }) => {
   const [zipCode, setZipCode] = useState('');
   const [applicationOn, setApplicationOn] = useState(false);
@@ -29,6 +32,9 @@ const ZipInputComponent = ({
     isNextEnabled(false);
     currentAppState().then(appFlag => setApplicationOn(appFlag));
   }, [currentAppState, setApplicationOn]);
+
+  let ZPText = isSpanish ? zpText.sp : zpText.en
+
 
   const onSubmit = async (e) => {
     let zipCodesList = {
@@ -44,9 +50,7 @@ const ZipInputComponent = ({
       window.location.href = 'https://covidvaccine.ynhh.org/';
       // if(applicationOn) nextPage(e,2);
       // else nextPage();
-    }
-
-    
+    }  
   };
 
   return (
@@ -54,19 +58,19 @@ const ZipInputComponent = ({
       <div className="radio_grp">
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
-            <label>Enter Your Zip Code:</label>
+            <label>{ZPText[0]}</label>
             <br></br>
             <br></br>
             <TextField
               error={!isSuccess}
-              label="Enter Your Zip Code:"
+              label={ZPText[0]}
               onChange={(e) => setZipCode(e.target.value)}
               variant="outlined"
               autoFocus
             />
           </div>
           <button className={styles.button} onClick={(e) => onSubmit(e)}>
-            {`Submit`}
+          {ZPText[1]}
           </button>
         </div>
       </div>

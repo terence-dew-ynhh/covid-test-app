@@ -1,18 +1,24 @@
 import { useState, useEffect } from 'react';
 import styles from './AgeComponent.module.css';
+import ageText from './agequestion.json';
+
 
 const AgeComponent = ({
   nextPage,
   isPrevEnabled,
   isDoneEnabled,
-  updateAnswerData
+  updateAnswerData,
+  isSpanish
 }) => {
   const [isDiagnosed, setIsDiagnosed] = useState('');
 
   useEffect(() => {
     isDoneEnabled(false);
-    isPrevEnabled(true);
+    isPrevEnabled(false);
   }, []);
+
+  let AGText = isSpanish ? ageText.sp : ageText.en
+
 
   return (
     <>
@@ -20,13 +26,12 @@ const AgeComponent = ({
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
             <p className="banner">
-              The following questions should be answered on behalf of the
-              individual being scheduled for vaccination.
+              {AGText[3]}
             </p>
             <br></br>
             <br></br>
             <fieldset>
-              <legend>I am currently scheduling for:</legend>
+              <legend>{AGText[2]}</legend>
               <div className="radio_row_item">
                 <input
                   id="prev_covid_yes"
@@ -38,7 +43,7 @@ const AgeComponent = ({
                   }}
                 ></input>
                 <label htmlFor="prev_covid_yes">
-                  Someone who is currently 18 years of age or older
+                {AGText[0]}
                 </label>
                 <br></br>
                 <br></br>
@@ -53,7 +58,7 @@ const AgeComponent = ({
                     }}
                   ></input>
                   <label htmlFor="prev_covid_no">
-                    Someone who is 16 or 17 years old
+                  {AGText[1]}
                   </label>
                 </div>
               </div>

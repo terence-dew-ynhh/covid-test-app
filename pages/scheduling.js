@@ -93,7 +93,7 @@ export default function Home({
             : ''}
         </h3>
 
-        <h3>
+        {/* <h3>
           {isOver18 == 'true'
             ? isRiskGroup == 'true'
               ? `Over 18 - High Risk`
@@ -101,7 +101,7 @@ export default function Home({
             : isRiskGroup == 'true'
             ? `16 or 17 - High Risk`
             : `16 or 17- Low Risk`}
-        </h3>
+        </h3> */}
 
         <button
           className="button"

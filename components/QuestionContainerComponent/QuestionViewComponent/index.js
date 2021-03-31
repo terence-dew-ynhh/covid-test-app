@@ -16,6 +16,7 @@ import AgeComponent from '../AgeComponent'
 import MonoclonalComponent from '../MonoclonalComponent'
 import ZipInputComponent from '../ZipInputComponent';
 import VaccinationScheduleConsent from '../VaccinationScheduleConsent';
+import YNHHFactSheetComponent from '../YNHHFactSheetComponent';
 import Over18Component from '../Over18Component';
 import styles from './QuestionViewComponent.module.css';
 
@@ -68,6 +69,7 @@ const QuestionViewComponent = ({
     testedpositive: TestedPositiveComponent,
     covidsymptoms: CovidSymptomsComponent,
     factsheet: FactSheetComponent,
+    ynhhfactsheet: YNHHFactSheetComponent,
     selectedvaccine: SelectVaccineComponent,
     vaccinedateselect: VaccineDateSelectComponent,
     quartinecovid: QuarantineComponent,

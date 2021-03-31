@@ -52,20 +52,21 @@ const FactSheetComponent = ({
                 <br></br>
                 <a
                   target="__blank"
-                  href="https://www.fda.gov/media/144638/download"
-                >
-                  Moderna Vaccination EUA
-                </a>
-                <br></br>
-                <br></br>
-                <a
-                  target="__blank"
                   href="https://mychart.ynhhs.org/MyChart-PRD/en-US/PDF/ESPCOVIDPfizerVaccineFactSheet.pdf"
                 >
                   {FSText[3]}
                 </a>{' '}
                 <br></br>
                 <br></br>
+                <a
+                  target="__blank"
+                  href="https://www.fda.gov/media/144638/download"
+                >
+                  Moderna Vaccination EUA
+                </a>
+                <br></br>
+                <br></br>
+
                 <a
                   target="__blank"
                   href="https://mychart.ynhhs.org/MyChart-PRD/en-US/PDF/ESPCOVIDModernaVaccineFactSheet.pdf"

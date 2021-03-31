@@ -26,13 +26,12 @@ const HaveSymptomsComponent = ({
     'Active Cancer Treatment',
     'Solid Organ Transplant',
     "Patient of Yale New Haven Children's Hospital",
-    'None of the Above'
   ];
 
   let conditions = checkboxesArray.map((checkbox, idx) => (
     <>
       <b>
-        <p>{checkbox}</p>
+        <p>- {checkbox}</p>
       </b>{' '}
     </>
   ));
@@ -46,22 +45,7 @@ const HaveSymptomsComponent = ({
         <br></br>
         <br></br>
         <fieldset className="radio_grp_set">
-          <legend>
-            {OEText[2]}
-            {conditions}
-          </legend>
-          <input
-            id="employee_staff_check_yes"
-            type="radio"
-            name="employee_staff"
-            onClick={() => {
-              nextPage();
-              setRiskGroup(true);
-            }}
-          ></input>
-          <label htmlFor="employee_staff_check_yes">{OEText[0]}</label>
-          <br></br>
-          <br></br>
+        
           <input
             id="employee_staff_check_no"
             type="radio"
@@ -71,7 +55,30 @@ const HaveSymptomsComponent = ({
               setRiskGroup(false);
             }}
           ></input>
-          <label htmlFor="employee_staff_check_no">{OEText[1]}</label>
+          <label htmlFor="employee_staff_check_no"> I or the person I am scheduling on behalf of <b style={{color: "red"}}><u>DO NOT</u></b> have any of the high risk conditions listed below.</label>
+          <br></br>
+          <br></br>
+          <input
+            id="employee_staff_check_yes"
+            type="radio"
+            name="employee_staff"
+            onClick={() => {
+              nextPage();
+              setRiskGroup(true);
+            }}
+          ></input>
+          <label htmlFor="employee_staff_check_yes"> I or the person I am scheduling on behalf of <b style={{color: "red"}}><u>DO</u></b> have one or more of the high risk conditions listed below.</label>
+          <br></br>
+          <br></br>
+          </fieldset>
+          <br></br>
+          <br></br>
+          <fieldset>
+          <legend>
+            {/* {OEText[2]} */}
+            {conditions}
+            <br></br>
+          </legend>
         </fieldset>
       </div>
       <style jsx>{``}</style>

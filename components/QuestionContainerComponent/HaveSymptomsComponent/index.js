@@ -77,6 +77,7 @@ const HaveSymptomsComponent = ({
           <legend>
             {/* {OEText[2]} */}
             {conditions}
+            <a target="__blank" href="https://www.ynhhs.org/patient-care/covid-19/vaccine/kids-and-the-vaccine.aspx#conditions"><p><b>-</b> Click here for more information on pediatric high risk conditions</p></a>
             <br></br>
           </legend>
         </fieldset>

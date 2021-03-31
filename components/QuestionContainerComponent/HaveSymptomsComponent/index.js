@@ -21,7 +21,7 @@ const HaveSymptomsComponent = ({
 
   let checkboxesArray = [
     'Sickle Cell Disease',
-    'Downs Syndrome',
+    'Down Syndrome',
     'End Stage Kidney Disease on Dialysis ',
     'Active Cancer Treatment',
     'Solid Organ Transplant',

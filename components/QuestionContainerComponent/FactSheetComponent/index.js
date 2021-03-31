@@ -74,14 +74,6 @@ const FactSheetComponent = ({
                 </a>
                 <br></br>
                 <br></br>
-                <a
-                  target="__blank"
-                  href="https://mychart.ynhhs.org/mychart-prd/en-US/PDF/YNHHCOVIDConsent.pdf"
-                >
-                  {FSText[5]}
-                </a>{' '}
-                <br></br>
-                <br></br>
               </legend>
               <div className="radio_row_item">
                 <input

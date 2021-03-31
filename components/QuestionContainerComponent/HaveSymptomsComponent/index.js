@@ -25,7 +25,7 @@ const HaveSymptomsComponent = ({
     'End Stage Kidney Disease on Dialysis ',
     'Active Cancer Treatment',
     'Solid Organ Transplant',
-    "Patient of Yale New Haven Children's Hospital",
+    "16 or 17 year old pediatric patient with high risk conditions",
   ];
 
   let conditions = checkboxesArray.map((checkbox, idx) => (

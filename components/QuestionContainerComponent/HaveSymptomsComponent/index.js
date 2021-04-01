@@ -25,7 +25,7 @@ const HaveSymptomsComponent = ({
     'End Stage Kidney Disease on Dialysis ',
     'Active Cancer Treatment',
     'Solid Organ Transplant',
-    "16 or 17 year old pediatric patient with high risk conditions",
+    '16 or 17 year old pediatric patient with high risk conditions'
   ];
 
   let checkboxesArrayEsp = [
@@ -34,10 +34,10 @@ const HaveSymptomsComponent = ({
     'Insuficiencia renal terminal en diálisis',
     'Tratamiento activo del cáncer',
     'Trasplante de órganos sólidos',
-    "Paciente pediátrico de 16 o 17 años con condiciones de alto riesgo",
+    'Paciente pediátrico de 16 o 17 años con condiciones de alto riesgo'
   ];
 
-  let determinedLanguageText = isSpanish ? checkboxesArrayEsp : checkboxesArray
+  let determinedLanguageText = isSpanish ? checkboxesArrayEsp : checkboxesArray;
   let conditions = determinedLanguageText.map((checkbox, idx) => (
     <>
       <b>
@@ -45,6 +45,57 @@ const HaveSymptomsComponent = ({
       </b>{' '}
     </>
   ));
+
+  let choiceOne = !isSpanish ? (
+    <>
+      <label htmlFor="employee_staff_check_no">
+        {' '}
+        I or the person I am scheduling on behalf of{' '}
+        <b style={{ color: 'red' }}>
+          <u>DO NOT</u>
+        </b>{' '}
+        have any of the high risk conditions listed below.
+      </label>
+    </>
+  ) : (
+    <>
+      <label htmlFor="employee_staff_check_no">
+        {' '}
+        Yo o la persona en cuyo nombre hago la cita{' '}
+        <b style={{ color: 'red' }}>
+          <u>NO</u>
+        </b>{' '}
+        tenemos ninguna de las condiciones de alto riesgo enumeradas a
+        continuación.
+      </label>
+    </>
+  );
+
+  let choiceTwo = !isSpanish ? (
+    <>
+      {' '}
+      <label htmlFor="employee_staff_check_yes">
+        {' '}
+        I or the person I am scheduling on behalf of{' '}
+        <b style={{ color: 'red' }}>
+          <u>DO</u>
+        </b>{' '}
+        have one or more of the high risk conditions listed below.
+      </label>
+    </>
+  ) : (
+    <>
+      <label htmlFor="employee_staff_check_yes">
+        {' '}
+        Yo o la persona en cuyo nombre hago la cita{' '}
+        <b style={{ color: 'red' }}>
+          <u>SÍ</u>
+        </b>{' '}
+        tenemos una o más de las condiciones de alto riesgo enumeradas a
+        continuación.
+      </label>
+    </>
+  );
 
   return (
     <>
@@ -55,7 +106,6 @@ const HaveSymptomsComponent = ({
         <br></br>
         <br></br>
         <fieldset className="radio_grp_set">
-        
           <input
             id="employee_staff_check_no"
             type="radio"
@@ -65,7 +115,7 @@ const HaveSymptomsComponent = ({
               setRiskGroup(false);
             }}
           ></input>
-          <label htmlFor="employee_staff_check_no"> I or the person I am scheduling on behalf of <b style={{color: "red"}}><u>DO NOT</u></b> have any of the high risk conditions listed below.</label>
+          {choiceOne}
           <br></br>
           <br></br>
           <input
@@ -73,21 +123,28 @@ const HaveSymptomsComponent = ({
             type="radio"
             name="employee_staff"
             onClick={(e) => {
-              nextPage(e,2);
+              nextPage(e, 2);
               setRiskGroup(true);
             }}
           ></input>
-          <label htmlFor="employee_staff_check_yes"> I or the person I am scheduling on behalf of <b style={{color: "red"}}><u>DO</u></b> have one or more of the high risk conditions listed below.</label>
+          {choiceTwo}
           <br></br>
           <br></br>
-          </fieldset>
-          <br></br>
-          <br></br>
-          <fieldset>
+        </fieldset>
+        <br></br>
+        <br></br>
+        <fieldset>
           <legend>
             {/* {OEText[2]} */}
             {conditions}
-            <a target="__blank" href="https://www.ynhhs.org/patient-care/covid-19/vaccine/kids-and-the-vaccine.aspx#conditions"><p><b>-</b> Click here for more information on pediatric high risk conditions</p></a>
+            <a
+              target="__blank"
+              href="https://www.ynhhs.org/patient-care/covid-19/vaccine/kids-and-the-vaccine.aspx#conditions"
+            >
+              <p>
+                <b>-</b> {OEText[0]}
+              </p>
+            </a>
             <br></br>
           </legend>
         </fieldset>

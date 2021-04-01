@@ -5,9 +5,8 @@
         "I am currently scheduling for:"
         ],
     "sp": [
-        "¿Tienes más de 18 años?",
-        "Sí",
-        "No",
-        ""
+        "Alguien que actualmente tiene 18 años o más",
+        "Alguien que tenga 16 o 17 años",
+        "Actualmente estoy programando para"
     ]
 }

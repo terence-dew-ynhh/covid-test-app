@@ -28,7 +28,17 @@ const HaveSymptomsComponent = ({
     "16 or 17 year old pediatric patient with high risk conditions",
   ];
 
-  let conditions = checkboxesArray.map((checkbox, idx) => (
+  let checkboxesArrayEsp = [
+    'Enfermedad de células falciformes',
+    'Síndrome de Down',
+    'Insuficiencia renal terminal en diálisis',
+    'Tratamiento activo del cáncer',
+    'Trasplante de órganos sólidos',
+    "Paciente pediátrico de 16 o 17 años con condiciones de alto riesgo",
+  ];
+
+  let determinedLanguageText = isSpanish ? checkboxesArrayEsp : checkboxesArray
+  let conditions = determinedLanguageText.map((checkbox, idx) => (
     <>
       <b>
         <p>- {checkbox}</p>

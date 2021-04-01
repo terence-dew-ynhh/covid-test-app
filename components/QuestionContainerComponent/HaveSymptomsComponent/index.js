@@ -72,8 +72,8 @@ const HaveSymptomsComponent = ({
             id="employee_staff_check_yes"
             type="radio"
             name="employee_staff"
-            onClick={() => {
-              nextPage();
+            onClick={(e) => {
+              nextPage(e,2);
               setRiskGroup(true);
             }}
           ></input>

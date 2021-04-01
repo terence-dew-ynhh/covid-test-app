@@ -22,6 +22,7 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
     'overeighteen',
     'vaccineconsent',
     'selectsymptoms',
+    'slotsfilled',
     'listconditions',
     'testedpositive',
     'covidsymptoms',

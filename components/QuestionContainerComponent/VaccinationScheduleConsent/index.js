@@ -1,27 +1,14 @@
-import { useState, useEffect } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { useEffect } from 'react';
 import styles from './VaccinationScheduleConsent.module.css';
-import Tooltip from '@material-ui/core/Tooltip';
-import InfoIcon from '@material-ui/icons/Info';
 import vsText from './vaccineschedule.json';
-import Link from 'next/link';
 
-const useStyles = makeStyles(() => ({
-  tooltip: {
-    fontSize: 25
-  }
-}));
 
 const VaccinationScheduleConsent = ({
-  nextPage,
   isPrevEnabled,
   isDoneEnabled,
-  updateField,
   schedulePush,
   isSpanish
 }) => {
-  const classes = useStyles();
-
   useEffect(() => {
     isDoneEnabled(false);
     isPrevEnabled(true);
@@ -31,11 +18,11 @@ const VaccinationScheduleConsent = ({
     schedulePush(e);
   };
 
+  const regex = /_/gi;
+
   let VSText = isSpanish ? vsText.sp : vsText.en;
 
   let checkboxesArray = ['Acknowledge'];
-
-  const regex = /_/gi;
 
   let checkboxes = checkboxesArray.map((checkbox, idx) => (
     <div className={styles.chk_row_item}>
@@ -74,14 +61,9 @@ const VaccinationScheduleConsent = ({
               <div className="imgcontainer">
                 <p className="versiontxt">v6 3.31.21</p>
                 <a href="/info" target="_blank" rel="noreferrer">
-                  <img
-                    src="/Schedule.PNG"
-                    passHref
-                  ></img>
+                  <img src="/Schedule.PNG" passHref></img>
                 </a>
-                <p>
-                  {VSText[1]}
-                </p>
+                <p>{VSText[1]}</p>
               </div>
             </legend>
             <div className={styles.q1_grid}>{checkboxes}</div>

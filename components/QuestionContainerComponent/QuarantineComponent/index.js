@@ -9,7 +9,7 @@ const QuarantineComponent = ({
   updateAnswerData,
   schedulePush,
   isSpanish,
-  isOver18,
+  isOver18
 }) => {
   const [isDiagnosed, setIsDiagnosed] = useState('');
 
@@ -52,7 +52,7 @@ const QuarantineComponent = ({
                     name="prev_covid"
                     onClick={(e) => {
                       updateAnswerData({ quarantined: e.target.value });
-                      if(isOver18)nextPage();
+                      if (isOver18) nextPage();
                       else schedulePush();
                     }}
                   ></input>

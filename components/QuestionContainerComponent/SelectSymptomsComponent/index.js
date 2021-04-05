@@ -1,7 +1,12 @@
 import styles from './SelectSymptomsComponent.module.css';
 import { useState, useEffect } from 'react';
 
-const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled, setRiskGroup }) => {
+const SelectSymptoms = ({
+  nextPage,
+  isPrevEnabled,
+  isDoneEnabled,
+  setRiskGroup
+}) => {
   const [hasSymptoms, setHasSymptoms] = useState('');
   const [hasSevereSymptoms, setHasSevereSymptoms] = useState('');
 
@@ -11,7 +16,6 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled, setRiskGroup }
   }, []);
 
   const handleChecked = (e) => {
-
     if (
       e.target.id === 'prev_covid_none_of_the_above' &&
       e.target.checked === true
@@ -27,8 +31,7 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled, setRiskGroup }
       });
       setRiskGroup(false);
       nextPage();
-      // setHasSymptoms('No');
-      // setHasSevereSymptoms('No');
+
     } else {
       checkboxesArray.forEach((element) => {
         let symtomsChk = document.getElementById(
@@ -36,7 +39,6 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled, setRiskGroup }
         );
         symtomsChk.disabled = false;
       });
-      
     }
 
     // If any of the boxes are checked beside None of the Above
@@ -53,7 +55,6 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled, setRiskGroup }
         }
       });
 
-
       let noneChk = document.getElementById(`prev_covid_none_of_the_above`);
       if (shouldDisable) {
         noneChk.checked = false;
@@ -67,20 +68,19 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled, setRiskGroup }
     }
   };
 
+  const regex = /_/gi;
+
   let checkboxesArray = [
     'Sickle_Cell_Disease',
     'Downs_Syndrome',
     'End_Stage_Kidney_Disease_on_Dialysis ',
     'Active_Cancer_Treatment',
     'Solid_Organ_Transplant',
-    'Patient_of_Yale_New_Haven_Children\'s_Hospital',
-    'None_of_the_Above',
+    "Patient_of_Yale_New_Haven_Children's_Hospital",
+    'None_of_the_Above'
   ];
 
-  const regex = /_/gi;
-  
-  let checkboxes = checkboxesArray.map((checkbox, idx) => 
-
+  let checkboxes = checkboxesArray.map((checkbox, idx) =>
     checkbox === 'None_of_the_Above' ? (
       <div className={styles.chk_row_item}>
         <label className={styles.none_label_or}>
@@ -126,14 +126,16 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled, setRiskGroup }
   return (
     <>
       <div className={styles.question_row_item}>
-        <p className="error" hidden={!(hasSymptoms === 'No' && hasSevereSymptoms === 'No')}>
-        If you have other symptoms, please contact your Primary care doctor to discuss your concerns.
+        <p
+          className="error"
+          hidden={!(hasSymptoms === 'No' && hasSevereSymptoms === 'No')}
+        >
+          If you have other symptoms, please contact your Primary care doctor to
+          discuss your concerns.
         </p>
         <div className={styles.question_row_item_sub}>
           <fieldset>
-            <legend>
-              :
-            </legend>
+            <legend>:</legend>
             <div className={styles.q1_grid}>{checkboxes}</div>
           </fieldset>
         </div>

@@ -6,18 +6,17 @@ const HaveSymptomsComponent = ({
   nextPage,
   isPrevEnabled,
   isDoneEnabled,
-  overEighteen,
   isSpanish,
   setRiskGroup
 }) => {
-  const [isOver18, setIsOver18] = useState(true);
+  // const [isOver18, setIsOver18] = useState(true);
 
   useEffect(() => {
     isPrevEnabled(true);
     isDoneEnabled(false);
   }, []);
 
-  let OEText = isSpanish ? oeText.sp : oeText.en;
+  // let OEText = isSpanish ? oeText.sp : oeText.en;
 
   let checkboxesArray = [
     'Sickle Cell Disease',
@@ -25,7 +24,7 @@ const HaveSymptomsComponent = ({
     'End Stage Kidney Disease on Dialysis ',
     'Active Cancer Treatment',
     'Solid Organ Transplant',
-    "16 or 17 year old pediatric patient with high risk conditions",
+    '16 or 17 year old pediatric patient with high risk conditions'
   ];
 
   let checkboxesArrayEsp = [
@@ -34,10 +33,10 @@ const HaveSymptomsComponent = ({
     'Insuficiencia renal terminal en diálisis',
     'Tratamiento activo del cáncer',
     'Trasplante de órganos sólidos',
-    "Paciente pediátrico de 16 o 17 años con condiciones de alto riesgo",
+    'Paciente pediátrico de 16 o 17 años con condiciones de alto riesgo'
   ];
 
-  let determinedLanguageText = isSpanish ? checkboxesArrayEsp : checkboxesArray
+  let determinedLanguageText = isSpanish ? checkboxesArrayEsp : checkboxesArray;
   let conditions = determinedLanguageText.map((checkbox, idx) => (
     <>
       <b>
@@ -50,12 +49,10 @@ const HaveSymptomsComponent = ({
     <>
       <div className={styles.question_row_item}>
         {/* <p className="banner" >
-      The following questions should be answered on behalf of the individual being scheduled for vaccination. 
         </p> */}
         <br></br>
         <br></br>
         <fieldset className="radio_grp_set">
-        
           <input
             id="employee_staff_check_no"
             type="radio"
@@ -65,7 +62,14 @@ const HaveSymptomsComponent = ({
               setRiskGroup(false);
             }}
           ></input>
-          <label htmlFor="employee_staff_check_no"> I or the person I am scheduling on behalf of <b style={{color: "red"}}><u>DO NOT</u></b> have any of the high risk conditions listed below.</label>
+          <label htmlFor="employee_staff_check_no">
+            {' '}
+            I or the person I am scheduling on behalf of{' '}
+            <b style={{ color: 'red' }}>
+              <u>DO NOT</u>
+            </b>{' '}
+            have any of the high risk conditions listed below.
+          </label>
           <br></br>
           <br></br>
           <input
@@ -77,17 +81,32 @@ const HaveSymptomsComponent = ({
               setRiskGroup(true);
             }}
           ></input>
-          <label htmlFor="employee_staff_check_yes"> I or the person I am scheduling on behalf of <b style={{color: "red"}}><u>DO</u></b> have one or more of the high risk conditions listed below.</label>
+          <label htmlFor="employee_staff_check_yes">
+            {' '}
+            I or the person I am scheduling on behalf of{' '}
+            <b style={{ color: 'red' }}>
+              <u>DO</u>
+            </b>{' '}
+            have one or more of the high risk conditions listed below.
+          </label>
           <br></br>
           <br></br>
-          </fieldset>
-          <br></br>
-          <br></br>
-          <fieldset>
+        </fieldset>
+        <br></br>
+        <br></br>
+        <fieldset>
           <legend>
             {/* {OEText[2]} */}
             {conditions}
-            <a target="__blank" href="https://www.ynhhs.org/patient-care/covid-19/vaccine/kids-and-the-vaccine.aspx#conditions"><p><b>-</b> Click here for more information on pediatric high risk conditions</p></a>
+            <a
+              target="__blank"
+              href="https://www.ynhhs.org/patient-care/covid-19/vaccine/kids-and-the-vaccine.aspx#conditions"
+            >
+              <p>
+                <b>-</b> Click here for more information on pediatric high risk
+                conditions
+              </p>
+            </a>
             <br></br>
           </legend>
         </fieldset>

@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import styles from './TestedPositiveComponent.module.css';
 import tpText from './testedpositive.json';
 
-
 const TestedPositiveComponent = ({
   nextPage,
   isPrevEnabled,
@@ -18,7 +17,7 @@ const TestedPositiveComponent = ({
     isPrevEnabled(true);
   }, []);
 
-  let TPText = isSpanish ? tpText.sp : tpText.en
+  let TPText = isSpanish ? tpText.sp : tpText.en;
 
   return (
     <>
@@ -26,7 +25,7 @@ const TestedPositiveComponent = ({
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
             <p className="error" hidden={!isDiagnosed}>
-            {TPText[2]}
+              {TPText[2]}
             </p>
 
             <fieldset>
@@ -34,9 +33,7 @@ const TestedPositiveComponent = ({
                 {TPText[0]}
                 <br></br>
                 <br></br>
-                <b>
-                {TPText[1]}
-                </b>
+                <b>{TPText[1]}</b>
               </legend>
 
               <div className="radio_row_item">

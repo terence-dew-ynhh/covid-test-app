@@ -2,8 +2,13 @@ import { useState, useEffect } from 'react';
 import styles from './MonoclonalComponent.module.css';
 import mText from './monoclonal.json';
 
-
-const MonoclonalComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateAnswerData, isSpanish }) => {
+const MonoclonalComponent = ({
+  nextPage,
+  isPrevEnabled,
+  isDoneEnabled,
+  updateAnswerData,
+  isSpanish
+}) => {
   const [isDiagnosed, setIsDiagnosed] = useState('');
 
   useEffect(() => {
@@ -11,16 +16,15 @@ const MonoclonalComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateAns
     isPrevEnabled(true);
   }, []);
 
-  let MText = isSpanish ? mText.sp : mText.en
-
+  let MText = isSpanish ? mText.sp : mText.en;
 
   return (
     <>
       <div className="radio_grp">
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
-          <p className="error" hidden={!(isDiagnosed === 'Yes')}>
-          {MText[1]}
+            <p className="error" hidden={!(isDiagnosed === 'Yes')}>
+              {MText[1]}
             </p>
             <fieldset>
               <legend>{MText[0]}</legend>
@@ -30,11 +34,9 @@ const MonoclonalComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateAns
                   type="radio"
                   value="Yes"
                   name="prev_covid"
-                  onClick={ 
-                    (e) =>{
-                      setIsDiagnosed(e.target.value);
-                    }
-                  }
+                  onClick={(e) => {
+                    setIsDiagnosed(e.target.value);
+                  }}
                 ></input>
                 <label htmlFor="prev_covid_yes">{MText[2]}</label>
                 <div className="radio_row_item">
@@ -43,18 +45,16 @@ const MonoclonalComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, updateAns
                     type="radio"
                     value="No"
                     name="prev_covid"
-                    onClick={
-                      (e) =>{
-                        updateAnswerData({monoclonal: e.target.value});
-                        nextPage(e);
-                      }
-                    }
+                    onClick={(e) => {
+                      updateAnswerData({ monoclonal: e.target.value });
+                      nextPage(e);
+                    }}
                   ></input>
                   <label htmlFor="prev_covid_no">{MText[3]}</label>
                 </div>
               </div>
             </fieldset>
-          </div>          
+          </div>
         </div>
       </div>
       <style jsx>{``}</style>

@@ -6,8 +6,8 @@ import { TramRounded } from '@material-ui/icons';
 
 const useStyles = makeStyles(() => ({
   tooltip: {
-    fontSize: 25,
-  },
+    fontSize: 25
+  }
 }));
 
 const ReceiveVaccinationConsent = ({
@@ -16,7 +16,6 @@ const ReceiveVaccinationConsent = ({
   isDoneEnabled,
   isSpanish
 }) => {
-
   useEffect(() => {
     isDoneEnabled(false);
     isPrevEnabled(TramRounded);
@@ -45,9 +44,7 @@ const ReceiveVaccinationConsent = ({
           handleChecked(e);
         }}
       ></input>
-      <label
-        htmlFor={`prev_covid_${checkbox.toLowerCase()}`}
-      >
+      <label htmlFor={`prev_covid_${checkbox.toLowerCase()}`}>
         {VEText[8]}
       </label>
     </div>
@@ -57,9 +54,7 @@ const ReceiveVaccinationConsent = ({
     <>
       <div className={styles.question_row_item}>
         <div className={styles.question_row_item_sub}>
-        <p className="message">
-              {VEText[10]}
-            </p>
+          <p className="message">{VEText[10]}</p>
           <fieldset>
             <legend>
               {VEText[0]}

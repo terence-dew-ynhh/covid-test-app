@@ -13,7 +13,7 @@ const PinInputComponent = ({
   const [pin, setPin] = useState('');
   const [isSuccess, setIsSuccess] = useState(true);
   const [isOverAttempts, setIsOverAttempts] = useState(false);
-  const [attempts, setAttempts]= useState(5);
+  const [attempts, setAttempts] = useState(5);
 
   useEffect(() => {
     isDoneEnabled(false);
@@ -27,13 +27,13 @@ const PinInputComponent = ({
     verifyPin(pin).then((data) => {
       console.log(data);
 
-      if(!data.overCount){
-      isValid = data.isValid;
-      setIsSuccess(isValid);
-      if(!isValid) setAttempts((attempts - 1));
-      console.log(`attempts: ${attempts}`)
-      if(attempts == 1) isPrevEnabled(false);
-      }else{
+      if (!data.overCount) {
+        isValid = data.isValid;
+        setIsSuccess(isValid);
+        if (!isValid) setAttempts(attempts - 1);
+        console.log(`attempts: ${attempts}`);
+        if (attempts == 1) isPrevEnabled(false);
+      } else {
         setIsOverAttempts(true);
       }
 
@@ -46,11 +46,11 @@ const PinInputComponent = ({
       <div className="radio_grp">
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
-            <p className="error" hidden={(attempts == 0) || isSuccess}>
+            <p className="error" hidden={attempts == 0 || isSuccess}>
               Invalid Pin Number
             </p>
             <p className="error" hidden={!isOverAttempts}>
-              {`Sorry, ${department} doesn’t have any additional open slots available.`} 
+              {`Sorry, ${department} doesn’t have any additional open slots available.`}
             </p>
             <p className="error" hidden={!(attempts == 0)}>
               Number of Allowed Attempts Exceeded.
@@ -66,14 +66,16 @@ const PinInputComponent = ({
               autoFocus
             />
           </div>
-          <button className={styles.button} hidden={(attempts == 0)} onClick={onSubmit}>
-          {`Submit`}
-        </button>
+          <button
+            className={styles.button}
+            hidden={attempts == 0}
+            onClick={onSubmit}
+          >
+            {`Submit`}
+          </button>
         </div>
       </div>
-      <style jsx>{`
-      
-      `}</style>
+      <style jsx>{``}</style>
     </>
   );
 };

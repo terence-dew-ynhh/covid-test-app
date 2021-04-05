@@ -1,11 +1,14 @@
 import { useState, useEffect } from 'react';
-import styles from './Over18Component.module.css'
+import styles from './Over18Component.module.css';
 import oeText from './over18.json';
 
-
-
- const Over18Component =({nextPage, isPrevEnabled, isDoneEnabled, overEighteen, isSpanish}) => {
-  
+const Over18Component = ({
+  nextPage,
+  isPrevEnabled,
+  isDoneEnabled,
+  overEighteen,
+  isSpanish
+}) => {
   const [isOver18, setIsOver18] = useState(true);
 
   useEffect(() => {
@@ -15,18 +18,17 @@ import oeText from './over18.json';
 
   let OEText = isSpanish ? oeText.sp : oeText.en;
 
-    return (
+  return (
     <>
       <div className={styles.question_row_item}>
-      <p className="banner" >
-      The following questions should be answered on behalf of the individual being scheduled for vaccination. 
+        <p className="banner">
+          The following questions should be answered on behalf of the individual
+          being scheduled for vaccination.
         </p>
         <br></br>
         <br></br>
         <fieldset className="radio_grp_set">
-          <legend>
-          {OEText[2]}
-          </legend>
+          <legend>{OEText[2]}</legend>
           <input
             id="employee_staff_check_yes"
             type="radio"
@@ -38,8 +40,8 @@ import oeText from './over18.json';
             }}
           ></input>
           <label htmlFor="employee_staff_check_yes">{OEText[0]}</label>
-            <br></br>
-            <br></br>
+          <br></br>
+          <br></br>
           <input
             id="employee_staff_check_no"
             type="radio"
@@ -51,11 +53,11 @@ import oeText from './over18.json';
             }}
           ></input>
           <label htmlFor="employee_staff_check_no">{OEText[1]}</label>
-        </fieldset>        
+        </fieldset>
       </div>
       <style jsx>{``}</style>
     </>
   );
-}
+};
 
 export default Over18Component;

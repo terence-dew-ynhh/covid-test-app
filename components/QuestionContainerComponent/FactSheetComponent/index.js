@@ -34,69 +34,60 @@ const FactSheetComponent = ({
   isDoneEnabled,
   updateField,
   schedulePush,
-  isSpanish, 
+  isSpanish,
   isOver18
 }) => {
   const [isDiagnosed, setIsDiagnosed] = useState('');
   const [open, setOpen] = useState(false);
   const [modalStyle] = useState(getModalStyle);
+  const classes = useStyles();
 
   useEffect(() => {
     isDoneEnabled(false);
     isPrevEnabled(true);
   }, []);
 
-  const classes = useStyles();
-  let FSText = isSpanish ? fsText.sp : fsText.en;
-
-  const handleOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-
   const body = (
     <div style={modalStyle} className={classes.paper}>
-      <img style={{height: '100%' }} src="Schedule.PNG"></img>
+      <img style={{ height: '100%' }} src="Schedule.PNG"></img>
     </div>
   );
 
-  const links = isOver18 ? ( 
-    <>             
-    <br></br>
-    <br></br>
-    <a
-      target="__blank"
-      href="https://www.fda.gov/media/144638/download"
-    >
-      Moderna Vaccination EUA
-    </a>
-    <br></br>
-    <br></br>
-    <a
-      target="__blank"
-      href="https://mychart.ynhhs.org/MyChart-PRD/en-US/PDF/ESPCOVIDModernaVaccineFactSheet.pdf"
-    >
-      {FSText[4]}
-    </a>
-    <br></br>
-    <br></br>
-    <a
-      target="__blank"
-      href="https://mychart.ynhhs.org/mychart-prd/en-US/PDF/JJEUA.pdf"
-    >
-      {FSText[9]}
-    </a>{' '}
-    <br></br>
-    <br></br>
-    <a
-      target="__blank"
-      href="https://mychart.ynhhs.org/mychart-prd/en-US/PDF/JJEUA_ESP.pdf"
-    >
-      {FSText[10]}
-    </a></>) : null;
+  let FSText = isSpanish ? fsText.sp : fsText.en;
+
+  const links = isOver18 ? (
+    <>
+      <br></br>
+      <br></br>
+      <a target="__blank" href="https://www.fda.gov/media/144638/download">
+        Moderna Vaccination EUA
+      </a>
+      <br></br>
+      <br></br>
+      <a
+        target="__blank"
+        href="https://mychart.ynhhs.org/MyChart-PRD/en-US/PDF/ESPCOVIDModernaVaccineFactSheet.pdf"
+      >
+        {FSText[4]}
+      </a>
+      <br></br>
+      <br></br>
+      <a
+        target="__blank"
+        href="https://mychart.ynhhs.org/mychart-prd/en-US/PDF/JJEUA.pdf"
+      >
+        {FSText[9]}
+      </a>{' '}
+      <br></br>
+      <br></br>
+      <a
+        target="__blank"
+        href="https://mychart.ynhhs.org/mychart-prd/en-US/PDF/JJEUA_ESP.pdf"
+      >
+        {FSText[10]}
+      </a>
+    </>
+  ) : null;
 
   return (
     <>
@@ -129,7 +120,7 @@ const FactSheetComponent = ({
                   {FSText[3]}
                 </a>{' '}
                 {links}
-                <br></br>                
+                <br></br>
               </legend>
 
               <div className="radio_row_item">
@@ -188,3 +179,11 @@ const FactSheetComponent = ({
 };
 
 export default FactSheetComponent;
+
+// const handleOpen = () => {
+//   setOpen(true);
+// };
+
+// const handleClose = () => {
+//   setOpen(false);
+// };

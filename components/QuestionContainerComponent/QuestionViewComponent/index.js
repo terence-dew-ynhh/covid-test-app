@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import DepartmentSelectComponent from '../DepartmentSelectComponent';
 import PinInputComponent from '../PinInputComponent';
 import VaccineDateSelectComponent from '../VaccineDateSelectComponent';
@@ -9,16 +9,15 @@ import CovidSymptomsComponent from '../CovidSymptomsComponent';
 import FactSheetComponent from '../FactSheetComponent';
 import SelectVaccineComponent from '../SelectVaccineComponent';
 import QuarantineComponent from '../QuarantineComponent';
-import HaveSymptomsComponent from '../HaveSymptomsComponent'
-import ReceiveVaccinationConsent from '../ReceiveVaccinationConsent'
-import SlotsFilledComponent from '../SlotsFilledComponent'
-import MonoclonalComponent from '../MonoclonalComponent'
+import HaveSymptomsComponent from '../HaveSymptomsComponent';
+import ReceiveVaccinationConsent from '../ReceiveVaccinationConsent';
+import SlotsFilledComponent from '../SlotsFilledComponent';
+import MonoclonalComponent from '../MonoclonalComponent';
 import ZipInputComponent from '../ZipInputComponent';
 import VaccinationScheduleConsent from '../VaccinationScheduleConsent';
 import AgeComponent from '../AgeComponent';
 import YNHHFactSheetComponent from '../YNHHFactSheetComponent';
 import styles from './QuestionViewComponent.module.css';
-
 
 const QuestionViewComponent = ({
   compName,
@@ -42,10 +41,7 @@ const QuestionViewComponent = ({
   const [prevEnabled, setPrevEnabled] = useState(false);
   const [nextEnabled, setNextEnabled] = useState(false);
   const [doneEnabled, setDoneEnabled] = useState(false);
-
-  useEffect(() => {
-    
-  }, []);
+  const ComponentName = components[compName || 'pininput'];
 
   const isPrevEnabled = (isEnabled) => {
     setPrevEnabled(isEnabled);
@@ -81,10 +77,8 @@ const QuestionViewComponent = ({
     monoclonal: MonoclonalComponent,
     zipcode: ZipInputComponent,
     vaccineschedule: VaccinationScheduleConsent,
-    ynhhfactsheet: YNHHFactSheetComponent,
+    ynhhfactsheet: YNHHFactSheetComponent
   };
-
-  const ComponentName = components[compName || 'pininput'];
 
   return (
     <div className={styles.questionContainer}>
@@ -121,7 +115,9 @@ const QuestionViewComponent = ({
         <button
           className="button"
           hidden={!doneEnabled}
-          onClick={() => {schedulePush(false);}}
+          onClick={() => {
+            schedulePush(false);
+          }}
         >
           {isSpanish ? `Programar una Cita` : `Schedule Appointment`}
         </button>

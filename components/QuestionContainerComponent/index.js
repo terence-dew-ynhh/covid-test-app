@@ -14,8 +14,9 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
   const [selDate, setSelDate] = useState('');
   const [responseData, setResponseData] = useState({});
 
+  const router = useRouter();
+
   const compNames = [
-    
     'slotsfilled',
     'age',
     'vaccineconsent',
@@ -33,53 +34,7 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
     'selectsymptoms'
   ];
 
-  const router = useRouter();
-
-  const verifyPin = async (pin) => {
-    //axios POST request to auth
-    //next page if response true
-    // error message if false
-
-    const action = 'post';
-    const res = await fetch('/api/auth', {
-      method: action,
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        department: department,
-        pin: pin
-      })
-    });
-    return res.json();
-  };
-
-  const submitData = async () => {
-    //axios POST request to auth
-    //next page if response true
-    // error message if false
-
-    const action = 'post';
-    const res = await fetch('/api/responses', {
-      method: action,
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(responseData)
-    });
-    return res.json();
-  };
-
-  const nextPage = (e, pageIncrement = 1) => {
-    let index = viewIdx + pageIncrement;
-    setviewIdx(index);
-    let newjumpArr = [...viewJump, pageIncrement];
-    setviewJump(newjumpArr);
-  };
-
-  const prevPage = (e) => {
-    let index = viewIdx - viewJump[viewJump.length - 1];
-    let newjumpArr = [...viewJump];
-    newjumpArr.splice(viewJump.length - 1, 1);
-    setviewJump(newjumpArr);
-    setviewIdx(index);
-  };
+  let progressWidth = Math.floor(100 * ((viewIdx + 1) / compNames.length));
 
   const pfizerSelected = (isPfizerSelected) => {
     setIsPfizer(isPfizerSelected);
@@ -107,6 +62,21 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
     setResponseData({ ...responseData, ...questionData });
   };
 
+  const nextPage = (e, pageIncrement = 1) => {
+    let index = viewIdx + pageIncrement;
+    setviewIdx(index);
+    let newjumpArr = [...viewJump, pageIncrement];
+    setviewJump(newjumpArr);
+  };
+
+  const prevPage = (e) => {
+    let index = viewIdx - viewJump[viewJump.length - 1];
+    let newjumpArr = [...viewJump];
+    newjumpArr.splice(viewJump.length - 1, 1);
+    setviewJump(newjumpArr);
+    setviewIdx(index);
+  };
+
   const schedulePush = () => {
     submitData();
     router.push(
@@ -117,7 +87,28 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
     );
   };
 
-  let progressWidth = Math.floor(100 * ((viewIdx + 1) / compNames.length));
+  const verifyPin = async (pin) => {
+    const action = 'post';
+    const res = await fetch('/api/auth', {
+      method: action,
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        department: department,
+        pin: pin
+      })
+    });
+    return res.json();
+  };
+
+  const submitData = async () => {
+    const action = 'post';
+    const res = await fetch('/api/responses', {
+      method: action,
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(responseData)
+    });
+    return res.json();
+  };
 
   return (
     <div className={styles.questionContainer}>

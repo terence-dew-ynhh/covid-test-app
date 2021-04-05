@@ -1,8 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import styles from './ReceiveVaccinationConsent.module.css';
-import Tooltip from '@material-ui/core/Tooltip';
-import InfoIcon from '@material-ui/icons/Info';
 import veText from './vaccineelidgibility.json';
 import { TramRounded } from '@material-ui/icons';
 
@@ -16,12 +14,8 @@ const ReceiveVaccinationConsent = ({
   nextPage,
   isPrevEnabled,
   isDoneEnabled,
-  updateField,
-  schedulePush,
   isSpanish
 }) => {
-
-  const classes = useStyles();
 
   useEffect(() => {
     isDoneEnabled(false);
@@ -52,7 +46,6 @@ const ReceiveVaccinationConsent = ({
         }}
       ></input>
       <label
-        // className={styles.prev_none_label}
         htmlFor={`prev_covid_${checkbox.toLowerCase()}`}
       >
         {VEText[8]}

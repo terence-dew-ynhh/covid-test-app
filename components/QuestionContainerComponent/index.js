@@ -5,8 +5,6 @@ import { useRouter } from 'next/router';
 
 const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
   const [viewIdx, setviewIdx] = useState(0);
-
-  //New States
   const [department, setDepartment] = useState('Cornell Scott');
   const [isPfizer, setIsPfizer] = useState(null);
   const [isInZipCodeRange, setIsInZipCodeRange] = useState(false);
@@ -18,8 +16,8 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
 
   const compNames = [
     
-    // 'slotsfilled',
-    'overeighteen',
+    'slotsfilled',
+    'age',
     'vaccineconsent',
     'selectsymptoms',
     'listconditions',
@@ -73,7 +71,6 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
     setviewIdx(index);
     let newjumpArr = [...viewJump, pageIncrement];
     setviewJump(newjumpArr);
-    // setView
   };
 
   const prevPage = (e) => {

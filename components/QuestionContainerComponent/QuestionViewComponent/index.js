@@ -12,11 +12,10 @@ import QuarantineComponent from '../QuarantineComponent';
 import HaveSymptomsComponent from '../HaveSymptomsComponent'
 import ReceiveVaccinationConsent from '../ReceiveVaccinationConsent'
 import SlotsFilledComponent from '../SlotsFilledComponent'
-import AgeComponent from '../AgeComponent'
 import MonoclonalComponent from '../MonoclonalComponent'
 import ZipInputComponent from '../ZipInputComponent';
 import VaccinationScheduleConsent from '../VaccinationScheduleConsent';
-import Over18Component from '../Over18Component';
+import AgeComponent from '../AgeComponent';
 import YNHHFactSheetComponent from '../YNHHFactSheetComponent';
 import styles from './QuestionViewComponent.module.css';
 
@@ -83,7 +82,6 @@ const QuestionViewComponent = ({
     zipcode: ZipInputComponent,
     vaccineschedule: VaccinationScheduleConsent,
     ynhhfactsheet: YNHHFactSheetComponent,
-    overeighteen: Over18Component,
   };
 
   const ComponentName = components[compName || 'pininput'];

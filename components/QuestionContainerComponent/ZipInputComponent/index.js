@@ -17,8 +17,6 @@ const ZipInputComponent = ({
   isPrevEnabled,
   isNextEnabled,
   isDoneEnabled,
-  verifyPin,
-  department,
   zipCodeInRange,
   isSpanish
 }) => {
@@ -48,8 +46,6 @@ const ZipInputComponent = ({
     } else {
       zipCodeInRange(false);
       window.location.href = 'https://covidvaccine.ynhh.org/';
-      // if(applicationOn) nextPage(e,2);
-      // else nextPage();
     }  
   };
 

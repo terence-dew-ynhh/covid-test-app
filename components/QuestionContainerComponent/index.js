@@ -34,10 +34,6 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
   const router = useRouter();
 
   const verifyPin = async (pin) => {
-    //axios POST request to auth
-    //next page if response true
-    // error message if false
-
     const action = 'post';
     const res = await fetch('/api/auth', {
       method: action,
@@ -51,10 +47,6 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
   };
 
   const submitData = async () => {
-    //axios POST request to auth
-    //next page if response true
-    // error message if false
-
     const action = 'post';
     const res = await fetch('/api/responses', {
       method: action,
@@ -93,8 +85,6 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
   };
 
   const updateAnswerData = (questionData) => {
-    // const dataKey = questionData.keys()
-    // setResponseOrder([...responseOrder, ...dataKey[0]]);
     setResponseData({ ...responseData, ...questionData });
   };
 

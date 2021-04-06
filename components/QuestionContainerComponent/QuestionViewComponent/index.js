@@ -41,24 +41,6 @@ const QuestionViewComponent = ({
   const [prevEnabled, setPrevEnabled] = useState(false);
   const [nextEnabled, setNextEnabled] = useState(false);
   const [doneEnabled, setDoneEnabled] = useState(false);
-  const ComponentName = components[compName || 'pininput'];
-
-  const isPrevEnabled = (isEnabled) => {
-    setPrevEnabled(isEnabled);
-  };
-
-  const isNextEnabled = (isEnabled) => {
-    setNextEnabled(isEnabled);
-  };
-
-  const isDoneEnabled = (isEnabled) => {
-    setDoneEnabled(isEnabled);
-  };
-
-  const setSchedulerURL = (location) => {
-    updateLocation(location);
-  };
-
   const components = {
     deptselect: DepartmentSelectComponent,
     pininput: PinInputComponent,
@@ -78,6 +60,23 @@ const QuestionViewComponent = ({
     zipcode: ZipInputComponent,
     vaccineschedule: VaccinationScheduleConsent,
     ynhhfactsheet: YNHHFactSheetComponent
+  };
+  const ComponentName = components[compName || 'pininput'];
+
+  const isPrevEnabled = (isEnabled) => {
+    setPrevEnabled(isEnabled);
+  };
+
+  const isNextEnabled = (isEnabled) => {
+    setNextEnabled(isEnabled);
+  };
+
+  const isDoneEnabled = (isEnabled) => {
+    setDoneEnabled(isEnabled);
+  };
+
+  const setSchedulerURL = (location) => {
+    updateLocation(location);
   };
 
   return (

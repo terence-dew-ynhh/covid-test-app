@@ -1,7 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import QuestionView from './QuestionViewComponent';
 import styles from './QuestionContainerComponent.module.css';
 import { useRouter } from 'next/router';
+
+const currentAppState = async () => {
+
+  return await fetch('/api/appstate')
+  .then(res => res.json())
+  .then(res => res.open)
+  
+};
 
 const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
   const [viewIdx, setviewIdx] = useState(0);
@@ -13,8 +21,21 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
   const [viewJump, setviewJump] = useState([]);
   const [selDate, setSelDate] = useState('');
   const [responseData, setResponseData] = useState({});
+  const [applicationOn, setApplicationOn] = useState(false);
 
   const router = useRouter();
+
+  useEffect(() => {
+    currentAppState().then(appFlag => {
+    if(appFlag){
+      setviewIdx(1);
+    }
+    setApplicationOn(appFlag);
+    });
+  }, []);
+
+  
+
 
   const compNames = [
     'slotsfilled',

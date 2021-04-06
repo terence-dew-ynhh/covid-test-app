@@ -5,14 +5,16 @@ import QuestionContainerComponent from '../components/QuestionContainerComponent
 import appText from '../data/questioncontainertext.json';
 
 
-function Home({ uuid }) {
+
+
+function Home({ initialIdx }) {
   const [isIndividual, setIsIndividual] = useState(false);
    const [isSpanish, setIsSpanish] = useState(false);
 
    let homeText = isSpanish ? appText.sp : appText.en
 
-  useEffect(() => {
-    
+   useEffect(() => {
+
   }, []);
 
   const updateHeader = (isIndividualAns) => {
@@ -45,19 +47,11 @@ function Home({ uuid }) {
       </div>
       <h1 className="title">{homeText[2]}</h1>
 
-      <QuestionContainerComponent isSpanish={isSpanish} uuid={uuid} updateHeader={updateHeader} />
+      <QuestionContainerComponent isSpanish={isSpanish} updateHeader={updateHeader} />
       {callText}
     </div>
   );
 }
-
-Home.getInitialProps = async (context) => {
-  let uuid =
-    Math.random().toString(36).substring(2, 15) +
-    Math.random().toString(36).substring(2, 15);
-
-  return { uuid: uuid };
-};
 
 export default Home;
 

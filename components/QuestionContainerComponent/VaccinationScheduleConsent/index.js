@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import styles from './VaccinationScheduleConsent.module.css';
 import vsText from './vaccineschedule.json';
 
-
 const VaccinationScheduleConsent = ({
   isPrevEnabled,
   isDoneEnabled,
@@ -51,21 +50,20 @@ const VaccinationScheduleConsent = ({
       <div className={styles.question_row_item}>
         <div className={styles.question_row_item_sub}>
           <p className="message">{VSText[2]}</p>
-          <fieldset>
-            <legend>
+          <fieldset className={styles.fieldset}>
+            <legend className={styles.legend}>
               <br></br>
               <br></br>
               {VSText[0]}
               <br></br>
               <br></br>
-              <div className="imgcontainer">
-                <p className="versiontxt">v7 4.7.21</p>
-                <a href="/info" target="_blank" rel="noreferrer">
-                  <img src="/Schedule.PNG" passHref></img>
-                </a>
-                <p>{VSText[1]}</p>
-              </div>
+              <p className="versiontxt">v7 4.7.21</p>
+              <a href="/info" target="_blank" rel="noreferrer">
+                <img src="/Schedule.PNG" passHref></img>
+              </a>
             </legend>
+            <p className="fin-statment">{VSText[1]}</p>
+
             <div className={styles.q1_grid}>{checkboxes}</div>
           </fieldset>
         </div>
@@ -83,11 +81,8 @@ const VaccinationScheduleConsent = ({
           text-align: center;
           margin: 1px;
         }
-        .imgcontainer {
-          width: 100%;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
+        .fin-statment {
+          width: 900px;
         }
       `}</style>
     </>

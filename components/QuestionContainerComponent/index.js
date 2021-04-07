@@ -37,7 +37,7 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
 
   const compNames = [
     'slotsfilled',
-    'vaccineschedule',
+    // 'vaccineschedule',
     'age',
     'vaccineconsent',
     'selectsymptoms',

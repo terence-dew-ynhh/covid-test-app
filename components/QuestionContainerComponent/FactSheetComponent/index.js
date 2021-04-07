@@ -47,6 +47,7 @@ const FactSheetComponent = ({
     isPrevEnabled(true);
   }, []);
 
+
   const body = (
     <div style={modalStyle} className={classes.paper}>
       <img style={{ height: '100%' }} src="Schedule.PNG"></img>
@@ -166,7 +167,7 @@ const FactSheetComponent = ({
         </div>
         <Modal
           open={open}
-          onClose={handleClose}
+          onClose={()=>{setOpen(false)}}
           aria-labelledby="simple-modal-title"
           aria-describedby="simple-modal-description"
         >

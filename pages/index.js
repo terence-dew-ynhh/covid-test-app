@@ -1,4 +1,3 @@
-import fetch from 'isomorphic-unfetch';
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import QuestionContainerComponent from '../components/QuestionContainerComponent';

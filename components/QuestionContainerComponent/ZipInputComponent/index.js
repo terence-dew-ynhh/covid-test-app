@@ -6,7 +6,7 @@ import zpText from './zipinput.json';
 
 const currentAppState = async () => {
 
-  return await fetch('/api/appstate')
+  return await fetch('/api/open')
   .then(res => res.json())
   .then(res => res.open)
   

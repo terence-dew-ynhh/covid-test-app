@@ -176,5 +176,6 @@ ___
 - Review Changes with another team member
 - Commit Changes Locally
   
-  
+### Contacts
+- **Yauheni Solad** - 203-863-3095
   

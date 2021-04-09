@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 
 const currentAppState = async () => {
 
-  return await fetch('/api/appState')
+  return await fetch('/api/open')
   .then(res => res.json())
   .then(res => res.open)
   

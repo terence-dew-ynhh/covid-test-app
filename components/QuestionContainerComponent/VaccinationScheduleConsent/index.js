@@ -70,7 +70,7 @@ const VaccinationScheduleConsent = ({
                   <b>
                     Yale New Haven Health is pleased to offer the following
                     clinics for the Connecticut Department of Developmental
-                    Services (DDS). All sites will offer the Pfizer vaccine.{' '}
+                    Services (DDS) and University Partners. All sites will offer the Pfizer vaccine.{' '}
                   </b>
                 </p>
                 <ul>

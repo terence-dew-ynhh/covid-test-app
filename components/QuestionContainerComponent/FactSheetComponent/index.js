@@ -71,6 +71,8 @@ const FactSheetComponent = ({
       >
         {FSText[4]}
       </a>
+
+      {/*
       <br></br>
       <br></br>
       <a
@@ -87,6 +89,9 @@ const FactSheetComponent = ({
       >
         {FSText[10]}
       </a>
+
+      */}
+
     </>
   ) : null;
 

@@ -82,7 +82,10 @@ const VaccinationScheduleConsent = ({
           margin: 1px;
         }
         .fin-statment {
-          width: 900px;
+          width: 100%;
+        }
+        .message{
+          width: 100%;
         }
       `}</style>
     </>

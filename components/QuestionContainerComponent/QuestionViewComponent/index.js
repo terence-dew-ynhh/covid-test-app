@@ -1,5 +1,10 @@
 import { useState } from 'react';
-import SelectLocation from '../SelectLocationComponent';
+import EmployeeQuestion from '../EmployeeQuestionComponent';
+import SelectSymptoms from '../SelectSymptomsComponent';
+import SevereSympStatement from '../SevereSympStatementComponent';
+import RequireCovidTestingComponent from '../RequireCovidTestingComponent';
+import OutOfWorkConsentComponent from '../OutOfWorkConsentComponent'
+import PossibleFluConsent from '../PossibleFluConsentComponent'
 import styles from './QuestionViewComponent.module.css'
 
 
@@ -25,10 +30,15 @@ const QuestionViewComponent = ({
   const setSchedulerURL = (location) => {updateLocation(location)};
   
   const components = {
-    location: SelectLocation
+    employee: EmployeeQuestion,
+    needcovidtesting: RequireCovidTestingComponent,
+    symptomssel: SelectSymptoms,
+    sevsymptomsstatment: SevereSympStatement,
+    symptomsstatment: OutOfWorkConsentComponent,
+    consent:PossibleFluConsent
   };
 
-  const ComponentName = components[compName || 'location'];
+  const ComponentName = components[compName || 'employee'];
 
   return (
     <div className={styles.questionContainer}>
@@ -38,11 +48,14 @@ const QuestionViewComponent = ({
         isPrevEnabled={isPrevEnabled}        
         isDoneEnabled={isDoneEnabled}
         setSchedulerURL={setSchedulerURL}
+        schedulePush={schedulePush}
       />
       </div>
       <div className={styles.buttonContainer}>          
-
-      <button className="button choice-button" hidden={!doneEnabled} onClick={schedulePush}>
+      <button className="button" hidden={!prevEnabled} onClick={prevPage}>
+        {`< Back`}
+      </button>
+      <button className="button" hidden={!doneEnabled} onClick={schedulePush}>
         Schedule Appoinment
       </button>  
       </div>

@@ -15,13 +15,14 @@ import styles from './EmployeeQuestionComponent.module.css'
     <>
       <div className={styles.question_row_item}>
       <p className="error" hidden={isEmployee}>
-          Sorry, please navigate to a public testing website to schedule your
-          test
+          Please schedule your test here: 
+          <a href="https://www.ynhhs.org/patient-care/covid-19/testing/testing-locations.aspx" >
+          Yale New Haven Health | COVID-19 Testing (ynhhs.org)
+          </a>
         </p>
         <fieldset className="radio_grp_set">
           <legend>
-            Are you an employee or medical staff member of Yale New Haven
-            Health/ Yale Medicine?
+          Are you an employee or tenant of Mohegan Sun?
           </legend>
           <input
             id="employee_staff_check_yes"

@@ -8,20 +8,49 @@ const QuestionFormComponent = ({}) => {
 
   const [viewIdx, setviewIdx] = useState(0);
   const [endPoint, setEndpoint] = useState('Mohegan Sun Employees');
-  const compNames = ['location'];
+  const compNames = [
+    'employee',
+    'needcovidtesting',
+    'symptomssel',
+    'sevsymptomsstatment',
+    'symptomsstatment',
+    'consent'
+  ];
+  const [jumpTracking, setJumpTracking] = useState([]); 
+  const [progressBarVal, setProgressBarVal] = useState(12); 
   const router = useRouter();
 
-  
-  const nextPage = () => {
-    console.log("made it")
-    let index = viewIdx <= 2 ? viewIdx + 1 : viewIdx;
-    setviewIdx(index);
-  };
+  const nextPage = (e, pageJump) => {
+    let pageProg = pageJump ? pageJump : 1;
+    let index = pageProg > 1 ? viewIdx + pageProg : viewIdx + 1;
+    let newjumpArr = [...jumpTracking, pageProg];
+    setJumpTracking(newjumpArr);
+    setviewIdx(index);
+    recalculateProgress();
+  };
 
-  const prevPage = () => {
-    let index = viewIdx > 0 ? viewIdx - 1 : viewIdx;
-    setviewIdx(index);
-  };
+  const recalculateProgress = () => {
+    console.log(viewIdx);
+    if (viewIdx < 2) {
+      setProgressBarVal(12);
+    }
+    if (viewIdx == 2) {
+      setProgressBarVal(3);
+    }
+    if (viewIdx == 1) {
+      setProgressBarVal(11);
+    }
+  }; 
+
+  const prevPage = (e) => {
+    let index =
+      viewIdx > 0 ? viewIdx - jumpTracking[jumpTracking.length - 1] : viewIdx;
+    let newjumpArr = [...jumpTracking];
+    newjumpArr.splice(jumpTracking.length - 1, 1);
+    setJumpTracking(newjumpArr);
+    setviewIdx(index);
+    recalculateProgress();
+  }; 
 
   const schedulePush = () => {
 

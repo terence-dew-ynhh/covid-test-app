@@ -73,8 +73,7 @@ const FactSheetComponent = ({
                 >
                   {FSText[3]}
                 </a>{' '}
-                <br></br>
-                <br></br>
+                
                 {/*
                 <a
                   target="__blank"
@@ -91,7 +90,10 @@ const FactSheetComponent = ({
                   {FSText[10]}
                 </a>{' '}
                 */}
+                
                 <br></br>
+                <br></br>
+
               </legend>
               <div className="radio_row_item">
                 <input
@@ -131,6 +133,13 @@ const FactSheetComponent = ({
                 ></input>
                 <label htmlFor="prev_covid_no">{FSText[8]}</label>
               </div>
+
+              <br></br>
+              <br></br>
+              <br></br>
+
+              {FSText[11]}
+
             </fieldset>
           </div>
         </div>

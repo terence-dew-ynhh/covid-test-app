@@ -10,7 +10,8 @@
         "I will read it upon arrival to Vaccination Fair",
         "Don't Agree",
         "Johnson & Johnson EUA",
-        "Johnson & Johnson EUA (Spanish)"
+        "Johnson & Johnson EUA (Spanish)",
+        "The Pfizer and Moderna COVID-19 vaccines are safe and effective.  Both have been shown to reduce the risk of becoming infected  with COVID-19 and being hospitalized.  Most importantly, both have been shown to eliminate the risk of developing severe disease and death due to COVID-19.  Both vaccines are well-tolerated.  Both Pfizer and Moderna vaccines require 2 doses separated by several weeks.  Getting vaccinated as soon as possible with the vaccine that is available will help protect you and your family against COVID."
         ],
     "sp": [
         "Ha leído la hoja informativa sobre la autorización para uso de emergencia y ha dado su consentimiento para recibir la vacuna por Covid-19",
@@ -21,6 +22,9 @@
         "YNHHS Consentimiento de Vacuna",
         "Sí, y deseo ser vacunado",
         "Lo leeré a la llegada a la Feria de Vacunación.",
-        "No estoy de acuerdo"
+        "No estoy de acuerdo",
+        "",
+        "",
+        "Las vacunas contra COVID-19 de Pfizer y Moderna son seguras y eficaces. Ambas han demostrado que reducen el riesgo de infectarse con COVID-19 y ser hospitalizado. Lo que es más importante, ambas han demostrado que eliminan el riesgo de desarrollar una enfermedad grave y de morir a causa de COVID-19. Ambas vacunas son bien toleradas. Tanto la vacuna de Pfizer como la de Moderna requieren 2 dosis separadas por varias semanas. Vacunarse lo antes posible con la vacuna que esté disponible ayudará a protegerle a usted y a su familia contra COVID."
     ]
 }

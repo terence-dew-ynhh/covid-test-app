@@ -7,6 +7,7 @@ import oeText from './over18.json';
  const Over18Component =({nextPage, isPrevEnabled, isDoneEnabled, isSpanish}) => {
   
   const [isOver18, setIsOver18] = useState(true);
+  const [under18, setUnder18] = useState(true); 
 
   useEffect(() => {
     isPrevEnabled(false);
@@ -45,12 +46,14 @@ import oeText from './over18.json';
             type="radio"
             name="employee_staff"
             onClick={(e) => {
-              nextPage();
-              setIsOver18(false);
+              //nextPage();
+              //setIsOver18(false);
               // overEighteen(false);
+              setUnder18(false);
             }}
           ></input>
           <label htmlFor="employee_staff_check_no">{OEText[1]}</label>
+          <p className="error" hidden={under18}>You have indicated that you are scheduling for yourself or someone who is 16 or 17 years old. At this time only the Pfizer Vaccine is eligible for this age group. To ensure that the appropriate Vaccine is scheduled please call 1-833-ASK-YNHH (275-9644) for assistance.</p>
         </fieldset>        
       </div>
       <style jsx>{``}</style>

@@ -70,15 +70,15 @@ const ReceiveVaccinationConsent = ({
           <fieldset>
             <legend>
               {VEText[0]}
+              {/*<br></br>
               <br></br>
-              <br></br>
-              {VEText[1]}
+              {VEText[1]*/}
               <br></br>
               <br></br>
               {VEText[15]}
+              {/*<br></br>
               <br></br>
-              <br></br>
-              <a href="https://portal.ct.gov/DDS/Legal/Eligibility/Eligibility-for-DDS-Services">Eligibility for DDS Services (ct.gov)</a>
+              <a href="https://portal.ct.gov/DDS/Legal/Eligibility/Eligibility-for-DDS-Services">Eligibility for DDS Services (ct.gov)</a>*/}
               <br></br>
               <br></br>
               {VEText[5]}

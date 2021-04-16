@@ -33,7 +33,8 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
     'quartinecovid',
     'selectedvaccine',
     'vaccinedateselect',
-    'selectsymptoms'
+    'selectsymptoms',
+    'vaccinecalendar'
   ];
 
   const router = useRouter();

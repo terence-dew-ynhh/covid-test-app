@@ -28,7 +28,8 @@ const VaccinationScheduleConsent = ({
   }, []);
 
   const handleChecked = (e) => {
-    schedulePush(e);
+    //schedulePush(e);
+    nextPage(e, 5);
   };
 
   let VSText = isSpanish ? vsText.sp : vsText.en;
@@ -68,31 +69,38 @@ const VaccinationScheduleConsent = ({
               <div className="imgcontainer">
                 <p>
                   <b>
-                    Yale New Haven Health is pleased to offer the following
-                    clinics for the Connecticut Department of Developmental
-                    Services (DDS) and University Partners. All sites will offer the Pfizer vaccine.{' '}
+                   Yale New Haven Health is pleased to offer the following clinics for our University Partners.{' '}
                   </b>
                 </p>
                 <ul>
                   <li>
-                    <b>YNHHS Vaccination Clinic</b> <br></br>{' '}
-                    <b>Floyd Little Athletic Center</b>
-                    <br></br> 476 Sherman Parkway New Haven, CT 06511
-                    <br></br> *Use Crescent Street parking lot for accessible
-                    entrance
+                    <b>YNHHS Vaccination Clinic</b> 
+                    <br></br>
+                    <b>Mohegan Sun Earth Convention Center</b>
+                    <br></br> 1 Mohegan Sun Boulevard Uncasville, CT 06382 
+                    <br></br>
                   </li>
                   <br></br>
 
                   <li>
                     <b>YNHHS Vaccination Clinic</b>
                     <br></br>
-                    <b>Mitchell College</b>
-                    <br></br> 3 De Biasi Drive
-                    <br></br>New London, CT 06320
+                    <b>Wheeler Recreation Center, University of Bridgeport</b>
+                    <br></br> 400 University Avenue Bridgeport, CT 06604
+                    <br></br>
+                  </li>
+
+                  <br></br>
+
+                  <li>
+                    <b>YNHHS Vaccination Clinic</b>
+                    <br></br>
+                    <b>Floyd Little Athletic Center</b>
+                    <br></br> 476 Sherman Parkway New Haven, CT 06511
+                    <br></br> *Use Crescent Street parking lot for accessible entrance
                   </li>
                 </ul>
-
-                <p>{VSText[1]}</p>
+                                
               </div>
             </legend>
             <div className={styles.q1_grid}>{checkboxes}</div>

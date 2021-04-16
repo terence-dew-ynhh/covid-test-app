@@ -18,6 +18,7 @@ import ZipInputComponent from '../ZipInputComponent';
 import VaccinationScheduleConsent from '../VaccinationScheduleConsent';
 import YNHHFactSheetComponent from '../YNHHFactSheetComponent';
 import Over18Component from '../Over18Component';
+import VaccinationCalendarComponent from '../VaccinationCalendarComponent';
 import styles from './QuestionViewComponent.module.css';
 
 
@@ -80,7 +81,8 @@ const QuestionViewComponent = ({
     monoclonal: MonoclonalComponent,
     zipcode: ZipInputComponent,
     vaccineschedule: VaccinationScheduleConsent,
-    over18: Over18Component
+    over18: Over18Component,
+    vaccinecalendar: VaccinationCalendarComponent,
   };
 
   const ComponentName = components[compName || 'pininput'];

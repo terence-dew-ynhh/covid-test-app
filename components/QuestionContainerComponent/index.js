@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
 
   useEffect(() => {
-    // window.location.href ='http://covidvaccine.ynhh.org/'
+    window.location.href ='http://covidvaccine.ynhh.org/'
   }, []);
 
   const [viewIdx, setviewIdx] = useState(0);

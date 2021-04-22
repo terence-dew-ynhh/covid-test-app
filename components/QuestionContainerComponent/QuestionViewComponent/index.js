@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import SelectLocation from '../SelectLocationComponent';
+import ConsentComponent from '../ConsentComponent';
 import styles from './QuestionViewComponent.module.css'
 
 
@@ -25,7 +26,8 @@ const QuestionViewComponent = ({
   const setSchedulerURL = (location) => {updateLocation(location)};
   
   const components = {
-    location: SelectLocation
+    location: SelectLocation,
+    consent: ConsentComponent
   };
 
   const ComponentName = components[compName || 'location'];

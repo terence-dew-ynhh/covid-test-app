@@ -8,7 +8,7 @@ const QuestionFormComponent = ({}) => {
 
   const [viewIdx, setviewIdx] = useState(0);
   const [endPoint, setEndpoint] = useState('Mohegan Sun Employees');
-  const compNames = ['location'];
+  const compNames = ['location', 'consent'];
   const router = useRouter();
 
   

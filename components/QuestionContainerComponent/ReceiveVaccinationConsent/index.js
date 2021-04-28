@@ -54,7 +54,7 @@ const ReceiveVaccinationConsent = ({
     <>
       <div className={styles.question_row_item}>
         <div className={styles.question_row_item_sub}>
-          <p className="message">{VEText[10]}</p>
+          {/* <p className="message">{VEText[10]}</p> */}
           <fieldset>
             <legend>
               {VEText[0]}
@@ -67,6 +67,7 @@ const ReceiveVaccinationConsent = ({
               <br></br>
               <br></br>
               <b>{VEText[9]}</b>
+              <b className="redText">{VEText[15]}</b>
             </legend>
             <div className={styles.q1_grid}>{checkboxes}</div>
           </fieldset>

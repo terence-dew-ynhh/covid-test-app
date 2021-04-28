@@ -7,13 +7,15 @@ const FirstDoseComponent = ({
   isPrevEnabled,
   isDoneEnabled,
   updateAnswerData,
-  isSpanish
+  isSpanish,
+  isOver18,
+  schedulePush
 }) => {
   // const [isDiagnosed, setIsDiagnosed] = useState('');
 
   useEffect(() => {
     isDoneEnabled(false);
-    isPrevEnabled(false);
+    isPrevEnabled(true);
   }, []);
 
   let FDText = isSpanish ? fdText.sp : fdText.en;
@@ -34,10 +36,13 @@ const FirstDoseComponent = ({
                   name="prev_covid"
                   onClick={(e) => {
                     updateAnswerData({ first_dose: e.target.value });
-                    nextPage(e);
+                    nextPage(e,2);
+
                   }}
                 ></input>
                 <label htmlFor="prev_covid_yes">{FDText[1]}</label>
+                <br></br>
+                <br></br>
                 <div className="radio_row_item">
                   <input
                     id="prev_covid_no"
@@ -46,13 +51,19 @@ const FirstDoseComponent = ({
                     name="prev_covid"
                     onClick={(e) => {
                       updateAnswerData({ first_dose: e.target.value });
-                      nextPage(e, 7);
+                      if(isOver18)
+                      nextPage();
+                      else
+                      nextPage(e, 2);
                     }}
                   ></input>
                   <label htmlFor="prev_covid_no">{FDText[2]}</label>
                 </div>
               </div>
             </fieldset>
+            <br></br>
+            <br></br>
+            <b className="redText">If you are scheduling your initial first dose of the Vaccine, your second dose appointment will be made for you at the Vaccination clinic at the time of your appointment.  </b>
           </div>
         </div>
       </div>

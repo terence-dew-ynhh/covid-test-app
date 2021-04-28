@@ -24,6 +24,10 @@ fieldset {
   padding: 0;
 }
 
+.redText{
+  color: red;
+}
+
 small {
   color: white;
   margin-right: 40px;

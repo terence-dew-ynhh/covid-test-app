@@ -7,7 +7,8 @@ const Over18Component = ({
   isPrevEnabled,
   isDoneEnabled,
   overEighteen,
-  isSpanish
+  isSpanish,
+  schedulePush
 }) => {
   const [isOver18, setIsOver18] = useState(true);
 
@@ -47,9 +48,9 @@ const Over18Component = ({
             type="radio"
             name="employee_staff"
             onClick={(e) => {
-              nextPage();
+              // nextPage();
               setIsOver18(false);
-              overEighteen(false);
+              nextPage();
             }}
           ></input>
           <label htmlFor="employee_staff_check_no">{OEText[1]}</label>

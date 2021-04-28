@@ -37,10 +37,10 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
 
   const compNames = [
     'slotsfilled',
-    // 'vaccineschedule',
     'age',
     'vaccineconsent',
-    'selectsymptoms',
+    'firstdose',
+    'selectedvaccine',
     'listconditions',
     'testedpositive',
     'covidsymptoms',
@@ -49,9 +49,6 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
     'ynhhfactsheet',
     'quartinecovid',
     'vaccineschedule',
-    'selectedvaccine',
-    'vaccinedateselect',
-    'selectsymptoms'
   ];
 
   let progressWidth = Math.floor(100 * ((viewIdx + 1) / compNames.length));

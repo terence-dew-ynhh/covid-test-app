@@ -6,7 +6,8 @@ const VaccinationScheduleConsent = ({
   isPrevEnabled,
   isDoneEnabled,
   schedulePush,
-  isSpanish
+  isSpanish,
+  isPfizer
 }) => {
   useEffect(() => {
     isDoneEnabled(false);
@@ -49,18 +50,20 @@ const VaccinationScheduleConsent = ({
     <>
       <div className={styles.question_row_item}>
         <div className={styles.question_row_item_sub}>
-          <p className="message">{VSText[2]}</p>
+        {isPfizer !== null ? null : <p className="message">{VSText[2]}</p>}
           <fieldset className={styles.fieldset}>
             <legend className={styles.legend}>
+            {isPfizer !== null ? null :
+              (<>
               <br></br>
               <br></br>
               {VSText[0]}
               <br></br>
               <br></br>
-              <p className="versiontxt">v7 4.7.21</p>
+              <p className="versiontxt">v8 5.8.21</p>
               <a href="/info" target="_blank" rel="noreferrer">
-                <img src="/Schedule.PNG" passHref></img>
-              </a>
+              <img src="/Schedule.PNG" passHref></img>
+              </a> </>)}
             </legend>
             <p className="fin-statment">{VSText[1]}</p>
 
@@ -72,9 +75,10 @@ const VaccinationScheduleConsent = ({
         img:hover {
           border: 2px solid rgba(255, 166, 0, 0.856);
         }
-        img {
+        a,img {
           margin: 0;
           height: 100vh;
+          width: 100%;
         }
         .versiontxt {
           font-size: 0.7em;

@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
-import styles from './Over18Component.module.css';
-import oeText from './over18.json';
+import styles from './HITHistoryComponent.module.css';
+import oeText from './hithistory.json';
+import Link from 'next/link'
 
-const Over18Component = ({
+const HITHistoryComponent = ({
   nextPage,
   isPrevEnabled,
   isDoneEnabled,
@@ -24,21 +25,24 @@ const Over18Component = ({
     <>
       <div className={styles.question_row_item}>
         <p className="banner">
-          The following questions should be answered on behalf of the individual
-          being scheduled for vaccination.
+          We have resumed distributing the Janssen (J&J) vaccination.
         </p>
         <br></br>
         <br></br>
         <fieldset className="radio_grp_set">
           <legend>{OEText[2]}</legend>
+          <Link href="/faq">
+          <a target="_blank">Janssen (J&J) FAQ</a>
+        </Link>
+        <br></br>
+        <br></br>
           <input
             id="employee_staff_check_yes"
             type="radio"
             name="employee_staff"
             onClick={() => {
+              setJJApproved(false);
               nextPage();
-              setIsOver18(true);
-              overEighteen(true);
             }}
           ></input>
           <label htmlFor="employee_staff_check_yes">{OEText[0]}</label>
@@ -50,17 +54,22 @@ const Over18Component = ({
             name="employee_staff"
             onClick={(e) => {
               // nextPage();
-              setIsOver18(false);
-              setJJApproved(false);
+              setJJApproved(true);
               nextPage();
             }}
           ></input>
           <label htmlFor="employee_staff_check_no">{OEText[1]}</label>
         </fieldset>
+        <br></br>
+        <br></br>
+        <b className="redText">
+          YNHHS recommends that patients with HIT obtain the Pfizer or Moderna
+          vaccine.
+        </b>
       </div>
       <style jsx>{``}</style>
     </>
   );
 };
 
-export default Over18Component;
+export default HITHistoryComponent;

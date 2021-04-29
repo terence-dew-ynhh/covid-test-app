@@ -6,10 +6,15 @@ const ListedConditionsConsent = ({
   nextPage,
   isPrevEnabled,
   isDoneEnabled,
-  isSpanish
+  isSpanish,
+  isOver18,
+  isPfizer
 }) => {
   const handleChecked = (e) => {
+    if(isOver18 & isPfizer === null)
     nextPage(e);
+    else
+    nextPage(e, 2);
   };
   const regex = /_/gi;
 

@@ -16,6 +16,7 @@ import MonoclonalComponent from '../MonoclonalComponent';
 import ZipInputComponent from '../ZipInputComponent';
 import VaccinationScheduleConsent from '../VaccinationScheduleConsent';
 import AgeComponent from '../AgeComponent';
+import HITHistoryComponent from '../HITHistoryComponent';
 import YNHHFactSheetComponent from '../YNHHFactSheetComponent';
 import styles from './QuestionViewComponent.module.css';
 
@@ -36,7 +37,9 @@ const QuestionViewComponent = ({
   zipCodeInRange,
   overEighteen,
   isOver18,
-  setRiskGroup
+  setRiskGroup,
+  setJJApproved,
+  isJassenapproved
 }) => {
   const [prevEnabled, setPrevEnabled] = useState(false);
   const [nextEnabled, setNextEnabled] = useState(false);
@@ -59,7 +62,8 @@ const QuestionViewComponent = ({
     monoclonal: MonoclonalComponent,
     zipcode: ZipInputComponent,
     vaccineschedule: VaccinationScheduleConsent,
-    ynhhfactsheet: YNHHFactSheetComponent
+    ynhhfactsheet: YNHHFactSheetComponent,
+    hithistory: HITHistoryComponent
   };
   const ComponentName = components[compName || 'pininput'];
 
@@ -102,6 +106,8 @@ const QuestionViewComponent = ({
           isOver18={isOver18}
           overEighteen={overEighteen}
           setRiskGroup={setRiskGroup}
+          setJJApproved={setJJApproved}
+          isJassenapproved={isJassenapproved}
         />
       </div>
       <div className={styles.buttonContainer}>

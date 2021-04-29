@@ -15,6 +15,7 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
   const [viewIdx, setviewIdx] = useState(0);
   const [department, setDepartment] = useState('Cornell Scott');
   const [isPfizer, setIsPfizer] = useState(null);
+  const [isJassenapproved, setIsJassenapproved] = useState(false);
   const [isInZipCodeRange, setIsInZipCodeRange] = useState(false);
   const [isOver18, setIsOver18] = useState(false);
   const [isRiskGroup, setIsRiskGroup] = useState(false);
@@ -37,11 +38,13 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
 
   const compNames = [
     'slotsfilled',
+    'vaccineschedule',
     'age',
     'vaccineconsent',
     'firstdose',
     'selectedvaccine',
     'listconditions',
+    'hithistory',
     'testedpositive',
     'covidsymptoms',
     'monoclonal',
@@ -67,6 +70,10 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
 
   const setReccDate = (date) => {
     setSelDate(date);
+  };
+
+   const setJJApproved = (approved) => {
+    setIsJassenapproved(approved);
   };
 
   const setRiskGroup = (isRiskGroup) => {
@@ -99,7 +106,7 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
     router.push(
       `/scheduling?recc_date=${selDate}&in_zip_range=${isInZipCodeRange}&second_dose=${
         isPfizer == null ? false : true
-      }&isPfizer=${isPfizer}&isSpanish=${isSpanish}&isRiskGroup=${isRiskGroup}&isOver18=${isOver18}`,
+      }&isPfizer=${isPfizer}&isSpanish=${isSpanish}&isRiskGroup=${isRiskGroup}&isOver18=${isOver18}&jjapproved=${isJassenapproved}`,
       '/scheduling'
     );
   };
@@ -163,6 +170,8 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
         overEighteen={overEighteen}
         isOver18={isOver18}
         setRiskGroup={setRiskGroup}
+        setJJApproved={setJJApproved}
+        isJassenapproved={isJassenapproved}
       ></QuestionView>
       {/* <p>{`Zip Code ${isInZipCodeRange ? 'is' : 'is not'} in range`}</p> */}
     </div>

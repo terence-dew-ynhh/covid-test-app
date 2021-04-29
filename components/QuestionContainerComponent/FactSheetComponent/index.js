@@ -35,7 +35,8 @@ const FactSheetComponent = ({
   updateField,
   schedulePush,
   isSpanish,
-  isOver18
+  isOver18,
+  isJassenapproved
 }) => {
   const [isDiagnosed, setIsDiagnosed] = useState('');
   const [open, setOpen] = useState(false);
@@ -47,7 +48,6 @@ const FactSheetComponent = ({
     isPrevEnabled(true);
   }, []);
 
-
   const body = (
     <div style={modalStyle} className={classes.paper}>
       <img style={{ height: '100%' }} src="Schedule.PNG"></img>
@@ -56,44 +56,58 @@ const FactSheetComponent = ({
 
   let FSText = isSpanish ? fsText.sp : fsText.en;
 
-  const links = isOver18 ? (
-    <>
-      <br></br>
-      <br></br>
-      <a target="__blank" href="https://www.fda.gov/media/144638/download">
-        Moderna Vaccination EUA
-      </a>
-      <br></br>
-      <br></br>
-      <a
-        target="__blank"
-        href="https://mychart.ynhhs.org/MyChart-PRD/en-US/PDF/ESPCOVIDModernaVaccineFactSheet.pdf"
-      >
-        {FSText[4]}
-      </a>
-
-      {/*
-      <br></br>
-      <br></br>
-      <a
-        target="__blank"
-        href="https://mychart.ynhhs.org/mychart-prd/en-US/PDF/JJEUA.pdf"
-      >
-        {FSText[9]}
-      </a>{' '}
-      <br></br>
+  const links =
+      isOver18 ?
+      isJassenapproved ? 
+      (
+      <>
+        <br></br>
+        <br></br>
+        <a target="__blank" href="https://www.fda.gov/media/144638/download">
+          Moderna Vaccination EUA
+        </a>
+        <br></br>
+        <br></br>
+        <a
+          target="__blank"
+          href="https://mychart.ynhhs.org/MyChart-PRD/en-US/PDF/ESPCOVIDModernaVaccineFactSheet.pdf"
+        >
+          {FSText[4]}
+        </a>
+        <br></br>
+        <br></br>
+        <a
+          target="__blank"
+          href="https://mychart.ynhhs.org/mychart-prd/en-US/PDF/JJEUAEnglishRevised.pdf"
+        >
+          {FSText[9]}
+        </a>{' '}
+        {/* <br></br>
       <br></br>
       <a
         target="__blank"
         href="https://mychart.ynhhs.org/mychart-prd/en-US/PDF/JJEUA_ESP.pdf"
       >
         {FSText[10]}
-      </a>
-
-      */}
-
-    </>
-  ) : null;
+      </a> */}
+      </>
+    ) : (
+      <>
+        <br></br>
+        <br></br>
+        <a target="__blank" href="https://www.fda.gov/media/144638/download">
+          Moderna Vaccination EUA
+        </a>
+        <br></br>
+        <br></br>
+        <a
+          target="__blank"
+          href="https://mychart.ynhhs.org/MyChart-PRD/en-US/PDF/ESPCOVIDModernaVaccineFactSheet.pdf"
+        >
+          {FSText[4]}
+        </a>
+      </>
+    ) : null;
 
   return (
     <>
@@ -172,7 +186,9 @@ const FactSheetComponent = ({
         </div>
         <Modal
           open={open}
-          onClose={()=>{setOpen(false)}}
+          onClose={() => {
+            setOpen(false);
+          }}
           aria-labelledby="simple-modal-title"
           aria-describedby="simple-modal-description"
         >

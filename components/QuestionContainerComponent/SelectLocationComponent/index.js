@@ -9,7 +9,7 @@ const SelectLocation = ({
 }) => {
   const locations = [
     'Please Select Option Below',
-    'Approved Travel for Mohegan Sun Employees',
+    'Approved Travel for Mohegan Employees',
     'Public Health Official - Appt Scheduling'
   ];
 

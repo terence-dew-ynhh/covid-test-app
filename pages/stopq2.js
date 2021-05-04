@@ -13,7 +13,7 @@ export default function ThankYou({ link }) {
   return (
     <div className="container">
       <Head>
-        <title>YNHH COVID19 Vaccination</title>
+        <title>New Haven Health Department COVID19 Vaccination</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="grid">
@@ -97,7 +97,7 @@ export default function ThankYou({ link }) {
 //   return (
 //     <div className="container">
 //       <Head>
-//         <title>YNHH COVID19 Vaccination</title>
+//         <title>New Haven Health Department COVID19 Vaccination</title>
 //         <link rel="icon" href="/favicon.ico" />
 //       </Head>
 //       <div className="grid">

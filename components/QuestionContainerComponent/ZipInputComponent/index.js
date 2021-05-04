@@ -17,15 +17,18 @@ const PinInputComponent = ({
 
   useEffect(() => {
     isDoneEnabled(false);
-    isPrevEnabled(true);
+    isPrevEnabled(false);
     isNextEnabled(false);
   }, []);
 
   const onSubmit = async () => {
     let zipCodesList = {
+      '06510': true,
       '06511': true,
-      '06512': true,
       '06513': true,
+      '06515': true,
+      '06516': true,
+      '06519': true,
     };
     if(zipCodesList[zipCode]) zipCodeInRange(true)
     else zipCodeInRange(false)

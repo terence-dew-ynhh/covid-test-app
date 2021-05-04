@@ -50,20 +50,9 @@ const VaccinationScheduleConsent = ({
     <>
       <div className={styles.question_row_item}>
         <div className={styles.question_row_item_sub}>
-        {isPfizer !== null ? null : <p className="message">{VSText[2]}</p>}
+        {/* {isPfizer !== null ? null : <p className="message">{VSText[2]}</p>} */}
           <fieldset className={styles.fieldset}>
-            <legend className={styles.legend}>
-            {isPfizer !== null ? null :
-              (<>
-              <br></br>
-              <br></br>
-              {VSText[0]}
-              <br></br>
-              <br></br>
-              <p className="versiontxt">v8 5.8.21</p>
-              <a href="/info" target="_blank" rel="noreferrer">
-              <img src="/Schedule.PNG" passHref></img>
-              </a> </>)}
+            <legend className={styles.legend}>            
             </legend>
             <p className="fin-statment">{VSText[1]}</p>
 

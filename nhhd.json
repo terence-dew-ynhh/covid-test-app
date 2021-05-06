@@ -1,7 +1,7 @@
 {
     "apps": [
         {
-            "name": "covidvaccine",
+            "name": "nhhd",
             "script": "npm",
             "args" : "start"
         }

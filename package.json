@@ -30,9 +30,9 @@
   },
   "devDependencies": {},
   "scripts": {
-    "dev": "next -p 3051",
+    "dev": "next -p 3019",
     "build": "next build",
-    "start": "next start -p 3051"
+    "start": "next start -p 3019"
   },
   "repository": {
     "type": "git",

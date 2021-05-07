@@ -57,9 +57,6 @@ const ListedConditionsConsent = ({
               {LCText[0]}
               <br></br>
               <br></br>
-              {LCText[1]}
-              <br></br>
-              <br></br>
               {LCText[2]}
               <br></br>
               <br></br>
@@ -72,11 +69,9 @@ const ListedConditionsConsent = ({
               {LCText[5]}
               <br></br>
               <br></br>
+              {LCText[6]}<b className="redText">{LCText[7]}</b>
               <br></br>
-              {LCText[6]}
               <br></br>
-              <br></br>
-              <b>{LCText[7]}</b>
             </legend>
             <div className={styles.q1_grid}>{checkboxes}</div>
           </fieldset>

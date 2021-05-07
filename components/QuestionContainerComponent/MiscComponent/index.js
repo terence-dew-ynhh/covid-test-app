@@ -1,14 +1,13 @@
 import { useState, useEffect } from 'react';
-import styles from './MonoclonalComponent.module.css';
-import mText from './monoclonal.json';
+import styles from './MiscComponent.module.css';
+import mText from './miscclonal.json';
 
-const MonoclonalComponent = ({
+const MiscComponent = ({
   nextPage,
   isPrevEnabled,
   isDoneEnabled,
   updateAnswerData,
-  isSpanish,
-  isOver18
+  isSpanish
 }) => {
   const [isDiagnosed, setIsDiagnosed] = useState('');
 
@@ -40,6 +39,7 @@ const MonoclonalComponent = ({
                   }}
                 ></input>
                 <label htmlFor="prev_covid_yes">{MText[2]}</label>
+                </div>
                 <div className="radio_row_item">
                   <input
                     id="prev_covid_no"
@@ -47,16 +47,25 @@ const MonoclonalComponent = ({
                     value="No"
                     name="prev_covid"
                     onClick={(e) => {
-                      updateAnswerData({ monoclonal: e.target.value });
-                      if(isOver18)
-                      nextPage(e,2);
-                      else
-                      nextPage(e)
+                      updateAnswerData({ miscivig: e.target.value });
+                      nextPage(e);
                     }}
                   ></input>
                   <label htmlFor="prev_covid_no">{MText[3]}</label>
                 </div>
-              </div>
+                <div className="radio_row_item">
+                  <input
+                    id="prev_covid_na"
+                    type="radio"
+                    value="No"
+                    name="prev_covid"
+                    onClick={(e) => {
+                      updateAnswerData({ miscivig: e.target.value });
+                      nextPage(e);
+                    }}
+                  ></input>
+                  <label htmlFor="prev_covid_no">{MText[3]}</label>
+                </div>
             </fieldset>
           </div>
         </div>
@@ -66,4 +75,4 @@ const MonoclonalComponent = ({
   );
 };
 
-export default MonoclonalComponent;
+export default MiscComponent;

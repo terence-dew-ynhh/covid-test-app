@@ -1,7 +1,7 @@
 {
     "apps": [
         {
-            "name": "cornellscottvaccinetest",
+            "name": "cornellscottvaccine",
             "script": "npm",
             "args" : "start"
         }

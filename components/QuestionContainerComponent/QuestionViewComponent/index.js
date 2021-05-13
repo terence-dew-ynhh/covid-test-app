@@ -16,6 +16,7 @@ import AgeComponent from '../AgeComponent'
 import MonoclonalComponent from '../MonoclonalComponent'
 import ZipInputComponent from '../ZipInputComponent'
 import MiscComponent from '../MiscComponent'
+import HITHistoryComponent from '../HITHistoryComponent'
 import styles from './QuestionViewComponent.module.css';
 
 
@@ -76,7 +77,8 @@ const QuestionViewComponent = ({
     age: AgeComponent,
     monoclonal: MonoclonalComponent,
     zipcode: ZipInputComponent,
-    misc: MiscComponent
+    misc: MiscComponent,
+    hithistory: HITHistoryComponent
   };
 
   const ComponentName = components[compName || 'pininput'];

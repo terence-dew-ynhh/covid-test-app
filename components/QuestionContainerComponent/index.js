@@ -20,7 +20,7 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
     'slotsfilled',
     'vaccineconsent',
     'listconditions',
-    // 'hithistory',
+    'hithistory',
     'testedpositive',
     'covidsymptoms',
     'monoclonal',

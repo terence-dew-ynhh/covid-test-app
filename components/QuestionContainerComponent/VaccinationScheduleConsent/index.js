@@ -60,7 +60,7 @@ const VaccinationScheduleConsent = ({
               {VSText[0]}
               <br></br>
               <br></br>
-              <p className="versiontxt">v9 5.17.21</p>
+              <p className="versiontxt">v10 5.25.21</p>
               <a href="/info" target="_blank" rel="noreferrer">
               <img src="/Schedule.PNG" passHref></img>
               </a> </>)}
@@ -78,10 +78,8 @@ const VaccinationScheduleConsent = ({
         a,img {
           margin: 0;
           height: 100vh;
-          width: 100%;
-        }
-        img{
-          
+          width: 90%;
+          text-align: center;
         }
         .versiontxt {
           font-size: 0.7em;

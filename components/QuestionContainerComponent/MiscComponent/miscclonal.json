@@ -1,10 +1,11 @@
 {
     "en": [
-        "If you were diagnosed MIS-C (Multisystem inflammatory syndrome in children) was your last dose of IVIG more than 4 weeks ago ?",
+        "If you were diagnosed with the Rare MIS-C (Multisystem inflammatory syndrome in children) was your last dose of IVIG more than 4 weeks ago ?",
         "CDC recommends vaccination should be deferred for at least 4 weeks after IVIG treatment. Please return after 4 weeks have passed to schedule your vaccine.",
-        "Never Diagnosed with MIS-C",
+        "Never Diagnosed with Rare MIS-C",
         "Yes, the last dose of IVIG was at least 4 weeks ago",
-        "No, the last dose of IVIG was less than 4 weeks ago"        
+        "No, the last dose of IVIG was less than 4 weeks ago"
+        
         ],
     "sp": [
         "¿Ha recibido anticuerpos monoclonales como parte del tratamiento contra el COVID-19 en los últimos 90 días?",

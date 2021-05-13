@@ -15,6 +15,7 @@ import SlotsFilledComponent from '../SlotsFilledComponent'
 import AgeComponent from '../AgeComponent'
 import MonoclonalComponent from '../MonoclonalComponent'
 import ZipInputComponent from '../ZipInputComponent'
+import MiscComponent from '../MiscComponent'
 import styles from './QuestionViewComponent.module.css';
 
 
@@ -74,7 +75,8 @@ const QuestionViewComponent = ({
     slotsfilled: SlotsFilledComponent,
     age: AgeComponent,
     monoclonal: MonoclonalComponent,
-    zipcode: ZipInputComponent
+    zipcode: ZipInputComponent,
+    misc: MiscComponent
   };
 
   const ComponentName = components[compName || 'pininput'];

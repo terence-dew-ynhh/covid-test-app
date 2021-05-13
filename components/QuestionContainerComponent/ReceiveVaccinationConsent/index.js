@@ -1,30 +1,24 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import styles from './ReceiveVaccinationConsent.module.css';
-import Tooltip from '@material-ui/core/Tooltip';
-import InfoIcon from '@material-ui/icons/Info';
 import veText from './vaccineelidgibility.json';
+import { TramRounded } from '@material-ui/icons';
 
 const useStyles = makeStyles(() => ({
   tooltip: {
-    fontSize: 25,
-  },
+    fontSize: 25
+  }
 }));
 
 const ReceiveVaccinationConsent = ({
   nextPage,
   isPrevEnabled,
   isDoneEnabled,
-  updateField,
-  schedulePush,
   isSpanish
 }) => {
-
-  const classes = useStyles();
-
   useEffect(() => {
     isDoneEnabled(false);
-    isPrevEnabled(true);
+    isPrevEnabled(TramRounded);
   }, []);
 
   const handleChecked = (e) => {
@@ -50,10 +44,7 @@ const ReceiveVaccinationConsent = ({
           handleChecked(e);
         }}
       ></input>
-      <label
-        // className={styles.prev_none_label}
-        htmlFor={`prev_covid_${checkbox.toLowerCase()}`}
-      >
+      <label htmlFor={`prev_covid_${checkbox.toLowerCase()}`}>
         {VEText[8]}
       </label>
     </div>
@@ -63,9 +54,7 @@ const ReceiveVaccinationConsent = ({
     <>
       <div className={styles.question_row_item}>
         <div className={styles.question_row_item_sub}>
-        <p className="message">
-              {VEText[10]}
-            </p>
+          {/* <p className="message">{VEText[10]}</p> */}
           <fieldset>
             <legend>
               {VEText[0]}
@@ -75,6 +64,10 @@ const ReceiveVaccinationConsent = ({
               <br></br>
               <br></br>
               <b>{VEText[6]}</b>
+              <br></br>
+              <br></br>
+              <b>{VEText[9]}</b>
+              <b className="redText">{VEText[15]}</b>
             </legend>
             <div className={styles.q1_grid}>{checkboxes}</div>
           </fieldset>

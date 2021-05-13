@@ -1,74 +1,66 @@
 import { useState, useEffect } from 'react';
 import styles from './AgeComponent.module.css';
-import ageText from './agequestion.json';
+import oeText from './agequestion.json';
 
-
-const AgeComponent = ({
+const Over18Component = ({
   nextPage,
   isPrevEnabled,
   isDoneEnabled,
-  updateAnswerData,
-  isSpanish
+  // overEighteen,
+  isSpanish,
+  schedulePush,
+  // setJJApproved
 }) => {
-  const [isDiagnosed, setIsDiagnosed] = useState('');
+  const [isOver18, setIsOver18] = useState(true);
 
   useEffect(() => {
-    isDoneEnabled(false);
     isPrevEnabled(false);
+    isDoneEnabled(false);
   }, []);
 
-  let AGText = isSpanish ? ageText.sp : ageText.en
-
+  let OEText = isSpanish ? oeText.sp : oeText.en;
 
   return (
     <>
-      <div className="radio_grp">
-        <div className={styles.question_row_item}>
-          <div className={styles.question_row_item_sub}>
-            <p className="banner">
-              {AGText[3]}
-            </p>
-            <br></br>
-            <br></br>
-            <fieldset>
-              <legend>{AGText[2]}</legend>
-              <div className="radio_row_item">
-                <input
-                  id="prev_covid_yes"
-                  type="radio"
-                  value="Yes"
-                  name="prev_covid"
-                  onClick={(e) => {
-                    nextPage();
-                  }}
-                ></input>
-                <label htmlFor="prev_covid_yes">
-                {AGText[0]}
-                </label>
-                <br></br>
-                <br></br>
-                <div className="radio_row_item">
-                  <input
-                    id="prev_covid_no"
-                    type="radio"
-                    value="No"
-                    name="prev_covid"
-                    onClick={(e) => {
-                      window.location.href = 'https://covidvaccine.ynhh.org/'
-                    }}
-                  ></input>
-                  <label htmlFor="prev_covid_no">
-                  {AGText[1]}
-                  </label>
-                </div>
-              </div>
-            </fieldset>
-          </div>
-        </div>
+      <div className={styles.question_row_item}>
+        <p className="banner">
+          The following questions should be answered on behalf of the individual
+          being scheduled for vaccination.
+        </p>
+        <br></br>
+        <br></br>
+        <fieldset className="radio_grp_set">
+          <legend>{OEText[2]}</legend>
+          <input
+            id="employee_staff_check_yes"
+            type="radio"
+            name="employee_staff"
+            onClick={() => {
+              nextPage();
+              setIsOver18(true);
+              // overEighteen(true);
+            }}
+          ></input>
+          <label htmlFor="employee_staff_check_yes">{OEText[0]}</label>
+          <br></br>
+          <br></br>
+          <input
+            id="employee_staff_check_no"
+            type="radio"
+            name="employee_staff"
+            onClick={(e) => {
+              // nextPage();
+              setIsOver18(false);
+              // setJJApproved(false);
+              nextPage();
+            }}
+          ></input>
+          <label htmlFor="employee_staff_check_no">{OEText[1]}</label>
+        </fieldset>
       </div>
       <style jsx>{``}</style>
     </>
   );
 };
 
-export default AgeComponent;
+export default Over18Component;

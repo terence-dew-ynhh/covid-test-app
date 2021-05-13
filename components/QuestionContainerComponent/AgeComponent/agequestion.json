@@ -1,14 +1,12 @@
 {
     "en": [
         "Someone who is currently 18 years of age or older",
-        "Someone who is 16 or 17 years old",
-        "I am currently scheduling for:",
-        "The following questions should be answered on behalf of the individual being scheduled for vaccination."
+        "Someone who is 12 – 17 years of age",
+        "I am currently scheduling for:"
         ],
     "sp": [
         "Alguien que actualmente tiene 18 años o más",
-        "Alguien que tenga 16 o 17 años",
-        "Actualmente estoy programando para:",
-        "Las siguientes preguntas deben responderse en nombre de la persona a la que se ha programado la vacunación."
+        "Alguien que tenga 12-17 años",
+        "Actualmente estoy programando para"
     ]
 }

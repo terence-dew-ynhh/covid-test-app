@@ -24,6 +24,10 @@ fieldset {
   padding: 0;
 }
 
+.redText{
+  color: red;
+}
+
 small {
   color: white;
   margin-right: 40px;
@@ -108,16 +112,12 @@ fieldset {
   background: #0f4d92;
   font-size: 1em;
   margin: 0;
-
 }
 
 .message{
   background: rgba(255, 166, 0, 0.856);
   font-size: 1em;
 }
-
-
-
 
 
 .phone{
@@ -144,7 +144,7 @@ li{
 }
 
 img{
-  height:70px;
+  height:100px;
   margin: 0 35px;
 }
 

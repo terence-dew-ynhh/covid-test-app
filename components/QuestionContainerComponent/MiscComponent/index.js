@@ -54,7 +54,7 @@ const MiscComponent = ({
                     nextPage(e);
                   }}
                 ></input>
-                <label htmlFor="prev_covid_yes">{MText[3]}</label>
+                <label htmlFor="prev_covid_yes">{MText[4]}</label>
               </div>
               <br></br>
               <br></br>
@@ -68,7 +68,7 @@ const MiscComponent = ({
                     setIsDiagnosed(e.target.value);
                   }}
                 ></input>
-                <label htmlFor="prev_covid_no">{MText[4]}</label>
+                <label htmlFor="prev_covid_no">{MText[3]}</label>
               </div>
             </fieldset>
           </div>

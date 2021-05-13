@@ -59,17 +59,20 @@ const ListedConditionsConsent = ({
               <br></br>
               {LCText[2]}
               <br></br>
+              {LCText[10]}
+              <br></br>
               <br></br>
               {LCText[3]}
               <br></br>
               <br></br>
               {LCText[4]}
               <br></br>
+              {LCText[11]}
+              <br></br>
               <br></br>
               {LCText[5]}
               <br></br>
-              <br></br>
-              {LCText[6]}<b className="redText">{LCText[7]}</b>
+              {LCText[12]}
               <br></br>
               <br></br>
             </legend>

@@ -13,6 +13,8 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
   const [viewJump, setviewJump] = useState([]);
   const [selDate, setSelDate] = useState('');
   const [responseData, setResponseData] = useState({});
+  const [isOver18, setIsOver18] = useState(false);
+
 
   const compNames = [
     'age',
@@ -89,6 +91,10 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
     setResponseData({ ...responseData, ...questionData });
   };
 
+  const overEighteen = (isOver18) => {
+    setIsOver18(isOver18);
+  };
+
   const schedulePush = () => {
     submitData();
     router.push(
@@ -134,6 +140,7 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
         updateHeader={updateHeader}
         isSpanish={isSpanish}
         zipCodeInRange={zipCodeInRange}
+        overEighteen={overEighteen}
       ></QuestionView>
       {/* <p>{`Zip Code ${isInZipCodeRange ? 'is' : 'is not'} in range`}</p> */}
     </div>

@@ -34,7 +34,8 @@ const QuestionViewComponent = ({
   updateAnswerData,
   updateHeader,
   isSpanish,
-  zipCodeInRange
+  zipCodeInRange,
+  overEighteen
 }) => {
   const [prevEnabled, setPrevEnabled] = useState(false);
   const [nextEnabled, setNextEnabled] = useState(false);
@@ -103,6 +104,7 @@ const QuestionViewComponent = ({
           updateHeader={updateHeader}
           isSpanish={isSpanish}
           zipCodeInRange={zipCodeInRange}
+          overEighteen={overEighteen}
         />
       </div>
       <div className={styles.buttonContainer}>

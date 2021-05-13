@@ -6,7 +6,7 @@ const Over18Component = ({
   nextPage,
   isPrevEnabled,
   isDoneEnabled,
-  // overEighteen,
+  overEighteen,
   isSpanish,
   schedulePush,
   // setJJApproved
@@ -38,7 +38,7 @@ const Over18Component = ({
             onClick={() => {
               nextPage();
               setIsOver18(true);
-              // overEighteen(true);
+              overEighteen(true);
             }}
           ></input>
           <label htmlFor="employee_staff_check_yes">{OEText[0]}</label>
@@ -51,7 +51,7 @@ const Over18Component = ({
             onClick={(e) => {
               // nextPage();
               setIsOver18(false);
-              // setJJApproved(false);
+              setJJApproved(false);
               nextPage();
             }}
           ></input>

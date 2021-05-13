@@ -48,9 +48,9 @@ const MonoclonalComponent = ({
                     name="prev_covid"
                     onClick={(e) => {
                       updateAnswerData({ monoclonal: e.target.value });
-                      if(isOver18)
-                      nextPage(e,2);
-                      else
+                      // if(isOver18)
+                      // nextPage(e,2);
+                      // else
                       nextPage(e)
                     }}
                   ></input>

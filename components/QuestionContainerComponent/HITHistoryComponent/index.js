@@ -53,7 +53,6 @@ const HITHistoryComponent = ({
             type="radio"
             name="employee_staff"
             onClick={(e) => {
-              // nextPage();
               setJJApproved(true);
               nextPage();
             }}

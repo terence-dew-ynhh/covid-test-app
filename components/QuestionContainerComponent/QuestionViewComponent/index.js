@@ -9,16 +9,15 @@ import CovidSymptomsComponent from '../CovidSymptomsComponent';
 import FactSheetComponent from '../FactSheetComponent';
 import SelectVaccineComponent from '../SelectVaccineComponent';
 import QuarantineComponent from '../QuarantineComponent';
-import SelectSymptomsComponent from '../SelectSymptomsComponent'
-import ReceiveVaccinationConsent from '../ReceiveVaccinationConsent'
-import SlotsFilledComponent from '../SlotsFilledComponent'
-import AgeComponent from '../AgeComponent'
-import MonoclonalComponent from '../MonoclonalComponent'
-import ZipInputComponent from '../ZipInputComponent'
-import MiscComponent from '../MiscComponent'
-import HITHistoryComponent from '../HITHistoryComponent'
+import SelectSymptomsComponent from '../SelectSymptomsComponent';
+import ReceiveVaccinationConsent from '../ReceiveVaccinationConsent';
+import SlotsFilledComponent from '../SlotsFilledComponent';
+import AgeComponent from '../AgeComponent';
+import MonoclonalComponent from '../MonoclonalComponent';
+import ZipInputComponent from '../ZipInputComponent';
+import MiscComponent from '../MiscComponent';
+import HITHistoryComponent from '../HITHistoryComponent';
 import styles from './QuestionViewComponent.module.css';
-
 
 const QuestionViewComponent = ({
   compName,
@@ -35,15 +34,16 @@ const QuestionViewComponent = ({
   updateHeader,
   isSpanish,
   zipCodeInRange,
-  overEighteen
+  overEighteen,
+  isOver18,
+  isJassenapproved,
+  setJJApproved,
 }) => {
   const [prevEnabled, setPrevEnabled] = useState(false);
   const [nextEnabled, setNextEnabled] = useState(false);
   const [doneEnabled, setDoneEnabled] = useState(false);
 
-  useEffect(() => {
-    
-  }, []);
+  useEffect(() => {}, []);
 
   const isPrevEnabled = (isEnabled) => {
     setPrevEnabled(isEnabled);
@@ -105,6 +105,9 @@ const QuestionViewComponent = ({
           isSpanish={isSpanish}
           zipCodeInRange={zipCodeInRange}
           overEighteen={overEighteen}
+          isOver18={isOver18}
+          setJJApproved={setJJApproved}
+          isJassenapproved={isJassenapproved}
         />
       </div>
       <div className={styles.buttonContainer}>
@@ -117,7 +120,9 @@ const QuestionViewComponent = ({
         <button
           className="button"
           hidden={!doneEnabled}
-          onClick={() => {schedulePush(false);}}
+          onClick={() => {
+            schedulePush(false);
+          }}
         >
           {isSpanish ? `Programar una Cita` : `Schedule Appointment`}
         </button>

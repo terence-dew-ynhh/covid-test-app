@@ -9,7 +9,7 @@ const Over18Component = ({
   overEighteen,
   isSpanish,
   schedulePush,
-  // setJJApproved
+  setJJApproved,
 }) => {
   const [isOver18, setIsOver18] = useState(true);
 
@@ -37,7 +37,7 @@ const Over18Component = ({
             name="employee_staff"
             onClick={() => {
               nextPage();
-              setIsOver18(true);
+              // setIsOver18(true);
               overEighteen(true);
             }}
           ></input>
@@ -50,7 +50,7 @@ const Over18Component = ({
             name="employee_staff"
             onClick={(e) => {
               // nextPage();
-              setIsOver18(false);
+              // setIsOver18(false);
               setJJApproved(false);
               nextPage();
             }}

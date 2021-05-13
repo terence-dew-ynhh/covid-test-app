@@ -55,17 +55,13 @@ export default function Home({ link, recc_date, second_dose, isSpanish }) {
 }
 
 Home.getInitialProps = async ({ query }) => {
-  const { recc_date, second_dose, isPfizer, isSpanish, in_zip_range } = query;
-  let link = '';
+  const { recc_date, second_dose, isPfizer, isSpanish, in_zip_range, jjApproved, overeighteen  } = query;
+  let link = 'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=85604,85773,86539&vt=2293&dept=421030003&view=plain&public=1';
 
-  if (in_zip_range === 'true')
-    link =
-      'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=83833,83836,83835,83834,85604,86539&vt=2293&dept=421010023,421020006,421090007,421160004,421030003&view=plain&public=1';
-  else
-    link =
-      'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=84788,84789,84786,84787,84790,84814,85097,85374,85635,85636,85637,85638,85639,85640,85642,85643&vt=2293&dept=102360001,102350001,102390001,102370001,102340001,102380001,102400001,101960001&view=plain&public=1';
+  if(jjApproved == "false") link = 'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=85604,86539&vt=2293&dept=421030003&view=plain&public=1'
 
-  console.log(link);
+  if(overeighteen == "false") link = 'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=86539&vt=2293&dept=421030003&view=plain&public=1'
+ 
   if (isSpanish == 'true') link = link + '&lang=espanol';
   else link = link + '&lang=english';
   if (second_dose == null) link = '';

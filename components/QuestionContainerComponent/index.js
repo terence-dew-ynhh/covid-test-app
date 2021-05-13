@@ -14,7 +14,7 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
   const [selDate, setSelDate] = useState('');
   const [responseData, setResponseData] = useState({});
   const [isOver18, setIsOver18] = useState(false);
-
+  const [isJassenapproved, setIsJassenapproved] = useState(false);
 
   const compNames = [
     'age',
@@ -95,12 +95,16 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
     setIsOver18(isOver18);
   };
 
+  const setJJApproved = (approved) => {
+    setIsJassenapproved(approved);
+  };
+
   const schedulePush = () => {
     submitData();
     router.push(
       `/scheduling?recc_date=${selDate}&in_zip_range=${isInZipCodeRange}&second_dose=${
         isPfizer == null ? false : true
-      }&isPfizer=${isPfizer}&isSpanish=${isSpanish}`,
+      }&isPfizer=${isPfizer}&isSpanish=${isSpanish}&jjApproved=${isJassenapproved}&overeighteen=${isOver18}`,
       '/scheduling'
     );
   };
@@ -141,6 +145,9 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
         isSpanish={isSpanish}
         zipCodeInRange={zipCodeInRange}
         overEighteen={overEighteen}
+        isOver18={isOver18}
+        setJJApproved={setJJApproved}
+        isJassenapproved={isJassenapproved}
       ></QuestionView>
       {/* <p>{`Zip Code ${isInZipCodeRange ? 'is' : 'is not'} in range`}</p> */}
     </div>

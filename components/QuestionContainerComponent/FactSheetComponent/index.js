@@ -135,7 +135,7 @@ const FactSheetComponent = ({
                 <br></br>
                 <a
                   target="__blank"
-                  href="https://mychart.ynhhs.org/MyChart-PRD/en-US/PDF/ESPCOVIDPfizerVaccineFactSheet.pdf"
+                  href="https://mychart.ynhhs.org/mychart-prd/en-US/PDF/EUAPfiser12_ESP.pdf"
                 >
                   {FSText[3]}
                 </a>{' '}

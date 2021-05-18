@@ -93,14 +93,6 @@ export default function Home({
             : ''}
         </h3>
 
-        <button
-          className="button"
-          style={{ marginBottom: 0 }}
-          type="button"
-          onClick={handleOpen}
-        >
-          Click here to see Vaccine Schedule
-        </button>
         <iframe
           id="openSchedulingFrame"
           className="widgetframe"
@@ -113,7 +105,7 @@ export default function Home({
           aria-labelledby="simple-modal-title"
           aria-describedby="simple-modal-description"
         >
-          {body}
+          {/* {body} */}
         </Modal>
       </div>
       <style jsx>{`

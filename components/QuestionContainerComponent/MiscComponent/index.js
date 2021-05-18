@@ -30,7 +30,37 @@ const MiscComponent = ({
               <legend>{MText[0]}</legend>
               <div className="radio_row_item">
                 <input
+                  id="prev_covid_na"
+                  type="radio"
+                  value="Yes"
+                  name="prev_covid"
+                  onClick={(e) => {
+                    updateAnswerData({ miscivig: e.target.value });
+                    nextPage(e);
+                  }}
+                ></input>
+                <label htmlFor="prev_covid_na">{MText[2]}</label>
+              </div>
+              <br></br>
+              <br></br>
+              <div className="radio_row_item">
+                <input
                   id="prev_covid_yes"
+                  type="radio"
+                  value="No"
+                  name="prev_covid"
+                  onClick={(e) => {
+                    updateAnswerData({ miscivig: e.target.value });
+                    nextPage(e);
+                  }}
+                ></input>
+                <label htmlFor="prev_covid_yes">{MText[4]}</label>
+              </div>
+              <br></br>
+              <br></br>
+              <div className="radio_row_item">
+                <input
+                  id="prev_covid_no"
                   type="radio"
                   value="Yes"
                   name="prev_covid"
@@ -38,34 +68,8 @@ const MiscComponent = ({
                     setIsDiagnosed(e.target.value);
                   }}
                 ></input>
-                <label htmlFor="prev_covid_yes">{MText[2]}</label>
-                </div>
-                <div className="radio_row_item">
-                  <input
-                    id="prev_covid_no"
-                    type="radio"
-                    value="No"
-                    name="prev_covid"
-                    onClick={(e) => {
-                      updateAnswerData({ miscivig: e.target.value });
-                      nextPage(e);
-                    }}
-                  ></input>
-                  <label htmlFor="prev_covid_no">{MText[3]}</label>
-                </div>
-                <div className="radio_row_item">
-                  <input
-                    id="prev_covid_na"
-                    type="radio"
-                    value="No"
-                    name="prev_covid"
-                    onClick={(e) => {
-                      updateAnswerData({ miscivig: e.target.value });
-                      nextPage(e);
-                    }}
-                  ></input>
-                  <label htmlFor="prev_covid_no">{MText[3]}</label>
-                </div>
+                <label htmlFor="prev_covid_no">{MText[3]}</label>
+              </div>
             </fieldset>
           </div>
         </div>

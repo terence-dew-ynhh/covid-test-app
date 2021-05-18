@@ -15,7 +15,7 @@ const HITHistoryComponent = ({
   const [isOver18, setIsOver18] = useState(true);
 
   useEffect(() => {
-    isPrevEnabled(true);
+    isPrevEnabled(false);
     isDoneEnabled(false);
   }, []);
 
@@ -63,7 +63,7 @@ const HITHistoryComponent = ({
         <br></br>
         <br></br>
         <b className="redText">
-          CSHHCS recommends that patients with HIT obtain the Pfizer or Moderna
+          YNHHS recommends that patients with HIT obtain the Pfizer or Moderna
           vaccine.
         </b>
       </div>

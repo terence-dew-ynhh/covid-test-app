@@ -68,9 +68,6 @@ const YNHHFactSheetComponent = ({
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
             <p className="error" hidden={!(isDiagnosed === 'No')}>
-              {FSText[1]}
-              <br></br>
-              <br></br>
               {FSText[2]}
             </p>
             <fieldset>

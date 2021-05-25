@@ -46,7 +46,7 @@ Home.getInitialProps = async ({ query }) => {
     {
       name: 'Mohegan Sun Employees',
       link:
-        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=82647,79643&vt=2228&dept=100001358&view=plain&public=1'
+        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=76698,76701,81079,82383,81452,76702,82948,82949,79643&vt=2228&dept=103010119,108010101,103720003,101050022,100001365,108710074,100001383,100001358,100001382&view=plain&public=1'
     }
   ];
 

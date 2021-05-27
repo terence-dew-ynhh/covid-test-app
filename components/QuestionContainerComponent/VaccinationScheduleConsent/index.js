@@ -77,7 +77,7 @@ const VaccinationScheduleConsent = ({
         }
         a,img {
           margin: 0;
-          height: 100vh;
+          height: 95%;
           width: 95%;
           text-align: center;
         }

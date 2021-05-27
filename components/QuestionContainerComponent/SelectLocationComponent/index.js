@@ -28,9 +28,10 @@ const SelectLocation = ({
     console.log(e.target.value);
 
     if (e.target.value == 1) {
-      setSchedulerURL(e.target.value);
+      setSchedulerURL(locations[e.target.value]);
       isDoneEnabled(true);
     } else if (e.target.value == 2) {
+      setSchedulerURL(locations[e.target.value]);
       nextPage();
     } else {
       isDoneEnabled(false);

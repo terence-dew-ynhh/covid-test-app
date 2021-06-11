@@ -19,8 +19,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "build": "next build",
     "dev": "node server/server.js",
+    "build": "next build",
     "start": "node server/server.js"
   },
   "repository": {

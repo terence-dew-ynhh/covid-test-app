@@ -17,12 +17,13 @@ export default function Home({ link }) {
       </div>
 
       <div className="scheduleContainer">
-        <iframe
+        {/* <iframe
           id="openSchedulingFrame"
           className="widgetframe"
           scrolling="yes"
           src={link}
-        ></iframe>
+        ></iframe> */}
+        <h1>{link}</h1>
       </div>
       <style jsx>{`
         .scheduleContainer,
@@ -40,13 +41,51 @@ export default function Home({ link }) {
 }
 
 Home.getInitialProps = async ({ query }) => {
-  const { endpoint } = query;
+  const { location, status } = query;
+  const urlList = {
+    'Bridgeport | Milford Area': { 
+      'Symptomatic': '11',
+      'AsymptomaticContact':'12',
+      'Asymptomatic':'13'
+    } ,
+    'Central CT': {
+      'Symptomatic': '21',
+      'AsymptomaticContact':'22',
+      'Asymptomatic':'23'
+     } ,
+    'Greenwich Hospital': { 
+      'Symptomatic': '31',
+      'AsymptomaticContact':'32',
+      'Asymptomatic':'33'
+    } ,
+    'Lawrence and Memorial Area': { 
+      'Symptomatic': '41',
+      'AsymptomaticContact':'42',
+      'Asymptomatic':'43'
+    } ,
+    'Lower Fairfield County | NY': {
+      'Symptomatic': '',
+      'AsymptomaticContact':'',
+      'Asymptomatic':''
+     } ,
+    'New Haven Area': { 
+      'Symptomatic': '',
+      'AsymptomaticContact':'',
+      'Asymptomatic':''
+    } ,
+    'Shoreline Area': {
+      'Symptomatic': '',
+      'AsymptomaticContact':'',
+      'Asymptomatic':''
+     } ,
+    'Westerly Area': { 
+      'Symptomatic': '',
+      'AsymptomaticContact':'',
+      'Asymptomatic':''
+    } ,
+  } 
 
-  let link =
-    endpoint === 'Asymptomatic'
-      ? 'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79078,81079,81452,82106,82112,82111,78600,82383,82948,82949,76698,76700,76703,76701,84072,76702,85142&vt=2102&dept=104290002,103720003,100001365,104360001,108710071,108010098,103010061,101050022,100001382,100001383,103010061,102010045,104010062,108010035,103010119,104010098,108010101,102010096,101980001,108710074,100001384&view=plain&public=1'
-      : endpoint === 'Symptomatic' ? 'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=81079,81452,82106,82112,82111,78600,82383,82948,82949,76698,76700,76703,76701,84072,76702,85142&vt=2228&dept=103720003,100001365,104360001,108710071,108010098,103010061,101050022,100001382,100001383,103010061,102010045,104010062,108010035,103010119,104010098,108010101,102010096,101980001,108710074,100001384&view=plain&public=1':
-         'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=81079,81452,82106,82112,82111,78600,82383,82948,82949,76698,76700,76703,76701,84072,76702,85142&vt=2228&dept=103720003,104290002,100001365,104360001,108710071,108010098,103010061,101050022,100001382,100001383,103010061,102010045,104010062,108010035,103010119,104010098,108010101,102010096,101980001,108710074,100001384&view=plain&public=1'
+  let link = urlList[location][status];
   return {
     link
   };

@@ -5,8 +5,9 @@ import { useRouter } from 'next/router';
 
 const QuestionFormComponent = ({}) => {
   const [viewIdx, setviewIdx] = useState(0);
-  const [endPoint, setEndpoint] = useState('Asymptomatic');
-  const compNames = ['priortest', 'eighteen', 'consent', 'symptomssel'];
+  const [status, setStatus] = useState('Asymptomatic');
+  const [location, setLocation] = useState('Bridgeport | Milford Area');
+  const compNames = ['location','priortest', 'eighteen', 'consent', 'symptomssel'];
   const router = useRouter();
 
   const nextPage = () => {
@@ -21,19 +22,21 @@ const QuestionFormComponent = ({}) => {
 
   const hasSymptoms = (hasSymptoms, hasMadeContact) => {
     hasSymptoms
-      ? setEndpoint('Symptomatic')
+      ? setStatus('Symptomatic')
       : hasMadeContact
-      ? setEndpoint('AsymptomaticContact')
-      : setEndpoint('Asymptomatic');
+      ? setStatus('AsymptomaticContact')
+      : setStatus('Asymptomatic');
   };
+
+  const updateLocation = (siteLocation) => {
+    setLocation(siteLocation);
+  }
 
   const schedulePush = () => {
-    router.push(`/scheduling?endpoint=${endPoint}`, '/scheduling');
+    router.push(`/scheduling?status=${status}&location=${location}`, '/scheduling');
   };
 
-  const updateLocation = (endpoint) => {
-    setEndpoint(endpoint);
-  };
+
 
   let progressWidth = 100 * ((viewIdx + 1) / 5);
 
@@ -61,6 +64,7 @@ const QuestionFormComponent = ({}) => {
         schedulePush={schedulePush}
         updateLocation={updateLocation}
         hasSymptoms={hasSymptoms}
+        updateLocation={updateLocation}
       ></QuestionView>
     </div>
   );

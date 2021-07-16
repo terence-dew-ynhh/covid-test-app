@@ -3,6 +3,7 @@ import PriorTest from '../PriorTestQuestionComponent';
 import OverEighteen from '../Over18Component';
 import ConsentComponent from '../ConsentComponent';
 import SelectSymptoms from '../SelectSymptomsComponent';
+import SelectLocationComponent from '../SelectLocationComponent';
 import styles from './QuestionViewComponent.module.css'
 
 
@@ -15,20 +16,23 @@ const QuestionViewComponent = ({
   hasSymptoms
 }) => {
   const [prevEnabled, setPrevEnabled] = useState(false);
+  const [nextEnabled, setNextEnabled] = useState(false);
   const [doneEnabled, setDoneEnabled] = useState(false);
 
   const isPrevEnabled = (isEnabled) => {
     setPrevEnabled(isEnabled);
   };
 
+  const isNextEnabled = (isEnabled) => {
+    setNextEnabled(isEnabled);
+  };
 
   const isDoneEnabled = (isEnabled) => {
     setDoneEnabled(isEnabled);    
   };     
-
-  const setSchedulerURL = (location) => {updateLocation(location)};
   
   const components = {
+    location: SelectLocationComponent,
     symptomssel: SelectSymptoms,
     eighteen: OverEighteen,
     consent: ConsentComponent,
@@ -44,11 +48,15 @@ const QuestionViewComponent = ({
         nextPage={nextPage}
         isPrevEnabled={isPrevEnabled}        
         isDoneEnabled={isDoneEnabled}
-        setSchedulerURL={setSchedulerURL}
+        isNextEnabled={isNextEnabled}
         hasSymptoms={hasSymptoms}
+        updateLocation={updateLocation}
       />
       </div>
-      <div className={styles.buttonContainer}>          
+      <div className={styles.buttonContainer}>
+      <button className="button" hidden={!nextEnabled} onClick={nextPage}>
+        {`Next >`}
+      </button>            
       <button className="button" hidden={!prevEnabled} onClick={prevPage}>
         {`< Back`}
       </button>

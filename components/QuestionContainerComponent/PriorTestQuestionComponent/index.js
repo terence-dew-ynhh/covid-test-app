@@ -2,13 +2,13 @@ import { useState, useEffect } from 'react';
 import styles from './PriorTestQuestionComponent.module.css'
 
 
- const PriorTestQuestion =({nextPage, isPrevEnabled, isDoneEnabled}) => {
+ const PriorTestQuestion =({nextPage, isPrevEnabled, isNextEnabled}) => {
   
   const [isEmployee, setIsEmployee] = useState(true);
 
   useEffect(() => {
-    isPrevEnabled(false);
-    isDoneEnabled(false);
+    isPrevEnabled(true);
+    isNextEnabled(false);
   }, []);
 
     return (

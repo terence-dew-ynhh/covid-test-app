@@ -2,24 +2,23 @@ import styles from './SelectLocationComponent.module.css';
 import { useEffect } from 'react';
 
 const SelectLocation = ({
-  isPrevEnabled,
-  isDoneEnabled,
-  setSchedulerURL,
+  isNextEnabled,
+  updateLocation,
 }) => {
   const locations = [
-    'Bridgeport Hospital',
-    'Bridgeport Hospital - MC',
+    'Bridgeport | Milford Area',
+    'Central CT',
     'Greenwich Hospital',
-    'Lawrence - Memorial Hospital',
-    'Westerly Hospital',
-    'Yale New Haven Hospital - SRC',
-    'Yale New Haven Hospital - YSC',
-    'Additional Employee Testing Sites'
+    'Lawrence and Memorial Area',
+    'Lower Fairfield County | NY',
+    'New Haven Area',
+    'Shoreline Area',
+    'Westerly Area'
   ];
 
   useEffect(() => {
-    isPrevEnabled(true);
-    isDoneEnabled(true);
+    isNextEnabled(true);
+
   }, []);
 
   const locationOptions = locations.map((option, idx) => (
@@ -33,11 +32,11 @@ const SelectLocation = ({
       <div className={styles.question_row_item}>
         <div className={styles.question_row_item_sub}>
           <fieldset>
-            <legend>What is your preferred collection location?</legend>
+            <legend>What is your preferred location?</legend>
 
             <div className="select-wrapper">
               <select
-                onChange={(e) => setSchedulerURL(e.target.value)}
+                onChange={(e) => updateLocation(e.target.value)}
                 className="select"
               >
                 {locationOptions}

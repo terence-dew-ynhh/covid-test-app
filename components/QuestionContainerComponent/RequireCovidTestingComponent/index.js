@@ -37,10 +37,21 @@ import styles from './RequireCovidTestingComponent.module.css'
             type="radio"
             name="employee_staff"
             onClick={(e) => {
-              nextPage(e,7)
+              nextPage(e,5)
             }}
           ></input>
           <label htmlFor="employee_staff_check_no">Return from Travel to a High Risk Area?</label>
+          <br></br>
+          <br></br>
+          <input
+            id="employee_staff_check_exempt"
+            type="radio"
+            name="employee_staff"
+            onClick={(e) => {
+              nextPage(e,9)
+            }}
+          ></input>
+          <label htmlFor="employee_staff_check_exempt">I have a COVID-19 Vaccine Exemption and I am Required for weekly COVID-19 testing</label>
         </fieldset>        
       </div>
       <style jsx>{``}</style>

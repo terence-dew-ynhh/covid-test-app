@@ -1,7 +1,12 @@
-import styles from './HighRiskStatementComponent.module.css';
+import styles from './VaccineExemptConsentComponent.module.css';
 import { useState, useEffect } from 'react';
 
-const HighRiskStatement = ({ nextPage, isPrevEnabled, isDoneEnabled,schedulePush}) => {
+const VaccineExemptConsentComponent = ({
+  nextPage,
+  isPrevEnabled,
+  isDoneEnabled,
+  schedulePush
+}) => {
   const [hasConsent, setHasConsent] = useState('');
 
   useEffect(() => {
@@ -23,9 +28,9 @@ const HighRiskStatement = ({ nextPage, isPrevEnabled, isDoneEnabled,schedulePush
           symtomsChk.disabled = true;
         }
       });
-      // setHasConsent('No');
-      nextPage(e)
-    } };
+      schedulePush(true);
+    }
+  };
 
   let checkboxesArray = ['None_of_the_Above'];
 
@@ -35,8 +40,7 @@ const HighRiskStatement = ({ nextPage, isPrevEnabled, isDoneEnabled,schedulePush
     <div className={styles.chk_row_item}>
       <label className={styles.none_label_or}>
         {' '}
-        <b>I understand the Above:</b>
-
+        <b>Please Confirm You Agree to the Above:</b>
       </label>
       <input
         id={`prev_covid_${checkbox.toLowerCase()}`}
@@ -52,7 +56,7 @@ const HighRiskStatement = ({ nextPage, isPrevEnabled, isDoneEnabled,schedulePush
         className={styles.prev_none_label}
         htmlFor={`prev_covid_${checkbox.toLowerCase()}`}
       >
-        {'Yes'}
+        {'I Agree'}
       </label>
     </div>
   ));
@@ -63,10 +67,17 @@ const HighRiskStatement = ({ nextPage, isPrevEnabled, isDoneEnabled,schedulePush
         <div className={styles.question_row_item_sub}>
           <fieldset>
             <legend>
-            -	Returning from a high risk travel location requires you to remain off work until you have 1 (one) negative baseline RNA test.<br></br><br></br>
-            - High risk travel locations include ANY country outside of the U.S.A. and ANY U.S. state other than CT, NY, NJ, and RI.<br></br><br></br>
-            -	If your baseline RNA test is negative AND you are asymptomatic, you may return to work as scheduled. You do not require clearance from Occupational Health.<br></br><br></br>
-
+              - I have a COVID-19 Vaccine Exemption and I am Required for weekly
+              COVID-19 PCR testing<br></br>
+              <br></br>- I am currently asymptomatic and will continue to work
+              <br></br>
+              <br></br>- I will adhere to twice daily fever and symptoms
+              monitoring<br></br>
+              <br></br>- If I develop symptom(s) or fever, I will NOT report to
+              work. I will revisit this Website for Symptomatic Testing or
+              contact the Employee Resource Center at (844) 543-2147; Option # 2
+              for Occupational Health.<br></br>
+              <br></br>
             </legend>
             <div className={styles.q1_grid}>{checkboxes}</div>
           </fieldset>
@@ -77,4 +88,4 @@ const HighRiskStatement = ({ nextPage, isPrevEnabled, isDoneEnabled,schedulePush
   );
 };
 
-export default HighRiskStatement;
+export default VaccineExemptConsentComponent;

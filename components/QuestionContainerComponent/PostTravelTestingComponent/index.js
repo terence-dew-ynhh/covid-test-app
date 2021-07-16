@@ -41,22 +41,6 @@ const PostTravelTesting = ({
             1st Baseline Test upon return from travel
           </label>
           <br></br>
-          {/* <br></br>
-          <input
-            id="employee_staff_check_no"
-            type="radio"
-            name="employee_staff"
-            onClick={() => {
-              schedulePush(true);
-            }}
-          ></input>
-          <label
-            className={styles.blocking_label}
-            htmlFor="employee_staff_check_no"
-          >
-            2nd Test, please schedule yourself on the 7th day after returning
-            from travel
-          </label> */}
         </fieldset>
       </div>
       <style jsx>{``}</style>

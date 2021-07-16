@@ -9,17 +9,15 @@ const QuestionFormComponent = ({}) => {
   const compNames = [
     'employee',
     'needcovidtesting',
-    'vaccinedose',
-    'exposuretocovid',
     'symptomssel',
     'sevsymptomsstatment',
     'outworkconsent',
     'possibleflu',
     'traveltesting',
     'highriskstatement',
-    'returnfromhighrisk',
     'posttravel',
     'negconsent',
+    'vaccineexempt',
     'location'
   ];
   const [jumpTracking, setJumpTracking] = useState([]);

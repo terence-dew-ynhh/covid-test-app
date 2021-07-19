@@ -23,8 +23,6 @@ const QuestionFormComponent = ({}) => {
   const hasSymptoms = (hasSymptoms, hasMadeContact) => {
     hasSymptoms
       ? setStatus('Symptomatic')
-      : hasMadeContact
-      ? setStatus('AsymptomaticContact')
       : setStatus('Asymptomatic');
   };
 

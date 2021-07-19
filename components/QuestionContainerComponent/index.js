@@ -7,7 +7,13 @@ const QuestionFormComponent = ({}) => {
   const [viewIdx, setviewIdx] = useState(0);
   const [status, setStatus] = useState('Asymptomatic');
   const [location, setLocation] = useState('Bridgeport | Milford Area');
-  const compNames = ['location','priortest', 'eighteen', 'consent', 'symptomssel'];
+  const compNames = [
+    // 'location',
+    'priortest',
+    'eighteen',
+    'consent',
+    'symptomssel'
+  ];
   const router = useRouter();
 
   const nextPage = () => {
@@ -23,18 +29,21 @@ const QuestionFormComponent = ({}) => {
   const hasSymptoms = (hasSymptoms, hasMadeContact) => {
     hasSymptoms
       ? setStatus('Symptomatic')
+      : hasMadeContact
+      ? setStatus('AsymptomaticContact')
       : setStatus('Asymptomatic');
   };
 
   const updateLocation = (siteLocation) => {
     setLocation(siteLocation);
-  }
-
-  const schedulePush = () => {
-    router.push(`/scheduling?status=${status}&location=${location}`, '/scheduling');
   };
 
-
+  const schedulePush = () => {
+    router.push(
+      `/scheduling?status=${status}&location=${location}`,
+      '/scheduling'
+    );
+  };
 
   let progressWidth = 100 * ((viewIdx + 1) / 5);
 

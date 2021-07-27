@@ -8,7 +8,7 @@ const QuestionFormComponent = ({}) => {
   const [status, setStatus] = useState('Asymptomatic');
   const [location, setLocation] = useState('Bridgeport | Milford Area');
   const compNames = [
-    // 'location',
+    'location',
     'priortest',
     'eighteen',
     'consent',
@@ -26,11 +26,9 @@ const QuestionFormComponent = ({}) => {
     setviewIdx(index);
   };
 
-  const hasSymptoms = (hasSymptoms, hasMadeContact) => {
+  const hasSymptoms = (hasSymptoms) => {
     hasSymptoms
       ? setStatus('Symptomatic')
-      : hasMadeContact
-      ? setStatus('AsymptomaticContact')
       : setStatus('Asymptomatic');
   };
 

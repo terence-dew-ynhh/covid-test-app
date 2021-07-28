@@ -8,7 +8,6 @@ const SelectLocation = ({
   const locations = [
     'Bridgeport | Milford Area',
     'Central CT',
-    // 'Greenwich Hospital',
     'Lawrence and Memorial Area',
     'Lower Fairfield County | NY',
     'New Haven Area',

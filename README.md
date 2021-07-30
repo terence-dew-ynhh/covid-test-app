@@ -37,7 +37,7 @@ ___
 [Preconfigured Setup File - Click Here](https://www.getpostman.com/collections/a71cb5f67cf3ff314837)
 - Download the json file and import into postman
 - Run the request but changing the following parts:
-- covidvaccine - 3011
+- covidvaccine - 3030
 - vaccinepartner - tbd
 - fairhavenvaccine - 3020
 - Change value to **true** to open and **false** to close

@@ -22,22 +22,13 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
   const [viewJump, setviewJump] = useState([]);
   const [selDate, setSelDate] = useState('');
   const [responseData, setResponseData] = useState({});
-  const [applicationOn, setApplicationOn] = useState(false);
 
   const router = useRouter();
 
-  useEffect(() => {
-    currentAppState().then(appFlag => {
-    if(appFlag){
-      setviewIdx(1);
-    }
-    setApplicationOn(appFlag);
-    });
-  }, []);
-
 
   const compNames = [
-    'slotsfilled',
+    'employee',
+    'vaccine',
     'age',
     'vaccineconsent',
     'firstdose',
@@ -81,8 +72,7 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
   };
 
   const updateAnswerData = (questionData) => {
-    // const dataKey = questionData.keys()
-    // setResponseOrder([...responseOrder, ...dataKey[0]]);
+
     setResponseData({ ...responseData, ...questionData });
   };
 

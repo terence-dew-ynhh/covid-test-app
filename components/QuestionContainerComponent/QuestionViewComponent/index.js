@@ -19,6 +19,8 @@ import AgeComponent from '../AgeComponent';
 import HITHistoryComponent from '../HITHistoryComponent';
 import YNHHFactSheetComponent from '../YNHHFactSheetComponent';
 import MiscComponent from '../MiscComponent';
+import VaccineQuestionComponent from '../VaccineQuestionComponent';
+import EmployeeQuestionComponent from '../EmployeeQuestionComponent';
 import styles from './QuestionViewComponent.module.css';
 
 const QuestionViewComponent = ({
@@ -65,7 +67,9 @@ const QuestionViewComponent = ({
     vaccineschedule: VaccinationScheduleConsent,
     ynhhfactsheet: YNHHFactSheetComponent,
     hithistory: HITHistoryComponent,
-    misc: MiscComponent
+    misc: MiscComponent,
+    employee: EmployeeQuestionComponent,
+    vaccine: VaccineQuestionComponent
   };
   const ComponentName = components[compName || 'pininput'];
 

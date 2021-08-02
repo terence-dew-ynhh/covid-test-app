@@ -17,11 +17,11 @@ import styles from './ResidentQuestionComponent.module.css'
     <>
       <div className={styles.question_row_item}>
       <p className="error" hidden={isEmployee}>
-      Testing is only available to residential students of the University of New Haven. Commuter students are required to test weekly in the Beckerman Recreation Center. Schedule your appointment <a href={hrefLink}>here</a>
+      Testing is only available to residential students of the CCSU. Commuter students are required to test weekly in the Beckerman Recreation Center. Schedule your appointment <a href={hrefLink}>here</a>
         </p>
         <fieldset className="radio_grp_set">
           <legend>
-          Are you an active, residential student at the University of New Haven?
+          Are you an active, residential student at the CCSU?
           </legend>
           <input
             id="employee_staff_check_yes"

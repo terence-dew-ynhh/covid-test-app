@@ -15,7 +15,7 @@ import styles from './Over18Component.module.css'
     <>
       <div className={styles.question_row_item}>
       <p className="error" hidden={isOver18}>
-      Please contact us at 203-932-7079 to discuss a process for you. 
+      Please contact us at 860-832-0224 to discuss a process for you. 
         </p>
         <fieldset className="radio_grp_set">
           <legend>

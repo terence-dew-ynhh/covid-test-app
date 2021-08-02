@@ -99,7 +99,7 @@ const ConsentComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
             I understand the information disclosed in response to this authorization may be subject to re-disclosure by recipient, and will no longer be protected under the terms of this authorization of by federal privacy regulations.
             <br></br><br></br>
             I understand that this authorization is voluntary and my treatment by Yale New Haven Health is in no way conditioned on whether or not I sign this authorization and that I may refuse to sign it. 
-            If I do not sign this form authorizing the release of my COVID-19 testing results to my University/employer, I will not be tested for COVID-19 under the terms of the agreement between Yale New Haven Health and the University of New Haven. 
+            If I do not sign this form authorizing the release of my COVID-19 testing results to my University/employer, I will not be tested for COVID-19 under the terms of the agreement between Yale New Haven Health and the CCSU. 
   
             I understand that I may see and copy the information described on this form if I ask for it. There may a charge for copies in accordance with Connecticut law.
             <br></br><br></br>

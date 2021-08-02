@@ -136,8 +136,8 @@ const SelectSymptoms = ({
         <p className="error" hidden={!(hasSymptoms === 'Yes')}>
           If you are a student and on campus, isolate yourself from contact with
           others and call the student health center to schedule a consultation
-          203-932-7079 If you are a faculty member or employee, notify your
-          manager and leave work. If you are home, stay home. Call 203-932-7079
+          860-832-0224 If you are a faculty member or employee, notify your
+          manager and leave work. If you are home, stay home. Call 860-832-0224
           during normal operations, or contact emergency services if you are
           experiencing a life threating emergency.
         </p>

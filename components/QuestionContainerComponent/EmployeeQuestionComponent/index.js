@@ -15,11 +15,11 @@ import styles from './EmployeeQuestionComponent.module.css'
     <>
       <div className={styles.question_row_item}>
       <p className="error" hidden={isEmployee}>
-      Testing is only available to active students, employees, or faculty of University of New Haven
+      Testing is only available to active students, employees, or faculty of CCSU
         </p>
         <fieldset className="radio_grp_set">
           <legend>
-          Are you an active student, employee, or faculty of University of New Haven?
+          Are you an active student, employee, or faculty of CCSU?
           </legend>
           <input
             id="employee_staff_check_yes"

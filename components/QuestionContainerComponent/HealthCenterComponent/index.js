@@ -26,11 +26,11 @@ const HealthCenterComponent = ({
         </p>
         <p className="error" hidden={!(hasSpokenToClinician == 'No')}>
           Please call the student health center to schedule a consultation at
-          203 932-7079
+          (860) 832-1926
         </p>
         <fieldset className="radio_grp_set">
           <legend>
-            Have you spoken directly with a clinician at the UNH student health
+            Have you spoken directly with a clinician at the CCSU student health
             center? This should be completed PRIOR TO scheduling a symptomatic
             test to review protocols.
           </legend>

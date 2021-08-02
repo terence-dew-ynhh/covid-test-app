@@ -153,7 +153,7 @@ Home.getInitialProps = async ({ query }) => {
         }
 
         if(isOver18 == 'false'){
-          link = 'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=86796,86801,86816,86812,86807,86817&vt=2293&dept=901010028,901100011,901100013,901010030,901040014,901320009&view=plain&public=1'
+          link = 'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=86796,86801,86816,86812,86807,86817,89520&vt=2293&dept=901010028,901100011,901100013,901010030,901040014,901320009,901330001&view=plain&public=1'
         }
 
 

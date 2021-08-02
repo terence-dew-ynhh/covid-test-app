@@ -6,13 +6,14 @@ const SelectLocation = ({
   updateLocation,
 }) => {
   const locations = [
-    'Bridgeport | Milford Area',
-    'Central CT',
-    'Lawrence and Memorial Area',
+    'Fairfield County',
+    'Middlesex Country',
+    'New London County',
     'Lower Fairfield County | NY',
-    'New Haven Area',
-    'Shoreline Area',
-    'Westerly Area'
+    'Northern New Haven County',
+    'Southern New Haven County',
+    'Washington RI County',
+    'Westchester NY County'
   ];
 
   useEffect(() => {

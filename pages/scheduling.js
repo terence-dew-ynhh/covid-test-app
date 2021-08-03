@@ -63,7 +63,7 @@ export default function Home({
       </Head>
 
       <div className="grid">
-        <img src="/UNHSLogo.png"></img>
+        <img src="/YNHHSLogo.png"></img>
       </div>
 
       <div className="scheduleContainer">

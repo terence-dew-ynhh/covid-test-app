@@ -9,7 +9,6 @@ const SelectLocation = ({
     'Fairfield County',
     'Middlesex Country',
     'New London County',
-    'Lower Fairfield County | NY',
     'Northern New Haven County',
     'Southern New Haven County',
     'Washington RI County',

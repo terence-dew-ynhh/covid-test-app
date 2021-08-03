@@ -7,12 +7,9 @@ const SelectLocation = ({
 }) => {
   const locations = [
     'Fairfield County',
-    'Middlesex Country',
+    'New Haven County',
     'New London County',
-    'Northern New Haven County',
-    'Southern New Haven County',
     'Washington RI County',
-    'Westchester NY County'
   ];
 
   useEffect(() => {

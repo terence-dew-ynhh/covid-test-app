@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 const QuestionFormComponent = ({}) => {
   const [viewIdx, setviewIdx] = useState(0);
   const [status, setStatus] = useState('Asymptomatic');
-  const [location, setLocation] = useState('Fairfield County');
+  const [location, setLocation] = useState('Fairfield County and NY');
   const compNames = [
     'location',
     'priortest',

@@ -147,7 +147,7 @@ ___
     monoclonal: MonoclonalComponent,
     zipcode: ZipInputComponent,
     vaccineschedule: VaccinationScheduleConsent,
-    ynhhfactsheet: YNHHFactSheetComponent
+    ynhhfactsheet: UNHFactSheetComponent
   }`
 
 -And Loads Them:

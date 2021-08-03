@@ -35,7 +35,7 @@ function Home({ initialIdx }) {
   return (
     <div className="container">
       <Head>
-        <title>YNHH COVID19 Vaccination</title>
+        <title>UNH COVID19 Vaccination</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="grid">

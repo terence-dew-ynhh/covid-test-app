@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import Modal from '@material-ui/core/Modal';
 import { makeStyles } from '@material-ui/core/styles';
 import IconButton from '@material-ui/core/IconButton';
 import ClearIcon from '@material-ui/icons/Clear';
@@ -56,32 +55,15 @@ export default function Home({
     setOpen(false);
   };
 
-  const body = (
-    <div style={modalStyle} className={classes.paper}>
-      <img style={{ height: '100%' }} src="/Schedule.PNG"></img>
-
-      <IconButton style={{ position: 'absolute' }} onClick={handleClose}>
-        <ClearIcon
-          style={{
-            border: '2px solid red',
-            position: 'absolute',
-            color: 'red'
-          }}
-          fontSize="large"
-        ></ClearIcon>
-      </IconButton>
-    </div>
-  );
-
   return (
     <>
       <Head>
-        <title>YNHH COVID19 Vaccination</title>
+        <title>UNH COVID19 Vaccination</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <div className="grid">
-        <img src="/YNHHSLogo.png"></img>
+        <img src="/UNHSLogo.png"></img>
       </div>
 
       <div className="scheduleContainer">
@@ -93,28 +75,13 @@ export default function Home({
             : ''}
         </h3>
 
-        <button
-          className="button"
-          style={{ marginBottom: 0 }}
-          type="button"
-          onClick={handleOpen}
-        >
-          Click here to see Vaccine Schedule
-        </button>
         <iframe
           id="openSchedulingFrame"
           className="widgetframe"
           scrolling="yes"
           src={link}
         ></iframe>
-        <Modal
-          open={open}
-          onClose={handleClose}
-          aria-labelledby="simple-modal-title"
-          aria-describedby="simple-modal-description"
-        >
-          {body}
-        </Modal>
+ 
       </div>
       <style jsx>{`
         .scheduleContainer,

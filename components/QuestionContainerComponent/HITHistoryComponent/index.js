@@ -63,7 +63,7 @@ const HITHistoryComponent = ({
         <br></br>
         <br></br>
         <b className="redText">
-          YNHHS recommends that patients with HIT obtain the Pfizer or Moderna
+          UNH recommends that patients with HIT obtain the Pfizer or Moderna
           vaccine.
         </b>
       </div>

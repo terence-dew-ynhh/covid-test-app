@@ -60,7 +60,7 @@ const VaccinationScheduleConsent = ({
               {VSText[0]}
               <br></br>
               <br></br>
-              <p className="versiontxt">v11 8.7.21</p>
+              <p className="versiontxt">v12 8.28.21</p>
               <a href="/info" target="_blank" rel="noreferrer">
               <img src="/Schedule.PNG" passHref></img>
               </a> </>)}

@@ -2,9 +2,6 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 
 export default function Home({ link }) {
-  const router = useRouter();
-  const { endpoint } = router.query;
-  console.log(endpoint);
   return (
     <>
       <Head>
@@ -40,7 +37,7 @@ export default function Home({ link }) {
 }
 
 Home.getInitialProps = async ({ query }) => {
-  const { symptoms } = query;
+  // const { symptoms } = query;
   let link = 'https://mychart.ynhhs.org/Mychart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=89312&vt=2102&dept=100001390&view=plain&public=1';
     // symptoms == "true"
     //   ? 'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=89312&vt=2228&dept=100001390&view=plain&public=1'

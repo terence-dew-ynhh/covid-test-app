@@ -8,7 +8,7 @@ const QuestionFormComponent = ({}) => {
 
   const [viewIdx, setviewIdx] = useState(0);
   const [symptomatic, setSymptomatic] = useState(false);
-  const compNames = ['employee', 'overeighteen', 'symptomssel', 'healthcare', 'consent'];
+  const compNames = ['employee', 'overeighteen', 'symptomssel',];
   const [jumpArr, setJumpArr] = useState([]);
   const router = useRouter();
 

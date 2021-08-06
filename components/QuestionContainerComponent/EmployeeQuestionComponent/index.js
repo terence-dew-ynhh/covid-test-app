@@ -15,7 +15,7 @@ import styles from './EmployeeQuestionComponent.module.css'
     <>
       <div className={styles.question_row_item}>
       <p className="error" hidden={isEmployee}>
-      Testing is only available to active students, employees, or faculty of CCSU
+      Testing is only available to active students, employees, or faculty of CCSU. Please call 860-832-1925 with any questions about eligibility for COVID-19 testing.
         </p>
         <fieldset className="radio_grp_set">
           <legend>

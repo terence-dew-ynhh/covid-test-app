@@ -31,7 +31,7 @@ const SelectSymptoms = ({
         }
       });
       setHasSymptoms('No');
-      nextPage(e, 2);
+      isDoneEnabled(true);
     } else {
       checkboxesArray.forEach((element) => {
         let symtomsChk = document.getElementById(
@@ -62,6 +62,7 @@ const SelectSymptoms = ({
         noneChk.disabled = true;
         setHasSymptoms('Yes');
         updateSymptoms(true);
+        isDoneEnabled(false);
       } else {
         noneChk.disabled = false;
         setHasSymptoms('');
@@ -135,8 +136,8 @@ const SelectSymptoms = ({
         <p className="error" hidden={!(hasSymptoms === 'Yes')}>
           If you are a student and on campus, isolate yourself from contact with
           others and call the student health center to schedule a consultation
-          860-832-0224. If you are a faculty member or employee, notify your
-          manager and leave work. If you are home, stay home. Call 860-832-0224
+          860-832-1925. If you are a faculty member or employee, notify your
+          manager and leave work. If you are home, stay home. Call 860-832-1925
           during normal operations, or contact emergency services if you are
           experiencing a life threating emergency.
         </p>
@@ -148,6 +149,32 @@ const SelectSymptoms = ({
             </legend>
             <div className={styles.q1_grid}>{checkboxes}</div>
           </fieldset>
+          <br></br>
+          <br></br>
+          <a
+            target="__blank"
+            href="https://mychart.ynhhs.org/mychart-prd/en-US/PDF/PFA.pdf"
+          >
+            Patient Acknowledgement and Financial Authorization
+          </a>
+          <br></br>
+          <br></br>
+          <a
+            target="__blank"
+            href="https://mychart.ynhhs.org/mychart-prd/en-US/PDF/NoticeofPrivacyPractices.pdf"
+          >
+            Notice of Privacy Practices
+          </a>
+          <br></br>
+          <br></br>
+          <a
+            target="__blank"
+            href="https://mychart.ynhhs.org/mychart-prd/en-US/PDF/CCSUClientProvidedOrderingClinicianForm.pdf"
+          >
+            COVID-19 Testing Authorization – Client Provided Ordering Clinician
+          </a>
+          <br></br>
+          <br></br>
         </div>
       </div>
       <style jsx>{``}</style>

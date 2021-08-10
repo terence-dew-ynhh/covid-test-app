@@ -3,6 +3,8 @@ import { useRouter } from 'next/router';
 
 export default function Home({ link }) {
   const router = useRouter();
+  const { endpoint } = router.query;
+  console.log(endpoint);
   return (
     <>
       <Head>
@@ -38,13 +40,30 @@ export default function Home({ link }) {
 }
 
 Home.getInitialProps = async ({ query }) => {
-  const { asymp } = query;
-  console.log(asymp);
-  let link =
-    asymp === 'true'
-      ? 'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=81452,81079,82106,82111,82112,82383,76698,78600,76704,76700,76703,76701,76702,82948,82949,83140,83139,83164,79073,79074,81414,81413,82457,81409,79075,79076,79077,79095,79078,79079,79080,79081,79082,79083,79084,79085,79167,80284,80285,80286,80287,81420,81419,81418,81417,81416,82984,84072,85142&vt=2275&dept=100001365,103720003,104360001,108010098,108710071,101050022,103010061,103700005,104010062,108010035,102010045,108710023,100001382,100001383,103070032,102100010,104010094,103010045,103160002,103530001,103480001,103490001,103220001,103080004,103190001,104240001,104050002,104290002,104030001,101700005,101160001,101050004,101460003,101570001,101310002,104140001,104160006,104130001,104200001,104080003,101630001,101230010,101140001,101600001,101500001,104340001,103010119,104010098,108010101,102010096,108710074,101980001,100001384&view=plain&public=1'
-      : 'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=81452,81079,82106,82111,82112,82383,76698,78600,76704,76700,76703,76701,76702,82948,82949,83139,84072,85142&vt=2276&dept=100001365,103720003,104360001,108010098,108710071,101050022,103010061,103700005,104010062,108010035,102010045,108710023,100001382,100001383,103070032,103010119,104010098,108010101,102010096,108710074,101980001&view=plain&public=1';
+  const { location, status } = query;
+  status
+  const urlList = {
+    'Fairfield County and NY': { 
+      'Symptomatic': 'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=78600,85142,76703&vt=2228&dept=103010119,100001384,104010098&view=plain&public=1',
+      'Asymptomatic':'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79073,79076,79074,85156,79075,81409,81411,81412,81413,79095,79167,80284,79077,79078,80286,79079,80285,80287,82984,78600,85142,76703&vt=2102&dept=103010045,103190001,103160002,103540001,103080004,103220001,103500001,203400001,103480001,104050002,104140001,104160006,104240001,104290002,104200001,104030001,104130001,104080003,104340001,103010119,100001384,104010098&view=plain&public=1'
+    } ,
+    'New London County': { 
+      'Symptomatic': 'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=76701,82949&vt=2228&dept=108010101,100001383&view=plain&public=1',
+      'Asymptomatic':'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=76701,82949&vt=2102&dept=108010101,100001383&view=plain&public=1'
+    } ,
+    'New Haven County and Middlesex County': {
+      'Symptomatic': 'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=81079,88751,81452,82383,82948&vt=2228&dept=103720003,101130001,100001365,101050022,100001382&view=plain&public=1',
+      'Asymptomatic':'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79084,81416,79083,82948,81079,88751,83688,83687,81420,79081,81417,81418,81452,79085,82383,79080,&vt=2102&dept=101570001,101500001,101460003,100001382,103720003,101130001,101090001,101380001,101630001,101160001,101600001,101140001,100001365,101050004,101310002,101050022,101700005&view=plain&public=1'
+     } ,
 
+    'Washington RI County': {
+      'Symptomatic': 'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=76702&vt=2228&dept=108710074&view=plain&public=1',
+      'Asymptomatic':'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=76702,79729&vt=2102&dept=108710074,108710007&view=plain&public=1'
+     } ,
+  } 
+
+  let link = urlList[location][status];
+ 
   return {
     link
   };

@@ -28,7 +28,7 @@ const VaccineExemptConsentComponent = ({
           symtomsChk.disabled = true;
         }
       });
-      schedulePush(true);
+      schedulePush();
     }
   };
 

@@ -5,8 +5,14 @@ import { useRouter } from 'next/router';
 
 const QuestionFormComponent = ({}) => {
   const [viewIdx, setviewIdx] = useState(0);
-  const [endPoint, setEndpoint] = useState('Bridgeport Hospital');
+  const [location, setLocation] = useState('Fairfield County and NY');
+  const [isSymptomatic, setIsSymptomatic] = useState(false);
+  const [jumpTracking, setJumpTracking] = useState([]);
+  const [progressBarVal, setProgressBarVal] = useState(12);
+  const router = useRouter();
+
   const compNames = [
+    'location',
     'employee',
     'needcovidtesting',
     'symptomssel',
@@ -17,12 +23,8 @@ const QuestionFormComponent = ({}) => {
     'highriskstatement',
     'posttravel',
     'negconsent',
-    'vaccineexempt',
-    'location'
+    'vaccineexempt'
   ];
-  const [jumpTracking, setJumpTracking] = useState([]);
-  const [progressBarVal, setProgressBarVal] = useState(12);
-  const router = useRouter();
 
   const nextPage = (e, pageJump) => {
     let pageProg = pageJump ? pageJump : 1;
@@ -56,12 +58,21 @@ const QuestionFormComponent = ({}) => {
     recalculateProgress();
   };
 
-  const schedulePush = (asymp = false) => {
-    router.push(`/scheduling?asymp=${asymp}`, '/scheduling');
+  const schedulePush = () => {
+    router.push(
+      `/scheduling?status=${
+        isSymptomatic ? 'Symptomatic' : 'Asymptomatic'
+      }&location=${location}`,
+      '/scheduling'
+    );
   };
 
-  const updateLocation = (endpoint) => {
-    setEndpoint(endpoint);
+  const updateLocation = (location) => {
+    setLocation(location);
+  };
+  
+  const updateIsSymptomatic = (symptomatic) => {
+    setIsSymptomatic(symptomatic);
   };
 
   let progressWidth = Math.floor(100 * ((viewIdx + 1) / progressBarVal));
@@ -89,6 +100,7 @@ const QuestionFormComponent = ({}) => {
         compName={compNames[viewIdx]}
         schedulePush={schedulePush}
         updateLocation={updateLocation}
+        updateIsSymptomatic={updateIsSymptomatic}
       ></QuestionView>
     </div>
   );

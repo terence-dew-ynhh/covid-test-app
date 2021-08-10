@@ -24,7 +24,7 @@ const NegResultConsent = ({ nextPage, isPrevEnabled, isDoneEnabled,schedulePush}
         }
       });
       // setHasConsent('No');
-      schedulePush(true)
+      schedulePush()
     } };
 
   let checkboxesArray = ['None_of_the_Above'];

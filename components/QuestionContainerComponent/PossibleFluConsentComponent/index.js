@@ -29,7 +29,7 @@ const PossibleFluConsent = ({
         }
       });
       // setHasConsent('No');
-      schedulePush(false);
+      schedulePush();
     }
 
     // If any of the boxes are checked beside None of the Above

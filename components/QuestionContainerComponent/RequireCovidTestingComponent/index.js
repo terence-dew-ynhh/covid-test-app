@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import styles from './RequireCovidTestingComponent.module.css'
 
 
- const RequireCovidTesting =({nextPage, isPrevEnabled, isDoneEnabled}) => {
+ const RequireCovidTesting =({nextPage, isPrevEnabled, isDoneEnabled, updateIsSymptomatic}) => {
   
   const [isEmployee, setIsEmployee] = useState(true);
 
@@ -26,6 +26,7 @@ import styles from './RequireCovidTestingComponent.module.css'
             type="radio"
             name="employee_staff"
             onClick={(e) => {
+              updateIsSymptomatic(true)
               nextPage(e)
             }}
           ></input>
@@ -37,6 +38,7 @@ import styles from './RequireCovidTestingComponent.module.css'
             type="radio"
             name="employee_staff"
             onClick={(e) => {
+              updateIsSymptomatic(false)
               nextPage(e,5)
             }}
           ></input>
@@ -48,6 +50,7 @@ import styles from './RequireCovidTestingComponent.module.css'
             type="radio"
             name="employee_staff"
             onClick={(e) => {
+              updateIsSymptomatic(false)
               nextPage(e,9)
             }}
           ></input>

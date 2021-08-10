@@ -2,13 +2,14 @@ import { useState, useEffect } from 'react';
 import styles from './EmployeeQuestionComponent.module.css'
 
 
- const EmployeeQuestion =({nextPage, isPrevEnabled, isDoneEnabled}) => {
+ const EmployeeQuestion =({nextPage, isPrevEnabled, isNextEnabled, isDoneEnabled}) => {
   
   const [isEmployee, setIsEmployee] = useState(true);
 
   useEffect(() => {
     isPrevEnabled(false);
     isDoneEnabled(false);
+    isNextEnabled(false);
   }, []);
 
     return (

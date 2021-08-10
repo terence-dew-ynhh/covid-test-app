@@ -13,7 +13,7 @@ const SevereSympStatement = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
     <>
       <div className={styles.question_row_item}>
         <p className="error">
-          You Have an Emergencny Symptom. Call 911 instead.
+          You Have an Emergency Symptom. Call 911 instead.
         </p>
         <fieldset className="radio_grp_set">
           <legend></legend>

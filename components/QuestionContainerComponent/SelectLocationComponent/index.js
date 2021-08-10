@@ -7,7 +7,7 @@ const SelectLocation = ({
 }) => {
   const locations = [
     'Fairfield County and NY',
-    'New Haven County',
+    'New Haven County and Middlesex County',
     'New London County',
     'Washington RI County',
   ];

@@ -27,7 +27,7 @@ const SchedulingForComponent = ({
               nextPage();
             }}
           ></input>
-          <label id={styles.blocking_label} htmlFor="under_eighteen">
+          <label id={styles.blocking_label} htmlFor="over_eighteen_proxy">
             Myself or someone over the age of 18
           </label>
           <input

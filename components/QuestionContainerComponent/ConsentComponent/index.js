@@ -74,7 +74,7 @@ const ConsentComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
           value={checkbox.replace(regex, ' ')}
           name="Consent"
           onChange={(e) => {
-            isDoneEnabled(true);
+            // isDoneEnabled(true);
             handleChecked(e);
           }}
         ></input>

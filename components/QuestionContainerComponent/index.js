@@ -13,13 +13,14 @@ const QuestionFormComponent = ({}) => {
     'location',
     'priortest',
     'eighteen',
+    'schedulingfor',
     'consent',
     'symptomssel'
   ];
   const router = useRouter();
 
   const nextPage = () => {
-    let index = viewIdx <= 3 ? viewIdx + 1 : viewIdx;
+    let index = viewIdx <= 4 ? viewIdx + 1 : viewIdx;
     setviewIdx(index);
   };
 

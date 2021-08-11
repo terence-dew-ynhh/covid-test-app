@@ -32,7 +32,7 @@ import styles from './Over18Component.module.css'
               nextPage()
             }}
           ></input>
-          <label id={styles.blocking_label} htmlFor="over_eighteen">I am over the age of 18</label>
+          <label id={styles.blocking_label} htmlFor="over_eighteen">I am 18 years of age or over</label>
           <input
             id="under_eighteen"
             type="radio"
@@ -51,18 +51,6 @@ import styles from './Over18Component.module.css'
 
             }}
           ></input>
-          <label id={styles.blocking_label} htmlFor="over_five_proxy">I am over the age of 18 and scheduling for someone 6 years of age and older</label>
-          <input
-            id="under_five_proxy"
-            type="radio"
-            name="over_eighteeen_ques"
-            onClick={() => {
-              updateIsFiveOrBelow(true)
-              nextPage();
-            }}
-          ></input>
-          <label id={styles.blocking_label} htmlFor="under_five_proxy">I am over the age of 18 and scheduling for someone 5 years of age or younger</label>
-
         </fieldset>        
       </div>
       <style jsx>{``}    

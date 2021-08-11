@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import styles from './Over18Component.module.css'
 
 
- const Over18Component =({nextPage, isPrevEnabled, isDoneEnabled}) => {
+ const Over18Component =({nextPage, isPrevEnabled, isDoneEnabled, updateIsFiveOrBelow}) => {
   
   const [isOver18, setIsOver18] = useState(true);
   const [isOver18andProxy, setIsOver18andProxy] = useState(true);
@@ -25,35 +25,44 @@ import styles from './Over18Component.module.css'
           Are you over the age of 18? 
           </legend>
           <input
-            id="employee_staff_check_yes"
+            id="over_eighteen"
             type="radio"
-            name="employee_staff"
+            name="over_eighteeen_ques"
             onClick={() => {
               nextPage()
-              setIsOver18(true);
             }}
           ></input>
-          <label id={styles.blocking_label} htmlFor="employee_staff_check_yesno">I am over the age of 18</label>
+          <label id={styles.blocking_label} htmlFor="over_eighteen">I am over the age of 18</label>
           <input
-            id="employee_staff_check_yesno"
+            id="under_eighteen"
             type="radio"
-            name="employee_staff"
+            name="over_eighteeen_ques"
+            onClick={() => {
+              setIsOver18(false);
+            }}
+          ></input>
+          <label id={styles.blocking_label} htmlFor="under_eighteen">I am under the age of 18</label>
+          <input
+            id="over_five_proxy"
+            type="radio"
+            name="over_eighteeen_ques"
             onClick={() => {
               nextPage();
-              setIsOver18(false);
-              setIsOver18andProxy(true);
+
             }}
           ></input>
-          <label id={styles.blocking_label} htmlFor="employee_staff_check_yes">I am over the age of 18 and scheduling for someone under the age of 18</label>
+          <label id={styles.blocking_label} htmlFor="over_five_proxy">I am over the age of 18 and scheduling for someone 6 years of age and older</label>
           <input
-            id="employee_staff_check_no"
+            id="under_five_proxy"
             type="radio"
-            name="employee_staff"
+            name="over_eighteeen_ques"
             onClick={() => {
-              setIsOver18(false);
+              updateIsFiveOrBelow(true)
+              nextPage();
             }}
           ></input>
-          <label id={styles.blocking_label} htmlFor="employee_staff_check_no">I am under the age of 18</label>
+          <label id={styles.blocking_label} htmlFor="under_five_proxy">I am over the age of 18 and scheduling for someone 5 years of age or younger</label>
+
         </fieldset>        
       </div>
       <style jsx>{``}    

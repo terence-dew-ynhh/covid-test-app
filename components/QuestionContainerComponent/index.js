@@ -7,6 +7,8 @@ const QuestionFormComponent = ({}) => {
   const [viewIdx, setviewIdx] = useState(0);
   const [status, setStatus] = useState('Asymptomatic');
   const [location, setLocation] = useState('Fairfield County and NY');
+  const [isFiveOrBelow, setIsFiveOrBelow] = useState(false);
+
   const compNames = [
     'location',
     'priortest',
@@ -27,9 +29,14 @@ const QuestionFormComponent = ({}) => {
   };
 
   const hasSymptoms = (hasSymptoms) => {
-    hasSymptoms
+    if(isFiveOrBelow) setStatus('Symptomatic')
+    else hasSymptoms
       ? setStatus('Symptomatic')
       : setStatus('Asymptomatic');
+  };
+
+  const updateIsFiveOrBelow = (ageFiveOrBelow) => {
+    setIsFiveOrBelow(ageFiveOrBelow)
   };
 
   const updateLocation = (siteLocation) => {
@@ -70,6 +77,7 @@ const QuestionFormComponent = ({}) => {
         updateLocation={updateLocation}
         hasSymptoms={hasSymptoms}
         updateLocation={updateLocation}
+        updateIsFiveOrBelow={updateIsFiveOrBelow}
       ></QuestionView>
     </div>
   );

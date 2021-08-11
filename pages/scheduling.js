@@ -66,7 +66,7 @@ Home.getInitialProps = async ({ query }) => {
 
     'Washington RI County': {
       'Symptomatic': 'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=76702&vt=2228&dept=108710074&view=plain&public=1',
-      'Asymptomatic':'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=76702,79729&vt=2102&dept=108710074,108710007&view=plain&public=1',
+      'Asymptomatic':'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=76702&vt=2102&dept=108710074&view=plain&public=1',
       'SymptomaticFive': 'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=76702&vt=2102&dept=108710074&view=plain&public=1',
     } ,
   } 

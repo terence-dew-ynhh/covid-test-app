@@ -46,7 +46,7 @@ const QuestionFormComponent = ({}) => {
 
   const schedulePush = () => {
     router.push(
-      `/scheduling?status=${status}&location=${location}`,
+      `/scheduling?status=${status}&location=${location}&isBelowFive=${isFiveOrBelow}`,
       '/scheduling'
     );
   };

@@ -19,6 +19,7 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
   const [isInZipCodeRange, setIsInZipCodeRange] = useState(false);
   const [isOver18, setIsOver18] = useState(false);
   const [isRiskGroup, setIsRiskGroup] = useState(false);
+  const [isImmunocomp, setIsImmunocomp] = useState(false);
   const [viewJump, setviewJump] = useState([]);
   const [selDate, setSelDate] = useState('');
   const [responseData, setResponseData] = useState({});
@@ -38,6 +39,8 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
 
   const compNames = [
     'slotsfilled',
+    'immunocompconsent',
+    'immunocomp',
     'age',
     'vaccineconsent',
     'firstdose',
@@ -78,6 +81,10 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
 
   const setRiskGroup = (isRiskGroup) => {
     setIsRiskGroup(isRiskGroup);
+  };
+
+  const setImmunocompromised = (Immunocompromised) => {
+    setIsImmunocomp(Immunocompromised);
   };
 
   const updateAnswerData = (questionData) => {
@@ -172,6 +179,8 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
         setRiskGroup={setRiskGroup}
         setJJApproved={setJJApproved}
         isJassenapproved={isJassenapproved}
+        setImmunocompromised={setImmunocompromised}
+        isImmunocomp={isImmunocomp}
       ></QuestionView>
       {/* <p>{`Zip Code ${isInZipCodeRange ? 'is' : 'is not'} in range`}</p> */}
     </div>

@@ -10,7 +10,8 @@ const SelectVaccineComponent = ({
   schedulePush,
   pfizerSelected,
   updateAnswerData,
-  isSpanish
+  isSpanish,
+  isImmunocomp
 }) => {
   // const [isDiagnosed, setIsDiagnosed] = useState('');
 
@@ -36,7 +37,7 @@ const SelectVaccineComponent = ({
             <br></br>
             <br></br>
             <fieldset>
-              <legend>{SVText[0]}</legend>
+              <legend>What was your Dose 1{isImmunocomp?'&2':''} Vaccine?</legend>
 
               <div className="radio_row_item">
                 <input

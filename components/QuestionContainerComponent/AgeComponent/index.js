@@ -14,7 +14,7 @@ const Over18Component = ({
   const [isOver18, setIsOver18] = useState(true);
 
   useEffect(() => {
-    isPrevEnabled(true);
+    isPrevEnabled(false);
     isDoneEnabled(false);
   }, []);
 
@@ -36,9 +36,9 @@ const Over18Component = ({
             type="radio"
             name="employee_staff"
             onClick={(e) => {
-              nextPage(e,2);
               setIsOver18(true);
               overEighteen(true);
+              nextPage();
             }}
           ></input>
           <label htmlFor="employee_staff_check_yes">{OEText[0]}</label>
@@ -49,7 +49,6 @@ const Over18Component = ({
             type="radio"
             name="employee_staff"
             onClick={(e) => {
-              // nextPage();
               setIsOver18(false);
               setJJApproved(false);
               nextPage();

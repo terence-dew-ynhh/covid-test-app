@@ -46,7 +46,7 @@ const ThirdDoseComponent = ({
             of prednisone daily) or any of the other medications{' '}
             <a
               target="__blank"
-              href="https://www.ynhhs.org/patient-care/covid-19/Vaccine/third-dose-immunocompromised"
+              href="https://mychart.ynhhs.org/mychart-prd/en-US/PDF/CDCMedImmunoBoosterDose.pdf"
             >
               on this list
             </a>{' '}

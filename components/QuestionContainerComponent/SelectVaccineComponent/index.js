@@ -48,7 +48,8 @@ const SelectVaccineComponent = ({
                   onClick={(e) => {
                     updateAnswerData({ sel_vaccine: 'Moderna' });
                     pfizerSelected(false);
-                    nextPage(e);
+                    if(isImmunocomp)nextPage(e,2);
+                    else nextPage()
                   }}
                 ></input>
                 <label htmlFor="prev_covid_no">Moderna</label>
@@ -64,7 +65,8 @@ const SelectVaccineComponent = ({
                   onClick={(e) => {
                     updateAnswerData({ sel_vaccine: 'Pfizer' });
                     pfizerSelected(true);
-                    nextPage(e);
+                    if(isImmunocomp)nextPage(e,2);
+                    else nextPage()
                   }}
                 ></input>
                 <label htmlFor="prev_covid_yes">Pfizer</label>

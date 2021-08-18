@@ -52,9 +52,6 @@ const FirstDoseComponent = ({
                     name="prev_covid"
                     onClick={(e) => {
                       updateAnswerData({ first_dose: e.target.value });
-                      if(isOver18)
-                      nextPage();
-                      else
                       nextPage(e, 2);
                     }}
                   ></input>
@@ -62,8 +59,6 @@ const FirstDoseComponent = ({
                   </div>
                   <br></br>
                   <br></br>
-                  {isImmunocomp &&
-                  (<>
                 <div className="radio_row_item">
                   <input
                     id="third_dose"
@@ -78,7 +73,7 @@ const FirstDoseComponent = ({
                       nextPage(e, 2);
                     }}
                   ></input>
-                  <label htmlFor="third_dose">{FDText[3]}</label></div></>)} 
+                  <label htmlFor="third_dose">{FDText[3]}</label></div>
             </fieldset>
             <br></br>
             <br></br>

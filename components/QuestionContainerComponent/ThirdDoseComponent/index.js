@@ -58,13 +58,8 @@ const ThirdDoseComponent = ({
             name="employee_staff"
             onClick={(e) => {
               setImmunocompromised(true);
-
-              if(isOver18){
-                nextPage(e,2);
-              }
-              else{
               nextPage();}
-            }}
+            }
           ></input>
           <label htmlFor="employee_staff_check_yes">{OEText[0]}</label>
           <br></br>
@@ -75,12 +70,8 @@ const ThirdDoseComponent = ({
             name="employee_staff"
             onClick={(e) => {
               setImmunocompromised(false);
-              if(isOver18){
-                nextPage(e,2);
-              }
-              else{
               nextPage();}
-            }}
+            }
           ></input>
           <label htmlFor="employee_staff_check_no">{OEText[1]}</label>
         </fieldset>

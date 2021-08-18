@@ -38,7 +38,7 @@ const Over18Component = ({
             onClick={(e) => {
               setIsOver18(true);
               overEighteen(true);
-              nextPage();
+              nextPage(e,2);
             }}
           ></input>
           <label htmlFor="employee_staff_check_yes">{OEText[0]}</label>

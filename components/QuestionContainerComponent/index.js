@@ -40,11 +40,10 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
   const compNames = [
     'slotsfilled',
     'age',
-    'immunocomp',
     'vaccineconsent',
     'firstdose',
+    'immunocomp',
     'selectedvaccine',
-    'listconditions',
     'hithistory',
     'testedpositive',
     'covidsymptoms',

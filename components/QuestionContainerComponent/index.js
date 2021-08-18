@@ -111,7 +111,7 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
     router.push(
       `/scheduling?recc_date=${selDate}&in_zip_range=${isInZipCodeRange}&second_dose=${
         isPfizer == null ? false : true
-      }&isPfizer=${isPfizer}&isSpanish=${isSpanish}&isRiskGroup=${isRiskGroup}&isOver18=${isOver18}&jjapproved=${isJassenapproved}`,
+      }&isPfizer=${isPfizer}&isSpanish=${isSpanish}&isRiskGroup=${isRiskGroup}&isOver18=${isOver18}&jjapproved=${isJassenapproved}&isimmunocomp=${isImmunocomp}`,
       '/scheduling'
     );
   };

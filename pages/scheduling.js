@@ -149,7 +149,8 @@ Home.getInitialProps = async ({ query }) => {
     isSpanish,
     isRiskGroup,
     isOver18,
-    jjapproved
+    jjapproved,
+    isimmunocomp
   } = query;
   let link = '';
 
@@ -172,6 +173,15 @@ Home.getInitialProps = async ({ query }) => {
     if (isPfizer == 'true') {
       link =
         'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=87701,88037,88038,88040,88042,88043,88046&vt=2339&dept=204680001,204590014,203260005,204400009,201120002,204530003,208040011&view=plain&public=1';
+    }
+  }
+
+  if (isimmunocomp == 'true') {
+    link =
+      'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=90412&vt=2445&dept=204150016&view=plain&public=1';
+    if (isPfizer == 'true') {
+      link =
+        'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=90409,88040,88037,88046,88038,88042,88043&vt=2444&dept=204010005,204400009,204590014,208040011,203260005,201120002,204530003&view=plain&public=1';
     }
   }
 

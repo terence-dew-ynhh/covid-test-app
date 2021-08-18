@@ -71,6 +71,7 @@ const SelectVaccineComponent = ({
               </div>
             </fieldset>
           </div>
+          <p><b>If you are unsure: find your vaccine card, call the place where you get vaccinated, or call the call center at 1-833-ASK-YNHH (275-9644)</b></p>
         </div>
       </div>
       <style jsx>{``}</style>

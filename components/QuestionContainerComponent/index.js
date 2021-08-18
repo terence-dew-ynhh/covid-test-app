@@ -4,11 +4,9 @@ import styles from './QuestionContainerComponent.module.css';
 import { useRouter } from 'next/router';
 
 const currentAppState = async () => {
-
   return await fetch('/api/open')
-  .then(res => res.json())
-  .then(res => res.open)
-  
+    .then((res) => res.json())
+    .then((res) => res.open);
 };
 
 const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
@@ -28,14 +26,13 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
   const router = useRouter();
 
   useEffect(() => {
-    currentAppState().then(appFlag => {
-    if(appFlag){
-      setviewIdx(1);
-    }
-    setApplicationOn(appFlag);
+    currentAppState().then((appFlag) => {
+      if (appFlag) {
+        setviewIdx(1);
+      }
+      setApplicationOn(appFlag);
     });
   }, []);
-
 
   const compNames = [
     'slotsfilled',
@@ -52,7 +49,7 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
     'factsheet',
     'ynhhfactsheet',
     'quartinecovid',
-    'vaccineschedule',
+    'vaccineschedule'
   ];
 
   let progressWidth = Math.floor(100 * ((viewIdx + 1) / compNames.length));
@@ -73,7 +70,7 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
     setSelDate(date);
   };
 
-   const setJJApproved = (approved) => {
+  const setJJApproved = (approved) => {
     setIsJassenapproved(approved);
   };
 

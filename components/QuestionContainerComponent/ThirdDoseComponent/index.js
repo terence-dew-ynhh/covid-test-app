@@ -8,13 +8,14 @@ const ThirdDoseComponent = ({
   isDoneEnabled,
   isSpanish,
   setImmunocompromised,
-  isOver18
+  isImmunocomp
 }) => {
   useEffect(() => {
     isPrevEnabled(true);
     isDoneEnabled(false);
   }, []);
 
+  const [meetsCriteria, setMeetsCriteria] = useState(true)
   let OEText = isSpanish ? oeText.sp : oeText.en;
 
   return (
@@ -22,6 +23,18 @@ const ThirdDoseComponent = ({
       <div className={styles.question_row_item}>
         <br></br>
         <br></br>
+        <p className="error" hidden={meetsCriteria}>
+          Yale New Haven Health is following State of Connecticut and Centers
+          for Disease Control and Prevention (CDC) guidance that allows for
+          certain individuals with compromised immune systems to receive a third
+          dose of either the Moderna or Pfizer COVID-19 vaccines.
+          <br></br>
+          <br></br>
+          We will continue to update our website, ynhhs.org, regarding
+          eligibility and additional guidance. Please do not contact your
+          doctor’s office to request a booster if you are not currently
+          eligible.
+        </p>
         <fieldset className="radio_grp_set">
           <legend>
             <b>
@@ -58,8 +71,8 @@ const ThirdDoseComponent = ({
             name="employee_staff"
             onClick={(e) => {
               setImmunocompromised(true);
-              nextPage();}
-            }
+              nextPage();
+            }}
           ></input>
           <label htmlFor="employee_staff_check_yes">{OEText[0]}</label>
           <br></br>
@@ -70,8 +83,8 @@ const ThirdDoseComponent = ({
             name="employee_staff"
             onClick={(e) => {
               setImmunocompromised(false);
-              nextPage();}
-            }
+              setMeetsCriteria(false);
+            }}
           ></input>
           <label htmlFor="employee_staff_check_no">{OEText[1]}</label>
         </fieldset>

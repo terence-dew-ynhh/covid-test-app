@@ -6,11 +6,10 @@ const SelectVaccineComponent = ({
   nextPage,
   isPrevEnabled,
   isDoneEnabled,
-  updateField,
-  schedulePush,
   pfizerSelected,
   updateAnswerData,
-  isSpanish
+  isSpanish,
+  isImmunocomp
 }) => {
   // const [isDiagnosed, setIsDiagnosed] = useState('');
 
@@ -18,12 +17,6 @@ const SelectVaccineComponent = ({
     isDoneEnabled(false);
     isPrevEnabled(true);
   }, []);
-
-  // const choiceSelected = (e) => {
-  //   if (e.target.value === 'Yes') schedulePush(true);
-  //   else nextPage(e.target.value);
-  //   setIsDiagnosed(e.target.value);
-  // };
 
   let SVText = isSpanish ? svText.sp : svText.en;
 
@@ -36,7 +29,9 @@ const SelectVaccineComponent = ({
             <br></br>
             <br></br>
             <fieldset>
-              <legend>{SVText[0]}</legend>
+              <legend>
+                What was your Dose 1{isImmunocomp ? '&2' : ''} Vaccine?
+              </legend>
 
               <div className="radio_row_item">
                 <input
@@ -47,7 +42,8 @@ const SelectVaccineComponent = ({
                   onClick={(e) => {
                     updateAnswerData({ sel_vaccine: 'Moderna' });
                     pfizerSelected(false);
-                    nextPage(e);
+                    if (pfizerSelected == null) nextPage();
+                    else nextPage(e, 2);
                   }}
                 ></input>
                 <label htmlFor="prev_covid_no">Moderna</label>
@@ -63,13 +59,21 @@ const SelectVaccineComponent = ({
                   onClick={(e) => {
                     updateAnswerData({ sel_vaccine: 'Pfizer' });
                     pfizerSelected(true);
-                    nextPage(e);
+                    if (pfizerSelected == null) nextPage();
+                    else nextPage(e, 2);
                   }}
                 ></input>
                 <label htmlFor="prev_covid_yes">Pfizer</label>
               </div>
             </fieldset>
           </div>
+          <p>
+            <b>
+              If you are unsure: find your vaccine card, call the place where
+              you got vaccinated, or call the YNHHS call center at 1-833-ASK-YNHH
+              (275-9644) for further assistance.
+            </b>
+          </p>
         </div>
       </div>
       <style jsx>{``}</style>

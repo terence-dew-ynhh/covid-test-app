@@ -91,7 +91,7 @@ const YNHHFactSheetComponent = ({
                   type="radio"
                   name="prev_covid"
                   onClick={(e) => {
-                    nextPage(e);
+                    schedulePush(e);
                   }}
                 ></input>
                 <label htmlFor="prev_covid_agree">{FSText[4]}</label>
@@ -104,7 +104,7 @@ const YNHHFactSheetComponent = ({
                   type="radio"
                   name="prev_covid_later"
                   onClick={(e) => {
-                    nextPage(e);
+                    schedulePush(e);
                   }}
                 ></input>
                 <label htmlFor="prev_covid_later">{FSText[5]}</label>

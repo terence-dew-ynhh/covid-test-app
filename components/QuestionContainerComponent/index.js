@@ -4,11 +4,9 @@ import styles from './QuestionContainerComponent.module.css';
 import { useRouter } from 'next/router';
 
 const currentAppState = async () => {
-
   return await fetch('/api/open')
-  .then(res => res.json())
-  .then(res => res.open)
-  
+    .then((res) => res.json())
+    .then((res) => res.open);
 };
 
 const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
@@ -19,6 +17,7 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
   const [isInZipCodeRange, setIsInZipCodeRange] = useState(false);
   const [isOver18, setIsOver18] = useState(false);
   const [isRiskGroup, setIsRiskGroup] = useState(false);
+  const [isImmunocomp, setIsImmunocomp] = useState(false);
   const [viewJump, setviewJump] = useState([]);
   const [selDate, setSelDate] = useState('');
   const [responseData, setResponseData] = useState({});
@@ -27,31 +26,30 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
   const router = useRouter();
 
   useEffect(() => {
-    currentAppState().then(appFlag => {
-    if(appFlag){
-      setviewIdx(1);
-    }
-    setApplicationOn(appFlag);
+    currentAppState().then((appFlag) => {
+      if (appFlag) {
+        setviewIdx(1);
+      }
+      setApplicationOn(appFlag);
     });
   }, []);
-
 
   const compNames = [
     'slotsfilled',
     'age',
     'vaccineconsent',
     'firstdose',
+    'immunocomp',
     'selectedvaccine',
-    'listconditions',
     'hithistory',
     'testedpositive',
     'covidsymptoms',
+    'quartinecovid',
     'monoclonal',
     'misc',
     'factsheet',
     'ynhhfactsheet',
-    'quartinecovid',
-    'vaccineschedule',
+    // 'vaccineschedule'
   ];
 
   let progressWidth = Math.floor(100 * ((viewIdx + 1) / compNames.length));
@@ -72,12 +70,16 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
     setSelDate(date);
   };
 
-   const setJJApproved = (approved) => {
+  const setJJApproved = (approved) => {
     setIsJassenapproved(approved);
   };
 
   const setRiskGroup = (isRiskGroup) => {
     setIsRiskGroup(isRiskGroup);
+  };
+
+  const setImmunocompromised = (Immunocompromised) => {
+    setIsImmunocomp(Immunocompromised);
   };
 
   const updateAnswerData = (questionData) => {
@@ -106,7 +108,7 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
     router.push(
       `/scheduling?recc_date=${selDate}&in_zip_range=${isInZipCodeRange}&second_dose=${
         isPfizer == null ? false : true
-      }&isPfizer=${isPfizer}&isSpanish=${isSpanish}&isRiskGroup=${isRiskGroup}&isOver18=${isOver18}&jjapproved=${isJassenapproved}`,
+      }&isPfizer=${isPfizer}&isSpanish=${isSpanish}&isRiskGroup=${isRiskGroup}&isOver18=${isOver18}&jjapproved=${isJassenapproved}&isimmunocomp=${isImmunocomp}`,
       '/scheduling'
     );
   };
@@ -172,6 +174,8 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
         setRiskGroup={setRiskGroup}
         setJJApproved={setJJApproved}
         isJassenapproved={isJassenapproved}
+        setImmunocompromised={setImmunocompromised}
+        isImmunocomp={isImmunocomp}
       ></QuestionView>
       {/* <p>{`Zip Code ${isInZipCodeRange ? 'is' : 'is not'} in range`}</p> */}
     </div>

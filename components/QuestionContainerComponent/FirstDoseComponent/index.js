@@ -9,7 +9,7 @@ const FirstDoseComponent = ({
   updateAnswerData,
   isSpanish,
   isOver18,
-  schedulePush
+  isImmunocomp
 }) => {
   // const [isDiagnosed, setIsDiagnosed] = useState('');
 
@@ -30,36 +30,47 @@ const FirstDoseComponent = ({
 
               <div className="radio_row_item">
                 <input
-                  id="prev_covid_yes"
+                  id="first_dose"
                   type="radio"
                   value="Yes"
                   name="prev_covid"
                   onClick={(e) => {
                     updateAnswerData({ first_dose: e.target.value });
-                    nextPage(e,2);
+                    nextPage(e,3);
 
                   }}
                 ></input>
-                <label htmlFor="prev_covid_yes">{FDText[1]}</label>
+                <label htmlFor="first_dose">{FDText[1]}</label>
+                </div>
                 <br></br>
                 <br></br>
                 <div className="radio_row_item">
                   <input
-                    id="prev_covid_no"
+                    id="second_dose"
                     type="radio"
                     value="No"
                     name="prev_covid"
                     onClick={(e) => {
                       updateAnswerData({ first_dose: e.target.value });
-                      if(isOver18)
-                      nextPage();
-                      else
-                      nextPage(e, 2);
+                      nextPage(e,2);
                     }}
                   ></input>
-                  <label htmlFor="prev_covid_no">{FDText[2]}</label>
-                </div>
-              </div>
+                  <label htmlFor="second_dose">{FDText[2]}</label>
+                  </div>
+                  <br></br>
+                  <br></br>
+                <div className="radio_row_item">
+                  <input
+                    id="third_dose"
+                    type="radio"
+                    value="No"
+                    name="prev_covid"
+                    onClick={(e) => {
+                      updateAnswerData({ first_dose: e.target.value });
+                      nextPage();
+                    }}
+                  ></input>
+                  <label htmlFor="third_dose">{FDText[3]}</label></div>
             </fieldset>
             <br></br>
             <br></br>

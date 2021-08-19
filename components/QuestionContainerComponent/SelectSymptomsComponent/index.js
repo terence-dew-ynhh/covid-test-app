@@ -83,13 +83,17 @@ const SelectSymptoms = ({
   const handleChecked = (e) => {
     if (e.target.id === 'prev_covid_no_symp_exp' && e.target.checked === true) {
       disableCheckboxes(e);
-      isDoneEnabled(true);
+      // isDoneEnabled(true);
       hasSymptoms(false, true);
-    }
-    else if (e.target.id === 'prev_covid_no_symp' && e.target.checked === true) {
+      nextPage(e);
+    } else if (
+      e.target.id === 'prev_covid_no_symp' &&
+      e.target.checked === true
+    ) {
       disableCheckboxes(e);
-      isDoneEnabled(true);
+      // isDoneEnabled(true);
       hasSymptoms(false, false);
+      nextPage(e);
     } else {
       enableCheckboxes(e);
       isDoneEnabled(false);

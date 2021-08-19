@@ -104,7 +104,7 @@ export default function Home({
         >
           Click here to see Vaccine Schedule
         </button>
-        <p>{`Over 18:${isOver18} | Pfizer:${isPfizer} | Third Dose:${isimmunocomp}`}</p>
+        {/* <p>{`Over 18:${isOver18} | Pfizer:${isPfizer} | Third Dose:${isimmunocomp}`}</p> */}
         <iframe
           id="openSchedulingFrame"
           className="widgetframe"

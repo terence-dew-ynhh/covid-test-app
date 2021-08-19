@@ -70,8 +70,8 @@ const SelectVaccineComponent = ({
           <p>
             <b>
               If you are unsure: find your vaccine card, call the place where
-              you get vaccinated, or call the call center at 1-833-ASK-YNHH
-              (275-9644)
+              you got vaccinated, or call the YNHHS call center at 1-833-ASK-YNHH
+              (275-9644) for further assistance.
             </b>
           </p>
         </div>

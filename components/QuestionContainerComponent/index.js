@@ -44,12 +44,12 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
     'hithistory',
     'testedpositive',
     'covidsymptoms',
+    'quartinecovid',
     'monoclonal',
     'misc',
     'factsheet',
     'ynhhfactsheet',
-    'quartinecovid',
-    'vaccineschedule'
+    // 'vaccineschedule'
   ];
 
   let progressWidth = Math.floor(100 * ((viewIdx + 1) / compNames.length));

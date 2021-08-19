@@ -32,11 +32,14 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Home({
   link,
-  recc_date,
-  second_dose,
-  isSpanish,
+  isPfizer,
   isRiskGroup,
-  isOver18
+  isOver18,
+  jjapproved,
+  second_dose,
+  isimmunocomp,
+  isSpanish,
+  recc_date
 }) {
   const [open, setOpen] = useState(false);
   const [modalStyle] = useState(getModalStyle);
@@ -101,6 +104,7 @@ export default function Home({
         >
           Click here to see Vaccine Schedule
         </button>
+        <p>{`Over 18:${isOver18} | Pfizer:${isPfizer} | Third Dose:${isimmunocomp}`}</p>
         <iframe
           id="openSchedulingFrame"
           className="widgetframe"
@@ -178,10 +182,10 @@ Home.getInitialProps = async ({ query }) => {
 
   if (isimmunocomp == 'true') {
     link =
-      'https://mychartnp.ynhhs.org/poc/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=90412&vt=2445&dept=204150016&view=plain&public=1';
+      'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=90412&vt=2445&dept=204150016&view=plain&public=1';
     if (isPfizer == 'true') {
       link =
-        'https://mychartnp.ynhhs.org/poc/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=90409,88040,88037,88046,88038,88042,88043&vt=2444&dept=204010005,204400009,204590014,208040011,203260005,201120002,204530003&view=plain&public=1';
+        'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=90409,88040,88037,88046,88038,88042,88043&vt=2444&dept=204010005,204400009,204590014,208040011,203260005,201120002,204530003&view=plain&public=1';
     }
   }
 
@@ -195,7 +199,9 @@ Home.getInitialProps = async ({ query }) => {
     second_dose,
     isSpanish,
     isRiskGroup,
-    isOver18
+    isOver18,
+    isimmunocomp,
+    isPfizer
   };
 };
 // export default redirect('http://www.ynhhs.org/covidvaccine');

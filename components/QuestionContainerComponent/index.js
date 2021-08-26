@@ -12,8 +12,7 @@ const QuestionFormComponent = ({}) => {
   const router = useRouter();
 
   const compNames = [
-    'location',
-    'employee',
+    'location',    
     'needcovidtesting',
     'symptomssel',
     'sevsymptomsstatment',
@@ -23,12 +22,17 @@ const QuestionFormComponent = ({}) => {
     'highriskstatement',
     'posttravel',
     'negconsent',
-    'vaccineexempt'
+    'vaccineexempt',
+    'employee',
+    'returnprocess',
+    'workplaceexposure',
+    'householdexposure'
   ];
 
   const nextPage = (e, pageJump) => {
     let pageProg = pageJump ? pageJump : 1;
     let index = pageProg > 1 ? viewIdx + pageProg : viewIdx + 1;
+
     let newjumpArr = [...jumpTracking, pageProg];
     setJumpTracking(newjumpArr);
     setviewIdx(index);

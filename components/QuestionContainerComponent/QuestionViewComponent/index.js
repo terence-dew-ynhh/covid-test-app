@@ -15,6 +15,9 @@ import VaccineDoseComponent from '../VaccineDoseComponent';
 import ExposureToCovidComponent from '../ExposureToCovidComponent';
 import PossibleFluConsent from '../PossibleFluConsentComponent'
 import VaccineExemptConsentComponent from '../VaccineExemptConsentComponent'
+import ReturnProcessConsentComponent from '../ReturnProcessConsentComponent'
+import WorkPlaceExposureComponent from '../WorkPlaceExposureComponent'
+import HouseHoldExposureComponent from '../HouseHoldExposureComponent'
 import styles from './QuestionViewComponent.module.css'
 
 
@@ -60,7 +63,10 @@ const QuestionViewComponent = ({
     vaccinedose: VaccineDoseComponent,
     exposuretocovid: ExposureToCovidComponent,
     possibleflu:PossibleFluConsent,
-    vaccineexempt: VaccineExemptConsentComponent
+    vaccineexempt: VaccineExemptConsentComponent,
+    returnprocess: ReturnProcessConsentComponent,
+    workplaceexposure: WorkPlaceExposureComponent,
+    householdexposure: HouseHoldExposureComponent,
   };
 
   const ComponentName = components[compName || 'employee'];

@@ -1,13 +1,12 @@
 import { useState, useEffect } from 'react';
 import styles from './EmployeeQuestionComponent.module.css'
 
-
  const EmployeeQuestion =({nextPage, isPrevEnabled, isNextEnabled, isDoneEnabled}) => {
   
   const [isEmployee, setIsEmployee] = useState(true);
 
   useEffect(() => {
-    isPrevEnabled(false);
+    isPrevEnabled(true);
     isDoneEnabled(false);
     isNextEnabled(false);
   }, []);
@@ -15,36 +14,35 @@ import styles from './EmployeeQuestionComponent.module.css'
     return (
     <>
       <div className={styles.question_row_item}>
-      <p className="error" hidden={isEmployee}>
-          Sorry, please navigate to a public testing website to schedule your
-          test
-        </p>
-        <fieldset className="radio_grp_set">
-          <legend>
-          Are you an employee or medical staff of Yale New Haven Health or Yale Medicine?
-          </legend>
+
+      <p className="disclaimer">
+            If you are at work, please ensure you are wearing a mask now, notify
+            your supervisor and leave work. If you are home, stay home.
+          </p>
+          <fieldset>
+            <p className="error">
+            - Symptoms such as fever, cough or body aches may also indicate the flu.{' '}
+            <br></br>
+            <br></br>- We recommend contacting your primary care provider or Urgent Care for testing and medical advice regarding this, especially if you age 65
+            years or older, have a chronic medical condition, and/or are
+            pregnant.<br></br>
+            <br></br>
+          </p>
+
           <input
             id="employee_staff_check_yes"
             type="radio"
             name="employee_staff"
-            onClick={() => {
-              nextPage()
-              setIsEmployee(true);
+            onClick={(e) => {
+              nextPage(e, 1);
             }}
           ></input>
-          <label htmlFor="employee_staff_check_yes">Yes</label>
+          <label htmlFor="employee_staff_check_yes">Continue</label>
 
-          <input
-            id="employee_staff_check_no"
-            type="radio"
-            name="employee_staff"
-            onClick={() => {
-              setIsEmployee(false);
-            }}
-          ></input>
-          <label htmlFor="employee_staff_check_no">No</label>
-        </fieldset>        
+          </fieldset>
+
       </div>
+
       <style jsx>{``}</style>
     </>
   );

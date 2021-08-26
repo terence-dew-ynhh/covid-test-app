@@ -68,8 +68,9 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
         if(isSevere){
           nextPage(e);
         }else{
-          if(idx < 2 || idx == 3 ) nextPage(e,3)
-          else nextPage(e,2);
+          if(idx >= 0 ){
+            nextPage(e,9);
+          }
         }
       } else {
         noneChk.disabled = false;

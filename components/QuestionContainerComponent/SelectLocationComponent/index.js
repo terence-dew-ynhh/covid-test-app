@@ -29,7 +29,7 @@ const SelectLocation = ({ isNextEnabled, updateLocation }) => {
             <div className="select-wrapper">
               <select
                 onChange={(e) => {
-                  updateLocation(e.target.value);
+                  updateLocation(e.target.value);                  
                 }}
                 className="select"
               >

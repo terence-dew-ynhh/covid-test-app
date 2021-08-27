@@ -67,7 +67,7 @@ import styles from './RequireCovidTestingComponent.module.css'
               nextPage(e,12)
             }}
           ></input>
-          <label htmlFor="employee_staff_check_workplace_exposure">I had a possible WORKPLACE exposure to someone with COVID-19</label>
+          <label htmlFor="employee_staff_check_workplace_exposure">I have a COVID 19 Vaccine exemption (or I am not fully vaccinated) and I am required to have twice weekly testing</label>
           <br></br>
           <br></br>
           <input
@@ -79,7 +79,7 @@ import styles from './RequireCovidTestingComponent.module.css'
               nextPage(e,13)
             }}
           ></input>
-          <label htmlFor="employee_staff_check_household_exposure">I had a possible Household or Community exposure to someone with COVID-19</label>
+          <label htmlFor="employee_staff_check_household_exposure">I am asymptomatic but have had a confirmed exposure at work or in the community</label>
         </fieldset>        
       </div>
       <style jsx>{``}</style>

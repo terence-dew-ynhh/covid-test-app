@@ -84,11 +84,11 @@ const WorkPlaceExposureComponent = ({
                 <b>b.</b> Please schedule your test 5 days from the date of the
                 exposure (not earlier)<br></br>
                 <br></br>
-                <b>i.</b>If you test <strong>POSITIVE</strong>, contact the
+                <b>i.</b> If you test <strong>POSITIVE</strong>, contact the
                 Occupational Health Employee Resource Center at 844-543-2147,
                 option 2
               </blockquote>
-              <b>3.</b> <strong>NOT</strong> Fully VACCINATED Employees
+              <b>3.</b><strong>NOT</strong> Fully VACCINATED Employees
               (Unvaccinated OR it has NOT been at least 2 weeks since receiving
               your final COVID-19 vaccine dose):<br></br>
               <br></br>
@@ -96,8 +96,10 @@ const WorkPlaceExposureComponent = ({
                 <b>a.</b> You must quarantine for 10 days from the date of the
                 exposure and undergo testing on day # 10.<br></br>
                 <b>b.</b> Please schedule your test 10 days from the date of
-                exposure (not earlier)<br></br>
-                <br></br> <b>i.</b> If you test <strong>POSITIVE</strong>,
+                exposure (not earlier)
+                <br></br>
+                <br></br>
+                <b>i.</b> If you test <strong>POSITIVE</strong>,
                 contact the Occupational Health Employee Resource Center
                 844-543-2147, option 2<br></br>
                 <b>ii.</b> If you test NEGATIVE on this day # 10 test, you may

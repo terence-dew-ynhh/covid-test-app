@@ -5,7 +5,8 @@ const VaccineExemptConsentComponent = ({
   nextPage,
   isPrevEnabled,
   isDoneEnabled,
-  schedulePush
+  schedulePush,
+  isConnecticut
 }) => {
   const [hasConsent, setHasConsent] = useState('');
 
@@ -67,7 +68,7 @@ const VaccineExemptConsentComponent = ({
         <div className={styles.question_row_item_sub}>
           <fieldset>
             <legend>
-              - I have a COVID-19 Vaccine Exemption and I am Required for weekly
+              - I work in {isConnecticut ? "CT" : "RI"} and I have a COVID-19 Vaccine Exemption and I am Required for weekly
               COVID-19 PCR testing<br></br>
               <br></br>- I am currently asymptomatic and will continue to work
               <br></br>

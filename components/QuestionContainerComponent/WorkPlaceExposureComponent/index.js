@@ -66,23 +66,46 @@ const WorkPlaceExposureComponent = ({
       <div className={styles.question_row_item}>
         <div className={styles.question_row_item_sub}>
           <fieldset>
-          <legend>
-            
-            Notify and discuss with your manager/supervisor that you may have had a high risk workplace exposure.  Details regarding the risk of exposure can be assessed between your manager and the Infection Prevention Contact Tracing team
-            <br></br><br></br>
-  
-            Fully VACCINATED Employees (it has been {">2"} weeks since receiving your final dose of the COVID-19 vaccine):<br></br><br></br>
-            You may continue to work as long as you are ASYMPTOMATIC<br></br>
-            Please schedule your test 5 days from the date of the exposure (not earlier)<br></br>
-            If you test <strong>POSITIVE</strong>, contact the Occupational Health Employee Resource Center at 844-543-2147, option 2
-            <br></br><br></br>
-            <strong>NOT</strong> Fully VACCINATED Employees (Unvaccinated OR it has NOT been at least 2 weeks since receiving your final COVID-19 vaccine dose):<br></br><br></br>
-            You must quarantine for 10 days from the date of the exposure and undergo testing on day # 10.<br></br>
-            Please schedule your test 10 days from the date of exposure (not earlier)<br></br>
-            If you test <strong>POSITIVE</strong>, contact the Occupational Health Employee Resource Center 844-543-2147, option 2<br></br>
-            If you test NEGATIVE on this day # 10 test, you may return to work on day # 11 <br></br>
-            If you need a return to work clearance from Occupational Health after completing your quarantine, contact the Employee Resource Center at 844-543-2147, option 2
-  
+            <legend>
+              <b>1.</b> Notify and discuss with your manager/supervisor that you
+              may have had a high risk workplace exposure. Details regarding the
+              risk of exposure can be assessed between your manager and the
+              Infection Prevention Contact Tracing team
+              <br></br>
+              <br></br>
+              <b>2.</b> Fully VACCINATED Employees (it has been {'>2'} weeks
+              since receiving your final dose of the COVID-19 vaccine):<br></br>
+              <br></br>
+              <blockquote>
+                <b>a.</b> You may continue to work as long as you are
+                ASYMPTOMATIC
+                <br></br>
+                <br></br>
+                <b>b.</b> Please schedule your test 5 days from the date of the
+                exposure (not earlier)<br></br>
+                <br></br>
+                <b>i.</b>If you test <strong>POSITIVE</strong>, contact the
+                Occupational Health Employee Resource Center at 844-543-2147,
+                option 2
+              </blockquote>
+              <b>3.</b> <strong>NOT</strong> Fully VACCINATED Employees
+              (Unvaccinated OR it has NOT been at least 2 weeks since receiving
+              your final COVID-19 vaccine dose):<br></br>
+              <br></br>
+              <blockquote>
+                <b>a.</b> You must quarantine for 10 days from the date of the
+                exposure and undergo testing on day # 10.<br></br>
+                <b>b.</b> Please schedule your test 10 days from the date of
+                exposure (not earlier)<br></br>
+                <br></br> <b>i.</b> If you test <strong>POSITIVE</strong>,
+                contact the Occupational Health Employee Resource Center
+                844-543-2147, option 2<br></br>
+                <b>ii.</b> If you test NEGATIVE on this day # 10 test, you may
+                return to work on day # 11 <br></br>
+                <b>iii.</b> If you need a return to work clearance from
+                Occupational Health after completing your quarantine, contact
+                the Employee Resource Center at 844-543-2147, option 2
+              </blockquote>
             </legend>
             <div className={styles.q1_grid}>{checkboxes}</div>
           </fieldset>

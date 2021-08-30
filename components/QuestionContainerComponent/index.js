@@ -9,6 +9,7 @@ const QuestionFormComponent = ({}) => {
   const [isSymptomatic, setIsSymptomatic] = useState(false);
   const [jumpTracking, setJumpTracking] = useState([]);
   const [progressBarVal, setProgressBarVal] = useState(12);
+  const [isConnecticut, setIsConnecticut] = useState(false);
   const router = useRouter();
 
   const compNames = [
@@ -79,6 +80,10 @@ const QuestionFormComponent = ({}) => {
     setIsSymptomatic(symptomatic);
   };
 
+  const updateIsConnecticut = (isInConnecticut) => {
+    setIsConnecticut(isInConnecticut);
+  };
+
   let progressWidth = Math.floor(100 * ((viewIdx + 1) / progressBarVal));
 
   return (
@@ -105,6 +110,8 @@ const QuestionFormComponent = ({}) => {
         schedulePush={schedulePush}
         updateLocation={updateLocation}
         updateIsSymptomatic={updateIsSymptomatic}
+        updateIsConnecticut={updateIsConnecticut}
+        isConnecticut={isConnecticut}
       ></QuestionView>
     </div>
   );

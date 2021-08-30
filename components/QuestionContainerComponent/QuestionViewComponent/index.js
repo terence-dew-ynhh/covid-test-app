@@ -27,7 +27,9 @@ const QuestionViewComponent = ({
   prevPage,
   schedulePush,
   updateLocation,
-  updateIsSymptomatic
+  updateIsSymptomatic,
+  updateIsConnecticut,
+  isConnecticut
 }) => {
   const [prevEnabled, setPrevEnabled] = useState(false);
   const [nextEnabled, setNextEnabled] = useState(false);
@@ -83,6 +85,8 @@ const QuestionViewComponent = ({
         schedulePush={schedulePush}
         updateLocation={updateLocation}
         updateIsSymptomatic={updateIsSymptomatic}
+        updateIsConnecticut={updateIsConnecticut}
+        isConnecticut={isConnecticut}
       />
       </div>
       <div className={styles.buttonContainer}>          

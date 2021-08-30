@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import styles from './RequireCovidTestingComponent.module.css'
 
 
- const RequireCovidTesting =({nextPage, isPrevEnabled, isDoneEnabled, updateIsSymptomatic, isNextEnabled}) => {
+ const RequireCovidTesting =({nextPage, isPrevEnabled, isDoneEnabled, updateIsSymptomatic, isNextEnabled, updateIsConnecticut}) => {
   
   const [isEmployee, setIsEmployee] = useState(true);
 
@@ -51,6 +51,7 @@ import styles from './RequireCovidTestingComponent.module.css'
             type="radio"
             name="employee_staff"
             onClick={(e) => {
+              updateIsConnecticut(true)
               updateIsSymptomatic(false)
               nextPage(e,9)
             }}
@@ -59,15 +60,16 @@ import styles from './RequireCovidTestingComponent.module.css'
           <br></br>
           <br></br>
           <input
-            id="employee_staff_check_workplace_exposure"
+            id="employee_ri_check_exempt"
             type="radio"
             name="employee_staff"
             onClick={(e) => {
+              updateIsConnecticut(false)
               updateIsSymptomatic(false)
-              nextPage(e,12)
+              nextPage(e,9)
             }}
           ></input>
-          <label htmlFor="employee_staff_check_exempt"><u>I work in RI</u> and have a COVID-19 Vaccine Exemption and I am Required for <u>twice weekly</u> COVID-19 testing</label>
+          <label htmlFor="employee_ri_check_exempt"><u>I work in RI</u> and have a COVID-19 Vaccine Exemption and I am Required for <u>twice weekly</u> COVID-19 testing</label>
           <br></br>
           <br></br>
           <input

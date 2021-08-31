@@ -19,8 +19,13 @@ import AgeComponent from '../AgeComponent';
 import HITHistoryComponent from '../HITHistoryComponent';
 import YNHHFactSheetComponent from '../YNHHFactSheetComponent';
 import MiscComponent from '../MiscComponent';
-import VaccineQuestionComponent from '../VaccineQuestionComponent';
 import EmployeeQuestionComponent from '../EmployeeQuestionComponent';
+import VaccineQuestionComponent from '../VaccineQuestionComponent';
+import IllnessWithFeverComponent from '../IllnessWithFeverComponent';
+import AllergicToChickenComponent from '../AllergicToChickenComponent';
+import SeriousReactionComponent from '../SeriousReactionComponent';
+import GuillainBarreComponent from '../GuillainBarreComponent';
+import ConsentForVaccination from '../ConsentForVaccination';
 import styles from './QuestionViewComponent.module.css';
 
 const QuestionViewComponent = ({
@@ -69,7 +74,12 @@ const QuestionViewComponent = ({
     hithistory: HITHistoryComponent,
     misc: MiscComponent,
     employee: EmployeeQuestionComponent,
-    vaccine: VaccineQuestionComponent
+    vaccine: VaccineQuestionComponent,
+    seriousreaction: SeriousReactionComponent,
+    illnessfever: IllnessWithFeverComponent,
+    chickenallergy: AllergicToChickenComponent,
+    guillainbarre: GuillainBarreComponent,
+    consent: ConsentForVaccination,  
   };
   const ComponentName = components[compName || 'pininput'];
 

@@ -43,6 +43,11 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
     'ynhhfactsheet',
     'quartinecovid',
     'vaccineschedule',
+    'seriousreaction',
+    'illnessfever',
+    'chickenallergy',
+    'guillainbarre',
+    'consent',
   ];
 
   let progressWidth = Math.floor(100 * ((viewIdx + 1) / compNames.length));

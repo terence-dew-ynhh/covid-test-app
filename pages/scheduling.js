@@ -121,26 +121,26 @@ Home.getInitialProps = async ({ query }) => {
   let link = '';
 
   link =
-    'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=88976,88977,88978&vt=2293&dept=201570002&view=plain&public=1';
+    'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=88976&vt=2443&dept=201570002&view=plain&public=1&lang=english';
 
-  if (jjapproved == 'true') {
-    link =
-      'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=88976,88977,88978&vt=2293&dept=201570002&view=plain&public=1';
-  }
+  // if (jjapproved == 'true') {
+  //   link =
+  //     'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=88976,88977,88978&vt=2293&dept=201570002&view=plain&public=1';
+  // }
 
-  if (isOver18 == 'false') {
-    link =
-      'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=88976,88977,88978&vt=2293&dept=201570002&view=plain&public=1';
-  }
+  // if (isOver18 == 'false') {
+  //   link =
+  //     'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=88976,88977,88978&vt=2293&dept=201570002&view=plain&public=1';
+  // }
 
-  if (second_dose == 'true') {
-    link =
-      'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=88977&vt=2338&dept=201570002&view=plain&public=1';
-    if (isPfizer == 'true') {
-      link =
-        'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=88976,88977,88978&vt=2293&dept=201570002&view=plain&public=1';
-    }
-  }
+  // if (second_dose == 'true') {
+  //   link =
+  //     'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=88977&vt=2338&dept=201570002&view=plain&public=1';
+  //   if (isPfizer == 'true') {
+  //     link =
+  //       'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=88976,88977,88978&vt=2293&dept=201570002&view=plain&public=1';
+  //   }
+  // }
 
   if (isSpanish == 'true') link = link + '&lang=espanol';
   else link = link + '&lang=english';

@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
-import styles from './VaccineQuestionComponent.module.css'
+import styles from './VaccineQuestionComponent.module.css';
 
-
- const VaccineQuestionComponent =({nextPage, isPrevEnabled, isDoneEnabled}) => {
-  
+const VaccineQuestionComponent = ({
+  nextPage,
+  isPrevEnabled,
+  isDoneEnabled
+}) => {
   const [isEmployee, setIsEmployee] = useState(true);
 
   useEffect(() => {
@@ -11,42 +13,42 @@ import styles from './VaccineQuestionComponent.module.css'
     isDoneEnabled(false);
   }, []);
 
-    return (
+  return (
     <>
       <div className={styles.question_row_item}>
-      <p className="error" hidden={isEmployee}>
-         Flu Vaccine will be available in September 2021. More information to follow. 
+        <p className="error" hidden={isEmployee}>
+          Please consult Student Health Services before scheduling vaccine at
+          203-932-7079.
         </p>
         <fieldset className="radio_grp_set">
           <legend>
-          Which Vaccine are you scheduling for? 
+            Are you allergic to chicken eggs or chicken egg products?
           </legend>
           <input
             id="employee_staff_check_yes"
             type="radio"
             name="employee_staff"
             onClick={() => {
-              nextPage()
-              setIsEmployee(true);
+              setIsEmployee(false);
             }}
           ></input>
-          <label htmlFor="employee_staff_check_yes">Covid-19 Vaccine</label>
+          <label htmlFor="employee_staff_check_yes">Yes</label>
 
           <input
             id="employee_staff_check_no"
             type="radio"
             name="employee_staff"
-            onClick={(e) => {
-              nextPage(e, 15);
-              
+            onClick={() => {
+              nextPage();
+              setIsEmployee(true);
             }}
           ></input>
-          <label htmlFor="employee_staff_check_no">Influenza Vaccine</label>
-        </fieldset>        
+          <label htmlFor="employee_staff_check_no">No</label>
+        </fieldset>
       </div>
       <style jsx>{``}</style>
     </>
   );
-}
+};
 
 export default VaccineQuestionComponent;

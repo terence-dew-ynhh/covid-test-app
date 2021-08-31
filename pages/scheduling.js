@@ -43,8 +43,8 @@ Home.getInitialProps = async ({ query }) => {
   const { symptoms } = query;
   let link =
     symptoms == "true"
-      ? 'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=84157&vt=2228&dept=201570001&view=plain&public=1'
-      : 'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79929,82746&vt=2102&dept=201570001&view=plain&public=1';
+      ? 'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=88976&vt=2443&dept=201570002&view=plain&public=1&lang=english'
+      : 'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=88976&vt=2443&dept=201570002&view=plain&public=1&lang=english';
 
   return {
     link

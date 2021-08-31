@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import EmployeeQuestion from '../EmployeeQuestionComponent';
-import ConsentComponent from '../ConsentComponent';
-import SelectSymptoms from '../SelectSymptomsComponent';
-import Over18Component from '../Over18Component';
-import HealthCenterComponent from '../HealthCenterComponent';
-import ResidentQuestionComponent from '../ResidentQuestionComponent';
+import ConsentForVaccination from '../ConsentForVaccination';
+import VaccineQuestionComponent from '../VaccineQuestionComponent';
+import IllnessWithFeverComponent from '../IllnessWithFeverComponent';
+import AllergicToChickenComponent from '../AllergicToChickenComponent';
+import SeriousReactionComponent from '../SeriousReactionComponent';
+import GuillainBarreComponent from '../GuillainBarreComponent';
 import styles from './QuestionViewComponent.module.css'
 
 
@@ -35,11 +36,12 @@ const QuestionViewComponent = ({
 
   const components = {
     employee: EmployeeQuestion,
-    resident: ResidentQuestionComponent,
-    overeighteen: Over18Component,
-    symptomssel: SelectSymptoms,
-    consent: ConsentComponent,  
-    healthcare: HealthCenterComponent  
+    vaccine: VaccineQuestionComponent,
+    seriousreaction: SeriousReactionComponent,
+    illnessfever: IllnessWithFeverComponent,
+    chickenallergy: AllergicToChickenComponent,
+    guillainbarre: GuillainBarreComponent,
+    consent: ConsentForVaccination,  
   };
 
   const ComponentName = components[compName || 'employee'];

@@ -37,11 +37,6 @@ const QuestionViewComponent = ({
   const components = {
     employee: EmployeeQuestion,
     vaccine: VaccineQuestionComponent,
-    seriousreaction: SeriousReactionComponent,
-    illnessfever: IllnessWithFeverComponent,
-    chickenallergy: AllergicToChickenComponent,
-    guillainbarre: GuillainBarreComponent,
-    consent: ConsentForVaccination,  
   };
 
   const ComponentName = components[compName || 'employee'];

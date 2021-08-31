@@ -37,7 +37,7 @@ import styles from './VaccineQuestionComponent.module.css'
             type="radio"
             name="employee_staff"
             onClick={() => {
-              nextPage();
+              setIsEmployee(false);
             }}
           ></input>
           <label htmlFor="employee_staff_check_no">Influenza Vaccine</label>

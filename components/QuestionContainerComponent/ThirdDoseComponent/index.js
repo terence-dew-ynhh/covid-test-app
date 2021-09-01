@@ -15,7 +15,7 @@ const ThirdDoseComponent = ({
     isDoneEnabled(false);
   }, []);
 
-  const [meetsCriteria, setMeetsCriteria] = useState(true)
+  const [meetsCriteria, setMeetsCriteria] = useState(true);
   let OEText = isSpanish ? oeText.sp : oeText.en;
 
   return (
@@ -42,21 +42,31 @@ const ThirdDoseComponent = ({
               compromising conditions:
             </b>
             <br></br>
-            <br></br>- Receiving treatment for a blood cancer (for example,
-            leukemia, lymphoma, myeloma, myelodysplastic syndrome)<br></br>
-            <br></br>- Receiving treatment for a solid tumor with chemotherapy
-            or immunotherapy (currently or within the last six months)<br></br>
-            <br></br>- Received a stem cell transplant within the last two years
-            or requiring immune-suppressing medication<br></br>
-            <br></br>- Received a solid organ transplant (such as a kidney or
-            liver transplant) and are taking immune-suppressing medication
+            <br></br>- Have received cancer therapy (including chemotherapy,
+            hormonal therapy, immunotherapy, surgery, and/or radiation therapy)
+            for a solid tumor within one year of my initial mRNA COVID-19
+            vaccine series<br></br>
+            <br></br>- Have a newly diagnosed cancer or recurrent cancer with a
+            treatment plan that will include chemotherapy, immunotherapy, and/or
+            radiation therapy<br></br>
+            <br></br>- Have a blood cancer diagnosis (for example, leukemia,
+            lymphoma, myeloma, myelodysplastic syndrome, chronic
+            myeloproliferative condition)<br></br>
+            <br></br>- Have received a stem cell transplant or CAR T-cell
+            therapy
             <br></br>
-            <br></br>- Moderate or severe primary immunodeficiency (such as
-            DiGeorge or Wiskott-Aldrich syndrome)
+            <br></br>- I have received a solid organ transplant (such as a
+            kidney or liver transplant) and am taking immune-suppressing
+            medication
+            <br></br>
+            <br></br>- I have a moderate or severe primary immunodeficiency
+            (such as DiGeorge or Wiskott-Aldrich syndrome)
             <br></br>
             <br></br>- Advanced or untreated HIV disease <br></br>
-            <br></br>- Taking high-dose corticosteroids (equal to at least 20 mg
-            of prednisone daily) or any of the other medications{' '}
+            <br></br>- I am taking (or was taking at the time of my initial mRNA
+            COVID-19 vaccine series) high-dose corticosteroids (at least 20 mg
+            of prednisone daily) or any of the other medications on this list
+            that suppress the immune system
             <a
               target="__blank"
               href="https://mychart.ynhhs.org/mychart-prd/en-US/PDF/CDCMedImmunoBoosterDose.pdf"

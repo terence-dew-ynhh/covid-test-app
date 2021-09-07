@@ -52,7 +52,7 @@ Home.getInitialProps = async ({ query }) => {
       'Asymptomatic':'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=76701,82949,79729&vt=2275&dept=108010101,100001383,108710007&view=plain&public=1'
     } ,
     'New Haven County and Middlesex County': {
-      'Symptomatic': 'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=81079,88751,81452,82383,82948&vt=2276&dept=103720003,101130001,100001365,101050022,100001382&view=plain&public=1',
+      'Symptomatic': 'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=81079,88751,81452,82383,82948,88751&vt=2276&dept=103720003,101130001,100001365,101050022,100001382&view=plain&public=1',
       'Asymptomatic':'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79084,81416,79083,82948,81079,88751,83688,83687,81420,79081,81417,81418,81452,79085,82383,79080,&vt=2275&dept=101570001,101500001,101460003,100001382,103720003,101130001,101090001,101380001,101630001,101160001,101600001,101140001,100001365,101050004,101310002,101050022,101700005&view=plain&public=1'
      } ,
 

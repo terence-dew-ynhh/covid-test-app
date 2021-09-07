@@ -49,7 +49,7 @@ Home.getInitialProps = async ({ query }) => {
     } ,
     'New London County': { 
       'Symptomatic': 'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=76701,82949&vt=2276&dept=108010101,100001383&view=plain&public=1',
-      'Asymptomatic':'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=76701,82949&vt=2275&dept=108010101,100001383&view=plain&public=1'
+      'Asymptomatic':'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=76701,82949,79729&vt=2275&dept=108010101,100001383,108710007&view=plain&public=1'
     } ,
     'New Haven County and Middlesex County': {
       'Symptomatic': 'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=81079,88751,81452,82383,82948&vt=2276&dept=103720003,101130001,100001365,101050022,100001382&view=plain&public=1',

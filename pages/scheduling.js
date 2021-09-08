@@ -36,7 +36,7 @@ export default function Home({ link }) {
 }
 
 Home.getInitialProps = async () => {
-  let link = 'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=82100&vt=10220&dept=204620001&view=plain&public=1';
+  let link = 'https://openscheduling.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=82100&vt=10220&dept=204620001&view=plain&public=1';
 
   return {
     link

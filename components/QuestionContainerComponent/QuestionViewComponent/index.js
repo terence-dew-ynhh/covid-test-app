@@ -5,6 +5,7 @@ import SelectSymptoms from '../SelectSymptomsComponent';
 import Over18Component from '../Over18Component';
 import HealthCenterComponent from '../HealthCenterComponent';
 import ResidentQuestionComponent from '../ResidentQuestionComponent';
+import IdentifyQuestionComponent from '../IdentifyQuestionComponent';
 import styles from './QuestionViewComponent.module.css'
 
 
@@ -13,7 +14,8 @@ const QuestionViewComponent = ({
   nextPage,
   prevPage,
   schedulePush,
-  updateSymptoms
+  updateSymptoms,
+  updateIsStudent
 }) => {
   const [prevEnabled, setPrevEnabled] = useState(false);
   const [doneEnabled, setDoneEnabled] = useState(false);
@@ -39,7 +41,8 @@ const QuestionViewComponent = ({
     overeighteen: Over18Component,
     symptomssel: SelectSymptoms,
     consent: ConsentComponent,  
-    healthcare: HealthCenterComponent  
+    healthcare: HealthCenterComponent,
+    identify: IdentifyQuestionComponent  
   };
 
   const ComponentName = components[compName || 'employee'];
@@ -53,6 +56,7 @@ const QuestionViewComponent = ({
         isDoneEnabled={isDoneEnabled}
         isNextEnabled={isNextEnabled}
         updateSymptoms={updateSymptoms}
+        updateIsStudent={updateIsStudent}
         
       />
       </div>

@@ -1,0 +1,9 @@
+{
+    "apps": [
+        {
+            "name": "msfluvaccine",
+            "script": "npm",
+            "args" : "start"
+        }
+    ]
+}

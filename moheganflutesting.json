@@ -1,7 +1,7 @@
 {
     "apps": [
         {
-            "name": "msfluvaccine",
+            "name": "moheganflutesting",
             "script": "npm",
             "args" : "start"
         }

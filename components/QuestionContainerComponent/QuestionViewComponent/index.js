@@ -13,13 +13,12 @@ import TravelTestingComponent from '../TravelTestingComponent';
 import SelectLocation from '../SelectLocationComponent';
 import VaccineDoseComponent from '../VaccineDoseComponent';
 import ExposureToCovidComponent from '../ExposureToCovidComponent';
-import PossibleFluConsent from '../PossibleFluConsentComponent'
-import VaccineExemptConsentComponent from '../VaccineExemptConsentComponent'
-import ReturnProcessConsentComponent from '../ReturnProcessConsentComponent'
-import WorkPlaceExposureComponent from '../WorkPlaceExposureComponent'
-import HouseHoldExposureComponent from '../HouseHoldExposureComponent'
-import styles from './QuestionViewComponent.module.css'
-
+import PossibleFluConsent from '../PossibleFluConsentComponent';
+import VaccineExemptConsentComponent from '../VaccineExemptConsentComponent';
+import ReturnProcessConsentComponent from '../ReturnProcessConsentComponent';
+import WorkPlaceExposureComponent from '../WorkPlaceExposureComponent';
+import HouseHoldExposureComponent from '../HouseHoldExposureComponent';
+import styles from './QuestionViewComponent.module.css';
 
 const QuestionViewComponent = ({
   compName,
@@ -44,11 +43,13 @@ const QuestionViewComponent = ({
   };
 
   const isDoneEnabled = (isEnabled) => {
-    setDoneEnabled(isEnabled);    
-  };     
+    setDoneEnabled(isEnabled);
+  };
 
-  const setSchedulerURL = (location) => {updateLocation(location)};
-  
+  const setSchedulerURL = (location) => {
+    updateLocation(location);
+  };
+
   const components = {
     employee: EmployeeQuestion,
     symptomssel: SelectSymptoms,
@@ -56,19 +57,19 @@ const QuestionViewComponent = ({
     symptomsstatment: SymptomsStatement,
     outworkconsent: OutOfWorkConsentComponent,
     negconsent: NegResultConsentComponent,
-    highriskstatement:HighRiskStatementComponent,
+    highriskstatement: HighRiskStatementComponent,
     needcovidtesting: RequireCovidTestingComponent,
     traveltesting: TravelTestingComponent,
     returnfromhighrisk: ReturnedFromHighRiskComponent,
-    posttravel: PostTravelTestingComponent ,
+    posttravel: PostTravelTestingComponent,
     location: SelectLocation,
     vaccinedose: VaccineDoseComponent,
     exposuretocovid: ExposureToCovidComponent,
-    possibleflu:PossibleFluConsent,
+    possibleflu: PossibleFluConsent,
     vaccineexempt: VaccineExemptConsentComponent,
     returnprocess: ReturnProcessConsentComponent,
     workplaceexposure: WorkPlaceExposureComponent,
-    householdexposure: HouseHoldExposureComponent,
+    householdexposure: HouseHoldExposureComponent
   };
 
   const ComponentName = components[compName || 'employee'];
@@ -76,29 +77,29 @@ const QuestionViewComponent = ({
   return (
     <div className={styles.questionContainer}>
       <div className={styles.questionContainer}>
-      <ComponentName
-        nextPage={nextPage}
-        isPrevEnabled={isPrevEnabled}
-        isNextEnabled={isNextEnabled}        
-        isDoneEnabled={isDoneEnabled}
-        setSchedulerURL={setSchedulerURL}
-        schedulePush={schedulePush}
-        updateLocation={updateLocation}
-        updateIsSymptomatic={updateIsSymptomatic}
-        updateIsConnecticut={updateIsConnecticut}
-        isConnecticut={isConnecticut}
-      />
+        <ComponentName
+          nextPage={nextPage}
+          isPrevEnabled={isPrevEnabled}
+          isNextEnabled={isNextEnabled}
+          isDoneEnabled={isDoneEnabled}
+          setSchedulerURL={setSchedulerURL}
+          schedulePush={schedulePush}
+          updateLocation={updateLocation}
+          updateIsSymptomatic={updateIsSymptomatic}
+          updateIsConnecticut={updateIsConnecticut}
+          isConnecticut={isConnecticut}
+        />
       </div>
-      <div className={styles.buttonContainer}>          
-      <button className="button" hidden={!prevEnabled} onClick={prevPage}>
-        {`< Back`}
-      </button>
-      <button className="button" hidden={!nextEnabled} onClick={nextPage}>
-        {`Next >`}
-      </button>
-      <button className="button" hidden={!doneEnabled} onClick={schedulePush}>
-        Schedule Appoinment
-      </button>  
+      <div className={styles.buttonContainer}>
+        <button className="button" hidden={!prevEnabled} onClick={prevPage}>
+          {`< Back`}
+        </button>
+        <button className="button" hidden={!nextEnabled} onClick={nextPage}>
+          {`Next >`}
+        </button>
+        <button className="button" hidden={!doneEnabled} onClick={schedulePush}>
+          Schedule COVID-19 Testing Only
+        </button>
       </div>
     </div>
   );

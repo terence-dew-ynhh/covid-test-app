@@ -37,9 +37,9 @@ export default function Home({ link }) {
 }
 
 Home.getInitialProps = async ({ query }) => {
-  const { isStudent } = query;
+  const { isstudent } = query;
   let link = 
-    isStudent == "true"
+    isstudent == "true"
       ? 'https://openscheduling.ynhhs.org/Mychart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=89312&vt=2102&dept=100001390&view=plain&public=1'
       : 'https://openscheduling.ynhhs.org/Mychart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=91049&vt=2455&dept=100001390&view=plain&public=1';
 

@@ -25,44 +25,44 @@ const IdentifyQuestion = ({
             Please identify yourself in one of the following groups:
           </legend>
           <input
-            id="employee_staff_check_yes"
+            id="student"
             type="radio"
-            name="employee_staff"
+            name="student"
             onClick={() => {
               nextPage();
               setIsStudent(true);
               updateIsStudent(true);
             }}
           ></input>
-          <label htmlFor="employee_staff_check_yes">
+          <label htmlFor="student">
             Active Student/Student Worker/COOP/Graduate Assistant/Graduate
             Intern of CCSU
           </label>
           <br></br> <br></br>
           <input
-            id="employee_staff_check_yes"
+            id="faculty"
             type="radio"
-            name="employee_staff"
+            name="faculty"
             onClick={() => {
               nextPage();
               setIsStudent(true);
               updateIsStudent(false);
             }}
           ></input>
-          <label htmlFor="employee_staff_check_yes">
+          <label htmlFor="faculty">
             Active Faculty or Staff of CCSU
           </label>
           <br></br> <br></br>
 
           <input
-            id="employee_staff_check_no"
+            id="neither"
             type="radio"
-            name="employee_staff"
+            name="neither"
             onClick={() => {
               setIsStudent(false);
             }}
           ></input>
-          <label htmlFor="employee_staff_check_no">Neither</label>
+          <label htmlFor="neither">Neither</label>
         </fieldset>
       </div>
       <style jsx>{``}</style>

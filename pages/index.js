@@ -16,6 +16,11 @@ export default function Home() {
         University of New Haven Health Services COVID – 19 Testing
       </h1>
       <QuestionContainerComponent></QuestionContainerComponent>
+      <br></br><br></br>
+      <b>
+        Flu shots (not COVID) will be given at Student Health Services,
+        Sheffield Hall, 1st Floor, 300 Boston Post Rd, West Haven, CT.{' '}
+      </b>
     </div>
   );
 }

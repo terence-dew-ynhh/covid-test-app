@@ -1,8 +1,8 @@
 import styles from './SelectSymptomsComponent.module.css';
 import { useState, useEffect } from 'react';
 
-const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
-  const [hasSymptoms, setHasSymptoms] = useState(false);
+const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled, hasSymptoms }) => {
+  const [hasSymptomsChk, setHasSymptomsChk] = useState(false);
   const [hasSevereSymptoms, setHasSevereSymptoms] = useState(false);
 
   useEffect(() => {
@@ -31,7 +31,7 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
       e.target.checked === true
     ) {
       toggleCheckBoxes([...checkboxesArr, ...severeCheckboxesArr], true);
-      setHasSymptoms(false);
+      setHasSymptomsChk(false);
       setHasSevereSymptoms(false);
       noneChk.checked = true;
       isDoneEnabled(true);
@@ -71,7 +71,8 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
 
         if(shouldDisableSymp){
           toggleCheckBoxes(checkboxesArr, true)
-          setHasSymptoms(false);
+          setHasSymptomsChk(false);
+          hasSymptoms(false)
           setHasSevereSymptoms(true);
         }else if(!shouldDisableSymp){
           toggleCheckBoxes(checkboxesArr, false)
@@ -80,16 +81,20 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
 
         if(shouldDisableSev){
           toggleCheckBoxes(severeCheckboxesArr, true)
-          setHasSymptoms(true);
+          setHasSymptomsChk(true);
           setHasSevereSymptoms(false);
+          isDoneEnabled(true);
+          hasSymptoms(true)
           noneChk.disabled = true;
         }else if(!shouldDisableSev){
           toggleCheckBoxes(severeCheckboxesArr, false)
-          setHasSymptoms(false);
+          setHasSymptomsChk(false);
+          hasSymptoms(false);
         }
       }else{
         noneChk.disabled = false;
-        setHasSymptoms(false);
+        setHasSymptomsChk(false);
+        hasSymptoms(false)
         setHasSevereSymptoms(false);
         isDoneEnabled(false);
       }
@@ -194,7 +199,7 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
         </p>
         <p
           className="error"
-          hidden={!(hasSymptoms)}
+          hidden={!(hasSymptomsChk)}
         >
           Symptoms such as fever, cough or body aches may indicate another
           respiratory infection such as the flu. <br></br> <br></br>

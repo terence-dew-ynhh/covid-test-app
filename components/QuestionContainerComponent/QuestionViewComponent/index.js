@@ -67,8 +67,8 @@ const QuestionViewComponent = ({
         {`< Back`}
       </button>
       <button className="button" hidden={!doneEnabled} onClick={schedulePush}>
-        Schedule Appoinment
-      </button>  
+      Schedule COVID-19 Testing Only
+      </button> 
       </div>
     </div>
   );

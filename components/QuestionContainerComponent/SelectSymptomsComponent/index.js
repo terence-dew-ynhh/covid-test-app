@@ -201,16 +201,10 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled, hasSymptoms })
           className="error"
           hidden={!(hasSymptomsChk)}
         >
-          Symptoms such as fever, cough or body aches may indicate another
-          respiratory infection such as the flu. <br></br> <br></br>
-          We recommend contacting your primary care provider for medical
-          assessment and appropriate testing, especially if you are 65 years or
-          older, have a chronic medical condition, and/or are pregnant.{' '}
-          <br></br>
-          <br></br>
+          
           If you do not have a primary care provider and would like to be
-          assessed for flu or other medical concerns, please <a target="__blank" href={"https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.ynhhs.org%2Fmake-an-appointment%2Fschedule-a-walk-in.aspx&data=04%7C01%7Cchristian.pettker%40yale.edu%7C2acb03a2800749d558c808d97269fa4b%7Cdd8cbebb21394df8b4114e3e87abeb5c%7C0%7C0%7C637666621751848956%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&sdata=uj3yqRbnXAsqwBXkmkNdi6n45afwH6wpCkPZO6RXO%2B0%3D&reserved=0"}>CLICK HERE</a> to make
-          a walk-in or video visit with one of our providers.
+          assessed for flu or other medical concerns, please <a target="__blank" href={"https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.ynhhs.org%2Fmake-an-appointment%2Fschedule-a-walk-in.aspx&data=04%7C01%7Cchristian.pettker%40yale.edu%7C2acb03a2800749d558c808d97269fa4b%7Cdd8cbebb21394df8b4114e3e87abeb5c%7C0%7C0%7C637666621751848956%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&sdata=uj3yqRbnXAsqwBXkmkNdi6n45afwH6wpCkPZO6RXO%2B0%3D&reserved=0"}>CLICK HERE</a>
+          to make a walk-in or video visit with one of our clinicians.
         </p>
         <div className={styles.question_row_item_sub}>
           <fieldset>

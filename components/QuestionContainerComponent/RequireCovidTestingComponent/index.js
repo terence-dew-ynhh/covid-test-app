@@ -56,7 +56,7 @@ import styles from './RequireCovidTestingComponent.module.css'
               nextPage(e,9)
             }}
           ></input>
-          <label htmlFor="employee_staff_check_exempt"><u>I work in CT</u> and have a COVID-19 Vaccine Exemption and I am Required for weekly COVID-19 testing</label>
+          <label htmlFor="employee_staff_check_exempt"><u>I work in CT or New York</u> and have a COVID-19 Vaccine Exemption and I am Required for weekly COVID-19 testing</label>
           <br></br>
           <br></br>
           <input

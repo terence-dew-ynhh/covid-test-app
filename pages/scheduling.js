@@ -61,7 +61,7 @@ export default function Home({
 
   const body = (
     <div style={modalStyle} className={classes.paper}>
-      <img style={{ height: '100%' }} src="/Schedule.PNG"></img>
+      <img style={{ height: '70%' }} src="/Schedule.PNG"></img>
 
       <IconButton style={{ position: 'absolute' }} onClick={handleClose}>
         <ClearIcon

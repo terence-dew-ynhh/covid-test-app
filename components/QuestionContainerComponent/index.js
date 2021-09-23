@@ -106,9 +106,8 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
     newjumpArr.splice(viewJump.length - 1, 1);
     setviewJump(newjumpArr);
     setviewIdx(index);
-    if(viewIdx == 1){
+    if(viewJump.length < 3){
       setIsImmunocomp(false);
-      
     }
   };
 
@@ -117,7 +116,7 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
     router.push(
       `/scheduling?recc_date=${selDate}&in_zip_range=${isInZipCodeRange}&second_dose=${
         isPfizer == null ? false : true
-      }&isPfizer=${isPfizer}&isSpanish=${isSpanish}&isRiskGroup=${isRiskGroup}&isOver18=${isOver18}&jjapproved=${isJassenapproved}&isimmunocomp=${isImmunocomp}`,
+      }&isPfizer=${isPfizer}&isSpanish=${isSpanish}&isRiskGroup=${isRiskGroup}&isOver18=${isOver18}&jjapproved=${isJassenapproved}&isimmunocomp=${isImmunocomp}&isbooster=${isBooster}`,
       '/scheduling'
     );
   };

@@ -9,7 +9,8 @@ const FirstDoseComponent = ({
   updateAnswerData,
   isSpanish,
   isOver18,
-  isImmunocomp
+  isImmunocomp,
+  setBooster
 }) => {
   // const [isDiagnosed, setIsDiagnosed] = useState('');
 
@@ -36,7 +37,7 @@ const FirstDoseComponent = ({
                   name="prev_covid"
                   onClick={(e) => {
                     updateAnswerData({ first_dose: e.target.value });
-                    nextPage(e,3);
+                    nextPage(e,5);
 
                   }}
                 ></input>
@@ -52,7 +53,7 @@ const FirstDoseComponent = ({
                     name="prev_covid"
                     onClick={(e) => {
                       updateAnswerData({ first_dose: e.target.value });
-                      nextPage(e,2);
+                      nextPage(e,3);
                     }}
                   ></input>
                   <label htmlFor="second_dose">{FDText[2]}</label>
@@ -67,10 +68,26 @@ const FirstDoseComponent = ({
                     name="prev_covid"
                     onClick={(e) => {
                       updateAnswerData({ first_dose: e.target.value });
-                      nextPage();
+                      setBooster(false);
+                      nextPage(e,2);
                     }}
                   ></input>
                   <label htmlFor="third_dose">{FDText[3]}</label></div>
+                  <br></br>
+                  <br></br>
+                <div className="radio_row_item">
+                  <input
+                    id="booster_dose"
+                    type="radio"
+                    value="No"
+                    name="prev_covid"
+                    onClick={(e) => {
+                      updateAnswerData({ first_dose: e.target.value });
+                      setBooster(true);
+                      nextPage(e);
+                    }}
+                  ></input>
+                  <label htmlFor="booster_dose">I’m looking to schedule my booster dose</label></div>
             </fieldset>
             <br></br>
             <br></br>

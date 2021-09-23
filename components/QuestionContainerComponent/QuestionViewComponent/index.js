@@ -21,6 +21,9 @@ import YNHHFactSheetComponent from '../YNHHFactSheetComponent';
 import MiscComponent from '../MiscComponent';
 import ThirdDoseComponent from '../ThirdDoseComponent';
 import ImmunoCompConsent from '../ImmunoCompConsent';
+import ReceiveBoosterConsent from '../ReceiveBoosterConsent';
+import SelectPfizerComponent from '../SelectPfizerComponent';
+
 import styles from './QuestionViewComponent.module.css';
 
 const QuestionViewComponent = ({
@@ -44,7 +47,9 @@ const QuestionViewComponent = ({
   setJJApproved,
   isJassenapproved,
   setImmunocompromised,
-  isImmunocomp
+  isImmunocomp,
+  setBooster,
+  isBooster
 }) => {
   const [prevEnabled, setPrevEnabled] = useState(false);
   const [nextEnabled, setNextEnabled] = useState(false);
@@ -70,8 +75,10 @@ const QuestionViewComponent = ({
     ynhhfactsheet: YNHHFactSheetComponent,
     hithistory: HITHistoryComponent,
     misc: MiscComponent,
-    immunocomp:ThirdDoseComponent,
-    immunocompconsent: ImmunoCompConsent
+    immunocomp: ThirdDoseComponent,
+    immunocompconsent: ImmunoCompConsent,
+    receivebooster: ReceiveBoosterConsent, 
+    selectpfizer: SelectPfizerComponent
   };
   const ComponentName = components[compName || 'pininput'];
 
@@ -118,6 +125,8 @@ const QuestionViewComponent = ({
           isJassenapproved={isJassenapproved}
           setImmunocompromised={setImmunocompromised}
           isImmunocomp={isImmunocomp}
+          setBooster={setBooster}
+          isBooster={isBooster}
         />
       </div>
       <div className={styles.buttonContainer}>

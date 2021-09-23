@@ -99,7 +99,7 @@ const ThirdDoseComponent = ({
           <label htmlFor="employee_staff_check_no">{OEText[1]}</label>
         </fieldset>
         <br></br>
-          <br></br>
+        <br></br>
         <b className="redText">You may still be eligible for a booster dose</b>
       </div>
       <style jsx>{``}</style>

@@ -54,9 +54,11 @@ const ReceiveBoosterConsent = ({
     <>
       <div className={styles.question_row_item}>
         <div className={styles.question_row_item_sub}>
-          <p className="message">Please note that boosters are not yet available for HCW, first
-          responders, etc. unless they meet one or more of the below criteria
-          placing them at risk for severe COVID.</p> 
+          <p className="message">
+            Please note that boosters are not yet recommended for HCW, first
+            responders, etc. unless they meet one or more of the below criteria
+            placing them at risk for severe COVID.
+          </p>
           <fieldset>
             <legend>
               <b>Current Eligibility Criteria for Booster:</b>
@@ -66,14 +68,10 @@ const ReceiveBoosterConsent = ({
               <br></br>
               <br></br>
               {VEText[1]}
-              <br></br>
-              <br></br>
-              {VEText[2]}
             </legend>
             <div className={styles.q1_grid}>{checkboxes}</div>
           </fieldset>
         </div>
-
       </div>
       <style jsx>{``}</style>
     </>

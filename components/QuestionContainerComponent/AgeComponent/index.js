@@ -38,7 +38,7 @@ const Over18Component = ({
             onClick={(e) => {
               setIsOver18(true);
               overEighteen(true);
-              nextPage(e,2);
+              nextPage(e, 2);
             }}
           ></input>
           <label htmlFor="employee_staff_check_yes">{OEText[0]}</label>
@@ -51,6 +51,7 @@ const Over18Component = ({
             onClick={(e) => {
               setIsOver18(false);
               setJJApproved(false);
+              overEighteen(false);
               nextPage();
             }}
           ></input>

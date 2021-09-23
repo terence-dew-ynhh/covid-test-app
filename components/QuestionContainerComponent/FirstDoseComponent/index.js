@@ -87,7 +87,7 @@ const FirstDoseComponent = ({
                       nextPage(e);
                     }}
                   ></input>
-                  <label htmlFor="booster_dose">I am looking to schedule my booster dose</label></div>
+                  <label htmlFor="booster_dose">{FDText[4]}</label></div>
             </fieldset>
             <br></br>
             <br></br>

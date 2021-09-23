@@ -82,8 +82,7 @@ const SelectVaccineComponent = ({
                   onClick={(e) => {
                     updateAnswerData({ sel_vaccine: 'Pfizer' });
                     pfizerSelected(true);
-                    if (pfizerSelected == null) nextPage();
-                    else nextPage(e, 2);
+                    nextPage(e, 2);
                   }}
                 ></input>
                 <label htmlFor="prev_covid_yes">Pfizer</label>

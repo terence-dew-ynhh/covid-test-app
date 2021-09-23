@@ -44,7 +44,7 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
     'immunocomp',
     'selectedvaccine',
     'selectpfizer',
-    'hithistory',
+    // 'hithistory',
     'testedpositive',
     'covidsymptoms',
     'quartinecovid',
@@ -106,6 +106,10 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
     newjumpArr.splice(viewJump.length - 1, 1);
     setviewJump(newjumpArr);
     setviewIdx(index);
+    if(viewIdx == 1){
+      setIsImmunocomp(false);
+      
+    }
   };
 
   const schedulePush = () => {

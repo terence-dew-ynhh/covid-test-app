@@ -155,7 +155,7 @@ Home.getInitialProps = async ({ query }) => {
     isOver18,
     jjapproved,
     isimmunocomp,
-    isBooster
+    isbooster
   } = query;
   let link = '';
 

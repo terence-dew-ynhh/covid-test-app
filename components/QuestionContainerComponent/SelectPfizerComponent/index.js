@@ -83,7 +83,7 @@ const SelectPfizerComponent = ({
                   value="Yes"
                   name="prev_covid"
                   onClick={(e) => {
-                    nextPage(e)
+                    nextPage(e,2)
                   }}
                 ></input>
                 <label htmlFor="prev_covid_yes">

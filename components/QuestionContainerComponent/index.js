@@ -13,7 +13,7 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
   const [viewIdx, setviewIdx] = useState(0);
   const [department, setDepartment] = useState('Cornell Scott');
   const [isPfizer, setIsPfizer] = useState(null);
-  const [isJassenapproved, setIsJassenapproved] = useState(false);
+  const [isJassenapproved, setIsJassenapproved] = useState(true);
   const [isInZipCodeRange, setIsInZipCodeRange] = useState(false);
   const [isOver18, setIsOver18] = useState(false);
   const [isRiskGroup, setIsRiskGroup] = useState(false);
@@ -44,7 +44,7 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
     'immunocomp',
     'selectedvaccine',
     'selectpfizer',
-    // 'hithistory',
+    'hithistory',
     'testedpositive',
     'covidsymptoms',
     'quartinecovid',

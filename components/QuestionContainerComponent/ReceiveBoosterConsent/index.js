@@ -68,7 +68,9 @@ const ReceiveBoosterConsent = ({
               <br></br>
               <br></br>
               {VEText[1]} <a href="https://mychart.ynhhs.org/mychart-prd/en-US/PDF/ChronicConditions.pdf" target="_blank" rel="noreferrer">-  Click to view high risk conditions</a>
-
+              <br></br>
+              <br></br>
+              {VEText[2]}
             </legend>
             <div className={styles.q1_grid}>{checkboxes}</div>
           </fieldset>

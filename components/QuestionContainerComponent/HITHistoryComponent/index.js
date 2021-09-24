@@ -24,9 +24,9 @@ const HITHistoryComponent = ({
   return (
     <>
       <div className={styles.question_row_item}>
-        <p className="banner">
+        {/* <p className="banner">
           We have resumed distributing the Janssen (J&J) vaccination.
-        </p>
+        </p> */}
         <br></br>
         <br></br>
         <fieldset className="radio_grp_set">

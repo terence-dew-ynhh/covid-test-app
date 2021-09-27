@@ -1,0 +1,16 @@
+{
+    "en": [
+        "In the past 90 days, have you been diagnosed with Multisystem Inflammatory Syndrome in Children, also known as MIS-C, or Multisystem Inflammatory Syndrome in Adults, also known as MIS-A, or are you still recovering from either of these diagnoses?",
+        "The CDC currently recommends that people with a history of MIS-C or MIS-A should consider delaying vaccination until they have both recovered from illness AND 90 days have passed after the date of diagnosis.",
+        "Never diagnosed with MIS-C or MIS-A",
+        "Yes, I have been diagnosed with MIS-C or MIS-A in the past 90 days or I am still symptomatic from this diagnosis",
+        "No, I have fully recovered from MIS-C or MIS-A more than 90 days ago"
+        
+        ],
+    "sp": [
+        "¿Ha recibido anticuerpos monoclonales como parte del tratamiento contra el COVID-19 en los últimos 90 días?",
+        "Los Centros para el Control y la Prevención de Enfermedades (CDC) recomiendan que se difiera la vacunación al menos 90 días después del tratamiento con anticuerpos monoclonales.",
+        "Si",
+        "No"
+    ]
+}

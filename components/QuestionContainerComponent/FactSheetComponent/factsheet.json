@@ -1,6 +1,6 @@
 {
     "en": [
-        "Have you read the Emergency Use Authorization Fact Sheet and consent to receiving the vaccination for Covid-19?",
+        "Have you read the Emergency Use Authorization Fact Sheet?",
         "CDC recommends vaccination should be deferred for at least 90 days after monoclonal antibody treatment.",
         "Thank you, you may close the page at this time.",
         "Pfizer Vaccination EUA (Spanish)",
@@ -8,7 +8,9 @@
         "YNHHS Vaccination Consent",
         "Yes, and I wish to be vaccinated",
         "I will read it upon arrival to Vaccination Fair",
-        "Don't Agree"
+        "Don't Agree",
+        "Johnson & Johnson EUA",
+        "Johnson & Johnson EUA (Spanish)"
         ],
     "sp": [
         "Ha leído la hoja informativa sobre la autorización para uso de emergencia y ha dado su consentimiento para recibir la vacuna por Covid-19",
@@ -19,6 +21,8 @@
         "YNHHS Consentimiento de Vacuna",
         "Sí, y deseo ser vacunado",
         "Lo leeré a la llegada a la Feria de Vacunación.",
-        "No estoy de acuerdo"
+        "No estoy de acuerdo",
+        "Johnson & Johnson EUA",
+        "Johnson & Johnson EUA (español)"
     ]
 }

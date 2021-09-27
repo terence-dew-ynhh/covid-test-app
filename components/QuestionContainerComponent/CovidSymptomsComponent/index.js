@@ -6,8 +6,6 @@ const CovidSymptomsComponent = ({
   nextPage,
   isPrevEnabled,
   isDoneEnabled,
-  updateField,
-  schedulePush,
   isSpanish
 }) => {
   const [isDiagnosed, setIsDiagnosed] = useState('');
@@ -17,8 +15,7 @@ const CovidSymptomsComponent = ({
     isPrevEnabled(true);
   }, []);
 
-  let CSText = isSpanish ? csText.sp : csText.en
-
+  let CSText = isSpanish ? csText.sp : csText.en;
 
   return (
     <>
@@ -26,19 +23,19 @@ const CovidSymptomsComponent = ({
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
             <p className="error" hidden={!(isDiagnosed === 'Yes')}>
-            {CSText[1]}
-          </p>
+              {CSText[1]}
+            </p>
             <fieldset>
-              <legend>
-                {CSText[0]}
-              </legend>
+              <legend>{CSText[0]}</legend>
               <div className="radio_row_item">
                 <input
                   id="prev_covid_yes"
                   type="radio"
                   value="Yes"
                   name="prev_covid"
-                  onClick={(e) => { setIsDiagnosed('Yes')}}
+                  onClick={(e) => {
+                    setIsDiagnosed('Yes');
+                  }}
                 ></input>
                 <label htmlFor="prev_covid_yes">{CSText[2]}</label>
                 <div className="radio_row_item">

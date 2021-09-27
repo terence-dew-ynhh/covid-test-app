@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import styles from './ReceiveVaccinationConsent.module.css';
+import styles from './ReceiveBoosterConsent.module.css';
 import veText from './vaccineelidgibility.json';
 import { TramRounded } from '@material-ui/icons';
 
@@ -10,7 +10,7 @@ const useStyles = makeStyles(() => ({
   }
 }));
 
-const ReceiveVaccinationConsent = ({
+const ReceiveBoosterConsent = ({
   nextPage,
   isPrevEnabled,
   isDoneEnabled,
@@ -22,7 +22,7 @@ const ReceiveVaccinationConsent = ({
   }, []);
 
   const handleChecked = (e) => {
-    nextPage(e);
+    nextPage(e, 2);
   };
 
   let VEText = isSpanish ? veText.sp : veText.en;
@@ -54,20 +54,23 @@ const ReceiveVaccinationConsent = ({
     <>
       <div className={styles.question_row_item}>
         <div className={styles.question_row_item_sub}>
-          {/* <p className="message">{VEText[10]}</p> */}
+          {/* <p className="message">
+            Please note that boosters are not yet recommended for HCW, first
+            responders, etc. unless they meet one or more of the below criteria
+            placing them at risk for severe COVID.
+          </p> */}
           <fieldset>
             <legend>
+              <b>Current Eligibility Criteria for Booster:</b>
+              <br></br>
+              <br></br>
               {VEText[0]}
               <br></br>
               <br></br>
-              {VEText[5]}
+              {VEText[1]} <a href="https://mychart.ynhhs.org/mychart-prd/en-US/PDF/ChronicConditions.pdf" target="_blank" rel="noreferrer">-  Click to view high risk conditions</a>
               <br></br>
               <br></br>
-              <b>{VEText[6]}</b>
-              <br></br>
-              <br></br>
-              <b>{VEText[9]}</b>
-              <b className="redText">{VEText[15]}</b>
+              {VEText[2]}
             </legend>
             <div className={styles.q1_grid}>{checkboxes}</div>
           </fieldset>
@@ -78,4 +81,4 @@ const ReceiveVaccinationConsent = ({
   );
 };
 
-export default ReceiveVaccinationConsent;
+export default ReceiveBoosterConsent;

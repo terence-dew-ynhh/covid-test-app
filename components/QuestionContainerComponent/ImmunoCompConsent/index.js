@@ -1,20 +1,21 @@
 import { useEffect } from 'react';
-import styles from './VaccinationCalendarComponent.module.css';
-import vsText from './vaccinationcalendar.json';
+import styles from './ImmunoCompConsent.module.css';
+import vsText from './immunocomp.json';
 
-const VaccinationCalendarComponent = ({
+const ImmunoCompConsent = ({
   isPrevEnabled,
   isDoneEnabled,
-  schedulePush,
-  isSpanish
+  nextPage,
+  isSpanish,
+  isPfizer,
 }) => {
   useEffect(() => {
     isDoneEnabled(false);
-    isPrevEnabled(true);
+    isPrevEnabled(false);
   }, []);
 
   const handleChecked = (e) => {
-    schedulePush(e);
+    nextPage();
   };
 
   const regex = /_/gi;
@@ -40,7 +41,7 @@ const VaccinationCalendarComponent = ({
         className={styles.none_label_or}
         htmlFor={`prev_covid_${checkbox.toLowerCase()}`}
       >
-        {VSText[3]}
+        {VSText[2]}
       </label>
     </div>
   ));
@@ -49,47 +50,37 @@ const VaccinationCalendarComponent = ({
     <>
       <div className={styles.question_row_item}>
         <div className={styles.question_row_item_sub}>
-          <p className="message">{VSText[2]}</p>
           <fieldset className={styles.fieldset}>
             <legend className={styles.legend}>
               <br></br>
               <br></br>
               {VSText[0]}
-              <br></br>
-              <br></br>
-              <p className="versiontxt">v7 4.7.21</p>
-              <a href="/info" target="_blank" rel="noreferrer">
-                <img src="/Schedule.PNG" passHref></img>
-              </a>
             </legend>
-            <p className="fin-statment">{VSText[1]}</p>
-
+            <a
+              className="fin-statment"
+              target="__blank"
+              href="https://www.ynhhs.org/patient-care/covid-19/Vaccine/third-dose-immunocompromised"
+            >
+              <span>
+                {' '}
+                {VSText[1]}
+              </span>
+            </a>{' '}
+            <br></br>
+            <br></br>
             <div className={styles.q1_grid}>{checkboxes}</div>
           </fieldset>
         </div>
       </div>
       <style jsx>{`
-        img:hover {
-          border: 2px solid rgba(255, 166, 0, 0.856);
-        }
-        img {
-          margin: 0;
-          height: 100vh;
-        }
-        .versiontxt {
-          font-size: 0.7em;
-          text-align: center;
-          margin: 1px;
-        }
+        
         .fin-statment {
-          width: 100%;
+          align-self: start;
         }
-        .message{
-          width: 100%;
-        }
+
       `}</style>
     </>
   );
 };
 
-export default VaccinationCalendarComponent;
+export default ImmunoCompConsent;

@@ -5,34 +5,21 @@ import Autocomplete from '@material-ui/lab/Autocomplete';
 import departmentsObj from '../../../data/departments.json';
 
 const DepartmentSelectComponent = ({
-  nextPage,
   isPrevEnabled,
   isNextEnabled,
   isDoneEnabled,
-  updateAge,
   setDepartment,
   updateAnswerData
 }) => {
-  const [ageCount, setAgeCount] = useState(18);
-
   useEffect(() => {
     isPrevEnabled(true);
     isDoneEnabled(false);
     isNextEnabled(false);
-    // updateAge(18);
   }, []);
-
-  // const ageChanged = (e) => {
-  //   if (e.target.value >= 0 && e.target.value <= 120)
-  //     setAgeCount(parseInt(e.target.value));
-  //   isNextEnabled(true);
-  //   updateAge(e.target.value);
-  // };
 
   return (
     <>
       <div className={styles.question_row_item}>
-
         <label>Please Select Employer:</label>
         <br></br>
         <br></br>
@@ -42,7 +29,7 @@ const DepartmentSelectComponent = ({
           getOptionLabel={(dept) => dept}
           onChange={(e, selDept) => {
             setDepartment(selDept);
-            updateAnswerData({employer: selDept});
+            updateAnswerData({ employer: selDept });
             isNextEnabled(true);
           }}
           style={{ width: 300 }}

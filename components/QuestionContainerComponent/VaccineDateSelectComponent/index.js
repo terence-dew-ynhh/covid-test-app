@@ -8,22 +8,17 @@ import {
 import styles from './VaccineDateSelectComponent.module.css';
 import vdsText from './vaccinedate.json';
 
-
 const VaccineDateSelectComponent = ({
-  nextPage,
   isPrevEnabled,
   isNextEnabled,
   isDoneEnabled,
-  updateField,
-  verifyPin,
   isPfizer,
   setReccDate,
   updateAnswerData,
   isSpanish
 }) => {
   const [selectedDate, setSelectedDate] = useState(new Date());
-  let VDSText = isSpanish ? vdsText.sp : vdsText.en
-
+  let VDSText = isSpanish ? vdsText.sp : vdsText.en;
 
   useEffect(() => {
     isDoneEnabled(true);
@@ -72,9 +67,7 @@ const VaccineDateSelectComponent = ({
       <div className="radio_grp">
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
-            <p className="banner">
-            {VDSText[1]}
-            </p>
+            <p className="banner">{VDSText[1]}</p>
             <br></br>
             <br></br>
             <label>{VDSText[0]}</label>

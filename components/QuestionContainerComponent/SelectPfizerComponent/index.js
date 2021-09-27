@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import styles from './SelectVaccineComponent.module.css';
+import styles from './SelectPfizerComponent.module.css';
 import svText from './selvaccine.json';
 
-const SelectVaccineComponent = ({
+const SelectPfizerComponent = ({
   nextPage,
   isPrevEnabled,
   isDoneEnabled,
@@ -41,15 +41,22 @@ const SelectVaccineComponent = ({
               eligible.
             </p>
             <p className="error" hidden={!(isModerna && !isBooster)}>
-            Yale New Haven Health does not currently have any appointments available for Moderna third dose. 
+              Yale New Haven Health does not currently have any appointments
+              available for Moderna third dose.
             </p>
             <br></br>
             <br></br>
             <fieldset>
               <legend>
-                {isBooster
-                  ? 'What was your original series dose?'
-                  : `What was your Dose 1${isImmunocomp ? '&2' : ''} Vaccine?`}
+                The CDC recommends, if possible, that your additional dose of
+                COVID vaccine be the same type of vaccine that you initially
+                received. For example, if you received two doses of the Moderna
+                vaccine, you should try to schedule your additional dose at a
+                site that is offering the Moderna vaccine on the day of your
+                appointment. The same is true for the Pfizer vaccine. <br></br>
+                <br></br> However, the CDC states that you can get the other
+                mRNA vaccine as your additional vaccine dose if the one for your
+                original vaccine series is not readily available.
               </legend>
 
               <div className="radio_row_item">
@@ -59,17 +66,13 @@ const SelectVaccineComponent = ({
                   value="No"
                   name="prev_covid"
                   onClick={(e) => {
-                    if(isBooster){
                     setIsModerna(true);
-                    }else{
-                    updateAnswerData({ sel_vaccine: 'Moderna' });
-                    pfizerSelected(false);
-                    if(isImmunocomp) nextPage(e);
-                    else nextPage(e, 3);
-                    }
                   }}
                 ></input>
-                <label htmlFor="prev_covid_no">Moderna</label>
+                <label htmlFor="prev_covid_no">
+                  I received Moderna as my primary series and <b>would not</b> like to
+                  schedule an appointment to receive a Pfizer third dose.
+                </label>
               </div>
               <br></br>
               <br></br>
@@ -80,12 +83,13 @@ const SelectVaccineComponent = ({
                   value="Yes"
                   name="prev_covid"
                   onClick={(e) => {
-                    updateAnswerData({ sel_vaccine: 'Pfizer' });
-                    pfizerSelected(true);
-                    nextPage(e, 3);
+                    nextPage(e,2)
                   }}
                 ></input>
-                <label htmlFor="prev_covid_yes">Pfizer</label>
+                <label htmlFor="prev_covid_yes">
+                  I received Moderna as my primary series and <b>would</b> like to
+                  schedule an appointment to receive a Pfizer third dose.
+                </label>
               </div>
             </fieldset>
           </div>
@@ -103,4 +107,4 @@ const SelectVaccineComponent = ({
   );
 };
 
-export default SelectVaccineComponent;
+export default SelectPfizerComponent;

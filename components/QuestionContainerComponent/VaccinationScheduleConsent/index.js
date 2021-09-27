@@ -1,42 +1,28 @@
-import { useState, useEffect } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { useEffect } from 'react';
 import styles from './VaccinationScheduleConsent.module.css';
-import Tooltip from '@material-ui/core/Tooltip';
-import InfoIcon from '@material-ui/icons/Info';
 import vsText from './vaccineschedule.json';
-import Link from 'next/link';
-
-const useStyles = makeStyles(() => ({
-  tooltip: {
-    fontSize: 25
-  }
-}));
 
 const VaccinationScheduleConsent = ({
-  nextPage,
   isPrevEnabled,
   isDoneEnabled,
-  updateField,
   schedulePush,
-  isSpanish
+  isSpanish,
+  isPfizer
 }) => {
-  const classes = useStyles();
-
   useEffect(() => {
     isDoneEnabled(false);
     isPrevEnabled(true);
   }, []);
 
   const handleChecked = (e) => {
-    //schedulePush(e);
-    nextPage(e, 5);
+    schedulePush(e);
   };
+
+  const regex = /_/gi;
 
   let VSText = isSpanish ? vsText.sp : vsText.en;
 
   let checkboxesArray = ['Acknowledge'];
-
-  const regex = /_/gi;
 
   let checkboxes = checkboxesArray.map((checkbox, idx) => (
     <div className={styles.chk_row_item}>
@@ -64,45 +50,23 @@ const VaccinationScheduleConsent = ({
     <>
       <div className={styles.question_row_item}>
         <div className={styles.question_row_item_sub}>
-          <fieldset>
-            <legend>
-              <div className="imgcontainer">
-                <p>
-                  <b>
-                   Yale New Haven Health is pleased to offer the following clinics for our University Partners.{' '}
-                  </b>
-                </p>
-                <ul>
-                  <li>
-                    <b>YNHHS Vaccination Clinic</b> 
-                    <br></br>
-                    <b>Mohegan Sun Earth Convention Center</b>
-                    <br></br> 1 Mohegan Sun Boulevard Uncasville, CT 06382 
-                    <br></br>
-                  </li>
-                  <br></br>
-
-                  <li>
-                    <b>YNHHS Vaccination Clinic</b>
-                    <br></br>
-                    <b>Wheeler Recreation Center, University of Bridgeport</b>
-                    <br></br> 400 University Avenue Bridgeport, CT 06604
-                    <br></br>
-                  </li>
-
-                  <br></br>
-
-                  <li>
-                    <b>YNHHS Vaccination Clinic</b>
-                    <br></br>
-                    <b>Floyd Little Athletic Center</b>
-                    <br></br> 476 Sherman Parkway New Haven, CT 06511
-                    <br></br> *Use Crescent Street parking lot for accessible entrance
-                  </li>
-                </ul>
-                                
-              </div>
+        {isPfizer !== null ? null : <p className="message">{VSText[2]}</p>}
+          <fieldset className={styles.fieldset}>
+            <legend className={styles.legend}>
+            {isPfizer !== null ? null :
+              (<>
+              <br></br>
+              <br></br>
+              {VSText[0]}
+              <br></br>
+              <br></br>
+              <p className="versiontxt">v12 8.28.21</p>
+              <a href="/info" target="_blank" rel="noreferrer">
+              <img src="/Schedule.PNG" passHref></img>
+              </a> </>)}
             </legend>
+            <p className="fin-statment">{VSText[1]}</p>
+
             <div className={styles.q1_grid}>{checkboxes}</div>
           </fieldset>
         </div>
@@ -111,20 +75,22 @@ const VaccinationScheduleConsent = ({
         img:hover {
           border: 2px solid rgba(255, 166, 0, 0.856);
         }
-        img {
+        a,img {
           margin: 0;
-          height: 100vh;
+          height: 95%;
+          width: 95%;
+          text-align: center;
         }
         .versiontxt {
           font-size: 0.7em;
           text-align: center;
           margin: 1px;
         }
-        .imgcontainer {
+        .fin-statment {
           width: 100%;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
+        }
+        .message{
+          width: 100%;
         }
       `}</style>
     </>

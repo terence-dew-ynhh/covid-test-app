@@ -1,12 +1,14 @@
 {
     "en": [
-        "Are you scheduling for your first dose of COVID19 vaccine?:",
-        "Yes",
-        "No"
+        "What dose of the COVID19 vaccine are you scheduling for?",
+        "I am scheduling first dose and have not had a dose yet.",
+        "I am scheduling second dose of a 2-dose vaccine",
+        "I am scheduling my third dose because I am immunocompromised and I have completed my second dose at least 28 days ago.",
+        "I am looking to schedule my booster dose and have completed my second dose at least 6 months ago."
         ],
     "sp": [
         "¿Está programando la primera dosis de la vacuna contra el COVID-19?",
-        "Si",
-        "No"
+        "Estoy programando la primera dosis de la vacuna COVID19 y aún no he recibido ninguna dosis.",
+        "He recibido una primera dosis de la vacuna COVID19 y estoy programando mi segunda dosis."
     ]
 }

@@ -3,88 +3,50 @@ import QuestionView from './QuestionViewComponent';
 import styles from './QuestionContainerComponent.module.css';
 import { useRouter } from 'next/router';
 
+const currentAppState = async () => {
+  return await fetch('/api/open')
+    .then((res) => res.json())
+    .then((res) => res.open);
+};
+
 const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
-
-  useEffect(() => {
-    window.location.href ='http://covidvaccine.ynhh.org/'
-  }, []);
-
   const [viewIdx, setviewIdx] = useState(0);
-
-  //New States
   const [department, setDepartment] = useState('Cornell Scott');
   const [isPfizer, setIsPfizer] = useState(null);
+  const [isJassenapproved, setIsJassenapproved] = useState(true);
   const [isInZipCodeRange, setIsInZipCodeRange] = useState(false);
+  const [isOver18, setIsOver18] = useState(false);
+  const [isRiskGroup, setIsRiskGroup] = useState(false);
+  const [isImmunocomp, setIsImmunocomp] = useState(false);
+  const [isBooster, setIsBooster] = useState(false);
   const [viewJump, setviewJump] = useState([]);
   const [selDate, setSelDate] = useState('');
   const [responseData, setResponseData] = useState({});
-
-  const compNames = [
-    'pininput',
-    'over18',
-    'vaccineconsent',
-    'listconditions',
-    'testedpositive',
-    'covidsymptoms',
-    'monoclonal',
-    'factsheet',
-    'ynhhfactsheet',
-    'vaccineschedule',
-    'quartinecovid',
-    'selectedvaccine',
-    'vaccinedateselect',
-    'selectsymptoms',
-    'vaccinecalendar'
-  ];
+  const [applicationOn, setApplicationOn] = useState(false);
 
   const router = useRouter();
 
-  const verifyPin = async (pin) => {
-    //axios POST request to auth
-    //next page if response true
-    // error message if false
-
-    const action = 'post';
-    const res = await fetch('/api/auth', {
-      method: action,
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        department: 'YNHH',
-        pin: pin
-      })
+  useEffect(() => {
+    currentAppState().then((appFlag) => {
+      if (appFlag) {
+        setviewIdx(1);
+      }
+      setApplicationOn(appFlag);
     });
-    return res.json();
-  };
+  }, []);
 
-  const submitData = async () => {
-    //axios POST request to auth
-    //next page if response true
-    // error message if false
+  const compNames = [
+    'hithistory',
+    'testedpositive',
+    'covidsymptoms',
+    'quartinecovid',
+    'monoclonal',
+    'misc',
+    'factsheet',
+    'ynhhfactsheet',
+  ];
 
-    const action = 'post';
-    const res = await fetch('/api/responses', {
-      method: action,
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(responseData)
-    });
-    return res.json();
-  };
-
-  const nextPage = (e, pageIncrement = 1) => {
-    let index = viewIdx + pageIncrement;
-    setviewIdx(index);
-    let newjumpArr = [...viewJump, pageIncrement];
-    setviewJump(newjumpArr);
-    // setView
-  };
-
-  const prevPage = (e) => {
-    let index = viewIdx - viewJump[viewJump.length - 1];
-    let newjumpArr = [...viewJump];
-    newjumpArr.splice(viewJump.length - 1, 1);
-    setviewJump(newjumpArr);
-    setviewIdx(index);
-  };
+  let progressWidth = Math.floor(100 * ((viewIdx + 1) / compNames.length));
 
   const pfizerSelected = (isPfizerSelected) => {
     setIsPfizer(isPfizerSelected);
@@ -94,8 +56,27 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
     setIsInZipCodeRange(isZipCodeInRange);
   };
 
+  const overEighteen = (isOver18) => {
+    setIsOver18(isOver18);
+  };
+
   const setReccDate = (date) => {
     setSelDate(date);
+  };
+
+  const setJJApproved = (approved) => {
+    setIsJassenapproved(approved);
+  };
+
+  const setRiskGroup = (isRiskGroup) => {
+    setIsRiskGroup(isRiskGroup);
+  };
+
+  const setImmunocompromised = (Immunocompromised) => {
+    setIsImmunocomp(Immunocompromised);
+  };
+  const setBooster = (booster) => {
+    setIsBooster(booster);
   };
 
   const updateAnswerData = (questionData) => {
@@ -104,17 +85,56 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
     setResponseData({ ...responseData, ...questionData });
   };
 
+  const nextPage = (e, pageIncrement = 1) => {
+    let index = viewIdx + pageIncrement;
+    setviewIdx(index);
+    let newjumpArr = [...viewJump, pageIncrement];
+    setviewJump(newjumpArr);
+  };
+
+  const prevPage = (e) => {
+    let index = viewIdx - viewJump[viewJump.length - 1];
+    let newjumpArr = [...viewJump];
+    newjumpArr.splice(viewJump.length - 1, 1);
+    setviewJump(newjumpArr);
+    setviewIdx(index);
+    if(viewJump.length < 3){
+      setIsImmunocomp(false);
+    }
+  };
+
   const schedulePush = () => {
     submitData();
     router.push(
       `/scheduling?recc_date=${selDate}&in_zip_range=${isInZipCodeRange}&second_dose=${
         isPfizer == null ? false : true
-      }&isPfizer=${isPfizer}&isSpanish=${isSpanish}`,
+      }&isPfizer=${isPfizer}&isSpanish=${isSpanish}&isRiskGroup=${isRiskGroup}&isOver18=${isOver18}&jjapproved=${isJassenapproved}&isimmunocomp=${isImmunocomp}&isbooster=${isBooster}`,
       '/scheduling'
     );
   };
 
-  let progressWidth = Math.floor(100 * ((viewIdx + 1) / compNames.length));
+  const verifyPin = async (pin) => {
+    const action = 'post';
+    const res = await fetch('/api/auth', {
+      method: action,
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        department: department,
+        pin: pin
+      })
+    });
+    return res.json();
+  };
+
+  const submitData = async () => {
+    const action = 'post';
+    const res = await fetch('/api/responses', {
+      method: action,
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(responseData)
+    });
+    return res.json();
+  };
 
   return (
     <div className={styles.questionContainer}>
@@ -149,6 +169,15 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
         updateHeader={updateHeader}
         isSpanish={isSpanish}
         zipCodeInRange={zipCodeInRange}
+        overEighteen={overEighteen}
+        isOver18={isOver18}
+        setRiskGroup={setRiskGroup}
+        setJJApproved={setJJApproved}
+        isJassenapproved={isJassenapproved}
+        setImmunocompromised={setImmunocompromised}
+        isImmunocomp={isImmunocomp}
+        setBooster={setBooster}
+        isBooster={isBooster}
       ></QuestionView>
       {/* <p>{`Zip Code ${isInZipCodeRange ? 'is' : 'is not'} in range`}</p> */}
     </div>

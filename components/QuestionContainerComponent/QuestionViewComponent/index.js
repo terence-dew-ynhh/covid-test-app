@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import DepartmentSelectComponent from '../DepartmentSelectComponent';
 import PinInputComponent from '../PinInputComponent';
 import VaccineDateSelectComponent from '../VaccineDateSelectComponent';
@@ -9,18 +9,22 @@ import CovidSymptomsComponent from '../CovidSymptomsComponent';
 import FactSheetComponent from '../FactSheetComponent';
 import SelectVaccineComponent from '../SelectVaccineComponent';
 import QuarantineComponent from '../QuarantineComponent';
-import SelectSymptomsComponent from '../SelectSymptomsComponent'
-import ReceiveVaccinationConsent from '../ReceiveVaccinationConsent'
-import IsEmployeeComponent from '../IsEmployeeComponent'
-import AgeComponent from '../AgeComponent'
-import MonoclonalComponent from '../MonoclonalComponent'
+import HaveSymptomsComponent from '../HaveSymptomsComponent';
+import ReceiveVaccinationConsent from '../ReceiveVaccinationConsent';
+import SlotsFilledComponent from '../SlotsFilledComponent';
+import MonoclonalComponent from '../MonoclonalComponent';
 import ZipInputComponent from '../ZipInputComponent';
 import VaccinationScheduleConsent from '../VaccinationScheduleConsent';
+import AgeComponent from '../AgeComponent';
+import HITHistoryComponent from '../HITHistoryComponent';
 import YNHHFactSheetComponent from '../YNHHFactSheetComponent';
-import Over18Component from '../Over18Component';
-import VaccinationCalendarComponent from '../VaccinationCalendarComponent';
-import styles from './QuestionViewComponent.module.css';
+import MiscComponent from '../MiscComponent';
+import ThirdDoseComponent from '../ThirdDoseComponent';
+import ImmunoCompConsent from '../ImmunoCompConsent';
+import ReceiveBoosterConsent from '../ReceiveBoosterConsent';
+import SelectPfizerComponent from '../SelectPfizerComponent';
 
+import styles from './QuestionViewComponent.module.css';
 
 const QuestionViewComponent = ({
   compName,
@@ -36,15 +40,47 @@ const QuestionViewComponent = ({
   updateAnswerData,
   updateHeader,
   isSpanish,
-  zipCodeInRange
+  zipCodeInRange,
+  overEighteen,
+  isOver18,
+  setRiskGroup,
+  setJJApproved,
+  isJassenapproved,
+  setImmunocompromised,
+  isImmunocomp,
+  setBooster,
+  isBooster
 }) => {
   const [prevEnabled, setPrevEnabled] = useState(false);
   const [nextEnabled, setNextEnabled] = useState(false);
   const [doneEnabled, setDoneEnabled] = useState(false);
-
-  useEffect(() => {
-    
-  }, []);
+  const components = {
+    deptselect: DepartmentSelectComponent,
+    pininput: PinInputComponent,
+    firstdose: FirstDoseComponent,
+    listconditions: ListedConditionsConsent,
+    testedpositive: TestedPositiveComponent,
+    covidsymptoms: CovidSymptomsComponent,
+    factsheet: FactSheetComponent,
+    selectedvaccine: SelectVaccineComponent,
+    vaccinedateselect: VaccineDateSelectComponent,
+    quartinecovid: QuarantineComponent,
+    selectsymptoms: HaveSymptomsComponent,
+    vaccineconsent: ReceiveVaccinationConsent,
+    slotsfilled: SlotsFilledComponent,
+    age: AgeComponent,
+    monoclonal: MonoclonalComponent,
+    zipcode: ZipInputComponent,
+    vaccineschedule: VaccinationScheduleConsent,
+    ynhhfactsheet: YNHHFactSheetComponent,
+    hithistory: HITHistoryComponent,
+    misc: MiscComponent,
+    immunocomp: ThirdDoseComponent,
+    immunocompconsent: ImmunoCompConsent,
+    receivebooster: ReceiveBoosterConsent, 
+    selectpfizer: SelectPfizerComponent
+  };
+  const ComponentName = components[compName || 'pininput'];
 
   const isPrevEnabled = (isEnabled) => {
     setPrevEnabled(isEnabled);
@@ -61,31 +97,6 @@ const QuestionViewComponent = ({
   const setSchedulerURL = (location) => {
     updateLocation(location);
   };
-
-  const components = {
-    deptselect: DepartmentSelectComponent,
-    pininput: PinInputComponent,
-    firstdose: FirstDoseComponent,
-    listconditions: ListedConditionsConsent,
-    testedpositive: TestedPositiveComponent,
-    covidsymptoms: CovidSymptomsComponent,
-    factsheet: FactSheetComponent,
-    ynhhfactsheet: YNHHFactSheetComponent,
-    selectedvaccine: SelectVaccineComponent,
-    vaccinedateselect: VaccineDateSelectComponent,
-    quartinecovid: QuarantineComponent,
-    selectsymptoms: SelectSymptomsComponent,
-    vaccineconsent: ReceiveVaccinationConsent,
-    employee: IsEmployeeComponent,
-    age: AgeComponent,
-    monoclonal: MonoclonalComponent,
-    zipcode: ZipInputComponent,
-    vaccineschedule: VaccinationScheduleConsent,
-    over18: Over18Component,
-    vaccinecalendar: VaccinationCalendarComponent,
-  };
-
-  const ComponentName = components[compName || 'pininput'];
 
   return (
     <div className={styles.questionContainer}>
@@ -107,6 +118,15 @@ const QuestionViewComponent = ({
           updateHeader={updateHeader}
           isSpanish={isSpanish}
           zipCodeInRange={zipCodeInRange}
+          isOver18={isOver18}
+          overEighteen={overEighteen}
+          setRiskGroup={setRiskGroup}
+          setJJApproved={setJJApproved}
+          isJassenapproved={isJassenapproved}
+          setImmunocompromised={setImmunocompromised}
+          isImmunocomp={isImmunocomp}
+          setBooster={setBooster}
+          isBooster={isBooster}
         />
       </div>
       <div className={styles.buttonContainer}>
@@ -119,7 +139,9 @@ const QuestionViewComponent = ({
         <button
           className="button"
           hidden={!doneEnabled}
-          onClick={() => {schedulePush(false);}}
+          onClick={() => {
+            schedulePush(false);
+          }}
         >
           {isSpanish ? `Programar una Cita` : `Schedule Appointment`}
         </button>

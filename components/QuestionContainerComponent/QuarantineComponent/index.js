@@ -8,7 +8,8 @@ const QuarantineComponent = ({
   isDoneEnabled,
   updateAnswerData,
   schedulePush,
-  isSpanish
+  isSpanish,
+  isOver18
 }) => {
   const [isDiagnosed, setIsDiagnosed] = useState('');
 
@@ -51,7 +52,8 @@ const QuarantineComponent = ({
                     name="prev_covid"
                     onClick={(e) => {
                       updateAnswerData({ quarantined: e.target.value });
-                      schedulePush();
+                      if (isOver18) nextPage();
+                      else schedulePush();
                     }}
                   ></input>
                   <label htmlFor="prev_covid_no">{QText[4]}</label>

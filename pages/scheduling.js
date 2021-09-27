@@ -55,7 +55,7 @@ export default function Home({ link, recc_date, second_dose, isSpanish }) {
 Home.getInitialProps = async ({ query }) => {
   const { recc_date, second_dose, isPfizer, isSpanish } = query;
     
-  let link = "https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=91932,91922,91924,91926,91928,91930,91934&vt=2460&dept=103070034,104010097,108010099,102011094,101010172,103700027,108710073&view=plain&public=1"
+  let link = "https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=91933,91923,91925,91927,91929,91931,91935&vt=2460&dept=103070034,104010097,108010099,102010094,101010172,103700027,108710073&view=plain&public=1&lang=english"
     
   return {
     link,
@@ -64,4 +64,3 @@ Home.getInitialProps = async ({ query }) => {
     isSpanish
   };
 };
-// export default redirect('http://www.ynhhs.org/covidvaccine');

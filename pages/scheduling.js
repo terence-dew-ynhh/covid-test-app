@@ -55,17 +55,8 @@ export default function Home({ link, recc_date, second_dose, isSpanish }) {
 Home.getInitialProps = async ({ query }) => {
   const { recc_date, second_dose, isPfizer, isSpanish } = query;
     
-  let link =
-    second_dose == 'true'
-      ? isPfizer == 'true'
-        ? 'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=83668,83667,74622,84623,83665,83652,83656,84799,84798,84796,84797,84800,84816,85109,85376&vt=2339&dept=204150016,204590014,201280003,208040011,204010005,204400009,102360001,102350001,102370001,102340001,102380001,102400001,101960001&view=plain&public=1'
-        :  'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=85687,85685&vt=2293&dept=102390001,102340001&view=plain&public=1'
-      : 'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=85688,85685,85689&vt=2293&dept=101960001,102340001,102400001&view=plain&public=1';
-
-      if(isSpanish == 'true') link = link + "&lang=espanol"
-      else link = link + "&lang=english"
-      if(second_dose == null) link = '';
-
+  let link = "https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=91932,91922,91924,91926,91928,91930,91934&vt=2460&dept=101010172,102010094,103070034,104010097,108010099,108710073,103700027"
+    
   return {
     link,
     recc_date,

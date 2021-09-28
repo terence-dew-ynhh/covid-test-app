@@ -68,8 +68,7 @@ const VaccineExemptConsentComponent = ({
         <div className={styles.question_row_item_sub}>
           <fieldset>
             <legend>
-              - I work in {isConnecticut ? "CT" : "RI"} and I have a COVID-19 Vaccine Exemption and I am Required for weekly
-              COVID-19 PCR testing<br></br>
+              - I am a YNHHS employee and I have a COVID-19 Vaccine Exemption and am required to undergo mandatory COVID-19 PCR testing.<br></br>
               <br></br>- I am currently asymptomatic and will continue to work
               <br></br>
               <br></br>- I will adhere to twice daily fever and symptoms

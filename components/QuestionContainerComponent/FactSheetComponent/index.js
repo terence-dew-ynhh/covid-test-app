@@ -115,9 +115,6 @@ const FactSheetComponent = ({
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
             <p className="error" hidden={!(isDiagnosed === 'No')}>
-              {FSText[1]}
-              <br></br>
-              <br></br>
               {FSText[2]}
             </p>
             <fieldset>
@@ -135,7 +132,7 @@ const FactSheetComponent = ({
                 <br></br>
                 <a
                   target="__blank"
-                  href="https://mychart.ynhhs.org/MyChart-PRD/en-US/PDF/ESPCOVIDPfizerVaccineFactSheet.pdf"
+                  href="https://mychart.ynhhs.org/mychart-prd/en-US/PDF/EUAPfiser12_ESP.pdf"
                 >
                   {FSText[3]}
                 </a>{' '}

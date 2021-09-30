@@ -18,6 +18,12 @@ import VaccinationScheduleConsent from '../VaccinationScheduleConsent';
 import AgeComponent from '../AgeComponent';
 import HITHistoryComponent from '../HITHistoryComponent';
 import YNHHFactSheetComponent from '../YNHHFactSheetComponent';
+import MiscComponent from '../MiscComponent';
+import ThirdDoseComponent from '../ThirdDoseComponent';
+import ImmunoCompConsent from '../ImmunoCompConsent';
+import ReceiveBoosterConsent from '../ReceiveBoosterConsent';
+import SelectPfizerComponent from '../SelectPfizerComponent';
+
 import styles from './QuestionViewComponent.module.css';
 
 const QuestionViewComponent = ({
@@ -39,7 +45,11 @@ const QuestionViewComponent = ({
   isOver18,
   setRiskGroup,
   setJJApproved,
-  isJassenapproved
+  isJassenapproved,
+  setImmunocompromised,
+  isImmunocomp,
+  setBooster,
+  isBooster
 }) => {
   const [prevEnabled, setPrevEnabled] = useState(false);
   const [nextEnabled, setNextEnabled] = useState(false);
@@ -63,7 +73,12 @@ const QuestionViewComponent = ({
     zipcode: ZipInputComponent,
     vaccineschedule: VaccinationScheduleConsent,
     ynhhfactsheet: YNHHFactSheetComponent,
-    hithistory: HITHistoryComponent
+    hithistory: HITHistoryComponent,
+    misc: MiscComponent,
+    immunocomp: ThirdDoseComponent,
+    immunocompconsent: ImmunoCompConsent,
+    receivebooster: ReceiveBoosterConsent, 
+    selectpfizer: SelectPfizerComponent
   };
   const ComponentName = components[compName || 'pininput'];
 
@@ -108,6 +123,10 @@ const QuestionViewComponent = ({
           setRiskGroup={setRiskGroup}
           setJJApproved={setJJApproved}
           isJassenapproved={isJassenapproved}
+          setImmunocompromised={setImmunocompromised}
+          isImmunocomp={isImmunocomp}
+          setBooster={setBooster}
+          isBooster={isBooster}
         />
       </div>
       <div className={styles.buttonContainer}>

@@ -24,9 +24,9 @@ const HITHistoryComponent = ({
   return (
     <>
       <div className={styles.question_row_item}>
-        <p className="banner">
+        {/* <p className="banner">
           We have resumed distributing the Janssen (J&J) vaccination.
-        </p>
+        </p> */}
         <br></br>
         <br></br>
         <fieldset className="radio_grp_set">
@@ -63,7 +63,7 @@ const HITHistoryComponent = ({
         <br></br>
         <br></br>
         <b className="redText">
-          New Haven Health Department recommends that patients with HIT obtain the Pfizer or Moderna
+          YNHHS recommends that patients with HIT obtain the Pfizer or Moderna
           vaccine.
         </b>
       </div>

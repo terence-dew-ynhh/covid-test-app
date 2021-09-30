@@ -7,7 +7,8 @@ const MonoclonalComponent = ({
   isPrevEnabled,
   isDoneEnabled,
   updateAnswerData,
-  isSpanish
+  isSpanish,
+  isOver18
 }) => {
   const [isDiagnosed, setIsDiagnosed] = useState('');
 
@@ -47,7 +48,10 @@ const MonoclonalComponent = ({
                     name="prev_covid"
                     onClick={(e) => {
                       updateAnswerData({ monoclonal: e.target.value });
-                      nextPage(e);
+                      // if(isOver18)
+                      // nextPage(e,2);
+                      // else
+                      nextPage(e)
                     }}
                   ></input>
                   <label htmlFor="prev_covid_no">{MText[3]}</label>

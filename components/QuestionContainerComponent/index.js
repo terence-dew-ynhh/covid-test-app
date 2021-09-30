@@ -4,21 +4,21 @@ import styles from './QuestionContainerComponent.module.css';
 import { useRouter } from 'next/router';
 
 const currentAppState = async () => {
-
   return await fetch('/api/open')
-  .then(res => res.json())
-  .then(res => res.open)
-  
+    .then((res) => res.json())
+    .then((res) => res.open);
 };
 
 const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
   const [viewIdx, setviewIdx] = useState(0);
   const [department, setDepartment] = useState('Cornell Scott');
   const [isPfizer, setIsPfizer] = useState(null);
-  const [isJassenapproved, setIsJassenapproved] = useState(false);
+  const [isJassenapproved, setIsJassenapproved] = useState(true);
   const [isInZipCodeRange, setIsInZipCodeRange] = useState(false);
   const [isOver18, setIsOver18] = useState(false);
   const [isRiskGroup, setIsRiskGroup] = useState(false);
+  const [isImmunocomp, setIsImmunocomp] = useState(false);
+  const [isBooster, setIsBooster] = useState(false);
   const [viewJump, setviewJump] = useState([]);
   const [selDate, setSelDate] = useState('');
   const [responseData, setResponseData] = useState({});
@@ -27,31 +27,31 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
   const router = useRouter();
 
   useEffect(() => {
-    currentAppState().then(appFlag => {
-    if(appFlag){
-      setviewIdx(1);
-    }
-    setApplicationOn(appFlag);
+    currentAppState().then((appFlag) => {
+      if (appFlag) {
+        setviewIdx(1);
+      }
+      setApplicationOn(appFlag);
     });
   }, []);
 
-
   const compNames = [
-    'slotsfilled',
     'zipcode',
     'age',
     'vaccineconsent',
     'firstdose',
+    'receivebooster',
+    'immunocomp',
     'selectedvaccine',
-    'listconditions',
+    'selectpfizer',
     'hithistory',
     'testedpositive',
     'covidsymptoms',
-    'monoclonal',
-    'factsheet',
-    // 'ynhhfactsheet',
     'quartinecovid',
-    'vaccineschedule',
+    'monoclonal',
+    'misc',
+    'factsheet',
+    'ynhhfactsheet',
   ];
 
   let progressWidth = Math.floor(100 * ((viewIdx + 1) / compNames.length));
@@ -72,12 +72,19 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
     setSelDate(date);
   };
 
-   const setJJApproved = (approved) => {
+  const setJJApproved = (approved) => {
     setIsJassenapproved(approved);
   };
 
   const setRiskGroup = (isRiskGroup) => {
     setIsRiskGroup(isRiskGroup);
+  };
+
+  const setImmunocompromised = (Immunocompromised) => {
+    setIsImmunocomp(Immunocompromised);
+  };
+  const setBooster = (booster) => {
+    setIsBooster(booster);
   };
 
   const updateAnswerData = (questionData) => {
@@ -99,6 +106,9 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
     newjumpArr.splice(viewJump.length - 1, 1);
     setviewJump(newjumpArr);
     setviewIdx(index);
+    if(viewJump.length < 3){
+      setIsImmunocomp(false);
+    }
   };
 
   const schedulePush = () => {
@@ -106,7 +116,7 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
     router.push(
       `/scheduling?recc_date=${selDate}&in_zip_range=${isInZipCodeRange}&second_dose=${
         isPfizer == null ? false : true
-      }&isPfizer=${isPfizer}&isSpanish=${isSpanish}&isRiskGroup=${isRiskGroup}&isOver18=${isOver18}&jjapproved=${isJassenapproved}`,
+      }&isPfizer=${isPfizer}&isSpanish=${isSpanish}&isRiskGroup=${isRiskGroup}&isOver18=${isOver18}&jjapproved=${isJassenapproved}&isimmunocomp=${isImmunocomp}&isbooster=${isBooster}`,
       '/scheduling'
     );
   };
@@ -172,6 +182,10 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
         setRiskGroup={setRiskGroup}
         setJJApproved={setJJApproved}
         isJassenapproved={isJassenapproved}
+        setImmunocompromised={setImmunocompromised}
+        isImmunocomp={isImmunocomp}
+        setBooster={setBooster}
+        isBooster={isBooster}
       ></QuestionView>
       {/* <p>{`Zip Code ${isInZipCodeRange ? 'is' : 'is not'} in range`}</p> */}
     </div>

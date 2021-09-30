@@ -1,7 +1,7 @@
 import styles from './SelectSymptomsComponent.module.css';
 import { useState, useEffect } from 'react';
 
-const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
+const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled, updateIsSymptomatic }) => {
   const [hasSymptoms, setHasSymptoms] = useState(false);
   const [hasSevereSymptoms, setHasSevereSymptoms] = useState(false);
 
@@ -34,6 +34,7 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
       setHasSymptoms(false);
       setHasSevereSymptoms(false);
       noneChk.checked = true;
+      updateIsSymptomatic(false);
       isDoneEnabled(true);
     } else {
       toggleCheckBoxes([...checkboxesArr, ...severeCheckboxesArr], false);
@@ -82,6 +83,8 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
           toggleCheckBoxes(severeCheckboxesArr, true)
           setHasSymptoms(true);
           setHasSevereSymptoms(false);
+          isDoneEnabled(true);
+          updateIsSymptomatic(true);
           noneChk.disabled = true;
         }else if(!shouldDisableSev){
           toggleCheckBoxes(severeCheckboxesArr, false)

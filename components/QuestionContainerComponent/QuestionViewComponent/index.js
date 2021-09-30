@@ -18,6 +18,7 @@ import VaccineExemptConsentComponent from '../VaccineExemptConsentComponent';
 import ReturnProcessConsentComponent from '../ReturnProcessConsentComponent';
 import WorkPlaceExposureComponent from '../WorkPlaceExposureComponent';
 import HouseHoldExposureComponent from '../HouseHoldExposureComponent';
+import EmploymentStatusComponent from '../EmploymentStatusComponent';
 import styles from './QuestionViewComponent.module.css';
 
 const QuestionViewComponent = ({
@@ -69,7 +70,8 @@ const QuestionViewComponent = ({
     vaccineexempt: VaccineExemptConsentComponent,
     returnprocess: ReturnProcessConsentComponent,
     workplaceexposure: WorkPlaceExposureComponent,
-    householdexposure: HouseHoldExposureComponent
+    householdexposure: HouseHoldExposureComponent,
+    employeestatus: EmploymentStatusComponent
   };
 
   const ComponentName = components[compName || 'employee'];

@@ -13,6 +13,7 @@ const QuestionFormComponent = ({}) => {
   const router = useRouter();
 
   const compNames = [
+    'employeestatus',
     'location',    
     'needcovidtesting',
     'symptomssel',

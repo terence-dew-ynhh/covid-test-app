@@ -36,6 +36,7 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
   }, []);
 
   const compNames = [
+    'receivebooster',
     'hithistory',
     'testedpositive',
     'covidsymptoms',

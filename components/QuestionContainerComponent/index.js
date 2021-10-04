@@ -8,7 +8,7 @@ const QuestionFormComponent = ({}) => {
   const [symptomatic, setSymptomatic] = useState(false);
   const [isStudent, setIsStudent] = useState(false);
 
-  const compNames = ['identify', 'overeighteen', 'symptomssel'];
+  const compNames = ['identify', 'pathconsent',  'overeighteen', 'symptomssel'];
   const [jumpArr, setJumpArr] = useState([]);
   const router = useRouter();
 
@@ -64,6 +64,7 @@ const QuestionFormComponent = ({}) => {
         schedulePush={schedulePush}
         updateSymptoms={updateSymptoms}
         updateIsStudent={updateIsStudent}
+        isStudent={isStudent}
       ></QuestionView>
     </div>
   );

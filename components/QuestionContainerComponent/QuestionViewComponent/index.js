@@ -6,6 +6,7 @@ import Over18Component from '../Over18Component';
 import HealthCenterComponent from '../HealthCenterComponent';
 import ResidentQuestionComponent from '../ResidentQuestionComponent';
 import IdentifyQuestionComponent from '../IdentifyQuestionComponent';
+import PathConsentComponent from '../PathConsentComponent';
 import styles from './QuestionViewComponent.module.css'
 
 
@@ -15,7 +16,8 @@ const QuestionViewComponent = ({
   prevPage,
   schedulePush,
   updateSymptoms,
-  updateIsStudent
+  updateIsStudent,
+  isStudent
 }) => {
   const [prevEnabled, setPrevEnabled] = useState(false);
   const [doneEnabled, setDoneEnabled] = useState(false);
@@ -42,7 +44,8 @@ const QuestionViewComponent = ({
     symptomssel: SelectSymptoms,
     consent: ConsentComponent,  
     healthcare: HealthCenterComponent,
-    identify: IdentifyQuestionComponent  
+    identify: IdentifyQuestionComponent,
+    pathconsent: PathConsentComponent  
   };
 
   const ComponentName = components[compName || 'employee'];
@@ -57,7 +60,7 @@ const QuestionViewComponent = ({
         isNextEnabled={isNextEnabled}
         updateSymptoms={updateSymptoms}
         updateIsStudent={updateIsStudent}
-        
+        isStudent={isStudent}
       />
       </div>
       <div className={styles.buttonContainer}>          

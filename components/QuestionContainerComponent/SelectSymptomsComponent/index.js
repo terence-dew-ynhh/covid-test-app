@@ -24,18 +24,29 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled, hasSymptoms })
 
   const handleChecked = (e) => {
     //None of the Above
-    let noneChk = e.target.id === 'prev_covid_no_symp_exp' ? document.getElementById(`prev_covid_no_symp_exp`) : document.getElementById(`prev_covid_no_symp`);
-
+    let noneChk = document.getElementById(`prev_covid_no_symp`);
+    let noneChkExp = document.getElementById(`prev_covid_no_symp_exp`);
     if (
-      (e.target.id === 'prev_covid_no_symp_exp' || e.target.id === 'prev_covid_no_symp')  &&
+      (e.target.id === 'prev_covid_no_symp_exp')  &&
       e.target.checked === true
     ) {
-      toggleCheckBoxes([...checkboxesArr, ...severeCheckboxesArr], true);
+      toggleCheckBoxes([...checkboxesArr, ...severeCheckboxesArr, `no_symp` ], true);
+      setHasSymptomsChk(false);
+      setHasSevereSymptoms(false);
+      noneChkExp.checked = true;
+      nextPage();
+    } 
+    else if (
+      (e.target.id === 'prev_covid_no_symp')  &&
+      e.target.checked === true
+    ) {
+      toggleCheckBoxes([...checkboxesArr, ...severeCheckboxesArr, 'no_symp_exp'], true);
       setHasSymptomsChk(false);
       setHasSevereSymptoms(false);
       noneChk.checked = true;
       nextPage();
-    } else {
+    }
+    else {
       toggleCheckBoxes([...checkboxesArr, ...severeCheckboxesArr], false);
       noneChk.checked = false;
       isDoneEnabled(false);
@@ -70,6 +81,10 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled, hasSymptoms })
         noneChk.checked = false;
         noneChk.disabled = true;
 
+        noneChkExp.checked = false;
+        noneChkExp.disabled = true;
+        
+
         if(shouldDisableSymp){
           toggleCheckBoxes(checkboxesArr, true)
           setHasSymptomsChk(false);
@@ -87,6 +102,7 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled, hasSymptoms })
           isDoneEnabled(true);
           hasSymptoms(true)
           noneChk.disabled = true;
+          noneChkExp.disabled = true;
         }else if(!shouldDisableSev){
           toggleCheckBoxes(severeCheckboxesArr, false)
           setHasSymptomsChk(false);
@@ -94,6 +110,7 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled, hasSymptoms })
         }
       }else{
         noneChk.disabled = false;
+        noneChkExp.disabled = false;
         setHasSymptomsChk(false);
         hasSymptoms(false)
         setHasSevereSymptoms(false);
@@ -102,6 +119,7 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled, hasSymptoms })
 
     } else {
       noneChk.disabled = false;
+      
     }
   };
 
@@ -122,8 +140,8 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled, hasSymptoms })
     'Sore throat',
     'New loss of taste or smell',
     'Sinus Congestion',
-    'Rhinorrhea',
-    'Conjunctivitis',
+    'Runny Nose (Rhinorrhea)',
+    'Pink Eye/Runny Eye (Conjunctivitis)',
     'Nausea',
     'Vomiting',
     'Diarrhea',

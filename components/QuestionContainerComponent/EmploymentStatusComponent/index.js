@@ -10,7 +10,7 @@ const EmploymentStatus = ({
   const [isEmployee, setIsEmployee] = useState(true);
 
   useEffect(() => {
-    isPrevEnabled(true);
+    isPrevEnabled(false);
     isDoneEnabled(false);
   }, []);
 

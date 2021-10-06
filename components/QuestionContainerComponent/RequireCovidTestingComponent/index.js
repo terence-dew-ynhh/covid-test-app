@@ -40,7 +40,7 @@ import styles from './RequireCovidTestingComponent.module.css'
             name="employee_staff"
             onClick={(e) => {
               updateIsSymptomatic(false)
-              nextPage(e,5)
+              nextPage(e, 4)
             }}
           ></input>
           <label htmlFor="employee_staff_check_no">Return from Travel to a High Risk Area?</label>
@@ -53,7 +53,7 @@ import styles from './RequireCovidTestingComponent.module.css'
             onClick={(e) => {
               updateIsConnecticut(true)
               updateIsSymptomatic(false)
-              nextPage(e,9)
+              nextPage(e,7)
             }}
           ></input>
           <label htmlFor="employee_staff_check_exempt"><u>I work in CT or New York</u> and have a COVID-19 Vaccine Exemption and I am Required for weekly COVID-19 testing</label>
@@ -66,7 +66,7 @@ import styles from './RequireCovidTestingComponent.module.css'
             onClick={(e) => {
               updateIsConnecticut(false)
               updateIsSymptomatic(false)
-              nextPage(e,9)
+              nextPage(e,7)
             }}
           ></input>
           <label htmlFor="employee_ri_check_exempt"><u>I work in RI</u> and have a COVID-19 Vaccine Exemption and I am Required for <u>twice weekly</u> COVID-19 testing</label>
@@ -78,7 +78,7 @@ import styles from './RequireCovidTestingComponent.module.css'
             name="employee_staff"
             onClick={(e) => {
               updateIsSymptomatic(false)
-              nextPage(e,12)
+              nextPage(e,10)
             }}
           ></input>
           <label htmlFor="employee_staff_check_workplace_exposure">I am asymptomatic but I had a possible WORKPLACE exposure to someone with COVID-19</label>
@@ -90,7 +90,7 @@ import styles from './RequireCovidTestingComponent.module.css'
             name="employee_staff"
             onClick={(e) => {
               updateIsSymptomatic(false)
-              nextPage(e,13)
+              nextPage(e,11)
             }}
           ></input>
           <label htmlFor="employee_staff_check_household_exposure">I am asymptomatic but I had a possible Household or Community exposure to someone with COVID-19</label>

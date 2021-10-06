@@ -1,7 +1,7 @@
 import styles from './SelectSymptomsComponent.module.css';
 import { useState, useEffect } from 'react';
 
-const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled, hasSymptoms }) => {
+const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled, updateIsSymptomatic }) => {
   const [hasSymptomsChk, setHasSymptomsChk] = useState(false);
   const [hasSevereSymptoms, setHasSevereSymptoms] = useState(false);
 
@@ -88,7 +88,7 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled, hasSymptoms })
         if(shouldDisableSymp){
           toggleCheckBoxes(checkboxesArr, true)
           setHasSymptomsChk(false);
-          hasSymptoms(false)
+          updateIsSymptomatic(false)
           setHasSevereSymptoms(true);
         }else if(!shouldDisableSymp){
           toggleCheckBoxes(checkboxesArr, false)
@@ -100,19 +100,19 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled, hasSymptoms })
           setHasSymptomsChk(true);
           setHasSevereSymptoms(false);
           isDoneEnabled(true);
-          hasSymptoms(true)
+          updateIsSymptomatic(true)
           noneChk.disabled = true;
           noneChkExp.disabled = true;
         }else if(!shouldDisableSev){
           toggleCheckBoxes(severeCheckboxesArr, false)
           setHasSymptomsChk(false);
-          hasSymptoms(false);
+          updateIsSymptomatic(false);
         }
       }else{
         noneChk.disabled = false;
         noneChkExp.disabled = false;
         setHasSymptomsChk(false);
-        hasSymptoms(false)
+        updateIsSymptomatic(false)
         setHasSevereSymptoms(false);
         isDoneEnabled(false);
       }

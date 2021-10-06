@@ -17,7 +17,6 @@ const QuestionFormComponent = ({}) => {
     'location',    
     'needcovidtesting',
     'symptomssel',
-    'sevsymptomsstatment',
     'outworkconsent',
     'possibleflu',
     'traveltesting',

@@ -24,31 +24,14 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled, updateIsSympto
 
   const handleChecked = (e) => {
     //None of the Above
-    let noneChk = document.getElementById(`prev_covid_no_symp`);
-    let noneChkExp = document.getElementById(`prev_covid_no_symp_exp`);
-    if (
-      (e.target.id === 'prev_covid_no_symp_exp')  &&
-      e.target.checked === true
-    ) {
-      toggleCheckBoxes([...checkboxesArr, ...severeCheckboxesArr, `no_symp` ], true);
-      setHasSymptomsChk(false);
-      setHasSevereSymptoms(false);
-      noneChkExp.checked = true;
-      nextPage();
-    } 
-    else if (
+
+     if (
       (e.target.id === 'prev_covid_no_symp')  &&
       e.target.checked === true
     ) {
-      toggleCheckBoxes([...checkboxesArr, ...severeCheckboxesArr, 'no_symp_exp'], true);
-      setHasSymptomsChk(false);
-      setHasSevereSymptoms(false);
-      noneChk.checked = true;
-      nextPage();
     }
     else {
       toggleCheckBoxes([...checkboxesArr, ...severeCheckboxesArr], false);
-      noneChk.checked = false;
       isDoneEnabled(false);
     }
 
@@ -78,11 +61,7 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled, updateIsSympto
       });
 
       if (shouldDisableSymp || shouldDisableSev) {
-        noneChk.checked = false;
-        noneChk.disabled = true;
 
-        noneChkExp.checked = false;
-        noneChkExp.disabled = true;
         
 
         if(shouldDisableSymp){
@@ -101,16 +80,14 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled, updateIsSympto
           setHasSevereSymptoms(false);
           isDoneEnabled(true);
           updateIsSymptomatic(true)
-          noneChk.disabled = true;
-          noneChkExp.disabled = true;
+
         }else if(!shouldDisableSev){
           toggleCheckBoxes(severeCheckboxesArr, false)
           setHasSymptomsChk(false);
           updateIsSymptomatic(false);
         }
       }else{
-        noneChk.disabled = false;
-        noneChkExp.disabled = false;
+
         setHasSymptomsChk(false);
         updateIsSymptomatic(false)
         setHasSevereSymptoms(false);
@@ -118,7 +95,6 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled, updateIsSympto
       }
 
     } else {
-      noneChk.disabled = false;
       
     }
   };
@@ -201,44 +177,6 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled, updateIsSympto
             <div className={styles.q1_grid}>{checkboxes}</div>
             <br></br>
               <br></br>
-            <div className={styles.chk_row_item}>
-              <label className={styles.none_label_or}></label>
-              <input
-                id={`prev_covid_no_symp_exp`}
-                type="checkbox"
-                key={'prev_covid_no_symp_exp'}
-                value={'prev_covid_no_symp_exp'}
-                name="symptoms"
-                onChange={(e) => {
-                  handleChecked(e);
-                }}
-              ></input>
-              <label
-                className={styles.prev_none_label}
-                htmlFor={`prev_covid_no_symp_exp`}
-              >
-                I am not experiencing any symptoms but I have had a close
-                contact with someone with a confirmed case of COVID-19.
-              </label>
-              <br></br>
-              <br></br>
-              <input
-                id={`prev_covid_no_symp`}
-                type="checkbox"
-                key={`prev_covid_no_symp`}
-                value={`prev_covid_no_symp`}
-                name="symptoms"
-                onChange={(e) => {
-                  handleChecked(e);
-                }}
-              ></input>
-              <label
-                className={styles.prev_none_label}
-                htmlFor={`prev_covid_no_symp`}
-              >
-                I am not experiencing any symptoms
-              </label>
-            </div>
           </fieldset>
         </div>
         <p

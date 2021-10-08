@@ -15,7 +15,7 @@ import styles from './Over18Component.module.css'
     <>
       <div className={styles.question_row_item}>
       <p className="error" hidden={isOver18}>
-      If you are under the age of 18, a parent or guardian is required to schedule this appointment. We recommend contacting your medical provider directly or call the YNHHS COVID Call Center at 1-888-ASK-YNHH for a clinical assessment.
+      If you are under the age of 18, a parent or guardian is required to schedule this appointment. We recommend contacting your medical provider directly or call the YNHHS COVID Call Center at 1-833-ASK-YNHH for a clinical assessment.
         </p>
         <p className="advisement" hidden={isOver18andProxy}>
         For any patient under the age of 18, a parent, legal guardian or designated adult is required to be present at the time of the test.        

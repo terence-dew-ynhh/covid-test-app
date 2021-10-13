@@ -246,9 +246,8 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled, hasSymptoms })
           hidden={!(hasSymptomsChk)}
         >
           
-          If you do not have a primary care provider and would like to be
-          assessed for flu or other medical concerns, please <a target="__blank" href={"https://www.ynhhs.org/make-an-appointment/schedule-a-walk-in.aspx?utm_source=covidtesting2&utm_medium=link"}>CLICK HERE</a>
-           to make a walk-in or video visit with one of our clinicians.
+          If you do not have a primary care provider and would like to be assessed for flu or other medical concerns, please call the YNHHS Call Center at 833-ASK-YNHH (833-275-9644) or <a target="__blank" href={"https://www.ynhhs.org/make-an-appointment/schedule-a-walk-in.aspx?utm_source=covidtesting2&utm_medium=link"}>CLICK HERE</a>
+            to make a walk-in or video visit with one of our clinicians.
         </p>
       </div>
       <style jsx>{``}</style>

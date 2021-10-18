@@ -1,10 +1,16 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
 export default function Home({ link }) {
   const router = useRouter();
   const { endpoint } = router.query;
   console.log(endpoint);
+
+  useEffect(() => {
+    if (link == '') router.push(`/`);
+  }, []);
+
   return (
     <>
       <Head>
@@ -71,7 +77,7 @@ Home.getInitialProps = async ({ query }) => {
     } ,
   } 
 
-  let link = urlList[location][testingStatus];
+  let link = (location) ? urlList[location][testingStatus] : '';
  
   return {
     link

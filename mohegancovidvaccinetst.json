@@ -1,0 +1,9 @@
+{
+    "apps": [
+        {
+            "name": "mohcovidvaccinetst",
+            "script": "npm",
+            "args" : "dev"
+        }
+    ]
+}

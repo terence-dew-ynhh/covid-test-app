@@ -27,16 +27,9 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
   const router = useRouter();
 
   useEffect(() => {
-    currentAppState().then((appFlag) => {
-      if (appFlag) {
-        setviewIdx(1);
-      }
-      setApplicationOn(appFlag);
-    });
   }, []);
 
   const compNames = [
-    'slotsfilled',
     'age',
     'vaccineconsent',
     'firstdose',

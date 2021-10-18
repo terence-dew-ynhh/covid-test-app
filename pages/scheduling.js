@@ -94,15 +94,6 @@ export default function Home({
               : `Please Select Date After ${recc_date}`
             : ''}
         </h3>
-
-        <button
-          className="button"
-          style={{ marginBottom: 0 }}
-          type="button"
-          onClick={handleOpen}
-        >
-          Click here to see Vaccine Schedule
-        </button>
         {/* <p>{`Over 18:${isOver18} | Pfizer:${isPfizer} | Third Dose:${isimmunocomp}`}</p> */}
         <iframe
           id="openSchedulingFrame"

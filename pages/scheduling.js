@@ -88,13 +88,6 @@ export default function Home({
       </div>
 
       <div className="scheduleContainer">
-        <h3>
-          {second_dose == 'true'
-            ? isSpanish == 'true'
-              ? `Seleccione una fecha posterior a ${recc_date}`
-              : `Please Select Date After ${recc_date}`
-            : ''}
-        </h3>
         {/* <p>{`Over 18:${isOver18} | Pfizer:${isPfizer} | Third Dose:${isimmunocomp}`}</p> */}
         <iframe
           id="openSchedulingFrame"

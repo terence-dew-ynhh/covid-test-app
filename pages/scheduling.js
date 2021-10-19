@@ -162,7 +162,7 @@ Home.getInitialProps = async ({ query }) => {
     // }
   }
 
-  if (isbooster) {
+  if (isbooster == 'true') {
     link =
       'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=85687,85685&vt=2293&dept=102390001,102340001&view=plain&public=1';
   }

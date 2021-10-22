@@ -156,6 +156,9 @@ Home.getInitialProps = async ({ query }) => {
   }
 
   if (isbooster == 'true') {
+        link =
+      'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=84792,84795,84794,94791,95375,84815,84793,85108&vt=2338&dept=101960001,102340001,102350001,102360001,102370001,102380001,102390001,102400001&view=plain&public=1';
+    if (isPfizer == 'true') {
     link =
       'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=88043&vt=2460&dept=204650005&view=plain&public=1';
   }

@@ -67,10 +67,13 @@ const ReceiveBoosterConsent = ({
               {VEText[0]}
               <br></br>
               <br></br>
-              {VEText[1]} <a href="https://mychart.ynhhs.org/mychart-prd/en-US/PDF/ChronicConditions.pdf" target="_blank" rel="noreferrer">-  Click to view high risk conditions</a>
+              {VEText[1]} <a href="https://www.cdc.gov/coronavirus/2019-ncov/vaccines/booster-shot.html#long-term-care" target="_blank" rel="noreferrer">long-term care settings</a>
               <br></br>
               <br></br>
-              {VEText[2]}
+              {VEText[2]} <a href="https://www.cdc.gov/coronavirus/2019-ncov/need-extra-precautions/people-with-medical-conditions.html" target="_blank" rel="noreferrer">underlying medical conditions</a>
+              <br></br>
+              <br></br>
+              {VEText[3]} <a href="https://www.cdc.gov/coronavirus/2019-ncov/vaccines/booster-shot.html#HighRisk" target="_blank" rel="noreferrer">high-risk settings</a>
             </legend>
             <div className={styles.q1_grid}>{checkboxes}</div>
           </fieldset>

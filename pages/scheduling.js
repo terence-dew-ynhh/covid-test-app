@@ -50,7 +50,7 @@ Home.getInitialProps = async ({ query }) => {
 
   let testingStatus = status;
   if( isBelowFive == 'true'){
-    testingStatus = testingStatus + 'Five'
+    testingStatus = 'SymptomaticFive'
   }
 
   const urlList = {

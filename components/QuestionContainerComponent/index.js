@@ -37,7 +37,6 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
     'immunocomp',
     'selectedvaccine',
     'selectpfizer',
-    'hithistory',
     'testedpositive',
     'covidsymptoms',
     'quartinecovid',

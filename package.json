@@ -32,7 +32,7 @@
   "scripts": {
     "dev": "next -p 3033",
     "build": "next build",
-    "start": "next start -p 3033"
+    "start": "next start -p 3052"
   },
   "repository": {
     "type": "git",

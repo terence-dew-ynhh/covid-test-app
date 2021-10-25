@@ -3,7 +3,7 @@
         {
             "name": "mohcovidvaccinetst",
             "script": "npm",
-            "args" : "dev"
+            "args" : "start"
         }
     ]
 }

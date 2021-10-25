@@ -8,7 +8,7 @@ const cookieSession = require('cookie-session');
 const http = require('http');
 
 const dev = process.env.NODE_ENV !== 'production';
-const port = process.env.PORT || 3050;
+const port = process.env.PORT || 3051;
 const app = next({ dev });
 const router = require('./router');
 

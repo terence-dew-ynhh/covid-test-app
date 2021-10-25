@@ -22,7 +22,7 @@ const ReceiveBoosterConsent = ({
   }, []);
 
   const handleChecked = (e) => {
-    nextPage(e, 2);
+    nextPage(e, 3);
   };
 
   let VEText = isSpanish ? veText.sp : veText.en;

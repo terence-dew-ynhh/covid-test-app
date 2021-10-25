@@ -52,7 +52,8 @@ const FirstDoseComponent = ({
                   name="prev_covid"
                   onClick={(e) => {
                     updateAnswerData({ first_dose: e.target.value });
-                    nextPage(e, 3);
+                    if(isOver18)nextPage(e, 3);
+                    else nextPage(e, 5);
                   }}
                 ></input>
                 <label htmlFor="second_dose">{FDText[2]}</label>

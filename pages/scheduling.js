@@ -161,7 +161,7 @@ Home.getInitialProps = async ({ query }) => {
     if (isPfizer == 'true') {
     link =
       'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=88043&vt=2460&dept=204650005&view=plain&public=1';
-  }
+  }}
 
   if (isimmunocomp == 'true') {
     link =

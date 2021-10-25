@@ -61,19 +61,18 @@ const ReceiveBoosterConsent = ({
             placing them at risk for severe COVID.
           </p> */}
           <fieldset>
-            <legend>
-              <b>Current Eligibility Criteria for Booster:</b>
-              <br></br>
-              <br></br>
+          <legend>
               {VEText[0]}
               <br></br>
-              {VEText[1]} <a href="https://www.cdc.gov/coronavirus/2019-ncov/vaccines/booster-shot.html#long-term-care" target="_blank" rel="noreferrer">long-term care settings</a>
+              <br></br>
+              {VEText[5]}
               <br></br>
               <br></br>
-              {VEText[2]} <a href="https://www.cdc.gov/coronavirus/2019-ncov/need-extra-precautions/people-with-medical-conditions.html" target="_blank" rel="noreferrer">underlying medical conditions</a>
+              <b>{VEText[6]}</b>
               <br></br>
               <br></br>
-              {VEText[3]} <a href="https://www.cdc.gov/coronavirus/2019-ncov/vaccines/booster-shot.html#HighRisk" target="_blank" rel="noreferrer">high-risk settings</a>
+              <b>{VEText[9]}</b>
+              <b className="redText">{VEText[15]}</b>
             </legend>
             <div className={styles.q1_grid}>{checkboxes}</div>
           </fieldset>

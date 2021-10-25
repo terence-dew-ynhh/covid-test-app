@@ -47,7 +47,7 @@ const SelectVaccineComponent = ({
                   name="prev_covid"
                   onClick={(e) => {
                     if(isBooster){
-                    nextPage(e, 3);
+                    nextPage(e);
                     }else{
                     updateAnswerData({ sel_vaccine: 'Moderna' });
                     pfizerSelected(false);

@@ -8,7 +8,7 @@ const ThirdDoseComponent = ({
   isDoneEnabled,
   isSpanish,
   setImmunocompromised,
-  isImmunocomp
+  isOver18
 }) => {
   useEffect(() => {
     isPrevEnabled(true);
@@ -81,7 +81,8 @@ const ThirdDoseComponent = ({
             name="employee_staff"
             onClick={(e) => {
               setImmunocompromised(true);
-              nextPage();
+              if (isOver18) nextPage();
+              else nextPage(e, 3);
             }}
           ></input>
           <label htmlFor="employee_staff_check_yes">{OEText[0]}</label>

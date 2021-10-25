@@ -70,8 +70,8 @@ const SelectPfizerComponent = ({
                   }}
                 ></input>
                 <label htmlFor="prev_covid_no">
-                  I received Moderna as my primary series and <b>would not</b> like to
-                  schedule an appointment to receive a Pfizer third dose.
+                I received Moderna as my primary series and would like to
+                  schedule an appointment to receive a <b>Moderna third dose</b>.
                 </label>
               </div>
               <br></br>
@@ -87,8 +87,8 @@ const SelectPfizerComponent = ({
                   }}
                 ></input>
                 <label htmlFor="prev_covid_yes">
-                  I received Moderna as my primary series and <b>would</b> like to
-                  schedule an appointment to receive a Pfizer third dose.
+                I received Moderna as my primary series and would like to
+                  schedule an appointment to receive a <b>Pfizer third dose</b>.
                 </label>
               </div>
             </fieldset>

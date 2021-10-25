@@ -30,7 +30,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "dev": "next -p 3050",
+    "dev": "next -p 3033",
     "build": "next build",
     "start": "next start -p 3033"
   },

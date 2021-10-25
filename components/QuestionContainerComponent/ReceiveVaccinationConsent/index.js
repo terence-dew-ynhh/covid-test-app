@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import styles from './ReceiveBoosterConsent.module.css';
+import styles from './ReceiveVaccinationConsent.module.css';
 import veText from './vaccineelidgibility.json';
 import { TramRounded } from '@material-ui/icons';
 
@@ -34,6 +34,7 @@ const ReceiveBoosterConsent = ({
   let checkboxes = checkboxesArray.map((checkbox, idx) => (
     <div className={styles.chk_row_item}>
       <label className={styles.none_label_or}> {VEText[7]}</label>
+      <br></br>
       <input
         id={`prev_covid_${checkbox.toLowerCase()}`}
         type="checkbox"
@@ -65,7 +66,6 @@ const ReceiveBoosterConsent = ({
               <br></br>
               <br></br>
               {VEText[0]}
-              <br></br>
               <br></br>
               {VEText[1]} <a href="https://www.cdc.gov/coronavirus/2019-ncov/vaccines/booster-shot.html#long-term-care" target="_blank" rel="noreferrer">long-term care settings</a>
               <br></br>

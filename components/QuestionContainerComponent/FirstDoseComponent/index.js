@@ -9,7 +9,7 @@ const FirstDoseComponent = ({
   updateAnswerData,
   isSpanish,
   isOver18,
-  isImmunocomp,
+  setImmunocompromised,
   setBooster
 }) => {
   // const [isDiagnosed, setIsDiagnosed] = useState('');
@@ -38,6 +38,8 @@ const FirstDoseComponent = ({
                   onClick={(e) => {
                     updateAnswerData({ first_dose: e.target.value });
                     nextPage(e, 5);
+                    setBooster(false);
+                    setImmunocompromised(false);
                   }}
                 ></input>
                 <label htmlFor="first_dose">{FDText[1]}</label>
@@ -52,8 +54,9 @@ const FirstDoseComponent = ({
                   name="prev_covid"
                   onClick={(e) => {
                     updateAnswerData({ first_dose: e.target.value });
-                    if(isOver18)nextPage(e, 3);
-                    else nextPage(e, 5);
+                    nextPage(e);
+                    setBooster(false);
+                    setImmunocompromised(false);
                   }}
                 ></input>
                 <label htmlFor="second_dose">{FDText[2]}</label>
@@ -69,7 +72,8 @@ const FirstDoseComponent = ({
                   onClick={(e) => {
                     updateAnswerData({ first_dose: e.target.value });
                     setBooster(false);
-                    nextPage(e, 2);
+                    setImmunocompromised(true);
+                    nextPage(e);
                   }}
                 ></input>
                 <label htmlFor="third_dose">{FDText[3]}</label>
@@ -86,6 +90,7 @@ const FirstDoseComponent = ({
                     onClick={(e) => {
                       updateAnswerData({ first_dose: e.target.value });
                       setBooster(true);
+                      setImmunocompromised(false)
                       nextPage(e);
                     }}
                   ></input>

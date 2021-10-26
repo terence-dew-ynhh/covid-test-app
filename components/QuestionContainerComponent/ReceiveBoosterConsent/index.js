@@ -66,6 +66,7 @@ const ReceiveBoosterConsent = ({
               <br></br>
               {VEText[0]}
               <br></br>
+              <br></br>
               {VEText[1]} <a href="https://www.cdc.gov/coronavirus/2019-ncov/vaccines/booster-shot.html#long-term-care" target="_blank" rel="noreferrer">long-term care settings</a>
               <br></br>
               <br></br>

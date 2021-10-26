@@ -39,8 +39,7 @@ const AllergyComponent = ({
           vaccinations you may proceed.
         </p>
         <p className="error" hidden={!hasNoAllergy}>
-          Yale New Haven Health does not currently have any appointments
-          available for Moderna third dose.
+         Due to allergic reaction, please contact your provider for COVID-19 vaccination recommendations
         </p>
         <br></br>
         <br></br>

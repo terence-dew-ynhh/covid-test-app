@@ -45,6 +45,7 @@ const AllergyComponent = ({
         <br></br>
         <fieldset className="radio_grp_set">
           <legend>{OEText[3]}</legend>
+          <b>*Please respond “yes” even if your allergic reaction was not severe enough to require emergency medical care.</b>
           <input
             id="employee_staff_check_yes"
             type="radio"

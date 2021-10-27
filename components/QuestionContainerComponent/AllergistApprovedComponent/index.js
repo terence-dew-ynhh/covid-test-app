@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import styles from './AllergyComponent.module.css';
+import styles from './AllergistApprovedComponent.module.css';
 import oeText from './over18.json';
 
-const AllergyComponent = ({
+const AllergistApprovedComponent = ({
   nextPage,
   isPrevEnabled,
   isDoneEnabled,
@@ -20,12 +20,12 @@ const AllergyComponent = ({
 
   const handleSelection = (e) => {
     if (isImmunocomp) {
-      nextPage(e, 3);
+      nextPage(e, 2);
     } else if (isBooster) {
-      nextPage(e,2);
+      nextPage(e);
     } else {
-      if (isOver18) nextPage(e, 4);
-      else nextPage(e, 5);
+      if (isOver18) nextPage(e, 3);
+      else nextPage(e, 4);
     }
   };
 
@@ -34,13 +34,10 @@ const AllergyComponent = ({
   return (
     <>
       <div className={styles.question_row_item}>
-        {/* <p className="banner">
-          NOTE: If your allergist has approved your receiving additional COVID
-          vaccinations you may proceed.
-        </p>
+
         <p className="error" hidden={!hasNoAllergy}>
-         Due to allergic reaction, please contact your provider for COVID-19 vaccination recommendations
-        </p> */}
+        Please contact your primary care provider to arrange for an allergist to determine if it is safe for you to receive another dose of the Moderna or Pfizer COVID-19 vaccine
+        </p>
         <br></br>
         <br></br>
         <fieldset className="radio_grp_set">
@@ -50,8 +47,7 @@ const AllergyComponent = ({
             type="radio"
             name="employee_staff"
             onClick={(e) => {
-              setHasNoAllergy(true);
-              nextPage(e);
+              handleSelection(e);
             }}
           ></input>
           <label htmlFor="employee_staff_check_yes">{OEText[0]}</label>
@@ -62,7 +58,7 @@ const AllergyComponent = ({
             type="radio"
             name="employee_staff"
             onClick={(e) => {
-              handleSelection(e);
+              setHasNoAllergy(true);
             }}
           ></input>
           <label htmlFor="employee_staff_check_no">{OEText[1]}</label>
@@ -74,4 +70,4 @@ const AllergyComponent = ({
   );
 };
 
-export default AllergyComponent;
+export default AllergistApprovedComponent;

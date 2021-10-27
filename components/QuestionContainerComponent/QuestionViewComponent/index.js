@@ -24,6 +24,7 @@ import ImmunoCompConsent from '../ImmunoCompConsent';
 import ReceiveBoosterConsent from '../ReceiveBoosterConsent';
 import SelectPfizerComponent from '../SelectPfizerComponent';
 import AllergyComponent from '../AllergyComponent';
+import AllergistApprovedComponent from '../AllergistApprovedComponent';
 
 import styles from './QuestionViewComponent.module.css';
 
@@ -80,7 +81,8 @@ const QuestionViewComponent = ({
     immunocompconsent: ImmunoCompConsent,
     receivebooster: ReceiveBoosterConsent, 
     selectpfizer: SelectPfizerComponent,
-    allergy: AllergyComponent
+    allergy: AllergyComponent,
+    allergistapproval: AllergistApprovedComponent
   };
   const ComponentName = components[compName || 'pininput'];
 

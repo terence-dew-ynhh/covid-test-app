@@ -22,7 +22,7 @@ const AllergyComponent = ({
     if (isImmunocomp) {
       nextPage(e, 3);
     } else if (isBooster) {
-      nextPage(e,2);
+      nextPage(e, 2);
     } else {
       if (isOver18) nextPage(e, 4);
       else nextPage(e, 5);
@@ -44,8 +44,16 @@ const AllergyComponent = ({
         <br></br>
         <br></br>
         <fieldset className="radio_grp_set">
-          <legend>{OEText[3]}</legend>
-          <b>*Please respond “yes” even if your allergic reaction was not severe enough to require emergency medical care.</b>
+          <legend>
+            {OEText[3]}
+            <p>
+              <b>
+                *Please respond “yes” even if your allergic reaction was not
+                severe enough to require emergency medical care.
+              </b>
+            </p>
+          </legend>
+
           <input
             id="employee_staff_check_yes"
             type="radio"
@@ -67,7 +75,6 @@ const AllergyComponent = ({
             }}
           ></input>
           <label htmlFor="employee_staff_check_no">{OEText[1]}</label>
-          
         </fieldset>
       </div>
       <style jsx>{``}</style>

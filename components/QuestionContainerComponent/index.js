@@ -26,13 +26,13 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
 
   const router = useRouter();
 
-  useEffect(() => {
-  }, []);
 
   const compNames = [
     'age',
     'vaccineconsent',
     'firstdose',
+    'allergy',
+    'allergistapproval',
     'receivebooster',
     'immunocomp',
     'selectedvaccine',

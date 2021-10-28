@@ -10,7 +10,7 @@ const useStyles = makeStyles(() => ({
   }
 }));
 
-const ReceiveVaccinationConsent = ({
+const ReceiveBoosterConsent = ({
   nextPage,
   isPrevEnabled,
   isDoneEnabled,
@@ -34,6 +34,7 @@ const ReceiveVaccinationConsent = ({
   let checkboxes = checkboxesArray.map((checkbox, idx) => (
     <div className={styles.chk_row_item}>
       <label className={styles.none_label_or}> {VEText[7]}</label>
+      <br></br>
       <input
         id={`prev_covid_${checkbox.toLowerCase()}`}
         type="checkbox"
@@ -54,9 +55,13 @@ const ReceiveVaccinationConsent = ({
     <>
       <div className={styles.question_row_item}>
         <div className={styles.question_row_item_sub}>
-          {/* <p className="message">{VEText[10]}</p> */}
+          {/* <p className="message">
+            Please note that boosters are not yet recommended for HCW, first
+            responders, etc. unless they meet one or more of the below criteria
+            placing them at risk for severe COVID.
+          </p> */}
           <fieldset>
-            <legend>
+          <legend>
               {VEText[0]}
               <br></br>
               <br></br>
@@ -78,4 +83,4 @@ const ReceiveVaccinationConsent = ({
   );
 };
 
-export default ReceiveVaccinationConsent;
+export default ReceiveBoosterConsent;

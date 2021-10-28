@@ -60,7 +60,7 @@ const ReceiveBoosterConsent = ({
             placing them at risk for severe COVID.
           </p> */}
           <fieldset>
-            <legend>
+          <legend>
               <b>Current Eligibility Criteria for Booster:</b>
               <br></br>
               <br></br>

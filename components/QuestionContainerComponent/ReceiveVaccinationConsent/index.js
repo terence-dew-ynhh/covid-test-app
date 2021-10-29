@@ -14,7 +14,8 @@ const ReceiveBoosterConsent = ({
   nextPage,
   isPrevEnabled,
   isDoneEnabled,
-  isSpanish
+  isSpanish,
+  isUnder5
 }) => {
   useEffect(() => {
     isDoneEnabled(false);
@@ -22,7 +23,8 @@ const ReceiveBoosterConsent = ({
   }, []);
 
   const handleChecked = (e) => {
-    nextPage(e);
+    if (isUnder5) nextPage(e, 8);
+    else nextPage(e);
   };
 
   let VEText = isSpanish ? veText.sp : veText.en;
@@ -61,8 +63,8 @@ const ReceiveBoosterConsent = ({
             placing them at risk for severe COVID.
           </p> */}
           <fieldset>
-          <legend>
-              {VEText[0]}
+            <legend>
+              {isUnder5 ? VEText[18] : VEText[0]}
               <br></br>
               <br></br>
               {VEText[5]}
@@ -71,8 +73,8 @@ const ReceiveBoosterConsent = ({
               <b>{VEText[6]}</b>
               <br></br>
               <br></br>
-              <b>{VEText[9]}</b>
-              <b className="redText">{VEText[15]}</b>
+              <b>{isUnder5 ? VEText[16] : VEText[9]}</b>
+              <b className="redText">{isUnder5 ? VEText[17] : VEText[0]}</b>
             </legend>
             <div className={styles.q1_grid}>{checkboxes}</div>
           </fieldset>

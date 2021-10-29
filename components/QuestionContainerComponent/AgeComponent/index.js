@@ -9,7 +9,8 @@ const Over18Component = ({
   overEighteen,
   isSpanish,
   schedulePush,
-  setJJApproved
+  setJJApproved,
+  underFive
 }) => {
   const [isOver18, setIsOver18] = useState(true);
 
@@ -30,7 +31,7 @@ const Over18Component = ({
         <br></br>
         <br></br>
         <fieldset className="radio_grp_set">
-          <legend>{OEText[2]}</legend>
+          <legend>{OEText[3]}</legend>
           <input
             id="employee_staff_check_yes"
             type="radio"
@@ -38,6 +39,7 @@ const Over18Component = ({
             onClick={(e) => {
               setIsOver18(true);
               overEighteen(true);
+              underFive(false);
               nextPage(e, 2);
             }}
           ></input>
@@ -52,10 +54,26 @@ const Over18Component = ({
               setIsOver18(false);
               setJJApproved(false);
               overEighteen(false);
+              underFive(false);
               nextPage();
             }}
           ></input>
           <label htmlFor="employee_staff_check_no">{OEText[1]}</label>
+          <br></br>
+          <br></br>
+          <input
+            id="employee_staff_check_five"
+            type="radio"
+            name="employee_staff"
+            onClick={(e) => {
+              setIsOver18(false);
+              setJJApproved(false);
+              overEighteen(false);
+              underFive(true);
+              nextPage();
+            }}
+          ></input>
+          <label htmlFor="employee_staff_check_five">{OEText[2]}</label>
         </fieldset>
       </div>
       <style jsx>{``}</style>

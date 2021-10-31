@@ -10,9 +10,10 @@ const SelectVaccineComponent = ({
   updateAnswerData,
   isSpanish,
   isImmunocomp,
-  isBooster
+  isBooster,
+  isOver18
 }) => {
-  const [isModerna, setIsModerna] = useState(false);
+  const [isModerna, setIsModerna] = useState(true);
 
   useEffect(() => {
     isDoneEnabled(false);
@@ -27,8 +28,8 @@ const SelectVaccineComponent = ({
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
             <p className="banner">{SVText[1]}</p>
-            <p className="error" hidden={!(isModerna && !isBooster)}>
-            Yale New Haven Health does not currently have any appointments available for Moderna third dose. 
+            <p className="error" hidden={!(!isModerna && isBooster)}>
+            At this time, Yale New Haven Health does not currently have any appointments available for primary series vaccinations.”
             </p>
             <br></br>
             <br></br>
@@ -47,7 +48,7 @@ const SelectVaccineComponent = ({
                   name="prev_covid"
                   onClick={(e) => {
                     if(isBooster){
-                    nextPage(e, 2);
+                    nextPage(e);
                     }else{
                     updateAnswerData({ sel_vaccine: 'Moderna' });
                     pfizerSelected(false);
@@ -69,7 +70,8 @@ const SelectVaccineComponent = ({
                   onClick={(e) => {
                     updateAnswerData({ sel_vaccine: 'Pfizer' });
                     pfizerSelected(true);
-                    nextPage(e, 2);
+                    if(isOver18) setIsModerna(false)
+                    else nextPage(e, 2);
                   }}
                 ></input>
                 <label htmlFor="prev_covid_yes">Pfizer</label>

@@ -52,8 +52,8 @@ const QuestionViewComponent = ({
   isImmunocomp,
   setBooster,
   isBooster,
-  underFive,
-  isUnder5
+  pediatric,
+  isPediatric
 }) => {
   const [prevEnabled, setPrevEnabled] = useState(false);
   const [nextEnabled, setNextEnabled] = useState(false);
@@ -133,8 +133,8 @@ const QuestionViewComponent = ({
           isImmunocomp={isImmunocomp}
           setBooster={setBooster}
           isBooster={isBooster}
-          underFive={underFive}
-          isUnder5={isUnder5}
+          pediatric={pediatric}
+          isPediatric={isPediatric}
         />
       </div>
       <div className={styles.buttonContainer}>

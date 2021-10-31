@@ -10,9 +10,9 @@ const Over18Component = ({
   isSpanish,
   schedulePush,
   setJJApproved,
-  underFive
+  pediatric
 }) => {
-  const [isOver18, setIsOver18] = useState(true);
+  const [isUnavailable, setIsUnavailable] = useState(false);
 
   useEffect(() => {
     isPrevEnabled(false);
@@ -24,6 +24,10 @@ const Over18Component = ({
   return (
     <>
       <div className={styles.question_row_item}>
+        <p className="error" hidden={!isUnavailable}>
+          At this time, Yale New Haven Health does not currently have any
+          appointments available for primary series vaccinations.
+        </p>
         <p className="banner">
           The following questions should be answered on behalf of the individual
           being scheduled for vaccination.
@@ -37,9 +41,9 @@ const Over18Component = ({
             type="radio"
             name="employee_staff"
             onClick={(e) => {
-              setIsOver18(true);
+              setIsUnavailable(false);
               overEighteen(true);
-              underFive(false);
+              pediatric(false);
               nextPage(e, 2);
             }}
           ></input>
@@ -51,11 +55,10 @@ const Over18Component = ({
             type="radio"
             name="employee_staff"
             onClick={(e) => {
-              setIsOver18(false);
+              setIsUnavailable(true);
               setJJApproved(false);
               overEighteen(false);
-              underFive(false);
-              nextPage();
+              pediatric(false);
             }}
           ></input>
           <label htmlFor="employee_staff_check_no">{OEText[1]}</label>
@@ -66,10 +69,10 @@ const Over18Component = ({
             type="radio"
             name="employee_staff"
             onClick={(e) => {
-              setIsOver18(false);
+              setIsUnavailable(false);
               setJJApproved(false);
               overEighteen(false);
-              underFive(true);
+              pediatric(true);
               nextPage();
             }}
           ></input>

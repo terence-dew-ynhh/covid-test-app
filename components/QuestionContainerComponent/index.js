@@ -16,7 +16,7 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
   const [isJassenapproved, setIsJassenapproved] = useState(true);
   const [isInZipCodeRange, setIsInZipCodeRange] = useState(false);
   const [isOver18, setIsOver18] = useState(false);
-  const [isUnder5, setIsUnder5] = useState(false);
+  const [isPediatric, setIsPediatric] = useState(false);
   const [isRiskGroup, setIsRiskGroup] = useState(false);
   const [isImmunocomp, setIsImmunocomp] = useState(false);
   const [isBooster, setIsBooster] = useState(false);
@@ -31,11 +31,11 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
     'age',
     'vaccineconsent',
     'firstdose',
-    'allergy',
-    'allergistapproval',
     'receivebooster',
     'immunocomp',
     'selectedvaccine',
+    'allergy',
+    'allergistapproval',
     'selectpfizer',
     'testedpositive',
     'covidsymptoms',
@@ -60,8 +60,8 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
     setIsOver18(isOver18);
   };
 
-  const underFive = (isUnder5) => {
-    setIsUnder5(isUnder5);
+  const pediatric = (isPediatric) => {
+    setIsPediatric(isPediatric);
   };
 
   const setReccDate = (date) => {
@@ -112,7 +112,7 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
     router.push(
       `/scheduling?recc_date=${selDate}&in_zip_range=${isInZipCodeRange}&second_dose=${
         isPfizer == null ? false : true
-      }&isPfizer=${isPfizer}&isSpanish=${isSpanish}&isRiskGroup=${isRiskGroup}&isOver18=${isOver18}&isUnder5=${isUnder5}&jjapproved=${isJassenapproved}&isimmunocomp=${isImmunocomp}&isbooster=${isBooster}`,
+      }&isPfizer=${isPfizer}&isSpanish=${isSpanish}&isRiskGroup=${isRiskGroup}&isOver18=${isOver18}&isPediatric=${isPediatric}&jjapproved=${isJassenapproved}&isimmunocomp=${isImmunocomp}&isbooster=${isBooster}`,
       '/scheduling'
     );
   };
@@ -182,8 +182,8 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
         isImmunocomp={isImmunocomp}
         setBooster={setBooster}
         isBooster={isBooster}
-        underFive={underFive}
-        isUnder5={isUnder5}
+        pediatric={pediatric}
+        isPediatric={isPediatric}
       ></QuestionView>
       {/* <p>{`Zip Code ${isInZipCodeRange ? 'is' : 'is not'} in range`}</p> */}
     </div>

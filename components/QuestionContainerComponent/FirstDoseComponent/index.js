@@ -26,11 +26,12 @@ const FirstDoseComponent = ({
       <div className="radio_grp">
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
-          <p className="error" hidden={!isClosed}>
-          At this time, Yale New Haven Health does not currently have any appointments available for primary series vaccinations.
-        </p>
-        <br></br>
-        <br></br>
+            <p className="error" hidden={!isClosed}>
+              At this time, Yale New Haven Health does not currently have any
+              appointments available for primary series vaccinations.
+            </p>
+            <br></br>
+            <br></br>
             <fieldset>
               <legend>{FDText[0]}</legend>
 
@@ -45,7 +46,7 @@ const FirstDoseComponent = ({
                     // nextPage(e, 6);
                     setBooster(false);
                     setImmunocompromised(false);
-                    setIsClosed(true)
+                    setIsClosed(true);
                   }}
                 ></input>
                 <label htmlFor="first_dose">{FDText[1]}</label>
@@ -63,7 +64,7 @@ const FirstDoseComponent = ({
                     // nextPage(e);
                     setBooster(false);
                     setImmunocompromised(false);
-                    setIsClosed(true)
+                    setIsClosed(true);
                   }}
                 ></input>
                 <label htmlFor="second_dose">{FDText[2]}</label>
@@ -80,7 +81,7 @@ const FirstDoseComponent = ({
                     updateAnswerData({ first_dose: e.target.value });
                     setBooster(false);
                     setImmunocompromised(true);
-                    nextPage(e);
+                    setIsClosed(true);
                   }}
                 ></input>
                 <label htmlFor="third_dose">{FDText[3]}</label>
@@ -97,8 +98,8 @@ const FirstDoseComponent = ({
                     onClick={(e) => {
                       updateAnswerData({ first_dose: e.target.value });
                       setBooster(true);
-                      setImmunocompromised(false)
-                      nextPage(e);
+                      setImmunocompromised(false);
+                      nextPage(e, 3);
                     }}
                   ></input>
                   <label htmlFor="booster_dose">{FDText[4]}</label>

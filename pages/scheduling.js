@@ -156,7 +156,7 @@ Home.getInitialProps = async ({ query }) => {
     jjapproved,
     isimmunocomp,
     isbooster,
-    isUnder5
+    isPediatric
   } = query;
   let link = '';
 
@@ -195,7 +195,7 @@ Home.getInitialProps = async ({ query }) => {
       'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=90409,88040,88037,88046,88038,88042,88043,91671,91796,91479,91478,91802,83564&vt=2444&dept=204010005,204400009,204590014,208040011,203260005,201120002,204530003,101450002,104010099,101870002&view=plain&public=1';
   }
 
-  if(isUnder5 == 'true') link = 'https://mychartnp.ynhhs.org/poc/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=92567,92571,92599,92600,92601,92701&vt=2467&dept=204010005,204400009,204590014,208040011,203260005,201120002,204530003,101450002,101870002&view=plain&public=1'
+  if(isPediatric == 'true') link = 'https://mychartnp.ynhhs.org/poc/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=92567,92571,92599,92600,92601,92701&vt=2467&dept=204010005,204400009,204590014,208040011,203260005,201120002,204530003,101450002,101870002&view=plain&public=1'
 
   if (isSpanish == 'true') link = link + '&lang=espanol';
   else link = link + '&lang=english';

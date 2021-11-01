@@ -55,7 +55,7 @@ export default function Home({ link, recc_date, second_dose, isSpanish }) {
 Home.getInitialProps = async ({ query }) => {
   const { recc_date, second_dose, isPfizer, isSpanish } = query;
     
-  let link = "https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=91933,91923,91925,91927,91929,91931,91935&vt=2460&dept=103070034,104010097,108010099,102010094,101010172,103700027,108710073&view=plain&public=1&lang=english"
+  let link = "https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=92544,92545,92546,92734,92543,92735,92736&vt=2465&dept=103070034,101010172,108010099,102010094,104010097,108710073,103700027&view=plain&public=1&lang=english"
     
   return {
     link,

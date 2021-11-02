@@ -36,7 +36,7 @@ const SelectVaccineComponent = ({
             <fieldset>
               <legend>
                 {isBooster
-                  ? 'What was your original series dose?'
+                  ? 'What vaccine would you like to receive as a booster?'
                   : `What was your Dose 1${isImmunocomp ? '&2' : ''} Vaccine?`}
               </legend>
 

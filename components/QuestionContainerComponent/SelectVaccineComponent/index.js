@@ -30,9 +30,13 @@ const SelectVaccineComponent = ({
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
             <p className="banner">{SVText[1]}</p>
-            {(!isModerna && isBooster) && <p className="error" hidden={!(!isModerna && isBooster)}>
-            {`At this time, Yale New Haven Health does not currently have any appointments available for primary series vaccinations. ${isJassenapproved ? "In order to schedule a J&J Booster please contact us at 1-833-ASK-YNHH (275-9644)." : ""}`}
-            </p>}
+            {!isModerna && isBooster && (
+              <p className="error">
+                {isJassenapproved
+                  ? 'We plan to offer J&J Boosters towards later part of November. Please contact us in a couple weeks at 1-833-ASK-YNHH (275-9644).'
+                  : `At this time, Yale New Haven Health does not currently have any appointments available for primary series vaccinations.`}
+              </p>
+            )}
             <br></br>
             <br></br>
             <fieldset>
@@ -49,14 +53,14 @@ const SelectVaccineComponent = ({
                   value="No"
                   name="prev_covid"
                   onClick={(e) => {
-                    if(isBooster){
-                    nextPage(e);
-                    }else{
-                    updateAnswerData({ sel_vaccine: 'Moderna' });
-                    pfizerSelected(false);
-                    setJJApproved(false);
-                    if(isImmunocomp) nextPage(e);
-                    else nextPage(e, 3);
+                    if (isBooster) {
+                      nextPage(e);
+                    } else {
+                      updateAnswerData({ sel_vaccine: 'Moderna' });
+                      pfizerSelected(false);
+                      setJJApproved(false);
+                      if (isImmunocomp) nextPage(e);
+                      else nextPage(e, 3);
                     }
                   }}
                 ></input>
@@ -74,7 +78,7 @@ const SelectVaccineComponent = ({
                     updateAnswerData({ sel_vaccine: 'Pfizer' });
                     pfizerSelected(true);
                     setJJApproved(false);
-                    if(isOver18) setIsModerna(false)
+                    if (isOver18) setIsModerna(false);
                     else nextPage(e, 2);
                   }}
                 ></input>
@@ -92,7 +96,7 @@ const SelectVaccineComponent = ({
                     updateAnswerData({ sel_vaccine: 'Pfizer' });
                     pfizerSelected(false);
                     setJJApproved(true);
-                    if(isOver18) setIsModerna(false)
+                    if (isOver18) setIsModerna(false);
                     else nextPage(e, 2);
                   }}
                 ></input>

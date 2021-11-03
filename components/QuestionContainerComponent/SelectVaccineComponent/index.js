@@ -11,7 +11,9 @@ const SelectVaccineComponent = ({
   isSpanish,
   isImmunocomp,
   isBooster,
-  isOver18
+  isOver18,
+  setJJApproved,
+  isJassenapproved
 }) => {
   const [isModerna, setIsModerna] = useState(true);
 
@@ -28,9 +30,9 @@ const SelectVaccineComponent = ({
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
             <p className="banner">{SVText[1]}</p>
-            <p className="error" hidden={!(!isModerna && isBooster)}>
-            At this time, Yale New Haven Health does not currently have any appointments available for primary series vaccinations.”
-            </p>
+            {(!isModerna && isBooster) && <p className="error" hidden={!(!isModerna && isBooster)}>
+            {`At this time, Yale New Haven Health does not currently have any appointments available for primary series vaccinations. ${isJassenapproved ? "In order to schedule a J&J Booster please contact us at 1-833-ASK-YNHH (275-9644)." : ""}`}
+            </p>}
             <br></br>
             <br></br>
             <fieldset>
@@ -52,6 +54,7 @@ const SelectVaccineComponent = ({
                     }else{
                     updateAnswerData({ sel_vaccine: 'Moderna' });
                     pfizerSelected(false);
+                    setJJApproved(false);
                     if(isImmunocomp) nextPage(e);
                     else nextPage(e, 3);
                     }
@@ -70,11 +73,30 @@ const SelectVaccineComponent = ({
                   onClick={(e) => {
                     updateAnswerData({ sel_vaccine: 'Pfizer' });
                     pfizerSelected(true);
+                    setJJApproved(false);
                     if(isOver18) setIsModerna(false)
                     else nextPage(e, 2);
                   }}
                 ></input>
                 <label htmlFor="prev_covid_yes">Pfizer</label>
+              </div>
+              <br></br>
+              <br></br>
+              <div className="radio_row_item">
+                <input
+                  id="prev_covid_jj"
+                  type="radio"
+                  value="JJ"
+                  name="prev_covid"
+                  onClick={(e) => {
+                    updateAnswerData({ sel_vaccine: 'Pfizer' });
+                    pfizerSelected(false);
+                    setJJApproved(true);
+                    if(isOver18) setIsModerna(false)
+                    else nextPage(e, 2);
+                  }}
+                ></input>
+                <label htmlFor="prev_covid_jj">Janssen (J&J)</label>
               </div>
             </fieldset>
           </div>

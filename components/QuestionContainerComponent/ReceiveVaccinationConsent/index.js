@@ -23,7 +23,7 @@ const ReceiveBoosterConsent = ({
   }, []);
 
   const handleChecked = (e) => {
-    if (isPediatric) nextPage(e, 8);
+    if (isPediatric) nextPage(e);
     else nextPage(e);
   };
 

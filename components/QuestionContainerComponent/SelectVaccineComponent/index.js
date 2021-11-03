@@ -10,9 +10,12 @@ const SelectVaccineComponent = ({
   updateAnswerData,
   isSpanish,
   isImmunocomp,
-  isBooster
+  isBooster,
+  isOver18,
+  setJJApproved,
+  isJassenapproved
 }) => {
-  const [isModerna, setIsModerna] = useState(false);
+  const [isModerna, setIsModerna] = useState(true);
 
   useEffect(() => {
     isDoneEnabled(false);
@@ -27,15 +30,19 @@ const SelectVaccineComponent = ({
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
             <p className="banner">{SVText[1]}</p>
-            <p className="error" hidden={!(isModerna && !isBooster)}>
-            Yale New Haven Health does not currently have any appointments available for Moderna third dose. 
-            </p>
+            {!isModerna && isBooster && (
+              <p className="error">
+                {isJassenapproved
+                  ? 'We plan to offer J&J Boosters towards later part of November. Please contact us in a couple weeks at 1-833-ASK-YNHH (275-9644).'
+                  : `At this time, Yale New Haven Health does not currently have any appointments available for primary series vaccinations.`}
+              </p>
+            )}
             <br></br>
             <br></br>
             <fieldset>
               <legend>
                 {isBooster
-                  ? 'What was your original series dose?'
+                  ? 'What vaccine would you like to receive as a booster?'
                   : `What was your Dose 1${isImmunocomp ? '&2' : ''} Vaccine?`}
               </legend>
 
@@ -46,13 +53,14 @@ const SelectVaccineComponent = ({
                   value="No"
                   name="prev_covid"
                   onClick={(e) => {
-                    if(isBooster){
-                    nextPage(e, 2);
-                    }else{
-                    updateAnswerData({ sel_vaccine: 'Moderna' });
-                    pfizerSelected(false);
-                    if(isImmunocomp) nextPage(e);
-                    else nextPage(e, 3);
+                    if (isBooster) {
+                      nextPage(e);
+                    } else {
+                      updateAnswerData({ sel_vaccine: 'Moderna' });
+                      pfizerSelected(false);
+                      setJJApproved(false);
+                      if (isImmunocomp) nextPage(e);
+                      else nextPage(e, 3);
                     }
                   }}
                 ></input>
@@ -69,10 +77,30 @@ const SelectVaccineComponent = ({
                   onClick={(e) => {
                     updateAnswerData({ sel_vaccine: 'Pfizer' });
                     pfizerSelected(true);
-                    nextPage(e, 2);
+                    setJJApproved(false);
+                    if (isOver18) setIsModerna(false);
+                    else nextPage(e, 2);
                   }}
                 ></input>
                 <label htmlFor="prev_covid_yes">Pfizer</label>
+              </div>
+              <br></br>
+              <br></br>
+              <div className="radio_row_item">
+                <input
+                  id="prev_covid_jj"
+                  type="radio"
+                  value="JJ"
+                  name="prev_covid"
+                  onClick={(e) => {
+                    updateAnswerData({ sel_vaccine: 'Pfizer' });
+                    pfizerSelected(false);
+                    setJJApproved(true);
+                    if (isOver18) setIsModerna(false);
+                    else nextPage(e, 2);
+                  }}
+                ></input>
+                <label htmlFor="prev_covid_jj">Janssen (J&J)</label>
               </div>
             </fieldset>
           </div>

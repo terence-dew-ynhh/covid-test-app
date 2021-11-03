@@ -9,9 +9,10 @@ const Over18Component = ({
   overEighteen,
   isSpanish,
   schedulePush,
-  setJJApproved
+  setJJApproved,
+  pediatric
 }) => {
-  const [isOver18, setIsOver18] = useState(true);
+  const [isUnavailable, setIsUnavailable] = useState(false);
 
   useEffect(() => {
     isPrevEnabled(false);
@@ -23,6 +24,10 @@ const Over18Component = ({
   return (
     <>
       <div className={styles.question_row_item}>
+        <p className="error" hidden={!isUnavailable}>
+          At this time, Yale New Haven Health does not currently have any
+          appointments available for primary series vaccinations.
+        </p>
         <p className="banner">
           The following questions should be answered on behalf of the individual
           being scheduled for vaccination.
@@ -30,14 +35,15 @@ const Over18Component = ({
         <br></br>
         <br></br>
         <fieldset className="radio_grp_set">
-          <legend>{OEText[2]}</legend>
+          <legend>{OEText[3]}</legend>
           <input
             id="employee_staff_check_yes"
             type="radio"
             name="employee_staff"
             onClick={(e) => {
-              setIsOver18(true);
+              setIsUnavailable(false);
               overEighteen(true);
+              pediatric(false);
               nextPage(e, 2);
             }}
           ></input>
@@ -49,13 +55,28 @@ const Over18Component = ({
             type="radio"
             name="employee_staff"
             onClick={(e) => {
-              setIsOver18(false);
+              setIsUnavailable(true);
               setJJApproved(false);
               overEighteen(false);
-              nextPage();
+              pediatric(false);
             }}
           ></input>
           <label htmlFor="employee_staff_check_no">{OEText[1]}</label>
+          <br></br>
+          <br></br>
+          <input
+            id="employee_staff_check_five"
+            type="radio"
+            name="employee_staff"
+            onClick={(e) => {
+              setIsUnavailable(false);
+              setJJApproved(false);
+              overEighteen(false);
+              pediatric(true);
+              nextPage();
+            }}
+          ></input>
+          <label htmlFor="employee_staff_check_five">{OEText[2]}</label>
         </fieldset>
       </div>
       <style jsx>{``}</style>

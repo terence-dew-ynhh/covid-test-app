@@ -31,7 +31,7 @@ const Over18Component = ({
         </p>
         {isPediatric && (
           <p className="error" >
-            We are sorry, there are currently no appointments available. 
+            At this time, there are no appointments available.
           </p>
         )}
         <p className="banner">

@@ -10,7 +10,8 @@ const Over18Component = ({
   isSpanish,
   schedulePush,
   setJJApproved,
-  pediatric
+  pediatric, 
+  isPediatric
 }) => {
   const [isUnavailable, setIsUnavailable] = useState(false);
 
@@ -24,10 +25,15 @@ const Over18Component = ({
   return (
     <>
       <div className={styles.question_row_item}>
-        <p className="error" hidden={!isUnavailable}>
+        <p className="error" hidden={!(isUnavailable && !isPediatric)}>
           At this time, Yale New Haven Health does not currently have any
           appointments available for primary series vaccinations.
         </p>
+        {isPediatric && (
+          <p className="error" >
+            We are sorry, there are currently no appointments available. 
+          </p>
+        )}
         <p className="banner">
           The following questions should be answered on behalf of the individual
           being scheduled for vaccination.
@@ -69,11 +75,11 @@ const Over18Component = ({
             type="radio"
             name="employee_staff"
             onClick={(e) => {
-              setIsUnavailable(false);
+              setIsUnavailable(true);
               setJJApproved(false);
               overEighteen(false);
               pediatric(true);
-              nextPage();
+              // nextPage();
             }}
           ></input>
           <label htmlFor="employee_staff_check_five">{OEText[2]}</label>

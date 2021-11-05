@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import SelectLocation from '../SelectLocationComponent';
 import ConsentComponent from '../ConsentComponent';
+import TestingTypeComponent from '../TestingTypeComponent';
 import styles from './QuestionViewComponent.module.css'
 
 
@@ -27,7 +28,8 @@ const QuestionViewComponent = ({
   
   const components = {
     location: SelectLocation,
-    consent: ConsentComponent
+    consent: ConsentComponent,
+    testingtype: TestingTypeComponent
   };
 
   const ComponentName = components[compName || 'location'];

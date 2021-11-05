@@ -1,7 +1,7 @@
 import styles from './SelectLocationComponent.module.css';
 import { useEffect } from 'react';
 
-const SelectLocation = ({ isNextEnabled, updateLocation }) => {
+const SelectLocation = ({ isNextEnabled, isPrevEnabled, updateLocation }) => {
   const locations = [
     'Fairfield County and NY',
     'New Haven County and Middlesex County',
@@ -11,6 +11,7 @@ const SelectLocation = ({ isNextEnabled, updateLocation }) => {
 
   useEffect(() => {
     isNextEnabled(true);
+    isPrevEnabled(true);
   }, []);
 
   const locationOptions = locations.map((option, idx) => (

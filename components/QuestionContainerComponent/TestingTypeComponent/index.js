@@ -29,8 +29,8 @@ const TestingTypeComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
                 <input
                   id="prev_covid_asymp"
                   type="radio"
-                  value="Yes"
-                  name="prev_covid_asymp"
+                  value="Asymp"
+                  name="prev_covid_a"
                   onClick={(e) => {
                     handleSelection();
                   }}
@@ -45,8 +45,8 @@ const TestingTypeComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
                 <input
                   id="prev_covid_symp"
                   type="radio"
-                  value="No"
-                  name="prev_covid_symp"
+                  value="Symp"
+                  name="prev_covid_a"
                   onClick={(e) => {
                     handleSelection();
                   }}
@@ -61,8 +61,8 @@ const TestingTypeComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
                 <input
                   id="prev_covid_sympflu"
                   type="radio"
-                  value="No"
-                  name="prev_covid_sympflu"
+                  value="SympFlu"
+                  name="prev_covid_a"
                   onClick={(e) => {
                     handleSelection();
                   }}

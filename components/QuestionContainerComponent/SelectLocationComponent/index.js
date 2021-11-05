@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 
 const SelectLocation = ({
   isNextEnabled,
+  isPrevEnabled,
   updateLocation,
 }) => {
   const locations = [
@@ -14,7 +15,7 @@ const SelectLocation = ({
 
   useEffect(() => {
     isNextEnabled(true);
-
+    isPrevEnabled(false);
   }, []);
 
   const locationOptions = locations.map((option, idx) => (

@@ -27,27 +27,27 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled, hasSymptoms })
     let noneChk = document.getElementById(`prev_covid_no_symp`);
     let noneChkExp = document.getElementById(`prev_covid_no_symp_exp`);
     if (
-      (e.target.id === 'prev_covid_no_symp_exp')  &&
+      (e.target.value === 'prev_covid_no_symp_exp')  &&
       e.target.checked === true
     ) {
       toggleCheckBoxes([...checkboxesArr, ...severeCheckboxesArr, `no_symp` ], true);
       setHasSymptomsChk(false);
       setHasSevereSymptoms(false);
       noneChkExp.checked = true;
-      nextPage();
+      nextPage(e);
     } 
     else if (
-      (e.target.id === 'prev_covid_no_symp')  &&
+      (e.target.value === 'prev_covid_no_symp')  &&
       e.target.checked === true
     ) {
       toggleCheckBoxes([...checkboxesArr, ...severeCheckboxesArr, 'no_symp_exp'], true);
       setHasSymptomsChk(false);
       setHasSevereSymptoms(false);
       noneChk.checked = true;
-      nextPage();
+      nextPage(e);
     }
     else {
-      toggleCheckBoxes([...checkboxesArr, ...severeCheckboxesArr], false);
+      toggleCheckBoxes([...checkboxesArr, ...severeCheckboxesArr, 'no_symp_exp', 'no_symp' ], false);
       noneChk.checked = false;
       isDoneEnabled(false);
     }
@@ -157,7 +157,7 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled, hasSymptoms })
         value={checkbox.replace(regex, ' ')}
         name="symptoms"
         onChange={(e) => {
-          handleChecked(e, true);
+          handleChecked(e);
         }}
       ></input>
       <label htmlFor={`prev_covid_${checkbox.toLowerCase()}`}>
@@ -176,7 +176,7 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled, hasSymptoms })
           value={checkbox.replace(regex, ' ')}
           name="symptoms"
           onChange={(e) => {
-            handleChecked(e, false, idx);
+            handleChecked(e);
           }}
         ></input>
         <label htmlFor={`prev_covid_${checkbox.toLowerCase()}`}>

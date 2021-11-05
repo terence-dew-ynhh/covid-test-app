@@ -22,7 +22,7 @@ const QuestionFormComponent = ({}) => {
   const router = useRouter();
 
   const nextPage = () => {
-    let index = viewIdx <= 5 ? viewIdx + 1 : viewIdx;
+    let index = viewIdx <= 6 ? viewIdx + 1 : viewIdx;
     setviewIdx(index);
   };
 

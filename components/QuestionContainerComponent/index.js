@@ -12,6 +12,7 @@ const QuestionFormComponent = ({}) => {
   const compNames = [
     'location',
     'priortest',
+    'healthprov',
     'eighteen',
     'schedulingfor',
     'consent',

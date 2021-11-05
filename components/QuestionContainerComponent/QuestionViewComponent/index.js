@@ -6,6 +6,7 @@ import SelectSymptoms from '../SelectSymptomsComponent';
 import SelectLocationComponent from '../SelectLocationComponent';
 import SchedulingForComponent from '../SchedulingForComponent';
 import AsympConsentComponent from '../AsympConsentComponent';
+import HealthProvQuestionComponent from '../HealthProvQuestionComponent';
 import styles from './QuestionViewComponent.module.css'
 
 
@@ -41,7 +42,8 @@ const QuestionViewComponent = ({
     consent: ConsentComponent,
     priortest: PriorTest,
     schedulingfor: SchedulingForComponent,
-    asympconsent: AsympConsentComponent     
+    asympconsent: AsympConsentComponent,
+    healthprov: HealthProvQuestionComponent     
   };
 
   const ComponentName = components[compName || 'employee'];

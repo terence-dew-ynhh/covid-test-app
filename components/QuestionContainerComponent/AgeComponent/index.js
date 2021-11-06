@@ -29,11 +29,11 @@ const Over18Component = ({
           At this time, Yale New Haven Health does not currently have any
           appointments available for primary series vaccinations.
         </p>
-        {isPediatric && (
+        {/* {isPediatric && (
           <p className="error" >
             At this time, there are no appointments available.
           </p>
-        )}
+        )} */}
         <p className="banner">
           The following questions should be answered on behalf of the individual
           being scheduled for vaccination.
@@ -79,7 +79,7 @@ const Over18Component = ({
               setJJApproved(false);
               overEighteen(false);
               pediatric(true);
-              // nextPage();
+              nextPage();
             }}
           ></input>
           <label htmlFor="employee_staff_check_five">{OEText[2]}</label>

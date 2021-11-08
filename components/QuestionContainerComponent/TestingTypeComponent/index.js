@@ -23,7 +23,7 @@ const TestingTypeComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
               eligible for COVID-19 screening.
             </p> */}
             <fieldset>
-              <legend>Have you previously tested Positive for COVID?:</legend>
+              <legend>Please indicate the testing needed:</legend>
 
               <div className="radio_row_item">
                 <input

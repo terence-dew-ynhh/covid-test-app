@@ -169,7 +169,7 @@ Home.getInitialProps = async ({ query }) => {
       'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=88043&vt=2444&dept=204650005&view=plain&public=1';
   }
 
-  if(isPediatric == 'true') link = 'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=92567,92599,92600,92601,92701&vt=2467&dept=104010099,208040011,101870002,101450002,204400009&view=plain&public=1'
+  if(isPediatric == 'true') link = 'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=92571&vt=2467&dept=204650005&view=plain&public=1'
 
   if (isSpanish == 'true') link = link + '&lang=espanol';
   else link = link + '&lang=english';

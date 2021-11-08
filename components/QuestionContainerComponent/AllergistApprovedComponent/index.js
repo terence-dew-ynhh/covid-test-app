@@ -20,9 +20,9 @@ const AllergistApprovedComponent = ({
 
   const handleSelection = (e) => {
     if (isImmunocomp) {
-      nextPage(e, 2);
+      nextPage(e, 3);
     } else if (isBooster) {
-      nextPage(e);
+      nextPage(e, 2);
     } else {
       if (isOver18) nextPage(e, 3);
       else nextPage(e, 4);

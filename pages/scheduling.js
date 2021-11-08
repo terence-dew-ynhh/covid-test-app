@@ -40,7 +40,8 @@ export default function Home({ link }) {
 }
 
 Home.getInitialProps = async ({ query }) => {
-  const { endpoint } = query;
+  const { endpoint, testingstate } = query;
+  console.log(testingstate)
   let link =
     'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=76698,76701,81079,82383,81452,76702,82948,82949,79643&vt=2372&dept=103010119,108010101,103720003,101050022,100001365,108710074,100001383,100001358,100001382&view=plain&public=1';
 
@@ -48,6 +49,9 @@ Home.getInitialProps = async ({ query }) => {
     link =
       'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=76698,76701,81079,82383,81452,76702,82948,82949,79643&vt=2228&dept=103010119,108010101,103720003,101050022,100001365,108710074,100001383,100001358,100001382&view=plain&public=1';
 
+  if(testingstate === '3') link = 'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=82949&vt=2473&dept=100001383&view=plain&public=1&lang=english'
+  if(testingstate === '1') link = 'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=76698,76701,81079,82383,81452,76702,82948,82949,79643&vt=2371&dept=103010119,108010101,103720003,101050022,100001365,108710074,100001383,100001358,100001382&view=plain&public=1'
+  
   return {
     link
   };

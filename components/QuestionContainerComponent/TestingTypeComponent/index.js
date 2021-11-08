@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import styles from './TestingTypeComponent.module.css';
 
-const TestingTypeComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
+const TestingTypeComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, setTestingState }) => {
   const [isCovidPositive, setIsCovidPositive] = useState('');
 
   useEffect(() => {
@@ -33,6 +33,7 @@ const TestingTypeComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
                   name="prev_covid_a"
                   onClick={(e) => {
                     handleSelection();
+                    setTestingState(1)
                   }}
                 ></input>
                 <label htmlFor="prev_covid_asymp">
@@ -49,6 +50,7 @@ const TestingTypeComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
                   name="prev_covid_a"
                   onClick={(e) => {
                     handleSelection();
+                    setTestingState(2)
                   }}
                 ></input>
                 <label htmlFor="prev_covid_symp">
@@ -65,6 +67,7 @@ const TestingTypeComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
                   name="prev_covid_a"
                   onClick={(e) => {
                     handleSelection();
+                    setTestingState(3)
                   }}
                 ></input>
                 <label htmlFor="prev_covid_sympflu">

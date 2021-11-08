@@ -9,6 +9,7 @@ const QuestionFormComponent = ({}) => {
   const [viewIdx, setviewIdx] = useState(0);
   const [endPoint, setEndpoint] = useState('Mohegan Sun Employees');
   const compNames = ['location', 'consent', 'testingtype'];
+  const [testingState, setTestingState] = useState(0)
   const router = useRouter();
 
   
@@ -25,7 +26,7 @@ const QuestionFormComponent = ({}) => {
 
   const schedulePush = () => {
 
-    router.push(`/scheduling?endpoint=${endPoint}`,'/scheduling');
+    router.push(`/scheduling?endpoint=${endPoint}&testingstate=${testingState}`,'/scheduling');
   };
 
   const updateLocation = (endpoint) =>{
@@ -54,6 +55,7 @@ const QuestionFormComponent = ({}) => {
         compName={compNames[viewIdx]}
         schedulePush={schedulePush}
         updateLocation={updateLocation}
+        setTestingState={setTestingState}
       ></QuestionView>
     </div>
   );

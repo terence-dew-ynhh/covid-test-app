@@ -1,7 +1,7 @@
 {
     "apps": [
         {
-            "name": "ctcovidtestingdev",
+            "name": "ctcovidtesting",
             "script": "npm",
             "args" : "start"
         }

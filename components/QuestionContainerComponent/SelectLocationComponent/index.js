@@ -14,7 +14,7 @@ const SelectLocation = ({
   ];
 
   useEffect(() => {
-    isPrevEnabled(true);
+    isPrevEnabled(false);
     isDoneEnabled(false);
   }, []);
 

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import SelectLocation from '../SelectLocationComponent';
 import ConsentComponent from '../ConsentComponent';
+import TestingTypeComponent from '../TestingTypeComponent';
 import styles from './QuestionViewComponent.module.css'
 
 
@@ -27,7 +28,8 @@ const QuestionViewComponent = ({
   
   const components = {
     location: SelectLocation,
-    consent: ConsentComponent
+    consent: ConsentComponent,
+    testingtype: TestingTypeComponent
   };
 
   const ComponentName = components[compName || 'location'];
@@ -43,10 +45,15 @@ const QuestionViewComponent = ({
       />
       </div>
       <div className={styles.buttonContainer}>          
-
+      <button className="button choice-button" hidden={!prevEnabled} onClick={prevPage}>
+        {"< Back"}
+      </button> 
+      
       <button className="button choice-button" hidden={!doneEnabled} onClick={schedulePush}>
         Schedule Appoinment
       </button>  
+      
+
       </div>
     </div>
   );

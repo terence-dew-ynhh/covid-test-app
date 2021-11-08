@@ -9,10 +9,11 @@ const FirstDoseComponent = ({
   updateAnswerData,
   isSpanish,
   isOver18,
-  isImmunocomp,
-  setBooster
+  setImmunocompromised,
+  setBooster,
+  isPediatric
 }) => {
-  // const [isDiagnosed, setIsDiagnosed] = useState('');
+  const [isClosed, setIsClosed] = useState('');
 
   useEffect(() => {
     isDoneEnabled(false);
@@ -26,6 +27,12 @@ const FirstDoseComponent = ({
       <div className="radio_grp">
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
+            <p className="error" hidden={!isClosed}>
+              At this time, Yale New Haven Health does not currently have any
+              appointments available for primary series vaccinations.
+            </p>
+            <br></br>
+            <br></br>
             <fieldset>
               <legend>{FDText[0]}</legend>
 
@@ -36,8 +43,11 @@ const FirstDoseComponent = ({
                   value="Yes"
                   name="prev_covid"
                   onClick={(e) => {
-                    updateAnswerData({ first_dose: e.target.value });
-                    nextPage(e, 5);
+                    // updateAnswerData({ first_dose: e.target.value });
+                    if (isPediatric) nextPage(e, 7);
+                    setBooster(false);
+                    setImmunocompromised(false);
+                    setIsClosed(true);
                   }}
                 ></input>
                 <label htmlFor="first_dose">{FDText[1]}</label>
@@ -51,16 +61,18 @@ const FirstDoseComponent = ({
                   value="No"
                   name="prev_covid"
                   onClick={(e) => {
-                    updateAnswerData({ first_dose: e.target.value });
-                    if(isOver18)nextPage(e, 3);
-                    else nextPage(e, 5);
+                    // updateAnswerData({ first_dose: e.target.value });
+                    // nextPage(e);
+                    setBooster(false);
+                    setImmunocompromised(false);
+                    setIsClosed(true);
                   }}
                 ></input>
                 <label htmlFor="second_dose">{FDText[2]}</label>
               </div>
               <br></br>
               <br></br>
-              <div className="radio_row_item">
+              {isOver18 && (<div className="radio_row_item">
                 <input
                   id="third_dose"
                   type="radio"
@@ -69,11 +81,12 @@ const FirstDoseComponent = ({
                   onClick={(e) => {
                     updateAnswerData({ first_dose: e.target.value });
                     setBooster(false);
-                    nextPage(e, 2);
+                    setImmunocompromised(true);
+                    setIsClosed(true);
                   }}
                 ></input>
                 <label htmlFor="third_dose">{FDText[3]}</label>
-              </div>
+              </div>)}
               <br></br>
               <br></br>
               {isOver18 && (
@@ -86,7 +99,8 @@ const FirstDoseComponent = ({
                     onClick={(e) => {
                       updateAnswerData({ first_dose: e.target.value });
                       setBooster(true);
-                      nextPage(e);
+                      setImmunocompromised(false);
+                      nextPage(e, 3);
                     }}
                   ></input>
                   <label htmlFor="booster_dose">{FDText[4]}</label>

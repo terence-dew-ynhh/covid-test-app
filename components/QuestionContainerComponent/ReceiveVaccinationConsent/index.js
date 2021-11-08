@@ -10,11 +10,12 @@ const useStyles = makeStyles(() => ({
   }
 }));
 
-const ReceiveVaccinationConsent = ({
+const ReceiveBoosterConsent = ({
   nextPage,
   isPrevEnabled,
   isDoneEnabled,
-  isSpanish
+  isSpanish,
+  isPediatric
 }) => {
   useEffect(() => {
     isDoneEnabled(false);
@@ -22,7 +23,8 @@ const ReceiveVaccinationConsent = ({
   }, []);
 
   const handleChecked = (e) => {
-    nextPage(e);
+    if (isPediatric) nextPage(e);
+    else nextPage(e);
   };
 
   let VEText = isSpanish ? veText.sp : veText.en;
@@ -34,6 +36,7 @@ const ReceiveVaccinationConsent = ({
   let checkboxes = checkboxesArray.map((checkbox, idx) => (
     <div className={styles.chk_row_item}>
       <label className={styles.none_label_or}> {VEText[7]}</label>
+      <br></br>
       <input
         id={`prev_covid_${checkbox.toLowerCase()}`}
         type="checkbox"
@@ -54,10 +57,14 @@ const ReceiveVaccinationConsent = ({
     <>
       <div className={styles.question_row_item}>
         <div className={styles.question_row_item_sub}>
-          {/* <p className="message">{VEText[10]}</p> */}
+          {/* <p className="message">
+            Please note that boosters are not yet recommended for HCW, first
+            responders, etc. unless they meet one or more of the below criteria
+            placing them at risk for severe COVID.
+          </p> */}
           <fieldset>
             <legend>
-              {VEText[0]}
+              {isPediatric ? VEText[18] : VEText[0]}
               <br></br>
               <br></br>
               {VEText[5]}
@@ -66,8 +73,8 @@ const ReceiveVaccinationConsent = ({
               <b>{VEText[6]}</b>
               <br></br>
               <br></br>
-              <b>{VEText[9]}</b>
-              <b className="redText">{VEText[15]}</b>
+              <b>{isPediatric ? VEText[16] : VEText[9]}</b>
+              <b className="redText">{isPediatric ? VEText[17] : VEText[0]}</b>
             </legend>
             <div className={styles.q1_grid}>{checkboxes}</div>
           </fieldset>
@@ -78,4 +85,4 @@ const ReceiveVaccinationConsent = ({
   );
 };
 
-export default ReceiveVaccinationConsent;
+export default ReceiveBoosterConsent;

@@ -23,6 +23,8 @@ import ThirdDoseComponent from '../ThirdDoseComponent';
 import ImmunoCompConsent from '../ImmunoCompConsent';
 import ReceiveBoosterConsent from '../ReceiveBoosterConsent';
 import SelectPfizerComponent from '../SelectPfizerComponent';
+import AllergyComponent from '../AllergyComponent';
+import AllergistApprovedComponent from '../AllergistApprovedComponent';
 
 import styles from './QuestionViewComponent.module.css';
 
@@ -49,7 +51,9 @@ const QuestionViewComponent = ({
   setImmunocompromised,
   isImmunocomp,
   setBooster,
-  isBooster
+  isBooster,
+  pediatric,
+  isPediatric
 }) => {
   const [prevEnabled, setPrevEnabled] = useState(false);
   const [nextEnabled, setNextEnabled] = useState(false);
@@ -78,7 +82,9 @@ const QuestionViewComponent = ({
     immunocomp: ThirdDoseComponent,
     immunocompconsent: ImmunoCompConsent,
     receivebooster: ReceiveBoosterConsent, 
-    selectpfizer: SelectPfizerComponent
+    selectpfizer: SelectPfizerComponent,
+    allergy: AllergyComponent,
+    allergistapproval: AllergistApprovedComponent
   };
   const ComponentName = components[compName || 'pininput'];
 
@@ -127,6 +133,8 @@ const QuestionViewComponent = ({
           isImmunocomp={isImmunocomp}
           setBooster={setBooster}
           isBooster={isBooster}
+          pediatric={pediatric}
+          isPediatric={isPediatric}
         />
       </div>
       <div className={styles.buttonContainer}>

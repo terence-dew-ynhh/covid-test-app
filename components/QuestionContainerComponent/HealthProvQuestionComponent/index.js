@@ -26,7 +26,7 @@ const HealthProvQuestion = ({ nextPage, isPrevEnabled, isNextEnabled }) => {
             </a>
             <br></br>
             <br></br>
-            2. Call the COVID-19 Call Center at 833-ASK-YNHH (833-275-3644)
+            2. Call the COVID-19 Call Center at 833-ASK-YNHH (833-275-9644)
             <br></br>
             <br></br>
             3. Wait to receive a phone call from our scheduling team to schedule

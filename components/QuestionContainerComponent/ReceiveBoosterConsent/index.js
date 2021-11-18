@@ -37,7 +37,7 @@ const ReceiveBoosterConsent = ({
       <input
         id={`prev_covid_${checkbox.toLowerCase()}`}
         type="checkbox"
-        key={checkbox.replace(regex, ' ')}
+        key={`chk-${idx}`}
         value={checkbox.replace(regex, ' ')}
         name="Consent"
         onChange={(e) => {

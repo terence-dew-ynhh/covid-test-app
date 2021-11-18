@@ -56,10 +56,8 @@ const FactSheetComponent = ({
 
   let FSText = isSpanish ? fsText.sp : fsText.en;
 
-  const links =
-      isOver18 ?
-      isJassenapproved ? 
-      (
+  const links = isOver18 ? (
+    isJassenapproved ? (
       <>
         <br></br>
         <br></br>
@@ -107,7 +105,8 @@ const FactSheetComponent = ({
           {FSText[4]}
         </a>
       </>
-    ) : null;
+    )
+  ) : null;
 
   return (
     <>
@@ -124,18 +123,18 @@ const FactSheetComponent = ({
                 <br></br>
                 <a
                   target="__blank"
-                  href="https://www.fda.gov/media/144414/download"
+                  href="https://www.fda.gov/media/144638/download"
                 >
-                  Pfizer Vaccination EUA
-                </a>{' '}
+                  Moderna Vaccination EUA
+                </a>
                 <br></br>
                 <br></br>
                 <a
                   target="__blank"
-                  href="https://mychart.ynhhs.org/mychart-prd/en-US/PDF/EUAPfiser12_ESP.pdf"
+                  href="https://mychart.ynhhs.org/MyChart-PRD/en-US/PDF/ESPCOVIDModernaVaccineFactSheet.pdf"
                 >
-                  {FSText[3]}
-                </a>{' '}
+                  {FSText[4]}
+                </a>
                 {links}
                 <br></br>
               </legend>

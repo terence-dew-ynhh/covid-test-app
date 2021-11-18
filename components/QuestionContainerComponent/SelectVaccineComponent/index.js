@@ -78,7 +78,7 @@ const SelectVaccineComponent = ({
                     updateAnswerData({ sel_vaccine: 'Pfizer' });
                     pfizerSelected(true);
                     setJJApproved(false);
-                    if (isOver18) setIsModerna(false);
+                    if (isOver18) nextPage(e);
                     else nextPage(e, 2);
                   }}
                 ></input>

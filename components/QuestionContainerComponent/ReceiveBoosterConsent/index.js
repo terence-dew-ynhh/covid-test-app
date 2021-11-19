@@ -54,11 +54,17 @@ const ReceiveBoosterConsent = ({
     <>
       <div className={styles.question_row_item}>
         <div className={styles.question_row_item_sub}>
-          {/* <p className="message">
-            Please note that boosters are not yet recommended for HCW, first
-            responders, etc. unless they meet one or more of the below criteria
-            placing them at risk for severe COVID.
-          </p> */}
+          <p className="banner">
+            This site is only for employees and affiliates of YNHHS. Please go
+            to{' '}
+            <a href="covidvaccine.ynhh.org">
+              <span style={{color: "#fff", textDecoration: "underline"}}>covidvaccine.ynhh.org</span>
+            </a>{' '}
+            to schedule your vaccination if you are not an employee or affiliate
+            of YNHHS.
+          </p>
+          <br></br>
+          <br></br>
           <fieldset>
             <legend>
               <b>Current Eligibility Criteria for Booster:</b>
@@ -67,7 +73,14 @@ const ReceiveBoosterConsent = ({
               {VEText[0]}
               <br></br>
               <br></br>
-              {VEText[1]} <a href="https://mychart.ynhhs.org/mychart-prd/en-US/PDF/ChronicConditions.pdf" target="_blank" rel="noreferrer">-  Click to view high risk conditions</a>
+              {VEText[1]}{' '}
+              <a
+                href="https://mychart.ynhhs.org/mychart-prd/en-US/PDF/ChronicConditions.pdf"
+                target="_blank"
+                rel="noreferrer"
+              >
+                - Click to view high risk conditions
+              </a>
               <br></br>
               <br></br>
               {VEText[2]}

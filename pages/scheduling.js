@@ -96,14 +96,14 @@ export default function Home({
             : ''}
         </h3>
 
-        <button
+        {/* <button
           className="button"
           style={{ marginBottom: 0 }}
           type="button"
           onClick={handleOpen}
         >
           Click here to see Vaccine Schedule
-        </button>
+        </button> */}
         {/* <p>{`Over 18:${isOver18} | Pfizer:${isPfizer} | Third Dose:${isimmunocomp}`}</p> */}
         <iframe
           id="openSchedulingFrame"
@@ -117,7 +117,7 @@ export default function Home({
           aria-labelledby="simple-modal-title"
           aria-describedby="simple-modal-description"
         >
-          {body}
+          {/* {body} */}
         </Modal>
       </div>
       <style jsx>{`

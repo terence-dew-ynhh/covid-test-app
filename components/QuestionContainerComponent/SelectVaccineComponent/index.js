@@ -33,7 +33,7 @@ const SelectVaccineComponent = ({
             {!isModerna && isBooster && (
               <p className="error">
                 {isJassenapproved
-                  ? 'We plan to offer J&J Boosters towards later part of November. Please contact us in a couple weeks at 1-833-ASK-YNHH (275-9644).'
+                  ? 'We plan to offer J&J Boosters at limited sites in December. Please contact us at 1-833-ASK-YNHH (275-9644).'
                   : `At this time, Yale New Haven Health does not currently have any appointments available for primary series vaccinations.`}
               </p>
             )}

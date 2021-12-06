@@ -78,8 +78,9 @@ const SelectVaccineComponent = ({
                     updateAnswerData({ sel_vaccine: 'Pfizer' });
                     pfizerSelected(true);
                     setJJApproved(false);
-                    if (isOver18) setIsModerna(false);
-                    else nextPage(e, 2);
+                    // if (isOver18) setIsModerna(false);
+                    // else 
+                    nextPage(e, 2);
                   }}
                 ></input>
                 <label htmlFor="prev_covid_yes">Pfizer</label>

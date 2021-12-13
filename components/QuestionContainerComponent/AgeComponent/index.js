@@ -79,7 +79,7 @@ const Over18Component = ({
               setJJApproved(false);
               overEighteen(false);
               pediatric(true);
-              // nextPage();
+              nextPage();
             }}
           ></input>
           <label htmlFor="employee_staff_check_five">{OEText[2]}</label>

@@ -45,7 +45,7 @@ const SelectVaccineComponent = ({
                   ? 'What vaccine would you like to receive as a booster?'
                   : `What was your Dose 1${isImmunocomp ? '&2' : ''} Vaccine?`}
               </legend>
-
+{/* 
               <div className="radio_row_item">
                 <input
                   id="prev_covid_no"
@@ -65,7 +65,7 @@ const SelectVaccineComponent = ({
                   }}
                 ></input>
                 <label htmlFor="prev_covid_no">Moderna</label>
-              </div>
+              </div> */}
               <br></br>
               <br></br>
               <div className="radio_row_item">
@@ -86,7 +86,7 @@ const SelectVaccineComponent = ({
               </div>
               <br></br>
               <br></br>
-              <div className="radio_row_item">
+              {/* <div className="radio_row_item">
                 <input
                   id="prev_covid_jj"
                   type="radio"
@@ -101,7 +101,7 @@ const SelectVaccineComponent = ({
                   }}
                 ></input>
                 <label htmlFor="prev_covid_jj">Janssen (J&J)</label>
-              </div>
+              </div> */}
             </fieldset>
           </div>
           <p>

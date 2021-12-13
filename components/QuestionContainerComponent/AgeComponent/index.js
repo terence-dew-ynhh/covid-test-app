@@ -61,10 +61,11 @@ const Over18Component = ({
             type="radio"
             name="employee_staff"
             onClick={(e) => {
-              setIsUnavailable(true);
+              // setIsUnavailable(true);
               setJJApproved(false);
               overEighteen(false);
               pediatric(false);
+              nextPage(e, 2);
             }}
           ></input>
           <label htmlFor="employee_staff_check_no">{OEText[1]}</label>

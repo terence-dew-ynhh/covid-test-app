@@ -8,7 +8,7 @@ const ThirdDoseComponent = ({
   isDoneEnabled,
   isSpanish,
   setImmunocompromised,
-  isOver18
+  isPediatric
 }) => {
   useEffect(() => {
     isPrevEnabled(true);
@@ -66,7 +66,7 @@ const ThirdDoseComponent = ({
             <br></br>- I am taking (or was taking at the time of my initial mRNA
             COVID-19 vaccine series) high-dose corticosteroids (at least 20 mg
             of prednisone daily) or any of the other medications on this list
-            that suppress the immune system
+            that suppress the immune system{' '} 
             <a
               target="__blank"
               href="https://mychart.ynhhs.org/mychart-prd/en-US/PDF/CDCMedImmunoBoosterDose.pdf"
@@ -81,8 +81,9 @@ const ThirdDoseComponent = ({
             name="employee_staff"
             onClick={(e) => {
               setImmunocompromised(true);
-              if (isOver18) nextPage();
-              else nextPage(e, 3);
+              if (isPediatric) setMeetsCriteria(false);  
+              else nextPage();
+              // else nextPage(e, 3);
             }}
           ></input>
           <label htmlFor="employee_staff_check_yes">{OEText[0]}</label>

@@ -24,6 +24,7 @@ const SchedulingForComponent = ({
             type="radio"
             name="over_eighteeen_ques"
             onClick={() => {
+              updateIsFiveOrBelow(false);
               nextPage();
             }}
           ></input>
@@ -35,6 +36,7 @@ const SchedulingForComponent = ({
             type="radio"
             name="over_eighteeen_ques"
             onClick={() => {
+              updateIsFiveOrBelow(false);
               nextPage();
             }}
           ></input>

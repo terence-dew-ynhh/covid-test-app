@@ -17,12 +17,13 @@ const QuestionFormComponent = ({}) => {
     'schedulingfor',
     'consent',
     'symptomssel',
-    'asympconsent'
+    'asympconsent',
+    'sympconsent'
   ];
   const router = useRouter();
 
-  const nextPage = () => {
-    let index = viewIdx <= 6 ? viewIdx + 1 : viewIdx;
+  const nextPage = (e, page = 1) => {
+    let index = viewIdx + page;
     setviewIdx(index);
   };
 
@@ -32,8 +33,7 @@ const QuestionFormComponent = ({}) => {
   };
 
   const hasSymptoms = (hasSymptoms) => {
-    if(isFiveOrBelow) setStatus('Symptomatic')
-    else hasSymptoms
+     hasSymptoms
       ? setStatus('Symptomatic')
       : setStatus('Asymptomatic');
   };

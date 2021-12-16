@@ -99,7 +99,7 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled, hasSymptoms })
           toggleCheckBoxes(severeCheckboxesArr, true)
           setHasSymptomsChk(true);
           setHasSevereSymptoms(false);
-          isDoneEnabled(true);
+          nextPage(e,2)
           hasSymptoms(true)
           noneChk.disabled = true;
           noneChkExp.disabled = true;
@@ -241,14 +241,6 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled, hasSymptoms })
             </div>
           </fieldset>
         </div>
-        <p
-          className="error"
-          hidden={!(hasSymptomsChk)}
-        >
-          
-          If you do not have a primary care provider and would like to be assessed for flu or other medical concerns, please call the YNHHS Call Center at 833-ASK-YNHH (833-275-9644) or <a target="__blank" href={"https://www.ynhhs.org/make-an-appointment/schedule-a-walk-in.aspx?utm_source=covidtesting2&utm_medium=link"}>CLICK HERE </a>
-            to make a walk-in or video visit with one of our clinicians.
-        </p>
       </div>
       <style jsx>{``}</style>
     </>

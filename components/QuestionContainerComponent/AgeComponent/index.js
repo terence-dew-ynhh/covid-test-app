@@ -11,7 +11,8 @@ const Over18Component = ({
   schedulePush,
   setJJApproved,
   pediatric, 
-  isPediatric
+  isPediatric,
+  setSixteen
 }) => {
   const [isUnavailable, setIsUnavailable] = useState(false);
 
@@ -55,6 +56,21 @@ const Over18Component = ({
           ></input>
           <label htmlFor="employee_staff_check_yes">{OEText[0]}</label>
           <br></br>
+        <br></br>
+          <input
+            id="employee_staff_check_sixteen"
+            type="radio"
+            name="employee_staff"
+            onClick={(e) => {
+              setIsUnavailable(false);
+              overEighteen(true);
+              setSixteen(true);
+              pediatric(false);
+              nextPage(e, 2);
+            }}
+          ></input>
+          <label htmlFor="employee_staff_check_sixteen">{OEText[4]}</label>
+          <br></br>
           <br></br>
           <input
             id="employee_staff_check_no"
@@ -83,6 +99,7 @@ const Over18Component = ({
             }}
           ></input>
           <label htmlFor="employee_staff_check_five">{OEText[2]}</label>
+       
         </fieldset>
       </div>
       <style jsx>{``}</style>

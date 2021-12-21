@@ -1,7 +1,13 @@
 import styles from './SelectSymptomsComponent.module.css';
 import { useState, useEffect } from 'react';
 
-const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled, hasSymptoms }) => {
+const SelectSymptoms = ({
+  nextPage,
+  isPrevEnabled,
+  isDoneEnabled,
+  hasSymptoms,
+  updateSelectionCode
+}) => {
   const [hasSymptomsChk, setHasSymptomsChk] = useState(false);
   const [hasSevereSymptoms, setHasSevereSymptoms] = useState(false);
 
@@ -12,50 +18,73 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled, hasSymptoms })
 
   const toggleCheckBoxes = (checkboxesArr, isDisabled) => {
     checkboxesArr.forEach((element) => {
-        let symtomsChk = document.getElementById(
-          `prev_covid_${element.toLowerCase()}`
-        );
-        if(isDisabled) symtomsChk.checked = false;
-        symtomsChk.disabled = isDisabled;
+      let symtomsChk = document.getElementById(
+        `prev_covid_${element.toLowerCase()}`
+      );
+      if (isDisabled) symtomsChk.checked = false;
+      symtomsChk.disabled = isDisabled;
     });
-
-    
   };
 
   const handleChecked = (e) => {
     //None of the Above
-    let noneChk = document.getElementById(`prev_covid_no_symp`);
+    let noneChkTravel = document.getElementById(`prev_covid_no_symp_travel`);
+    let noneChkMandate = document.getElementById(`prev_covid_no_symp_mandate`);
     let noneChkExp = document.getElementById(`prev_covid_no_symp_exp`);
     if (
-      (e.target.value === 'prev_covid_no_symp_exp')  &&
+      e.target.value === 'prev_covid_no_symp_exp' &&
       e.target.checked === true
     ) {
-      toggleCheckBoxes([...checkboxesArr, ...severeCheckboxesArr, `no_symp` ], true);
       setHasSymptomsChk(false);
       setHasSevereSymptoms(false);
-      noneChkExp.checked = true;
+      // noneChkExp.checked = true;
+      updateSelectionCode('exposure');
       nextPage(e);
-    } 
-    else if (
-      (e.target.value === 'prev_covid_no_symp')  &&
+    } else if (
+      e.target.value === 'prev_covid_no_symp_travel' &&
       e.target.checked === true
     ) {
-      toggleCheckBoxes([...checkboxesArr, ...severeCheckboxesArr, 'no_symp_exp'], true);
+     
       setHasSymptomsChk(false);
       setHasSevereSymptoms(false);
-      noneChk.checked = true;
+      // noneChk.checked = true;
+      updateSelectionCode('travel');
       nextPage(e);
-    }
-    else {
-      toggleCheckBoxes([...checkboxesArr, ...severeCheckboxesArr, 'no_symp_exp', 'no_symp' ], false);
-      noneChk.checked = false;
+    } else if (
+      e.target.value === 'prev_covid_no_symp_mandate' &&
+      e.target.checked === true
+    ) {
+
+      setHasSymptomsChk(false);
+      setHasSevereSymptoms(false);
+      // noneChk.checked = true;
+      updateSelectionCode('mandate');
+      nextPage(e);
+    } else {
+      toggleCheckBoxes(
+        [
+          ...checkboxesArr,
+          ...severeCheckboxesArr,
+          'no_symp_exp',
+          'no_symp_travel',
+          'no_symp_mandate'
+        ],
+        false
+      );
+      noneChkMandate.checked = false;
+      noneChkTravel.checked = false;
       isDoneEnabled(false);
     }
 
     // If any of the boxes are checked beside None of the Above
 
-    if (!( e.target.id === 'prev_covid_no_symp_exp' ||
-    e.target.id === 'prev_covid_no_symp')) {
+    if (
+      !(
+        e.target.id === 'prev_covid_no_symp_exp' ||
+        e.target.id === 'prev_covid_no_symp_mandate' ||
+        e.target.id === 'prev_covid_no_symp_travel'
+      )
+    ) {
       let shouldDisableSymp = false;
       let shouldDisableSev = false;
 
@@ -78,49 +107,48 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled, hasSymptoms })
       });
 
       if (shouldDisableSymp || shouldDisableSev) {
-        noneChk.checked = false;
-        noneChk.disabled = true;
+        noneChkTravel.checked = false;
+        noneChkTravel.disabled = true;
+
+        noneChkMandate.checked = false;
+        noneChkMandate.disabled = true;
 
         noneChkExp.checked = false;
         noneChkExp.disabled = true;
-        
 
-        if(shouldDisableSymp){
-          toggleCheckBoxes(checkboxesArr, true)
+        if (shouldDisableSymp) {
+          toggleCheckBoxes(checkboxesArr, true);
           setHasSymptomsChk(false);
-          hasSymptoms(false)
+          hasSymptoms(false);
           setHasSevereSymptoms(true);
-        }else if(!shouldDisableSymp){
-          toggleCheckBoxes(checkboxesArr, false)
+        } else if (!shouldDisableSymp) {
+          toggleCheckBoxes(checkboxesArr, false);
           setHasSevereSymptoms(false);
         }
 
-        if(shouldDisableSev){
-          toggleCheckBoxes(severeCheckboxesArr, true)
+        if (shouldDisableSev) {
           setHasSymptomsChk(true);
           setHasSevereSymptoms(false);
-          nextPage(e,2)
-          hasSymptoms(true)
-          noneChk.disabled = true;
+          nextPage(e, 2);
+          hasSymptoms(true);
+          noneChkMandate.disabled = true;
+          noneChkTravel.disabled = true;
           noneChkExp.disabled = true;
-        }else if(!shouldDisableSev){
-          toggleCheckBoxes(severeCheckboxesArr, false)
+        } else if (!shouldDisableSev) {
+          toggleCheckBoxes(severeCheckboxesArr, false);
           setHasSymptomsChk(false);
           hasSymptoms(false);
         }
-      }else{
-        noneChk.disabled = false;
+      } else {
+        noneChkMandate.disabled = false;
+          noneChkTravel.disabled = false;
         noneChkExp.disabled = false;
         setHasSymptomsChk(false);
-        hasSymptoms(false)
+        hasSymptoms(false);
         setHasSevereSymptoms(false);
         isDoneEnabled(false);
       }
-
-    } else {
-      noneChk.disabled = false;
-      
-    }
+    } 
   };
 
   let severeCheckboxesArr = [
@@ -144,7 +172,7 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled, hasSymptoms })
     'Pink Eye/Runny Eye (Conjunctivitis)',
     'Nausea',
     'Vomiting',
-    'Diarrhea',
+    'Diarrhea'
   ];
 
   const regex = /_/gi;
@@ -166,29 +194,28 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled, hasSymptoms })
     </div>
   ));
 
-  let checkboxes = checkboxesArr.map((checkbox, idx) =>
-    
-      <div className="chk_row_item">
-        <input
-          id={`prev_covid_${checkbox.toLowerCase()}`}
-          key={idx}
-          type="checkbox"
-          value={checkbox.replace(regex, ' ')}
-          name="symptoms"
-          onChange={(e) => {
-            handleChecked(e);
-          }}
-        ></input>
-        <label htmlFor={`prev_covid_${checkbox.toLowerCase()}`}>
-          {checkbox.replace(regex, ' ')}
-        </label>
-      </div>
-  );
+  let checkboxes = checkboxesArr.map((checkbox, idx) => (
+    <div className="chk_row_item">
+      <input
+        id={`prev_covid_${checkbox.toLowerCase()}`}
+        key={idx}
+        type="checkbox"
+        value={checkbox.replace(regex, ' ')}
+        name="symptoms"
+        onChange={(e) => {
+          handleChecked(e);
+        }}
+      ></input>
+      <label htmlFor={`prev_covid_${checkbox.toLowerCase()}`}>
+        {checkbox.replace(regex, ' ')}
+      </label>
+    </div>
+  ));
 
   return (
     <>
       <div className={styles.question_row_item}>
-        <p className="error" hidden={!(hasSevereSymptoms)}>
+        <p className="error" hidden={!hasSevereSymptoms}>
           Your symptom(s) may indicate a Medical Emergency. Call 911.
         </p>
 
@@ -200,7 +227,7 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled, hasSymptoms })
             <div className={styles.q2_grid}>{severeCheckboxes}</div>
             <div className={styles.q1_grid}>{checkboxes}</div>
             <br></br>
-              <br></br>
+            <br></br>
             <div className={styles.chk_row_item}>
               <label className={styles.none_label_or}></label>
               <input
@@ -223,10 +250,10 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled, hasSymptoms })
               <br></br>
               <br></br>
               <input
-                id={`prev_covid_no_symp`}
+                id={`prev_covid_no_symp_mandate`}
                 type="checkbox"
-                key={`prev_covid_no_symp`}
-                value={`prev_covid_no_symp`}
+                key={`prev_covid_no_symp_mandate`}
+                value={`prev_covid_no_symp_mandate`}
                 name="symptoms"
                 onChange={(e) => {
                   handleChecked(e);
@@ -234,9 +261,29 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled, hasSymptoms })
               ></input>
               <label
                 className={styles.prev_none_label}
-                htmlFor={`prev_covid_no_symp`}
+                htmlFor={`prev_covid_no_symp_mandate`}
               >
-                I am not experiencing any symptoms
+                I am not experiencing any symptoms and I am mandated to test by
+                my employer or school
+              </label>
+              <br></br>
+              <br></br>
+              <input
+                id={`prev_covid_no_symp_travel`}
+                type="checkbox"
+                key={`prev_covid_no_symp_travel`}
+                value={`prev_covid_no_symp_travel`}
+                name="symptoms"
+                onChange={(e) => {
+                  handleChecked(e);
+                }}
+              ></input>
+              <label
+                className={styles.prev_none_label}
+                htmlFor={`prev_covid_no_symp_travel`}
+              >
+                I am not experiencing any symptoms and I am being tested for
+                travel, recreational or other reasons
               </label>
             </div>
           </fieldset>

@@ -8,8 +8,10 @@ const QuestionFormComponent = ({}) => {
   const [status, setStatus] = useState('Asymptomatic');
   const [location, setLocation] = useState('Fairfield County and NY');
   const [isFiveOrBelow, setIsFiveOrBelow] = useState(false);
+  const [selectionCode, setSelectionCode] = useState('');
 
   const compNames = [
+    'info',
     'location',
     'priortest',
     'healthprov',
@@ -46,9 +48,13 @@ const QuestionFormComponent = ({}) => {
     setLocation(siteLocation);
   };
 
+  const updateSelectionCode = (code) => {
+    setSelectionCode(code);
+  };
+
   const schedulePush = () => {
     router.push(
-      `/scheduling?status=${status}&location=${location}&isBelowFive=${isFiveOrBelow}`,
+      `/scheduling?status=${status}&location=${location}&isBelowFive=${isFiveOrBelow}&code=${selectionCode}`,
       '/scheduling'
     );
   };
@@ -81,6 +87,7 @@ const QuestionFormComponent = ({}) => {
         hasSymptoms={hasSymptoms}
         updateLocation={updateLocation}
         updateIsFiveOrBelow={updateIsFiveOrBelow}
+        updateSelectionCode={updateSelectionCode}
       ></QuestionView>
     </div>
   );

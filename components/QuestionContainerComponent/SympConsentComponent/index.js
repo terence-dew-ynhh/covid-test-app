@@ -6,7 +6,7 @@ const SympConsentComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
 
   useEffect(() => {
     isDoneEnabled(false);
-    isPrevEnabled(true);
+    isPrevEnabled(false);
   }, []);
 
   const handleChecked = (e) => {

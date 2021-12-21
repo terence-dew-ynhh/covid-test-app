@@ -8,6 +8,7 @@ import SchedulingForComponent from '../SchedulingForComponent';
 import AsympConsentComponent from '../AsympConsentComponent';
 import SympConsentComponent from '../SympConsentComponent';
 import HealthProvQuestionComponent from '../HealthProvQuestionComponent';
+import DisclaimerComponent from '../DisclaimerComponent';
 import styles from './QuestionViewComponent.module.css'
 
 
@@ -18,7 +19,8 @@ const QuestionViewComponent = ({
   schedulePush,
   updateLocation,
   hasSymptoms,
-  updateIsFiveOrBelow
+  updateIsFiveOrBelow,
+  updateSelectionCode
 }) => {
   const [prevEnabled, setPrevEnabled] = useState(false);
   const [nextEnabled, setNextEnabled] = useState(false);
@@ -45,7 +47,8 @@ const QuestionViewComponent = ({
     schedulingfor: SchedulingForComponent,
     asympconsent: AsympConsentComponent,
     sympconsent: SympConsentComponent,
-    healthprov: HealthProvQuestionComponent     
+    healthprov: HealthProvQuestionComponent,
+    info: DisclaimerComponent    
   };
 
   const ComponentName = components[compName || 'employee'];
@@ -61,6 +64,7 @@ const QuestionViewComponent = ({
         hasSymptoms={hasSymptoms}
         updateLocation={updateLocation}
         updateIsFiveOrBelow={updateIsFiveOrBelow}
+        updateSelectionCode={updateSelectionCode}
       />
       </div>
       <div className={styles.buttonContainer}>

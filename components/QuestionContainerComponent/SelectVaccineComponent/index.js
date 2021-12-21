@@ -47,7 +47,7 @@ const SelectVaccineComponent = ({
                   : `What was your Dose 1${isImmunocomp ? '&2' : ''} Vaccine?`}
               </legend>
 
-              {false && (
+              {!is1617 && (
                 <>
                   <div className="radio_row_item">
                     <input
@@ -83,7 +83,7 @@ const SelectVaccineComponent = ({
                     updateAnswerData({ sel_vaccine: 'Pfizer' });
                     pfizerSelected(true);
                     setJJApproved(false);
-                    if(is1617) {nextPage(e, 3)}
+                    if(is1617) {nextPage(e, 4)}
                     if (isOver18){setIsModerna(false)}
                     else nextPage(e, 2);
                   }}
@@ -92,7 +92,7 @@ const SelectVaccineComponent = ({
               </div>
               <br></br>
               <br></br>
-              {false && (
+              {!is1617 && (
                 <div className="radio_row_item">
                   <input
                     id="prev_covid_jj"

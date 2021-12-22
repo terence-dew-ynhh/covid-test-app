@@ -25,6 +25,7 @@ const SelectLocation = ({
     'Madison Emergency Medical Services',
     'Madison Hose CompanyNo.1',
     'Madison Police Department',
+    'Masonicare Front Line Worker',
     'Nelson Ambulance Service',
     'New Haven Fire Department ',
     'North Branford Police Department ',

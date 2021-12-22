@@ -4,6 +4,7 @@ import SelectDepartment from '../SelectDepartmentComponent';
 import ConsentComponent from '../ConsentComponent';
 import NeedCovidTest from '../NeedCovidTestComponent';
 import FirstResponderComponent from '../FirstResponderComponent';
+import ApprovalComponent from '../ApprovalComponent';
 import styles from './QuestionViewComponent.module.css'
 
 
@@ -43,7 +44,8 @@ const QuestionViewComponent = ({
     seldept: SelectDepartment,
     needcovid: NeedCovidTest,
     consent: ConsentComponent, 
-    firstresponder: FirstResponderComponent  
+    firstresponder: FirstResponderComponent,
+    approval: ApprovalComponent   
   };
 
   const ComponentName = components[compName || 'seldept'];

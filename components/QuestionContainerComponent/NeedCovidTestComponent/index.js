@@ -13,13 +13,7 @@ const NeedCovidTestComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, schedu
     <>
       <div className="radio_grp">
         <div className={styles.question_row_item}>
-          <div className={styles.question_row_item_sub}>
-            <p className="error" hidden={!(isCovidPositive === 'Yes')}>
-              If you are experiencing symptoms, we recommend contacting your
-              medical provider directly or call the YNHHS COVID Call Center at
-              1-833-ASK-YNHH for a clinical assessment.
-            </p>
-            <fieldset>
+          <div className={styles.question_row_item_sub}>            <fieldset>
               <legend>Why do you need COVID Testing?:</legend>
 
               <div className="radio_row_item">
@@ -29,8 +23,7 @@ const NeedCovidTestComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, schedu
                   value="Yes"
                   name="prev_covid"
                   onClick={(e) => {
-                    schedulePush(true);
-                    // setIsCovidPositive(e.target.value);
+                    nextPage()
                   }}
                 ></input>
                 <label htmlFor="prev_covid_yes">Having Symptoms</label>

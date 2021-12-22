@@ -47,7 +47,7 @@ const SelectVaccineComponent = ({
                   : `What was your Dose 1${isImmunocomp ? '&2' : ''} Vaccine?`}
               </legend>
 
-              {!is1617 && (
+              {isBooster && isOver18 && (
                 <>
                   <div className="radio_row_item">
                     <input
@@ -62,8 +62,7 @@ const SelectVaccineComponent = ({
                           updateAnswerData({ sel_vaccine: 'Moderna' });
                           pfizerSelected(false);
                           setJJApproved(false);
-                          if (isImmunocomp) nextPage(e);
-                          else nextPage(e, 3);
+                          nextPage(e, 4);
                         }
                       }}
                     ></input>
@@ -83,16 +82,18 @@ const SelectVaccineComponent = ({
                     updateAnswerData({ sel_vaccine: 'Pfizer' });
                     pfizerSelected(true);
                     setJJApproved(false);
-                    if(is1617) {nextPage(e, 4)}
-                    if (isOver18){setIsModerna(false)}
-                    else nextPage(e, 2);
+                    // if(is1617) {nextPage(e, 4)}
+                    // if (isOver18){setIsModerna(false)}
+                    // else nextPage(e, 2);
+                    if (isImmunocomp) nextPage(e);
+                    else nextPage(e, 4);
                   }}
                 ></input>
                 <label htmlFor="prev_covid_six">Pfizer</label>
               </div>
               <br></br>
               <br></br>
-              {!is1617 && (
+              {/* {!is1617 && (
                 <div className="radio_row_item">
                   <input
                     id="prev_covid_jj"
@@ -103,13 +104,13 @@ const SelectVaccineComponent = ({
                       updateAnswerData({ sel_vaccine: 'Jansen' });
                       pfizerSelected(false);
                       setJJApproved(true);
-                      if (isOver18) setIsModerna(false);
-                      else nextPage(e, 2);
+                      // if (isOver18) setIsModerna(false);
+                      // else nextPage(e, 2);
                     }}
                   ></input>
                   <label htmlFor="prev_covid_jj">Janssen (J&J)</label>
                 </div>
-              )}
+              )} */}
             </fieldset>
           </div>
           <p>

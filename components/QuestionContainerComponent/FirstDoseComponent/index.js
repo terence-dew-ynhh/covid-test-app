@@ -43,11 +43,11 @@ const FirstDoseComponent = ({
                   value="Yes"
                   name="prev_covid"
                   onClick={(e) => {
-                    // updateAnswerData({ first_dose: e.target.value });
-                    if (isPediatric) nextPage(e, 7);
+                    updateAnswerData({ first_dose: e.target.value });
                     setBooster(false);
                     setImmunocompromised(false);
                     setIsClosed(true);
+                    nextPage(e, 7);
                   }}
                 ></input>
                 <label htmlFor="first_dose">{FDText[1]}</label>
@@ -61,18 +61,18 @@ const FirstDoseComponent = ({
                   value="No"
                   name="prev_covid"
                   onClick={(e) => {
-                    // updateAnswerData({ first_dose: e.target.value });
-                    // nextPage(e);
+                    updateAnswerData({ first_dose: e.target.value });
+                    nextPage(e ,3);
                     setBooster(false);
                     setImmunocompromised(false);
-                    setIsClosed(true);
+                    // setIsClosed(true);
                   }}
                 ></input>
                 <label htmlFor="second_dose">{FDText[2]}</label>
               </div>
               <br></br>
               <br></br>
-              {isOver18 && (<div className="radio_row_item">
+              {!isPediatric && (<div className="radio_row_item">
                 <input
                   id="third_dose"
                   type="radio"
@@ -82,7 +82,8 @@ const FirstDoseComponent = ({
                     updateAnswerData({ first_dose: e.target.value });
                     setBooster(false);
                     setImmunocompromised(true);
-                    setIsClosed(true);
+                    nextPage(e, 2)
+                    // setIsClosed(true);
                   }}
                 ></input>
                 <label htmlFor="third_dose">{FDText[3]}</label>
@@ -100,7 +101,7 @@ const FirstDoseComponent = ({
                       updateAnswerData({ first_dose: e.target.value });
                       setBooster(true);
                       setImmunocompromised(false);
-                      nextPage(e, 3);
+                      nextPage(e);
                     }}
                   ></input>
                   <label htmlFor="booster_dose">{FDText[4]}</label>

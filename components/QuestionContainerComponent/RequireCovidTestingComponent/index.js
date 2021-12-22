@@ -34,7 +34,7 @@ import styles from './RequireCovidTestingComponent.module.css'
           <label htmlFor="employee_staff_check_yes">Having Symptoms?</label>
           <br></br>
           <br></br>
-          <input
+          {/* <input
             id="employee_staff_check_no"
             type="radio"
             name="employee_staff"
@@ -45,7 +45,7 @@ import styles from './RequireCovidTestingComponent.module.css'
           ></input>
           <label htmlFor="employee_staff_check_no">Return from Travel to a High Risk Area?</label>
           <br></br>
-          <br></br>
+          <br></br> */}
           <input
             id="employee_staff_check_exempt"
             type="radio"

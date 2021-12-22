@@ -101,7 +101,7 @@ const FirstDoseComponent = ({
                       updateAnswerData({ first_dose: e.target.value });
                       setBooster(true);
                       setImmunocompromised(false);
-                      nextPage(e,7);
+                      nextPage(e,3);
                     }}
                   ></input>
                   <label htmlFor="booster_dose">{FDText[4]}</label>

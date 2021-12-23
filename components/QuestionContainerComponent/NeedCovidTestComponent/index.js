@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import styles from './NeedCovidTestComponent.module.css';
 
-const NeedCovidTestComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, schedulePush }) => {
+const NeedCovidTestComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, schedulePush, updateHasSymptoms }) => {
   const [isCovidPositive, setIsCovidPositive] = useState('');
 
   useEffect(() => {
@@ -23,7 +23,8 @@ const NeedCovidTestComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, schedu
                   value="Yes"
                   name="prev_covid"
                   onClick={(e) => {
-                    nextPage()
+                    updateHasSymptoms(true)
+                    nextPage();
                   }}
                 ></input>
                 <label htmlFor="prev_covid_yes">Having Symptoms</label>
@@ -36,6 +37,7 @@ const NeedCovidTestComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, schedu
                   value="No"
                   name="prev_covid"
                   onClick={(e) => {
+                    updateHasSymptoms(false)
                     nextPage();
                   }}
                 ></input>
@@ -49,6 +51,7 @@ const NeedCovidTestComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, schedu
                   value="No"
                   name="prev_covid"
                   onClick={(e) => {
+                    updateHasSymptoms(false)
                     nextPage();
                   }}
                 ></input>

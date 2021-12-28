@@ -46,7 +46,7 @@ export default function Home({ link }) {
 }
 
 Home.getInitialProps = async ({ query }) => {
-  const { location, status, isBelowFive, code } = query;
+  const { location='', status='', isBelowFive='', code='' } = query;
 
   let testingStatus = status;
   if (isBelowFive == 'true') {

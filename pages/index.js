@@ -13,7 +13,7 @@ export default function Home() {
         <img src="/YNHHSLogo.png"></img>
       </div>
       <h1 className="title">
-      First Responder Health Services COVID – 19 Testing
+      First Responder/Priority Health Services COVID-19 Testing
       </h1>
       <QuestionContainerComponent></QuestionContainerComponent>
     </div>

@@ -15,7 +15,7 @@ const FirstResponderComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, sched
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
             <fieldset>
-              <legend>Are you a Police/Fire/EMS first responder?:</legend>
+              <legend>Are you a Police/Fire/EMS or other YNHHS Approved patient or designee?:</legend>
 
               <div className="radio_row_item">
                 <input

@@ -19,6 +19,7 @@ import ReturnProcessConsentComponent from '../ReturnProcessConsentComponent';
 import WorkPlaceExposureComponent from '../WorkPlaceExposureComponent';
 import HouseHoldExposureComponent from '../HouseHoldExposureComponent';
 import EmploymentStatusComponent from '../EmploymentStatusComponent';
+import SymptomsMessageComponent from '../SymptomsMessageComponent';
 import styles from './QuestionViewComponent.module.css';
 
 const QuestionViewComponent = ({
@@ -71,7 +72,8 @@ const QuestionViewComponent = ({
     returnprocess: ReturnProcessConsentComponent,
     workplaceexposure: WorkPlaceExposureComponent,
     householdexposure: HouseHoldExposureComponent,
-    employeestatus: EmploymentStatusComponent
+    employeestatus: EmploymentStatusComponent,
+    sympmessage: SymptomsMessageComponent
   };
 
   const ComponentName = components[compName || 'employee'];

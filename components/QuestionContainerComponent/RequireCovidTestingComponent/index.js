@@ -81,7 +81,7 @@ import styles from './RequireCovidTestingComponent.module.css'
               nextPage(e,10)
             }}
           ></input>
-          <label htmlFor="employee_staff_check_workplace_exposure">I am asymptomatic but I had a possible WORKPLACE exposure to someone with COVID-19</label>
+          <label htmlFor="employee_staff_check_workplace_exposure">I am asymptomatic and I had a possible WORKPLACE exposure to someone with COVID-19</label>
           <br></br>
           <br></br>
           <input
@@ -93,7 +93,7 @@ import styles from './RequireCovidTestingComponent.module.css'
               nextPage(e,11)
             }}
           ></input>
-          <label htmlFor="employee_staff_check_household_exposure">I am asymptomatic but I had a possible Household or Community exposure to someone with COVID-19</label>
+          <label htmlFor="employee_staff_check_household_exposure">I am asymptomatic and I had a possible Household or Community exposure to someone with COVID-19</label>
         </fieldset>        
       </div>
       <style jsx>{``}</style>

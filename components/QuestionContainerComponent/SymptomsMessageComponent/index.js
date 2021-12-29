@@ -1,7 +1,7 @@
-import styles from './WorkPlaceExposureComponent.module.css';
+import styles from './SymptomsMessageComponent.module.css';
 import { useState, useEffect } from 'react';
 
-const WorkPlaceExposureComponent = ({
+const SymptomsMessageComponent = ({
   nextPage,
   isPrevEnabled,
   isDoneEnabled,
@@ -28,7 +28,7 @@ const WorkPlaceExposureComponent = ({
           symtomsChk.disabled = true;
         }
       });
-      schedulePush();
+      isDoneEnabled(true);
     }
   };
 
@@ -67,33 +67,34 @@ const WorkPlaceExposureComponent = ({
         <div className={styles.question_row_item_sub}>
           <fieldset>
             <legend>
-              Notify and discuss with your manager/supervisor that you may have
-              had a high risk workplace exposure. Details regarding the risk of
-              exposure can be assessed between your manager and your local
-              Infection Prevention department.
-              <br></br>
-              <br></br>
-              <b>1.</b> Fully Vaccinated AND <b>BOOSTED</b> Employees:
-              <br></br>
+              <b>Return to Work Process AFTER your test result</b>
               <blockquote>
-                <b>a.</b> You may continue to work as long as you are
-                ASYMPTOMATIC
+                <b>1.</b>Please remain out of work until your test result is
+                available.
                 <br></br>
-                <b>b.</b> You <b>DO NOT REQUIRE</b> testing<br></br>
-              </blockquote>
-              <b>2.</b>
-              <strong> NOT</strong> Fully Vaccinated OR Fully Vaccinated AND
-              <b> NOT BOOSTED </b>
-              Employees:<br></br>
-              <blockquote>
-                <b>a.</b>You may Continue to Work as long as you are
-                ASYMPTOMATIC and get testing<br></br>
+                <br></br>
+                <b>2.</b> If you have a <b>POSITIVE</b> test, remain out of work
+                for a total of 7 days (day # 0 is your first day of symptoms).
+                <br></br>
+                <br></br>
+                <b>3.</b> If you have a <b>NEGATIVE</b> test, you may return to
+                work ONLY if you meet the following conditions for at least 24
+                hours:
                 <blockquote>
-                  <b>i.</b> Please schedule a test ONCE 1 or 2 days after
-                  your exposure AND<br></br>
-                  <b>ii.</b>Schedule a test ONCE between days 5 and 7 after your
-                  exposure<br></br>
+                  <b>a.</b> You DO NOT have fever (not on fever reducing
+                  medicine), vomiting, or diarrhea AND
+                  <b>b.</b> The following symptoms (if
+                  present) are mild, improving, or have returned to baseline:
+                  <blockquote>
+                    <b>i.</b> Cough, body aches, fatigue, nausea, shortness of
+                    breath, headaches, sore throat
+                  </blockquote>
                 </blockquote>
+                <b>4.</b> If you have{' '}
+                <b>been off work {'>'}3 days unrelated to COVID-19</b> and need
+                clearance from Occupational Health, contact the Occupational
+                Health Employee Resource Center at 844-543-2147, Option 2 and
+                then again Option 2.
               </blockquote>
             </legend>
             <div className={styles.q1_grid}>{checkboxes}</div>
@@ -105,4 +106,4 @@ const WorkPlaceExposureComponent = ({
   );
 };
 
-export default WorkPlaceExposureComponent;
+export default SymptomsMessageComponent;

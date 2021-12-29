@@ -26,7 +26,8 @@ const QuestionFormComponent = ({}) => {
     'employee',
     'returnprocess',
     'workplaceexposure',
-    'householdexposure'
+    'householdexposure',
+    'sympmessage'
   ];
 
   const nextPage = (e, pageJump) => {

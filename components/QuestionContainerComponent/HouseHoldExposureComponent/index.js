@@ -67,44 +67,32 @@ const HouseHoldExposureComponent = ({
         <div className={styles.question_row_item_sub}>
           <fieldset>
             <legend>
-              <b>1.</b> If you sustained a high risk exposure to someone with
-              COVID-19 in your household or in the community, please follow the
+              If you sustained a high risk exposure to someone with COVID-19 in
+              your household or in the community, please follow the
               recommendations below regarding when to get a test and work
               recommendations.
-              <br></br> If you have further questions, contact the Occupational
-              Health Employee Resource Center at 844-543-2147, option 2<br></br>
               <br></br>
-              <b>2.</b> Fully VACCINATED Employees (it has been {'>2'} weeks
-              since receiving your final dose of the COVID-19 vaccine):<br></br>
               <br></br>
+              <b>1.</b>Fully Vaccinated AND <b>BOOSTED</b> Employees:<br></br>
               <blockquote>
                 <b>a.</b> You may continue to work as long as you are
                 ASYMPTOMATIC<br></br>
-                <b>b.</b> Please schedule your test 5 days from the date of the
-                exposure (not earlier)<br></br>
-                If you test <strong>POSITIVE</strong>, contact the Occupational
-                Health Employee Resource Center at 844-543-2147, option 2
+                <b>b.</b> You <b>DO NOT REQUIRE</b> testing
               </blockquote>
               <br></br>
               <br></br>
-              <b>3.</b> NOT Fully VACCINATED Employees (Unvaccinated OR it has
-              NOT been at least 2 weeks since receiving your final COVID-19
-              vaccine dose):<br></br>
-              <br></br>
+              <b>2.</b>
+              <b>NOT</b> Fully Vaccinated OR Fully Vaccinated AND{' '}
+              <b>NOT BOOSTED</b> Employees:<br></br>
               <blockquote>
-                <b>a.</b> You must quarantine for 10 days from the date of the
-                exposure and undergo testing on day # 10.<br></br>
-                <b>b.</b> Please schedule your test 10 days from the date of
-                exposure (not earlier)<br></br>
-                <br></br>
-                <b>i.</b> If you test <strong>POSITIVE</strong>, contact the
-                Occupational Health Employee Resource Center 844-543-2147,
-                option 2<br></br>
-                <b>ii.</b> If you test NEGATIVE on this day # 10 test, you may
-                return to work on day # 11 <br></br>
-                <b>iii.</b> If you need a return to work clearance from
-                Occupational Health after completing your quarantine, contact
-                the Employee Resource Center at 844-543-2147, option 2
+                <b>a.</b>You may Continue to Work as long as you are
+                ASYMPTOMATIC and get testing.<br></br>
+                <blockquote>
+                  <b>i.</b>Schedule a test ONCE 1 or 2 days after your exposure
+                  AND<br></br>
+                  <b>ii.</b>Schedule a test ONCE between days 5 and 7 after your
+                  exposure<br></br>
+                </blockquote>
               </blockquote>
             </legend>
             <div className={styles.q1_grid}>{checkboxes}</div>

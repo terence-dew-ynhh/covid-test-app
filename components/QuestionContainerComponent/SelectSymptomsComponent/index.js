@@ -79,6 +79,7 @@ const SelectSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled, updateIsSympto
           setHasSymptomsChk(true);
           setHasSevereSymptoms(false);
           isDoneEnabled(true);
+          nextPage(e, 11);
           updateIsSymptomatic(true)
 
         }else if(!shouldDisableSev){

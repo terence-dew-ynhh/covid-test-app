@@ -15,11 +15,11 @@ import styles from './DisclaimerComponent.module.css'
     <>
       <div className={styles.question_row_item}>
       <p className="error">
-        <b>- Due to current demands for testing, results are typically available between 2-3 days </b><br></br><br></br>
-        <b>- Travel/recreational testing availability will be limited</b><br></br><br></br>
-        <b>- Results may not be available for travel documentation</b><br></br><br></br>
-        <b>- Many sites now require an appointment. <a href="https://www.ynhhs.org/patient-care/covid-19/testing/COVID-Testing-Locations-Asymptomatic-Symptomatic">Please visit location pages for more information</a></b><br></br><br></br>
-        <b>- Testing cannot be guaranteed without an appointment</b><br></br><br></br>
+        <b>• Appointment required at all locations. </b><br></br><br></br>
+        <b>• Hospital Emergency Departments do not provide COVID screening tests. If you need a COVID screening test, please schedule through one of our sites.</b><br></br><br></br>
+        <b>• Due to current demands for testing, results are typically between 2-3 days.</b><br></br><br></br>
+        <b>• Travel/recreational testing availability will be limited.</b><br></br><br></br>
+        <b>• Results may not be available for travel documentation.</b><br></br><br></br>
         </p>
         <fieldset className="radio_grp_set">
           <legend>

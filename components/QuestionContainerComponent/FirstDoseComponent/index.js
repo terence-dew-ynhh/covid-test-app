@@ -112,7 +112,7 @@ const FirstDoseComponent = ({
             <br></br>
             {!isOver18 && (
               <b className="redText">
-                Patients ages 12-17 are currently not eligible for the booster
+                Patients ages 12-15 are currently not eligible for the booster
               </b>
             )}
             <br></br>

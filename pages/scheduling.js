@@ -182,7 +182,7 @@ Home.getInitialProps = async ({ query }) => {
     // }
   }
 
-  if (isbooster) {
+  if (isbooster == 'true') {
         link =
       'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=92548,92580,92581,92582,92699&vt=2465&dept=104010099,208040011,101870002,101450002,204590014&view=plain&public=1';
     if (isPfizer == 'true') {

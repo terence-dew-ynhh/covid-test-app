@@ -68,7 +68,9 @@ const VaccineExemptConsentComponent = ({
         <div className={styles.question_row_item_sub}>
           <fieldset>
             <legend>
-              - I am a YNHHS employee and I have a COVID-19 Vaccine Exemption and am required to undergo mandatory COVID-19 PCR testing.<br></br>
+              - I am a YNHHS employee and I have a COVID-19 Vaccine Exemption
+              and am required to undergo mandatory COVID-19 PCR testing.
+              <br></br>
               <br></br>- I am currently asymptomatic and will continue to work
               <br></br>
               <br></br>- I will adhere to twice daily fever and symptoms
@@ -77,6 +79,10 @@ const VaccineExemptConsentComponent = ({
               work. I will revisit this Website for Symptomatic Testing or
               contact the Employee Resource Center at (844) 543-2147; Option # 2
               for Occupational Health.<br></br>
+              <br></br>- By agreeing to undergo weekly testing as a condition of
+              being exempted from receiving the COVID-19 vaccine, I agree to
+              have my COVID test results shared to my Occupational Health
+              records.<br></br>
               <br></br>
             </legend>
             <div className={styles.q1_grid}>{checkboxes}</div>

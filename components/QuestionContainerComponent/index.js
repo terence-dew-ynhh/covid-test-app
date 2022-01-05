@@ -14,7 +14,6 @@ const QuestionFormComponent = ({}) => {
     'info',
     'location',
     'priortest',
-    'healthprov',
     'eighteen',
     'schedulingfor',
     'consent',

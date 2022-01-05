@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import styles from './ReceiveVaccinationConsent.module.css';
-import veText from './vaccineelidgibility.json';
 import { TramRounded } from '@material-ui/icons';
 
 const useStyles = makeStyles(() => ({
@@ -13,21 +12,16 @@ const useStyles = makeStyles(() => ({
 const ReceiveBoosterConsent = ({
   nextPage,
   isPrevEnabled,
-  isDoneEnabled,
-  isSpanish,
-  isPediatric
+  schedulePush
 }) => {
   useEffect(() => {
-    isDoneEnabled(false);
-    isPrevEnabled(TramRounded);
+    isPrevEnabled(true);
   }, []);
 
   const handleChecked = (e) => {
-    if (isPediatric) nextPage(e);
-    else nextPage(e);
+    schedulePush();
   };
 
-  let VEText = isSpanish ? veText.sp : veText.en;
 
   let checkboxesArray = ['None_of_the_Above'];
 
@@ -35,8 +29,7 @@ const ReceiveBoosterConsent = ({
 
   let checkboxes = checkboxesArray.map((checkbox, idx) => (
     <div className={styles.chk_row_item}>
-      <label className={styles.none_label_or}> {VEText[7]}</label>
-      <br></br>
+      <label className={styles.none_label_or}> Confirm: By clicking this box I agree to the above</label>
       <input
         id={`prev_covid_${checkbox.toLowerCase()}`}
         type="checkbox"
@@ -48,7 +41,7 @@ const ReceiveBoosterConsent = ({
         }}
       ></input>
       <label htmlFor={`prev_covid_${checkbox.toLowerCase()}`}>
-        {VEText[8]}
+      Confirm
       </label>
     </div>
   ));
@@ -57,24 +50,13 @@ const ReceiveBoosterConsent = ({
     <>
       <div className={styles.question_row_item}>
         <div className={styles.question_row_item_sub}>
-          {/* <p className="message">
-            Please note that boosters are not yet recommended for HCW, first
-            responders, etc. unless they meet one or more of the below criteria
-            placing them at risk for severe COVID.
-          </p> */}
+
           <fieldset>
-            <legend>
-              {isPediatric ? VEText[18] : VEText[0]}
+          <legend>
+          I confirm that I am an employee of the City of New Haven and I have the appropriate approvals to make this appointment.
               <br></br>
               <br></br>
-              {VEText[5]}
-              <br></br>
-              <br></br>
-              <b>{VEText[6]}</b>
-              <br></br>
-              <br></br>
-              <b>{isPediatric ? VEText[16] : VEText[9]}</b>
-              <b className="redText">{isPediatric ? VEText[17] : VEText[0]}</b>
+              This testing is being performed because I have a COVID-19 vaccine exemption and I am required to have weekly COVID-19 testing.
             </legend>
             <div className={styles.q1_grid}>{checkboxes}</div>
           </fieldset>

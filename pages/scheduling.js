@@ -147,34 +147,6 @@ Home.getInitialProps = async ({ query }) => {
   link =
     'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=88043&vt=2293&dept=204650005&view=plain&public=1';
 
-  if (second_dose == 'true') {
-    // link =
-    //   'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=84792,84795,84794,94791,95375,84815,84793,85108&vt=2338&dept=101960001,102340001,102350001,102360001,102370001,102380001,102390001,102400001&view=plain&public=1';
-    // if (isPfizer == 'true') {
-    link =
-      'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=88043&vt=2339&dept=204650005&view=plain&public=1';
-    // }
-  }
-
-  if (isbooster == 'true') {
-        link =
-      'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=92547&vt=2465&dept=204650005&view=plain&public=1';
-    if (isPfizer == 'true') {
-    link =
-      'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=88043&vt=2460&dept=204650005&view=plain&public=1';
-  }}
-
-  if (isimmunocomp == 'true') {
-    link =
-      'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=88043&vt=2444&dept=204650005&view=plain&public=1';
-  }
-
-  if(isPediatric == 'true') link = 'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=92571&vt=2467&dept=204650005&view=plain&public=1'
-
-  if (isSpanish == 'true') link = link + '&lang=espanol';
-  else link = link + '&lang=english';
-  if (second_dose == null) link = '';
-
   return {
     link,
     recc_date,

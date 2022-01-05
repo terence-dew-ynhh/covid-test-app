@@ -28,22 +28,8 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
   const router = useRouter();
 
   const compNames = [
-    'age',
     'vaccineconsent',
-    'firstdose',
-    'receivebooster',
-    'immunocomp',
-    'selectedvaccine',
-    'allergy',
-    'allergistapproval',
-    'selectpfizer',
-    'testedpositive',
-    'covidsymptoms',
-    'quartinecovid',
-    'monoclonal',
-    'misc',
-    'factsheet',
-    'ynhhfactsheet'
+
   ];
 
   let progressWidth = Math.floor(100 * ((viewIdx + 1) / compNames.length));

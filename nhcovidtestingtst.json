@@ -1,7 +1,7 @@
 {
     "apps": [
         {
-            "name": "mohcovidvaccine",
+            "name": "nhcovidtestingtst",
             "script": "npm",
             "args" : "start"
         }

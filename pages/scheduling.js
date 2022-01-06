@@ -145,7 +145,7 @@ Home.getInitialProps = async ({ query }) => {
   let link = '';
 
   link =
-    'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=91948&vt=2455&dept=100001391&view=plain&public=1';
+    'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=81452&vt=2455&dept=100001391&view=plain&public=1';
 
   return {
     link,

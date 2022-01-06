@@ -9,11 +9,7 @@ const useStyles = makeStyles(() => ({
   }
 }));
 
-const ReceiveBoosterConsent = ({
-  nextPage,
-  isPrevEnabled,
-  schedulePush
-}) => {
+const ReceiveBoosterConsent = ({ nextPage, isPrevEnabled, schedulePush }) => {
   useEffect(() => {
     isPrevEnabled(true);
   }, []);
@@ -22,14 +18,16 @@ const ReceiveBoosterConsent = ({
     schedulePush();
   };
 
-
   let checkboxesArray = ['None_of_the_Above'];
 
   const regex = /_/gi;
 
   let checkboxes = checkboxesArray.map((checkbox, idx) => (
     <div className={styles.chk_row_item}>
-      <label className={styles.none_label_or}> Confirm: By clicking this box I agree to the above</label>
+      <label className={styles.none_label_or}>
+        {' '}
+        Confirm: By clicking this box I agree to the above
+      </label>
       <input
         id={`prev_covid_${checkbox.toLowerCase()}`}
         type="checkbox"
@@ -40,9 +38,7 @@ const ReceiveBoosterConsent = ({
           handleChecked(e);
         }}
       ></input>
-      <label htmlFor={`prev_covid_${checkbox.toLowerCase()}`}>
-      Confirm
-      </label>
+      <label htmlFor={`prev_covid_${checkbox.toLowerCase()}`}>Confirm</label>
     </div>
   ));
 
@@ -50,13 +46,15 @@ const ReceiveBoosterConsent = ({
     <>
       <div className={styles.question_row_item}>
         <div className={styles.question_row_item_sub}>
-
           <fieldset>
-          <legend>
-          I confirm that I am an employee of the City of New Haven and I have the appropriate approvals to make this appointment.
+            <legend>
+              I confirm that I am an employee of the City of New Haven and I
+              have the appropriate approvals to make this appointment.
               <br></br>
               <br></br>
-              This testing is being performed because I have a COVID-19 vaccine exemption and I am required to have weekly COVID-19 testing.
+              This testing is being performed because I am required to have
+              weekly COVID-19 testing as part of the city’s vaccine/testing
+              policy.
             </legend>
             <div className={styles.q1_grid}>{checkboxes}</div>
           </fieldset>

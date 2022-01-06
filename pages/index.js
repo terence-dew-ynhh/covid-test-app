@@ -20,22 +20,10 @@ function Home({ initialIdx }) {
     setIsIndividual(isIndividualAns);
   };
 
-  let callText = (
-    <div>
-      <h4>
-        {' '}
-        {homeText[0]}
-      </h4>
-      <h4>
-      {homeText[1]}
-      </h4>
-    </div>
-  );
-
   return (
     <div className="container">
       <Head>
-        <title>Mohegan COVID19 Vaccination</title>        <link rel="icon" href="/favicon.ico" />
+        <title>City of New Haven COVID19 Testing</title>        <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="grid">
         <img src="/YNHHSLogo.png"></img>
@@ -46,7 +34,6 @@ function Home({ initialIdx }) {
       <h1 className="title">{homeText[2]}</h1>
 
       <QuestionContainerComponent isSpanish={isSpanish} updateHeader={updateHeader} />
-      {callText}
     </div>
   );
 }

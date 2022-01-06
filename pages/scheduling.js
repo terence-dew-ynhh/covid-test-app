@@ -79,7 +79,7 @@ export default function Home({
   return (
     <>
       <Head>
-        <title>Mohegan COVID19 Vaccination</title>{' '}
+        <title>City of New Haven COVID19 Testing</title>{' '}
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

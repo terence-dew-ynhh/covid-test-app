@@ -2,8 +2,6 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 
 export default function Home({ link }) {
-  const router = useRouter();
-  const { endpoint } = router.query;
   return (
     <>
       <Head>

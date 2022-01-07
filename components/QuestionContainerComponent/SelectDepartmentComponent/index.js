@@ -19,6 +19,7 @@ const SelectLocation = ({
     'American Medical Response of CT New Haven',
     'Bethany Volunteer Fire Department Ambulance Corps',
     'Branford Fire Department',
+    'New Haven Police Department',
     'Columbus House Respite Program',
     'East Haven Fire Department',
     'Guilford Fire Department',

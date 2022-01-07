@@ -1,0 +1,9 @@
+{
+    "apps": [
+        {
+            "name": "covidvaccinetst",
+            "script": "npm",
+            "args" : "dev"
+        }
+    ]
+}

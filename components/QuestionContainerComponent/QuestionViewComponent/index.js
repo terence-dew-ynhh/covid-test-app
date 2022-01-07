@@ -25,6 +25,7 @@ import ReceiveBoosterConsent from '../ReceiveBoosterConsent';
 import SelectPfizerComponent from '../SelectPfizerComponent';
 import AllergyComponent from '../AllergyComponent';
 import AllergistApprovedComponent from '../AllergistApprovedComponent';
+import PedThirdDoseComponent from '../PedThirdDoseComponent';
 
 import styles from './QuestionViewComponent.module.css';
 
@@ -82,6 +83,7 @@ const QuestionViewComponent = ({
     hithistory: HITHistoryComponent,
     misc: MiscComponent,
     immunocomp: ThirdDoseComponent,
+    pedimmunocomp: PedThirdDoseComponent,
     immunocompconsent: ImmunoCompConsent,
     receivebooster: ReceiveBoosterConsent, 
     selectpfizer: SelectPfizerComponent,

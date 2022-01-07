@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import styles from './FirstDoseComponent.module.css';
 import fdText from './firstdose.json';
+import { InsertPhotoOutlined } from '@material-ui/icons';
 
 const FirstDoseComponent = ({
   nextPage,
@@ -47,7 +48,7 @@ const FirstDoseComponent = ({
                     setBooster(false);
                     setImmunocompromised(false);
                     setIsClosed(true);
-                    nextPage(e, 7);
+                    nextPage(e, 8);
                   }}
                 ></input>
                 <label htmlFor="first_dose">{FDText[1]}</label>
@@ -62,7 +63,7 @@ const FirstDoseComponent = ({
                   name="prev_covid"
                   onClick={(e) => {
                     updateAnswerData({ first_dose: e.target.value });
-                    nextPage(e ,3);
+                    nextPage(e ,4);
                     setBooster(false);
                     setImmunocompromised(false);
                     // setIsClosed(true);
@@ -72,7 +73,7 @@ const FirstDoseComponent = ({
               </div>
               <br></br>
               <br></br>
-              {!isPediatric && (<div className="radio_row_item">
+              <div className="radio_row_item">
                 <input
                   id="third_dose"
                   type="radio"
@@ -82,12 +83,13 @@ const FirstDoseComponent = ({
                     updateAnswerData({ first_dose: e.target.value });
                     setBooster(false);
                     setImmunocompromised(true);
-                    nextPage(e, 2)
+                    if(isPediatric)nextPage(e, 2)
+                    else nextPage(e, 3)
                     // setIsClosed(true);
                   }}
                 ></input>
                 <label htmlFor="third_dose">{FDText[3]}</label>
-              </div>)}
+              </div>
               <br></br>
               <br></br>
               {isOver18 && (
@@ -101,7 +103,7 @@ const FirstDoseComponent = ({
                       updateAnswerData({ first_dose: e.target.value });
                       setBooster(true);
                       setImmunocompromised(false);
-                      nextPage(e,3);
+                      nextPage(e,4);
                     }}
                   ></input>
                   <label htmlFor="booster_dose">{FDText[4]}</label>

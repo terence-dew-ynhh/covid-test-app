@@ -33,6 +33,7 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
     'vaccineconsent',
     'firstdose',
     'receivebooster',
+    'pedimmunocomp',
     'immunocomp',
     'selectedvaccine',
     'allergy',

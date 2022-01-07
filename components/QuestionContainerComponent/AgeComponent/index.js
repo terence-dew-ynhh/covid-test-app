@@ -72,7 +72,7 @@ const Over18Component = ({
           <label htmlFor="employee_staff_check_sixteen">{OEText[4]}</label>
           <br></br>
           <br></br>
-          <input
+          {/* <input
             id="employee_staff_check_no"
             type="radio"
             name="employee_staff"
@@ -86,7 +86,7 @@ const Over18Component = ({
           ></input>
           <label htmlFor="employee_staff_check_no">{OEText[1]}</label>
           <br></br>
-          <br></br>
+          <br></br> */}
           <input
             id="employee_staff_check_five"
             type="radio"

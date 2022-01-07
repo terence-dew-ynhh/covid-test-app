@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import styles from './ThirdDoseComponent.module.css';
+import styles from './PedThirdDoseComponent.module.css';
 import oeText from './thirddose.json';
 
-const ThirdDoseComponent = ({
+const PedThirdDoseComponent = ({
   nextPage,
   isPrevEnabled,
   isDoneEnabled,
@@ -65,14 +65,13 @@ const ThirdDoseComponent = ({
             <br></br>- Advanced or untreated HIV disease <br></br>
             <br></br>- I am taking (or was taking at the time of my initial mRNA
             COVID-19 vaccine series) high-dose corticosteroids (at least 20 mg
-            of prednisone daily) or any of the other medications on this list
-            that suppress the immune system
+            of prednisone daily) or any of the other medications            
             {' '}
             <a
               target="__blank"
               href="https://mychart.ynhhs.org/mychart-prd/en-US/PDF/CDCMedImmunoBoosterDose.pdf"
             >
-              on this list
+               on this list
             </a>{' '}
             that suppress the immune system.<br></br>
           </legend>
@@ -83,7 +82,7 @@ const ThirdDoseComponent = ({
             onClick={(e) => {
               setImmunocompromised(true);
               if (isOver18) nextPage();
-              else nextPage(e, 3);
+              else nextPage(e, 4);
             }}
           ></input>
           <label htmlFor="employee_staff_check_yes">{OEText[0]}</label>
@@ -109,4 +108,4 @@ const ThirdDoseComponent = ({
   );
 };
 
-export default ThirdDoseComponent;
+export default PedThirdDoseComponent;

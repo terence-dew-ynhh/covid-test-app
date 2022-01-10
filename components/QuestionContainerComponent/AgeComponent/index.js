@@ -54,7 +54,7 @@ const Over18Component = ({
             onClick={(e) => {
               setIsUnavailable(false);
               overEighteen(true);
-              nextPage(e, 2);
+              nextPage(e);
             }}
           ></input>
           <label htmlFor="employee_staff_check_yes">{OEText[0]}</label>
@@ -68,7 +68,7 @@ const Over18Component = ({
               setIsUnavailable(false);
               setSixteen(true);
               overEighteen(true);
-              nextPage(e, 2);
+              nextPage(e);
             }}
           ></input>
           <label htmlFor="employee_staff_check_sixteen">{OEText[4]}</label>
@@ -98,7 +98,7 @@ const Over18Component = ({
               setJJApproved(false);
               overEighteen(false);
               pediatric(true);
-              nextPage();
+              nextPage(e);
             }}
           ></input>
           <label htmlFor="employee_staff_check_five">{OEText[2]}</label>

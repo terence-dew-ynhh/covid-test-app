@@ -47,7 +47,7 @@ const SelectVaccineComponent = ({
                   : `What was your Dose 1${isImmunocomp ? '&2' : ''} Vaccine?`}
               </legend>
 
-              {(isBooster && isOver18 && !is1617) && (
+              {(isBooster && isOver18 && !is1217) && (
                 <>
                   <div className="radio_row_item">
                     <input

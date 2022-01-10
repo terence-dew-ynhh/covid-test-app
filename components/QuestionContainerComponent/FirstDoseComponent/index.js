@@ -113,13 +113,6 @@ const FirstDoseComponent = ({
             </fieldset>
             <br></br>
             <br></br>
-            {(!isPediatric) && (
-              <b className="redText">
-                Patients ages 12-15 are currently not eligible for the booster
-              </b>
-            )}
-            <br></br>
-            <br></br>
             <b className="redText">
               If you are scheduling your initial first dose of the Vaccine, your
               second dose appointment will be made for you at the Vaccination

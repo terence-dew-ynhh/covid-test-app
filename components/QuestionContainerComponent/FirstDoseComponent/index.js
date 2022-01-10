@@ -12,7 +12,8 @@ const FirstDoseComponent = ({
   isOver18,
   setImmunocompromised,
   setBooster,
-  isPediatric
+  isPediatric,
+  is1217
 }) => {
   const [isClosed, setIsClosed] = useState('');
 
@@ -92,7 +93,7 @@ const FirstDoseComponent = ({
               </div>
               <br></br>
               <br></br>
-              {isOver18 && (
+              {(isOver18) && (
                 <div className="radio_row_item">
                   <input
                     id="booster_dose"
@@ -106,13 +107,13 @@ const FirstDoseComponent = ({
                       nextPage(e,4);
                     }}
                   ></input>
-                  <label htmlFor="booster_dose">{FDText[4]}</label>
+                  <label htmlFor="booster_dose">{is1217 ? FDText[6]: FDText[4] }</label>
                 </div>
               )}
             </fieldset>
             <br></br>
             <br></br>
-            {!isOver18 && (
+            {(!isPediatric) && (
               <b className="redText">
                 Patients ages 12-15 are currently not eligible for the booster
               </b>

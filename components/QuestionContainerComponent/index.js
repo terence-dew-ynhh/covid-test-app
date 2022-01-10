@@ -16,7 +16,7 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
   const [isJassenapproved, setIsJassenapproved] = useState(true);
   const [isInZipCodeRange, setIsInZipCodeRange] = useState(false);
   const [isOver18, setIsOver18] = useState(false);
-  const [is1617, setIs1617] = useState(false);
+  const [is1217, setIs1217] = useState(false);
   const [isPediatric, setIsPediatric] = useState(false);
   const [isRiskGroup, setIsRiskGroup] = useState(false);
   const [isImmunocomp, setIsImmunocomp] = useState(false);
@@ -86,7 +86,7 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
   };
 
   const setSixteen = (sixteen) => {
-    setIs1617(sixteen)
+    setIs1217(sixteen)
   }
 
   const updateAnswerData = (questionData) => {
@@ -191,7 +191,7 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
         pediatric={pediatric}
         isPediatric={isPediatric}
         setSixteen={setSixteen}
-        is1617={is1617}
+        is1217={is1217}
       ></QuestionView>
       {/* <p>{`Zip Code ${isInZipCodeRange ? 'is' : 'is not'} in range`}</p> */}
     </div>

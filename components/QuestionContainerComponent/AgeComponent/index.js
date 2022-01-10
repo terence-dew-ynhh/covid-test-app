@@ -12,13 +12,17 @@ const Over18Component = ({
   setJJApproved,
   pediatric, 
   isPediatric,
-  setSixteen
+  setSixteen,
+
 }) => {
   const [isUnavailable, setIsUnavailable] = useState(false);
 
   useEffect(() => {
     isPrevEnabled(false);
     isDoneEnabled(false);
+    setSixteen(false);
+    overEighteen(false);
+    pediatric(false)
   }, []);
 
   let OEText = isSpanish ? oeText.sp : oeText.en;
@@ -50,7 +54,6 @@ const Over18Component = ({
             onClick={(e) => {
               setIsUnavailable(false);
               overEighteen(true);
-              pediatric(false);
               nextPage(e, 2);
             }}
           ></input>
@@ -63,9 +66,8 @@ const Over18Component = ({
             name="employee_staff"
             onClick={(e) => {
               setIsUnavailable(false);
-              overEighteen(true);
               setSixteen(true);
-              pediatric(false);
+              overEighteen(true);
               nextPage(e, 2);
             }}
           ></input>

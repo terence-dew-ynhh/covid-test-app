@@ -14,7 +14,7 @@ const SelectVaccineComponent = ({
   isOver18,
   setJJApproved,
   isJassenapproved,
-  is1617
+  is1217
 }) => {
   const [isModerna, setIsModerna] = useState(true);
 

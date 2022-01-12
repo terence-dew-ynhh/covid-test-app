@@ -8,7 +8,8 @@ const MonoclonalComponent = ({
   isDoneEnabled,
   updateAnswerData,
   isSpanish,
-  isOver18
+  isOver18,
+  isPediatric
 }) => {
   const [isDiagnosed, setIsDiagnosed] = useState('');
 
@@ -28,7 +29,7 @@ const MonoclonalComponent = ({
               {MText[1]}
             </p>
             <fieldset>
-              <legend>{MText[0]}</legend>
+              <legend>{isPediatric ? "Has your child":"Have you"} {MText[0]}</legend>
               <div className="radio_row_item">
                 <input
                   id="prev_covid_yes"

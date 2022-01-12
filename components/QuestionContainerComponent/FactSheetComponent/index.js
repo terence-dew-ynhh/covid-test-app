@@ -36,7 +36,8 @@ const FactSheetComponent = ({
   schedulePush,
   isSpanish,
   isOver18,
-  isJassenapproved
+  isJassenapproved,
+  isPediatric 
 }) => {
   const [isDiagnosed, setIsDiagnosed] = useState('');
   const [open, setOpen] = useState(false);
@@ -149,7 +150,7 @@ const FactSheetComponent = ({
                     nextPage(e);
                   }}
                 ></input>
-                <label htmlFor="prev_covid_agree">{FSText[6]}</label>
+                <label htmlFor="prev_covid_agree">{FSText[6]}{isPediatric ? "I wish for my child to be vaccinated" : "I wish to be vaccinated"}</label>
               </div>
               <br></br>
               <br></br>

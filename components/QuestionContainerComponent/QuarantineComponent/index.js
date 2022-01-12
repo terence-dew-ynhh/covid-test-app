@@ -33,7 +33,7 @@ const QuarantineComponent = ({
               {QText[2]}
             </p>
             <fieldset>
-              <legend>{QText[0]}</legend>
+              <legend>{isPediatric ? "Is your child currently":"Are you"} {QText[0]}</legend>
               <div className="radio_row_item">
                 <input
                   id="prev_covid_yes"

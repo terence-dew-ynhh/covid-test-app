@@ -34,7 +34,8 @@ const YNHHFactSheetComponent = ({
   isDoneEnabled,
   updateField,
   schedulePush,
-  isSpanish
+  isSpanish,
+  isPediatric
 }) => {
   const [isDiagnosed, setIsDiagnosed] = useState('');
   const [open, setOpen] = useState(false);
@@ -94,7 +95,7 @@ const YNHHFactSheetComponent = ({
                     schedulePush(e);
                   }}
                 ></input>
-                <label htmlFor="prev_covid_agree">{FSText[4]}</label>
+                <label htmlFor="prev_covid_agree">{FSText[4]}{isPediatric ? "I wish for my child to be vaccinated" : "I wish to be vaccinated"}</label>
               </div>
               <br></br>
               <br></br>

@@ -7,7 +7,8 @@ const MiscComponent = ({
   isPrevEnabled,
   isDoneEnabled,
   updateAnswerData,
-  isSpanish
+  isSpanish,
+  isPediatric
 }) => {
   const [isDiagnosed, setIsDiagnosed] = useState('');
 
@@ -27,7 +28,7 @@ const MiscComponent = ({
               {MText[1]}
             </p>
             <fieldset>
-              <legend>{MText[0]}</legend>
+              <legend>In the past 90 days,  {isPediatric ? 'Has your child' : 'Have you'} been diagnosed with multisystem inflammatory syndrome in children also known as MIS-C and are they still recovering from the diagnosis?</legend>
               <div className="radio_row_item">
                 <input
                   id="prev_covid_na"
@@ -54,7 +55,10 @@ const MiscComponent = ({
                     nextPage(e);
                   }}
                 ></input>
-                <label htmlFor="prev_covid_yes">{MText[4]}</label>
+                <label htmlFor="prev_covid_yes">
+                  No, {isPediatric ? 'my child has' : 'I have'} fully recovered
+                  from MIS-C more than 90 days ago
+                </label>
               </div>
               <br></br>
               <br></br>
@@ -68,7 +72,11 @@ const MiscComponent = ({
                     setIsDiagnosed(e.target.value);
                   }}
                 ></input>
-                <label htmlFor="prev_covid_no">{MText[3]}</label>
+                <label htmlFor="prev_covid_no">
+                  Yes, {isPediatric ? 'my child has' : 'I have'} been diagnosed
+                  with MIS-C in the past 90 days and is still symptomatic from
+                  this diagnosis
+                </label>
               </div>
             </fieldset>
           </div>

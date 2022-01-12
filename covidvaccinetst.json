@@ -3,7 +3,7 @@
         {
             "name": "covidvaccinetst",
             "script": "npm",
-            "args" : "dev"
+            "args" : "staging"
         }
     ]
 }

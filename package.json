@@ -32,6 +32,7 @@
   "scripts": {
     "dev": "next -p 3050",
     "build": "next build",
+    "staging": "next start -p 3050",
     "start": "next start -p 3011"
   },
   "repository": {

@@ -89,7 +89,7 @@ const FirstDoseComponent = ({
                     // setIsClosed(true);
                   }}
                 ></input>
-                <label htmlFor="third_dose">I am scheduling for {isPediatric|| is1217 ? "my child's":"my"} third dose because I am immunocompromised and {isPediatric|| is1217 ? "they":"I"} have completed my second dose at least 28 days ago.</label>
+                <label htmlFor="third_dose">I am scheduling for {isPediatric|| is1217 ? "my child's":"my"} third dose because {isPediatric|| is1217 ? "they are":"I am"} immunocompromised and {isPediatric|| is1217 ? "they":"I"} have completed my second dose at least 28 days ago.</label>
               </div>
               <br></br>
               <br></br>
@@ -107,7 +107,7 @@ const FirstDoseComponent = ({
                       nextPage(e,4);
                     }}
                   ></input>
-                  <label htmlFor="booster_dose">{is1217 ?  FDText[7] : FDText[4]  }</label>
+                  <label htmlFor="booster_dose">{isPediatric || is1217 ?  FDText[7] : FDText[4]  }</label>
                 </div>
               )}
             </fieldset>

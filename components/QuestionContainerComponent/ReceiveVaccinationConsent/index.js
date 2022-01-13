@@ -15,7 +15,8 @@ const ReceiveBoosterConsent = ({
   isPrevEnabled,
   isDoneEnabled,
   isSpanish,
-  isPediatric
+  isPediatric,
+  is1217
 }) => {
   useEffect(() => {
     isDoneEnabled(false);
@@ -64,7 +65,7 @@ const ReceiveBoosterConsent = ({
           </p> */}
           <fieldset>
             <legend>
-              {isPediatric ? VEText[18] : VEText[0]}
+              {isPediatric|| is1217 ? VEText[18] : VEText[0]}
               <br></br>
               <br></br>
               {VEText[5]}
@@ -73,8 +74,8 @@ const ReceiveBoosterConsent = ({
               <b>{VEText[6]}</b>
               <br></br>
               <br></br>
-              <b>{isPediatric ? VEText[16] : VEText[9]}</b>
-              <b className="redText">{isPediatric ? VEText[17] : VEText[0]}</b>
+              <b>{isPediatric|| is1217 ? VEText[16] : VEText[9]}</b>
+              <b className="redText">{isPediatric|| is1217 ? VEText[17] : VEText[0]}</b>
             </legend>
             <div className={styles.q1_grid}>{checkboxes}</div>
           </fieldset>

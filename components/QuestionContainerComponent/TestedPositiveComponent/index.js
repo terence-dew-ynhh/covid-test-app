@@ -9,7 +9,8 @@ const TestedPositiveComponent = ({
   updateAnswerData,
   schedulePush,
   isSpanish,
-  isPediatric
+  isPediatric,
+  is1217
 }) => {
   const [isDiagnosed, setIsDiagnosed] = useState('');
 
@@ -31,10 +32,10 @@ const TestedPositiveComponent = ({
 
             <fieldset>
               <legend>
-              {isPediatric ? "Has your child":"Have you"} tested positive for COVID-19 in the last 10 days?
+              {isPediatric|| is1217 ? "Has your child":"Have you"} tested positive for COVID-19 in the last 10 days?
                 <br></br>
                 <br></br>
-                <b>Before getting vaccinated, {isPediatric ? "your child":"you"} must wait until resolution of covid 19 symptoms and completion of a 10 day isolation period (20 days if you are immunocompromised or had severe symptoms</b>
+                <b>Before getting vaccinated, {isPediatric|| is1217 ? "your child":"you"} must wait until resolution of covid 19 symptoms and completion of a 10 day isolation period (20 days if you are immunocompromised or had severe symptoms</b>
               </legend>
 
               <div className="radio_row_item">

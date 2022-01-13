@@ -10,7 +10,8 @@ const QuarantineComponent = ({
   schedulePush,
   isSpanish,
   isOver18,
-  isPediatric
+  isPediatric,
+  is1217
 }) => {
   const [isDiagnosed, setIsDiagnosed] = useState('');
 
@@ -33,7 +34,7 @@ const QuarantineComponent = ({
               {QText[2]}
             </p>
             <fieldset>
-              <legend>{isPediatric ? "Is your child currently":"Are you"} {QText[0]}</legend>
+              <legend>{isPediatric|| is1217 ? "Is your child currently":"Are you"} {QText[0]}</legend>
               <div className="radio_row_item">
                 <input
                   id="prev_covid_yes"

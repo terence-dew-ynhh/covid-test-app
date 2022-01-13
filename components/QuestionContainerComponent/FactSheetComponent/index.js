@@ -37,7 +37,8 @@ const FactSheetComponent = ({
   isSpanish,
   isOver18,
   isJassenapproved,
-  isPediatric 
+  isPediatric,
+  is1217 
 }) => {
   const [isDiagnosed, setIsDiagnosed] = useState('');
   const [open, setOpen] = useState(false);
@@ -150,7 +151,7 @@ const FactSheetComponent = ({
                     nextPage(e);
                   }}
                 ></input>
-                <label htmlFor="prev_covid_agree">{FSText[6]}{isPediatric ? "I wish for my child to be vaccinated" : "I wish to be vaccinated"}</label>
+                <label htmlFor="prev_covid_agree">{FSText[6]}{isPediatric|| is1217 ? "I wish for my child to be vaccinated" : "I wish to be vaccinated"}</label>
               </div>
               <br></br>
               <br></br>

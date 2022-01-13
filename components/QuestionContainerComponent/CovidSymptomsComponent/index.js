@@ -7,7 +7,8 @@ const CovidSymptomsComponent = ({
   isPrevEnabled,
   isDoneEnabled,
   isSpanish,
-  isPediatric
+  isPediatric,
+  is1217
 }) => {
   const [isDiagnosed, setIsDiagnosed] = useState('');
 
@@ -27,7 +28,7 @@ const CovidSymptomsComponent = ({
               {CSText[1]}
             </p>
             <fieldset>
-              <legend>{isPediatric ? "Does your child":"Do you"}  {CSText[0]}</legend>
+              <legend>{isPediatric|| is1217 ? "Does your child":"Do you"}  {CSText[0]}</legend>
               <div className="radio_row_item">
                 <input
                   id="prev_covid_yes"

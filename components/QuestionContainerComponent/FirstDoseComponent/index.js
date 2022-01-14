@@ -70,7 +70,7 @@ const FirstDoseComponent = ({
                     // setIsClosed(true);
                   }}
                 ></input>
-                <label htmlFor="second_dose">I am scheduling {isPediatric|| is1217 ? "my child's":"my"} second dose of a 2-dose vaccine</label>
+                <label htmlFor="second_dose">I am scheduling {isPediatric|| is1217 ? "my child's":"my"} second dose {isPediatric|| is1217 ? "":"of a 2-dose vaccine"}</label>
               </div>
               <br></br>
               <br></br>

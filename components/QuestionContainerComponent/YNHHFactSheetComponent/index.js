@@ -36,7 +36,7 @@ const YNHHFactSheetComponent = ({
   schedulePush,
   isSpanish
 }) => {
-  const [isDiagnosed, setIsDiagnosed] = useState('');
+  const [isDiagnosed, setIsDiagnosed] = useState(false);
   const [open, setOpen] = useState(false);
   const [modalStyle] = useState(getModalStyle);
 
@@ -67,9 +67,9 @@ const YNHHFactSheetComponent = ({
       <div className="radio_grp">
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
-            <p className="error" hidden={!(isDiagnosed === 'No')}>
+            {isDiagnosed && <p className="error">
               {FSText[2]}
-            </p>
+            </p>}
             <fieldset>
               <legend>
                 {FSText[0]}
@@ -118,7 +118,7 @@ const YNHHFactSheetComponent = ({
                   value="No"
                   name="prev_covid"
                   onClick={(e) => {
-                    setIsDiagnosed(e.target.value);
+                    setIsDiagnosed(true);
                   }}
                 ></input>
                 <label htmlFor="prev_covid_no">{FSText[6]}</label>

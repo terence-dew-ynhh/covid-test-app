@@ -6,13 +6,13 @@ const SelectVaccineComponent = ({
   nextPage,
   isPrevEnabled,
   isDoneEnabled,
-  updateField,
-  schedulePush,
   pfizerSelected,
   updateAnswerData,
-  isSpanish
+  isSpanish,
+  isBoosterDose,
+  isSecondDose
 }) => {
-  // const [isDiagnosed, setIsDiagnosed] = useState('');
+  const [isModerna, setIsModerna] = useState(false);
 
   useEffect(() => {
     isDoneEnabled(false);
@@ -33,10 +33,13 @@ const SelectVaccineComponent = ({
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
             <p className="banner">{SVText[1]}</p>
+            {isModerna  && <p className='error'>We will only be offering Pfzier only at this clinic</p>}
             <br></br>
             <br></br>
             <fieldset>
-              <legend>{SVText[0]}</legend>
+              {isSecondDose && <legend>{SVText[0]}</legend>}
+              {isBoosterDose && <legend>{SVText[2]}</legend>}
+
 
               <div className="radio_row_item">
                 <input
@@ -47,7 +50,8 @@ const SelectVaccineComponent = ({
                   onClick={(e) => {
                     updateAnswerData({ sel_vaccine: 'Moderna' });
                     pfizerSelected(false);
-                    nextPage(e);
+                    if(isBoosterDose) setIsModerna(true)
+                    else nextPage(e);
                   }}
                 ></input>
                 <label htmlFor="prev_covid_no">Moderna</label>

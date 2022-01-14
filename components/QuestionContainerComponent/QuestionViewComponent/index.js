@@ -47,7 +47,11 @@ const QuestionViewComponent = ({
   isOver18,
   setRiskGroup,
   setJJApproved,
-  isJassenapproved
+  isJassenapproved,
+  isSecondDose,
+  isBoosterDose,
+  setBoosterDose,
+  setSecondDose
 }) => {
   const [prevEnabled, setPrevEnabled] = useState(false);
   const [nextEnabled, setNextEnabled] = useState(false);
@@ -124,6 +128,10 @@ const QuestionViewComponent = ({
           setRiskGroup={setRiskGroup}
           setJJApproved={setJJApproved}
           isJassenapproved={isJassenapproved}
+          isSecondDose={isSecondDose}
+          isBoosterDose={isBoosterDose}
+          setBoosterDose={setBoosterDose}
+          setSecondDose={setSecondDose}
         />
       </div>
       <div className={styles.buttonContainer}>

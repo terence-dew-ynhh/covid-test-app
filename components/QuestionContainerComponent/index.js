@@ -19,6 +19,8 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
   const [isInZipCodeRange, setIsInZipCodeRange] = useState(false);
   const [isOver18, setIsOver18] = useState(false);
   const [isRiskGroup, setIsRiskGroup] = useState(false);
+  const [isSecondDose, setIsSecondDose] = useState(false);
+  const [isBoosterDose, setIsBoosterDose] = useState(false);
   const [viewJump, setviewJump] = useState([]);
   const [selDate, setSelDate] = useState('');
   const [responseData, setResponseData] = useState({});
@@ -76,9 +78,17 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
     setIsRiskGroup(isRiskGroup);
   };
 
+  const setSecondDose = (secondDose) => {
+    setIsSecondDose(secondDose);
+  };
+
+  const setBoosterDose = (boosterDose) => {
+    setIsBoosterDose(boosterDose);
+  };
+
   const updateAnswerData = (questionData) => {
 
-    setResponseData({ ...responseData, ...questionData });
+    // setResponseData({ ...responseData, ...questionData });
   };
 
   const nextPage = (e, pageIncrement = 1) => {
@@ -167,6 +177,10 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
         setRiskGroup={setRiskGroup}
         setJJApproved={setJJApproved}
         isJassenapproved={isJassenapproved}
+        isSecondDose={isSecondDose}
+        isBoosterDose={isBoosterDose}
+        setBoosterDose={setBoosterDose}
+        setSecondDose={setSecondDose}
       ></QuestionView>
       {/* <p>{`Zip Code ${isInZipCodeRange ? 'is' : 'is not'} in range`}</p> */}
     </div>

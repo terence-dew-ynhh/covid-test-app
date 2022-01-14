@@ -41,7 +41,7 @@ const MiscComponent = ({
                     nextPage(e);
                   }}
                 ></input>
-                <label htmlFor="prev_covid_na">{MText[2]}</label>
+                <label htmlFor="prev_covid_na">{MText[2]} {isPediatric || is1217 ? "":"or MIS-A"}</label>
               </div>
               <br></br>
               <br></br>
@@ -74,7 +74,7 @@ const MiscComponent = ({
                   }}
                 ></input>
                 <label htmlFor="prev_covid_no">
-                  Yes, {isPediatric ? 'my child has' : 'I have'} been diagnosed
+                  Yes, {isPediatric || is1217 ? 'my child has' : 'I have'} been diagnosed
                   with MIS-C in the past 90 days and is still symptomatic from
                   this diagnosis
                 </label>

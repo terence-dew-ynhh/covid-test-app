@@ -18,7 +18,7 @@ const ReceiveVaccinationConsent = ({
 }) => {
   useEffect(() => {
     isDoneEnabled(false);
-    isPrevEnabled(TramRounded);
+    isPrevEnabled(true);
   }, []);
 
   const handleChecked = (e) => {

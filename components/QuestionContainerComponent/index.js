@@ -4,11 +4,9 @@ import styles from './QuestionContainerComponent.module.css';
 import { useRouter } from 'next/router';
 
 const currentAppState = async () => {
-
   return await fetch('/api/open')
-  .then(res => res.json())
-  .then(res => res.open)
-  
+    .then((res) => res.json())
+    .then((res) => res.open);
 };
 
 const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
@@ -26,7 +24,6 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
   const [responseData, setResponseData] = useState({});
 
   const router = useRouter();
-
 
   const compNames = [
     'employee',
@@ -49,7 +46,7 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
     'illnessfever',
     'chickenallergy',
     'guillainbarre',
-    'consent',
+    'consent'
   ];
 
   let progressWidth = Math.floor(100 * ((viewIdx + 1) / compNames.length));
@@ -70,7 +67,7 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
     setSelDate(date);
   };
 
-   const setJJApproved = (approved) => {
+  const setJJApproved = (approved) => {
     setIsJassenapproved(approved);
   };
 
@@ -87,7 +84,6 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
   };
 
   const updateAnswerData = (questionData) => {
-
     // setResponseData({ ...responseData, ...questionData });
   };
 
@@ -106,12 +102,9 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
     setviewIdx(index);
   };
 
-  const schedulePush = () => {
-    submitData();
+  const schedulePush = (isFlu) => {
     router.push(
-      `/scheduling?recc_date=${selDate}&in_zip_range=${isInZipCodeRange}&second_dose=${
-        isPfizer == null ? false : true
-      }&isPfizer=${isPfizer}&isSpanish=${isSpanish}&isRiskGroup=${isRiskGroup}&isOver18=${isOver18}&jjapproved=${isJassenapproved}`,
+      `/scheduling?recc_date=${selDate}&booster=${isBoosterDose}&second_dose=${isSecondDose}&isPfizer=${isPfizer}&isSpanish=${isSpanish}&isOver18=${isOver18}&flu=${isFlu}`,
       '/scheduling'
     );
   };

@@ -14,7 +14,7 @@ const Over18Component = ({
   const [isOver18, setIsOver18] = useState(true);
 
   useEffect(() => {
-    isPrevEnabled(false);
+    isPrevEnabled(true);
     isDoneEnabled(false);
   }, []);
 

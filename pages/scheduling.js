@@ -42,7 +42,7 @@ export default function Home({ link }) {
 }
 
 Home.getInitialProps = async ({ query }) => {
-  const { booster, second_dose } = query;
+  const { booster, second_dose, flu } = query;
   console.log(booster)
   
   let link = "https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=88976&vt=2293&dept=201570002&view=plain&public=1&lang=english"

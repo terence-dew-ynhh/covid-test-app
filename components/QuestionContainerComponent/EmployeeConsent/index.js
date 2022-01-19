@@ -49,7 +49,7 @@ const EmployeeConsent = ({ nextPage, isPrevEnabled }) => {
             <legend>
               I understand that by scheduling this test I will need to register
               for a MyChart account in order to get my results. Negative results
-              will be available only through MyChart. I will only receive a call
+              will be available only through MyChart. I will only receive a notification
               if my results are positive or invalid. You can also get your
               results by calling the COVID Call Center at 833-ASK-YNHH.
               <br></br>

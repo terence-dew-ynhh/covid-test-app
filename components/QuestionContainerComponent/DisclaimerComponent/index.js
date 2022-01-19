@@ -17,8 +17,7 @@ import styles from './DisclaimerComponent.module.css'
       <p className="error">
         <b>• Appointment required at all locations. </b><br></br><br></br>
         <b>• Hospital Emergency Departments do not provide COVID screening tests. If you need a COVID screening test, please schedule through one of our sites.</b><br></br><br></br>
-        <b>• Due to current demands for testing, results are typically between 2-3 days.</b><br></br><br></br>
-        <b>• Travel/recreational testing availability will be limited.</b><br></br><br></br>
+        <b>• Due to current demands for testing, results are typically available within 2 days.</b><br></br><br></br>
         <b>• Results may not be available for travel documentation.</b><br></br><br></br>
         </p>
         <fieldset className="radio_grp_set">

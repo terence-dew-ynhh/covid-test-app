@@ -4,7 +4,7 @@
         "I am scheduling first dose and have not had a dose yet.",
         "I am scheduling second dose of a 2-dose vaccine",
         "I am scheduling my third dose because I am immunocompromised and I have completed my second dose at least 28 days ago.",
-        "I am looking to schedule my booster dose and have completed my second dose at least 5 months ago (Janssen/J&J at least 2 months ago).",
+        "I am scheduling a booster dose and have completed my second or third (if immunocompromised) doe at least 5 months ago",
         "I am scheduling a third dose for someone who is immunocompromised and has completed their second dose at least 28 days ago.",
         "I am looking to schedule my booster dose and have completed my second dose at least 5 months ago",
         "I am looking to schedule my child’s booster and they have completed the second dose at least 5 months ago"

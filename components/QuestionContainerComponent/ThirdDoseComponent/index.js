@@ -55,11 +55,11 @@ const ThirdDoseComponent = ({
             <br></br>- Have received a stem cell transplant or CAR T-cell
             therapy
             <br></br>
-            <br></br>- I have received a solid organ transplant (such as a
+            <br></br>- Have received a solid organ transplant (such as a
             kidney or liver transplant) and am taking immune-suppressing
             medication
             <br></br>
-            <br></br>- I have a moderate or severe primary immunodeficiency
+            <br></br>- Have a moderate or severe primary immunodeficiency
             (such as DiGeorge or Wiskott-Aldrich syndrome)
             <br></br>
             <br></br>- Advanced or untreated HIV disease <br></br>
@@ -102,7 +102,7 @@ const ThirdDoseComponent = ({
         </fieldset>
         <br></br>
         <br></br>
-        <b className="redText">You may still be eligible for a booster dose</b>
+        <b className="redText">You are eligible for a booster dose 5 months after your third dose of Moderna/Pfizer or 2 months after J&J</b>
       </div>
       <style jsx>{``}</style>
     </>

@@ -62,7 +62,7 @@ const ThirdDoseComponent = ({
             <br></br>- Have a moderate or severe primary immunodeficiency
             (such as DiGeorge or Wiskott-Aldrich syndrome)
             <br></br>
-            <br></br>- Advanced or untreated HIV disease <br></br>
+            <br></br>- Have a Advanced or untreated HIV disease <br></br>
             <br></br>- I am taking (or was taking at the time of my initial mRNA
             COVID-19 vaccine series) high-dose corticosteroids (at least 20 mg
             of prednisone daily) or any of the other medications on this list

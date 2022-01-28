@@ -12,6 +12,7 @@ const SelectVaccineComponent = ({
   isImmunocomp,
   isBooster,
   isOver18,
+  isPediatric,
   setJJApproved,
   isJassenapproved
 }) => {
@@ -45,29 +46,33 @@ const SelectVaccineComponent = ({
                   ? 'What vaccine would you like to receive as a booster?'
                   : `What was your Dose 1${isImmunocomp ? '&2' : ''} Vaccine?`}
               </legend>
-{/* 
-              <div className="radio_row_item">
-                <input
-                  id="prev_covid_no"
-                  type="radio"
-                  value="No"
-                  name="prev_covid"
-                  onClick={(e) => {
-                    if (isBooster) {
-                      nextPage(e);
-                    } else {
-                      updateAnswerData({ sel_vaccine: 'Moderna' });
-                      pfizerSelected(false);
-                      setJJApproved(false);
-                      if (isImmunocomp) nextPage(e);
-                      else nextPage(e, 3);
-                    }
-                  }}
-                ></input>
-                <label htmlFor="prev_covid_no">Moderna</label>
-              </div> */}
-              <br></br>
-              <br></br>
+
+              {isBooster && isOver18 && (
+                <>
+                  <div className="radio_row_item">
+                    <input
+                      id="prev_covid_no"
+                      type="radio"
+                      value="No"
+                      name="prev_covid"
+                      onClick={(e) => {
+                        if (isBooster) {
+                          nextPage(e);
+                        } else {
+                          updateAnswerData({ sel_vaccine: 'Moderna' });
+                          pfizerSelected(false);
+                          setJJApproved(false);
+                          if (isImmunocomp) nextPage(e);
+                          else nextPage(e, 3);
+                        }
+                      }}
+                    ></input>
+                    <label htmlFor="prev_covid_no">Moderna</label>
+                  </div>
+                  <br></br>
+                  <br></br>
+                </>
+              )}
               <div className="radio_row_item">
                 <input
                   id="prev_covid_yes"

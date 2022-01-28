@@ -4,11 +4,9 @@
         "I am scheduling first dose and have not had a dose yet.",
         "I am scheduling second dose of a 2-dose vaccine",
         "I am scheduling my third dose because I am immunocompromised and I have completed my second dose at least 28 days ago.",
-        "I am looking to schedule my booster dose and have completed my second dose at least 6 months ago (Janssen/J&J at least 2 months ago)."
-        ],
-    "sp": [
-        "¿Está programando la primera dosis de la vacuna contra el COVID-19?",
-        "Estoy programando la primera dosis de la vacuna COVID19 y aún no he recibido ninguna dosis.",
-        "He recibido una primera dosis de la vacuna COVID19 y estoy programando mi segunda dosis."
-    ]
+        "I am scheduling a booster dose and have completed my second or third (if immunocompromised) dose at least 5 months ago",
+        "I am scheduling a third dose for someone who is immunocompromised and has completed their second dose at least 28 days ago.",
+        "I am looking to schedule my booster dose and have completed my second dose at least 5 months ago",
+        "I am looking to schedule my child’s booster and they have completed their second or third (if immunocompromised) dose at least 5 months ago"
+        ]
 }

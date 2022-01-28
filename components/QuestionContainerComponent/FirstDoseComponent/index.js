@@ -11,7 +11,7 @@ const FirstDoseComponent = ({
   isOver18,
   setImmunocompromised,
   setBooster,
-  isPediatric
+  isPediatric,
 }) => {
   const [isClosed, setIsClosed] = useState('');
 
@@ -24,108 +24,103 @@ const FirstDoseComponent = ({
 
   return (
     <>
-      <div className="radio_grp">
-        <div className={styles.question_row_item}>
-          <div className={styles.question_row_item_sub}>
-            <p className="error" hidden={!isClosed}>
-              At this time, Yale New Haven Health does not currently have any
-              appointments available for primary series vaccinations.
-            </p>
-            <br></br>
-            <br></br>
-            <fieldset>
-              <legend>{FDText[0]}</legend>
+    <div className="radio_grp">
+      <div className={styles.question_row_item}>
+        <div className={styles.question_row_item_sub}>
+          <p className="error" hidden={!isClosed}>
+            At this time, Yale New Haven Health does not currently have any
+            appointments available for primary series vaccinations.
+          </p>
+          <br></br>
+          <br></br>
+          <fieldset>
+            <legend>{FDText[0]}</legend>
 
+            <div className="radio_row_item">
+              <input
+                id="first_dose"
+                type="radio"
+                value="Yes"
+                name="prev_covid"
+                onClick={(e) => {
+                  updateAnswerData({ first_dose: e.target.value });
+                  setBooster(false);
+                  setImmunocompromised(false);
+                  setIsClosed(true);
+                  nextPage(e, 8);
+                }}
+              ></input>
+              <label htmlFor="first_dose">I am scheduling {!isOver18 ? "my child's":"my"} first dose and {!isOver18 ? "they":"I"} have not had a dose yet.</label>
+            </div>
+            <br></br>
+            <br></br>
+            <div className="radio_row_item">
+              <input
+                id="second_dose"
+                type="radio"
+                value="No"
+                name="prev_covid"
+                onClick={(e) => {
+                  updateAnswerData({ first_dose: e.target.value });
+                  nextPage(e ,4);
+                  setBooster(false);
+                  setImmunocompromised(false);
+                  // setIsClosed(true);
+                }}
+              ></input>
+              <label htmlFor="second_dose">I am scheduling {!isOver18 ? "my child's":"my"} second dose {!isOver18 ? "":"of a 2-dose vaccine"}</label>
+            </div>
+            <br></br>
+            <br></br>
+            <div className="radio_row_item">
+              <input
+                id="third_dose"
+                type="radio"
+                value="No"
+                name="prev_covid"
+                onClick={(e) => {
+                  updateAnswerData({ first_dose: e.target.value });
+                  setBooster(false);
+                  setImmunocompromised(true);
+                  if(isPediatric)nextPage(e, 2)
+                  else nextPage(e, 3)
+                  // setIsClosed(true);
+                }}
+              ></input>
+              <label htmlFor="third_dose">I am scheduling for {!isOver18 ? "my child's":"my"} third dose because {!isOver18 ? "they are":"I am"} immunocompromised and {!isOver18 ? "they":"I"} have completed {!isOver18 ? "their":"my"} second dose at least 28 days ago.</label>
+            </div>
+            <br></br>
+            <br></br>
+            {(!isPediatric) && (
               <div className="radio_row_item">
                 <input
-                  id="first_dose"
-                  type="radio"
-                  value="Yes"
-                  name="prev_covid"
-                  onClick={(e) => {
-                    updateAnswerData({ first_dose: e.target.value });
-                    nextPage(e, 7);
-                    setBooster(false);
-                    setImmunocompromised(false);
-                    
-                  }}
-                ></input>
-                <label htmlFor="first_dose">{FDText[1]}</label>
-              </div>
-              <br></br>
-              <br></br>
-              <div className="radio_row_item">
-                <input
-                  id="second_dose"
+                  id="booster_dose"
                   type="radio"
                   value="No"
                   name="prev_covid"
                   onClick={(e) => {
-                    // updateAnswerData({ first_dose: e.target.value });
-                    // nextPage(e);
-                    setBooster(false);
-                    setImmunocompromised(false);
-                    nextPage(e,3)
-                  }}
-                ></input>
-                <label htmlFor="second_dose">{FDText[2]}</label>
-              </div>
-              <br></br>
-              <br></br>
-              {(<div className="radio_row_item">
-                <input
-                  id="third_dose"
-                  type="radio"
-                  value="No"
-                  name="prev_covid"
-                  onClick={(e) => {
                     updateAnswerData({ first_dose: e.target.value });
-                    setBooster(false);
-                    setImmunocompromised(true);
-                    nextPage(e,2)
+                    setBooster(true);
+                    setImmunocompromised(false);
+                    nextPage(e,3);
                   }}
                 ></input>
-                <label htmlFor="third_dose">{FDText[3]}</label>
-              </div>)}
-              <br></br>
-              <br></br>
-              {isOver18 && (
-                <div className="radio_row_item">
-                  <input
-                    id="booster_dose"
-                    type="radio"
-                    value="No"
-                    name="prev_covid"
-                    onClick={(e) => {
-                      updateAnswerData({ first_dose: e.target.value });
-                      setBooster(true);
-                      setImmunocompromised(false);
-                      nextPage(e, 3);
-                    }}
-                  ></input>
-                  <label htmlFor="booster_dose">{FDText[4]}</label>
-                </div>
-              )}
-            </fieldset>
-            <br></br>
-            <br></br>
-            {!isOver18 && (
-              <b className="redText">
-                Patients ages 12-17 are currently not eligible for the booster
-              </b>
+                <label htmlFor="booster_dose">{!isOver18 ?  FDText[7] : FDText[4]  }</label>
+              </div>
             )}
-            <br></br>
-            <br></br>
-            <b className="redText">
-              If you are scheduling your initial first dose of the Vaccine, your
-              second dose appointment will be made for you at the Vaccination
-              clinic at the time of your appointment.{' '}
-            </b>
-          </div>
+          </fieldset>
+          <br></br>
+          <br></br>
+          <b className="redText">
+            If you are scheduling {!isOver18 ? "your child's":"your"} initial first dose of the Vaccine, {!isOver18 ? "the child's":"your"}
+            second dose appointment will be made for {!isOver18 ? "them":"you"} at the Vaccination
+            clinic at the time of your appointment.{' '}
+          </b>
         </div>
       </div>
-      <style jsx>{``}</style>
-    </>
+    </div>
+    <style jsx>{``}</style>
+  </>
   );
 };
 

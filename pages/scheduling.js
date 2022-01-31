@@ -157,8 +157,9 @@ Home.getInitialProps = async ({ query }) => {
   }
 
   if (isbooster == 'true') {
+    
         link =
-      'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=92547&vt=2465&dept=204650005&view=plain&public=1';
+      'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=92547&vt=2465&%20dept=204650005view=plain&public=1';
     if (isPfizer == 'true') {
     link =
       'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=88043&vt=2460&dept=204650005&view=plain&public=1';

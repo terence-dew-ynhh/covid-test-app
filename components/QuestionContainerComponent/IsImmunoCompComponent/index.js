@@ -30,36 +30,67 @@ const IsImmunoCompComponent = ({
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
             <fieldset>
-              <legend>{isPediatric|| is1217 ? "Is your child currently":"Are you"} immunocompromised and {isPediatric|| is1217 ? "has your child":"have you"} completed {isPediatric|| is1217 ? "their":"your"} second dose at least 28 days ago?</legend>
+              <legend>
+                Which statement best describes{' '}
+                {isPediatric || is1217 ? 'your child?' : 'you?'}
+              </legend>
               <div className="radio_row_item">
                 <input
-                  id="prev_covid_yes"
+                  id="prev_covid_no"
                   type="radio"
                   value="Yes"
                   name="prev_covid"
                   onClick={(e) => {
-                    updateAnswerData({ first_dose: e.target.value });
-                    setBooster(false);
-                    setImmunocompromised(true);
-                    if(isPediatric)nextPage(e, 3)
-                    else nextPage(e, 4)
-
+                    setImmunocompromised(false);
+                    nextPage(e);
                   }}
                 ></input>
-                <label htmlFor="prev_covid_yes">{QText[3]}</label>
+                <label htmlFor="prev_covid_no">
+                  {isPediatric || is1217 ? 'My child is' : 'I am'} not
+                  immunocompromised
+                </label>
+                </div>
+                <br></br>
+                <br></br>
                 <div className="radio_row_item">
                   <input
-                    id="prev_covid_no"
+                    id="prev_covid_yes_3rd"
                     type="radio"
                     value="No"
                     name="prev_covid"
                     onClick={(e) => {
-                      nextPage(e)
+                      updateAnswerData({ first_dose: e.target.value });
+                      setBooster(false);
+                      setImmunocompromised(true);
+                      if (isPediatric) nextPage(e, 3);
+                      else nextPage(e, 4);
                     }}
                   ></input>
-                  <label htmlFor="prev_covid_no">{QText[4]}</label>
+                  <label htmlFor="prev_covid_yes_3rd">
+                    {isPediatric || is1217 ? 'My child is' : 'I am'}{' '}
+                    immunocompromised and I wish to schedule a third dose{' '}
+                    {(isPediatric || is1217) && 'for them'}
+                  </label>
                 </div>
-              </div>
+                <br></br>
+                <br></br>
+                <div className="radio_row_item">
+                  <input
+                    id="prev_covid_yes_series"
+                    type="radio"
+                    value="No"
+                    name="prev_covid"
+                    onClick={(e) => {
+                      setImmunocompromised(true);
+                      nextPage(e);
+                    }}
+                  ></input>
+                  <label htmlFor="prev_covid_yes_series">
+                    {isPediatric || is1217 ? 'My child is' : 'I am'}{' '}
+                    immunocompromised and I wish to schedule another dose or
+                    booster{isPediatric || is1217 ? ' for them.' : '.'}
+                  </label>
+                </div>
             </fieldset>
           </div>
         </div>

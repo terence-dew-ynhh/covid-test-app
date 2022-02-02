@@ -74,7 +74,7 @@ const FirstDoseComponent = ({
               </div>
               <br></br>
               <br></br>
-              <div className="radio_row_item">
+              {/* <div className="radio_row_item">
                 <input
                   id="third_dose"
                   type="radio"
@@ -86,13 +86,12 @@ const FirstDoseComponent = ({
                     setImmunocompromised(true);
                     if(isPediatric)nextPage(e, 2)
                     else nextPage(e, 3)
-                    // setIsClosed(true);
                   }}
                 ></input>
                 <label htmlFor="third_dose">I am scheduling for {isPediatric|| is1217 ? "my child's":"my"} third dose because {isPediatric|| is1217 ? "they are":"I am"} immunocompromised and {isPediatric|| is1217 ? "they":"I"} have completed {isPediatric|| is1217 ? "their":"my"} second dose at least 28 days ago.</label>
               </div>
               <br></br>
-              <br></br>
+              <br></br> */}
               {(isOver18) && (
                 <div className="radio_row_item">
                   <input

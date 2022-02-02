@@ -38,7 +38,7 @@ const PedThirdDoseComponent = ({
         <fieldset className="radio_grp_set">
           <legend>
           <b>
-              I attest to having one or more of the following immune
+              I attest to my child having one or more of the following immune
               compromising conditions:
             </b>
             <br></br>
@@ -82,8 +82,7 @@ const PedThirdDoseComponent = ({
             name="employee_staff"
             onClick={(e) => {
               setImmunocompromised(true);
-              if (isOver18) nextPage();
-              else nextPage(e, 4);
+              nextPage(e, 5);
             }}
           ></input>
           <label htmlFor="employee_staff_check_yes">{OEText[0]}</label>

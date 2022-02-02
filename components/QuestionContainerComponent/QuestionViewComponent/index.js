@@ -26,6 +26,7 @@ import SelectPfizerComponent from '../SelectPfizerComponent';
 import AllergyComponent from '../AllergyComponent';
 import AllergistApprovedComponent from '../AllergistApprovedComponent';
 import PedThirdDoseComponent from '../PedThirdDoseComponent';
+import IsImmunoCompComponent from '../IsImmunoCompComponent'
 
 import styles from './QuestionViewComponent.module.css';
 
@@ -88,9 +89,10 @@ const QuestionViewComponent = ({
     receivebooster: ReceiveBoosterConsent, 
     selectpfizer: SelectPfizerComponent,
     allergy: AllergyComponent,
-    allergistapproval: AllergistApprovedComponent
+    allergistapproval: AllergistApprovedComponent,
+    isImmunocomp: IsImmunoCompComponent
   };
-  const ComponentName = components[compName || 'pininput'];
+  const ComponentName = components[compName || 'age'];
 
   const isPrevEnabled = (isEnabled) => {
     setPrevEnabled(isEnabled);

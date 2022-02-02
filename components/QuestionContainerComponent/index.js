@@ -30,7 +30,7 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
 
   const compNames = [
     'age',
-    // 'vaccineconsent',
+    'isImmunocomp',
     'firstdose',
     'receivebooster',
     'pedimmunocomp',

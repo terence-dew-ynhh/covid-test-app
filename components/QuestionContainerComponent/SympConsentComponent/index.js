@@ -1,8 +1,8 @@
 import styles from './SympConsentComponent.module.css';
 import { useState, useEffect } from 'react';
 
-const SympConsentComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
-  const [hasConsent, setHasConsent] = useState('');
+const SympConsentComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, schedulePush }) => {
+  const [hasConsent, setHasConsent] = useState(false);
 
   useEffect(() => {
     isDoneEnabled(false);
@@ -10,14 +10,7 @@ const SympConsentComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
   }, []);
 
   const handleChecked = (e) => {
-    if (
-      e.target.id === 'prev_covid_none_of_the_above' &&
-      e.target.checked === true
-    ) {
-      isDoneEnabled(true);
-    } else {
-      isDoneEnabled(false);
-    }
+    setHasConsent((consent) => !consent);
   };
 
   let checkboxesArray = ['None_of_the_Above'];
@@ -55,13 +48,31 @@ const SympConsentComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
               <b>SYMPTOMATIC (experiencing symptoms).</b>
               <br></br>
               <br></br>
-              <div className={styles.q1_grid}>{checkboxes}</div>
-
-              If you do not have a primary care provider and would like to be assessed for flu or other medical concerns, please call the YNHHS Call Center at 833-ASK-YNHH (833-275-9644) or <a target="__blank" href={"https://www.ynhhs.org/make-an-appointment/schedule-a-walk-in.aspx?utm_source=covidtesting2&utm_medium=link"}>CLICK HERE </a>
-            to make a walk-in or video visit with one of our clinicians.
+              {!hasConsent && (
+                <div className={styles.q1_grid}>{checkboxes}</div>
+              )}
+              {hasConsent && (
+                <>
+                <br></br>
+                <br></br>
+                <button
+                  className="button"
+                  onClick={schedulePush}
+                >
+                  Schedule COVID-19 Testing Only
+                </button>
+                <br></br>
+                <br></br></>
+              )}
+              If you do not have a primary care provider and would like to be
+              assessed for flu or other medical concerns, please call the YNHHS
+              Call Center at 833-ASK-YNHH (833-275-9644) or{' '}
+              <a href="https://www.ynhhs.org/make-an-appointment/schedule-a-walk-in.aspx?utm_source=covidtesting2&utm_medium=link">
+                CLICK HERE
+              </a>{' '}
+              make a walk-in or video visit with one of our clinicians.
               <br></br>
               <br></br>
-
               If you are symptomatic and test positive, you may be eligible for
               COVID-19 treatment. You should call your primary care provider,
               or, if you do not have a primary care provider, call 833-ASK-YNHH

@@ -65,6 +65,7 @@ const QuestionViewComponent = ({
         updateLocation={updateLocation}
         updateIsFiveOrBelow={updateIsFiveOrBelow}
         updateSelectionCode={updateSelectionCode}
+        schedulePush={schedulePush}
       />
       </div>
       <div className={styles.buttonContainer}>

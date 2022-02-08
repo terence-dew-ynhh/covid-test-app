@@ -33,7 +33,6 @@ const SympConsentComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
         value={checkbox.replace(regex, ' ')}
         name="Consent"
         onChange={(e) => {
-          // isDoneEnabled(true);
           handleChecked(e);
         }}
       ></input>
@@ -57,8 +56,7 @@ const SympConsentComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
               <br></br>
               <br></br>
               <div className={styles.q1_grid}>{checkboxes}</div>
-              <br></br>
-              <br></br>
+
               If you do not have a primary care provider and would like to be assessed for flu or other medical concerns, please call the YNHHS Call Center at 833-ASK-YNHH (833-275-9644) or <a target="__blank" href={"https://www.ynhhs.org/make-an-appointment/schedule-a-walk-in.aspx?utm_source=covidtesting2&utm_medium=link"}>CLICK HERE </a>
             to make a walk-in or video visit with one of our clinicians.
               <br></br>

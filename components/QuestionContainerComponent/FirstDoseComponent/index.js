@@ -13,7 +13,8 @@ const FirstDoseComponent = ({
   setImmunocompromised,
   setBooster,
   isPediatric,
-  is1217
+  is1217,
+  isImmunocomp
 }) => {
   const [isClosed, setIsClosed] = useState('');
 
@@ -52,7 +53,11 @@ const FirstDoseComponent = ({
                     nextPage(e, 8);
                   }}
                 ></input>
-                <label htmlFor="first_dose">I am scheduling {isPediatric|| is1217 ? "my child's":"my"} first dose and {isPediatric|| is1217 ? "they":"I"} have not had a dose yet.</label>
+                <label htmlFor="first_dose">
+                  I am scheduling {isPediatric || is1217 ? "my child's" : 'my'}{' '}
+                  first dose and {isPediatric || is1217 ? 'they' : 'I'} have not
+                  had a dose yet.
+                </label>
               </div>
               <br></br>
               <br></br>
@@ -64,35 +69,53 @@ const FirstDoseComponent = ({
                   name="prev_covid"
                   onClick={(e) => {
                     updateAnswerData({ first_dose: e.target.value });
-                    nextPage(e ,4);
+                    if (isOver18) nextPage(e, 4);
+                    else nextPage(e, 8);
                     setBooster(false);
                     setImmunocompromised(false);
                     // setIsClosed(true);
                   }}
                 ></input>
-                <label htmlFor="second_dose">I am scheduling {isPediatric|| is1217 ? "my child's":"my"} second dose {isPediatric|| is1217 ? "":"of a 2-dose vaccine"}</label>
+                <label htmlFor="second_dose">
+                  I am scheduling {isPediatric || is1217 ? "my child's" : 'my'}{' '}
+                  second dose{' '}
+                  {isPediatric || is1217 ? '' : 'of a 2-dose vaccine'}
+                </label>
               </div>
               <br></br>
               <br></br>
-              {/* <div className="radio_row_item">
-                <input
-                  id="third_dose"
-                  type="radio"
-                  value="No"
-                  name="prev_covid"
-                  onClick={(e) => {
-                    updateAnswerData({ first_dose: e.target.value });
-                    setBooster(false);
-                    setImmunocompromised(true);
-                    if(isPediatric)nextPage(e, 2)
-                    else nextPage(e, 3)
-                  }}
-                ></input>
-                <label htmlFor="third_dose">I am scheduling for {isPediatric|| is1217 ? "my child's":"my"} third dose because {isPediatric|| is1217 ? "they are":"I am"} immunocompromised and {isPediatric|| is1217 ? "they":"I"} have completed {isPediatric|| is1217 ? "their":"my"} second dose at least 28 days ago.</label>
-              </div>
-              <br></br>
-              <br></br> */}
-              {(isOver18) && (
+              {isImmunocomp && (
+                <>
+                  <div className="radio_row_item">
+                    <input
+                      id="third_dose"
+                      type="radio"
+                      value="No"
+                      name="prev_covid"
+                      onClick={(e) => {
+                        updateAnswerData({ first_dose: e.target.value });
+                        setBooster(false);
+                        setImmunocompromised(true);
+                        if (isPediatric) nextPage(e, 8);
+                        else nextPage(e, 4);
+                      }}
+                    ></input>
+                    <label htmlFor="third_dose">
+                      I am scheduling for{' '}
+                      {isPediatric || is1217 ? "my child's" : 'my'} third dose
+                      because {isPediatric || is1217 ? 'they are' : 'I am'}{' '}
+                      immunocompromised and{' '}
+                      {isPediatric || is1217 ? 'they' : 'I'} have completed{' '}
+                      {isPediatric || is1217 ? 'their' : 'my'} second dose at
+                      least 28 days ago.
+                    </label>
+                  </div>
+                  <br></br>
+                  <br></br>
+                </>
+              )}
+
+              {!isPediatric && (
                 <div className="radio_row_item">
                   <input
                     id="booster_dose"
@@ -103,19 +126,32 @@ const FirstDoseComponent = ({
                       updateAnswerData({ first_dose: e.target.value });
                       setBooster(true);
                       setImmunocompromised(false);
-                      nextPage(e,4);
+                      if (isOver18) nextPage(e, 4);
+                      else nextPage(e, 8);
                     }}
                   ></input>
-                  <label htmlFor="booster_dose">{isPediatric || is1217 ?  FDText[7] : FDText[4]  }</label>
+                  <label htmlFor="booster_dose">
+                    {`I am looking to schedule ${
+                      isPediatric || is1217 ? 'my child’s' : 'my'
+                    } booster and ${
+                      isPediatric || is1217 ? 'they ' : ''
+                    }have completed their second or third (if immunocompromised) dose at least ${
+                      isImmunocomp ? '3' : '5'
+                    } months ago`}
+                  </label>
                 </div>
               )}
             </fieldset>
             <br></br>
             <br></br>
             <b className="redText">
-              If you are scheduling {isPediatric|| is1217 ? "your child's":"your"} initial first dose of the Vaccine, {isPediatric|| is1217 ? "the child's":"your"}
-              second dose appointment will be made for {isPediatric|| is1217 ? "them":"you"} at the Vaccination
-              clinic at the time of your appointment.{' '}
+              If you are scheduling{' '}
+              {isPediatric || is1217 ? "your child's" : 'your'} initial first
+              dose of the Vaccine,{' '}
+              {isPediatric || is1217 ? "the child's" : 'your'}
+              second dose appointment will be made for{' '}
+              {isPediatric || is1217 ? 'them' : 'you'} at the Vaccination clinic
+              at the time of your appointment.{' '}
             </b>
           </div>
         </div>

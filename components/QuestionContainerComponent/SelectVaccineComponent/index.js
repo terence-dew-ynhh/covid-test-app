@@ -31,11 +31,11 @@ const SelectVaccineComponent = ({
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
             <p className="banner">{SVText[1]}</p>
-            {!isModerna && isBooster && (
+            {isModerna && (
               <p className="error">
-                {isJassenapproved
-                  ? 'We plan to offer J&J Boosters at limited sites in December. Please contact us at 1-833-ASK-YNHH (275-9644).'
-                  : `At this time, Yale New Haven Health does not currently have any appointments available for primary series vaccinations.`}
+                We do not currently offer Moderna primary series doses, please
+                check your local community pharmacy or check back here in the
+                future
               </p>
             )}
             <br></br>
@@ -47,7 +47,7 @@ const SelectVaccineComponent = ({
                   : `What was your Dose 1${isImmunocomp ? '&2' : ''} Vaccine?`}
               </legend>
 
-              {(isBooster && isOver18 && !is1217) && (
+              {isOver18 && (
                 <>
                   <div className="radio_row_item">
                     <input
@@ -93,7 +93,7 @@ const SelectVaccineComponent = ({
               </div>
               <br></br>
               <br></br>
-              {/* {!is1617 && (
+              {/* {isOver18 && (
                 <div className="radio_row_item">
                   <input
                     id="prev_covid_jj"

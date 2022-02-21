@@ -135,9 +135,13 @@ const FirstDoseComponent = ({
                       isPediatric || is1217 ? 'my child’s' : 'my'
                     } booster and ${
                       isPediatric || is1217 ? 'they ' : ''
-                    }have completed their second or third (if immunocompromised) dose at least ${
-                      isImmunocomp ? '3' : '5'
-                    } months ago`}
+                    }have completed ${
+                      isPediatric || is1217 ? 'their ' : 'my'
+                    } ${
+                      isImmunocomp
+                        ? '(third) additonal primary series '
+                        : 'second'
+                    } dose at least ${isImmunocomp ? '3' : '5'} months ago`}
                   </label>
                 </div>
               )}

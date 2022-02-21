@@ -54,6 +54,7 @@ const Over18Component = ({
             onClick={(e) => {
               setIsUnavailable(false);
               overEighteen(true);
+              pediatric(false);
               nextPage(e);
             }}
           ></input>
@@ -68,6 +69,7 @@ const Over18Component = ({
               setIsUnavailable(false);
               setSixteen(true);
               overEighteen(true);
+              pediatric(false);
               nextPage(e);
             }}
           ></input>

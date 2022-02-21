@@ -14,7 +14,8 @@ const FirstDoseComponent = ({
   setBooster,
   isPediatric,
   is1217,
-  isImmunocomp
+  isImmunocomp,
+  setThirdDose,
 }) => {
   const [isClosed, setIsClosed] = useState('');
 
@@ -48,8 +49,8 @@ const FirstDoseComponent = ({
                   onClick={(e) => {
                     updateAnswerData({ first_dose: e.target.value });
                     setBooster(false);
-                    setImmunocompromised(false);
                     setIsClosed(true);
+                    setThirdDose(false);
                     nextPage(e, 8);
                   }}
                 ></input>
@@ -72,10 +73,9 @@ const FirstDoseComponent = ({
                     if (isOver18) nextPage(e, 4);
                     else nextPage(e, 8);
                     setBooster(false);
-                    setImmunocompromised(false);
-                    // setIsClosed(true);
+                    setThirdDose(false);
                   }}
-                ></input>
+                  ></input>
                 <label htmlFor="second_dose">
                   I am scheduling {isPediatric || is1217 ? "my child's" : 'my'}{' '}
                   second dose{' '}
@@ -95,7 +95,7 @@ const FirstDoseComponent = ({
                       onClick={(e) => {
                         updateAnswerData({ first_dose: e.target.value });
                         setBooster(false);
-                        setImmunocompromised(true);
+                        setThirdDose(true);
                         if (isPediatric) nextPage(e, 8);
                         else nextPage(e, 4);
                       }}
@@ -125,7 +125,7 @@ const FirstDoseComponent = ({
                     onClick={(e) => {
                       updateAnswerData({ first_dose: e.target.value });
                       setBooster(true);
-                      setImmunocompromised(false);
+                      setThirdDose(false);
                       if (isOver18) nextPage(e, 4);
                       else nextPage(e, 8);
                     }}

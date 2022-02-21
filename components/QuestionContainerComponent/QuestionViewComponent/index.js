@@ -57,7 +57,9 @@ const QuestionViewComponent = ({
   pediatric,
   isPediatric,
   setSixteen,
-  is1217
+  is1217,
+  setThirdDose,
+        isThirdDose
 }) => {
   const [prevEnabled, setPrevEnabled] = useState(false);
   const [nextEnabled, setNextEnabled] = useState(false);
@@ -143,6 +145,8 @@ const QuestionViewComponent = ({
           isPediatric={isPediatric}
           setSixteen={setSixteen}
           is1217={is1217}
+          setThirdDose={setThirdDose}
+        isThirdDose={isThirdDose}
         />
       </div>
       <div className={styles.buttonContainer}>

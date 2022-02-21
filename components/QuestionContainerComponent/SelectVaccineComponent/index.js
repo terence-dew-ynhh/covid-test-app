@@ -14,9 +14,10 @@ const SelectVaccineComponent = ({
   isOver18,
   setJJApproved,
   isJassenapproved,
-  is1217
+  is1217,
+  isThirdDose
 }) => {
-  const [isModerna, setIsModerna] = useState(true);
+  const [isModerna, setIsModerna] = useState(false);
 
   useEffect(() => {
     isDoneEnabled(false);
@@ -44,34 +45,30 @@ const SelectVaccineComponent = ({
               <legend>
                 {isBooster
                   ? 'What vaccine would you like to receive as a booster?'
-                  : `What was your Dose 1${isImmunocomp ? '&2' : ''} Vaccine?`}
+                  : `What was your Dose 1${isThirdDose ? '&2' : ''} Vaccine?`}
               </legend>
 
-              {isOver18 && (
-                <>
-                  <div className="radio_row_item">
-                    <input
-                      id="prev_covid_no"
-                      type="radio"
-                      value="No"
-                      name="prev_covid"
-                      onClick={(e) => {
-                        if (isBooster) {
-                          nextPage(e);
-                        } else {
+              {isOver18 &&
+                ((isImmunocomp && isThirdDose) || !isThirdDose) &&
+                !isBooster && (
+                  <>
+                    <div className="radio_row_item">
+                      <input
+                        id="prev_covid_no"
+                        type="radio"
+                        value="No"
+                        name="prev_covid"
+                        onClick={(e) => {
                           updateAnswerData({ sel_vaccine: 'Moderna' });
-                          pfizerSelected(false);
-                          setJJApproved(false);
-                          nextPage(e, 4);
-                        }
-                      }}
-                    ></input>
-                    <label htmlFor="prev_covid_no">Moderna</label>
-                  </div>
-                  <br></br>
-                  <br></br>
-                </>
-              )}
+                          setIsModerna(true);
+                        }}
+                      ></input>
+                      <label htmlFor="prev_covid_no">Moderna</label>
+                    </div>
+                    <br></br>
+                    <br></br>
+                  </>
+                )}
               <div className="radio_row_item">
                 <input
                   id="prev_covid_six"

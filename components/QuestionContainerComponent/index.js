@@ -20,11 +20,12 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
   const [isPediatric, setIsPediatric] = useState(false);
   const [isRiskGroup, setIsRiskGroup] = useState(false);
   const [isImmunocomp, setIsImmunocomp] = useState(false);
+  const [isThirdDose, setIsThirdDose] = useState(false);
   const [isBooster, setIsBooster] = useState(false);
   const [viewJump, setviewJump] = useState([]);
   const [selDate, setSelDate] = useState('');
   const [responseData, setResponseData] = useState({});
-  const [applicationOn, setApplicationOn] = useState(false);
+  // const [applicationOn, setApplicationOn] = useState(false);
 
   const router = useRouter();
 
@@ -87,6 +88,9 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
 
   const setSixteen = (sixteen) => {
     setIs1217(sixteen)
+  }
+  const setThirdDose = (thirdDose) => {
+    setIsThirdDose(thirdDose)
   }
 
   const updateAnswerData = (questionData) => {
@@ -191,6 +195,8 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
         pediatric={pediatric}
         isPediatric={isPediatric}
         setSixteen={setSixteen}
+        setThirdDose={setThirdDose}
+        isThirdDose={isThirdDose}
         is1217={is1217}
       ></QuestionView>
       {/* <p>{`Zip Code ${isInZipCodeRange ? 'is' : 'is not'} in range`}</p> */}

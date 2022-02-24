@@ -27,6 +27,8 @@ import AllergyComponent from '../AllergyComponent';
 import AllergistApprovedComponent from '../AllergistApprovedComponent';
 import PedThirdDoseComponent from '../PedThirdDoseComponent';
 import IsImmunoCompComponent from '../IsImmunoCompComponent'
+import SelectMRNAComponent from '../SelectMRNAComponent'
+
 
 import styles from './QuestionViewComponent.module.css';
 
@@ -92,7 +94,8 @@ const QuestionViewComponent = ({
     selectpfizer: SelectPfizerComponent,
     allergy: AllergyComponent,
     allergistapproval: AllergistApprovedComponent,
-    isImmunocomp: IsImmunoCompComponent
+    isImmunocomp: IsImmunoCompComponent,
+    mrnaselect: SelectMRNAComponent
   };
   const ComponentName = components[compName || 'age'];
 

@@ -45,16 +45,16 @@ const SelectVaccineComponent = ({
               <legend>
                 {isBooster
                   ? 'What vaccine would you like to receive as a booster?'
-                  : `What was your Dose 1${isThirdDose ? '&2' : ''} Vaccine?`}
+                  : `What was your ${
+                      isThirdDose ? 'primary series vaccine' : 'Dose 1 Vaccine'
+                    } ?`}
               </legend>
 
-              {isOver18 &&
-                ((isImmunocomp && isThirdDose) || !isThirdDose) &&
-                !isBooster && (
+              {((isOver18 && isThirdDose) || (!isThirdDose && !isBooster)) && (
                   <>
                     <div className="radio_row_item">
                       <input
-                        id="prev_covid_no"
+                        id="moderna"
                         type="radio"
                         value="No"
                         name="prev_covid"
@@ -63,7 +63,7 @@ const SelectVaccineComponent = ({
                           setIsModerna(true);
                         }}
                       ></input>
-                      <label htmlFor="prev_covid_no">Moderna</label>
+                      <label htmlFor="moderna">Moderna</label>
                     </div>
                     <br></br>
                     <br></br>
@@ -71,7 +71,7 @@ const SelectVaccineComponent = ({
                 )}
               <div className="radio_row_item">
                 <input
-                  id="prev_covid_six"
+                  id="pfizer"
                   type="radio"
                   value="Yes"
                   name="prev_covid"
@@ -79,35 +79,30 @@ const SelectVaccineComponent = ({
                     updateAnswerData({ sel_vaccine: 'Pfizer' });
                     pfizerSelected(true);
                     setJJApproved(false);
-                    // if(is1617) {nextPage(e, 4)}
-                    // if (isOver18){setIsModerna(false)}
-                    // else nextPage(e, 2);
-                    if (isImmunocomp) nextPage(e);
-                    else nextPage(e, 4);
+                    if (isImmunocomp) nextPage(e, 2);
+                    else nextPage(e, 5);
                   }}
                 ></input>
-                <label htmlFor="prev_covid_six">Pfizer</label>
+                <label htmlFor="pfizer">Pfizer</label>
               </div>
               <br></br>
               <br></br>
-              {/* {isOver18 && (
-                <div className="radio_row_item">
-                  <input
-                    id="prev_covid_jj"
-                    type="radio"
-                    value="JJ"
-                    name="prev_covid"
-                    onClick={(e) => {
-                      updateAnswerData({ sel_vaccine: 'Jansen' });
-                      pfizerSelected(false);
-                      setJJApproved(true);
-                      // if (isOver18) setIsModerna(false);
-                      // else nextPage(e, 2);
-                    }}
-                  ></input>
-                  <label htmlFor="prev_covid_jj">Janssen (J&J)</label>
-                </div>
-              )} */}
+              {isThirdDose && isOver18 && (
+                <>
+                  <div className="radio_row_item">
+                    <input
+                      id="janssen"
+                      type="radio"
+                      value="Yes"
+                      name="prev_covid"
+                      onClick={(e) => {
+                        nextPage(e);
+                      }}
+                    ></input>
+                    <label htmlFor="janssen">Janssen</label>
+                  </div>
+                </>
+              )}
             </fieldset>
           </div>
           <p>

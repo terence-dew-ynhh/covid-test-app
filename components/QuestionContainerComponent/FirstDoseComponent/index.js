@@ -51,7 +51,7 @@ const FirstDoseComponent = ({
                     setBooster(false);
                     setIsClosed(true);
                     setThirdDose(false);
-                    nextPage(e, 8);
+                    nextPage(e, 9);
                   }}
                 ></input>
                 <label htmlFor="first_dose">
@@ -102,7 +102,7 @@ const FirstDoseComponent = ({
                     ></input>
                     <label htmlFor="third_dose">
                       I am scheduling for{' '}
-                      {isPediatric || is1217 ? "my child's" : 'my'} third dose
+                      {isPediatric || is1217 ? "my child's" : 'my'} additional primary dose
                       because {isPediatric || is1217 ? 'they are' : 'I am'}{' '}
                       immunocompromised and{' '}
                       {isPediatric || is1217 ? 'they' : 'I'} have completed{' '}
@@ -139,9 +139,9 @@ const FirstDoseComponent = ({
                       isPediatric || is1217 ? 'their ' : 'my'
                     } ${
                       isImmunocomp
-                        ? '(third) additonal primary series '
-                        : 'second'
-                    } dose at least ${isImmunocomp ? '3' : '5'} months ago`}
+                        ? 'additonal primary dose '
+                        : 'second dose'
+                    } at least ${isImmunocomp ? '3' : '5'} months ago`}
                   </label>
                 </div>
               )}

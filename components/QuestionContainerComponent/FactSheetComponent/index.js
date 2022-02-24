@@ -38,7 +38,7 @@ const FactSheetComponent = ({
   isOver18,
   isJassenapproved,
   isPediatric,
-  is1217 
+  is1217
 }) => {
   const [isDiagnosed, setIsDiagnosed] = useState('');
   const [open, setOpen] = useState(false);
@@ -58,58 +58,7 @@ const FactSheetComponent = ({
 
   let FSText = isSpanish ? fsText.sp : fsText.en;
 
-  const links =
-      isOver18 ?
-      isJassenapproved ? 
-      (
-      <>
-        <br></br>
-        <br></br>
-        <a target="__blank" href="https://www.fda.gov/media/144638/download">
-          Moderna Vaccination EUA
-        </a>
-        <br></br>
-        <br></br>
-        <a
-          target="__blank"
-          href="https://mychart.ynhhs.org/MyChart-PRD/en-US/PDF/ESPCOVIDModernaVaccineFactSheet.pdf"
-        >
-          {FSText[4]}
-        </a>
-        <br></br>
-        <br></br>
-        <a
-          target="__blank"
-          href="https://mychart.ynhhs.org/mychart-prd/en-US/PDF/JJEUAEnglishRevised.pdf"
-        >
-          {FSText[9]}
-        </a>{' '}
-        {/* <br></br>
-      <br></br>
-      <a
-        target="__blank"
-        href="https://mychart.ynhhs.org/mychart-prd/en-US/PDF/JJEUA_ESP.pdf"
-      >
-        {FSText[10]}
-      </a> */}
-      </>
-    ) : (
-      <>
-        <br></br>
-        <br></br>
-        <a target="__blank" href="https://www.fda.gov/media/144638/download">
-          Moderna Vaccination EUA
-        </a>
-        <br></br>
-        <br></br>
-        <a
-          target="__blank"
-          href="https://mychart.ynhhs.org/MyChart-PRD/en-US/PDF/ESPCOVIDModernaVaccineFactSheet.pdf"
-        >
-          {FSText[4]}
-        </a>
-      </>
-    ) : null;
+  const links = <></>;
 
   return (
     <>
@@ -124,21 +73,46 @@ const FactSheetComponent = ({
                 {FSText[0]}
                 <br></br>
                 <br></br>
+                <b>Pfizer Vaccination: </b>
+                <br></br>
+                <br></br>
+                <span>FDA authorized </span>
                 <a
                   target="__blank"
                   href="https://www.fda.gov/media/144414/download"
                 >
-                  Pfizer Vaccination EUA
+                  EUA
                 </a>{' '}
                 <br></br>
                 <br></br>
+                <span>CDC authorized </span>
                 <a
                   target="__blank"
-                  href="https://mychart.ynhhs.org/mychart-prd/en-US/PDF/EUAPfiser12_ESP.pdf"
-                >
-                  {FSText[3]}
+                  href="https://www.cdc.gov/vaccines/covid-19/eui/downloads/Pfizer-Caregiver.pdf"
+                  >
+                  EUI
                 </a>{' '}
-                {links}
+                  <br></br>
+                  <br></br>                
+                <b>Moderna Vaccination: </b>
+                <br></br>
+                <br></br>
+                <span>FDA authorized </span>
+                <a
+                  target="__blank"
+                  href="https://www.fda.gov/media/144638/download"
+                  >
+                  EUA
+                </a>
+                <br></br>
+                <br></br>
+                  <span>CDC authorized </span>
+                <a
+                  target="__blank"
+                  href="https://www.cdc.gov/vaccines/covid-19/eui/downloads/Moderna-Caregiver.pdf"
+                >
+                  EUI
+                </a>
                 <br></br>
               </legend>
 
@@ -151,7 +125,12 @@ const FactSheetComponent = ({
                     nextPage(e);
                   }}
                 ></input>
-                <label htmlFor="prev_covid_agree">{FSText[6]}{isPediatric|| is1217 ? "I wish for my child to be vaccinated" : "I wish to be vaccinated"}</label>
+                <label htmlFor="prev_covid_agree">
+                  {FSText[6]}
+                  {isPediatric || is1217
+                    ? 'I wish for my child to be vaccinated'
+                    : 'I wish to be vaccinated'}
+                </label>
               </div>
               <br></br>
               <br></br>
@@ -201,10 +180,3 @@ const FactSheetComponent = ({
 
 export default FactSheetComponent;
 
-// const handleOpen = () => {
-//   setOpen(true);
-// };
-
-// const handleClose = () => {
-//   setOpen(false);
-// };

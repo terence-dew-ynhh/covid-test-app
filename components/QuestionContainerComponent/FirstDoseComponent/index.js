@@ -85,7 +85,7 @@ const FirstDoseComponent = ({
                   second dose{' '}
                   {isPediatric || is1217 ? '' : 'of a two dose vaccine'}{' '}
                   {(is1217 || is18to64) && !isImmunocomp
-                    ? 'and have received my first dose 3-8 weeks ago*.'
+                    ? `and ${is1217 && "they"} have received ${is1217 ? "their" : "my"} first dose 3-8 weeks ago*.`
                     : '.'}
                 </label>
               </div>

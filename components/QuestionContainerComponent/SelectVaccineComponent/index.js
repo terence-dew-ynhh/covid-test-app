@@ -15,7 +15,8 @@ const SelectVaccineComponent = ({
   setJJApproved,
   isJassenapproved,
   is1217,
-  isThirdDose
+  isThirdDose,
+  is18to64
 }) => {
   const [isModerna, setIsModerna] = useState(false);
 
@@ -50,7 +51,7 @@ const SelectVaccineComponent = ({
                     } ?`}
               </legend>
 
-              {isOver65 && (
+              {(isOver65|| is18to64) && (
                 <>
                   <div className="radio_row_item">
                     <input

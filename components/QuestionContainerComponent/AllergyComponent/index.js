@@ -6,7 +6,7 @@ const AllergyComponent = ({
   nextPage,
   isPrevEnabled,
   isDoneEnabled,
-  isOver18,
+  isOver65,
   isSpanish,
   isImmunocomp,
   isBooster
@@ -24,7 +24,7 @@ const AllergyComponent = ({
     } else if (isBooster) {
       nextPage(e, 3);
     } else {
-      if (isOver18) nextPage(e, 4);
+      if (isOver65) nextPage(e, 4);
       else nextPage(e, 5);
     }
   };

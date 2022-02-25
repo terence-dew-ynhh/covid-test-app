@@ -35,7 +35,7 @@ const FactSheetComponent = ({
   updateField,
   schedulePush,
   isSpanish,
-  isOver18,
+  isOver65,
   isJassenapproved,
   isPediatric,
   is1217

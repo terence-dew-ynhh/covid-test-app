@@ -91,8 +91,8 @@ ___
 #### Questions Container - QuestionContainerComponent
 -  Holds Majority of the Application Level Logic
   
-  `const overEighteen = (isOver18) => {
-    setIsOver18(isOver18);
+  `const over65 = (isOver65) => {
+    setisOver65(isOver65);
   };`
 
   `const setRiskGroup = (isRiskGroup) => {
@@ -180,7 +180,7 @@ ___
   - Link is first determined by whether the person is over 18 (Adult) and then checks whether they are High Risk or not.
      
   `link =
-    isOver18 == 'true'
+    isOver65 == 'true'
       ? isRiskGroup == 'true'
         ? 'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=85374,85643,86213,84790,85637,86214,84789,85635,86215,84788,85636,86216,84787,85638,86217,84814,85639,86218,85097,85642,86171,84786,85640,86219&vt=2293&dept=101960001,102340001,102350001,102360001,102370001,102380001,102390001,102400001&view=plain&public=1'
         : 'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=85374,85643,86213,84790,85637,86214,84789,85635,86215,84788,85636,86216,84787,85638,86217,84814,85639,86218,85097,85642,86171,84786,85640,86219&vt=2293&dept=101960001,102340001,102350001,102360001,102370001,102380001,102390001,102400001&view=plain&public=1'

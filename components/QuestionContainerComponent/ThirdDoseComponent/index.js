@@ -8,7 +8,7 @@ const ThirdDoseComponent = ({
   isDoneEnabled,
   isSpanish,
   setImmunocompromised,
-  isOver18
+  isOver65
 }) => {
   useEffect(() => {
     isPrevEnabled(true);
@@ -82,7 +82,7 @@ const ThirdDoseComponent = ({
             name="employee_staff"
             onClick={(e) => {
               setImmunocompromised(true);
-              if (isOver18) nextPage();
+              if (isOver65) nextPage();
               else nextPage(e, 3);
             }}
           ></input>

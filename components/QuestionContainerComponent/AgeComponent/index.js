@@ -6,14 +6,14 @@ const Over18Component = ({
   nextPage,
   isPrevEnabled,
   isDoneEnabled,
-  overEighteen,
+  over65,
   isSpanish,
   schedulePush,
   setJJApproved,
   pediatric, 
   isPediatric,
   setSixteen,
-
+  set18to64,
 }) => {
   const [isUnavailable, setIsUnavailable] = useState(false);
 
@@ -21,7 +21,7 @@ const Over18Component = ({
     isPrevEnabled(false);
     isDoneEnabled(false);
     setSixteen(false);
-    overEighteen(false);
+    over65(false);
     pediatric(false)
   }, []);
 
@@ -48,18 +48,34 @@ const Over18Component = ({
         <fieldset className="radio_grp_set">
           <legend>{OEText[3]}</legend>
           <input
-            id="employee_staff_check_yes"
+            id="age1865"
             type="radio"
             name="employee_staff"
             onClick={(e) => {
               setIsUnavailable(false);
-              overEighteen(true);
+              over65(true);
+              set18to64(false);
               pediatric(false);
               nextPage(e);
             }}
           ></input>
-          <label htmlFor="employee_staff_check_yes">{OEText[0]}</label>
-          <br></br>
+          <label htmlFor="age1865">{OEText[0]}</label>
+        <br></br>
+        <br></br>
+          <input
+            id="age1864"
+            type="radio"
+            name="employee_staff"
+            onClick={(e) => {
+              setIsUnavailable(false);
+              over65(false);
+              set18to64(true);
+              pediatric(false);
+              nextPage(e);
+            }}
+          ></input>
+          <label htmlFor="age1864">Someone who is 18 – 64 years of age</label>
+        <br></br>
         <br></br>
           <input
             id="employee_staff_check_sixteen"
@@ -68,7 +84,8 @@ const Over18Component = ({
             onClick={(e) => {
               setIsUnavailable(false);
               setSixteen(true);
-              overEighteen(true);
+              set18to64(false);
+              over65(false);
               pediatric(false);
               nextPage(e);
             }}
@@ -83,7 +100,7 @@ const Over18Component = ({
             onClick={(e) => {
               setIsUnavailable(true);
               setJJApproved(false);
-              overEighteen(false);
+              over65(false);
               pediatric(false);
               nextPage(e, 2);
             }}
@@ -98,7 +115,8 @@ const Over18Component = ({
             onClick={(e) => {
               setIsUnavailable(true);
               setJJApproved(false);
-              overEighteen(false);
+              set18to64(false);
+              over65(false);
               pediatric(true);
               nextPage(e);
             }}

@@ -7,12 +7,12 @@ const HITHistoryComponent = ({
   nextPage,
   isPrevEnabled,
   isDoneEnabled,
-  overEighteen,
+  over65,
   isSpanish,
   schedulePush,
   setJJApproved
 }) => {
-  const [isOver18, setIsOver18] = useState(true);
+  const [isOver65, setisOver65] = useState(true);
 
   useEffect(() => {
     isPrevEnabled(true);

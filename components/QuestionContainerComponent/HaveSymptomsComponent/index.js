@@ -9,7 +9,7 @@ const HaveSymptomsComponent = ({
   isSpanish,
   setRiskGroup
 }) => {
-  // const [isOver18, setIsOver18] = useState(true);
+  // const [isOver65, setisOver65] = useState(true);
 
   useEffect(() => {
     isPrevEnabled(true);

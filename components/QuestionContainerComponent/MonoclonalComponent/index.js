@@ -8,7 +8,7 @@ const MonoclonalComponent = ({
   isDoneEnabled,
   updateAnswerData,
   isSpanish,
-  isOver18,
+  isOver65,
   isPediatric,
   is1217
 }) => {
@@ -50,7 +50,7 @@ const MonoclonalComponent = ({
                     name="prev_covid"
                     onClick={(e) => {
                       updateAnswerData({ monoclonal: e.target.value });
-                      // if(isOver18)
+                      // if(isOver65)
                       // nextPage(e,2);
                       // else
                       nextPage(e)

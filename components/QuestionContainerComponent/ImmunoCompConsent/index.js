@@ -8,7 +8,7 @@ const ImmunoCompConsent = ({
   nextPage,
   isSpanish,
   isPfizer,
-  isOver18
+  isOver65
 }) => {
   useEffect(() => {
     isDoneEnabled(false);

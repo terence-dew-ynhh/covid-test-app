@@ -11,7 +11,7 @@ const SelectVaccineComponent = ({
   isSpanish,
   isImmunocomp,
   isBooster,
-  isOver18,
+  isOver65,
   setJJApproved,
   isJassenapproved,
   is1217,
@@ -50,25 +50,29 @@ const SelectVaccineComponent = ({
                     } ?`}
               </legend>
 
-              {((isOver18 && isThirdDose) || (!isThirdDose && !isBooster)) && (
-                  <>
-                    <div className="radio_row_item">
-                      <input
-                        id="moderna"
-                        type="radio"
-                        value="No"
-                        name="prev_covid"
-                        onClick={(e) => {
-                          updateAnswerData({ sel_vaccine: 'Moderna' });
-                          setIsModerna(true);
-                        }}
-                      ></input>
-                      <label htmlFor="moderna">Moderna</label>
-                    </div>
-                    <br></br>
-                    <br></br>
-                  </>
-                )}
+              {isOver65 && (
+                <>
+                  <div className="radio_row_item">
+                    <input
+                      id="moderna"
+                      type="radio"
+                      value="No"
+                      name="prev_covid"
+                      onClick={(e) => {
+                        updateAnswerData({ sel_vaccine: 'Moderna' });
+                        setIsModerna(true);
+                        if (isBooster) {
+                          if (isImmunocomp) nextPage(e, 2);
+                          else nextPage(e, 5);
+                        }
+                      }}
+                    ></input>
+                    <label htmlFor="moderna">Moderna</label>
+                  </div>
+                  <br></br>
+                  <br></br>
+                </>
+              )}
               <div className="radio_row_item">
                 <input
                   id="pfizer"
@@ -87,7 +91,7 @@ const SelectVaccineComponent = ({
               </div>
               <br></br>
               <br></br>
-              {isThirdDose && isOver18 && (
+              {isThirdDose && isOver65 && (
                 <>
                   <div className="radio_row_item">
                     <input

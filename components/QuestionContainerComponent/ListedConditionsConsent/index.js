@@ -7,11 +7,11 @@ const ListedConditionsConsent = ({
   isPrevEnabled,
   isDoneEnabled,
   isSpanish,
-  isOver18,
+  isOver65,
   isPfizer
 }) => {
   const handleChecked = (e) => {
-    if(isOver18 & isPfizer === null)
+    if(isOver65 & isPfizer === null)
     nextPage(e);
     else
     nextPage(e, 2);

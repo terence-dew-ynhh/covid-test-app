@@ -9,7 +9,7 @@ const QuarantineComponent = ({
   updateAnswerData,
   schedulePush,
   isSpanish,
-  isOver18,
+  isOver65,
   isPediatric,
   is1217
 }) => {
@@ -54,7 +54,7 @@ const QuarantineComponent = ({
                     name="prev_covid"
                     onClick={(e) => {
                       updateAnswerData({ quarantined: e.target.value });
-                      if (isOver18 || isPediatric) nextPage();
+                      if (isOver65 || isPediatric) nextPage();
                       else schedulePush();
                     }}
                   ></input>

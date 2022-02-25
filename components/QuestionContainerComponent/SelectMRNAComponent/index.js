@@ -11,7 +11,7 @@ const SelectMRNAComponent = ({
   isSpanish,
   isImmunocomp,
   isBooster,
-  isOver18,
+  isOver65,
   setJJApproved,
   isJassenapproved,
   is1217,

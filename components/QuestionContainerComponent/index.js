@@ -15,7 +15,8 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
   const [isPfizer, setIsPfizer] = useState(null);
   const [isJassenapproved, setIsJassenapproved] = useState(true);
   const [isInZipCodeRange, setIsInZipCodeRange] = useState(false);
-  const [isOver18, setIsOver18] = useState(false);
+  const [isOver65, setisOver65] = useState(false);
+  const [is18to64, setis18to64] = useState(false);
   const [is1217, setIs1217] = useState(false);
   const [isPediatric, setIsPediatric] = useState(false);
   const [isRiskGroup, setIsRiskGroup] = useState(false);
@@ -59,9 +60,11 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
     setIsInZipCodeRange(isZipCodeInRange);
   };
 
-  const overEighteen = (isOver18) => {
-    setIsOver18(isOver18);
+  const over65 = (isOver65) => {
+    setisOver65(isOver65);
   };
+    
+
 
   const pediatric = (isPediatric) => {
     setIsPediatric(isPediatric);
@@ -122,7 +125,7 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
     router.push(
       `/scheduling?recc_date=${selDate}&in_zip_range=${isInZipCodeRange}&second_dose=${
         isPfizer == null ? false : true
-      }&isPfizer=${isPfizer}&isSpanish=${isSpanish}&isRiskGroup=${isRiskGroup}&isOver18=${isOver18}&isPediatric=${isPediatric}&jjapproved=${isJassenapproved}&isimmunocomp=${isImmunocomp}&isbooster=${isBooster}`,
+      }&isPfizer=${isPfizer}&isSpanish=${isSpanish}&isRiskGroup=${isRiskGroup}&isOver65=${isOver65}&isPediatric=${isPediatric}&jjapproved=${isJassenapproved}&isimmunocomp=${isImmunocomp}&isbooster=${isBooster}`,
       '/scheduling'
     );
   };
@@ -183,8 +186,8 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
         updateHeader={updateHeader}
         isSpanish={isSpanish}
         zipCodeInRange={zipCodeInRange}
-        overEighteen={overEighteen}
-        isOver18={isOver18}
+        over65={over65}
+        isOver65={isOver65}
         setRiskGroup={setRiskGroup}
         setJJApproved={setJJApproved}
         isJassenapproved={isJassenapproved}
@@ -198,6 +201,8 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
         setThirdDose={setThirdDose}
         isThirdDose={isThirdDose}
         is1217={is1217}
+        set18to64={(e)=> setis18to64(e)}
+        is18to64={is18to64}
       ></QuestionView>
       {/* <p>{`Zip Code ${isInZipCodeRange ? 'is' : 'is not'} in range`}</p> */}
     </div>

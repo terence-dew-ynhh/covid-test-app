@@ -9,13 +9,14 @@ const FirstDoseComponent = ({
   isDoneEnabled,
   updateAnswerData,
   isSpanish,
-  isOver18,
+  isOver65,
   setImmunocompromised,
   setBooster,
   isPediatric,
   is1217,
   isImmunocomp,
   setThirdDose,
+  is18to64 
 }) => {
   const [isClosed, setIsClosed] = useState('');
 
@@ -31,10 +32,13 @@ const FirstDoseComponent = ({
       <div className="radio_grp">
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
-            <p className="error" hidden={!isClosed}>
-              At this time, Yale New Haven Health does not currently have any
-              appointments available for primary series vaccinations.
-            </p>
+            {isClosed && (
+              <p className="error">
+                At this time, Yale New Haven Health does not offer Dose 1
+                (primary series), please check with your primary care attending,
+                local pharmacy, or check back here in the future.
+              </p>
+            )}
             <br></br>
             <br></br>
             <fieldset>
@@ -50,8 +54,8 @@ const FirstDoseComponent = ({
                     updateAnswerData({ first_dose: e.target.value });
                     setBooster(false);
                     setIsClosed(true);
-                    setThirdDose(false);
-                    nextPage(e, 9);
+                    // setThirdDose(false);
+                    // nextPage(e, 9);
                   }}
                 ></input>
                 <label htmlFor="first_dose">
@@ -70,16 +74,19 @@ const FirstDoseComponent = ({
                   name="prev_covid"
                   onClick={(e) => {
                     updateAnswerData({ first_dose: e.target.value });
-                    if (isOver18) nextPage(e, 4);
-                    else nextPage(e, 8);
+                    if (isOver65) nextPage(e, 4);
+                    else nextPage(e, 9);
                     setBooster(false);
                     setThirdDose(false);
                   }}
-                  ></input>
+                ></input>
                 <label htmlFor="second_dose">
                   I am scheduling {isPediatric || is1217 ? "my child's" : 'my'}{' '}
                   second dose{' '}
-                  {isPediatric || is1217 ? '' : 'of a 2-dose vaccine'}
+                  {isPediatric || is1217 ? '' : 'of a two dose vaccine'}{' '}
+                  {(is1217 || is18to64) && !isImmunocomp
+                    ? 'and have received my first dose 3-8 weeks ago*.'
+                    : '.'}
                 </label>
               </div>
               <br></br>
@@ -96,14 +103,15 @@ const FirstDoseComponent = ({
                         updateAnswerData({ first_dose: e.target.value });
                         setBooster(false);
                         setThirdDose(true);
-                        if (isPediatric) nextPage(e, 8);
+                        if (isPediatric) nextPage(e, 9);
                         else nextPage(e, 4);
                       }}
                     ></input>
                     <label htmlFor="third_dose">
                       I am scheduling for{' '}
-                      {isPediatric || is1217 ? "my child's" : 'my'} additional primary dose
-                      because {isPediatric || is1217 ? 'they are' : 'I am'}{' '}
+                      {isPediatric || is1217 ? "my child's" : 'my'} additional
+                      primary dose because{' '}
+                      {isPediatric || is1217 ? 'they are' : 'I am'}{' '}
                       immunocompromised and{' '}
                       {isPediatric || is1217 ? 'they' : 'I'} have completed{' '}
                       {isPediatric || is1217 ? 'their' : 'my'} second dose at
@@ -126,8 +134,8 @@ const FirstDoseComponent = ({
                       updateAnswerData({ first_dose: e.target.value });
                       setBooster(true);
                       setThirdDose(false);
-                      if (isOver18) nextPage(e, 4);
-                      else nextPage(e, 8);
+                      if (isOver65) nextPage(e, 4);
+                      else nextPage(e, 9);
                     }}
                   ></input>
                   <label htmlFor="booster_dose">
@@ -138,14 +146,28 @@ const FirstDoseComponent = ({
                     }have completed ${
                       isPediatric || is1217 ? 'their ' : 'my'
                     } ${
-                      isImmunocomp
-                        ? 'additonal primary dose '
-                        : 'second dose'
-                    } at least ${isImmunocomp ? '3' : '5'} months ago`}
+                      isImmunocomp ? 'additonal primary dose.' : 'second dose'
+                    } at least ${isImmunocomp ? '3' : '5'} months ago.`}
                   </label>
                 </div>
               )}
             </fieldset>
+            <br></br>
+            <br></br>
+            {(is1217 || is18to64) && !isImmunocomp && (
+              <>
+                <b>
+                  *An 8-week interval may be optimal for some people ages 12
+                  years and older, especially for males ages 12 to 39 years. A
+                  shorter interval (3 weeks for Pfizer-BioNTech; 4 weeks for
+                  Moderna) between the first and second doses remains the
+                  recommended interval for: people who are moderately or
+                  severely immunocompromised; adults ages 65 years and older;
+                  and others who need rapid protection due to increased concern
+                  about community transmission or risk of severe disease.{' '}
+                </b>
+              </>
+            )}
             <br></br>
             <br></br>
             <b className="redText">

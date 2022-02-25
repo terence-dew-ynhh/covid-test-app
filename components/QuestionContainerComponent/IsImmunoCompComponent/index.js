@@ -23,7 +23,7 @@ const IsImmunoCompComponent = ({
   updateAnswerData,
   schedulePush,
   isSpanish,
-  isOver18,
+  isOver65,
   isPediatric,
   is1217,
   setImmunocompromised,
@@ -52,7 +52,7 @@ const IsImmunoCompComponent = ({
           style={{ width: '40%', height: '75%' }}
           className={classes.paper}
         >
-          <b>{!isOver18 ? 'Has your child ' : 'Have you '}:</b>
+          <b>{!isOver65 ? 'Has your child ' : 'Have you '}:</b>
           <br></br>
           <br></br>- Received cancer therapy (including chemotherapy, hormonal
           therapy, immunotherapy, surgery, and/or radiation therapy) for a solid

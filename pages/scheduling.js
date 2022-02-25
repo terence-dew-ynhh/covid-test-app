@@ -34,7 +34,7 @@ export default function Home({
   link,
   isPfizer,
   isRiskGroup,
-  isOver18,
+  isOver65,
   jjapproved,
   second_dose,
   isimmunocomp,
@@ -104,7 +104,7 @@ export default function Home({
         >
           Click here to see Vaccine Schedule
         </button> */}
-        {/* <p>{`Over 18:${isOver18} | Pfizer:${isPfizer} | Third Dose:${isimmunocomp}`}</p> */}
+        {/* <p>{`Over 18:${isOver65} | Pfizer:${isPfizer} | Third Dose:${isimmunocomp}`}</p> */}
         <iframe
           id="openSchedulingFrame"
           className="widgetframe"
@@ -152,7 +152,7 @@ Home.getInitialProps = async ({ query }) => {
     isPfizer,
     isSpanish,
     isRiskGroup,
-    isOver18,
+    isOver65,
     jjapproved,
     isimmunocomp,
     isbooster,
@@ -168,7 +168,7 @@ Home.getInitialProps = async ({ query }) => {
       'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=87702,87700,88037,88038,88040,88042,88043,88046,91479,83570,91671,91796,83564&vt=2293&dept=204680001,204590014,203260005,204400009,201120002,204530003,208040011,101450002,104010099,101870002&view=plain&public=1';
   }
 
-  if (isOver18 == 'false') {
+  if (isOver65 == 'false') {
     link =
       'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=87700,88037,88038,88040,88042,88043,88046,91671,91796,83564&vt=2293&dept=204680001,204590014,203260005,204400009,201120002,204530003,208040011,101450002,104010099,101870002&view=plain&public=1';
   }
@@ -207,7 +207,7 @@ Home.getInitialProps = async ({ query }) => {
     second_dose,
     isSpanish,
     isRiskGroup,
-    isOver18,
+    isOver65,
     isimmunocomp,
     isPfizer
   };

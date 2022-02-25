@@ -26,9 +26,8 @@ import SelectPfizerComponent from '../SelectPfizerComponent';
 import AllergyComponent from '../AllergyComponent';
 import AllergistApprovedComponent from '../AllergistApprovedComponent';
 import PedThirdDoseComponent from '../PedThirdDoseComponent';
-import IsImmunoCompComponent from '../IsImmunoCompComponent'
-import SelectMRNAComponent from '../SelectMRNAComponent'
-
+import IsImmunoCompComponent from '../IsImmunoCompComponent';
+import SelectMRNAComponent from '../SelectMRNAComponent';
 
 import styles from './QuestionViewComponent.module.css';
 
@@ -47,8 +46,8 @@ const QuestionViewComponent = ({
   updateHeader,
   isSpanish,
   zipCodeInRange,
-  overEighteen,
-  isOver18,
+  over65,
+  isOver65,
   setRiskGroup,
   setJJApproved,
   isJassenapproved,
@@ -61,7 +60,9 @@ const QuestionViewComponent = ({
   setSixteen,
   is1217,
   setThirdDose,
-        isThirdDose
+  isThirdDose,
+  set18to64,
+  is18to64
 }) => {
   const [prevEnabled, setPrevEnabled] = useState(false);
   const [nextEnabled, setNextEnabled] = useState(false);
@@ -90,7 +91,7 @@ const QuestionViewComponent = ({
     immunocomp: ThirdDoseComponent,
     pedimmunocomp: PedThirdDoseComponent,
     immunocompconsent: ImmunoCompConsent,
-    receivebooster: ReceiveBoosterConsent, 
+    receivebooster: ReceiveBoosterConsent,
     selectpfizer: SelectPfizerComponent,
     allergy: AllergyComponent,
     allergistapproval: AllergistApprovedComponent,
@@ -135,8 +136,8 @@ const QuestionViewComponent = ({
           updateHeader={updateHeader}
           isSpanish={isSpanish}
           zipCodeInRange={zipCodeInRange}
-          isOver18={isOver18}
-          overEighteen={overEighteen}
+          isOver65={isOver65}
+          over65={over65}
           setRiskGroup={setRiskGroup}
           setJJApproved={setJJApproved}
           isJassenapproved={isJassenapproved}
@@ -149,7 +150,9 @@ const QuestionViewComponent = ({
           setSixteen={setSixteen}
           is1217={is1217}
           setThirdDose={setThirdDose}
-        isThirdDose={isThirdDose}
+          isThirdDose={isThirdDose}
+          set18to64={set18to64}
+        is18to64={is18to64}
         />
       </div>
       <div className={styles.buttonContainer}>

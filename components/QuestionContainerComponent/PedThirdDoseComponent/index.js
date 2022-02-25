@@ -8,7 +8,7 @@ const PedThirdDoseComponent = ({
   isDoneEnabled,
   isSpanish,
   setImmunocompromised,
-  isOver18
+  isOver65
 }) => {
   useEffect(() => {
     isPrevEnabled(true);

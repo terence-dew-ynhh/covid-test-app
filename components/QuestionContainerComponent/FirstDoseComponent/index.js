@@ -74,7 +74,7 @@ const FirstDoseComponent = ({
                   name="prev_covid"
                   onClick={(e) => {
                     updateAnswerData({ first_dose: e.target.value });
-                    if (isOver65) nextPage(e, 4);
+                    if (isOver65 || is18to64) nextPage(e, 4);
                     else nextPage(e, 9);
                     setBooster(false);
                     setThirdDose(false);
@@ -134,7 +134,7 @@ const FirstDoseComponent = ({
                       updateAnswerData({ first_dose: e.target.value });
                       setBooster(true);
                       setThirdDose(false);
-                      if (isOver65) nextPage(e, 4);
+                      if (isOver65 || is18to64) nextPage(e, 4);
                       else nextPage(e, 9);
                     }}
                   ></input>

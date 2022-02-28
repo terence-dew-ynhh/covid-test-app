@@ -82,7 +82,7 @@ const FirstDoseComponent = ({
                 <label htmlFor="second_dose">
                   I am scheduling {isPediatric || is1217 ? "my child's" : 'my'}{' '}
                   second dose{' '}
-                  {isPediatric || is1217 ? '' : 'of a two dose vaccine'}{' '}
+                  {isPediatric || is1217 ? '' : 'of a two dose vaccine'}
                   {(is1217 || is18to64) && !isImmunocomp
                     ? `and ${is1217 ? "they": ""} have received ${is1217 ? "their" : "my"} first dose 3-8 weeks ago*.`
                     : '.'}

@@ -8,8 +8,8 @@ const AllergyComponent = ({
   isDoneEnabled,
   isOver65,
   isSpanish,
-  isImmunocomp,
-  isBooster
+  isBooster,
+  is18to64
 }) => {
   const [hasNoAllergy, setHasNoAllergy] = useState(false);
 
@@ -19,14 +19,8 @@ const AllergyComponent = ({
   }, []);
 
   const handleSelection = (e) => {
-    if (isImmunocomp) {
-      nextPage(e, 4);
-    } else if (isBooster) {
-      nextPage(e, 3);
-    } else {
-      if (isOver65) nextPage(e, 4);
-      else nextPage(e, 5);
-    }
+    if (isOver65 || is18to64) nextPage(e, 3);
+    else nextPage(e, 5);
   };
 
   let OEText = isSpanish ? oeText.sp : oeText.en;

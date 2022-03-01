@@ -56,7 +56,7 @@ import styles from './RequireCovidTestingComponent.module.css'
               nextPage(e,7)
             }}
           ></input>
-          <label htmlFor="employee_staff_check_exempt"><u>I work in CT or New York</u> and have a COVID-19 Vaccine Exemption and I am Required for weekly COVID-19 testing</label>
+          <label htmlFor="employee_staff_check_exempt"><u>I work in CT or New York</u> and am required to have weekly COVID-19 testing due to an exemption or some other reason.</label>
           <br></br>
           <br></br>
           <input
@@ -69,7 +69,7 @@ import styles from './RequireCovidTestingComponent.module.css'
               nextPage(e,7)
             }}
           ></input>
-          <label htmlFor="employee_ri_check_exempt"><u>I work in RI</u> and have a COVID-19 Vaccine Exemption and I am Required for <u>twice weekly</u> COVID-19 testing</label>
+          <label htmlFor="employee_ri_check_exempt"><u>I work in RI</u> and am required to have weekly or twice weekly COVID-19 testing due to an exemption or some other reason.</label>
           <br></br>
           <br></br>
           <input

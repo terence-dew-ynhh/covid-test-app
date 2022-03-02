@@ -15,9 +15,10 @@ const FirstDoseComponent = ({
   is1217,
   isImmunocomp,
   setThirdDose,
-  is18to64 
+  is18to64
 }) => {
   const [isClosed, setIsClosed] = useState('');
+  const [isDose2, setisDose2] = useState('');
 
   useEffect(() => {
     isDoneEnabled(false);
@@ -38,6 +39,13 @@ const FirstDoseComponent = ({
                 local pharmacy, or check back here in the future.
               </p>
             )}
+            {isDose2 && (
+              <p className="error">
+                Please contact 1-833-ASK-YNHH (275-9644) to check for
+                appointment availability and to schedule your child’s Dose 2
+                appointment.
+              </p>
+            )}
             <br></br>
             <br></br>
             <fieldset>
@@ -53,6 +61,7 @@ const FirstDoseComponent = ({
                     updateAnswerData({ first_dose: e.target.value });
                     setBooster(false);
                     setIsClosed(true);
+                    setisDose2(false)
                     // setThirdDose(false);
                     // nextPage(e, 9);
                   }}
@@ -74,6 +83,7 @@ const FirstDoseComponent = ({
                   onClick={(e) => {
                     updateAnswerData({ first_dose: e.target.value });
                     if (isOver65 || is18to64) nextPage(e, 4);
+                    if (isPediatric){ setisDose2(true); setIsClosed(false)}
                     else nextPage(e, 9);
                     setBooster(false);
                     setThirdDose(false);
@@ -84,7 +94,9 @@ const FirstDoseComponent = ({
                   second dose{' '}
                   {isPediatric || is1217 ? '' : 'of a two dose vaccine'}
                   {(is1217 || is18to64) && !isImmunocomp
-                    ? `and ${is1217 ? "they": ""} have received ${is1217 ? "their" : "my"} first dose 3-8 weeks ago*.`
+                    ? `and ${is1217 ? 'they' : ''} have received ${
+                        is1217 ? 'their' : 'my'
+                      } first dose 3-8 weeks ago*.`
                     : '.'}
                 </label>
               </div>
@@ -171,9 +183,9 @@ const FirstDoseComponent = ({
             <br></br>
             <b className="redText">
               If you are scheduling{' '}
-              {isPediatric || is1217 ? "your child's" : 'your'} initial first
+              {isPediatric || is1217 ? "your child's " : 'your '}initial first
               dose of the Vaccine,{' '}
-              {isPediatric || is1217 ? "the child's" : 'your'}
+              {isPediatric || is1217 ? "the child's " : 'your '}
               second dose appointment will be made for{' '}
               {isPediatric || is1217 ? 'them' : 'you'} at the Vaccination clinic
               at the time of your appointment.{' '}

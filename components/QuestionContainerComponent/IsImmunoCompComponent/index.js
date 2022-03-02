@@ -77,6 +77,7 @@ const IsImmunoCompComponent = ({
           COVID-19 vaccine series) high-dose corticosteroids (at least 20 mg of
           prednisone daily) or any of the other medications on this list that
           suppress the immune system
+          <br></br>
           <br></br>- People should talk to their healthcare provider about
           COVID-19 vaccinations and boosters if they have a medical condition to
           help determine if they may be immunocompromised.

@@ -32,14 +32,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Home({
   link,
-  isPfizer,
-  isRiskGroup,
-  isOver65,
-  jjapproved,
-  second_dose,
-  isimmunocomp,
-  isSpanish,
-  recc_date
 }) {
   const [open, setOpen] = useState(false);
   const [modalStyle] = useState(getModalStyle);
@@ -88,13 +80,13 @@ export default function Home({
       </div>
 
       <div className="scheduleContainer">
-        <h3>
+        {/* <h3>
           {second_dose == 'true'
             ? isSpanish == 'true'
               ? `Seleccione una fecha posterior a ${recc_date}`
               : `Please Select Date After ${recc_date}`
             : ''}
-        </h3>
+        </h3> */}
 
         {/* <button
           className="button"
@@ -146,70 +138,36 @@ export default function Home({
 }
 
 Home.getInitialProps = async ({ query }) => {
-  const {
-    recc_date,
-    second_dose,
-    isPfizer,
-    isSpanish,
-    isRiskGroup,
-    isOver65,
-    jjapproved,
-    isimmunocomp,
-    isbooster,
-    isPediatric
-  } = query;
+  const { ispfizer, isbooster, isseconddose, immunocomp, thirddose } = query;
   let link = '';
 
-  link =
-    'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=87700,88037,88038,88040,88042,88043,88046,91479,83570,91671,91796,83564&vt=2293&dept=204680001,204590014,203260005,204400009,201120002,204530003,208040011,101450002,%20104010099,101870002&view=plain&public=1';
-
-  if (jjapproved == 'true') {
+  //1 closed
+  //2 5-11 closed everone else pfizer
+  //3 Immunocomp 12
+  if (isseconddose == 'true')
     link =
-      'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=87702,87700,88037,88038,88040,88042,88043,88046,91479,83570,91671,91796,83564&vt=2293&dept=204680001,204590014,203260005,204400009,201120002,204530003,208040011,101450002,104010099,101870002&view=plain&public=1';
-  }
-
-  if (isOver65 == 'false') {
+      'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=83462,91478,91671,83567,83563,83564,83565,83686,90409,88040,88037,88046,88038,88042,91796,88043&vt=2460&dept=204010005,204400009,204590014,208040011,203260005,201120002,204530003,101010172,101450002,101870002,102010094,103070034,104010097,108010099,104010099,108710073&view=plain&public=1&lang=english';
+  
+       if (immunocomp == 'true' && thirddose == 'true' ) {
     link =
-      'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=87700,88037,88038,88040,88042,88043,88046,91671,91796,83564&vt=2293&dept=204680001,204590014,203260005,204400009,201120002,204530003,208040011,101450002,104010099,101870002&view=plain&public=1';
-  }
-
-  if (second_dose == 'true') {
-    // link =
-    //   'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=84792,84795,84794,94791,95375,84815,84793,85108&vt=2338&dept=101960001,102340001,102350001,102360001,102370001,102380001,102390001,102400001&view=plain&public=1';
-    // if (isPfizer == 'true') {
-      link =
-        'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=87701,88037,88038,88040,88042,88043,88046,91671,91796,83564&vt=2339&dept=204680001,204590014,203260005,204400009,201120002,204530003,208040011,101450002,104010099,101870002&view=plain&public=1';
-    // }
+      'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=83462,91478,91671,83567,83563,83564,83565,83686,90409,88040,88037,88046,88038,88042,91796,88043&vt=2444&dept=204010005,204400009,204590014,208040011,203260005,201120002,204530003,101010172,101450002,101870002,102010094,103070034,104010097,108010099,104010099,108710073&view=plain&public=1&lang=english';
   }
 
   if (isbooster == 'true') {
-        link =
-      'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=92548,92580,92581,92582,92699&vt=2465&dept=104010099,208040011,101870002,101450002,204590014&view=plain&public=1';
-    if (isPfizer == 'true') {
-    link =
-      'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=83462,91478,91671,83567,83563,83564,83565,83686,90409,88040,88037,88046,88038,88042,91796,88043&vt=2460&dept=204010005,204400009,204590014,208040011,203260005,201120002,204530003,101010172,101450002,101870002,102010094,103070034,104010097,108010099,104010099,108710073&view=plain&public=1';
-  }}
-
-  if (isimmunocomp == 'true') {
-    link =
-      'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=90409,88040,88037,88046,88038,88042,88043,91671,91796,91479,91478,91802,83564&vt=2444&dept=204010005,204400009,204590014,208040011,203260005,201120002,204530003,101450002,104010099,101870002&view=plain&public=1';
+    if (ispfizer == 'true') {
+      link =
+        'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=83462,91478,91671,83567,83563,83564,83565,83686,90409,88040,88037,88046,88038,88042,91796,88043&vt=2460&dept=204010005,204400009,204590014,208040011,203260005,201120002,204530003,101010172,101450002,101870002,102010094,103070034,104010097,108010099,104010099,108710073&view=plain&public=1&lang=english';
+    } else {
+      link =
+        'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=83462,91478,91671,83567,83563,83564,83565,83686,90409,88040,88037,88046,88038,88042,91796,88043&vt=2460&dept=204010005,204400009,204590014,208040011,203260005,201120002,204530003,101010172,101450002,101870002,102010094,103070034,104010097,108010099,104010099,108710073&view=plain&public=1&lang=english';
+    }
   }
 
-  if(isPediatric == 'true') link = 'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=92567,92599,92600,92601,92701&vt=2467&dept=104010099,208040011,101870002,101450002,204400009&view=plain&public=1'
-
-  if (isSpanish == 'true') link = link + '&lang=espanol';
-  else link = link + '&lang=english';
-  if (second_dose == null) link = '';
+  link = link + '&lang=english';
+  if (isbooster == null) link = '';
 
   return {
     link,
-    recc_date,
-    second_dose,
-    isSpanish,
-    isRiskGroup,
-    isOver65,
-    isimmunocomp,
-    isPfizer
   };
 };
 // export default redirect('http://www.ynhhs.org/covidvaccine');

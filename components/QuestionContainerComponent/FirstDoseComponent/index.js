@@ -18,7 +18,7 @@ const FirstDoseComponent = ({
   is18to64
 }) => {
   const [isClosed, setIsClosed] = useState('');
-  const [isDose2, setisDose2] = useState('');
+  const [isDosePrimary, setisDosePrimary] = useState('');
 
   useEffect(() => {
     isDoneEnabled(false);
@@ -39,7 +39,7 @@ const FirstDoseComponent = ({
                 local pharmacy, or check back here in the future.
               </p>
             )}
-            {isDose2 && (
+            {isDosePrimary && (
               <p className="error">
                 Please contact 1-833-ASK-YNHH (275-9644) to check for
                 appointment availability and to schedule your child’s Dose 2
@@ -61,7 +61,7 @@ const FirstDoseComponent = ({
                     updateAnswerData({ first_dose: e.target.value });
                     setBooster(false);
                     setIsClosed(true);
-                    setisDose2(false)
+                    setisDosePrimary(false);
                     // setThirdDose(false);
                     // nextPage(e, 9);
                   }}
@@ -83,8 +83,10 @@ const FirstDoseComponent = ({
                   onClick={(e) => {
                     updateAnswerData({ first_dose: e.target.value });
                     if (isOver65 || is18to64) nextPage(e, 4);
-                    if (isPediatric){ setisDose2(true); setIsClosed(false)}
-                    else nextPage(e, 9);
+                    if (isPediatric) {
+                      setisDosePrimary(true);
+                      setIsClosed(false);
+                    } else nextPage(e, 9);
                     setBooster(false);
                     setThirdDose(false);
                   }}
@@ -114,8 +116,10 @@ const FirstDoseComponent = ({
                         updateAnswerData({ first_dose: e.target.value });
                         setBooster(false);
                         setThirdDose(true);
-                        if (isPediatric) nextPage(e, 9);
-                        else nextPage(e, 4);
+                        if (isPediatric) {
+                          setisDosePrimary(true);
+                          setIsClosed(false);
+                        } else nextPage(e, 4);
                       }}
                     ></input>
                     <label htmlFor="third_dose">

@@ -121,21 +121,46 @@ const FactSheetComponent = ({
                 {FSText[0]}
                 <br></br>
                 <br></br>
+                <b>Pfizer Vaccination: </b>
+                <br></br>
+                <br></br>
+                <span>FDA authorized </span>
+                <a
+                  target="__blank"
+                  href="https://www.fda.gov/media/144414/download"
+                >
+                  EUA
+                </a>{' '}
+                <br></br>
+                <br></br>
+                <span>CDC authorized </span>
+                <a
+                  target="__blank"
+                  href="https://www.cdc.gov/vaccines/covid-19/eui/downloads/Pfizer-Caregiver.pdf"
+                  >
+                  EUI
+                </a>{' '}
+                  <br></br>
+                  <br></br>                
+                <b>Moderna Vaccination: </b>
+                <br></br>
+                <br></br>
+                <span>FDA authorized </span>
                 <a
                   target="__blank"
                   href="https://www.fda.gov/media/144638/download"
-                >
-                  Moderna Vaccination EUA
+                  >
+                  EUA
                 </a>
                 <br></br>
                 <br></br>
+                  <span>CDC authorized </span>
                 <a
                   target="__blank"
-                  href="https://mychart.ynhhs.org/MyChart-PRD/en-US/PDF/ESPCOVIDModernaVaccineFactSheet.pdf"
+                  href="https://www.cdc.gov/vaccines/covid-19/eui/downloads/Moderna-Caregiver.pdf"
                 >
-                  {FSText[4]}
+                  EUI
                 </a>
-                {links}
                 <br></br>
               </legend>
 

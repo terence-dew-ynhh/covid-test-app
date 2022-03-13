@@ -136,7 +136,15 @@ export default function Home({ link }) {
 }
 
 Home.getInitialProps = async ({ query }) => {
-  const { ispfizer, isbooster, isseconddose, immunocomp, thirddose } = query;
+  const {
+    ispfizer,
+    isbooster,
+    isseconddose,
+    immunocomp,
+    thirddose,
+    over65,
+    eightteentosixtyfour
+  } = query;
   let link = '';
 
   //1 closed
@@ -156,8 +164,12 @@ Home.getInitialProps = async ({ query }) => {
       link =
         'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=83462,91478,91671,83567,83563,83564,83565,83686,90409,88040,88037,88046,88038,88042,91796,88043&vt=2460&dept=204010005,204400009,204590014,208040011,203260005,201120002,204530003,101010172,101450002,101870002,102010094,103070034,104010097,108010099,104010099,108710073&view=plain&public=1&lang=english';
     } else {
-      link =
-        'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=92548,92580,92581,92582,92699&vt=2465&dept=104010099,208040011,101870002,101450002,204590014&view=plain&public=1&lang=english';
+      if (eightteentosixtyfour || over65) {
+        link =
+          'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=92548,92580,92581,92582,92699&vt=2465&dept=104010099,208040011,101870002,101450002,204590014&view=plain&public=1';
+      } else
+        link =
+          'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=92548,92580,92581,92582,92699&vt=2465&dept=104010099,208040011,101870002,101450002,204590014&view=plain&public=1';
     }
   }
 

@@ -42,7 +42,7 @@ const FirstDoseComponent = ({
             {isDosePrimary && (
               <p className="error">
                 Please contact 1-833-ASK-YNHH (275-9644) to check for
-                appointment availability and to schedule your child’s Dose 2
+                appointment availability and to schedule your child’s primary series
                 appointment.
               </p>
             )}

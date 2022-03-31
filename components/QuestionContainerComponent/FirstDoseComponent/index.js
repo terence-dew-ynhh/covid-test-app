@@ -15,7 +15,11 @@ const FirstDoseComponent = ({
   is1217,
   isImmunocomp,
   setThirdDose,
-  is18to64
+  is18to64,
+  isOver50,
+  setIsOver50,
+  is2ndBooster,
+  setIs2ndBooster
 }) => {
   const [isClosed, setIsClosed] = useState('');
   const [isDosePrimary, setisDosePrimary] = useState('');
@@ -42,8 +46,8 @@ const FirstDoseComponent = ({
             {isDosePrimary && (
               <p className="error">
                 Please contact 1-833-ASK-YNHH (275-9644) to check for
-                appointment availability and to schedule your child’s primary series
-                appointment.
+                appointment availability and to schedule your child’s primary
+                series appointment.
               </p>
             )}
             <br></br>
@@ -68,8 +72,7 @@ const FirstDoseComponent = ({
                 ></input>
                 <label htmlFor="first_dose">
                   I am scheduling {isPediatric || is1217 ? "my child's" : 'my'}{' '}
-                  first dose and {isPediatric || is1217 ? 'they' : 'I'} have not
-                  had a dose yet.
+                  first primary series dose
                 </label>
               </div>
               <br></br>
@@ -82,24 +85,18 @@ const FirstDoseComponent = ({
                   name="prev_covid"
                   onClick={(e) => {
                     updateAnswerData({ first_dose: e.target.value });
-                    if (isOver65 || is18to64) nextPage(e, 4);
+                    if (isOver65 || is18to64) nextPage(e, 5);
                     if (isPediatric) {
                       setisDosePrimary(true);
                       setIsClosed(false);
-                    } else nextPage(e, 9);
+                    } else nextPage(e, 10);
                     setBooster(false);
                     setThirdDose(false);
                   }}
                 ></input>
                 <label htmlFor="second_dose">
                   I am scheduling {isPediatric || is1217 ? "my child's" : 'my'}{' '}
-                  second dose{' '}
-                  {isPediatric || is1217 ? '' : 'of a two dose vaccine'}
-                  {(is1217 || is18to64) && !isImmunocomp
-                    ? `and ${is1217 ? 'they' : ''} have received ${
-                        is1217 ? 'their' : 'my'
-                      } first dose 3-8 weeks ago*.`
-                    : '.'}
+                  second primary series dose
                 </label>
               </div>
               <br></br>
@@ -119,16 +116,13 @@ const FirstDoseComponent = ({
                         if (isPediatric) {
                           setisDosePrimary(true);
                           setIsClosed(false);
-                        } else nextPage(e, 4);
+                        } else nextPage(e, 5);
                       }}
                     ></input>
                     <label htmlFor="third_dose">
                       I am scheduling for{' '}
                       {isPediatric || is1217 ? "my child's" : 'my'} additional
-                      primary dose because{' '}
-                      {isPediatric || is1217 ? 'they are' : 'I am'}{' '}
-                      immunocompromised and{' '}
-                      {isPediatric || is1217 ? 'they' : 'I'} have completed{' '}
+                      primary series dose and have completed{' '}
                       {isPediatric || is1217 ? 'their' : 'my'} second dose at
                       least 28 days ago.
                     </label>
@@ -137,7 +131,7 @@ const FirstDoseComponent = ({
                   <br></br>
                 </>
               )}
-
+              
               {!isPediatric && (
                 <div className="radio_row_item">
                   <input
@@ -149,20 +143,51 @@ const FirstDoseComponent = ({
                       updateAnswerData({ first_dose: e.target.value });
                       setBooster(true);
                       setThirdDose(false);
-                      if (isOver65 || is18to64) nextPage(e, 4);
-                      else nextPage(e, 9);
+                      if (isOver65 || is18to64) nextPage(e, 5);
+                      else nextPage(e, 10);
                     }}
                   ></input>
                   <label htmlFor="booster_dose">
-                    {`I am looking to schedule ${
+                    {`I am scheduling ${
                       isPediatric || is1217 ? 'my child’s' : 'my'
-                    } booster and ${
+                    } first booster and ${
                       isPediatric || is1217 ? 'they ' : ''
                     }have completed ${
                       isPediatric || is1217 ? 'their ' : 'my'
                     } ${
                       isImmunocomp ? 'additonal primary dose.' : 'second dose'
                     } at least ${isImmunocomp ? '3' : '5'} months ago.`}
+                  </label>
+                </div>
+              )}
+              <br></br>
+              <br></br>
+              {!isPediatric && ((is1217 && isImmunocomp) || isOver50) && (
+                <div className="radio_row_item">
+                  <input
+                    id="booster_dose2"
+                    type="radio"
+                    value="No"
+                    name="prev_covid"
+                    onClick={(e) => {
+                      updateAnswerData({ first_dose: e.target.value });
+                      setBooster(true);
+                      setIs2ndBooster(true);
+                      setThirdDose(false);
+                      if (is18to64) nextPage(e);
+                      else nextPage(e, 9);
+                    }}
+                  ></input>
+                  <label htmlFor="booster_dose2">
+                    {`I am scheduling ${
+                      isPediatric || is1217 ? 'my child’s' : 'my'
+                    } second booster and ${
+                      isPediatric || is1217 ? 'they ' : ''
+                    }have completed ${
+                      isPediatric || is1217 ? 'their ' : 'my'
+                    } ${
+                      isImmunocomp ? 'first booster' : 'second dose'
+                    } at least 4 months ago.`}
                   </label>
                 </div>
               )}

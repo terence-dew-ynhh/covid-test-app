@@ -28,6 +28,7 @@ import AllergistApprovedComponent from '../AllergistApprovedComponent';
 import PedThirdDoseComponent from '../PedThirdDoseComponent';
 import IsImmunoCompComponent from '../IsImmunoCompComponent';
 import SelectMRNAComponent from '../SelectMRNAComponent';
+import Over50Component from '../Over50Component';
 
 import styles from './QuestionViewComponent.module.css';
 
@@ -62,7 +63,11 @@ const QuestionViewComponent = ({
   setThirdDose,
   isThirdDose,
   set18to64,
-  is18to64
+  is18to64,
+  isOver50,
+  setIsOver50,
+  is2ndBooster,
+  setIs2ndBooster
 }) => {
   const [prevEnabled, setPrevEnabled] = useState(false);
   const [nextEnabled, setNextEnabled] = useState(false);
@@ -96,7 +101,8 @@ const QuestionViewComponent = ({
     allergy: AllergyComponent,
     allergistapproval: AllergistApprovedComponent,
     isImmunocomp: IsImmunoCompComponent,
-    mrnaselect: SelectMRNAComponent
+    mrnaselect: SelectMRNAComponent,
+    over50:Over50Component
   };
   const ComponentName = components[compName || 'age'];
 
@@ -152,7 +158,11 @@ const QuestionViewComponent = ({
           setThirdDose={setThirdDose}
           isThirdDose={isThirdDose}
           set18to64={set18to64}
-        is18to64={is18to64}
+          is18to64={is18to64}
+          isOver50={isOver50}
+          setIsOver50={setIsOver50}
+          is2ndBooster={is2ndBooster}
+          setIs2ndBooster={setIs2ndBooster}
         />
       </div>
       <div className={styles.buttonContainer}>

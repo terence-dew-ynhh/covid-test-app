@@ -23,6 +23,8 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
   const [isImmunocomp, setIsImmunocomp] = useState(false);
   const [isThirdDose, setIsThirdDose] = useState(false);
   const [isBooster, setIsBooster] = useState(false);
+  const [isOver50, setIsOver50] = useState(false);
+  const [is2ndBooster, setIs2ndBooster] = useState(false);
   const [viewJump, setviewJump] = useState([]);
   const [selDate, setSelDate] = useState('');
   const [responseData, setResponseData] = useState({});
@@ -34,6 +36,7 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
     'age',
     'isImmunocomp',
     'firstdose',
+    'over50',
     'receivebooster',
     'pedimmunocomp',
     'immunocomp',
@@ -201,6 +204,10 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
         is1217={is1217}
         set18to64={(e)=> setis18to64(e)}
         is18to64={is18to64}
+        isOver50={isOver50}
+        setIsOver50={(e)=> setIsOver50(e)} 
+        is2ndBooster={is2ndBooster} 
+        setIs2ndBooster={(e)=> setIs2ndBooster(e)}
       ></QuestionView>
       {/* <p>{`Zip Code ${isInZipCodeRange ? 'is' : 'is not'} in range`}</p> */}
     </div>

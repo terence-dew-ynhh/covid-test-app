@@ -14,6 +14,10 @@ const Over18Component = ({
   isPediatric,
   setSixteen,
   set18to64,
+  isOver50,
+  setIsOver50,
+  is2ndBooster,
+  setIs2ndBooster
 }) => {
   const [isUnavailable, setIsUnavailable] = useState(false);
 
@@ -55,6 +59,7 @@ const Over18Component = ({
               setIsUnavailable(false);
               over65(true);
               set18to64(false);
+              setIsOver50(true)
               pediatric(false);
               nextPage(e);
             }}
@@ -71,6 +76,7 @@ const Over18Component = ({
               over65(false);
               set18to64(true);
               pediatric(false);
+              setIsOver50(true);
               nextPage(e);
             }}
           ></input>
@@ -86,6 +92,7 @@ const Over18Component = ({
               setSixteen(true);
               set18to64(false);
               over65(false);
+              setIsOver50(false);
               pediatric(false);
               nextPage(e);
             }}
@@ -93,21 +100,7 @@ const Over18Component = ({
           <label htmlFor="employee_staff_check_sixteen">{OEText[4]}</label>
           <br></br>
           <br></br>
-          {/* <input
-            id="employee_staff_check_no"
-            type="radio"
-            name="employee_staff"
-            onClick={(e) => {
-              setIsUnavailable(true);
-              setJJApproved(false);
-              over65(false);
-              pediatric(false);
-              nextPage(e, 2);
-            }}
-          ></input>
-          <label htmlFor="employee_staff_check_no">{OEText[1]}</label>
-          <br></br>
-          <br></br> */}
+
           <input
             id="employee_staff_check_five"
             type="radio"
@@ -117,6 +110,7 @@ const Over18Component = ({
               setJJApproved(false);
               set18to64(false);
               over65(false);
+              setIsOver50(false);
               pediatric(true);
               nextPage(e);
             }}

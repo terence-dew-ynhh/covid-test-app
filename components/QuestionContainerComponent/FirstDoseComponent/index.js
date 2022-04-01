@@ -174,7 +174,7 @@ const FirstDoseComponent = ({
                       setBooster(true);
                       setIs2ndBooster(true);
                       setThirdDose(false);
-                      if (isOver65 || is1217) nextPage(e, 5);
+                      if (isOver65 || is1217 || (is18to64 && isImmunocomp) ) nextPage(e, 5);
                       else nextPage(e);
                     }}
                   ></input>

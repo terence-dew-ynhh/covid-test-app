@@ -82,7 +82,7 @@ const Over50Component = ({
                   name="prev_covid"
                   onClick={(e) => {
                     setIsOver50(true)
-                    nextPage(e);
+                    nextPage(e,4);
                   }}
                 ></input>
                 <label htmlFor="prev_covid_agree">

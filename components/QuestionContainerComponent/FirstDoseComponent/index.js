@@ -174,8 +174,8 @@ const FirstDoseComponent = ({
                       setBooster(true);
                       setIs2ndBooster(true);
                       setThirdDose(false);
-                      if (is18to64) nextPage(e);
-                      else nextPage(e, 9);
+                      if (isOver65 || is1217) nextPage(e, 5);
+                      else nextPage(e);
                     }}
                   ></input>
                   <label htmlFor="booster_dose2">

@@ -71,8 +71,7 @@ const FirstDoseComponent = ({
                   }}
                 ></input>
                 <label htmlFor="first_dose">
-                  I am scheduling {isPediatric || is1217 ? "my child's" : 'my'}{' '}
-                  first primary series dose
+                  First primary series dose
                 </label>
               </div>
               <br></br>
@@ -95,8 +94,7 @@ const FirstDoseComponent = ({
                   }}
                 ></input>
                 <label htmlFor="second_dose">
-                  I am scheduling {isPediatric || is1217 ? "my child's" : 'my'}{' '}
-                  second primary series dose
+                  Second primary series dose
                 </label>
               </div>
               <br></br>
@@ -120,11 +118,7 @@ const FirstDoseComponent = ({
                       }}
                     ></input>
                     <label htmlFor="third_dose">
-                      I am scheduling for{' '}
-                      {isPediatric || is1217 ? "my child's" : 'my'} additional
-                      primary series dose and have completed{' '}
-                      {isPediatric || is1217 ? 'their' : 'my'} second dose at
-                      least 28 days ago.
+                      Additional primary series dose (at least 28 days since second primary dose)
                     </label>
                   </div>
                   <br></br>
@@ -148,15 +142,7 @@ const FirstDoseComponent = ({
                     }}
                   ></input>
                   <label htmlFor="booster_dose">
-                    {`I am scheduling ${
-                      isPediatric || is1217 ? 'my child’s' : 'my'
-                    } first booster and ${
-                      isPediatric || is1217 ? 'they ' : ''
-                    }have completed ${
-                      isPediatric || is1217 ? 'their ' : 'my'
-                    } ${
-                      isImmunocomp ? 'additonal primary dose' : 'second dose'
-                    } at least ${isImmunocomp ? '3' : '5'} months ago.`}
+                    First booster (at least ${isImmunocomp ? '3' : '5'} months since {isImmunocomp ? 'additional' : 'second'} primary series dose).`}
                   </label>
                 </div>
               )}
@@ -179,15 +165,7 @@ const FirstDoseComponent = ({
                     }}
                   ></input>
                   <label htmlFor="booster_dose2">
-                    {`I am scheduling ${
-                      isPediatric || is1217 ? 'my child’s' : 'my'
-                    } second booster and ${
-                      isPediatric || is1217 ? 'they ' : ''
-                    }have completed ${
-                      isPediatric || is1217 ? 'their ' : 'my'
-                    } ${
-                      (isOver65 || (is18to64 && !isImmunocomp))  ? 'first booster' : 'second dose'
-                    } at least 4 months ago.`}
+                  Second booster (at least 4 months since first booster dose)
                   </label>
                 </div>
               )}

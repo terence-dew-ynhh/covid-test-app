@@ -186,7 +186,7 @@ const FirstDoseComponent = ({
                     }have completed ${
                       isPediatric || is1217 ? 'their ' : 'my'
                     } ${
-                      isImmunocomp ? 'first booster' : 'second dose'
+                      (isOver65 || (is18to64 && !isImmunocomp))  ? 'first booster' : 'second dose'
                     } at least 4 months ago.`}
                   </label>
                 </div>

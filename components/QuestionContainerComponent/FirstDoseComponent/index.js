@@ -142,7 +142,7 @@ const FirstDoseComponent = ({
                     }}
                   ></input>
                   <label htmlFor="booster_dose">
-                    First booster (at least {isImmunocomp ? '3' : '5'} months since {isImmunocomp ? 'additional' : 'second'} primary series dose).`}
+                    First booster (at least {isImmunocomp ? '3' : '5'} months since {isImmunocomp ? 'additional' : 'second'} primary series dose).
                   </label>
                 </div>
               )}

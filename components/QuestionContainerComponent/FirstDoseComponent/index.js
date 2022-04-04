@@ -155,7 +155,7 @@ const FirstDoseComponent = ({
                     }have completed ${
                       isPediatric || is1217 ? 'their ' : 'my'
                     } ${
-                      isImmunocomp ? 'additonal primary dose.' : 'second dose'
+                      isImmunocomp ? 'additonal primary dose' : 'second dose'
                     } at least ${isImmunocomp ? '3' : '5'} months ago.`}
                   </label>
                 </div>

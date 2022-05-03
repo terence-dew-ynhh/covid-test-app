@@ -1,7 +1,7 @@
 {
     "apps": [
         {
-            "name": "covidtesting",
+            "name": "easycare",
             "script": "npm",
             "args" : "start"
         }

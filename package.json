@@ -19,9 +19,10 @@
   },
   "devDependencies": {},
   "scripts": {
+    "dev": "next -p 3050",
     "build": "next build",
-    "dev": "node server/server.js",
-    "start": "node server/server.js"
+    "staging": "next start -p 3035",
+    "start": "next start -p 3035"
   },
   "repository": {
     "type": "git",

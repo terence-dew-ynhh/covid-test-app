@@ -23,21 +23,31 @@ const EmployeeQuestion = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
         </p>
         <fieldset className="radio_grp_set">
           <legend>
-            Check your eligibility for Easy Care, please select one of the
-            following:
+            Please select a visit type
           </legend>
           <input
             id="employee_staff_check_yes"
             type="radio"
             name="employee_staff"
             onClick={() => {
-              nextPage();
-              setIsEmployee(true);
+              
             }}
           ></input>
           <label htmlFor="employee_staff_check_yes">
-            I am Yale-New Haven Health System employee (full time, part time,
-            or per diem, inclusive of employed medical staff and trainees).
+          Sick Visit
+          </label>
+              <br></br>
+              <br></br>
+          <input
+            id="employee_staff_check_yes"
+            type="radio"
+            name="employee_staff"
+            onClick={() => {
+              
+            }}
+          ></input>
+          <label htmlFor="employee_staff_check_yes">
+          Biometric Screening (including cholesterol and diabetes screening)   
           </label>
               <br></br>
               <br></br>
@@ -46,11 +56,11 @@ const EmployeeQuestion = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
             type="radio"
             name="employee_staff"
             onClick={() => {
-              setIsEmployee(false);
+              
             }}
           ></input>
           <label htmlFor="employee_staff_check_no">
-            I am not a Yale-New Haven Health System employee.
+          Vaccine 
           </label>
         </fieldset>
       </div>

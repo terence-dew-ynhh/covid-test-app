@@ -1,6 +1,8 @@
 import { useState } from 'react';
-import SelectLocation from '../SelectLocationComponent';
-import SelectSymptoms from '../SelectSymptomsComponent';
+import EmployeeQuestionComponent from '../EmployeeQuestionComponent';
+import CurrentLTSymptomsComponent from '../CurrentLTSymptomsComponent';
+import CurrentSymptomsComponent from '../CurrentSymptomsComponent';
+import ApptQuestionComponent from '../ApptQuestionComponent';
 import styles from './QuestionViewComponent.module.css'
 
 
@@ -26,8 +28,10 @@ const QuestionViewComponent = ({
   const setSchedulerURL = (location) => {updateLocation(location)};
   
   const components = {
-    symptoms: SelectSymptoms,
-    location: SelectLocation
+    symptoms: CurrentSymptomsComponent,
+    ltsymptoms: CurrentLTSymptomsComponent,
+    employee: EmployeeQuestionComponent,
+    apptsel: ApptQuestionComponent
   };
 
   const ComponentName = components[compName || 'symptoms'];

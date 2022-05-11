@@ -34,10 +34,10 @@ handler.post(async (req, res) => {
 
 
 try{
-  const items = await req.db
-    .collection('survey_answers')
-    .insertOne(req.body);
-  // console.log(req.db)
+  // const items = await req.db
+  //   .collection('survey_answers')
+  //   .insertOne(req.body);
+  // // console.log(req.db)
 
   
 

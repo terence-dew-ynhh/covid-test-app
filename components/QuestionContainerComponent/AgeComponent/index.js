@@ -44,7 +44,7 @@ const Over18Component = ({
               setIsUnavailable(false);
               overEighteen(true);
               pediatric(false);
-              nextPage(e, 2);
+              nextPage(e);
             }}
           ></input>
           <label htmlFor="employee_staff_check_yes">{OEText[0]}</label>

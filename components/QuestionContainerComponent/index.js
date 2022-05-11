@@ -29,20 +29,6 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
 
   const compNames = [
     'age',
-    'vaccineconsent',
-    'firstdose',
-    'receivebooster',
-    'immunocomp',
-    'selectedvaccine',
-    'allergy',
-    'allergistapproval',
-    'selectpfizer',
-    'testedpositive',
-    'covidsymptoms',
-    'quartinecovid',
-    'monoclonal',
-    'misc',
-    'factsheet',
     'ynhhfactsheet'
   ];
 

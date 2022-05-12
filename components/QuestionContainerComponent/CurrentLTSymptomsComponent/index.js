@@ -15,8 +15,8 @@ const CurrentLTSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
             <p className="error" hidden={!(isCovidPositive === 'Yes')}>
-              Those that have previously tested positive are currently not
-              eligible for COVID-19 screening.
+              If you are experiencing a medical emergency, please call 9-1-1
+              right away and/or seek care at an Emergency Department.
             </p>
             <fieldset>
               <legend>
@@ -48,7 +48,7 @@ const CurrentLTSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
               <br></br>
               <br></br>
               <br></br>
-              
+
               <div className="radio_row_item">
                 <input
                   id="prev_covid_yes"

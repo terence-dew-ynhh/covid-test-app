@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import styles from './EmployeeQuestionComponent.module.css';
 
-const EmployeeQuestion = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
+const EmployeeQuestion = ({ nextPage, isPrevEnabled, isDoneEnabled, setSchedulerURL }) => {
   const [isEmployee, setIsEmployee] = useState(true);
 
   useEffect(() => {
@@ -26,40 +26,43 @@ const EmployeeQuestion = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
             Please select a visit type
           </legend>
           <input
-            id="employee_staff_check_yes"
+            id="employee_staff_check_sick"
             type="radio"
             name="employee_staff"
             onClick={() => {
-              
+              setSchedulerURL("Sick");
+              isDoneEnabled(true);
             }}
-          ></input>
-          <label htmlFor="employee_staff_check_yes">
+            ></input>
+          <label htmlFor="employee_staff_check_sick">
           Sick Visit
           </label>
               <br></br>
               <br></br>
           <input
-            id="employee_staff_check_yes"
+            id="employee_staff_check_bio"
             type="radio"
             name="employee_staff"
             onClick={() => {
-              
+              setSchedulerURL("Biometric");
+              isDoneEnabled(true);
             }}
-          ></input>
-          <label htmlFor="employee_staff_check_yes">
+            ></input>
+          <label htmlFor="employee_staff_check_bio">
           Biometric Screening (including cholesterol and diabetes screening)   
           </label>
               <br></br>
               <br></br>
           <input
-            id="employee_staff_check_no"
+            id="employee_staff_check_vacc"
             type="radio"
             name="employee_staff"
             onClick={() => {
-              
+              setSchedulerURL("Vaccine");
+              isDoneEnabled(true);
             }}
           ></input>
-          <label htmlFor="employee_staff_check_no">
+          <label htmlFor="employee_staff_check_vacc">
           Vaccine 
           </label>
         </fieldset>

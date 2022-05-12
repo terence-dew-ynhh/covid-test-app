@@ -44,19 +44,19 @@ Home.getInitialProps = async ({ query }) => {
   let link = '';
   const locationMapping = [
     {
-      name: 'Bridgeport Region',
+      name: 'Biometric',
       link:
-        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79285,79286,79548,79549,81918,82865,82866,84275,85559,86759&vt=2102&dept=100001340&view=plain&public=1'
+        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=1878,6460,63414,67242,206829&vt=1873&dept=104010100&view=plain&public=1'
     },
     {
-      name: 'New Haven Region',
+      name: 'Vaccine',
       link:
-        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79287,79288,79289,82068,82088,82312,82333,82519,82520,82521,82522,82523,82524,82687,82688,82689,82690,82828,82864,83261,83260,85739,86212&vt=2102&dept=100001341&view=plain&public=1'
+        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=1878,6460,63414,67242,206829&vt=10542&dept=104010100&view=plain&public=1'
     },
     {
-      name: 'New London Region',
+      name: 'Sick',
       link:
-        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79290,79561,79562,79290&vt=2102&dept=100001342&view=plain&public=1'
+        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=1878,6460,63414,67242,206829&vt=10540&dept=104010100&view=plain&public=1'
     }
   ];
 

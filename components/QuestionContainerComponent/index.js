@@ -8,7 +8,7 @@ const QuestionFormComponent = ({}) => {
 
   const [viewIdx, setviewIdx] = useState(0);
   const [endPoint, setEndpoint] = useState('Bridgeport Region');
-  const compNames = ['employee','ltsymptoms','symptoms', 'apptsel'];
+  const compNames = ['ltsymptoms','employee','symptoms', 'apptsel'];
   const router = useRouter();
   
   
@@ -35,17 +35,7 @@ const QuestionFormComponent = ({}) => {
 
   return (
     <div className={styles.questionContainer}>
-          {/* <div style={{  
-            content: '',
-	          position: 'fixed',
-	          bottom: '0px',
-	          left: '0%',
-            width: `${progressWidth}%`,
-            fontSize: '1.2em',
-            fontWeight: '600',
-            paddingLeft: `${progressWidth-15}%`,
-            color: '#0f4d92',
-            borderBottom: '15px solid #0f4d92'}} >{`${progressWidth}%`}</div> */}
+          
 
       <QuestionView
         nextPage={nextPage}

@@ -9,6 +9,7 @@ import AsympConsentComponent from '../AsympConsentComponent';
 import SympConsentComponent from '../SympConsentComponent';
 import HealthProvQuestionComponent from '../HealthProvQuestionComponent';
 import DisclaimerComponent from '../DisclaimerComponent';
+import TestReasonComponent from '../TestReasonComponent';
 import styles from './QuestionViewComponent.module.css'
 
 
@@ -48,7 +49,8 @@ const QuestionViewComponent = ({
     asympconsent: AsympConsentComponent,
     sympconsent: SympConsentComponent,
     healthprov: HealthProvQuestionComponent,
-    info: DisclaimerComponent    
+    info: DisclaimerComponent,
+    testreason: TestReasonComponent    
   };
 
   const ComponentName = components[compName || 'employee'];

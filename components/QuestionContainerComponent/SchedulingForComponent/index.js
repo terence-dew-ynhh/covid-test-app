@@ -8,7 +8,6 @@ const SchedulingForComponent = ({
   updateIsFiveOrBelow
 }) => {
   const [isOver18, setIsOver18] = useState(true);
-  const [isOver18andProxy, setIsOver18andProxy] = useState(true);
   useEffect(() => {
     isPrevEnabled(true);
     isDoneEnabled(false);
@@ -24,7 +23,6 @@ const SchedulingForComponent = ({
             type="radio"
             name="over_eighteeen_ques"
             onClick={() => {
-              updateIsFiveOrBelow(false);
               nextPage();
             }}
           ></input>
@@ -36,7 +34,6 @@ const SchedulingForComponent = ({
             type="radio"
             name="over_eighteeen_ques"
             onClick={() => {
-              updateIsFiveOrBelow(false);
               nextPage();
             }}
           ></input>
@@ -48,7 +45,6 @@ const SchedulingForComponent = ({
             type="radio"
             name="over_eighteeen_ques"
             onClick={() => {
-              updateIsFiveOrBelow(true);
               nextPage();
             }}
           ></input>

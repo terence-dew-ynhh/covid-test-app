@@ -11,13 +11,11 @@ const QuestionFormComponent = ({}) => {
   const [selectionCode, setSelectionCode] = useState('');
 
   const compNames = [
-    'info',
     'location',
     'priortest',
     'eighteen',
     'schedulingfor',
-    'consent',
-    'symptomssel',
+    'testreason',
     'asympconsent',
     'sympconsent'
   ];

@@ -82,7 +82,6 @@ const QuestionFormComponent = ({}) => {
         schedulePush={schedulePush}
         updateLocation={updateLocation}
         hasSymptoms={hasSymptoms}
-        updateLocation={updateLocation}
         updateIsFiveOrBelow={updateIsFiveOrBelow}
         updateSelectionCode={updateSelectionCode}
       ></QuestionView>

@@ -2,7 +2,7 @@
     "apps": [
         {
             "name": "yucovidtesting",
-            "script": "npm",
+            "script": "yarn",
             "args" : "start"
         }
     ]

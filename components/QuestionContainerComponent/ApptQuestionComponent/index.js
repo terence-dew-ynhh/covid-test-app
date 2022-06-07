@@ -40,20 +40,6 @@ const EmployeeQuestion = ({ nextPage, isPrevEnabled, isDoneEnabled, setScheduler
               <br></br>
               <br></br>
           <input
-            id="employee_staff_check_bio"
-            type="radio"
-            name="employee_staff"
-            onClick={() => {
-              setSchedulerURL("Biometric");
-              isDoneEnabled(true);
-            }}
-            ></input>
-          <label htmlFor="employee_staff_check_bio">
-          Biometric Screening (including cholesterol and diabetes screening)   
-          </label>
-              <br></br>
-              <br></br>
-          <input
             id="employee_staff_check_vacc"
             type="radio"
             name="employee_staff"

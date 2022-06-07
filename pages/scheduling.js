@@ -8,7 +8,7 @@ export default function Home({ link }) {
   return (
     <>
       <Head>
-        <title>YNHH COVID-19 Test Scheduler</title>
+      <title>YNHH Easy Care</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -44,19 +44,14 @@ Home.getInitialProps = async ({ query }) => {
   let link = '';
   const locationMapping = [
     {
-      name: 'Biometric',
-      link:
-        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=1878,6460,63414,67242,206829&vt=1873&dept=104010100&view=plain&public=1'
-    },
-    {
       name: 'Vaccine',
       link:
-        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=1878,6460,63414,67242,206829&vt=10542&dept=104010100&view=plain&public=1'
+        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=1878,6460,63414,67242,206829,7161&vt=10542&dept=104010100&view=plain&public=1'
     },
     {
       name: 'Sick',
       link:
-        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=1878,6460,63414,67242,206829&vt=10540&dept=104010100&view=plain&public=1'
+        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=1878,6460,63414,67242,206829,7161&vt=10540&dept=104010100&view=plain&public=1'
     }
   ];
 

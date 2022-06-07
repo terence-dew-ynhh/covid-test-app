@@ -55,8 +55,7 @@ const EmployeeQuestion = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
           ></input>
           <label htmlFor="employee_staff_check_empvirt">
             I am a Yale-New Haven Health System employee or non-employee
-            seeking VIRTUAL care Monday – Friday from 4pm-8pm, or
-            Saturday-Sunday 8am-8pm
+            seeking VIRTUAL care 7 days a week from 8am-8pm
           </label>
           <br></br>
           <br></br>

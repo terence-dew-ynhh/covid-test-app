@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import styles from './TestReasonComponent.module.css';
 
-const TestReasonComponent = ({ nextPage, isPrevEnabled, isNextEnabled }) => {
+const TestReasonComponent = ({ nextPage, isPrevEnabled, isNextEnabled, hasSymptoms}) => {
   const [isEmployee, setIsEmployee] = useState(true);
 
   useEffect(() => {
@@ -19,6 +19,7 @@ const TestReasonComponent = ({ nextPage, isPrevEnabled, isNextEnabled }) => {
             type="radio"
             name="employee_staff"
             onClick={(e) => {
+              hasSymptoms(true);
               nextPage(e,2);   
             }}
           ></input>
@@ -30,6 +31,7 @@ const TestReasonComponent = ({ nextPage, isPrevEnabled, isNextEnabled }) => {
             type="radio"
             name="employee_staff"
             onClick={() => {
+              hasSymptoms(false);
               nextPage();
             }}
           ></input>

@@ -256,7 +256,7 @@ const SelectSymptoms = ({
                 value={`prev_covid_no_symp_mandate`}
                 name="symptoms"
                 onChange={(e) => {
-                  handleChecked(e);
+                  nextPage(e,3);
                 }}
               ></input>
               <label
@@ -275,7 +275,7 @@ const SelectSymptoms = ({
                 value={`prev_covid_no_symp_travel`}
                 name="symptoms"
                 onChange={(e) => {
-                  handleChecked(e);
+                  nextPage(e,3);
                 }}
               ></input>
               <label

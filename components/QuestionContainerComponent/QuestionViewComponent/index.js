@@ -9,6 +9,8 @@ import AsympConsentComponent from '../AsympConsentComponent';
 import SympConsentComponent from '../SympConsentComponent';
 import HealthProvQuestionComponent from '../HealthProvQuestionComponent';
 import DisclaimerComponent from '../DisclaimerComponent';
+import BillingChangeComponent from '../BillingChangeComponent';
+import NotOfferedComponent from '../NotOfferedComponent';
 import styles from './QuestionViewComponent.module.css'
 
 
@@ -48,7 +50,9 @@ const QuestionViewComponent = ({
     asympconsent: AsympConsentComponent,
     sympconsent: SympConsentComponent,
     healthprov: HealthProvQuestionComponent,
-    info: DisclaimerComponent    
+    info: DisclaimerComponent,
+    billingchange: BillingChangeComponent,
+    notoffered: NotOfferedComponent    
   };
 
   const ComponentName = components[compName || 'employee'];

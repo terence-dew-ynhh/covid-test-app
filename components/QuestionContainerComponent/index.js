@@ -12,6 +12,7 @@ const QuestionFormComponent = ({}) => {
 
   const compNames = [
     'info',
+    'billingchange',
     'location',
     'priortest',
     'eighteen',
@@ -19,7 +20,8 @@ const QuestionFormComponent = ({}) => {
     'consent',
     'symptomssel',
     'asympconsent',
-    'sympconsent'
+    'sympconsent',
+    'notoffered'
   ];
   const router = useRouter();
 
@@ -84,7 +86,6 @@ const QuestionFormComponent = ({}) => {
         schedulePush={schedulePush}
         updateLocation={updateLocation}
         hasSymptoms={hasSymptoms}
-        updateLocation={updateLocation}
         updateIsFiveOrBelow={updateIsFiveOrBelow}
         updateSelectionCode={updateSelectionCode}
       ></QuestionView>

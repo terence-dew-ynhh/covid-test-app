@@ -14,6 +14,39 @@ const BillingChangeComponent = ({
     isDoneEnabled(false);
   }, []);
 
+  
+  let checkboxesArray = [
+    'None_of_the_Above'
+  ];
+  const regex = /_/gi;
+
+  let checkboxes = checkboxesArray.map((checkbox, idx) =>
+  (<div className={styles.chk_row_item}>
+    <label className={styles.none_label_or}>
+      {' '}
+      <b>Signature:</b><br></br>
+      By checking this box, I attest that I have read the FAQ (link
+            located above) and I understand that I may receive a bill for my
+            COVID-19 test from Yale-New Haven Health System.
+    </label>
+    <input
+      id={`prev_covid_${checkbox.toLowerCase()}`}
+      type="checkbox"
+      key={checkbox.replace(regex, ' ')}
+      value={checkbox.replace(regex, ' ')}
+      name="Consent"
+      onChange={(e) => {
+        nextPage(e)
+      }}
+    ></input>
+    <label
+      className={styles.prev_none_label}
+      htmlFor={`prev_covid_${checkbox.toLowerCase()}`}
+    >
+      {'By checking this box I agree to the above'}
+    </label>
+    </div>) );
+
   return (
     <>
       <div className={styles.question_row_item}>
@@ -38,24 +71,9 @@ const BillingChangeComponent = ({
           <br></br>
           <br></br>
         </p>
-        <fieldset className="radio_grp_set">
-          <legend>
-            By checking this box, I attest that I have read the FAQ (link
-            located above) and I understand that I may receive a bill for my
-            COVID-19 test from Yale-New Haven Health System.
-          </legend>
-          <input
-            id="over_eighteen"
-            type="radio"
-            name="over_eighteeen_ques"
-            onClick={() => {
-              nextPage();
-            }}
-          ></input>
-          <label id={styles.blocking_label} htmlFor="over_eighteen">
-            Continue
-          </label>
-        </fieldset>
+        <div className={styles.q1_grid}>{checkboxes}</div>
+
+        
       </div>
 
       <style jsx>{``}</style>

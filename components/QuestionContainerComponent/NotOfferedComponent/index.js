@@ -10,6 +10,7 @@ const NotOfferedComponent = ({
   const [isOver18, setIsOver18] = useState(true);
   const [isOver18andProxy, setIsOver18andProxy] = useState(true);
   useEffect(() => {
+    isPrevEnabled(false)
     isDoneEnabled(false);
   }, []);
 
@@ -37,7 +38,6 @@ const NotOfferedComponent = ({
           <br></br>
           <b> Connecticut:</b>
           <br></br>
-          <br></br>
           <b>
             {' '}
             <a href="https://portal.ct.gov/Coronavirus/TestingSiteListings">
@@ -52,8 +52,8 @@ const NotOfferedComponent = ({
             </a>
           </b>
           <br></br>
-          <b> New York:</b>
           <br></br>
+          <b> New York:</b>
           <br></br>
           <b>
             {' '}
@@ -61,6 +61,7 @@ const NotOfferedComponent = ({
               Find a Test Site Near You | Department of Health (ny.gov)
             </a>
           </b>
+          <br></br>
           <br></br>
           <b> Rhode Island:</b>
           <br></br>

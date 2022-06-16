@@ -1,7 +1,12 @@
 import styles from './SympConsentComponent.module.css';
 import { useState, useEffect } from 'react';
 
-const SympConsentComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, schedulePush }) => {
+const SympConsentComponent = ({
+  nextPage,
+  isPrevEnabled,
+  isDoneEnabled,
+  schedulePush
+}) => {
   const [hasConsent, setHasConsent] = useState(false);
 
   useEffect(() => {
@@ -53,22 +58,21 @@ const SympConsentComponent = ({ nextPage, isPrevEnabled, isDoneEnabled, schedule
               )}
               {hasConsent && (
                 <>
-                <br></br>
-                <br></br>
-                <button
-                  className="button"
-                  onClick={schedulePush}
-                >
-                  Schedule COVID-19 Testing Only
-                </button>
-                <br></br>
-                <br></br></>
+                  <br></br>
+                  <br></br>
+                  <button className="button" onClick={schedulePush}>
+                    Schedule COVID-19 Testing Only
+                  </button>
+                  <br></br>
+                  <br></br>
+                </>
               )}
-              If you are symptomatic and test positive, you may be eligible for
-              COVID-19 treatment. You should call your primary care provider,
-              or, if you do not have a primary care provider, call 833-ASK-YNHH
-              (833-275-9644) as soon as your result is available to be assessed
-              for eligibility for referral and treatment.
+              After choosing Complete Survey, you will be redirected to MyChart
+              to schedule a test at the dedicated test site for individuals with
+              possible symptoms for COVID-19. If you wish to speak with a Yale
+              Health medical professional, please contact the Campus COVID
+              Resource Line at <a href='tel:203-432-6604'>(203) 432-6604</a> or call your Primary Care
+              Provider.
               <br></br>
               <br></br>
             </legend>

@@ -14,7 +14,7 @@ import styles from './Over18Component.module.css'
     <>
       <div className={styles.question_row_item}>
       <p className="error" hidden={isOver18}>
-      If you are under the age of 18, a parent or guardian is required to schedule this appointment. We recommend contacting your medical provider directly or call the YNHHS COVID Call Center at 1-833-ASK-YNHH for a clinical assessment.
+      If you are under the age of 18, a parent or guardian is required to schedule this appointment.
         </p>
         
         <fieldset className="radio_grp_set">

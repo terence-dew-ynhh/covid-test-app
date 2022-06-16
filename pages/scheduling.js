@@ -51,7 +51,7 @@ Home.getInitialProps = async ({ query }) => {
     {
       name: 'Sick',
       link:
-        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=1878,6460,63414,67242,206829,7161&vt=2391&dept=104010100&view=plain&public=1'
+        'https://openscheduling.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=1878,6460,63414,67242,206829,7161&vt=2391&dept=104010100&view=plain&public=1'
     }
   ];
 

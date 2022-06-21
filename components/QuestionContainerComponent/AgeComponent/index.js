@@ -114,8 +114,25 @@ const Over18Component = ({
               pediatric(true);
               nextPage(e);
             }}
-          ></input>
+            ></input>
           <label htmlFor="employee_staff_check_five">{OEText[2]}</label>
+            <br></br>
+            <br></br>
+          <input
+            id="employee_staff_check_6mo"
+            type="radio"
+            name="employee_staff"
+            onClick={(e) => {
+              setIsUnavailable(true);
+              setJJApproved(false);
+              set18to64(false);
+              over65(false);
+              setIsOver50(false);
+              pediatric(true);
+              nextPage(e,12);
+            }}
+          ></input>
+          <label htmlFor="employee_staff_check_6mo">Someone who is 6 months – 4 years of age</label>
        
         </fieldset>
       </div>

@@ -128,7 +128,7 @@ const Over18Component = ({
               set18to64(false);
               over65(false);
               setIsOver50(false);
-              pediatric(false);
+              pediatric(true);
               setIsAdolescent(true)
               nextPage(e,12);
             }}

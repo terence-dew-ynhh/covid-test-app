@@ -79,7 +79,7 @@ const FactSheetComponent = ({
                 <span>FDA authorized </span>
                 <a
                   target="__blank"
-                  href="https://www.fda.gov/media/144638/download"
+                  href="https://mychart.ynhhs.org/mychart-prd/en-US/PDF/Modernafactsheetpeds6m-5y.pdf"
                   >
                   EUA
                 </a>

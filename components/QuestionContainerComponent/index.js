@@ -123,7 +123,6 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
   };
 
   const schedulePush = () => {
-    submitData();
     router.push(
       `/scheduling?&ispfizer=${isPfizer}&isseconddose=${
         !isThirdDose && !isBooster

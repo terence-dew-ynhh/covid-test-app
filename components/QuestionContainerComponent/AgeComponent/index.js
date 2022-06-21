@@ -38,11 +38,11 @@ const Over18Component = ({
        {isUnavailable && <p className="error">
         At this time, Yale New Haven Health is not offering COVID Vaccinations for this age group. Please check with your primary care provider or <a href="www.vaccines.gov/search/" target={"_blank"}>www.vaccines.gov/search/</a> to locate a local vaccine provider.
         </p>}
-        {isPediatric && (
+        {/* {isPediatric && (
           <p className="error" >
             At this time all appointments for children ages 5-11 are booked. Please check back here regularly for updates.
           </p>
-        )}
+        )} */}
         <p className="banner">
           The following questions should be answered on behalf of the individual
           being scheduled for vaccination.

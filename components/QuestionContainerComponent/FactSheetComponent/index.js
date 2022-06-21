@@ -72,28 +72,7 @@ const FactSheetComponent = ({
               <legend>
                 {FSText[0]}
                 <br></br>
-                <br></br>
-                <b>Pfizer Vaccination: </b>
-                <br></br>
-                <br></br>
-                <span>FDA authorized </span>
-                <a
-                  target="__blank"
-                  href="https://www.fda.gov/media/144414/download"
-                >
-                  EUA
-                </a>{' '}
-                <br></br>
-                <br></br>
-                <span>CDC authorized </span>
-                <a
-                  target="__blank"
-                  href="https://www.cdc.gov/vaccines/covid-19/eui/downloads/Pfizer-Caregiver.pdf"
-                  >
-                  EUI
-                </a>{' '}
-                  <br></br>
-                  <br></br>                
+                <br></br>              
                 <b>Moderna Vaccination: </b>
                 <br></br>
                 <br></br>
@@ -104,15 +83,7 @@ const FactSheetComponent = ({
                   >
                   EUA
                 </a>
-                <br></br>
-                <br></br>
-                  <span>CDC authorized </span>
-                <a
-                  target="__blank"
-                  href="https://www.cdc.gov/vaccines/covid-19/eui/downloads/Moderna-Caregiver.pdf"
-                >
-                  EUI
-                </a>
+               
                 <br></br>
               </legend>
 

@@ -67,7 +67,8 @@ const QuestionViewComponent = ({
   isOver50,
   setIsOver50,
   is2ndBooster,
-  setIs2ndBooster
+  setIs2ndBooster,
+  setIsAdolescent
 }) => {
   const [prevEnabled, setPrevEnabled] = useState(false);
   const [nextEnabled, setNextEnabled] = useState(false);
@@ -163,6 +164,7 @@ const QuestionViewComponent = ({
           setIsOver50={setIsOver50}
           is2ndBooster={is2ndBooster}
           setIs2ndBooster={setIs2ndBooster}
+          setIsAdolescent={setIsAdolescent}
         />
       </div>
       <div className={styles.buttonContainer}>

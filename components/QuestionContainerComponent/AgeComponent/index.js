@@ -17,7 +17,8 @@ const Over18Component = ({
   isOver50,
   setIsOver50,
   is2ndBooster,
-  setIs2ndBooster
+  setIs2ndBooster,
+  setIsAdolescent
 }) => {
   const [isUnavailable, setIsUnavailable] = useState(false);
 
@@ -34,10 +35,9 @@ const Over18Component = ({
   return (
     <>
       <div className={styles.question_row_item}>
-        <p className="error" hidden={!(isUnavailable && !isPediatric)}>
-          At this time, Yale New Haven Health does not currently have any
-          appointments available for primary series vaccinations.
-        </p>
+       {isUnavailable && <p className="error">
+        At this time, Yale New Haven Health is not offering COVID Vaccinations for this age group. Please check with your primary care provider or www.vaccines.gov/search/ to locate a local vaccine provider.
+        </p>}
         {isPediatric && (
           <p className="error" >
             At this time all appointments for children ages 5-11 are booked. Please check back here regularly for updates.
@@ -56,12 +56,12 @@ const Over18Component = ({
             type="radio"
             name="employee_staff"
             onClick={(e) => {
-              setIsUnavailable(false);
+              setIsUnavailable(true);
               over65(true);
               set18to64(false);
               setIsOver50(true)
               pediatric(false);
-              nextPage(e);
+              // nextPage(e);
             }}
           ></input>
           <label htmlFor="age1865">{OEText[0]}</label>
@@ -72,12 +72,12 @@ const Over18Component = ({
             type="radio"
             name="employee_staff"
             onClick={(e) => {
-              setIsUnavailable(false);
+              setIsUnavailable(true);
               over65(false);
               set18to64(true);
               pediatric(false);
               setIsOver50(true);
-              nextPage(e);
+              // nextPage(e);
             }}
           ></input>
           <label htmlFor="age1864">Someone who is 18 – 64 years of age</label>
@@ -88,13 +88,13 @@ const Over18Component = ({
             type="radio"
             name="employee_staff"
             onClick={(e) => {
-              setIsUnavailable(false);
+              setIsUnavailable(true);
               setSixteen(true);
               set18to64(false);
               over65(false);
               setIsOver50(false);
               pediatric(false);
-              nextPage(e);
+              // nextPage(e);
             }}
           ></input>
           <label htmlFor="employee_staff_check_sixteen">{OEText[4]}</label>
@@ -112,7 +112,7 @@ const Over18Component = ({
               over65(false);
               setIsOver50(false);
               pediatric(true);
-              nextPage(e);
+              // nextPage(e);
             }}
             ></input>
           <label htmlFor="employee_staff_check_five">{OEText[2]}</label>
@@ -123,16 +123,17 @@ const Over18Component = ({
             type="radio"
             name="employee_staff"
             onClick={(e) => {
-              setIsUnavailable(true);
+              setIsUnavailable(false);
               setJJApproved(false);
               set18to64(false);
               over65(false);
               setIsOver50(false);
-              pediatric(true);
+              pediatric(false);
+              setIsAdolescent(true)
               nextPage(e,12);
             }}
           ></input>
-          <label htmlFor="employee_staff_check_6mo">Someone who is 6 months – 4 years of age</label>
+          <label htmlFor="employee_staff_check_6mo">Someone who is 6 months – 5 years of age</label>
        
         </fieldset>
       </div>

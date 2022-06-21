@@ -19,6 +19,7 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
   const [is18to64, setis18to64] = useState(false);
   const [is1217, setIs1217] = useState(false);
   const [isPediatric, setIsPediatric] = useState(false);
+  const [isAdolescent, setIsAdolescent] = useState(false);
   const [isRiskGroup, setIsRiskGroup] = useState(false);
   const [isImmunocomp, setIsImmunocomp] = useState(false);
   const [isThirdDose, setIsThirdDose] = useState(false);
@@ -66,8 +67,6 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
   const over65 = (isOver65) => {
     setisOver65(isOver65);
   };
-    
-
 
   const pediatric = (isPediatric) => {
     setIsPediatric(isPediatric);
@@ -93,11 +92,11 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
   };
 
   const setSixteen = (sixteen) => {
-    setIs1217(sixteen)
-  }
+    setIs1217(sixteen);
+  };
   const setThirdDose = (thirdDose) => {
-    setIsThirdDose(thirdDose)
-  }
+    setIsThirdDose(thirdDose);
+  };
 
   const updateAnswerData = (questionData) => {
     // const dataKey = questionData.keys()
@@ -126,7 +125,9 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
   const schedulePush = () => {
     submitData();
     router.push(
-      `/scheduling?&ispfizer=${isPfizer}&isseconddose=${!isThirdDose && !isBooster}&isbooster=${isBooster}&immunocomp=${isImmunocomp}&thirddose=${isThirdDose}&over65=${isOver65}&eightteentosixtyfour=${is18to64}`,
+      `/scheduling?&ispfizer=${isPfizer}&isseconddose=${
+        !isThirdDose && !isBooster
+      }&isbooster=${isBooster}&immunocomp=${isImmunocomp}&thirddose=${isThirdDose}&over65=${isOver65}&eightteentosixtyfour=${is18to64}&isadolescent=${isAdolescent}`,
       '/scheduling'
     );
   };
@@ -202,12 +203,13 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
         setThirdDose={setThirdDose}
         isThirdDose={isThirdDose}
         is1217={is1217}
-        set18to64={(e)=> setis18to64(e)}
+        set18to64={(e) => setis18to64(e)}
         is18to64={is18to64}
         isOver50={isOver50}
-        setIsOver50={(e)=> setIsOver50(e)} 
-        is2ndBooster={is2ndBooster} 
-        setIs2ndBooster={(e)=> setIs2ndBooster(e)}
+        setIsOver50={(e) => setIsOver50(e)}
+        setIsAdolescent={(e) => setIsAdolescent(e)}
+        is2ndBooster={is2ndBooster}
+        setIs2ndBooster={(e) => setIs2ndBooster(e)}
       ></QuestionView>
       {/* <p>{`Zip Code ${isInZipCodeRange ? 'is' : 'is not'} in range`}</p> */}
     </div>

@@ -143,7 +143,8 @@ Home.getInitialProps = async ({ query }) => {
     immunocomp,
     thirddose,
     over65,
-    eightteentosixtyfour
+    eightteentosixtyfour,
+    isadolescent
   } = query;
   let link = '';
 
@@ -172,6 +173,11 @@ Home.getInitialProps = async ({ query }) => {
           'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=92548,92580,92581,92582,92699&vt=2465&dept=104010099,208040011,101870002,101450002,204590014&view=plain&public=1';
     }
   }
+
+  if(isadolescent == 'true'){
+  link = 'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=96596,96610,96598&vt=2110&dept=101870002,208040011,104150007&view=plain&public=1'
+  }
+
 
   link = link + '&lang=english';
   if (isbooster == null) link = '';

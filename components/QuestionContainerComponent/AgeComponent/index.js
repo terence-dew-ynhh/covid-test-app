@@ -118,7 +118,7 @@ const Over18Component = ({
           <label htmlFor="employee_staff_check_five">{OEText[2]}</label>
             <br></br>
             <br></br>
-          {/* <input
+          <input
             id="employee_staff_check_6mo"
             type="radio"
             name="employee_staff"
@@ -133,7 +133,7 @@ const Over18Component = ({
               nextPage(e,12);
             }}
           ></input>
-          <label htmlFor="employee_staff_check_6mo">Someone who is 6 months – 5 years of age</label> */}
+          <label htmlFor="employee_staff_check_6mo">Someone who is 6 months – 5 years of age</label>
        
         </fieldset>
       </div>

@@ -31,50 +31,7 @@ const SelectSymptoms = ({
     let noneChkTravel = document.getElementById(`prev_covid_no_symp_travel`);
     let noneChkMandate = document.getElementById(`prev_covid_no_symp_mandate`);
     let noneChkExp = document.getElementById(`prev_covid_no_symp_exp`);
-    if (
-      e.target.value === 'prev_covid_no_symp_exp' &&
-      e.target.checked === true
-    ) {
-      setHasSymptomsChk(false);
-      setHasSevereSymptoms(false);
-      // noneChkExp.checked = true;
-      updateSelectionCode('exposure');
-      nextPage(e);
-    } else if (
-      e.target.value === 'prev_covid_no_symp_travel' &&
-      e.target.checked === true
-    ) {
-     
-      setHasSymptomsChk(false);
-      setHasSevereSymptoms(false);
-      // noneChk.checked = true;
-      updateSelectionCode('travel');
-      nextPage(e);
-    } else if (
-      e.target.value === 'prev_covid_no_symp_mandate' &&
-      e.target.checked === true
-    ) {
 
-      setHasSymptomsChk(false);
-      setHasSevereSymptoms(false);
-      // noneChk.checked = true;
-      updateSelectionCode('mandate');
-      nextPage(e);
-    } else {
-      toggleCheckBoxes(
-        [
-          ...checkboxesArr,
-          ...severeCheckboxesArr,
-          'no_symp_exp',
-          'no_symp_travel',
-          'no_symp_mandate'
-        ],
-        false
-      );
-      noneChkMandate.checked = false;
-      noneChkTravel.checked = false;
-      isDoneEnabled(false);
-    }
 
     // If any of the boxes are checked beside None of the Above
 
@@ -129,7 +86,7 @@ const SelectSymptoms = ({
         if (shouldDisableSev) {
           setHasSymptomsChk(true);
           setHasSevereSymptoms(false);
-          nextPage(e, 2);
+          nextPage(e, 3);
           hasSymptoms(true);
           noneChkMandate.disabled = true;
           noneChkTravel.disabled = true;
@@ -237,7 +194,7 @@ const SelectSymptoms = ({
                 value={'prev_covid_no_symp_exp'}
                 name="symptoms"
                 onChange={(e) => {
-                  handleChecked(e);
+                  handleChecked(e,2);
                 }}
               ></input>
               <label
@@ -256,7 +213,7 @@ const SelectSymptoms = ({
                 value={`prev_covid_no_symp_mandate`}
                 name="symptoms"
                 onChange={(e) => {
-                  nextPage(e,3);
+                  nextPage(e);
                 }}
               ></input>
               <label
@@ -275,7 +232,7 @@ const SelectSymptoms = ({
                 value={`prev_covid_no_symp_travel`}
                 name="symptoms"
                 onChange={(e) => {
-                  nextPage(e,3);
+                  nextPage(e);
                 }}
               ></input>
               <label

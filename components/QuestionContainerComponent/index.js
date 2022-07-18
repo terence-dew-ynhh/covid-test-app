@@ -19,9 +19,9 @@ const QuestionFormComponent = ({}) => {
     'schedulingfor',
     'consent',
     'symptomssel',
+    'notoffered',
     'asympconsent',
     'sympconsent',
-    'notoffered'
   ];
   const router = useRouter();
 

@@ -11,6 +11,7 @@ import HealthProvQuestionComponent from '../HealthProvQuestionComponent';
 import DisclaimerComponent from '../DisclaimerComponent';
 import BillingChangeComponent from '../BillingChangeComponent';
 import NotOfferedComponent from '../NotOfferedComponent';
+import RetailComponent from '../RetailComponent';
 import styles from './QuestionViewComponent.module.css'
 
 
@@ -52,7 +53,8 @@ const QuestionViewComponent = ({
     healthprov: HealthProvQuestionComponent,
     info: DisclaimerComponent,
     billingchange: BillingChangeComponent,
-    notoffered: NotOfferedComponent    
+    notoffered: NotOfferedComponent,    
+    retail: RetailComponent    
   };
 
   const ComponentName = components[compName || 'employee'];

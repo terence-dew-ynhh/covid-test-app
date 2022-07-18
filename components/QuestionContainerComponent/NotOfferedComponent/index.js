@@ -14,26 +14,65 @@ const NotOfferedComponent = ({
     isDoneEnabled(false);
   }, []);
 
+  let checkboxes = ["None"].map((checkbox, idx) =>
+  (<div className={styles.chk_row_item}>
+    <label className={styles.none_label_or}>
+      {' '}
+      <b>Signature:</b><br></br>
+      By checking this box, I attest that I am making this appointment because I am mandated to test by my employer or school or I am testing for travel or recreational purposes. I am not making this appointment because I am symptomatic or have had a confirmed exposure to COVID-19. I agree to be responsible for and to pay the total charges for this COVID-19 Test. The cost of this test will be $75.  A bill will be sent once testing is complete.
+    </label>
+    <input
+      id={`prev_covid_${checkbox.toLowerCase()}`}
+      type="checkbox"
+      key={checkbox.replace(/_/gi, ' ')}
+      value={checkbox.replace(/_/gi, ' ')}
+      name="Consent"
+      onChange={(e) => {
+        handleChecked(e);
+      }}
+    ></input>
+    <label
+      className={styles.prev_none_label}
+      htmlFor={`prev_covid_${checkbox.toLowerCase()}`}
+    >
+      {'By checking this box I agree to the above'}
+    </label>
+  </div>));
+
   return (
     <>
       <div className={styles.question_row_item}>
         <p className="error">
           <b>
-            • Beginning June 15, 2022, federal funding is ending for COVID-19
-            testing across all healthcare systems. Yale New Haven Health is not
-            able to offer COVID-19 testing for the reason that you have
-            indicated at this time. Please check back later for additional
-            updates.
+          Yale-New Haven Health System is able to offer non-emergency/elective testing for this reason.  You are requesting this service.
           </b>
           <br></br>
           <br></br>
         </p>
         <p>
+          <fieldset>
+            <div className={styles.q1_grid}>{checkboxes}</div>
+          </fieldset>
+          <b>
+            {' '}
+            To set up payment arrangements you may contact the Yale New Haven Health billing office at 1-855-547-4584. <br></br><br></br>
+            If you are an employer or school and would like to contract with
+            Yale-New Haven Health System for mandated testing requirements,
+            please contact Veronica Fraser, Executive Director, Laboratory
+            Services at{' '}
+            <a href="mailto:veronica.fraser@ynhh.org">
+              veronica.fraser@ynhh.org
+            </a>
+            .
+          </b>
+          <br></br>
+          <br></br>
           <b>
             {' '}
             Below is a list of other options to consider if you need this type
             of testing:
           </b>
+
           <br></br>
           <br></br>
           <b> Connecticut:</b>
@@ -71,20 +110,6 @@ const NotOfferedComponent = ({
               COVID-19 Testing in Rhode Island | RI COVID-19 Information Portal
             </a>
           </b>
-          <br></br>
-          <br></br>
-          <b>
-            {' '}
-            If you are an employer or school and would like to contract with
-            Yale-New Haven Health System for mandated testing requirements,
-            please contact Veronica Fraser, Executive Director, Laboratory
-            Services at{' '}
-            <a href="mailto:veronica.fraser@ynhh.org">
-              veronica.fraser@ynhh.org
-            </a>
-            .
-          </b>
-          <br></br>
         </p>
       </div>
 

@@ -68,10 +68,10 @@
   display: grid;
   width: 100%;
   -ms-grid-columns: 1fr 1fr;
-  grid-template-columns: repeat(1, 1fr);
-  -ms-grid-rows: auto 1em;
-  grid-template-rows: repeat(5, auto);
-  row-gap: .5em;
+  grid-template-columns: repeat(2, 1fr);
+  -ms-grid-rows: auto 1em auto 1em auto 1em auto 1em auto 1em auto 1em auto;
+  grid-template-rows: repeat(7, auto);
+  row-gap: 1em;
   margin-top: 20px;
 }
 

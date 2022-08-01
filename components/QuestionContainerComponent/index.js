@@ -9,6 +9,7 @@ const QuestionFormComponent = ({}) => {
   const [location, setLocation] = useState('Fairfield County and NY');
   const [isFiveOrBelow, setIsFiveOrBelow] = useState(false);
   const [selectionCode, setSelectionCode] = useState('');
+  const [condition, setCondition] = useState('');
 
   const compNames = [
     'info',
@@ -55,7 +56,7 @@ const QuestionFormComponent = ({}) => {
 
   const schedulePush = () => {
     router.push(
-      `/scheduling?status=${status}&location=${location}&isBelowFive=${isFiveOrBelow}&code=${selectionCode}`,
+      `/scheduling?status=${status}&location=${location}&isBelowFive=${isFiveOrBelow}&code=${selectionCode}&condition=${condition}`,
       '/scheduling'
     );
   };
@@ -88,6 +89,7 @@ const QuestionFormComponent = ({}) => {
         hasSymptoms={hasSymptoms}
         updateIsFiveOrBelow={updateIsFiveOrBelow}
         updateSelectionCode={updateSelectionCode}
+        setCondition={(value) => setCondition(value)}
       ></QuestionView>
     </div>
   );

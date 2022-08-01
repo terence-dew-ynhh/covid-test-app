@@ -6,7 +6,8 @@ const SelectSymptoms = ({
   isPrevEnabled,
   isDoneEnabled,
   hasSymptoms,
-  updateSelectionCode
+  updateSelectionCode,
+  setCondition
 }) => {
   const [hasSymptomsChk, setHasSymptomsChk] = useState(false);
   const [hasSevereSymptoms, setHasSevereSymptoms] = useState(false);
@@ -16,6 +17,38 @@ const SelectSymptoms = ({
     isPrevEnabled(true);
   }, []);
 
+
+
+  let conditionLookup = {
+    "BodyAches": "bodyaches",
+
+    "PinkEye/RunnyEye(Conjunctivitis)": "conjunctivitis",
+
+    "Cough": "cough",
+
+    "Diarrhea": "diarrhea",
+
+    "Fever": "fever",
+
+    "Newlossoftasteorsmell": "losstastesmell",
+
+    "Nausea": "nausea",
+
+    "NewHeadaches": "newheadaches",
+
+    "ProfoundFatigue": "profoundfatigue",
+
+    "RunnyNose(Rhinorrhea)": "runnynose",
+
+    "ShortnessofBreath": "shortbreath",
+
+    "SinusCongestion": "sinuscongestion",
+
+    'Sorethroat': "sorethroat",
+
+    "Vomiting": "vomiting",
+
+  }
   const toggleCheckBoxes = (checkboxesArr, isDisabled) => {
     checkboxesArr.forEach((element) => {
       let symtomsChk = document.getElementById(
@@ -86,8 +119,10 @@ const SelectSymptoms = ({
         if (shouldDisableSev) {
           setHasSymptomsChk(true);
           setHasSevereSymptoms(false);
-          nextPage(e, 3);
           hasSymptoms(true);
+          let condition = e.target.value
+          setCondition(conditionLookup[condition.split(' ').join('')])
+          nextPage(e, 3);
           noneChkMandate.disabled = true;
           noneChkTravel.disabled = true;
           noneChkExp.disabled = true;
@@ -98,14 +133,14 @@ const SelectSymptoms = ({
         }
       } else {
         noneChkMandate.disabled = false;
-          noneChkTravel.disabled = false;
+        noneChkTravel.disabled = false;
         noneChkExp.disabled = false;
         setHasSymptomsChk(false);
         hasSymptoms(false);
         setHasSevereSymptoms(false);
         isDoneEnabled(false);
       }
-    } 
+    }
   };
 
   let severeCheckboxesArr = [
@@ -118,7 +153,7 @@ const SelectSymptoms = ({
   let checkboxesArr = [
     'Fever',
     'Cough',
-    'Shortness_of_Breath',
+    'Shortness of Breath',
     'Body Aches',
     'Profound Fatigue',
     'New Headaches',
@@ -139,7 +174,7 @@ const SelectSymptoms = ({
         id={`prev_covid_${checkbox.toLowerCase()}`}
         key={idx}
         type="checkbox"
-        value={checkbox.replace(regex, ' ')}
+        value={checkbox}
         name="symptoms"
         onChange={(e) => {
           handleChecked(e);
@@ -194,7 +229,7 @@ const SelectSymptoms = ({
                 value={'prev_covid_no_symp_exp'}
                 name="symptoms"
                 onChange={(e) => {
-                  handleChecked(e,2);
+                  handleChecked(e, 2);
                 }}
               ></input>
               <label

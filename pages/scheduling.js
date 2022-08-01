@@ -434,7 +434,50 @@ Home.getInitialProps = async ({ query }) => {
           'https://openscheduling.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=76702&vt=2102&dept=108710074&view=plain&public=1'
       },
       SymptomaticFive:
-        'https://openscheduling.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=76702&vt=2228&dept=108710074&view=plain&public=1',
+      {
+        "bodyaches":
+          "https://openscheduling.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=76702&vt=2181&dept=108710074&view=plain&public=1",
+
+        "conjunctivitis":
+          "https://openscheduling.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=76702&vt=2229&dept=108710074&view=plain&public=1",
+
+        "cough":
+          "https://openscheduling.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=76702&vt=2179&dept=108710074&view=plain&public=1",
+
+        "diarrhea":
+          "https://openscheduling.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=76702&vt=2236&dept=108710074&view=plain&public=1",
+
+        "fever":
+          "https://openscheduling.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=76702&vt=2154&dept=108710074&view=plain&public=1",
+
+        "losstastesmell":
+          "https://openscheduling.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=76702&vt=2188&dept=108710074&view=plain&public=1",
+
+        "nausea":
+          "https://openscheduling.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=76702&vt=2234&dept=108710074&view=plain&public=1",
+
+        "newheadaches":
+          "https://openscheduling.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=76702&vt=2185&dept=108710074&view=plain&public=1",
+
+        "profoundfatigue":
+          "https://openscheduling.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=76702&vt=2182&dept=108710074&view=plain&public=1",
+
+        "runnynose":
+          "https://openscheduling.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=76702&vt=2227&dept=108710074&view=plain&public=1",
+
+        "shortbreath":
+          "https://openscheduling.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=76702&vt=2180&dept=108710074&view=plain&public=1",
+
+        "sinuscongestion":
+          "https://openscheduling.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=76702&vt=2216&dept=108710074&view=plain&public=1",
+
+        "sorethroat":
+          "https://openscheduling.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=76702&vt=2187&dept=108710074&view=plain&public=1",
+
+        "vomiting":
+          "https://openscheduling.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=76702&vt=2235&dept=108710074&view=plain&public=1"
+
+      },
       AsymptomaticFive: {
         mandate:
           'https://openscheduling.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=76702&vt=2102&dept=108710074&view=plain&public=1',

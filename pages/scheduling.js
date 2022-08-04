@@ -5,7 +5,6 @@ import { useEffect } from 'react';
 export default function Home({ link }) {
   const router = useRouter();
   const { endpoint } = router.query;
-  console.log(endpoint);
 
   useEffect(() => {
     if (link == '') router.push(`/`);

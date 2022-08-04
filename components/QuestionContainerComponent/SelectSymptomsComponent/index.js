@@ -229,7 +229,10 @@ const SelectSymptoms = ({
                 value={'prev_covid_no_symp_exp'}
                 name="symptoms"
                 onChange={(e) => {
-                  handleChecked(e, 2);
+                  setHasSymptomsChk(false);
+                  setHasSevereSymptoms(false);
+                  updateSelectionCode('exposure');
+                  nextPage(e, 2);
                 }}
               ></input>
               <label
@@ -248,7 +251,10 @@ const SelectSymptoms = ({
                 value={`prev_covid_no_symp_mandate`}
                 name="symptoms"
                 onChange={(e) => {
-                  nextPage(e);
+                  setHasSymptomsChk(false);
+                  setHasSevereSymptoms(false);
+                  updateSelectionCode('mandate');
+                  nextPage(e, 2);
                 }}
               ></input>
               <label
@@ -267,7 +273,10 @@ const SelectSymptoms = ({
                 value={`prev_covid_no_symp_travel`}
                 name="symptoms"
                 onChange={(e) => {
-                  nextPage(e);
+                  setHasSymptomsChk(false);
+                  setHasSevereSymptoms(false);
+                  updateSelectionCode('travel');
+                  nextPage(e, 2);
                 }}
               ></input>
               <label

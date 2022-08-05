@@ -25,12 +25,8 @@ const NotOfferedComponent = ({
           <br></br>
         </p>
         <p>
-            Beginning June 15, 2022, federal funding is ending for COVID-19 testing across all healthcare systems. 
-            New haven Health is not able to offer COVID-19 testing for the reason that you have indicated at this time. 
-            Please check back later for additional updates.
           <br></br>
-          <br></br>
-            Below is a list of other options to consider if you need this type of testing:
+            <b>Below is a list of other options to consider if you need this type of testing:</b>
           <br></br>
           <br></br>
           <b> Connecticut:</b>

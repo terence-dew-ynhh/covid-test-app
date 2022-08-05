@@ -19,7 +19,7 @@ const NotOfferedComponent = ({
       <div className={styles.question_row_item}>
         <p className="error">
           <b>
-          Yale-New Haven Health System is able to offer non-emergency/elective testing for this reason.  You are requesting this service.
+          Yale New Haven Health is not able to offer COVID-19 testing for the reason that you have indicated at this time.  Please check back later for additional updates.
           </b>
           <br></br>
           <br></br>

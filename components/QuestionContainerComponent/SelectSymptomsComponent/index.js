@@ -252,6 +252,7 @@ const SelectSymptoms = ({
                 name="symptoms"
                 onChange={(e) => {
                   nextPage(e);
+                  updateSelectionCode('mandate');
                 }}
               ></input>
               <label
@@ -271,6 +272,7 @@ const SelectSymptoms = ({
                 name="symptoms"
                 onChange={(e) => {
                   nextPage(e);
+                  updateSelectionCode('travel');
                 }}
               ></input>
               <label

@@ -94,6 +94,9 @@ const ConsentComponent = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
 
         <div className={styles.question_row_item_sub}>
           <fieldset>
+      <p className="info">
+        Testing for the reason that you have indicated does not qualify to be billed to insurance.  You will receive a bill from Yale-New Haven Health System for $75 for this test.  Please read below.
+      </p>
             <div className={styles.q1_grid}>{checkboxes}</div>
           </fieldset>
           <p>

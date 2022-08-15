@@ -87,7 +87,7 @@ fieldset {
 .question_div {
   padding: 25px 35px;
 }
-.error, .advisement{
+.error, .advisement,.info{
   color:white;
   padding: 15px 20px;
   font-weight: 600;
@@ -99,6 +99,11 @@ fieldset {
 
 .advisement{
   background: blue;
+}
+
+.info {
+  background: #1B3D6F;
+  color: white;
 }
 
 .divider {

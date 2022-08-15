@@ -28,6 +28,10 @@
   color: red;
   font-weight: 700;
 }
+.info {
+  color: #1B3D6F;
+  font-weight: 700;
+}
 
 .radio_grp_set {
   padding-left: 35px;

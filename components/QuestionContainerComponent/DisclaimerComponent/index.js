@@ -50,13 +50,6 @@ const DisclaimerComponent = ({
           </b>
           <br></br>
           <br></br>
-          <b>
-            • Yale-New Haven Health is not able to offer testing for travel
-            documentation at this time. We are actively working to offer this
-            service again. Please check back later for additional updates.
-          </b>
-          <br></br>
-          <br></br>
         </p>
         <fieldset className="radio_grp_set">
           <legend>I have read the above and wish to proceed:</legend>

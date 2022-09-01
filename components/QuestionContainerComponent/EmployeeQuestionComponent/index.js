@@ -66,13 +66,11 @@ const EmployeeQuestion = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
             type="radio"
             name="employee_staff"
             onClick={() => {
-              location.href = "https://www.ynhhs.org/locations/appointment?id=33F4FE81BFEB4F459632C0499E54AF8A&dep=204440001&dt=2022-05-09"
+              location.href = "https://www.ynhhs.org/patient-care/urgent-care"
             }}
           ></input>
           <label htmlFor="employee_staff_check_empip">
-            I am a Yale-New Haven Health System employee or non-employee
-            seeking IN PERSON care Monday – Friday from 4pm-7:30pm, or Saturday
-            7:30am-4pm
+          I am a Yale-New Haven Health System employee or non-employee seeking IN PERSON care at a Walk-In or Urgent Care Center 
           </label>
         </fieldset>
       </div>

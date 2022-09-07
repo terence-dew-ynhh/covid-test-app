@@ -67,33 +67,13 @@ const HouseHoldExposureComponent = ({
         <div className={styles.question_row_item_sub}>
           <fieldset>
             <legend>
-              If you sustained a high risk exposure to someone with COVID-19 in
-              your household or in the community, please follow the
-              recommendations below regarding when to get a test and work
-              recommendations.
+              If you sustained an exposure to someone with COVID-19 in your household, community or during travel, please follow the recommendations below regarding when to get a test and work recommendations.
               <br></br>
               <br></br>
-              <b>1.</b>Fully Vaccinated AND <b>BOOSTED</b> Employees:<br></br>
-              <blockquote>
-                <b>a.</b> You may continue to work as long as you are
-                ASYMPTOMATIC<br></br>
-                <b>b.</b> You <b>DO NOT REQUIRE</b> testing
-              </blockquote>
+              <b>1.</b> Regardless of vaccination/boosted status, you may continue to work as long as you are ASYMPTOMATIC
               <br></br>
               <br></br>
-              <b>2.</b>
-              <b>NOT</b> Fully Vaccinated OR Fully Vaccinated AND{' '}
-              <b>NOT BOOSTED</b> Employees:<br></br>
-              <blockquote>
-                <b>a.</b>You may Continue to Work as long as you are
-                ASYMPTOMATIC and get testing.<br></br>
-                <blockquote>
-                  <b>i.</b>Schedule a test ONCE 1 or 2 days after your exposure
-                  AND<br></br>
-                  <b>ii.</b>Schedule a test ONCE between days 5 and 7 after your
-                  exposure<br></br>
-                </blockquote>
-              </blockquote>
+              <b>2.</b> You may (if desired) schedule a test <b>ONCE</b> 5 days after your exposure<br></br>
             </legend>
             <div className={styles.q1_grid}>{checkboxes}</div>
           </fieldset>

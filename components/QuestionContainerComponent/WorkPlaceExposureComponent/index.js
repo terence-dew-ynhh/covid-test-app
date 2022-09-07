@@ -73,28 +73,10 @@ const WorkPlaceExposureComponent = ({
               Infection Prevention department.
               <br></br>
               <br></br>
-              <b>1.</b> Fully Vaccinated AND <b>BOOSTED</b> Employees:
+              <b>1.</b>Regardless of vaccination/boosted status, you may continue to work as long as you are ASYMPTOMATIC 
               <br></br>
-              <blockquote>
-                <b>a.</b> You may continue to work as long as you are
-                ASYMPTOMATIC
-                <br></br>
-                <b>b.</b> You <b>DO NOT REQUIRE</b> testing<br></br>
-              </blockquote>
-              <b>2.</b>
-              <strong> NOT</strong> Fully Vaccinated OR Fully Vaccinated AND
-              <b> NOT BOOSTED </b>
-              Employees:<br></br>
-              <blockquote>
-                <b>a.</b>You may Continue to Work as long as you are
-                ASYMPTOMATIC and get testing<br></br>
-                <blockquote>
-                  <b>i.</b> Please schedule a test ONCE 1 or 2 days after
-                  your exposure AND<br></br>
-                  <b>ii.</b>Schedule a test ONCE between days 5 and 7 after your
-                  exposure<br></br>
-                </blockquote>
-              </blockquote>
+              <br></br>
+              <b>2.</b> You may (if desired) schedule a test <b>ONCE</b> 5 days after your exposure<br></br>
             </legend>
             <div className={styles.q1_grid}>{checkboxes}</div>
           </fieldset>

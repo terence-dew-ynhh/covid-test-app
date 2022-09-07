@@ -46,7 +46,7 @@ import styles from './RequireCovidTestingComponent.module.css'
           <label htmlFor="employee_staff_check_no">Return from Travel to a High Risk Area?</label>
           <br></br>
           <br></br> */}
-          <input
+          {/* <input
             id="employee_staff_check_exempt"
             type="radio"
             name="employee_staff"
@@ -71,7 +71,7 @@ import styles from './RequireCovidTestingComponent.module.css'
           ></input>
           <label htmlFor="employee_ri_check_exempt"><u>I work in RI</u> and am required to have weekly or twice weekly COVID-19 testing due to an exemption or some other reason.</label>
           <br></br>
-          <br></br>
+          <br></br> */}
           <input
             id="employee_staff_check_workplace_exposure"
             type="radio"
@@ -93,7 +93,7 @@ import styles from './RequireCovidTestingComponent.module.css'
               nextPage(e,11)
             }}
           ></input>
-          <label htmlFor="employee_staff_check_household_exposure">I am asymptomatic and I had a possible Household or Community exposure to someone with COVID-19</label>
+          <label htmlFor="employee_staff_check_household_exposure">I am asymptomatic and I had a possible Household, Community, or during Travel exposure to someone with COVID-19</label>
         </fieldset>        
       </div>
       <style jsx>{``}</style>

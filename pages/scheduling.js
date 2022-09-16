@@ -21,7 +21,6 @@ export default function Home({ link }) {
         data-additionalparams-dept="204620001"
         data-additionalparams-vt="10220"
         data-additionalparams-id="82100">
-
         </div>
       </div>
       <style jsx>{`

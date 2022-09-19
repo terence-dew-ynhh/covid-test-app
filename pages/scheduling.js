@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { useRouter } from 'next/router';
+import Script from 'next/script'
 
 export default function Home() {
   return (
@@ -7,7 +7,6 @@ export default function Home() {
       <Head>
         <title>Mohegan Flu Vaccine Scheduler</title>
         <link rel="icon" href="/favicon.ico" />
-        <script src="https://mychart.ynhhs.org/mychart-prd/Scripts/lib/Widget/widget_sdk.js"></script>
       </Head>
 
       <div className="grid">
@@ -25,7 +24,8 @@ export default function Home() {
       {/* </div> */}
       <style jsx>{`
 
-      `}</style>
+`}</style>
+      <Script src="https://mychart.ynhhs.org/mychart-prd/Scripts/lib/Widget/widget_sdk.js"/>
     </>
   );
 }

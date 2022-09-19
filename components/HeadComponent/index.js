@@ -28,8 +28,7 @@ const Head = (props) => (
     <meta property="og:image" content={props.ogImage || defaultOGImage} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <script src="https://mychart.ynhhs.org/mychart-prd/Scripts/lib/Widget/widget_sdk.js"></script>
-  </NextHead>
+    <script src="https://mychart.ynhhs.org/mychart-prd/Scripts/lib/Widget/widget_sdk.js"></script>  </NextHead>
 );
 
 Head.propTypes = {

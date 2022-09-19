@@ -25,7 +25,6 @@ export default function Home() {
       <style jsx>{`
 
 `}</style>
-      <Script src="https://mychart.ynhhs.org/mychart-prd/Scripts/lib/Widget/widget_sdk.js"/>
     </>
   );
 }

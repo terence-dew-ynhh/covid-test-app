@@ -490,7 +490,7 @@ Home.getInitialProps = async ({ query }) => {
   let link = location ? urlList[location][testingStatus] : '';
   if (testingStatus == 'Symptomatic' || testingStatus == 'SymptomaticFive') {
     link = location ? urlList[location][testingStatus][condition] : '';
-  } 
+  }
 
   if (status.includes('Asymptomatic'))
     link = location ? urlList[location][testingStatus][code] : '';

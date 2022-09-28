@@ -122,7 +122,7 @@ const SelectSymptoms = ({
           hasSymptoms(true);
           let condition = e.target.value
           setCondition(conditionLookup[condition.split(' ').join('')])
-          nextPage(e, 3);
+          nextPage(e, 4);
           noneChkMandate.disabled = true;
           noneChkTravel.disabled = true;
           noneChkExp.disabled = true;
@@ -232,7 +232,7 @@ const SelectSymptoms = ({
                   setHasSymptomsChk(false);
                   setHasSevereSymptoms(false);
                   updateSelectionCode('exposure');
-                  nextPage(e, 2);
+                  nextPage(e, 3);
                 }}
               ></input>
               <label

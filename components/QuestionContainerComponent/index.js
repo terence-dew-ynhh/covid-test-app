@@ -21,6 +21,7 @@ const QuestionFormComponent = ({}) => {
     'consent',
     'symptomssel',
     'notoffered',
+    'feeconsent',
     'asympconsent',
     'sympconsent',
   ];

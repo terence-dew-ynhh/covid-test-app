@@ -56,57 +56,7 @@ const FactSheetComponent = ({
 
   let FSText = isSpanish ? fsText.sp : fsText.en;
 
-  const links = isOver18 ? (
-    isJassenapproved ? (
-      <>
-        <br></br>
-        <br></br>
-        <a target="__blank" href="https://www.fda.gov/media/144638/download">
-          Moderna Vaccination EUA
-        </a>
-        <br></br>
-        <br></br>
-        <a
-          target="__blank"
-          href="https://mychart.ynhhs.org/MyChart-PRD/en-US/PDF/ESPCOVIDModernaVaccineFactSheet.pdf"
-        >
-          {FSText[4]}
-        </a>
-        <br></br>
-        <br></br>
-        <a
-          target="__blank"
-          href="https://mychart.ynhhs.org/mychart-prd/en-US/PDF/JJEUAEnglishRevised.pdf"
-        >
-          {FSText[9]}
-        </a>{' '}
-        {/* <br></br>
-      <br></br>
-      <a
-        target="__blank"
-        href="https://mychart.ynhhs.org/mychart-prd/en-US/PDF/JJEUA_ESP.pdf"
-      >
-        {FSText[10]}
-      </a> */}
-      </>
-    ) : (
-      <>
-        <br></br>
-        <br></br>
-        <a target="__blank" href="https://www.fda.gov/media/144638/download">
-          Moderna Vaccination EUA
-        </a>
-        <br></br>
-        <br></br>
-        <a
-          target="__blank"
-          href="https://mychart.ynhhs.org/MyChart-PRD/en-US/PDF/ESPCOVIDModernaVaccineFactSheet.pdf"
-        >
-          {FSText[4]}
-        </a>
-      </>
-    )
-  ) : null;
+
 
   return (
     <>
@@ -131,15 +81,6 @@ const FactSheetComponent = ({
                 >
                   EUA
                 </a>{' '}
-                <br></br>
-                <br></br>
-                <span>CDC authorized </span>
-                <a
-                  target="__blank"
-                  href="https://www.cdc.gov/vaccines/covid-19/eui/downloads/Pfizer-Caregiver.pdf"
-                  >
-                  EUI
-                </a>{' '}
                   <br></br>
                   <br></br>                
                 <b>Moderna Vaccination: </b>
@@ -154,13 +95,6 @@ const FactSheetComponent = ({
                 </a>
                 <br></br>
                 <br></br>
-                  <span>CDC authorized </span>
-                <a
-                  target="__blank"
-                  href="https://www.cdc.gov/vaccines/covid-19/eui/downloads/Moderna-Caregiver.pdf"
-                >
-                  EUI
-                </a>
                 <br></br>
               </legend>
 

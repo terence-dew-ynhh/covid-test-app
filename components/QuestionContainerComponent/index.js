@@ -37,12 +37,12 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
 
   const compNames = [
     'receivebooster',
-    'hithistory',
     'testedpositive',
     'covidsymptoms',
     'quartinecovid',
     'monoclonal',
     'misc',
+    'selectedvaccine',
     'factsheet',
     'ynhhfactsheet',
   ];
@@ -107,9 +107,7 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
   const schedulePush = () => {
     submitData();
     router.push(
-      `/scheduling?recc_date=${selDate}&in_zip_range=${isInZipCodeRange}&second_dose=${
-        isPfizer == null ? false : true
-      }&isPfizer=${isPfizer}&isSpanish=${isSpanish}&isRiskGroup=${isRiskGroup}&isOver18=${isOver18}&jjapproved=${isJassenapproved}&isimmunocomp=${isImmunocomp}&isbooster=${isBooster}`,
+      `/scheduling?isPfizer=${isPfizer}`,
       '/scheduling'
     );
   };

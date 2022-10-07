@@ -22,7 +22,7 @@ const ReceiveBoosterConsent = ({
   }, []);
 
   const handleChecked = (e) => {
-    nextPage(e, 2);
+    nextPage(e, 1);
   };
 
   let VEText = isSpanish ? veText.sp : veText.en;
@@ -55,35 +55,29 @@ const ReceiveBoosterConsent = ({
       <div className={styles.question_row_item}>
         <div className={styles.question_row_item_sub}>
           <p className="banner">
-            This site is only for employees and affiliates of YNHHS. Please go
-            to{' '}
-            <a href="covidvaccine.ynhh.org">
-              <span style={{color: "#fff", textDecoration: "underline"}}>covidvaccine.ynhh.org</span>
-            </a>{' '}
-            to schedule your vaccination if you are not an employee or affiliate
-            of YNHHS.
+            This site is only for employees and affiliates of YNHHS. 
           </p>
           <br></br>
           <br></br>
           <fieldset>
             <legend>
-              <b>Current Eligibility Criteria for Booster:</b>
+              <b>Current Eligibility Criteria for the 2022 Covid-19 bivalent (Omicron) booster:</b>
               <br></br>
               <br></br>
-              {VEText[0]}
+              -You are eligible to receive your Covid-19 2022 bivalent (Omicron) booster if you are at least two (2) months post your initial vaccine series or your last booster
               <br></br>
               <br></br>
-              {VEText[1]}{' '}
-              <a
-                href="https://mychart.ynhhs.org/mychart-prd/en-US/PDF/ChronicConditions.pdf"
-                target="_blank"
-                rel="noreferrer"
-              >
-                - Click to view high risk conditions
-              </a>
+              -The Pfizer booster for people ages 12 years and older, and the Moderna booster for people ages 18 years and older. 
               <br></br>
               <br></br>
-              {VEText[2]}
+              <b>You should not get the booster if you had a severe allergic reaction after a previous dose of any COVID-19 booster or to vaccine ingredients below:</b>
+              <br></br>
+              <br></br>
+                -The <b>Moderna</b> Omicron booster contains the following ingredients: messenger ribonucleic acid (mRNA), lipids (SM-102, polyethylene glycol [PEG] 2000 dimyristoyl glycerol [DMG], cholesterol, and 1,2-distearoyl-sn-glycero-3-phosphocholine [DSPC]), tromethamine, tromethamine hydrochloride, acetic acid, sodium acetate trihydrate, and sucrose. 
+              <br></br>
+              <br></br>
+                -The <b>Pfizer</b> Omicron booster contains the following ingredients: messenger ribonucleic acid (mRNA), lipids (((4-hydroxybutyl)azanediyl)bis(hexane-6,1-diyl)bis(2hexyldecanoate), 2 [(polyethylene glycol)-2000]-N,N-ditetradecylacetamide,1,2-Distearoyl-sn-glycero-3-phosphocholine and cholesterol), tromethamine hydrochloride, and sucrose.  
+
             </legend>
             <div className={styles.q1_grid}>{checkboxes}</div>
           </fieldset>

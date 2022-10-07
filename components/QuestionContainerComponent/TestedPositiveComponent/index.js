@@ -34,6 +34,12 @@ const TestedPositiveComponent = ({
                 <br></br>
                 <br></br>
                 <b>{TPText[1]}</b>
+                <br></br>
+                <br></br>
+                - Your isolation period has ended – which is 7 days for YNHHS employees and medical staff 
+                <br></br>
+                <br></br>
+                - Your symptoms are gone (if you had symptoms) and you are fever-free (and not on fever reducing medications such as Tylenol)   
               </legend>
 
               <div className="radio_row_item">

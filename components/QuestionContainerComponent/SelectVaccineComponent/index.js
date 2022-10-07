@@ -26,30 +26,12 @@ const SelectVaccineComponent = ({
       <div className="radio_grp">
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
-            <p className="banner">{SVText[1]}</p>
-            <p className="error" hidden={!(isModerna && isBooster)}>
-              Yale New Haven Health is following State of Connecticut and
-              Centers for Disease Control and Prevention (CDC) guidance that
-              allows for certain individuals to receive a booster dose of the
-              Pfizer COVID-19 vaccine. The current recommendations do not allow
-              those who have received Moderna as a primary series to receive a
-              booster. <br></br>
-              <br></br>
-              We will continue to update our website, ynhhs.org, regarding
-              eligibility and additional guidance. Please do not contact your
-              doctor’s office to request a booster if you are not currently
-              eligible.
-            </p>
-            <p className="error" hidden={!(isModerna && !isBooster)}>
-            Yale New Haven Health does not currently have any appointments available for Moderna third dose. 
-            </p>
+            {/* <p className="banner">{SVText[1]}</p> */}
             <br></br>
             <br></br>
             <fieldset>
               <legend>
-                {isBooster
-                  ? 'What was your original series dose?'
-                  : `What was your Dose 1${isImmunocomp ? '&2' : ''} Vaccine?`}
+             What was your original series dose?
               </legend>
 
               <div className="radio_row_item">
@@ -59,14 +41,8 @@ const SelectVaccineComponent = ({
                   value="No"
                   name="prev_covid"
                   onClick={(e) => {
-                    if(isBooster){
-                    setIsModerna(true);
-                    }else{
-                    updateAnswerData({ sel_vaccine: 'Moderna' });
-                    pfizerSelected(false);
-                    if(isImmunocomp) nextPage(e);
-                    else nextPage(e, 3);
-                    }
+                    pfizerSelected(true)
+                    nextPage(e)
                   }}
                 ></input>
                 <label htmlFor="prev_covid_no">Moderna</label>
@@ -80,9 +56,8 @@ const SelectVaccineComponent = ({
                   value="Yes"
                   name="prev_covid"
                   onClick={(e) => {
-                    updateAnswerData({ sel_vaccine: 'Pfizer' });
-                    pfizerSelected(true);
-                    nextPage(e, 3);
+                    pfizerSelected(false)
+                    nextPage(e)
                   }}
                 ></input>
                 <label htmlFor="prev_covid_yes">Pfizer</label>

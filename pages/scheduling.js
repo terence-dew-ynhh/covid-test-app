@@ -56,6 +56,8 @@ Home.getInitialProps = async ({ query }) => {
   const { recc_date, second_dose, isPfizer, isSpanish } = query;
     
   let link = "https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=92544,92545,92546,92734,92543,92735,92736&vt=2465&dept=103070034,101010172,108010099,102010094,104010097,108710073,103700027&view=plain&public=1&lang=english"
+  if(isPfizer == 'false')
+  link = "https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=92544,92545,92546,92734,92543,92735,92736&vt=2465&dept=103070034,101010172,108010099,102010094,104010097,108710073,103700027&view=plain&public=1&lang=english"
     
   return {
     link,

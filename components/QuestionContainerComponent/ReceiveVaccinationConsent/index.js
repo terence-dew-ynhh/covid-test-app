@@ -57,17 +57,7 @@ const ReceiveVaccinationConsent = ({
           {/* <p className="message">{VEText[10]}</p> */}
           <fieldset>
             <legend>
-              {VEText[0]}
-              <br></br>
-              <br></br>
-              {VEText[5]}
-              <br></br>
-              <br></br>
-              <b>{VEText[6]}</b>
-              <br></br>
-              <br></br>
-              <b>{VEText[9]}</b>
-              <b className="redText">{VEText[15]}</b>
+              I understand that I am scheduling an appointment to recieve a COVID-19 Booster shot at a YNHHS site. As such, I consent to my immunization records being shared with and retained in my Occupational Health record and if applicable, my Epic electronic health records at YNHHS. Upon consenting, this immunization record will be available to my health care providers, and I hearby consent to the disclosure of this information.
             </legend>
             <div className={styles.q1_grid}>{checkboxes}</div>
           </fieldset>

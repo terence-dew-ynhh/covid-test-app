@@ -42,6 +42,7 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
     'quartinecovid',
     'monoclonal',
     'misc',
+    'vaccineconsent',
     'selectedvaccine',
     'factsheet',
     'ynhhfactsheet',

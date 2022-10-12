@@ -67,7 +67,7 @@ const ReceiveBoosterConsent = ({
               -You are eligible to receive your Covid-19 2022 bivalent (Omicron) booster if you are at least two (2) months post your initial vaccine series or your last booster
               <br></br>
               <br></br>
-              -The Pfizer booster for people ages 12 years and older, and the Moderna booster for people ages 18 years and older. 
+              -The Pfizer booster is for people ages 12 years and older, and the Moderna booster for people ages 18 years and older. 
               <br></br>
               <br></br>
               <b>You should not get the booster if you had a severe allergic reaction after a previous dose of any COVID-19 booster or to vaccine ingredients below:</b>

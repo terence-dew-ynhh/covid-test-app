@@ -40,8 +40,6 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
     'testedpositive',
     'covidsymptoms',
     'quartinecovid',
-    'monoclonal',
-    'misc',
     'vaccineconsent',
     'selectedvaccine',
     'factsheet',

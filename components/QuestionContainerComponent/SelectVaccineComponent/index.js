@@ -41,7 +41,7 @@ const SelectVaccineComponent = ({
                   value="No"
                   name="prev_covid"
                   onClick={(e) => {
-                    pfizerSelected(true)
+                    pfizerSelected(false)
                     nextPage(e)
                   }}
                 ></input>
@@ -56,7 +56,7 @@ const SelectVaccineComponent = ({
                   value="Yes"
                   name="prev_covid"
                   onClick={(e) => {
-                    pfizerSelected(false)
+                    pfizerSelected(true)
                     nextPage(e)
                   }}
                 ></input>

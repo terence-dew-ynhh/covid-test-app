@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import styles from './ReceiveBoosterConsent.module.css';
 import veText from './vaccineelidgibility.json';
-import { TramRounded } from '@material-ui/icons';
 
 const ReceiveBoosterConsent = ({
   nextPage,
@@ -11,7 +10,7 @@ const ReceiveBoosterConsent = ({
 }) => {
   useEffect(() => {
     isDoneEnabled(false);
-    isPrevEnabled(TramRounded);
+    isPrevEnabled(false);
   }, []);
 
   const handleChecked = (e) => {

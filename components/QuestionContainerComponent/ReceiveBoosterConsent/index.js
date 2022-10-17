@@ -1,14 +1,7 @@
 import { useEffect } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import styles from './ReceiveBoosterConsent.module.css';
 import veText from './vaccineelidgibility.json';
 import { TramRounded } from '@material-ui/icons';
-
-const useStyles = makeStyles(() => ({
-  tooltip: {
-    fontSize: 25
-  }
-}));
 
 const ReceiveBoosterConsent = ({
   nextPage,

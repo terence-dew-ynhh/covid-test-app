@@ -8,7 +8,7 @@ const QuestionFormComponent = ({}) => {
 
   const [viewIdx, setviewIdx] = useState(0);
   const [endPoint, setEndpoint] = useState('BH FLU FAIR CLINIC');
-  const compNames = ['consent','factsheet'];
+  const compNames = ['consent','previous'];
   const router = useRouter();
 
   

@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import styles from './ConsentComponent.module.css'
 
 
- const Consent =({nextPage, isPrevEnabled, isDoneEnabled, schedulePush}) => {
-  
+const Consent = ({ nextPage, isPrevEnabled, isDoneEnabled, schedulePush }) => {
+
   const [isMandated, setIsMandated] = useState(true);
 
   useEffect(() => {
@@ -11,16 +11,16 @@ import styles from './ConsentComponent.module.css'
     isDoneEnabled(false);
   }, []);
 
-    return (
+  return (
     <>
       <div className={styles.question_row_item}>
-      <p className="error" hidden={isMandated}>
+        <p className="error" hidden={isMandated}>
           Sorry, please navigate to a public testing website to schedule your
-          test.
+          vaccination.
         </p>
         <fieldset className="radio_grp_set">
           <legend>
-          I understand that information regarding this vaccination will be copied from Epic into my occupational health record, for purposes of documenting compliance with YNHHS vaccination requirements, and I hereby consent to the disclosure of this information for such purposes.          </legend>
+          I understand that I am scheduling an appointment to receive the Flu shot at a YNHHS site. As such, I consent to my immunization records being shared with and retained in my Occupational Health records and, if applicable, my Epic electronic health records at YNHHS. Upon consenting, this immunization record will be available to my health care providers, and I hereby consent to the disclosure of this information.</legend>
           <input
             id="mandated_test_check_yes"
             type="radio"
@@ -38,11 +38,10 @@ import styles from './ConsentComponent.module.css'
             name="mandated_test"
             onClick={() => {
               setIsMandated(false);
-              schedulePush(true);
             }}
           ></input>
           <label htmlFor="mandated_test_check_no">Do Not Agree</label>
-        </fieldset>        
+        </fieldset>
       </div>
       <style jsx>{``}</style>
     </>

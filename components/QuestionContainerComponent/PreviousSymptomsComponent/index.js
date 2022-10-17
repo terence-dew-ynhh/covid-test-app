@@ -9,27 +9,23 @@ const PreviousSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled, schedulePush
     isPrevEnabled(true);
   }, []);
 
-  const toCallService = (e) => {
-    setIsCovidPositive(e.target.value);
-                    schedulePush(true);
-  }
+
   return (
     <>
       <div className="radio_grp">
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
-            <p className="error" hidden={!(isCovidPositive === 'Yes')}>
-              Those that have previously tested positive are currently not
-              eligible for COVID-19 screening.
+            <p className="error" hidden={!(isCovidPositive == 'Yes')}>
+              Sorry, you are not eligible for the Flu shot.
             </p>
             <fieldset>
               <legend>
-                Have you had any of the following?                 
+                Have you had any of the following?
               </legend>
               <legend> - A serious reaction to a flu
-                shot</legend> 
-                <legend> - Guillain-Barré syndrome</legend>
-                <legend> - Allergy to chicken eggs or chicken
+                shot</legend>
+              <legend> - Guillain-Barré syndrome</legend>
+              <legend> - Allergy to chicken eggs or chicken
                 egg product</legend>
 
               <div className="radio_row_item">
@@ -39,7 +35,7 @@ const PreviousSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled, schedulePush
                   value="Yes"
                   name="prev_covid"
                   onClick={(e) => {
-                    toCallService(e)
+                    setIsCovidPositive(e.target.value);
                   }}
                 ></input>
                 <label htmlFor="prev_covid_yes">Yes</label>
@@ -50,7 +46,7 @@ const PreviousSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled, schedulePush
                     value="No"
                     name="prev_covid"
                     onClick={(e) => {
-                      nextPage();
+                      schedulePush(true);
                       setIsCovidPositive(e.target.value);
                     }}
                   ></input>

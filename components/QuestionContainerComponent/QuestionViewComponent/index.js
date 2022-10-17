@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import YNHHFactSheetComponent from '../YNHHFactSheetComponent';
 import PreviousSymptoms from '../PreviousSymptomsComponent';
-import Consent from '../ReceiveBoosterConsent';
+import Consent from '../ConsentComponent';
 import SelectLocation from '../SelectLocationComponent';
 import styles from './QuestionViewComponent.module.css'
 
@@ -28,7 +28,6 @@ const QuestionViewComponent = ({
   const setSchedulerURL = (location) => {updateLocation(location)};
   
   const components = {
-    factsheet: YNHHFactSheetComponent,
     previous: PreviousSymptoms,
     consent: Consent,
     selectlocation: SelectLocation

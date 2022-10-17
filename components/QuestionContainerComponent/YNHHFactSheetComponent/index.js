@@ -1,32 +1,6 @@
 import { useState, useEffect } from 'react';
 import styles from './YNHHFactSheetComponent.module.css';
 import fsText from './ynhhfactsheet.json';
-import Modal from '@material-ui/core/Modal';
-import { makeStyles } from '@material-ui/core/styles';
-
-function getModalStyle() {
-  const top = 50;
-  const left = 52;
-  const innerLeft = 50;
-
-  return {
-    top: `${top}%`,
-    left: `${left}%`,
-    transform: `translate(-${top}%, -${innerLeft}%)`
-  };
-}
-
-const useStyles = makeStyles((theme) => ({
-  paper: {
-    position: 'absolute',
-    height: '90%',
-    backgroundColor: theme.palette.background.paper,
-    border: '2px solid #000',
-    boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3),
-    outline: 0
-  }
-}));
 
 const YNHHFactSheetComponent = ({
   isPrevEnabled,
@@ -34,30 +8,15 @@ const YNHHFactSheetComponent = ({
   schedulePush,
 }) => {
   const [isDiagnosed, setIsDiagnosed] = useState('');
-  const [open, setOpen] = useState(false);
-  const [modalStyle] = useState(getModalStyle);
 
   useEffect(() => {
     isDoneEnabled(false);
     isPrevEnabled(true);
   }, []);
 
-  const classes = useStyles();
   let FSText = fsText.en;
 
-  const handleOpen = () => {
-    setOpen(true);
-  };
 
-  const handleClose = () => {
-    setOpen(false);
-  };
-
-  const body = (
-    <div style={modalStyle} className={classes.paper}>
-      <img style={{height: '100%' }} src="Schedule.PNG"></img>
-    </div>
-  );
 
   return (
     <>
@@ -123,14 +82,7 @@ const YNHHFactSheetComponent = ({
             </fieldset>
           </div>
         </div>
-        <Modal
-          open={open}
-          onClose={handleClose}
-          aria-labelledby="simple-modal-title"
-          aria-describedby="simple-modal-description"
-        >
-          {body}
-        </Modal>
+
       </div>
       <style jsx>{``}</style>
     </>

@@ -97,6 +97,12 @@ fieldset {
   padding: 15px 20px;
   font-weight: 600;
 }
+.banner{
+  color:white;
+  background: #0f4d92;
+  padding: 15px 20px;
+  font-weight: 600;
+}
 
 .divider {
   display: block;

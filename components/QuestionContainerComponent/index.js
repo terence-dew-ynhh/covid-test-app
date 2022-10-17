@@ -8,7 +8,7 @@ const QuestionFormComponent = ({}) => {
 
   const [viewIdx, setviewIdx] = useState(0);
   const [endPoint, setEndpoint] = useState('BH FLU FAIR CLINIC');
-  const compNames = ['selectlocation'];
+  const compNames = ['consent','factsheet'];
   const router = useRouter();
 
   
@@ -24,7 +24,7 @@ const QuestionFormComponent = ({}) => {
 
   const schedulePush = (isdisqualified) => {
 
-     router.push(`/scheduling?endpoint=${endPoint}`,'/scheduling');
+     router.push(`/scheduling`,'/scheduling');
   };
 
   const updateLocation = (endpoint) =>{

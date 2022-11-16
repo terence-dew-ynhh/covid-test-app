@@ -13,6 +13,7 @@ import BillingChangeComponent from '../BillingChangeComponent';
 import NotOfferedComponent from '../NotOfferedComponent';
 import RetailComponent from '../RetailComponent';
 import FeeConsentComponent from '../FeeConsentComponent';
+import ProviderOrderComponent from '../ProviderOrderComponent';
 import styles from './QuestionViewComponent.module.css'
 
 
@@ -57,7 +58,8 @@ const QuestionViewComponent = ({
     billingchange: BillingChangeComponent,
     notoffered: NotOfferedComponent,    
     retail: RetailComponent,
-    feeconsent: FeeConsentComponent    
+    feeconsent: FeeConsentComponent,
+    provorder: ProviderOrderComponent    
   };
 
   const ComponentName = components[compName || 'employee'];

@@ -36,7 +36,7 @@ const Over18Component = ({
     <>
       <div className={styles.question_row_item}>
        {isUnavailable && <p className="error">
-        At this time, Yale New Haven Health is not offering COVID Vaccinations for this age group. Please check with your primary care provider or <a href="www.vaccines.gov/search/" target={"_blank"}>www.vaccines.gov/search/</a> to locate a local vaccine provider.
+        At this time, Yale New Haven Health is not offering COVID Vaccinations for this age group. Please check with your primary care provider or <a href="http://www.vaccines.gov" target={"__blank"}>www.vaccines.gov/search</a> to locate a local vaccine provider.
         </p>}
         {/* {isPediatric && (
           <p className="error" >

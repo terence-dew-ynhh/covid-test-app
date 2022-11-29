@@ -43,14 +43,14 @@ Home.getInitialProps = async ({ query }) => {
   const { endpoint, testingstate } = query;
   console.log(testingstate)
   let link =
-    'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=76698,76701,81079,82383,81452,76702,82948,82949&vt=2372&dept=103010119,108010101,103720003,101050022,100001365,108710074,100001383,100001358,100001382&view=plain&public=1';
+    'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=76698,76701,81079,82383,81452,76702,82948,108432,82949&vt=2372&dept=103010119,108010101,103720003,101050022,100001365,108710074,100001383,108140001,100001382&view=plain&public=1';
 
   if (endpoint == 'Approved Travel for Mohegan Employees')
     link =
-      'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=76698,76701,81079,82383,81452,76702,82948,82949,79643&vt=2371&dept=103010119,108010101,103720003,101050022,100001365,108710074,100001383,100001358,100001382&view=plain&public=1';
+      'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=76698,76701,81079,82383,81452,76702,82948,82949,108432&vt=2371&dept=103010119,108010101,103720003,101050022,100001365,108710074,100001383,108140001,100001382&view=plain&public=1';
 
-  if(testingstate === '3') link = 'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=76698,76701,81079,82383,81452,76702,82948,82949&vt=2473&dept=103010119,108010101,103720003,101050022,100001365,108710074,100001383,100001358,100001382&view=plain&public=1'
-  if(testingstate === '1') link = 'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=76698,76701,81079,82383,81452,76702,82948,82949,79643&vt=2371&dept=103010119,108010101,103720003,101050022,100001365,108710074,100001383,100001358,100001382&view=plain&public=1'
+  if(testingstate === '3') link = 'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=76698,76701,81079,82383,81452,76702,82948,108432,82949&vt=2473&dept=103010119,108010101,103720003,101050022,100001365,108710074,100001383,108140001,100001382&view=plain&public=1'
+  if(testingstate === '1') link = 'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=76698,76701,81079,82383,81452,76702,82948,82949,108432&vt=2371&dept=103010119,108010101,103720003,101050022,100001365,108710074,100001383,108140001,100001382&view=plain&public=1'
   
   return {
     link

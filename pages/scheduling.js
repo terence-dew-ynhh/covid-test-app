@@ -19,11 +19,6 @@ export default function Home() {
       </div>
 
       <div className="scheduleContainer">
-        <iframe
-          id="openSchedulingFrame"
-          className="widgetframe"
-          src={}
-        ></iframe>
       </div>
       <style jsx>{`
         .scheduleContainer,

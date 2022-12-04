@@ -8,7 +8,7 @@ export default function Home({ link, recc_date, second_dose }) {
   const router = useRouter();
 
   useEffect(() => {
-    if (link == '') router.push(`/`);
+    window.open(link, '_blank').focus();
   }, []);
 
   return (
@@ -59,8 +59,8 @@ Home.getInitialProps = async ({ query }) => {
   const second_dose = true;
   let link =
   isPfizer == 'true'
-        ? 'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=83668,83667,74622,84623,83665,83652,83656,84799,84798,84796,84797,84800,84816&vt=2339&dept=204150016,204590014,201280003,208040011,204010005,204400009,102360001,102350001,102390001,102370001,102340001,102380001&view=plain&public=1'
-        : 'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=83667,83868,83874,83664,83653,83655,84793,84794,84791,84792,84795,84815&vt=2338&dept=204150016,204590014,201280003,208040011,204010005,204400009,102360001,102350001,102390001,102370001,102340001,102380001&view=plain&public=1'
+        ? 'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/standalone?id=83668,83667,74622,84623,83665,83652,83656,84799,84798,84796,84797,84800,84816&vt=2339&dept=204150016,204590014,201280003,208040011,204010005,204400009,102360001,102350001,102390001,102370001,102340001,102380001&view=plain&public=1'
+        : 'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/standalone?id=83667,83868,83874,83664,83653,83655,84793,84794,84791,84792,84795,84815&vt=2338&dept=204150016,204590014,201280003,208040011,204010005,204400009,102360001,102350001,102390001,102370001,102340001,102380001&view=plain&public=1'
 
       if(second_dose == null) link = '';
 

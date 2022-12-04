@@ -7,7 +7,7 @@ export default function Home({ link }) {
   console.log(link);
 
   useEffect(() => {
-    if (!link) router.push(`/`);
+    window.open(link, '_blank').focus();
   }, []);
   return (
     <>
@@ -47,8 +47,8 @@ Home.getInitialProps = async ({ query }) => {
   const { isstudent } = query;
   let link = 
     isstudent == "true"
-      ? 'https://openscheduling.ynhhs.org/Mychart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=89312&vt=2102&dept=100001390&view=plain&public=1'
-      : 'https://openscheduling.ynhhs.org/Mychart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=91049&vt=2455&dept=100001390&view=plain&public=1';
+      ? 'https://openscheduling.ynhhs.org/Mychart-PRD/openscheduling/standalone?id=89312&vt=2102&dept=100001390&view=plain&public=1'
+      : 'https://openscheduling.ynhhs.org/Mychart-PRD/openscheduling/standalone?id=91049&vt=2455&dept=100001390&view=plain&public=1';
   if(!query.isstudent) link = null;
   return {
     link

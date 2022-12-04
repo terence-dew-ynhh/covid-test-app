@@ -45,7 +45,7 @@ export default function Home({
   const classes = useStyles();
 
   useEffect(() => {
-    if (link == '') router.push(`/`);
+    window.open(link, '_blank').focus();
   }, []);
 
   const handleOpen = () => {
@@ -146,21 +146,21 @@ Home.getInitialProps = async ({ query }) => {
   let link = '';
 
   
-        link = 'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=83837,86796,85175,86801,85274,86816,86814,86812,86809,86807,86819,86817&vt=2293&dept=901010028,901100011,901100013,901010030,901040014,901320009&view=plain&public=1'
+        link = 'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/standalone?id=83837,86796,85175,86801,85274,86816,86814,86812,86809,86807,86819,86817&vt=2293&dept=901010028,901100011,901100013,901010030,901040014,901320009&view=plain&public=1'
         
         if(jjapproved == 'true'){
-          link = 'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=83837,86796,86798,85175,86803,86801,85274,86804,86816,86814,86812,86811,86809,86807,86821,86819,86817&vt=2293&dept=901010028,901100011,901100013,901010030,901040014,901320009&view=plain&public=1'
+          link = 'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/standalone?id=83837,86796,86798,85175,86803,86801,85274,86804,86816,86814,86812,86811,86809,86807,86821,86819,86817&vt=2293&dept=901010028,901100011,901100013,901010030,901040014,901320009&view=plain&public=1'
         }
 
         if(isOver18 == 'false'){
-          link = 'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=86796,86801,86816,86812,86807,86817,89520&vt=2293&dept=901010028,901100011,901100013,901010030,901040014,901320009,901330001&view=plain&public=1'
+          link = 'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/standalone?id=86796,86801,86816,86812,86807,86817,89520&vt=2293&dept=901010028,901100011,901100013,901010030,901040014,901320009,901330001&view=plain&public=1'
         }
 
 
       // if(second_dose == 'true'){
-      //   link = 'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=84792,84795,84794,94791,95375,84815,84793,85108&vt=2338&dept=101960001,102340001,102350001,102360001,102370001,102380001,102390001,102400001&view=plain&public=1'
+      //   link = 'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/standalone?id=84792,84795,84794,94791,95375,84815,84793,85108&vt=2338&dept=101960001,102340001,102350001,102360001,102370001,102380001,102390001,102400001&view=plain&public=1'
       //   if(isPfizer == 'true'){
-      //     link = 'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=84797,84800,84799,84796,85376,84816,84798,85109&vt=2339&dept=101960001,102340001,102350001,102360001,102370001,102380001,102390001,102400001&view=plain&public=1'
+      //     link = 'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/standalone?id=84797,84800,84799,84796,85376,84816,84798,85109&vt=2339&dept=101960001,102340001,102350001,102360001,102370001,102380001,102390001,102400001&view=plain&public=1'
       //   }
       // }
 

@@ -8,8 +8,7 @@ export default function Home({ link, recc_date, second_dose, isSpanish }) {
   const router = useRouter();
 
   useEffect(() => {
-    // if (link == '') router.push(`/`);
-      // window.location.href ='http://covidvaccine.ynhh.org/'
+    window.open(link, '_blank').focus();
   }, []);
 
   return (
@@ -27,12 +26,6 @@ export default function Home({ link, recc_date, second_dose, isSpanish }) {
         <h3>
           {second_dose == 'true' ? (isSpanish == 'true' ? `Seleccione una fecha posterior a ${recc_date}`  : `Please Select Date After ${recc_date}`) : ''}
         </h3>
-        <iframe
-          id="openSchedulingFrame"
-          className="widgetframe"
-          scrolling="yes"
-          src={link}
-        ></iframe>
       </div>
       <style jsx>{`
         .scheduleContainer,
@@ -55,9 +48,9 @@ export default function Home({ link, recc_date, second_dose, isSpanish }) {
 Home.getInitialProps = async ({ query }) => {
   const { recc_date, second_dose, isPfizer, isSpanish } = query;
     
-  let link = "https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=91925,91933,91929,91923,91927,91931,91935&vt=2460&dept=103070034,101010172,108010099,102010094,104010097,108710073,103700027&view=plain&public=1&lang=english"
+  let link = "https://openscheduling.ynhhs.org/mychart-prd/openscheduling/standalone?id=91925,91933,91929,91923,91927,91931,91935&vt=2460&dept=103070034,101010172,108010099,102010094,104010097,108710073,103700027&view=plain&public=1&lang=english"
   if(isPfizer == 'false')
-  link = "https://openscheduling.ynhhs.org/mychart-prd/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=92544,92545,92546,92734,92543,92735,92736&vt=2465&dept=103070034,101010172,108010099,102010094,104010097,108710073,103700027&view=plain&public=1&lang=english"
+  link = "https://openscheduling.ynhhs.org/mychart-prd/openscheduling/standalone?id=92544,92545,92546,92734,92543,92735,92736&vt=2465&dept=103070034,101010172,108010099,102010094,104010097,108710073,103700027&view=plain&public=1&lang=english"
     
   return {
     link,

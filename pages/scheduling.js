@@ -1,10 +1,13 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
 export default function Home({ link }) {
   const router = useRouter();
   const { endpoint } = router.query;
-  console.log(endpoint);
+  useEffect(() => {
+    window.open(link, '_blank').focus();
+  }, []);
   return (
     <>
       <Head>
@@ -46,17 +49,17 @@ Home.getInitialProps = async ({ query }) => {
     {
       name: 'Bridgeport Region',
       link:
-        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79285,79286,79548,79549,81918,82865,82866,84275,85559,86759&vt=2102&dept=100001340&view=plain&public=1'
+        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/standalone?id=79285,79286,79548,79549,81918,82865,82866,84275,85559,86759&vt=2102&dept=100001340&view=plain&public=1'
     },
     {
       name: 'New Haven Region',
       link:
-        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79287,79288,79289,82068,82088,82312,82333,82519,82520,82521,82522,82523,82524,82687,82688,82689,82690,82828,82864,83261,83260,85739,86212&vt=2102&dept=100001341&view=plain&public=1'
+        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/standalone?id=79287,79288,79289,82068,82088,82312,82333,82519,82520,82521,82522,82523,82524,82687,82688,82689,82690,82828,82864,83261,83260,85739,86212&vt=2102&dept=100001341&view=plain&public=1'
     },
     {
       name: 'New London Region',
       link:
-        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=79290,79561,79562,79290&vt=2102&dept=100001342&view=plain&public=1'
+        'https://mychart.ynhhs.org/MyChart-PRD/openscheduling/standalone?id=79290,79561,79562,79290&vt=2102&dept=100001342&view=plain&public=1'
     }
   ];
 

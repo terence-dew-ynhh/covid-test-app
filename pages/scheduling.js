@@ -1,6 +1,12 @@
 import Head from 'next/head';
+import { useEffect } from 'react';
 
 export default function Home({ link }) {
+
+  useEffect(() => {
+    window.open(link, '_blank').focus();
+  }, []);
+
   return (
     <>
       <Head>
@@ -12,12 +18,6 @@ export default function Home({ link }) {
         <img src="/YNHHSLogo.png"></img>
       </div>
       <div className="scheduleContainer">
-        <iframe
-          id="openSchedulingFrame"
-          className="widgetframe"
-          scrolling="yes"
-          src={link}
-        ></iframe>
       </div>
       <style jsx>{`
         .scheduleContainer,

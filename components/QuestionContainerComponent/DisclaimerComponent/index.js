@@ -37,7 +37,7 @@ const DisclaimerComponent = ({
             • If you do not have a primary care provider and would like testing for other respiratory viruses such as Flu or RSV, please call the YNHHS Call Center at 833-ASK-YNHH (833-275-9644) for assessment or 
             <a
               target="__blank"
-              href="https://www.ynhhs.org/patient-care/covid-19/testing/testing-locations"
+              href="https://www.ynhhs.org/get-care-now"
             >
             {' '}CLICK HERE{' '}
             </a>

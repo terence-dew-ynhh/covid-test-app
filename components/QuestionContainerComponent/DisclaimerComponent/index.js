@@ -17,36 +17,36 @@ const DisclaimerComponent = ({
   return (
     <>
       <div className={styles.question_row_item}>
-        <p className="error">
+        <p className="info">
           <b>
-            • As of June 15, 2022, appointments will be required at all COVID-19
-            testing sites.{' '}
+            •This website can be used for scheduling COVID-19 testing only.
           </b>
           <br></br>
           <br></br>
           <b>
-            • Hospital Emergency Departments do not provide COVID screening
-            tests. If you need a COVID screening test, please schedule through
-            one of our sites.
+            • If you are scheduling an appointment for a test that your provider has already placed an order for, please do not use this site to schedule. Check your e-mail or log into your MyChart and select “Schedule an Appointment”.  You may also call 833-ASK-YNHH (833-275-9644) for assistance.
           </b>
           <br></br>
           <br></br>
           <b>
-            • Repeat PCR testing is NOT generally indicated within 90 days of a
-            positive test, either antigen or PCR, especially among patients with
-            symptoms of COVID-19. For more information,{' '}
+            • Signs and symptoms of Covid, Flu and RSV can overlap. Please contact your primary care provider to discuss your symptoms.
+          </b>
+          <br></br>
+          <br></br>
+          <b>
+            • If you do not have a primary care provider and would like testing for other respiratory viruses such as Flu or RSV, please call the YNHHS Call Center at 833-ASK-YNHH (833-275-9644) for assessment or 
             <a
               target="__blank"
               href="https://www.ynhhs.org/patient-care/covid-19/testing/testing-locations"
             >
-              CLICK HERE{' '}
+            {' '}CLICK HERE{' '}
             </a>
+            to make a walk-in or video visit with one of our clinicians.  You may be able to obtain this test through our YNHHS testing sites.  The call center is open 7 days a week from 7am-7pm.
           </b>
           <br></br>
           <br></br>
           <b>
-            • Due to current demands for testing, results are typically
-            available within 2 days.
+            • Hospital Emergency Departments are not able to provide COVID, Flu or RSV testing.
           </b>
           <br></br>
           <br></br>

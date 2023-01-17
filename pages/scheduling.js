@@ -7,7 +7,7 @@ export default function Home({ link }) {
   const { endpoint } = router.query;
 
   useEffect(() => {
-    window.open(link).focus();
+    window.location.href = link;
   }, []);
 
   return (

@@ -26,6 +26,7 @@ import styles from './RequireCovidTestingComponent.module.css'
             id="employee_staff_check_yes"
             type="radio"
             name="employee_staff"
+            disabled
             onClick={(e) => {
               updateIsSymptomatic(true)
               nextPage(e)

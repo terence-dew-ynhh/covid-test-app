@@ -14,9 +14,11 @@ const CurrentLTSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
       <div className="radio_grp">
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
+            <p className="error">
+            If you are experiencing any respiratory or COVID-like symptoms, a Negative COVID-19 PCR test result is required within 48 hours prior to your Easy Care visit.
+            </p>
             <p className="error" hidden={!(isCovidPositive === 'Yes')}>
-              If you are experiencing a medical emergency, please call 9-1-1
-              right away and/or seek care at an Emergency Department.
+            If you are experiencing any of these COVID related symptoms, for the health and safety of staff and employees, a negative PCR test is required 48 hours before coming to Easy Care. Employees can schedule a COVID test by visiting <a href='https://ocucovidtesting.ynhhs.org/'>https://ocucovidtesting.ynhhs.org/</a> 
             </p>
             <fieldset>
               <legend>

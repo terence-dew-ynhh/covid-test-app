@@ -12,6 +12,10 @@ const EmployeeQuestion = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
   return (
     <>
       <div className={styles.question_row_item}>
+        <p className="error">
+          If you are experiencing any respiratory or COVID-like symptoms, a Negative COVID-19 PCR test result is required within 48 hours prior to your Easy Care visit.
+        </p>
+
         <p className="error" hidden={isEmployee}>
           Thank you for your interest in Easy Care, you are not eligible for
           this service at this time. If you need assistance finding care please
@@ -70,7 +74,7 @@ const EmployeeQuestion = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
             }}
           ></input>
           <label htmlFor="employee_staff_check_empip">
-          I am a Yale-New Haven Health System employee or non-employee seeking IN PERSON care at a Walk-In or Urgent Care Center 
+            I am a Yale-New Haven Health System employee or non-employee seeking IN PERSON care at a Walk-In or Urgent Care Center
           </label>
         </fieldset>
       </div>

@@ -12,14 +12,8 @@ const EmployeeQuestion = ({ nextPage, isPrevEnabled, isDoneEnabled, setScheduler
   return (
     <>
       <div className={styles.question_row_item}>
-        <p className="error" hidden={isEmployee}>
-          Thank you for your interest in Easy Care, you are not eligible for
-          this service at this time. If you need assistance finding care please
-          call 833-ASK-YNHH (833-275-9644) or visit{' '}
-          <a href="https://www.ynhhs.org/get-care-now" target={'_blank'}>
-            Get Care Now (ynhhs.org)
-          </a>
-          .
+        <p className="error">
+          If you are experiencing any respiratory or COVID-like symptoms, a Negative COVID-19 PCR test result is required within 48 hours prior to your Easy Care visit.
         </p>
         <fieldset className="radio_grp_set">
           <legend>
@@ -33,12 +27,12 @@ const EmployeeQuestion = ({ nextPage, isPrevEnabled, isDoneEnabled, setScheduler
               setSchedulerURL("Sick");
               isDoneEnabled(true);
             }}
-            ></input>
+          ></input>
           <label htmlFor="employee_staff_check_sick">
-          Sick Visit
+            Sick Visit
           </label>
-              <br></br>
-              <br></br>
+          <br></br>
+          <br></br>
           <input
             id="employee_staff_check_vacc"
             type="radio"
@@ -49,7 +43,7 @@ const EmployeeQuestion = ({ nextPage, isPrevEnabled, isDoneEnabled, setScheduler
             }}
           ></input>
           <label htmlFor="employee_staff_check_vacc">
-          Vaccine 
+            Vaccine
           </label>
         </fieldset>
       </div>

@@ -31,7 +31,7 @@ import styles from './RequireCovidTestingComponent.module.css'
               nextPage(e)
             }}
           ></input>
-          <label htmlFor="employee_staff_check_yes">Having Symptoms?</label>
+          <label htmlFor="employee_staff_check_yes">Having Symptoms? Please contact the Employee Resource Center to discuss symptoms and testing for COVID-19, Flu, and RSV; Call: (844)-543-2147</label>
           <br></br>
           <br></br>
           {/* <input

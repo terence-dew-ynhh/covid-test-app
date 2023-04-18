@@ -29,7 +29,7 @@ const DisclaimerComponent = ({
           <br></br>
           <br></br>
           <b>
-            • All of our drive-through testing sites will be closing by the end of April.  We are still offering testing for COVID-19 at many of our community draw station locations.  If you have an order from your provider or from our call center, you may schedule an appointment by logging into your MyChart and selecting “Schedule an Appointment” or call 833-ASK-YNHH for assistance in scheduling.
+            • Most of our drive-through testing sites will be closing by the end of April.  We are still offering testing for COVID-19 at many of our community draw station locations.  If you have an order from your provider or from our call center, you may schedule an appointment by logging into your MyChart and selecting “Schedule an Appointment” or call 833-ASK-YNHH for assistance in scheduling.
           </b>
           <br></br>
           <br></br>

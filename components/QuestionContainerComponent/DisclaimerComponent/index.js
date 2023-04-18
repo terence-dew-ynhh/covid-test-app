@@ -10,43 +10,37 @@ const DisclaimerComponent = ({
   const [isOver18, setIsOver18] = useState(true);
   const [isOver18andProxy, setIsOver18andProxy] = useState(true);
   useEffect(() => {
-    isPrevEnabled(true);
+    isPrevEnabled(false);
     isDoneEnabled(false);
   }, []);
 
   return (
     <>
       <div className={styles.question_row_item}>
-        <p className="info">
+        <p className="error">
           <b>
-            •This website can be used for scheduling COVID-19 testing only.
+            •The Public Health Emergency is ending on May 11.  Due to this, we are no longer able to offer “self-scheduling” through this website as of April 28, 2023.
           </b>
           <br></br>
           <br></br>
           <b>
-            • If you are scheduling an appointment for a test that your provider has already placed an order for, please do not use this site to schedule. Check your e-mail or log into your MyChart and select “Schedule an Appointment”.  You may also call 833-ASK-YNHH (833-275-9644) for assistance.
+            • If you are in need of testing for COVID-19, please call 833-ASK-YNHH (833-275-9644) for symptom assessment and for a COVID-19 test order to be placed if needed.
           </b>
           <br></br>
           <br></br>
           <b>
-            • Signs and symptoms of Covid, Flu and RSV can overlap. Please contact your primary care provider to discuss your symptoms.
+            • All of our drive-through testing sites will be closing by the end of April.  We are still offering testing for COVID-19 at many of our community draw station locations.  If you have an order from your provider or from our call center, you may schedule an appointment by logging into your MyChart and selecting “Schedule an Appointment” or call 833-ASK-YNHH for assistance in scheduling.
           </b>
           <br></br>
           <br></br>
           <b>
-            • If you do not have a primary care provider and would like testing for other respiratory viruses such as Flu or RSV, please call the YNHHS Call Center at 833-ASK-YNHH (833-275-9644) for assessment or 
-            <a
+            • If you do not have a primary care provider and would like testing for other respiratory viruses such as Flu or RSV, please <a
               target="__blank"
               href="https://www.ynhhs.org/get-care-now"
             >
-            {' '}CLICK HERE{' '}
+              {' '}CLICK HERE{' '}
             </a>
-            to make a walk-in or video visit with one of our clinicians.  You may be able to obtain this test through our YNHHS testing sites.  The call center is open 7 days a week from 7am-7pm.
-          </b>
-          <br></br>
-          <br></br>
-          <b>
-            • Hospital Emergency Departments are not able to provide COVID, Flu or RSV testing.
+            to make a walk-in or video visit with one of our clinicians.
           </b>
           <br></br>
           <br></br>

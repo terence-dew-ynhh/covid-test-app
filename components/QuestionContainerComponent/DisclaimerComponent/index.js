@@ -44,8 +44,11 @@ const DisclaimerComponent = ({
           </b>
           <br></br>
           <br></br>
+          <b>
+            • You are no longer able to access COVID-19 testing through this website.
+          </b>
         </p>
-        <fieldset className="radio_grp_set">
+        {/* <fieldset className="radio_grp_set">
           <legend>I have read the above and wish to proceed:</legend>
           <input
             id="over_eighteen"
@@ -58,7 +61,7 @@ const DisclaimerComponent = ({
           <label id={styles.blocking_label} htmlFor="over_eighteen">
             Continue
           </label>
-        </fieldset>
+        </fieldset> */}
       </div>
 
       <style jsx>{``}</style>

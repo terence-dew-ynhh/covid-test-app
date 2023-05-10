@@ -13,7 +13,7 @@ const EmployeeQuestion = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
     <>
       <div className={styles.question_row_item}>
         <p className="error">
-          If you are experiencing any respiratory or COVID-like symptoms, a Negative COVID-19 PCR test result is required within 48 hours prior to your Easy Care visit.
+          If you are experiencing any respiratory or COVID-like symptoms, a Negative COVID-19 PCR or Rapid Antigen Test result is required within 48 hours prior to your Easy Care visit.
         </p>
 
         <p className="error" hidden={isEmployee}>

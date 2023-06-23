@@ -14,11 +14,11 @@ const CurrentSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
       <div className="radio_grp">
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
-            <p className="error">
+            <p className="info">
               If you are experiencing any respiratory or COVID-like symptoms, a Negative COVID-19 PCR or Rapid Antigen Test result is required within 48 hours prior to your Easy Care visit.
             </p>
             <p className="error" hidden={!(isCovidPositive === 'Yes')}>
-              If you are experiencing any of these COVID related symptoms, for the health and safety of staff and employees, a negative PCR test is required 48 hours before coming to Easy Care. Employees can schedule a COVID test by visiting <a href='https://ocucovidtesting.ynhhs.org/'>https://ocucovidtesting.ynhhs.org/</a>
+            Employees can self-schedule a COVID test at a YNHHS Draw station via MyChart scheduling. Or please call the Employee Resource Center with COVID-19 questions and concerns (not scheduling) at 844-543-2147, Option 2, open Monday – Friday 7 am – 4:30 pm.
             </p>
             <fieldset>
               <legend>

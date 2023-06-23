@@ -93,6 +93,12 @@ fieldset {
   padding: 15px 20px;
   font-weight: 600;
 }
+.info{
+  color:white;
+  background: blue;
+  padding: 15px 20px;
+  font-weight: 600;
+}
 
 .divider {
   display: block;

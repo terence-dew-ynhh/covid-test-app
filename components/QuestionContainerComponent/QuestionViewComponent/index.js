@@ -22,11 +22,7 @@ const QuestionViewComponent = ({
   nextPage,
   prevPage,
   schedulePush,
-  updateLocation,
-  hasSymptoms,
-  updateIsFiveOrBelow,
-  updateSelectionCode,
-  setCondition
+  updateLanguage,
 }) => {
   const [prevEnabled, setPrevEnabled] = useState(false);
   const [nextEnabled, setNextEnabled] = useState(false);
@@ -72,12 +68,8 @@ const QuestionViewComponent = ({
         isPrevEnabled={isPrevEnabled}        
         isDoneEnabled={isDoneEnabled}
         isNextEnabled={isNextEnabled}
-        hasSymptoms={hasSymptoms}
-        updateLocation={updateLocation}
-        updateIsFiveOrBelow={updateIsFiveOrBelow}
-        updateSelectionCode={updateSelectionCode}
+        updateLanguage={updateLanguage}
         schedulePush={schedulePush}
-        setCondition={setCondition}
       />
       </div>
       <div className={styles.buttonContainer}>

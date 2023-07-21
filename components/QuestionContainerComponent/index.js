@@ -5,26 +5,10 @@ import { useRouter } from 'next/router';
 
 const QuestionFormComponent = ({}) => {
   const [viewIdx, setviewIdx] = useState(0);
-  const [status, setStatus] = useState('Asymptomatic');
-  const [location, setLocation] = useState('Fairfield County and NY');
-  const [isFiveOrBelow, setIsFiveOrBelow] = useState(false);
-  const [selectionCode, setSelectionCode] = useState('');
-  const [condition, setCondition] = useState('');
+  const [language, setLanguage] = useState('');
 
   const compNames = [
-    'info',
-    'billingchange',
-    'location',
-    'priortest',
-    'provorder',
-    'eighteen',
-    'schedulingfor',
-    'consent',
-    'symptomssel',
-    'notoffered',
-    'feeconsent',
-    'asympconsent',
-    'sympconsent',
+    'info'
   ];
   const router = useRouter();
 
@@ -38,27 +22,13 @@ const QuestionFormComponent = ({}) => {
     setviewIdx(index);
   };
 
-  const hasSymptoms = (hasSymptoms) => {
-     hasSymptoms
-      ? setStatus('Symptomatic')
-      : setStatus('Asymptomatic');
-  };
-
-  const updateIsFiveOrBelow = (ageFiveOrBelow) => {
-    setIsFiveOrBelow(ageFiveOrBelow)
-  };
-
-  const updateLocation = (siteLocation) => {
-    setLocation(siteLocation);
-  };
-
-  const updateSelectionCode = (code) => {
-    setSelectionCode(code);
+  const updateLanguage = (selLanguage) => {
+    setLanguage(selLanguage);
   };
 
   const schedulePush = () => {
     router.push(
-      `/scheduling?status=${status}&location=${location}&isBelowFive=${isFiveOrBelow}&code=${selectionCode}&condition=${condition}`,
+      `/scheduling?language=${language}`,
       '/scheduling'
     );
   };
@@ -86,12 +56,7 @@ const QuestionFormComponent = ({}) => {
         nextPage={nextPage}
         prevPage={prevPage}
         compName={compNames[viewIdx]}
-        schedulePush={schedulePush}
-        updateLocation={updateLocation}
-        hasSymptoms={hasSymptoms}
-        updateIsFiveOrBelow={updateIsFiveOrBelow}
-        updateSelectionCode={updateSelectionCode}
-        setCondition={(value) => setCondition(value)}
+        updateLanguage={updateLanguage}
       ></QuestionView>
     </div>
   );

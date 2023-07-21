@@ -1,7 +1,7 @@
 {
     "apps": [
         {
-            "name": "covidtesting2",
+            "name": "bariatric-scheduling",
             "script": "npm",
             "args" : "start"
         }

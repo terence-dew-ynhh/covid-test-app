@@ -75,7 +75,7 @@ Home.getInitialProps = async ({ query }) => {
     {
       name: 'YNHH OFF SITE FLU FAIR CLINIC',
       link:
-        'https://openscheduling.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=81778,81779,81780,81781,81782,81783,81784,81785,81786,81787&vt=10220&dept=100001366&view=plain&public=1'
+        'https://openscheduling.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=81778,81779,81780,81781,81782,81783,81784,81785,81786,117357,117358,117359,117360,117361,117362,81787&vt=10220&dept=100001366&view=plain&public=1'
     },
     {
       name: "YALE PHYSICIAN'S BUILDING FLU FAIR CLINIC",
@@ -100,7 +100,7 @@ Home.getInitialProps = async ({ query }) => {
     },{
       name: 'LM OFFSITE FLU FAIR CLINIC',
       link:
-        'https://openscheduling.ynhhs.org/mychart-prd/openscheduling/standalone?id=92026,91884,81624,81691,117357,117358,117359,117360,117361,117362,81732,81760,81781,91885,81849,81787,81845,81850,81535,81845,81788,81793,81789,91883,81798,81803,81623,81780,82727,82726,81784,81796,81782,81801&vt=10220&dept=103010114,104010092,108010097,100001366,108710070,102010093,100001367,200010001,200010002,200010003,101010170&view=plain&public=1'
+        'https://openscheduling.ynhhs.org/MyChart-PRD/openscheduling/SignupAndSchedule/EmbeddedSchedule?id=81845,81846,81847,81848,81849,81850&vt=10220&dept=100001367&view=plain&public=1'
     }
     
   ];

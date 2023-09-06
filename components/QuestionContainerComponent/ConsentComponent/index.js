@@ -7,7 +7,7 @@ const Consent = ({ nextPage, isPrevEnabled, isDoneEnabled, schedulePush }) => {
   const [isMandated, setIsMandated] = useState(true);
 
   useEffect(() => {
-    isPrevEnabled(true);
+    isPrevEnabled(false);
     isDoneEnabled(false);
   }, []);
 

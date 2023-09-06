@@ -4,6 +4,7 @@ import PreviousSymptoms from '../PreviousSymptomsComponent';
 import Consent from '../ConsentComponent';
 import SelectLocation from '../SelectLocationComponent';
 import styles from './QuestionViewComponent.module.css'
+import EmployeeQuestion from '../EmployeeQuestionComponent';
 
 
 const QuestionViewComponent = ({
@@ -28,10 +29,10 @@ const QuestionViewComponent = ({
   const setSchedulerURL = (location) => {updateLocation(location)};
   
   const components = {
+    employee: EmployeeQuestion,
     previous: PreviousSymptoms,
     consent: Consent,
     selectlocation: SelectLocation
-
   };
 
   const ComponentName = components[compName || 'employee'];

@@ -46,7 +46,7 @@ const PreviousSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled, schedulePush
                     value="No"
                     name="prev_covid"
                     onClick={(e) => {
-                      schedulePush(true);
+                      nextPage();
                       setIsCovidPositive(e.target.value);
                     }}
                   ></input>

@@ -8,7 +8,7 @@ const QuestionFormComponent = ({}) => {
 
   const [viewIdx, setviewIdx] = useState(0);
   const [endPoint, setEndpoint] = useState('BH FLU FAIR CLINIC');
-  const compNames = ['consent','previous'];
+  const compNames = ['employee','consent','previous','selectlocation'];
   const router = useRouter();
 
   
@@ -24,7 +24,7 @@ const QuestionFormComponent = ({}) => {
 
   const schedulePush = (isdisqualified) => {
 
-     router.push(`/scheduling`,'/scheduling');
+     router.push(`/scheduling?location=${endPoint}`,'/scheduling');
   };
 
   const updateLocation = (endpoint) =>{
@@ -35,17 +35,6 @@ const QuestionFormComponent = ({}) => {
 
   return (
     <div className={styles.questionContainer}>
-          {/* <div style={{  
-            content: '',
-	          position: 'fixed',
-	          bottom: '0px',
-	          left: '0%',
-            width: `${progressWidth}%`,
-            fontSize: '1.2em',
-            fontWeight: '600',
-            paddingLeft: `${progressWidth-15}%`,
-            color: '#0f4d92',
-            borderBottom: '15px solid #0f4d92'}} >{`${progressWidth}%`}</div> */}
 
       <QuestionView
         nextPage={nextPage}

@@ -50,7 +50,7 @@ Home.getInitialProps = async ({ query }) => {
     {
       name: 'GH FLU FAIR CLINIC',
       link:
-        'https://openscheduling.ynhhs.org/MyChart-PRD/openscheduling/standalone?id=81619,81620,81621,81622,81623,82387&vt=10220&dept=104010092&view=plain&public=1'
+        'https://openscheduling.ynhhs.org/MyChart-PRD/openscheduling/standalone?id=81619,81620,81621,81622,81623,71677,82387&vt=10220&dept=104010092&view=plain&public=1'
     },
     {
       name: 'LM FLU FAIR CLINIC',

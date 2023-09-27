@@ -16,7 +16,6 @@ const SelectLocation = ({ isPrevEnabled, isDoneEnabled, setSchedulerURL }) => {
     'NE PRACTICES: GREENWICH FLU FAIR CLINIC ',
     'NE PRACTICES: NEW LONDON FLU FAIR CLINIC',
     'LM OFFSITE FLU FAIR CLINIC'
-
   ];
 
   useEffect(() => {

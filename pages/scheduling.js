@@ -90,7 +90,7 @@ Home.getInitialProps = async ({ query }) => {
       link:
         'https://openscheduling.ynhhs.org/MyChart-PRD/openscheduling/standalone?id=81794,81795,81796,82184,82185&vt=10220&dept=200010002&view=plain&public=1'
     },{
-      name: 'NE PRACTICES: GREENWICH FLU FAIR CLINIC ',
+      name: 'NE PRACTICES: GREENWICH FLU FAIR CLINIC',
       link:
         'https://openscheduling.ynhhs.org/MyChart-PRD/openscheduling/standalone?id=81797,81798,81799,81803,82186&vt=10220&dept=200010003&view=plain&public=1'
     },{

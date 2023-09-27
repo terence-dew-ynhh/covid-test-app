@@ -25,8 +25,6 @@ const PreviousSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled, schedulePush
               <legend> - A serious reaction to a flu
                 shot</legend>
               <legend> - Guillain-Barré syndrome</legend>
-              <legend> - Allergy to chicken eggs or chicken
-                egg product</legend>
 
               <div className="radio_row_item">
                 <input

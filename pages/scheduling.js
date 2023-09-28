@@ -88,7 +88,7 @@ Home.getInitialProps = async ({ query }) => {
     },{
       name: 'NE PRACTICES: NEW HAVEN FLU FAIR CLINIC',
       link:
-        'https://openscheduling.ynhhs.org/MyChart-PRD/openscheduling/standalone?id=81794,81795,81796,82184,82185&vt=10220&dept=200010002&view=plain&public=1'
+        'https://openscheduling.ynhhs.org/MyChart-PRD/openscheduling/standalone?id=81800,81805,81806,91900,81807,81808&vt=10220&dept=200010004&view=plain&public=1'
     },{
       name: 'NE PRACTICES: GREENWICH FLU FAIR CLINIC',
       link:

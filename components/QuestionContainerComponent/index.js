@@ -8,7 +8,7 @@ const QuestionFormComponent = ({}) => {
 
   const [viewIdx, setviewIdx] = useState(0);
   const [endPoint, setEndpoint] = useState('Bridgeport Hospital Testing Tent');
-  const compNames = ['flushot','seriousreaction','allergiceggs','antibiotic','fever','guillainbarre','pregnant','chemotherapy','consent'];
+  const compNames = ['flushot','seriousreaction','antibiotic','fever','guillainbarre','pregnant','chemotherapy','consent'];
   const router = useRouter();
 
   

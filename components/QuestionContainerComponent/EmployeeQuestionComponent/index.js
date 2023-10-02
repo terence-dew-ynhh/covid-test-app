@@ -17,7 +17,7 @@ const EmployeeQuestion = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
         </p>
         <fieldset className="radio_grp_set">
           <legend>
-            Are you a Employee, Provider, Volunteer, Student or Vendor ?
+            Are you a Provider, Volunteer, Student or Vendor ?
           </legend>
           <input
             id="employee_staff_check_yes"

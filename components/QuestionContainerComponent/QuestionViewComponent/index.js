@@ -1,28 +1,9 @@
 import { useState } from 'react';
-import DepartmentSelectComponent from '../DepartmentSelectComponent';
-import PinInputComponent from '../PinInputComponent';
-import VaccineDateSelectComponent from '../VaccineDateSelectComponent';
-import FirstDoseComponent from '../FirstDoseComponent';
-import ListedConditionsConsent from '../ListedConditionsConsent';
-import TestedPositiveComponent from '../TestedPositiveComponent';
-import CovidSymptomsComponent from '../CovidSymptomsComponent';
-import FactSheetComponent from '../FactSheetComponent';
-import SelectVaccineComponent from '../SelectVaccineComponent';
-import QuarantineComponent from '../QuarantineComponent';
-import HaveSymptomsComponent from '../HaveSymptomsComponent';
+
 import ReceiveVaccinationConsent from '../ReceiveVaccinationConsent';
-import SlotsFilledComponent from '../SlotsFilledComponent';
-import MonoclonalComponent from '../MonoclonalComponent';
-import ZipInputComponent from '../ZipInputComponent';
-import VaccinationScheduleConsent from '../VaccinationScheduleConsent';
-import AgeComponent from '../AgeComponent';
-import HITHistoryComponent from '../HITHistoryComponent';
-import YNHHFactSheetComponent from '../YNHHFactSheetComponent';
-import MiscComponent from '../MiscComponent';
-import ThirdDoseComponent from '../ThirdDoseComponent';
-import ImmunoCompConsent from '../ImmunoCompConsent';
-import ReceiveBoosterConsent from '../ReceiveBoosterConsent';
-import SelectPfizerComponent from '../SelectPfizerComponent';
+
+import EmployeeComponent from '../EmployeeComponent';
+
 
 import styles from './QuestionViewComponent.module.css';
 
@@ -55,32 +36,11 @@ const QuestionViewComponent = ({
   const [nextEnabled, setNextEnabled] = useState(false);
   const [doneEnabled, setDoneEnabled] = useState(false);
   const components = {
-    deptselect: DepartmentSelectComponent,
-    pininput: PinInputComponent,
-    firstdose: FirstDoseComponent,
-    listconditions: ListedConditionsConsent,
-    testedpositive: TestedPositiveComponent,
-    covidsymptoms: CovidSymptomsComponent,
-    factsheet: FactSheetComponent,
-    selectedvaccine: SelectVaccineComponent,
-    vaccinedateselect: VaccineDateSelectComponent,
-    quartinecovid: QuarantineComponent,
-    selectsymptoms: HaveSymptomsComponent,
-    vaccineconsent: ReceiveVaccinationConsent,
-    slotsfilled: SlotsFilledComponent,
-    age: AgeComponent,
-    monoclonal: MonoclonalComponent,
-    zipcode: ZipInputComponent,
-    vaccineschedule: VaccinationScheduleConsent,
-    ynhhfactsheet: YNHHFactSheetComponent,
-    hithistory: HITHistoryComponent,
-    misc: MiscComponent,
-    immunocomp: ThirdDoseComponent,
-    immunocompconsent: ImmunoCompConsent,
-    receivebooster: ReceiveBoosterConsent, 
-    selectpfizer: SelectPfizerComponent
+    employee: EmployeeComponent,
+    receivebooster: ReceiveVaccinationConsent,
+
   };
-  const ComponentName = components[compName || 'pininput'];
+  const ComponentName = components[compName || 'employee'];
 
   const isPrevEnabled = (isEnabled) => {
     setPrevEnabled(isEnabled);

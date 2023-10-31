@@ -144,7 +144,7 @@ ___
     selectsymptoms: HaveSymptomsComponent,
     vaccineconsent: ReceiveVaccinationConsent,
     slotsfilled: SlotsFilledComponent,
-    age: AgeComponent,
+    age: EmployeeComponent,
     monoclonal: MonoclonalComponent,
     zipcode: ZipInputComponent,
     vaccineschedule: VaccinationScheduleConsent,
@@ -192,7 +192,7 @@ ___
 ### Reusable Components
 ___
 - **Radio**
-  - **Example**: AgeComponent
+  - **Example**: EmployeeComponent
   - **Usage**: A when a users needs to select a choice from multiple options. 
 - **Checkbox** 
   - **Example**: ReceiveVaccinationConsent

@@ -1,9 +1,9 @@
 import React from "react";
 import Link from "next/link";
-import styles from './ErrorMessageComponent.module.css'
+import styles from './ErrorMessEmployeeComponent.module.css'
 
 
-const ErrorMessageComponent = () => {
+const ErrorMessEmployeeComponent = () => {
   return (
 <>
       <h2 className="title">
@@ -35,4 +35,4 @@ const ErrorMessageComponent = () => {
   );
 };
 
-export default ErrorMessageComponent;
+export default ErrorMessEmployeeComponent;

@@ -36,14 +36,8 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
   }, []);
 
   const compNames = [
+    'employee',
     'receivebooster',
-    'testedpositive',
-    'covidsymptoms',
-    'quartinecovid',
-    'vaccineconsent',
-    'selectedvaccine',
-    'factsheet',
-    'ynhhfactsheet',
   ];
 
   let progressWidth = Math.floor(100 * ((viewIdx + 1) / compNames.length));
@@ -80,8 +74,7 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
   };
 
   const updateAnswerData = (questionData) => {
-    // const dataKey = questionData.keys()
-    // setResponseOrder([...responseOrder, ...dataKey[0]]);
+
     setResponseData({ ...responseData, ...questionData });
   };
 
@@ -104,10 +97,8 @@ const QuestionFormComponent = ({ updateHeader, isSpanish }) => {
   };
 
   const schedulePush = () => {
-    submitData();
     router.push(
-      `/scheduling?isPfizer=${isPfizer}`,
-      '/scheduling'
+      `/scheduling`
     );
   };
 

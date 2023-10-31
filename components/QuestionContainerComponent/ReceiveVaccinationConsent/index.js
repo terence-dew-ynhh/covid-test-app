@@ -33,7 +33,7 @@ const ReceiveVaccinationConsent = ({
 
   let checkboxes = checkboxesArray.map((checkbox, idx) => (
     <div className={styles.chk_row_item}>
-      <label className={styles.none_label_or}> </label>
+      <label className={styles.none_label_or}>I acknowledge that I have received a copy of the Yale New Haven Health Notice of Privacy Practices. </label>
       <input
         id={`prev_covid_${checkbox.toLowerCase()}`}
         type="checkbox"
@@ -45,7 +45,7 @@ const ReceiveVaccinationConsent = ({
         }}
       ></input>
       <label htmlFor={`prev_covid_${checkbox.toLowerCase()}`}>
-        {VEText[8]}
+        I Agree
       </label>
     </div>
   ));
@@ -61,9 +61,9 @@ const ReceiveVaccinationConsent = ({
               <br></br>
               <br></br>
 
-              I have read or someone has read to me the 2023-2024 Vaccine Fact Sheet for the 2023-2024 mRNA Moderna Covid-19 vaccine. I understand the risks and benefits of the vaccine and I voluntarily assume responsibility for any reactions that may result from receipt of the vaccine. I have had an opportunity to ask questions regarding the vaccine and all of my questions have been answered to my satisfaction. I consent to the administration of the vaccine on behalf of myself or the person named below for whom I am the parent or legal guardian (“Ward”). I, for myself or on behalf of my Ward, and each of our respective heirs, executors, personal representatives and assigns, hereby release Yale New Haven Health, its affiliates, subsidiaries, divisions, directors, contractors, agents and employees (collectively “Released Parties”), from any and all claims arising out of, in connection with or, in any way related to my receipt and the receipt of my Ward of this or these vaccines(s). 
+              I have read or someone has read to me the 2023-2024 Vaccine Fact Sheet for the 2023-2024 mRNA Moderna Covid-19 vaccine. I understand the risks and benefits of the vaccine and I voluntarily assume responsibility for any reactions that may result from receipt of the vaccine. I have had an opportunity to ask questions regarding the vaccine and all of my questions have been answered to my satisfaction. I consent to the administration of the vaccine on behalf of myself or the person named below for whom I am the parent or legal guardian (“Ward”). I, for myself or on behalf of my Ward, and each of our respective heirs, executors, personal representatives and assigns, hereby release Yale New Haven Health, its affiliates, subsidiaries, divisions, directors, contractors, agents and employees (collectively “Released Parties”), from any and all claims arising out of, in connection with or, in any way related to my receipt and the receipt of my Ward of this or these vaccines(s).
               <br></br><br></br>
-              Neither the provisioning vaccination center nor any of the Released Parties shall, at any time or to any extent whatsoever, be liable, responsible, or in any way accountable for any loss, injury, death or damage suffered or sustained by any person at any time in connection with or as a result of this vaccine program or the administration of the vaccine(s) described above. My medical record may be shared with my physician or other healthcare provider and the medical record of my Ward may be shared with his/her physician or other healthcare provider. Yale New Haven Health may use and disclose the personal and health information of myself or my Ward in order to provide treatment, receive payment for the care provided or for other healthcare operations. I acknowledge that I have received a copy of the Yale New Haven Health Notice of Privacy Practices.
+              Neither the provisioning vaccination center nor any of the Released Parties shall, at any time or to any extent whatsoever, be liable, responsible, or in any way accountable for any loss, injury, death or damage suffered or sustained by any person at any time in connection with or as a result of this vaccine program or the administration of the vaccine(s) described above. My medical record may be shared with my physician or other healthcare provider and the medical record of my Ward may be shared with his/her physician or other healthcare provider. Yale New Haven Health may use and disclose the personal and health information of myself or my Ward in order to provide treatment, receive payment for the care provided or for other healthcare operations.
             </legend>
             <div className={styles.q1_grid}>{checkboxes}</div>
           </fieldset>

@@ -4,7 +4,7 @@
   "description": "",
   "main": "next.config.js",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^1.6.0",
     "compression": "^1.7.4",
     "cookie-session": "^1.4.0",
     "dotenv": "^8.2.0",

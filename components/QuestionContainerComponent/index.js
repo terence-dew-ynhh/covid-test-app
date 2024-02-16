@@ -8,7 +8,7 @@ const QuestionFormComponent = ({}) => {
 
   const [viewIdx, setviewIdx] = useState(0);
   const [endPoint, setEndpoint] = useState('Bridgeport Region');
-  const compNames = ['ltsymptoms','employee','symptoms', 'apptsel'];
+  const compNames = ['ltsymptoms','employee','apptsel'];
   const router = useRouter();
   
   

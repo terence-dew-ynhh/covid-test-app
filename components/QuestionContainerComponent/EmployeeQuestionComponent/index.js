@@ -12,9 +12,6 @@ const EmployeeQuestion = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
   return (
     <>
       <div className={styles.question_row_item}>
-        <p className="error">
-          If you are experiencing any respiratory or COVID-like symptoms, a Negative COVID-19 PCR or Rapid Antigen Test result is required within 48 hours prior to your Easy Care visit.
-        </p>
 
         <p className="error" hidden={isEmployee}>
           Thank you for your interest in Easy Care, you are not eligible for
@@ -54,7 +51,7 @@ const EmployeeQuestion = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
             type="radio"
             name="employee_staff"
             onClick={() => {
-              location.href = "https://www.ynhhs.org/OnDemand"
+              location.href = "https://www.ynhhs.org/get-care-now"
             }}
           ></input>
           <label htmlFor="employee_staff_check_empvirt">
@@ -70,7 +67,7 @@ const EmployeeQuestion = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
             type="radio"
             name="employee_staff"
             onClick={() => {
-              location.href = "https://www.ynhhs.org/patient-care/urgent-care"
+              location.href = "https://www.ynhhs.org/get-care-now"
             }}
           ></input>
           <label htmlFor="employee_staff_check_empip">

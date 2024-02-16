@@ -14,9 +14,6 @@ const CurrentLTSymptoms = ({ nextPage, isPrevEnabled, isDoneEnabled }) => {
       <div className="radio_grp">
         <div className={styles.question_row_item}>
           <div className={styles.question_row_item_sub}>
-          <p className="info">
-            If you are experiencing any respiratory or COVID-like symptoms, a Negative COVID-19 PCR or Rapid Antigen Test result is required within 48 hours prior to your Easy Care visit.
-            </p>
             <p className="error" hidden={!(isCovidPositive === 'Yes')}>
             If you are experiencing a medical emergency, please call 9-1-1 right away and/or seek care at an Emergency Department.            </p>
             <fieldset>

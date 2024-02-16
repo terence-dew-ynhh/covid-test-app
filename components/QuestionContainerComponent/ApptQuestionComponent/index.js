@@ -12,9 +12,8 @@ const EmployeeQuestion = ({ nextPage, isPrevEnabled, isDoneEnabled, setScheduler
   return (
     <>
       <div className={styles.question_row_item}>
-        <p className="error">
-          If you are experiencing any respiratory or COVID-like symptoms, a Negative COVID-19 PCR or Rapid Antigen Test result is required within 48 hours prior to your Easy Care visit.
-        </p>
+        <p className="info">
+        If you are experiencing any respiratory or COVID-like symptoms, please proceed with self-scheduling. Testing for flu, COVID and RSV is available. Please follow current YNHHS masking recommendations.        </p>
         <fieldset className="radio_grp_set">
           <legend>
             Please select a visit type

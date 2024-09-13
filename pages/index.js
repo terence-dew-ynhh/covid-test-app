@@ -34,7 +34,7 @@ function Home({ uuid }) {
   return (
     <div className="container">
       <Head>
-        <title>COVID-19 Vaccine Scheduler</title>
+        <title>YNHH Affiliates COVID-19 Vaccination</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="grid">

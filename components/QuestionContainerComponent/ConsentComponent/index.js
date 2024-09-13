@@ -20,7 +20,7 @@ const Consent = ({ nextPage, isPrevEnabled, isDoneEnabled, schedulePush }) => {
         </p>
         <fieldset className="radio_grp_set">
           <legend>
-          I understand that I am scheduling an appointment to receive the Flu shot at a YNHHS site. As such, I consent to my immunization records being shared with and retained in my Occupational Health records and, if applicable, my Epic electronic health records at YNHHS. Upon consenting, this immunization record will be available to my health care providers, and I hereby consent to the disclosure of this information.</legend>
+          I understand that I am scheduling an appointment to receive the Flu shot at a YNHHS site. As such, I consent to my immunization records being shared with and retained in my Occupational Health records and, if applicable, my Epic electronic health records at YNHHS. Upon consenting, this immunization record will be available to my health care providers, and I hereby consent to the disclosure of this information. If I am an employee of Yale University and a member of YNHHS medical staff, I further consent to this information being shared from Epic and Occupational Medicine with Yale University.</legend>
           <input
             id="mandated_test_check_yes"
             type="radio"

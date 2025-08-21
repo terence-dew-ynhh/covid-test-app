@@ -19,7 +19,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "dev": "next dev -p 3050",
+    "dev": "next dev -p 3015",
     "build": "next build",
     "start": "next start -p 3015"
   },
